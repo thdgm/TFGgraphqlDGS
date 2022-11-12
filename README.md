@@ -1,2 +1,2 @@
 # TFGgraphqlDGS
-TFG Diego Garcia 
+TFG Diego Garcia Muro 
