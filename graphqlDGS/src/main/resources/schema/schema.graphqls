@@ -1,0 +1,133 @@
+type Query{
+}
+
+type Mutation{
+}
+
+# Catalog: Dataset where each element is a metadata record that represents a resource
+type Catalog{
+
+  # Id of the Catalog
+  id: ID!
+
+  # Name of the Catalog
+  name: String!
+
+  # A Catalog can record descriptions of resources such as dataset or dataservices
+  dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
+
+  # Optional information
+  dcatRecord: CatalogRecord!
+
+
+}
+
+# It can be a Resource, Catalog, dataset or dataservice
+union CatalogDescriptions = Resource | DataService | Dataset | Catalog
+
+
+# CatalogRecord (optional) Save information about catalog's record
+type CatalogRecord{
+
+  # Id of the CatalogRecord
+  id: ID!
+
+  # Name of the CatalogRecord
+  name: String!
+
+}
+
+
+
+# Resource: Represents a dataset, data service or another resource.
+interface Resource{
+
+  # Id of the Resource
+  id: ID!
+
+  # Name of the Resource
+  name: String!
+
+  # Type of Resource
+  typeResource: ResourcesType
+
+  #Info about pagination
+  paginationInfo: PaginationInfo
+
+}
+
+# Represents the different types of resources
+enum ResourcesType{
+
+  DATASET
+
+  DATASERVICE
+
+}
+
+
+# Dataset: Collection of data published by one agent, is a type of Resource
+type Dataset implements Resource{
+
+  # Id of the Dataset
+  id: ID!
+
+  # Name of the Dataset
+  name: String!
+
+  # Access to dataset
+  dcatDistribution: [Distribution!]
+
+  # A dataset series of which the dataset is part
+  dcatInSeries: [DatasetSeries!]
+
+}
+
+# Dataservice: Collection of operations which provide access 
+# to one or more datasets. Is a type of Resource
+type DataService implements Resource{
+
+  # Id of the DataService
+  id: ID!
+
+  # Name of the DataService
+  name: String!
+
+  # Access to dataservice
+  dcatAccessService: [Distribution!]
+
+}
+
+
+# DatasetSeries: Collection of datasets that are group by common features
+type DatasetSeries implements Dataset{
+
+  # Id of the DatasetSeries
+  id: ID!
+
+  # Name of the DatasetSeries
+  name: String!
+}
+
+# Distribution: Accessible way to dataset
+type Distribution{
+
+  # Id of the Distribution
+  id: ID!
+
+  # Name of the Distribution
+  name: String!
+}
+
+  #Info about pagination
+
+type PaginationInfo{
+
+  startCursor: ID
+
+  # End cursor
+  offset: ID
+
+  hasNext: Boolean!
+
+}
