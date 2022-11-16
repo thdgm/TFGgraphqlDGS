@@ -1,133 +1,94 @@
-type Query{
+schema {
+  query: Query
 }
 
-type Mutation{
+type Query {
+  resource(id: ID): Resource
+  catalog(id: ID): Catalog  
+  dataset(id: ID): DatasetInCatalog
+  dataService(id: ID): DataService
+  dataSeries(id: ID): DatasetSeries
+  catalogRecord(id: ID): CatalogRecord
+  distribution(id: ID): Distribution
 }
 
-# Catalog: Dataset where each element is a metadata record that represents a resource
-type Catalog{
+#
+# type -> final type, cannot be extended
+# interface -> abstrct type, can be extended
+#
 
-  # Id of the Catalog
+# Resource published or curated by a single agent.
+interface Resource {
   id: ID!
-
-  # Name of the Catalog
-  name: String!
-
-  # A Catalog can record descriptions of resources such as dataset or dataservices
-  dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
-
-  # Optional information
-  dcatRecord: CatalogRecord!
-
-
+  # A name given to the resource.
+  title: String!  
 }
 
 # It can be a Resource, Catalog, dataset or dataservice
-union CatalogDescriptions = Resource | DataService | Dataset | Catalog
+union ResourceInCatalog = DatasetSeries | DataService | Dataset | Catalog
 
+union DatasetInCatalog = DatasetSeries | Dataset | Catalog
 
-# CatalogRecord (optional) Save information about catalog's record
-type CatalogRecord{
-
-  # Id of the CatalogRecord
+# Concepto dcat:Dataset 
+interface AbtractDataset implements Resource {
   id: ID!
-
-  # Name of the CatalogRecord
-  name: String!
-
+  title: String!  
 }
 
-
-
-# Resource: Represents a dataset, data service or another resource.
-interface Resource{
-
-  # Id of the Resource
+# A collection of operations that provides access to one or more datasets or 
+# data processing functions.
+type DataService implements Resource {
   id: ID!
-
-  # Name of the Resource
-  name: String!
-
-  # Type of Resource
-  typeResource: ResourcesType
-
-  #Info about pagination
-  paginationInfo: PaginationInfo
-
+  title: String!  
+  servesDataset: [DatasetInCatalog!] # If a DataService is bound to one or more specified 
+                                    # Datasets, they are indicated by the this property.
 }
 
-# Represents the different types of resources
-enum ResourcesType{
-
-  DATASET
-
-  DATASERVICE
-
-}
-
-
-# Dataset: Collection of data published by one agent, is a type of Resource
-type Dataset implements Resource{
-
-  # Id of the Dataset
+#
+# A Catalog represents a catalog, which is a Dataset in which each individual item 
+# is a metadata record describing some resource.
+#
+type Catalog implements AbstractDataset {
   id: ID!
+  title: String!
+  resources: [ResourceInCatalog!] # A resource that is listed in the catalog.
+  datasets: [DatasetInCatalog!]  # A dataset that is listed in the catalog.
+  services: [DataService!] # A service that is listed in the catalog. 
+  catalogs: [Catalog!] # A catalog that is listed in the catalog. 
+  records: [CatalogRecords!] # A record describing the registration of a single resource 
+                             # (e.g., a dataset, a data service) that is part of the catalog.
+                             # set(records.primaryTopic) == resources
 
-  # Name of the Dataset
-  name: String!
-
-  # Access to dataset
-  dcatDistribution: [Distribution!]
-
-  # A dataset series of which the dataset is part
-  dcatInSeries: [DatasetSeries!]
-
+  # Future:
+  #  - A Catalog can record descriptions of resources such as dataset or dataservices
+  #    dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
 }
 
-# Dataservice: Collection of operations which provide access 
-# to one or more datasets. Is a type of Resource
-type DataService implements Resource{
-
-  # Id of the DataService
+# Concepto dcat:DatasetSeries
+type DatasetSeries implements AbstractDataset {
   id: ID!
-
-  # Name of the DataService
-  name: String!
-
-  # Access to dataservice
-  dcatAccessService: [Distribution!]
-
+  title: String!  
 }
 
-
-# DatasetSeries: Collection of datasets that are group by common features
-type DatasetSeries implements Dataset{
-
-  # Id of the DatasetSeries
+# Dataset que no es ni Catalogo ni Dataset Series
+type Dataset implements AbstractDataset {
   id: ID!
-
-  # Name of the DatasetSeries
-  name: String!
+  title: String!  
+  inSeries: [DatasetSeries!] # A dataset series of which the dataset is part.
+  distributions: [Distribution!] # An available distribution of the dataset.
 }
 
-# Distribution: Accessible way to dataset
-type Distribution{
-
-  # Id of the Distribution
+type CatalogRecord {
   id: ID!
-
-  # Name of the Distribution
-  name: String!
+  title: String!  # Record es "Zaragoza", Catalog Record es "Metadato de Zaragoza"
+  primaryTopic: ResourceInCatalog!
 }
 
-  #Info about pagination
-
-type PaginationInfo{
-
-  startCursor: ID
-
-  # End cursor
-  offset: ID
-
-  hasNext: Boolean!
-
+# A specific representation of a dataset. 
+# This represents a general availability of a dataset.
+# That is, represents an accessible form of a dataset such as a downloadable file.
+type Distribution {
+  id: ID!
+  title: String!  
+  accessService: [DataService!] # A data service that gives access to the distribution of the dataset
 }
