@@ -1,0 +1,34 @@
+package com.graphqlDGS.graphqlDGS.model.client;
+
+import com.netflix.graphql.dgs.client.codegen.BaseSubProjectionNode;
+
+public class Catalog_Catalogs_Datasets_Catalog_ResourcesProjection extends BaseSubProjectionNode<Catalog_Catalogs_Datasets_CatalogProjection, CatalogProjectionRoot> {
+  public Catalog_Catalogs_Datasets_Catalog_ResourcesProjection(
+      Catalog_Catalogs_Datasets_CatalogProjection parent, CatalogProjectionRoot root) {
+    super(parent, root, java.util.Optional.of("ResourceInCatalog"));
+  }
+
+  public Catalog_Catalogs_Datasets_Catalog_Resources_DatasetSeriesProjection onDatasetSeries() {
+    Catalog_Catalogs_Datasets_Catalog_Resources_DatasetSeriesProjection fragment = new Catalog_Catalogs_Datasets_Catalog_Resources_DatasetSeriesProjection(this, getRoot());
+    getFragments().add(fragment);
+    return fragment;
+  }
+
+  public Catalog_Catalogs_Datasets_Catalog_Resources_DataServiceProjection onDataService() {
+    Catalog_Catalogs_Datasets_Catalog_Resources_DataServiceProjection fragment = new Catalog_Catalogs_Datasets_Catalog_Resources_DataServiceProjection(this, getRoot());
+    getFragments().add(fragment);
+    return fragment;
+  }
+
+  public Catalog_Catalogs_Datasets_Catalog_Resources_DatasetProjection onDataset() {
+    Catalog_Catalogs_Datasets_Catalog_Resources_DatasetProjection fragment = new Catalog_Catalogs_Datasets_Catalog_Resources_DatasetProjection(this, getRoot());
+    getFragments().add(fragment);
+    return fragment;
+  }
+
+  public Catalog_Catalogs_Datasets_Catalog_Resources_CatalogProjection onCatalog() {
+    Catalog_Catalogs_Datasets_Catalog_Resources_CatalogProjection fragment = new Catalog_Catalogs_Datasets_Catalog_Resources_CatalogProjection(this, getRoot());
+    getFragments().add(fragment);
+    return fragment;
+  }
+}
