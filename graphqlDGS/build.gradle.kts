@@ -46,15 +46,14 @@ dependencyManagement {
         mavenBom ("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release")
     }
 }
-/* 
+
 tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
-    generateClient = true
-	schemaPaths = mutableListOf("${projectDir}/src/main/resources/schema")
-   	packageName = "com.graphqlDGS.graphqlDGS.model" // The package name to use to generate sources
-	language = "KOTLIN"
+
+  packageName = "com.graphqlDGS.graphqlDGS.model" // The package name to use to generate sources
+	
 	
 
-}*/
+}
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {

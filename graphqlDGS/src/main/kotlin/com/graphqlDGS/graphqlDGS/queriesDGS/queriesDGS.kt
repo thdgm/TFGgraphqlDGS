@@ -2,9 +2,7 @@ package com.graphqlDGS.graphqlDGS.queriesDGS
 
 import com.graphqlDGS.graphqlDGS.data.DatasetTest
 import com.graphqlDGS.graphqlDGS.model.types.*
-import com.netflix.graphql.dgs.DgsComponent
-import com.netflix.graphql.dgs.DgsQuery
-import com.netflix.graphql.dgs.InputArgument
+import com.netflix.graphql.dgs.*
 import org.springframework.beans.factory.annotation.Autowired
 
 @DgsComponent
@@ -25,33 +23,61 @@ class Queries {
   val r = DatasetTest.CollectionTypes.ResourceInCatalog()
 
 
+  //////////////////////////////////////////
+  // CATALOG QUERIES
+  //////////////////////////////////////////
 
   // @DgsQuery catalog: returns the catalog which id is the @InputArgument id
-  //Busco las propiedades: resources, datasets, services, catalogs, records en ResourceRelations
-  //Haría por ejemplo records = getRecords("catalogRecords", id)
-  // Esto pilla los id de los records del catalog id y busca en datasetTest los records con ese id
   @DgsQuery
   fun catalog(@InputArgument id: String?): Catalog? {
     if (id == null) {
       return null
     }
     var cat: Catalog? = model?.get(c, id) as Catalog?
-    cat?.records = model.searchRecordsForCatalogById(id)
-    cat?.catalogs = model.searchCatalogsForCatalogById(id)
-    cat?.services = model.searchServicesForCatalogById(id)
-    cat?.datasets = model.searchDatasetsForCatalogById(id)  
-    cat?.resources = model.searchResourcesorCatalogById(id)
-    
-
-     
-    for (i in cat?.records.orEmpty()){
-      i?.primaryTopic = model.searchPrimaryTopicForCatalogRecordById(i.id)
-      iniciarCR(i?.primaryTopic)
-    }
-    
     return cat
   }
 
+   // @DgsData catalogs: returns catalogs field of the corresponding Catalog
+  @DgsData(parentType="Catalog", field="catalogs")
+  fun catalogs(dfe: DgsDataFetchingEnvironment):Collection<Catalog?>{
+    val ct: Catalog? = dfe.getSource()
+    return model.searchCatalogsForCatalogById(ct!!.id)
+  }
+
+  // @DgsData records: returns records field of the corresponding Catalog
+  @DgsData(parentType="Catalog", field="records")
+  fun records(dfe: DgsDataFetchingEnvironment):Collection<CatalogRecords?>{
+    val ct: Catalog? = dfe.getSource()
+    return model.searchRecordsForCatalogById(ct!!.id)
+  }
+
+
+  // @DgsData services: returns services field of the corresponding Catalog
+  @DgsData(parentType="Catalog", field="services")
+  fun services(dfe: DgsDataFetchingEnvironment):Collection<DataService?>{
+    val ct: Catalog? = dfe.getSource()
+    return model.searchServicesForCatalogById(ct!!.id)
+  }
+
+    // @DgsData datasets: returns datasets field of the corresponding Catalog
+    @DgsData(parentType="Catalog", field="datasets")
+    fun datasets(dfe: DgsDataFetchingEnvironment):Collection<DatasetInCatalog?>{
+      val ct: Catalog? = dfe.getSource()
+      return model.searchDatasetsForCatalogById(ct!!.id)
+    }
+  
+
+    // @DgsData resources: returns resources field of the corresponding Catalog
+    @DgsData(parentType="Catalog", field="resources")
+    fun resources(dfe: DgsDataFetchingEnvironment):Collection<ResourceInCatalog?>{
+      val ct: Catalog? = dfe.getSource()
+      return model.searchResourcesorCatalogById(ct!!.id)
+    }
+  
+
+  //////////////////////////////////////////
+  // DATASERIES QUERIES
+  //////////////////////////////////////////
 
   // @DgsQuery dataSeries: returns the dataSeries which id is the @InputArgument id
   @DgsQuery
@@ -63,19 +89,23 @@ class Queries {
     return dataSeries
   }
 
+  //////////////////////////////////////////
+  // CATALOGRECORDS QUERIES
+  //////////////////////////////////////////
 
   // @DgsQuery catalogRecord: returns the catalogRecord which id is the @InputArgument id
   @DgsQuery
-  fun catalogRecord(@InputArgument id: String?): CatalogRecord? {
+  fun catalogRecord(@InputArgument id: String?): CatalogRecords? {
     if (id == null) {
       return null
     }
-    var catalogRecord: CatalogRecord? = model?.get(cR, id) as CatalogRecord?
-    catalogRecord?.primaryTopic = model.searchPrimaryTopicForCatalogRecordById(id)
-    iniciarCR(catalogRecord?.primaryTopic)
+    var catalogRecord: CatalogRecords? = model?.get(cR, id) as CatalogRecords?
     return catalogRecord
   }
-
+  
+  //////////////////////////////////////////
+  // DISTRIBUTION QUERIES
+  //////////////////////////////////////////
 
   // @DgsQuery distribution: returns the distribution which id is the @InputArgument id
   @DgsQuery
@@ -83,13 +113,19 @@ class Queries {
     if (id == null) {
       return null
     }
-    var dist:Distribution? = model?.get(di, id) as Distribution?
-    // return albums.first { it.id == id }
-    dist?.accessService = model.searchAccessServicesForDistributionById(id)
-    iniciarDist(dist?.accessService)
     return model?.get(di, id) as Distribution?
   }
 
+   // @DgsData accessService: returns accessService field of the corresponding Distribution
+   @DgsData(parentType="Distribution", field="accessService")
+   fun accessService(dfe: DgsDataFetchingEnvironment):Collection<DataService?>{
+     val dist: Distribution? = dfe.getSource()
+     return model.searchAccessServicesForDistributionById(dist!!.id)
+   }
+
+  //////////////////////////////////////////
+  // DATASET QUERIES
+  //////////////////////////////////////////
 
   // @DgsQuery dataset: returns the dataset which id is the @InputArgument id
   @DgsQuery
@@ -98,24 +134,53 @@ class Queries {
       return null
     }
     var data:DatasetInCatalog? = model?.get(d, id) as DatasetInCatalog?
-
-    when(data){
-      is Catalog -> iniciarCatalog(data,id)
-      is Dataset -> iniciarDataset(data,id)
-    }
     return data
   }
   
+   // @DgsData inSeries: returns inSeries field of the corresponding Dataset
+   @DgsData(parentType="Dataset", field="inSeries")
+   fun inSeries(dfe: DgsDataFetchingEnvironment):Collection<DatasetSeries?>{
+     val dic: DatasetInCatalog? = dfe.getSource()
+     return when(dic){
+      is Dataset -> model.searchInSeriesForDatasetById(dic!!.id)
+       else -> listOf()
+     }
+   }
+
+  // @DgsData distributions: returns distributions field of the corresponding Dataset
+  @DgsData(parentType="Dataset", field="distributions")
+  fun distributions(dfe: DgsDataFetchingEnvironment):Collection<Distribution?>{
+    val dic: DatasetInCatalog? = dfe.getSource()
+    return when(dic){
+      is Dataset -> model.searchDistributionsForDatasetById(dic!!.id)
+      else -> listOf()
+    }
+  }
+
+  //////////////////////////////////////////
+  // DATASERVICE QUERIES
+  //////////////////////////////////////////
+
   // @DgsQuery dataService: returns the dataService which id is the @InputArgument id
   @DgsQuery
   fun dataService(@InputArgument id: String?): DataService? {
     if (id == null) {
       return null
     }
-    var service:DataService? = model?.get(dSe, id) as DataService?
-    service?.servesDataset = model.searchServesDatasetForDataServicedById(id)
-    return service
+    return model?.get(dSe, id) as DataService?
   }
+
+  // @DgsData servesDataset: returns servesDataset field of the corresponding DataService
+  @DgsData(parentType="DataService", field="servesDataset")
+  fun servesDataset(dfe: DgsDataFetchingEnvironment):Collection<DatasetInCatalog?>{
+    val dserv: DataService? = dfe.getSource()
+    return model.searchServesDatasetForDataServicedById(dserv!!.id)
+  }
+
+
+  //////////////////////////////////////////
+  // RESOURCE QUERIES
+  //////////////////////////////////////////
 
   // @DgsQuery resource: returns the resource which id is the @InputArgument id
   @DgsQuery
@@ -124,11 +189,6 @@ class Queries {
       return null
     }
     var res:ResourceInCatalog? = model?.get(r, id) as ResourceInCatalog?
-    when(res){
-      is Catalog -> iniciarCatalog(res,id)
-      is Dataset -> iniciarDataset(res,id)
-      is DataService -> iniciarDataService(res,id)
-    }
     return res
   }
 
@@ -139,11 +199,6 @@ class Queries {
       return null
     }
     var res:ResourceInCatalog? = model?.get(r, id) as ResourceInCatalog?
-    when(res){
-      is Catalog -> iniciarCatalog(res,id)
-      is Dataset -> iniciarDataset(res,id)
-      is DataService -> iniciarDataService(res,id)
-    }
     return res
   }
 
@@ -152,33 +207,38 @@ class Queries {
   ////////////////////////////
 
 
-  // Inicia las propiedades de dataset
+  /* Inicia las propiedades de dataset
   fun iniciarDataset(data:Dataset?,id:String):Dataset?{
-    data?.inSeries = model.searchInSeriesForDatasetById(id)
-    data?.distributions = model.searchDistributionsForDatasetById(id)
-    return data
+    return data?.copy(
+      inSeries = model.searchInSeriesForDatasetById(id),
+      distributions = model.searchDistributionsForDatasetById(id)
+    )
   }
-
-    // Inicia las propiedades de catalog
+*/
+    /* Inicia las propiedades de catalog
   fun iniciarCatalog(cat:Catalog?,id:String):Catalog?{
-    cat?.records = model.searchRecordsForCatalogById(id)
-    cat?.catalogs = model.searchCatalogsForCatalogById(id)
-    cat?.services = model.searchServicesForCatalogById(id)
-    cat?.datasets = model.searchDatasetsForCatalogById(id)
-    cat?.resources = model.searchResourcesorCatalogById(id)
-    return cat
+    return cat?.copy(
+      records = model.searchRecordsForCatalogById(id),
+      catalogs = model.searchCatalogsForCatalogById(id),
+      services = model.searchServicesForCatalogById(id),
+      datasets = model.searchDatasetsForCatalogById(id),
+      resources = model.searchResourcesorCatalogById(id)
+    )
   }
 
   //Inicia las propiedades de dataService
   fun iniciarDataService(dserv:DataService?,id:String):DataService?{
-    dserv?.servesDataset = model.searchServesDatasetForDataServicedById(id)
-    return dserv
+    return dserv?.copy(
+      servesDataset = model.searchServesDatasetForDataServicedById(id) as
+              List<DatasetInCatalog>?
+    )
+
   }
 
   // Inicia las propeidades de catalogRecord
   fun iniciarCR(pt: ResourceInCatalog?){
     when(pt){
-      is Catalog -> iniciarCatalog(pt,pt.id)
+     // is Catalog -> iniciarCatalog(pt,pt.id)
       is Dataset -> iniciarDataset(pt,pt.id)
       is DataService -> iniciarDataService(pt,pt.id)
     }
@@ -191,7 +251,7 @@ class Queries {
         iniciarDataService(s,s.id)
       }
     }
-  }
+  }*/
   
 }
 
@@ -309,3 +369,193 @@ class Queries {
 }
 
 */
+
+
+    /*cat?.copy(
+      records = model.searchRecordsForCatalogById(id),
+      catalogs = model.searchCatalogsForCatalogById(id),
+      services = model.searchServicesForCatalogById(id),
+      datasets = model.searchDatasetsForCatalogById(id),  
+      resources = model.searchResourcesorCatalogById(id),
+    )*/
+
+    /*
+    
+    
+{
+  dataset(id:"catalog1"){
+    __typename
+    	... on Dataset{
+        	id
+        	inSeries{
+          	id
+            title
+        	}
+      	}
+       	... on DatasetSeries{
+        	id
+      	}
+      	... on Catalog{
+        	id
+          records{
+            id
+            primaryTopic{
+              __typename
+               ... on Dataset{
+        				id
+      				}
+       				... on DatasetSeries{
+        				id
+      				}
+              ... on Catalog{
+        				id
+      				}
+              ... on DataService{
+        				id
+      				}
+            }
+          }
+      	}
+  }
+  dataService(id:"dSer1"){
+		id
+    title
+    servesDataset{
+     __typename
+       	... on Dataset{
+        	id
+      	}
+       	... on DatasetSeries{
+        	id
+      	}
+      	... on Catalog{
+        	id
+      	}
+      }
+  }
+  distribution(id:"Dist2"){
+    id
+    title
+    accessService{
+      id
+      title
+      servesDataset{
+        __typename
+       	... on Dataset{
+        	id
+      	}
+       	... on DatasetSeries{
+        	id
+      	}
+      	... on Catalog{
+        	id
+      	}
+    	}
+    }
+  }
+  catalogRecord(id:"cR4"){
+    id
+    primaryTopic{
+      __typename
+       ... on Dataset{
+        id
+      }
+       ... on DatasetSeries{
+        id
+      }
+      ... on Catalog{
+        id
+        records{
+          id
+          primaryTopic{
+            __typename
+       ... on Dataset{
+        id
+      }
+       ... on DatasetSeries{
+        id
+      }
+      ... on Catalog{
+        id
+        records{
+          id
+         
+        }
+      }
+      ... on DataService{
+        id
+      }
+          }
+        }
+      }
+      ... on DataService{
+        id
+      }
+    }
+  }
+	catalog(id:"catalog1"){
+   	id
+  	title
+    resources{
+       __typename
+       ... on Dataset{
+        id
+      }
+       ... on DatasetSeries{
+        id
+      }
+      ... on Catalog{
+        id
+      }
+      ... on DataService{
+        id
+      }
+    }
+    datasets{
+      __typename
+       ... on Dataset{
+        id
+      }
+       ... on DatasetSeries{
+        id
+      }
+      ... on Catalog{
+        id
+        records{
+          title
+        }
+      }
+    }
+    services{
+      id
+      title
+    }
+    records{
+      id
+      primaryTopic{
+        __typename
+        ... on Catalog{
+          id
+          records{
+            title
+          }
+        }
+      }
+    }
+    catalogs{
+      id
+      title
+      catalogs{
+        id
+      }
+    }
+   
+  }
+    
+}
+
+
+    
+    
+    
+    */

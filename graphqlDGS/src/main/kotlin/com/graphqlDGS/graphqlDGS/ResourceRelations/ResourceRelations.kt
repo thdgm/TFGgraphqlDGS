@@ -6,7 +6,7 @@ var unaVez = true
 val mapaCatalog1 = mutableMapOf<String,String>()
 
 //Contiene valores <id_source, id_target> pues solo tienen un campo primaryTopic, así que no tengo que guardar la property
-val catalogReocord = mutableMapOf<String,Map<String,String>>()
+//val catalogReocord = mutableMapOf<String,Map<String,String>>()
 
 //Contiene la propiedad accessService de las distributions, tenemos <id_source, list<id_target>>
 val distributions = mutableMapOf<String,Collection<String>>()
@@ -30,17 +30,17 @@ class ResourceRelations(
    /*  var id_source: String,
     var property: String,
     var id_target: String*/
-) {
+) { 
 
   // Setter general
   fun setRelation(id_source: String,property: String,id_target: String){
     mapaCatalog1.put(id_target,property)
   }
 
-  fun setRelationCR(id_source: String,property:String, id_target: String){
+  /*fun setRelationCR(id_source: String,property:String, id_target: String){
     val tp:Map<String,String> = mapOf(id_target to property)
     catalogReocord.put(id_source,tp)
-  }
+  }*/
 
   fun setRelationDist(id_source: String,id_target: Collection<String>){
     distributions.put(id_source,id_target)
@@ -98,12 +98,12 @@ class ResourceRelations(
     return filterIdProperty
   }
 
-  //Busca id del primary topic correspondiente al catalogRecord con el id que recibe como parametro
+  /*Busca id del primary topic correspondiente al catalogRecord con el id que recibe como parametro
   fun getPrimaryTopic(id:String):Map<String,String>{
     println("Get PrimaryTopic $id")
     val filterIdProperty = catalogReocord.filter { (key,value) -> key==id}
     return filterIdProperty.values.elementAt(0)
-  }
+  }*/
   //Busca los id del accessService correspondientes a la Distribution con el id que recibe como parametro
   fun getAccessService(id:String):Collection<String>{
     println("Get AccessService $id")

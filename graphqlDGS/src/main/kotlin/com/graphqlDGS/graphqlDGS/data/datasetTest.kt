@@ -19,28 +19,28 @@ class DatasetTest() {
 
   // DatasetService
   val datasetService1 =
-      DataService("dSer1", "dServTit1", servesDataset = null)
+      DataService("dSer1", "dServTit1")
 
   // DataSeries
   val dataSeries1 = DatasetSeries("dS1", "dSTit1")
 
   // Distributions
-  val distribution1 = Distribution("Dist1", "DistTit1", accessService = null)
-  val distribution2 = Distribution("Dist2", "DistTit2", accessService = null)
-  val distribution3 = Distribution("Dist3", "DistTit3", accessService = null)
+  val distribution1 = Distribution("Dist1", "DistTit1")
+  val distribution2 = Distribution("Dist2", "DistTit2")
+  val distribution3 = Distribution("Dist3", "DistTit3")
 
   // Dataset
-  val dataset1 = Dataset( "d1", "dTit1", inSeries = null, distributions = null)
+  val dataset1 = Dataset( "d1", "dTit1")
 
   // El catalogo de la prueba se contiene a si mismo
-  val catalogo1 = Catalog("catalog1", "catalogTit1",resources=null,datasets=null,services=null,catalogs=null,records=null)
+  val catalogo1 = Catalog("catalog1", "catalogTit1")
   
 
   // CatalogRecords
-  val catalogRecord1 = CatalogRecord("cR1", "cRTit1", primaryTopic = null)
-  val catalogRecord2 = CatalogRecord("cR2", "cRTit2", primaryTopic = null)
-  val catalogRecord3 = CatalogRecord("cR3", "cRTit3", primaryTopic = null)
-  val catalogRecord4 = CatalogRecord("cR4", "cRTit4", primaryTopic = null)
+  val catalogRecord1 = CatalogRecords("cR1", "cRTit1",catalogo1)
+  val catalogRecord2 = CatalogRecords("cR2", "cRTit2",catalogo1)
+  val catalogRecord3 = CatalogRecords("cR3", "cRTit3",catalogo1)
+  val catalogRecord4 = CatalogRecords("cR4", "cRTit4",catalogo1)
 
   //////////////////////////////////////////
   // Definicion de las colecciones de prueba
@@ -54,7 +54,7 @@ class DatasetTest() {
 
   val datasetService: Collection<DataService> = setOf(datasetService1)
 
-  val catalogRecords: Collection<CatalogRecord> = setOf(catalogRecord1,catalogRecord2,catalogRecord3,catalogRecord4)
+  val catalogRecords: Collection<CatalogRecords> = setOf(catalogRecord1,catalogRecord2,catalogRecord3,catalogRecord4)
 
   val resourceInCatalog: Collection<ResourceInCatalog>  = setOf(catalogo1,dataSeries1,dataset1,datasetService1)
 
@@ -83,14 +83,14 @@ class DatasetTest() {
     //Digo que tiene un datasetSeries que es el dataSeries1
     relation.setRelation("catalog1","dataSeries","dS1")
   
-    //Digo que tiene un ResourceInCatalog que es el catalog1
+    /*Digo que tiene un ResourceInCatalog que es el catalog1
     relation.setRelationCR("cR1","catalog","catalog1")
     //Digo que tiene un ResourceInCatalog que es el dataset1
     relation.setRelationCR("cR2","datasets","d1" )
     //Digo que tiene un ResourceInCatalog que es el dataSet1
     relation.setRelationCR("cR3","dataSeries","dS1")
     //Digo que tiene un ResourceInCatalog que es el datasetService1
-    relation.setRelationCR("cR4","services","dSer1")
+    relation.setRelationCR("cR4","services","dSer1")*/
 
     //Digo que Distribution Dist1 tiene un accessService que es el datasetService1
     relation.setRelationDist("Dist1",listOf("dSer1"))
@@ -204,14 +204,14 @@ fun buscar(clave:String, valor:String):DatasetInCatalog?{
   }
 }
 //Función auxiliar. Ayuda a buscar en las colecciones ResourceInCatalog
-fun buscarR(clave:String, valor:String):ResourceInCatalog?{
+fun buscarR(clave:String, valor:String):ResourceInCatalog{
   println("CLAVE: $clave VALOR: $valor")
   return when (valor) {
     "datasets" -> dataset.first{ it.id == clave }
     "catalog" -> catalogo.first{ it.id == clave }
     "dataSeries" -> datasetSeries.first{ it.id == clave }
     "services" -> datasetService.first{ it.id == clave }
-    else -> null
+    else -> throw AssertionError()
   }
 }
 
@@ -220,49 +220,49 @@ fun buscarR(clave:String, valor:String):ResourceInCatalog?{
   //////////////////////////////////////////
 
 // Localiza records del catalog en la colección a través de su id
-fun searchRecordsForCatalogById(id:String):List<CatalogRecord>?{
+fun searchRecordsForCatalogById(id:String):List<CatalogRecords?>{
   val idRecords:Collection<String> = relation.getRecords(id)
   val records = catalogRecords.filter{ it.id in idRecords }
   return records
 }
 
 // Localiza catalogs del catalog en la colección a través de su id
-fun searchCatalogsForCatalogById(id:String):List<Catalog>?{
+fun searchCatalogsForCatalogById(id:String):List<Catalog?>{
   val idCatalog:Collection<String> = relation.getCatalogs(id)
-  val catalogs:List<Catalog>? = catalogo.filter{ it.id in idCatalog }
+  val catalogs:List<Catalog?> = catalogo.filter{ it.id in idCatalog }
   return catalogs
 }
 
-// Localiza services del catalog en la colección a través de su id
-fun searchServicesForCatalogById(id:String):List<DataService>?{
+// Localiza services del catalog en la colección a través de su id 
+fun searchServicesForCatalogById(id:String):List<DataService?>{
   val idServices:Collection<String> = relation.getServices(id)
   val services = datasetService.filter{ it.id in idServices }
   return services
 }
 
 // Localiza un datasets del catalog en la colección a través de su id
-fun searchDatasetsForCatalogById(id:String):List<DatasetInCatalog>?{
+fun searchDatasetsForCatalogById(id:String):List<DatasetInCatalog?>{
   val idDatasets:Map<String,String> = relation.getDatasets(id)
   // Aquí puedo devolver un map<String, String> y con un when busco según sea catalogs | datasets | dataSeries
-  var datasets:List<DatasetInCatalog?>? = mutableListOf()
+  var datasets:List<DatasetInCatalog?> = mutableListOf()
   for ((id,property) in idDatasets){
     if (datasets != null) {
       datasets+=buscar(id, property)
     }
   }
-  return datasets as List<DatasetInCatalog>?
+  return datasets
 }
 
 // Localiza un resources del catalog en la colección a través de su id
-fun searchResourcesorCatalogById(id:String):List<ResourceInCatalog>?{
+fun searchResourcesorCatalogById(id:String):List<ResourceInCatalog?>{
   val idResources:Map<String,String> = relation.getResources(id)
-  var resources:List<ResourceInCatalog?>? = mutableListOf()
+  var resources:List<ResourceInCatalog?> = mutableListOf()
   for ((id,property) in idResources){
     if (resources != null) {
       resources+=buscarR(id, property)
     }
   }
-  return resources as List<ResourceInCatalog>?
+  return resources
 }
 
 
@@ -271,21 +271,21 @@ fun searchResourcesorCatalogById(id:String):List<ResourceInCatalog>?{
   // Obtener campos del catalogRecord, los pide el DGS
   //////////////////////////////////////////
 
-// Recibe el id del catalog record, y busca el id del primary topic del mismo
-fun searchPrimaryTopicForCatalogRecordById(id:String):ResourceInCatalog?{
+/*Recibe el id del catalog record, y busca el id del primary topic del mismo
+fun searchPrimaryTopicForCatalogRecordById(id:String):ResourceInCatalog{
   //val idPrimaryTopic:String = relation.getPrimaryTopic(id).elementAt(0)
   val idPrimaryTopic:Map<String,String> = relation.getPrimaryTopic(id)
-  var primaryTopic:ResourceInCatalog? = buscarR(idPrimaryTopic.keys.elementAt(0),idPrimaryTopic.values.elementAt(0)) //resourceInCatalog.filter{ it.id in idPrimaryTopic }
+  var primaryTopic:ResourceInCatalog = buscarR(idPrimaryTopic.keys.elementAt(0),idPrimaryTopic.values.elementAt(0)) //resourceInCatalog.filter{ it.id in idPrimaryTopic }
   return primaryTopic
 }
-
+*/
 
   //////////////////////////////////////////
   // Obtener campos del Distributions, los pide el DGS
   //////////////////////////////////////////
 
 //Busca el accessServices de la distribution id
-fun searchAccessServicesForDistributionById(id:String):List<DataService>?{
+fun searchAccessServicesForDistributionById(id:String):List<DataService?>{
   val idServices:Collection<String> = relation.getAccessService(id)
   val services = datasetService.filter{ it.id in idServices }
   return services
@@ -297,7 +297,7 @@ fun searchAccessServicesForDistributionById(id:String):List<DataService>?{
 //////////////////////////////////////////
 
 // Busca los servesDataset del DataService id
-fun searchServesDatasetForDataServicedById(id:String):List<DatasetInCatalog>?{
+fun searchServesDatasetForDataServicedById(id:String):List<DatasetInCatalog?>{
   val idPServesDataset:Collection<Pair<String,String>>? = relation.getServesDataset(id)
   var servesDataset:List<DatasetInCatalog?> = listOf() //resourceInCatalog.filter{ it.id in idPrimaryTopic }
   if (idPServesDataset != null) {
@@ -307,7 +307,7 @@ fun searchServesDatasetForDataServicedById(id:String):List<DatasetInCatalog>?{
       }
     }
   }
-  return servesDataset as List<DatasetInCatalog>?
+  return servesDataset
 }
 
 //////////////////////////////////////////
@@ -315,14 +315,14 @@ fun searchServesDatasetForDataServicedById(id:String):List<DatasetInCatalog>?{
 //////////////////////////////////////////
 
 //Search accessServices for distribution id
-fun searchInSeriesForDatasetById(id:String):List<DatasetSeries>?{
+fun searchInSeriesForDatasetById(id:String):List<DatasetSeries?>{
   val idInseries:Collection<String> = relation.getInSeries(id)
   val inSeries = datasetSeries.filter{ it.id in idInseries }
   return inSeries
 }
 
 //Search accessServices for distribution id
-fun searchDistributionsForDatasetById(id:String):List<Distribution>?{
+fun searchDistributionsForDatasetById(id:String):List<Distribution?>{
   val idDistributions:Collection<String> = relation.getDistributions(id)
   val distributions = distributions.filter{ it.id in idDistributions }
   return distributions
