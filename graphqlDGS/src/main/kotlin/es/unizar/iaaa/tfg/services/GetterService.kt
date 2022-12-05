@@ -1,5 +1,5 @@
-package com.graphqlDGS.graphqlDGS.initget
-import com.graphqlDGS.graphqlDGS.domain.Properties
+package es.unizar.iaaa.tfg.services
+import es.unizar.iaaa.tfg.domain.Properties
 import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct
 

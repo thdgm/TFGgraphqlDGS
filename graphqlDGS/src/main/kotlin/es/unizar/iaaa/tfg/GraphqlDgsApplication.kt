@@ -1,4 +1,4 @@
-package com.graphqlDGS.graphqlDGS
+package es.unizar.iaaa.tfg
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

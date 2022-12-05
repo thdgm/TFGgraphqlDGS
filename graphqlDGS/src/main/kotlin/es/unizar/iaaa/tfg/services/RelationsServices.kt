@@ -1,4 +1,4 @@
-package com.graphqlDGS.graphqlDGS.initget
+package es.unizar.iaaa.tfg.services
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
 import com.graphqlDGS.graphqlDGS.model.types.DataService

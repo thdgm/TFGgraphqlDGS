@@ -1,4 +1,4 @@
-package com.graphqlDGS.graphqlDGS.domain
+package es.unizar.iaaa.tfg.domain
 
 enum class Properties(val n: String) {
     CATALOGS("catalogs"),
