@@ -24,7 +24,9 @@ class CatalogQueries(
         if (id == null) {
             return null
         }
-        return initService.showCatalogs().firstOrNull { it?.id == id }
+        //println("UNA PRUEBILLAAAAA $id")
+        //println(initService.showCatalog(id))
+        return initService.showCatalog(id)//initService.showCatalogs().firstOrNull { it?.id == id }
     }
 
     // @DgsData catalogs: returns catalogs field of the corresponding Catalog
