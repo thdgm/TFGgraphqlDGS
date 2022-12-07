@@ -1,4 +1,4 @@
-package com.graphqlDGS.graphqlDGS.initget
+package es.unizar.iaaa.tfg.services
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
 import com.graphqlDGS.graphqlDGS.model.types.DataService
@@ -7,10 +7,13 @@ import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
 import com.graphqlDGS.graphqlDGS.model.types.Distribution
 import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
+import es.unizar.iaaa.tfg.domain.CatalogEntity
+import es.unizar.iaaa.tfg.repository.CatalogRepository
 import org.springframework.stereotype.Service
 
 interface InitService {
     fun showCatalogs(): Collection<Catalog?>
+    fun showCatalog(id:String): Catalog?
     fun showDatasets(): Collection<Dataset?>
     fun showDatasetSeries(): Collection<DatasetSeries?>
     fun showDataServices(): Collection<DataService?>
@@ -21,13 +24,20 @@ interface InitService {
 }
 
 @Service
-class InitBasicServices : InitService {
+class InitBasicServices(private val catalogRepository: CatalogRepository) : InitService {
 
     // Genera una lista de Catalogs de prueba
     override fun showCatalogs(): Collection<Catalog?> {
         return listOf(Catalog("catalog1", "catalogTit1"))
     }
+    override fun showCatalog(id:String): Catalog? {
 
+        val c = catalogRepository.findById(id)
+        if(!c.isEmpty){
+            return c.get().toCatalog()
+        }
+        return null
+    }
     // Genera una lista de Dataset de prueba
     override fun showDatasets(): Collection<Dataset?> {
         return listOf(Dataset("d1", "dTit1"))

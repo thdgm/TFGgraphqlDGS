@@ -1,5 +1,6 @@
-package com.graphqlDGS.graphqlDGS.initget
-import com.graphqlDGS.graphqlDGS.domain.Properties
+package es.unizar.iaaa.tfg.services
+import es.unizar.iaaa.tfg.domain.Properties
+import es.unizar.iaaa.tfg.repository.CatalogRepository
 import org.springframework.stereotype.Service
 import javax.annotation.PostConstruct
 
@@ -85,6 +86,7 @@ class GetFieldsService : GetFieldService {
 
     // Return catalog properties of id_source according the parameter property
     override fun loadCatalogs(idSource: String, property: String): Collection<String?> {
+
         val m1 = catalogFields.filter { (k, _) -> k == idSource }.values.elementAt(0)
         return m1.filter { (_, v) -> v == property }.keys
     }

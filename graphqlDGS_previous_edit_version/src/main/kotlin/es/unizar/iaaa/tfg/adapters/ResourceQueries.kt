@@ -1,6 +1,5 @@
-package com.graphqlDGS.graphqlDGS.queriesDGS
+package es.unizar.iaaa.tfg.adapters
 
-import com.graphqlDGS.graphqlDGS.initget.InitService
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.DataService
 import com.graphqlDGS.graphqlDGS.model.types.Dataset
@@ -10,6 +9,7 @@ import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
+import es.unizar.iaaa.tfg.services.InitService
 
 @DgsComponent
 class ResourceQueries(

@@ -1,8 +1,5 @@
-package com.graphqlDGS.graphqlDGS.queriesDGS
+package es.unizar.iaaa.tfg.adapters
 
-import com.graphqlDGS.graphqlDGS.domain.Properties
-import com.graphqlDGS.graphqlDGS.initget.GetFieldService
-import com.graphqlDGS.graphqlDGS.initget.InitService
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
 import com.graphqlDGS.graphqlDGS.model.types.DataService
@@ -13,6 +10,9 @@ import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
+import es.unizar.iaaa.tfg.domain.Properties
+import es.unizar.iaaa.tfg.services.GetFieldService
+import es.unizar.iaaa.tfg.services.InitService
 @DgsComponent
 class CatalogQueries(
     private val initService: InitService,
@@ -24,7 +24,9 @@ class CatalogQueries(
         if (id == null) {
             return null
         }
-        return initService.showCatalogs().firstOrNull { it?.id == id }
+        //println("UNA PRUEBILLAAAAA $id")
+        //println(initService.showCatalog(id))
+        return initService.showCatalog(id)//initService.showCatalogs().firstOrNull { it?.id == id }
     }
 
     // @DgsData catalogs: returns catalogs field of the corresponding Catalog
