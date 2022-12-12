@@ -85,25 +85,37 @@ class GetFieldsService : GetFieldService {
 
     // Return catalog properties of id_source according the parameter property
     override fun loadCatalogs(idSource: String, property: String): Collection<String?> {
-        val m1 = catalogFields.filter { (k, _) -> k == idSource }.values.elementAt(0)
-        return m1.filter { (_, v) -> v == property }.keys
+        val m1 = catalogFields.filter { (k, _) -> k == idSource }.values
+        if (m1.isEmpty()){
+            return listOf()
+        }
+        return m1.elementAt(0).filter { (_, v) -> v == property }.keys
     }
 
     // Return distribution properties of id_source according the parameter property
     override fun loadDistributions(idSource: String, property: String): Collection<String?> {
-        val m1 = distributionFields.filter { (k, _) -> k == idSource }.values.elementAt(0)
-        return m1.filter { (_, v) -> v == property }.keys
+        val m1 = distributionFields.filter { (k, _) -> k == idSource }.values
+        if (m1.isEmpty()){
+            return listOf()
+        }
+        return m1.elementAt(0).filter { (_, v) -> v == property }.keys
     }
 
     // Return services properties of id_source according the parameter property
     override fun loadServices(idSource: String, property: String): Collection<String?> {
-        val m1 = dataServiceFields.filter { (k, _) -> k == idSource }.values.elementAt(0)
-        return m1.filter { (_, v) -> v == property }.keys
+        val m1 = dataServiceFields.filter { (k, _) -> k == idSource }.values
+        if (m1.isEmpty()){
+            return listOf()
+        }
+        return m1.elementAt(0).filter { (_, v) -> v == property }.keys
     }
 
     // Return datasets properties of id_source according the parameter property
     override fun loadDatasets(idSource: String, property: String): Collection<String?> {
-        val m1 = dataset.filter { (k, _) -> k == idSource }.values.elementAt(0)
-        return m1.filter { (_, v) -> v == property }.keys
+        val m1 = dataset.filter { (k, _) -> k == idSource }.values
+        if (m1.isEmpty()){
+            return listOf()
+        }
+        return m1.elementAt(0).filter { (_, v) -> v == property }.keys
     }
 }

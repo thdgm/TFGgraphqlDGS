@@ -13,9 +13,12 @@ import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.domain.Properties
 import es.unizar.iaaa.tfg.services.GetFieldService
 import es.unizar.iaaa.tfg.services.InitService
+import es.unizar.iaaa.tfg.services.InitServiceById
+
 @DgsComponent
 class CatalogQueries(
     private val initService: InitService,
+    private val initServiceById: InitServiceById,
     private val getFieldService: GetFieldService
 ) {
     // @DgsQuery catalog: returns the catalog which id is the @InputArgument id
@@ -24,7 +27,7 @@ class CatalogQueries(
         if (id == null) {
             return null
         }
-        return initService.showCatalog(id) // initService.showCatalogs().firstOrNull { it?.id == id }
+        return initServiceById.showCatalog(id)
     }
 
     // @DgsData catalogs: returns catalogs field of the corresponding Catalog

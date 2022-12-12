@@ -2,7 +2,6 @@ package es.unizar.iaaa.tfg.domain
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
-import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -19,7 +18,7 @@ class CatalogRecordEntity {
     @Column(nullable = false)
     lateinit var title: String
 
-    fun toCatalogRecords():CatalogRecords?{
-        return CatalogRecords(id, title, Catalog("catalog1","catalogTit1"))
+    fun toCatalogRecords(): CatalogRecords? {
+        return CatalogRecords(id, title, Catalog("catalog1", "catalogTit1"))
     }
 }

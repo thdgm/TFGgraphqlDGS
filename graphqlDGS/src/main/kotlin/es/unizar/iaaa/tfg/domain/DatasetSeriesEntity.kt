@@ -1,6 +1,5 @@
 package es.unizar.iaaa.tfg.domain
 
-import com.graphqlDGS.graphqlDGS.model.types.Dataset
 import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
 import javax.persistence.Column
 import javax.persistence.Entity

@@ -15,7 +15,7 @@ class DataServiceEntity {
     @Column(nullable = false)
     lateinit var title: String
 
-    fun toDataService():DataService?{
+    fun toDataService(): DataService? {
         return DataService(id, title)
     }
 }

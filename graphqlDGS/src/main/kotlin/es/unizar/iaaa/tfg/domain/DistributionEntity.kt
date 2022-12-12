@@ -15,7 +15,7 @@ class DistributionEntity {
     @Column(nullable = false)
     lateinit var title: String
 
-    fun toDistribution():Distribution?{
+    fun toDistribution(): Distribution? {
         return Distribution(id, title)
     }
 }

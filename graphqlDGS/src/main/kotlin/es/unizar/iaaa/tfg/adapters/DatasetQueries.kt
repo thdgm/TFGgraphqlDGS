@@ -1,6 +1,5 @@
 package es.unizar.iaaa.tfg.adapters
 
-import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.Dataset
 import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
@@ -13,10 +12,12 @@ import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.domain.Properties
 import es.unizar.iaaa.tfg.services.GetFieldService
 import es.unizar.iaaa.tfg.services.InitService
+import es.unizar.iaaa.tfg.services.InitServiceById
 
 @DgsComponent
 class DatasetQueries(
     private val initService: InitService,
+    private val initServiceById: InitServiceById,
     private val getFieldService: GetFieldService
 ) {
 
@@ -26,15 +27,7 @@ class DatasetQueries(
         if (id == null) {
             return null
         }
-
-        return initService.showDatasetInCatalog(id)/*showDatasetsInCatalog().firstOrNull {
-            when (it) {
-                is Dataset -> it.id == id
-                is Catalog -> it.id == id
-                is DatasetSeries -> it.id == id
-                else -> false
-            }*/
-
+        return initServiceById.showDatasetInCatalog(id)
     }
 
     // @DgsData inSeries: returns inSeries field of the corresponding Dataset

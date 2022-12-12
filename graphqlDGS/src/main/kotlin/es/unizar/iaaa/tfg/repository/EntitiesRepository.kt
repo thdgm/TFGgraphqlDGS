@@ -10,9 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface CatalogRepository : JpaRepository<CatalogEntity, String> {
-    fun findByTitle(t: String?): CatalogEntity?
-}
+interface CatalogRepository : JpaRepository<CatalogEntity, String>
 
 @Repository
 interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String>
@@ -28,23 +26,3 @@ interface DatasetSeriesRepository : JpaRepository<DatasetSeriesEntity, String>
 
 @Repository
 interface DistributionRepository : JpaRepository<DistributionEntity, String>
-
-//Dataset in catalog
-/*
-SELECT * FROM "catalog" where "id"=?1
-UNION
-SELECT * FROM "dataset" where "id"=?1
-UNION
-SELECT * FROM "datasetseries" where "id"=?1
- */
-
-//Resource in catalog
-/*
-SELECT * FROM "catalog" where "id"=?1
-UNION
-SELECT * FROM "dataset" where "id"=?1
-UNION
-SELECT * FROM "datasetseries" where "id"=?1
-UNION
-SELECT * FROM "dataservice" where "id"=?1
- */

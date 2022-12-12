@@ -25,8 +25,11 @@ interface Resource {
 }
 
 # It can be a Resource, Catalog, dataset or dataservice
-union ResourceInCatalog = DatasetSeries | DataService | Dataset | Catalog
-
+# union ResourceInCatalog = DatasetSeries | DataService | Dataset | Catalog
+interface ResourceInCatalog implements AbstractDataset & Resource{
+  id: ID!
+  title: String!
+}
 interface DatasetInCatalog implements AbstractDataset & Resource {
   id: ID!
   title: String!  
@@ -40,7 +43,7 @@ interface AbstractDataset implements Resource {
 
 # A collection of operations that provides access to one or more datasets or 
 # data processing functions.
-type DataService implements Resource {
+type DataService implements ResourceInCatalog & Resource & AbstractDataset {
   id: ID!
   title: String!  
   servesDataset: [DatasetInCatalog!] # If a DataService is bound to one or more specified 
@@ -51,7 +54,7 @@ type DataService implements Resource {
 # A Catalog represents a catalog, which is a Dataset in which each individual item 
 # is a metadata record describing some resource.
 #
-type Catalog implements DatasetInCatalog & AbstractDataset & Resource {
+type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
   id: ID!
   title: String!
   resources: [ResourceInCatalog!] # A resource that is listed in the catalog.
@@ -68,13 +71,13 @@ type Catalog implements DatasetInCatalog & AbstractDataset & Resource {
 }
 
 # Concepto dcat:DatasetSeries
-type DatasetSeries implements DatasetInCatalog & AbstractDataset & Resource {
+type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
   id: ID!
   title: String!  
 }
 
 # Dataset que no es ni Catalogo ni Dataset Series
-type Dataset implements DatasetInCatalog & AbstractDataset & Resource {
+type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
   id: ID!
   title: String!  
   inSeries: [DatasetSeries!] # A dataset series of which the dataset is part.

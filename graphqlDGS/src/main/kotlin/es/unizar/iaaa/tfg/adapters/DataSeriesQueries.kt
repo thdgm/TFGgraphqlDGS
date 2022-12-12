@@ -4,11 +4,11 @@ import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.services.InitService
+import es.unizar.iaaa.tfg.services.InitServiceById
 
 @DgsComponent
 class DataSeriesQueries(
-    private val initService: InitService
+    private val initServiceById: InitServiceById,
 ) {
 
     // @DgsQuery dataSeries: returns the dataSeries which id is the @InputArgument id
@@ -17,6 +17,6 @@ class DataSeriesQueries(
         if (id == null) {
             return null
         }
-        return initService.showDatasetSerie(id)//showDatasetSeries().firstOrNull { it?.id == id }
+        return initServiceById.showDatasetSerie(id)
     }
 }

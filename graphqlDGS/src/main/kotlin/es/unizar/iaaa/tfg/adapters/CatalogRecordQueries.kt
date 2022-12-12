@@ -4,11 +4,11 @@ import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.services.InitService
+import es.unizar.iaaa.tfg.services.InitServiceById
 
 @DgsComponent
 class CatalogRecordQueries(
-    private val initService: InitService
+    private val initServiceById: InitServiceById,
 ) {
     // @DgsQuery catalogRecord: returns the catalogRecord which id is the @InputArgument id
     @DgsQuery
@@ -16,6 +16,6 @@ class CatalogRecordQueries(
         if (id == null) {
             return null
         }
-        return initService.showCatalogRecord(id)//showCatalogRecords().firstOrNull { it?.id == id }
+        return initServiceById.showCatalogRecord(id)
     }
 }

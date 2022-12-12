@@ -7,6 +7,10 @@ import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
 import com.graphqlDGS.graphqlDGS.model.types.Distribution
 import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
+import es.unizar.iaaa.tfg.domain.CatalogEntity
+import es.unizar.iaaa.tfg.domain.DataServiceEntity
+import es.unizar.iaaa.tfg.domain.DatasetEntity
+import es.unizar.iaaa.tfg.domain.DatasetSeriesEntity
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.DataServiceRepository
@@ -46,8 +50,15 @@ class InitBasicServices(
 
     // Genera una lista de Catalogs de prueba
     override fun showCatalogs(): Collection<Catalog?> {
-        return listOf(Catalog("catalog1", "catalogTit1"))
+        //return listOf(Catalog("catalog1", "catalogTit1"))
+        val cEntity = catalogRepository.findAll()
+        var catalogs = listOf<Catalog?>()
+        cEntity.forEach{
+            catalogs += it.toCatalog()
+        }
+        return catalogs
     }
+
     // Busca el Catalog correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showCatalog(id: String): Catalog? {
         val c = catalogRepository.findById(id)
@@ -59,7 +70,13 @@ class InitBasicServices(
 
     // Genera una lista de Dataset de prueba
     override fun showDatasets(): Collection<Dataset?> {
-        return listOf(Dataset("d1", "dTit1"))
+        //return listOf(Dataset("d1", "dTit1"))
+        val dEntity = datasetRepository.findAll()
+        var datasets = listOf<Dataset?>()
+        dEntity.forEach{
+            datasets += it.toDataset()
+        }
+        return datasets
     }
     // Busca el Dataset correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showDataset(id: String): Dataset? {
@@ -72,7 +89,13 @@ class InitBasicServices(
 
     // Genera una lista de DatasetSeries de prueba
     override fun showDatasetSeries(): Collection<DatasetSeries?> {
-        return listOf(DatasetSeries("dS1", "dSTit1"))
+        //return listOf(DatasetSeries("dS1", "dSTit1"))
+        val dSEntity = datasetSeriesRepository.findAll()
+        var datasetSeries = listOf<DatasetSeries?>()
+        dSEntity.forEach{
+            datasetSeries += it.toDatasetSeries()
+        }
+        return datasetSeries
     }
     // Busca el DatasetSeries correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showDatasetSerie(id: String): DatasetSeries? {
@@ -84,7 +107,13 @@ class InitBasicServices(
     }
     // Genera una lista de DataService de prueba
     override fun showDataServices(): Collection<DataService?> {
-        return listOf(DataService("dSer1", "dServTit1"))
+        //return listOf(DataService("dSer1", "dServTit1"))
+        val dSerEntity = dataServiceRepository.findAll()
+        var dataServices = listOf<DataService?>()
+        dSerEntity.forEach{
+            dataServices += it.toDataService()
+        }
+        return dataServices
     }
     // Busca el DataService correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showDataService(id: String): DataService? {
@@ -96,13 +125,19 @@ class InitBasicServices(
     }
     // Genera una lista de CatalogRecords de prueba
     override fun showCatalogRecords(): Collection<CatalogRecords?> {
-        val catalogo1 = Catalog("catalog1", "catalogTit1")
+        /*val catalogo1 = Catalog("catalog1", "catalogTit1")
         return listOf(
             CatalogRecords("cR1", "cRTit1", catalogo1),
             CatalogRecords("cR2", "cRTit2", catalogo1),
             CatalogRecords("cR3", "cRTit3", catalogo1),
             CatalogRecords("cR4", "cRTit4", catalogo1)
-        )
+        )*/
+        val cREntity = catalogRecordsRepository.findAll()
+        var catalogRecords = listOf<CatalogRecords?>()
+        cREntity.forEach{
+            catalogRecords += it.toCatalogRecords()
+        }
+        return catalogRecords
     }
     // Busca el CatalogRecords correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showCatalogRecord(id: String): CatalogRecords? {
@@ -114,11 +149,17 @@ class InitBasicServices(
     }
     // Genera una lista de Distribution de prueba
     override fun showDistributions(): Collection<Distribution?> {
-        return listOf(
+        /*return listOf(
             Distribution("Dist1", "DistTit1"),
             Distribution("Dist2", "DistTit2"),
             Distribution("Dist3", "DistTit3")
-        )
+        )*/
+        val distEntity = distributionRepository.findAll()
+        var distributions = listOf<Distribution?>()
+        distEntity.forEach{
+            distributions += it.toDistribution()
+        }
+        return distributions
     }
     // Busca el Distributions correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showDistribution(id: String): Distribution? {
@@ -130,11 +171,24 @@ class InitBasicServices(
     }
     // Genera una lista de DatasetInCatalog de prueba
     override fun showDatasetsInCatalog(): Collection<DatasetInCatalog?> {
-        return listOf(
+        val datasets = datasetRepository.findAll()
+        val catalogs = catalogRepository.findAll()
+        val datasetSeries = datasetSeriesRepository.findAll()
+        val dcs = datasets +catalogs+datasetSeries
+        var datasetsInCatalogs = listOf<DatasetInCatalog?>()
+        dcs.forEach{
+            when(it){
+                is DatasetEntity -> datasetsInCatalogs + it.toDataset()
+                is DatasetSeriesEntity -> datasetsInCatalogs + it.toDatasetSeries()
+                is CatalogEntity -> datasetsInCatalogs + it.toCatalog()
+            }
+        }
+        return datasetsInCatalogs
+        /*return listOf(
             DatasetSeries("dS1", "dSTit1"),
             Dataset("d1", "dTit1"),
             Catalog("catalog1", "catalogTit1")
-        )
+        )*/
     }
     // Busca el DatasetInCatalog correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showDatasetInCatalog(id:String): DatasetInCatalog? {
@@ -149,12 +203,27 @@ class InitBasicServices(
     }
     // Genera una lista de ResourceInCatalog de prueba
     override fun showResourcesInCatalog(): Collection<ResourceInCatalog?> {
-        return listOf(
+        /*return listOf(
             DatasetSeries("dS1", "dSTit1"),
             Dataset("d1", "dTit1"),
             Catalog("catalog1", "catalogTit1"),
             DataService("dSer1", "dServTit1")
-        )
+        )*/
+        val datasets = datasetRepository.findAll()
+        val catalogs = catalogRepository.findAll()
+        val datasetSeries = datasetSeriesRepository.findAll()
+        val dataServices = dataServiceRepository.findAll()
+        val dcss = datasets + catalogs + datasetSeries + dataServices
+        var resourceInCatalogs = listOf<ResourceInCatalog?>()
+        dcss.forEach{
+            when(it){
+                is DatasetEntity -> resourceInCatalogs + it.toDataset()
+                is DatasetSeriesEntity -> resourceInCatalogs + it.toDatasetSeries()
+                is CatalogEntity -> resourceInCatalogs + it.toCatalog()
+                is DataServiceEntity -> resourceInCatalogs + it.toDataService()
+            }
+        }
+        return resourceInCatalogs
     }
     // Busca el ResourceInCatalog correspondiente al id y lo devuelve, si no lo encuentra devuelve null
     override fun showResourceInCatalog(id:String): ResourceInCatalog? {

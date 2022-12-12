@@ -1,7 +1,6 @@
 package es.unizar.iaaa.tfg.domain
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
-import java.util.*
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id

@@ -10,10 +10,12 @@ import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.domain.Properties
 import es.unizar.iaaa.tfg.services.GetFieldService
 import es.unizar.iaaa.tfg.services.InitService
+import es.unizar.iaaa.tfg.services.InitServiceById
 
 @DgsComponent
 class DistributionQueries(
     private val initService: InitService,
+    private val initServiceById: InitServiceById,
     private val getFieldService: GetFieldService
 ) {
 
@@ -23,7 +25,7 @@ class DistributionQueries(
         if (id == null) {
             return null
         }
-        return initService.showDistribution(id)//showDistributions().firstOrNull { it?.id == id }
+        return initServiceById.showDistribution(id)
     }
 
     // @DgsData accessService: returns accessService field of the corresponding Distribution

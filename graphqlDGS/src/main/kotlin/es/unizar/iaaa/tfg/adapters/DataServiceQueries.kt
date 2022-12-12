@@ -10,10 +10,12 @@ import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.domain.Properties
 import es.unizar.iaaa.tfg.services.GetFieldService
 import es.unizar.iaaa.tfg.services.InitService
+import es.unizar.iaaa.tfg.services.InitServiceById
 
 @DgsComponent
 class DataServiceQueries(
     private val initService: InitService,
+    private val initServiceById: InitServiceById,
     private val getFieldService: GetFieldService
 ) {
     // @DgsQuery dataService: returns the dataService which id is the @InputArgument id
@@ -22,7 +24,7 @@ class DataServiceQueries(
         if (id == null) {
             return null
         }
-        return initService.showDataService(id)//showDataServices().firstOrNull { it?.id == id }
+        return initServiceById.showDataService(id)
     }
 
     // @DgsData servesDataset: returns servesDataset field of the corresponding DataService
