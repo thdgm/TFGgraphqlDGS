@@ -8,24 +8,21 @@ import javax.persistence.*
 @Table(name = "resource")
 open class ResourceEntity {
     @Id
-    lateinit var id: String
+    open lateinit var id: String
 
     @Column(nullable = false)
-    lateinit var title: String
+    open lateinit var title: String
 
     @Column(nullable = false)
-    lateinit var tipo: String
+    open lateinit var tipo: String
 
     @OneToMany(mappedBy = "id_target")
-    lateinit var relationshipsTarget: Collection<RelationshipsEntity>
-
-    @OneToMany(mappedBy = "resourceId")
-    lateinit var records: Collection<CatalogInRecordEntity>
+    open lateinit var relationshipsTarget: Collection<RelationshipsEntity>
 
     @OneToMany(mappedBy = "resource")
-    lateinit var catalogRecords: Collection<CatalogRecordEntity>
+    open lateinit var catalogRecords: Collection<CatalogRecordEntity>
 
     @ManyToOne
     @JoinColumn(name="datasetServiceId", nullable=true)
-    lateinit var datasetService:DataServiceEntity
+    open lateinit var datasetService:DataServiceEntity
 }

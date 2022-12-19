@@ -20,8 +20,10 @@ class DistributionEntity {
     )
     lateinit var accessService:Collection<DataServiceEntity>
 
-    @ManyToMany(mappedBy="inseries")
-    lateinit var distributions:Collection<DatasetEntity>
+   /* @ManyToMany(mappedBy="inseries")
+    lateinit var distributions:Collection<DatasetEntity>*/
+   @ManyToMany(mappedBy="distributions")
+   lateinit var datasets:Collection<DatasetEntity>
 
 
     fun toDistribution(): Distribution {

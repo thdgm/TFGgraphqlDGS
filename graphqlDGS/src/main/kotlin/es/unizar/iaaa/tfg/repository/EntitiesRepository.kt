@@ -9,19 +9,12 @@ import org.springframework.stereotype.Repository
 interface CatalogRepository : JpaRepository<CatalogEntity, String>
 
 @Repository
-interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String>{
-    /*@Query("SELECT r.id,r.title,r.tipo FROM ResourceEntity AS r,CatalogRecordEntity AS cr WHERE r.id = cr.resource and cr.id = ?1")
-    fun primaryTopic(id:String):String?
-    @Query("SELECT cr.id,cr.title FROM CatalogRecordEntity AS cr WHERE cr.id LIKE %?1%")
-    fun findCR(id:String):String?*/
-}
+interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String>
 
 @Repository
 interface DataServiceRepository : JpaRepository<DataServiceEntity, String>{
-    //@Query("SELECT r.id,r.title " + "FROM ResourceEntity AS r WHERE r.datasetService LIKE %?1%")
     @Query("SELECT r FROM ResourceEntity AS r WHERE r.datasetService = ?1")
     fun servesDataset(ds:DataServiceEntity):Collection<ResourceEntity?>
-
     fun findAccessServiceByDistributionsId(id:String):Collection<DataServiceEntity?>
 }
 
@@ -29,10 +22,31 @@ interface DataServiceRepository : JpaRepository<DataServiceEntity, String>{
 interface DatasetRepository : JpaRepository<DatasetEntity, String>
 
 @Repository
-interface DatasetSeriesRepository : JpaRepository<DatasetSeriesEntity, String>
+interface DatasetSeriesRepository : JpaRepository<DatasetSeriesEntity, String>{
+    fun findInseriesByDatasetId(id:String):Collection<DatasetSeriesEntity?>
+
+}
 
 @Repository
-interface DistributionRepository : JpaRepository<DistributionEntity, String>
+interface DistributionRepository : JpaRepository<DistributionEntity, String>{
+    fun findDistributionsByDatasetsId(id:String):Collection<DistributionEntity?>
+
+}
 
 @Repository
-interface ResourceRepository : JpaRepository<ResourceEntity, String>
+interface RelationshipsRepository : JpaRepository<RelationshipsEntity, String>{
+    fun findByIdIdSourceAndTypes(idS:String,type:String):Collection<RelationshipsEntity?>
+    fun findByIdIdSource(idS:String):Collection<RelationshipsEntity?>
+    fun findByIdIdSourceAndTypesNot(idS:String,type:String):Collection<RelationshipsEntity?>
+}
+@Repository
+interface ResourceRepository : JpaRepository<ResourceEntity, String>{
+    fun findByIdAndTipoNot(idS:String,type:String):ResourceEntity?
+
+
+
+}
+@Repository
+interface CatalogInRecordRepository : JpaRepository<CatalogInRecordEntity, String>{
+    fun findByIdResourceId(id:String):Collection<CatalogInRecordEntity?>
+}

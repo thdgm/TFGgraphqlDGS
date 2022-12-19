@@ -13,6 +13,9 @@ class CatalogEntity:ResourceEntity(), Serializable {
     @OneToMany(mappedBy = "id_source")
     lateinit var relationshipsSource: Collection<RelationshipsEntity>
 
+    @OneToMany(mappedBy = "resourceId")
+    lateinit var records: Collection<CatalogInRecordEntity>
+
     override fun toString(): String {
         return "Catalog[" +
             "id = " + id +

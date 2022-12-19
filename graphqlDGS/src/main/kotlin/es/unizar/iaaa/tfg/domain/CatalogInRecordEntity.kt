@@ -12,7 +12,7 @@ class CatalogInRecordEntity: Serializable {
     @ManyToOne
     @JoinColumn(name="id_resource")
     @MapsId("id_resource")
-    lateinit var resourceId:ResourceEntity
+    lateinit var resourceId:CatalogEntity
 
     @ManyToOne
     @JoinColumn(name="id_catalog_record")

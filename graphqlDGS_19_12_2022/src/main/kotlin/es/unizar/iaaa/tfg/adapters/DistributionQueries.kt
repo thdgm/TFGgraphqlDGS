@@ -7,19 +7,14 @@ import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.domain.Properties
-import es.unizar.iaaa.tfg.services.GetFieldService
-import es.unizar.iaaa.tfg.services.InitService
-import es.unizar.iaaa.tfg.services.InitServiceById
-import es.unizar.iaaa.tfg.services.converts.ConvertersEntityTo
+import es.unizar.iaaa.tfg.services.DistributionServices
+
 
 @DgsComponent
 class DistributionQueries(
-    private val initService: InitService,
-    private val initServiceById: InitServiceById,
-    private val getFieldService: GetFieldService,
-    private val convertersEntityTo: ConvertersEntityTo
-) {
+    private val distributionServices: DistributionServices,
+
+    ) {
 
     // @DgsQuery distribution: returns the distribution which id is the @InputArgument id
     @DgsQuery
@@ -27,22 +22,14 @@ class DistributionQueries(
         if (id == null) {
             return null
         }
-        return initServiceById.showDistribution(id)
+        return distributionServices.showDistribution(id)
     }
 
     // @DgsData accessService: returns accessService field of the corresponding Distribution
-    // Puedo buscar en DataService aquellos con distribution_id igual al dfe.getSource().id
     @DgsData(parentType = "Distribution")
     fun accessService(dfe: DgsDataFetchingEnvironment): Collection<DataService?> {
-        /*val dist: Distribution? = dfe.getSource()
-        val servicesEntities = initService.showDataServices().filter {
-            1==1
-            //it?.distribution?.id == dist!!.id
-            //it?.id in getFieldService.loadDistributions(dist!!.id, Properties.ACCESSSERVICE.n)
-        }
-        return convertersEntityTo.toDataServices(servicesEntities)*/
         val dist: Distribution? = dfe.getSource()
-        return initServiceById.showDistributionAccessService(dist!!.id)
+        return distributionServices.showDistributionAccessService(dist!!.id)
 
     }
 }

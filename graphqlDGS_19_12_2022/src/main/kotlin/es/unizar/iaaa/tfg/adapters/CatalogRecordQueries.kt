@@ -1,24 +1,21 @@
 package es.unizar.iaaa.tfg.adapters
 
-import com.graphqlDGS.graphqlDGS.model.types.Catalog
-import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
-import com.graphqlDGS.graphqlDGS.model.types.DataService
-import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
+import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import com.netflix.graphql.dgs.*
-import es.unizar.iaaa.tfg.domain.Properties
-import es.unizar.iaaa.tfg.services.InitServiceById
+import es.unizar.iaaa.tfg.services.CatalogRecordsServices
 
 @DgsComponent
 class CatalogRecordQueries(
-    private val initServiceById: InitServiceById,
+    private val catalogRecordsServices: CatalogRecordsServices,
+
 ) {
     // @DgsQuery catalogRecord: returns the catalogRecord which id is the @InputArgument id
     @DgsQuery
-    fun catalogRecord(@InputArgument id: String?): CatalogRecords? {
+    fun catalogRecord(@InputArgument id: String?): CatalogRecord? {
         if (id == null) {
             return null
         }
-        return initServiceById.showCatalogRecord(id)
+        return catalogRecordsServices.showCatalogRecord(id)
     }
 
 

@@ -1,7 +1,7 @@
 package es.unizar.iaaa.tfg.domain
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
-import com.graphqlDGS.graphqlDGS.model.types.CatalogRecords
+import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Retry.Topic
 import java.io.Serializable
 import javax.persistence.*
@@ -17,11 +17,12 @@ class CatalogRecordEntity {
     @Column(nullable = false)
     lateinit var title: String
 
+    @OneToMany(mappedBy = "catalogRecordId")
+    lateinit var resources: Collection<CatalogInRecordEntity>
+
     @ManyToOne
     lateinit var resource: ResourceEntity
 
-    fun toCatalogRecords(): CatalogRecords? {
-        return CatalogRecords(id, title, Catalog("catalog1", "catalogTit1"))
-    }
+
 }
  
