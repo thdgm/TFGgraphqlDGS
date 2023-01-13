@@ -1,0 +1,68 @@
+package es.unizar.iaaa.tfg.repository
+
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.fail
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
+import org.springframework.data.repository.findByIdOrNull
+
+@DataJpaTest
+class CatalogRepositoryTest {
+
+    @Autowired lateinit var catalogRepository: CatalogRepository
+
+    @Autowired lateinit var em: TestEntityManager
+
+    @Test
+    fun contextLoads() {
+        Assertions.assertNotNull(em)
+    }
+
+    @Test
+    fun `el catalogo1 tiene 4 registros`(){
+       val catalog = catalogRepository.findByIdOrNull("catalog1") ?: fail("El catalogo no existe")
+        assertEquals(4,catalog.records.size)
+    }
+
+    @Test
+    fun `el catalogo1 tiene 3 datasets`(){
+        val catalog = catalogRepository.findByIdOrNull("catalog1") ?: fail("El catalogo no existe")
+        assertEquals(3,catalog.resourcesOfCatalog.filter { it.types != "DataService" }.size)
+    }
+    @Test
+    fun `el catalogo1 tiene 4 resources`(){
+        val catalog = catalogRepository.findByIdOrNull("catalog1") ?: fail("El catalogo no existe")
+        assertEquals(4,catalog.resourcesOfCatalog.size)
+    }
+
+    @Test
+    fun `el catalogo1 tiene 1 service`(){
+        val catalog = catalogRepository.findByIdOrNull("catalog1") ?: fail("El catalogo no existe")
+        assertEquals(1,catalog.resourcesOfCatalog.filter { it.types=="DataService" }.size)
+    }
+
+    @Test
+    fun `el catalogo1 tiene 1 catalog`(){
+        val catalog = catalogRepository.findByIdOrNull("catalog1") ?: fail("El catalogo no existe")
+        assertEquals(1,catalog.resourcesOfCatalog.filter {it.types == "Catalog" }.size)
+    }
+
+    @Test
+    fun `el catalog1 es consistente`(){
+        val catalog = catalogRepository.findByIdOrNull("catalog1") ?: fail("El catalogo no existe")
+
+        val idResources = catalog.records.map{
+            it.resource.id
+        }
+        val idResources2 = catalog.resourcesOfCatalog.map{
+            it.resource.id
+        }
+
+        assertThat(idResources).hasSize(idResources2.size).hasSameElementsAs(idResources2)
+    }
+
+}
