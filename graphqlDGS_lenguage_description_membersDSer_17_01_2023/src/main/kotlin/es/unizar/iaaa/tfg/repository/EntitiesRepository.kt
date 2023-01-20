@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface CatalogRepository : JpaRepository<CatalogEntity, String>{
+interface CatalogRepository : JpaRepository<CatalogEntity, String> {
     fun findCatalogResourcesByResourcesCatalogId(id: String): Collection<CatalogEntity?>
 }
 
@@ -18,7 +18,7 @@ interface DataServiceRepository : JpaRepository<DataServiceEntity, String> {
 }
 
 @Repository
-interface DatasetRepository : JpaRepository<DatasetEntity, String>{
+interface DatasetRepository : JpaRepository<DatasetEntity, String> {
     fun findDatasetByInseriesId(id: String): Collection<DatasetEntity?>
 }
 
@@ -38,11 +38,13 @@ interface ResourceRepository : JpaRepository<ResourceEntity, String> {
     fun findResourcesCatalogByCatalogResourcesId(id: String): Collection<ResourceEntity>
     fun findServesDatasetByDatasetServiceId(id: String): Collection<ResourceEntity>
 }
+
 @Repository
-interface LanguageRepository : JpaRepository<LanguageEntity,String>{
-    fun findLanguagesResourcesByResourcesLanguagesId(id: String):Collection<LanguageEntity>
+interface LanguageRepository : JpaRepository<LanguageEntity, String> {
+    fun findLanguagesResourcesByResourcesLanguagesId(id: String): Collection<LanguageEntity>
 }
+
 @Repository
-interface DescriptionRepository : JpaRepository<DescriptionEntity,String>{
-    fun findByResourceId(id: String):Collection<DescriptionEntity>
+interface DescriptionRepository : JpaRepository<DescriptionEntity, String> {
+    fun findByResourceId(id: String): Collection<DescriptionEntity>
 }

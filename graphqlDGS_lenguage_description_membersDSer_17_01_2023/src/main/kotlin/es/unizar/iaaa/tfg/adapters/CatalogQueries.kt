@@ -58,6 +58,5 @@ class CatalogQueries(
 
     // @DgsQuery belongsToCatalog: returns the catalog which resource id belongs to
     @DgsQuery
-    fun belongsToCatalog(@InputArgument id: String):Collection<Catalog?> = catalogServices.getCatalogOfResource(id)
-
+    fun belongsToCatalog(@InputArgument id: String): Collection<Catalog?> = catalogServices.getCatalogOfResource(id)
 }

@@ -18,7 +18,7 @@ interface CatalogServices {
     fun showServicesCatalog(id: String): Collection<DataService?>
     fun showResourcesCatalog(id: String): Collection<ResourceInCatalog?>
     fun showDatasetsCatalog(id: String): Collection<DatasetInCatalog?>
-    fun getCatalogOfResource(id: String):Collection<Catalog?>
+    fun getCatalogOfResource(id: String): Collection<Catalog?>
 }
 
 @Service
@@ -73,14 +73,12 @@ class CatalogServicesImpl(
             .map {
                 converter.createDataset(it)
             }
-    //Return de catalog which contains de resource id
-    override fun getCatalogOfResource(id: String):Collection<Catalog?>  = catalogRepository.findCatalogResourcesByResourcesCatalogId("d1")
-            ?.map {
-                it?.toCatalog()
-            } ?: emptyList()
 
-
-
-
-
+    // Return de catalog which contains de resource id
+    override fun getCatalogOfResource(id: String): Collection<Catalog?> = catalogRepository.findCatalogResourcesByResourcesCatalogId(
+        "d1"
+    )
+        ?.map {
+            it?.toCatalog()
+        } ?: emptyList()
 }

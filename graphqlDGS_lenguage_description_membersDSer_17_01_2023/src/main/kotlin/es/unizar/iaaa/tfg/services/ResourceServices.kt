@@ -21,7 +21,7 @@ class ResourceServicesImpl(
     private val languageRepository: LanguageRepository,
     private val descriptionRepository: DescriptionRepository,
 
-    ) : ResourceServices {
+) : ResourceServices {
 
     // Return ResourceInCatalog  id or null
     override fun showResources(id: String): ResourceInCatalog? {
@@ -32,18 +32,18 @@ class ResourceServicesImpl(
     // Returns language list of id
     override fun getLanguages(id: String): Collection<String?> {
         val c = languageRepository.findLanguagesResourcesByResourcesLanguagesId(id)
-            .map{
+            .map {
                 it.id
             }
         println(c)
         return c
     }
 
-
     // Returns descriptions list of id with its language
-    override fun getDescriptions(id: String): Collection<ResourceDescription?> = descriptionRepository.findByResourceId(id)
-            .map{
-                converter.convertToResourceDescription(it)
-            }
-
+    override fun getDescriptions(id: String): Collection<ResourceDescription?> = descriptionRepository.findByResourceId(
+        id
+    )
+        .map {
+            converter.convertToResourceDescription(it)
+        }
 }

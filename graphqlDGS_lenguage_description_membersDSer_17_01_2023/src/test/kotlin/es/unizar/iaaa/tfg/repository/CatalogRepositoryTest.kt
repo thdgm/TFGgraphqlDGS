@@ -69,20 +69,19 @@ class CatalogRepositoryTest {
 
         assertThat(idResources).hasSize(idResources2.size).hasSameElementsAs(idResources2)
     }
+
     @Test
-    fun `get catalog which resource d1 belongs to`(){
-       val catalogIds = resourceRepository.findByIdOrNull("d1")?.catalogResources?.map {
-           it.id
-       }
+    fun `get catalog which resource d1 belongs to`() {
+        val catalogIds = resourceRepository.findByIdOrNull("d1")?.catalogResources?.map {
+            it.id
+        }
         var resourcesIdToVerify = mutableListOf<String>()
-        catalogIds?.forEach(){
-           catalogRepository.findByIdOrNull(it)?.resourcesCatalog?.map{
-               resourcesIdToVerify += it.id
-           }
-       }
-        println(catalogRepository.findCatalogResourcesByResourcesCatalogId("d1").map{it})
+        catalogIds?.forEach() {
+            catalogRepository.findByIdOrNull(it)?.resourcesCatalog?.map {
+                resourcesIdToVerify += it.id
+            }
+        }
+        println(catalogRepository.findCatalogResourcesByResourcesCatalogId("d1").map { it })
         assertThat(resourcesIdToVerify).contains("d1")
     }
-
-
 }

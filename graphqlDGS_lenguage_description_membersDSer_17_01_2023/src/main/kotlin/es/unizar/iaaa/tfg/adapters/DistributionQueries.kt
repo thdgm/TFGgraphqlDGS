@@ -30,5 +30,4 @@ class DistributionQueries(
         val dist: Distribution? = dfe.getSource()
         return distributionServices.showDistributionAccessService(dist!!.id)
     }
-
 }

@@ -1,9 +1,7 @@
 package es.unizar.iaaa.tfg.adapters
 
 import com.netflix.graphql.dgs.DgsQueryExecutor
-import com.netflix.graphql.dgs.autoconfig.DgsAutoConfiguration
 import data.ConstantValues
-import es.unizar.iaaa.tfg.services.CatalogRecordsServices
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,9 +14,9 @@ class DatasetServiceTest {
     lateinit var dgsQueryExecutor: DgsQueryExecutor
 
     @Test
-    fun `el dataservice dSer1 tiene 3 datasetInCatalog`()  {
-
-        val servesDataset : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+    fun `el dataservice dSer1 tiene 3 datasetInCatalog`() {
+        val servesDataset: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 dataService(id: "dSer1") {
                       servesDataset{
@@ -26,14 +24,18 @@ class DatasetServiceTest {
                       }
                 }
             }
-        """.trimIndent(), "data.dataService.servesDataset[*].__typename")
+            """.trimIndent(),
+            "data.dataService.servesDataset[*].__typename"
+        )
 
         assertThat(servesDataset.size).isEqualTo(3)
         assertThat(ConstantValues.DATASERVICE in servesDataset).isFalse
     }
+
     @Test
     fun `Dataservice dSer1 es consistente sirve dataset cuya distribution contiene accessService a el mismo`() {
-        val dataservices : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val dataservices: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
               dataService(id:"dSer1"){
                   servesDataset{
@@ -47,9 +49,9 @@ class DatasetServiceTest {
                   }
               }
             }
-        """.trimIndent(), "data.dataService.servesDataset[*].distributions[*].accessService[*].id")
+            """.trimIndent(),
+            "data.dataService.servesDataset[*].distributions[*].accessService[*].id"
+        )
         assertThat("dSer1").isIn(dataservices)
-
     }
-
-}  
+}

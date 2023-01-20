@@ -23,7 +23,7 @@ INSERT INTO "resource" ("id", "title","tipo","dataset_service_id","fecha_hora_cr
 --INSERT INTO "catalog" ("catalog_id") VALUES ('catalog2');
 --INSERT INTO "resource" ("id", "title","tipo") VALUES ('catalog3','catalogTit3','catalog');
 --INSERT INTO "catalog" ("catalog_id") VALUES ('catalog3');
---
+-- 
 ---------------------
 ---------------------
 ---- DISTRIBUTIONS

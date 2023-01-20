@@ -1,9 +1,7 @@
 package es.unizar.iaaa.tfg.adapters
 
 import com.netflix.graphql.dgs.DgsQueryExecutor
-import com.netflix.graphql.dgs.autoconfig.DgsAutoConfiguration
 import data.ConstantValues
-import es.unizar.iaaa.tfg.services.CatalogRecordsServices
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,9 +14,10 @@ class DatasetTest {
     lateinit var dgsQueryExecutor: DgsQueryExecutor
 
     @Test
-    fun `el dataset d1 tiene 1 dataSeries`()  {
+    fun `el dataset d1 tiene 1 dataSeries`() {
         val esperado = listOf<String>(ConstantValues.DATASETSERIES)
-        val inSeries : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val inSeries: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 dataset(id: "d1") {
                   ... on Dataset{
@@ -28,18 +27,24 @@ class DatasetTest {
                   }
                 }
             }
-        """.trimIndent(), "data.dataset.inSeries[*].__typename")
+            """.trimIndent(),
+            "data.dataset.inSeries[*].__typename"
+        )
 
         assertThat(inSeries.size).isEqualTo(1)
         assertThat(inSeries).isEqualTo(esperado)
-
     }
+
     @Test
-    fun `el dataset d1 tiene 4 distributions`()  {
+    fun `el dataset d1 tiene 4 distributions`() {
         val esperado = listOf<String>(
-            ConstantValues.DISTRIBUTION,ConstantValues.DISTRIBUTION,ConstantValues.DISTRIBUTION,ConstantValues.DISTRIBUTION
+            ConstantValues.DISTRIBUTION,
+            ConstantValues.DISTRIBUTION,
+            ConstantValues.DISTRIBUTION,
+            ConstantValues.DISTRIBUTION
         )
-        val distributions : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val distributions: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 dataset(id: "d1") {
                   ... on Dataset{
@@ -49,10 +54,11 @@ class DatasetTest {
                   }
                 }
             }
-        """.trimIndent(), "data.dataset.distributions[*].__typename")
+            """.trimIndent(),
+            "data.dataset.distributions[*].__typename"
+        )
 
         assertThat(distributions.size).isEqualTo(4)
         assertThat(distributions).isEqualTo(esperado)
     }
-
-}  
+}

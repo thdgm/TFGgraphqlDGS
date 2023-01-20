@@ -24,6 +24,4 @@ class DatasetServiceRepositoryTest {
         val dataservice = dataServiceRepository.findByIdOrNull("dSer1") ?: fail("El dataservice no existe")
         assertEquals(3, dataservice.servesDataset.size)
     }
-
-
 }

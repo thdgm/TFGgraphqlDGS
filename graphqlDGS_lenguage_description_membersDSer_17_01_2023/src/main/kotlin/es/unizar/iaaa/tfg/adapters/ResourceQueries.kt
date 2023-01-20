@@ -2,7 +2,6 @@ package es.unizar.iaaa.tfg.adapters
 
 import com.graphqlDGS.graphqlDGS.model.types.*
 import com.netflix.graphql.dgs.*
-import es.unizar.iaaa.tfg.services.CatalogServices
 import es.unizar.iaaa.tfg.services.ResourceServices
 
 @DgsComponent

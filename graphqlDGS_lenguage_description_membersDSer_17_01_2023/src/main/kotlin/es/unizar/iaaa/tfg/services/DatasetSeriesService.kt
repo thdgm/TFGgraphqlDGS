@@ -25,9 +25,8 @@ class DatasetSeriesServiceImpl(
         val c = datasetSeriesRepository.findById(id)
         return if (!c.isEmpty) converter.toDatasetSeries(c.get()) else null
     }
-    //Busca los dataset miembros del dataseries id
+
+    // Busca los dataset miembros del dataseries id
     override fun showMembers(id: String): Collection<Dataset?> = datasetRepository.findDatasetByInseriesId(id)
-            .map { it?.toDataset() }
-
-
+        .map { it?.toDataset() }
 }

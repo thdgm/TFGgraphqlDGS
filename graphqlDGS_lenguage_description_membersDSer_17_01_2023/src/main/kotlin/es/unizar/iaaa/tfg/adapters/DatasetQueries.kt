@@ -37,6 +37,4 @@ class DatasetQueries(
         val dic: DatasetInCatalog? = dfe.getSource()
         return datasetServices.showDistributionsDataset(dic!!.id)
     }
-
-
 }

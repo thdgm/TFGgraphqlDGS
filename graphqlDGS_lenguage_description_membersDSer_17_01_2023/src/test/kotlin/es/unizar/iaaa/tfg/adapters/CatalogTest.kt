@@ -16,11 +16,15 @@ class CatalogTest {
     lateinit var dgsQueryExecutor: DgsQueryExecutor
 
     @Test
-    fun `el catalogo1 tiene 4 registros`()  {
+    fun `el catalogo1 tiene 4 registros`() {
         val esperado = listOf<String>(
-            ConstantValues.CATALOGRECORD,ConstantValues.CATALOGRECORD,ConstantValues.CATALOGRECORD,ConstantValues.CATALOGRECORD
+            ConstantValues.CATALOGRECORD,
+            ConstantValues.CATALOGRECORD,
+            ConstantValues.CATALOGRECORD,
+            ConstantValues.CATALOGRECORD
         )
-        val records : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val records: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                records{
@@ -28,14 +32,18 @@ class CatalogTest {
                     }
                 }
             }
-        """.trimIndent(), "data.catalog.records[*].__typename")
+        """.trimIndent(),
+            "data.catalog.records[*].__typename"
+        )
 
         assertThat(records.size).isEqualTo(4)
         assertThat(records).isEqualTo(esperado)
     }
+
     @Test
-    fun `el catalogo1 tiene 3 datasets`()  {
-        val datasets : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+    fun `el catalogo1 tiene 3 datasets`() {
+        val datasets: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                datasets{
@@ -43,14 +51,17 @@ class CatalogTest {
                     }
                 }
             }
-        """.trimIndent(), "data.catalog.datasets[*].__typename")
+        """.trimIndent(),
+            "data.catalog.datasets[*].__typename"
+        )
 
         assertThat(datasets.size).isEqualTo(3)
-
     }
+
     @Test
-    fun `el catalogo1 tiene 4 resources`()  {
-        val resources : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+    fun `el catalogo1 tiene 4 resources`() {
+        val resources: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                resources{
@@ -58,15 +69,18 @@ class CatalogTest {
                     }
                 }
             }
-        """.trimIndent(), "data.catalog.resources[*].__typename")
+        """.trimIndent(),
+            "data.catalog.resources[*].__typename"
+        )
 
         assertThat(resources.size).isEqualTo(4)
-
     }
+
     @Test
-    fun `el catalogo1 tiene 1 service`()  {
+    fun `el catalogo1 tiene 1 service`() {
         val esperado = listOf<String>(ConstantValues.DATASERVICE)
-        val services : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val services: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                services{
@@ -74,15 +88,19 @@ class CatalogTest {
                     }
                 }
             }
-        """.trimIndent(), "data.catalog.services[*].__typename")
+        """.trimIndent(),
+            "data.catalog.services[*].__typename"
+        )
 
         assertThat(services.size).isEqualTo(1)
         assertThat(services).isEqualTo(esperado)
     }
+
     @Test
-    fun `el catalogo1 tiene 1 catalog`()  {
+    fun `el catalogo1 tiene 1 catalog`() {
         val esperado = listOf<String>(ConstantValues.CATALOG)
-        val catalogs : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val catalogs: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                catalogs{
@@ -90,7 +108,9 @@ class CatalogTest {
                     }
                 }
             }
-        """.trimIndent(), "data.catalog.catalogs[*].__typename")
+        """.trimIndent(),
+            "data.catalog.catalogs[*].__typename"
+        )
 
         assertThat(catalogs.size).isEqualTo(1)
         assertThat(catalogs).isEqualTo(esperado)
@@ -98,7 +118,8 @@ class CatalogTest {
 
     @Test
     fun `el catalog1 es consistente CR PrimaryTopic in Resources`() {
-        val primaryTopics : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val primaryTopics: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                records{
@@ -108,8 +129,11 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.records[*].primaryTopic.id")
-        val resources : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        """.trimIndent(),
+            "data.catalog.records[*].primaryTopic.id"
+        )
+        val resources: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
                     resources{
@@ -117,13 +141,20 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.resources[*].id")
-        assertTrue(primaryTopics.size == resources.size && primaryTopics.containsAll(resources) && resources.containsAll(primaryTopics))
-
+            """.trimIndent(),
+            "data.catalog.resources[*].id"
+        )
+        assertTrue(
+            primaryTopics.size == resources.size && primaryTopics.containsAll(resources) && resources.containsAll(
+                primaryTopics
+            )
+        )
     }
+
     @Test
     fun `el catalog1 es consistente Resources = Datasets + Services`() {
-        val datasets : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val datasets: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                datasets{
@@ -131,8 +162,11 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.datasets[*].id")
-        val resources : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        """.trimIndent(),
+            "data.catalog.datasets[*].id"
+        )
+        val resources: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
                     resources{
@@ -140,8 +174,11 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.resources[*].id")
-        val services : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+            """.trimIndent(),
+            "data.catalog.resources[*].id"
+        )
+        val services: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
                     services{
@@ -149,14 +186,22 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.services[*].id")
+            """.trimIndent(),
+            "data.catalog.services[*].id"
+        )
         val dataAndServ = datasets + services
         println(dataAndServ)
-        assertTrue(dataAndServ.size == resources.size && dataAndServ.containsAll(resources) && resources.containsAll(dataAndServ))
+        assertTrue(
+            dataAndServ.size == resources.size && dataAndServ.containsAll(resources) && resources.containsAll(
+                dataAndServ
+            )
+        )
     }
+
     @Test
     fun `el catalog1 es consistente Resources contains Catalogs`() {
-        val catalogs : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val catalogs: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
   	                catalogs{
@@ -164,8 +209,11 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.catalogs[*].id")
-        val resources : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        """.trimIndent(),
+            "data.catalog.catalogs[*].id"
+        )
+        val resources: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                 catalog(id:"catalog1"){
                     resources{
@@ -173,13 +221,15 @@ class CatalogTest {
                     }
                }
             }
-        """.trimIndent(), "data.catalog.resources[*].id")
+            """.trimIndent(),
+            "data.catalog.resources[*].id"
+        )
 
         assertThat(resources).containsAll(catalogs)
     }
 
     @Test
-    fun `puedo verificar el catalog al que pertenece un dataset servido por un recurso`(){
+    fun `puedo verificar el catalog al que pertenece un dataset servido por un recurso`() {
         var variableName = "\$idResource"
         var query = """
             query getCatalogs($variableName:ID){
@@ -191,7 +241,8 @@ class CatalogTest {
             }
         """.trimIndent()
 
-        val datasets : Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath("""
+        val datasets: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
             {
                	dataService(id:"dSer1"){
                   servesDataset{
@@ -199,16 +250,17 @@ class CatalogTest {
                   }
                 }
             }
-        """.trimIndent(), "data.dataService.servesDataset[*].id")
+            """.trimIndent(),
+            "data.dataService.servesDataset[*].id"
+        )
 
         datasets.forEach {
-            val idD = mutableMapOf<String,Any>("idResource" to it)
+            val idD = mutableMapOf<String, Any>("idResource" to it)
             val catalogss = dgsQueryExecutor.executeAndGetDocumentContext(query, idD)
-            val response = GraphQLResponse(catalogss.jsonString());
+            val response = GraphQLResponse(catalogss.jsonString())
             val resources = response.extractValue<Collection<String>>("data.belongsToCatalog[*].resources[*].id")
-            //Compruebo que el id de cada dataset ofrecido por el dataService está en los resources de su catalogo
+            // Compruebo que el id de cada dataset ofrecido por el dataService está en los resources de su catalogo
             assertThat(it).isIn(resources)
         }
-
     }
-}  
+}

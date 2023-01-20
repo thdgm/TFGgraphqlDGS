@@ -55,7 +55,10 @@ class ConvertersEntityTo : Converters {
         "dataset_series" -> DatasetSeries(res.id, res.title)
         else -> throw IllegalArgumentException("Tipo desconocido $res.tipo")
     }
-    //Recibe un descriptionEntity y crea el ResourceDescription correspondiente
-    override fun convertToResourceDescription(des: DescriptionEntity): ResourceDescription = ResourceDescription(des.text,des.language.id)
 
+    // Recibe un descriptionEntity y crea el ResourceDescription correspondiente
+    override fun convertToResourceDescription(des: DescriptionEntity): ResourceDescription = ResourceDescription(
+        des.text,
+        des.language.id
+    )
 }
