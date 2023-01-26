@@ -1,11 +1,11 @@
 package es.unizar.iaaa.tfg.domain
 
+import jakarta.persistence.DiscriminatorValue
+import jakarta.persistence.Entity
+import jakarta.persistence.ManyToMany
+import jakarta.persistence.OneToMany
+import jakarta.persistence.Table
 import java.io.Serializable
-import javax.persistence.DiscriminatorValue
-import javax.persistence.Entity
-import javax.persistence.ManyToMany
-import javax.persistence.OneToMany
-import javax.persistence.Table
 @Entity
 @Table(name = "dataservice")
 @DiscriminatorValue("data_service")

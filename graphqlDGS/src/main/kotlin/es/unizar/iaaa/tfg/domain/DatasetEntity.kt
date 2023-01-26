@@ -1,14 +1,14 @@
 package es.unizar.iaaa.tfg.domain
 
+import jakarta.persistence.Column
+import jakarta.persistence.DiscriminatorValue
+import jakarta.persistence.Entity
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.JoinTable
+import jakarta.persistence.ManyToMany
+import jakarta.persistence.Table
 import java.io.Serializable
 import java.util.Date
-import javax.persistence.Column
-import javax.persistence.DiscriminatorValue
-import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.JoinTable
-import javax.persistence.ManyToMany
-import javax.persistence.Table
 
 // @PrimaryKeyJoinColumn(name = "dataset_id")
 @Entity
