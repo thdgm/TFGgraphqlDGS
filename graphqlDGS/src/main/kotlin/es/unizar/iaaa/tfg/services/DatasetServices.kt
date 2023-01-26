@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 
 interface DatasetServices {
     fun showDistributionsDataset(id: String): Collection<Distribution?>
-    fun showInSeriesDataset(id: String): Collection<DatasetSeries?>
+    fun showInSeriesDataset(filterIdDS: String?,id: String): Collection<DatasetSeries?>
 }
 
 /*
@@ -32,9 +32,12 @@ class DatasetServicesImpl(
             }
 
     // Return property InSeries Dataset
-    override fun showInSeriesDataset(id: String): Collection<DatasetSeries?> =
-        datasetSeriesRepository.findInseriesByDatasetId(id)
+    override fun showInSeriesDataset(filterIdDS: String?,id: String): Collection<DatasetSeries?> {
+        val datasetSeries = datasetSeriesRepository.findInseriesByDatasetId(id)
             .map {
                 converter.toDatasetSeries(it!!)
             }
+        return if (filterIdDS == null)  datasetSeries else datasetSeries.filter { it?.id == filterIdDS }
+
+    }
 }

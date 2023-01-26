@@ -33,9 +33,9 @@ class DatasetQueries(
 
     // @DgsData inSeries: returns inSeries field of the corresponding Dataset
     @DgsData(parentType = "Dataset")
-    fun inSeries(dfe: DgsDataFetchingEnvironment): Collection<DatasetSeries?> {
+    fun inSeries(filter:String?,dfe: DgsDataFetchingEnvironment): Collection<DatasetSeries?> {
         val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServices.showInSeriesDataset(dic!!.id)
+        return datasetServices.showInSeriesDataset(filter,dic!!.id)
     }
 
     // @DgsData distributions: returns distributions field of the corresponding Dataset

@@ -17,6 +17,7 @@ INSERT INTO "resource" ("id", "title","tipo","fecha_hora_creacion","ultima_modif
 ---------------------
 --
 INSERT INTO "resource" ("id", "title","tipo","dataset_service_id","fecha_hora_creacion","ultima_modificacion") VALUES ('catalog1','catalogTit1','catalog','dSer1','2012-02-21T18:10:00', '2012-01-01T00:00:00');
+INSERT INTO "resource" ("id", "title","tipo","dataset_service_id","fecha_hora_creacion","ultima_modificacion") VALUES ('catalog2','catalogTit2','catalog','dSer1','2012-02-21T18:10:00', '2012-01-01T00:00:00');
 
 --INSERT INTO "catalog" ("catalog_id") VALUES ('catalog1');
 --INSERT INTO "resource" ("id", "title","tipo") VALUES ('catalog2','catalogTit2','catalog');
@@ -95,6 +96,7 @@ INSERT INTO "distributions" ("dataset_id","distribution_id") VALUES ('d1','Dist4
 ---------------------
 ---------------------
 INSERT INTO "relationships" ("id_catalog", "id_resource") VALUES ('catalog1', 'dS1');
+INSERT INTO "relationships" ("id_catalog", "id_resource") VALUES ('catalog2', 'dS1');
 INSERT INTO "relationships" ("id_catalog", "id_resource") VALUES ('catalog1', 'dSer1');
 INSERT INTO "relationships" ("id_catalog", "id_resource") VALUES ('catalog1', 'd1');
 INSERT INTO "relationships" ("id_catalog", "id_resource") VALUES ('catalog1', 'catalog1');

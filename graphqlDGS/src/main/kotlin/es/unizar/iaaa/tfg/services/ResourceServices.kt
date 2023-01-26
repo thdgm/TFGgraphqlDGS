@@ -1,8 +1,12 @@
 package es.unizar.iaaa.tfg.services
 
+import com.graphqlDGS.graphqlDGS.model.types.Catalog
+import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import com.graphqlDGS.graphqlDGS.model.types.FechaHora
 import com.graphqlDGS.graphqlDGS.model.types.ResourceDescription
 import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
+import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
+import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.DescriptionRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
@@ -17,6 +21,8 @@ interface ResourceServices {
     fun getDescriptions(id: String): Collection<ResourceDescription?>
     fun getCreacion(id: String): FechaHora?
     fun getModificacion(id: String): FechaHora?
+    fun getCatalogOfResource(filterId:String?,id: String): Collection<Catalog?>
+    fun getCatalogsRecordOf(filterId:String?, id: String): Collection<CatalogRecord?>
 }
 
 @Service
@@ -26,8 +32,10 @@ class ResourceServicesImpl(
     private val languageRepository: LanguageRepository,
     private val descriptionRepository: DescriptionRepository,
     private val converterAuxiliar: ConvertersAuxiliarEntitiesTo,
+    private val catalogRepository: CatalogRepository,
+    private val catalogRecordsRepository: CatalogRecordsRepository,
 
-) : ResourceServices {
+    ) : ResourceServices {
 
     // Return ResourceInCatalog  id or null
     override fun showResources(id: String): ResourceInCatalog? {
@@ -58,4 +66,22 @@ class ResourceServicesImpl(
     override fun getModificacion(id: String): FechaHora? = converterAuxiliar.datetoFechaHora(
         resourceRepository.findByIdOrNull(id)?.ultimaModificacion
     )
+
+    // Return de list of catalog which contains de resource id
+    override fun getCatalogOfResource(filterId:String?, id: String): Collection<Catalog?> {
+        val catalogs =  catalogRepository.findCatalogResourcesByResourcesCatalogId(id)
+            .map {
+                converter.catalogEntitytoCatalog(it)
+            }
+        return if (filterId == null)  catalogs else catalogs.filter { it?.id == filterId }
+    }
+
+    // Return de list of catalogRecord which contains de resource id
+    override fun getCatalogsRecordOf(filterId:String?, id: String): Collection<CatalogRecord?> {
+        val catalogRecords =  catalogRecordsRepository.findCatalogRecordsByResourceId(id)
+            .map {
+                converter.toCatalogRecord(it!!)
+            }
+        return if (filterId == null)  catalogRecords else catalogRecords.filter { it?.id == filterId }
+    }
 }

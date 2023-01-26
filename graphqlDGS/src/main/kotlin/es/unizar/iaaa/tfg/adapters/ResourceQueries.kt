@@ -1,5 +1,7 @@
 package es.unizar.iaaa.tfg.adapters
 
+import com.graphqlDGS.graphqlDGS.model.types.Catalog
+import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import com.graphqlDGS.graphqlDGS.model.types.FechaHora
 import com.graphqlDGS.graphqlDGS.model.types.Resource
 import com.graphqlDGS.graphqlDGS.model.types.ResourceDescription
@@ -40,17 +42,31 @@ class ResourceQueries(
         return resourceServices.getLanguages(res!!.id)
     }
 
-    // @DgsData language: Devuelve lista de los lenguajes empleados en el resource
+    // @DgsData fechaHoraCreacion: Devuelve la FechaHora de la creación del resource
     @DgsData(parentType = "Resource")
     fun fechaHoraCreacion(dfe: DgsDataFetchingEnvironment): FechaHora? {
         val res: Resource? = dfe.getSource()
         return resourceServices.getCreacion(res!!.id)
     }
 
-    // @DgsData language: Devuelve lista de los lenguajes empleados en el resource
+    // @DgsData ultimaModificacion: Devuelve la FechaHora de la última modificación del resource
     @DgsData(parentType = "Resource")
     fun ultimaModificacion(dfe: DgsDataFetchingEnvironment): FechaHora? {
         val res: Resource? = dfe.getSource()
         return resourceServices.getModificacion(res!!.id)
     }
+
+    // @DgsQuery inCatalog: returns the inverse of resources property of catalog
+    @DgsData(parentType = "Resource")
+    fun inCatalog(filter:String?,dfe: DgsDataFetchingEnvironment): Collection<Catalog?> {
+        val res: Resource? = dfe.getSource()
+        return resourceServices.getCatalogOfResource(filter,res!!.id)
+    }
+    // @DgsQuery isPrimaryTopicOf: returns the inverse of primaryTopic property of CatalogRecord
+    @DgsData(parentType = "Resource")
+    fun isPrimaryTopicOf(filter:String?,dfe: DgsDataFetchingEnvironment): Collection<CatalogRecord?> {
+        val res: Resource? = dfe.getSource()
+        return resourceServices.getCatalogsRecordOf(filter, res!!.id)
+    }
+
 }

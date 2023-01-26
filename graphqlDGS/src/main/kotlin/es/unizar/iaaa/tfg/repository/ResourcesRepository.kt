@@ -16,7 +16,9 @@ interface CatalogRepository : JpaRepository<CatalogEntity, String> {
 }
 
 @Repository
-interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String>
+interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String>{
+    fun findCatalogRecordsByResourceId(id: String): Collection<CatalogRecordEntity?>
+}
 
 @Repository
 interface DataServiceRepository : JpaRepository<DataServiceEntity, String> {

@@ -42,6 +42,11 @@ class CatalogTest {
 
     @Test
     fun `el catalogo1 tiene 3 datasets`() {
+        val esperado = listOf<String>(
+            ConstantValues.CATALOG,
+            ConstantValues.DATASET,
+            ConstantValues.DATASETSERIES,
+        )
         val datasets: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
             """
             {
@@ -56,10 +61,20 @@ class CatalogTest {
         )
 
         assertThat(datasets.size).isEqualTo(3)
+        assertThat(datasets).containsExactlyInAnyOrderElementsOf(esperado)
+        //https://www.baeldung.com/java-assert-lists-equality-ignore-order
+        // Comprobar cada tipo con que son coleccciones idénticas sin importar el orden
+        // o comprobando uno a uno la inclusión de cada tipo
     }
 
     @Test
     fun `el catalogo1 tiene 4 resources`() {
+        val esperado = listOf<String>(
+            ConstantValues.CATALOG,
+            ConstantValues.DATASET,
+            ConstantValues.DATASETSERIES,
+            ConstantValues.DATASERVICE,
+        )
         val resources: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
             """
             {
@@ -74,6 +89,9 @@ class CatalogTest {
         )
 
         assertThat(resources.size).isEqualTo(4)
+        assertThat(resources).containsExactlyInAnyOrderElementsOf(esperado)
+        // Comprobar cada tipo con que son coleccciones idénticas sin importar el orden
+        // o comprobando uno a uno la inclusión de cada tipo
     }
 
     @Test
@@ -144,11 +162,9 @@ class CatalogTest {
             """.trimIndent(),
             "data.catalog.resources[*].id"
         )
-        assertTrue(
-            primaryTopics.size == resources.size && primaryTopics.containsAll(resources) && resources.containsAll(
-                primaryTopics
-            )
-        )
+        // assertThat dos colecciones son iguales con independencia del orden
+        assertThat(primaryTopics).containsExactlyInAnyOrderElementsOf(resources) //https://www.baeldung.com/java-assert-lists-equality-ignore-order
+
     }
 
     @Test
@@ -191,11 +207,10 @@ class CatalogTest {
         )
         val dataAndServ = datasets + services
         println(dataAndServ)
-        assertTrue(
-            dataAndServ.size == resources.size && dataAndServ.containsAll(resources) && resources.containsAll(
-                dataAndServ
-            )
-        )
+        println(resources)
+        assertThat(resources).containsExactlyInAnyOrderElementsOf(dataAndServ) //https://www.baeldung.com/java-assert-lists-equality-ignore-order
+
+        // assertThat dos colecciones son iguales con independencia del orden
     }
 
     @Test
@@ -229,38 +244,38 @@ class CatalogTest {
     }
 
     @Test
-    fun `puedo verificar el catalog al que pertenece un dataset servido por un recurso`() {
-        var variableName = "\$idResource"
+    fun `consistencia entre propiedad resources de Catalog "catalog1" y inCatalog de Resource`() {
+        val esperado = listOf<String>(
+            "catalog1"
+        )
+        var variableName = "\$idCatalog"
+        var variableFilter = "\$idCatalogFilter"
         var query = """
-            query getCatalogs($variableName:ID){
-                belongsToCatalog(id:$variableName){
+            query getCatalogs($variableName:ID,$variableFilter:String){
+                catalog(id:$variableName){
                     resources{
-                        id
+                        inCatalog(filter:$variableFilter) {
+                            id
+                        }
                     }
                 }
             }
         """.trimIndent()
-
-        val datasets: Collection<String> = dgsQueryExecutor.executeAndExtractJsonPath(
-            """
-            {
-               	dataService(id:"dSer1"){
-                  servesDataset{
-                      id
-                  }
-                }
-            }
-            """.trimIndent(),
-            "data.dataService.servesDataset[*].id"
-        )
-
-        datasets.forEach {
-            val idD = mutableMapOf<String, Any>("idResource" to it)
-            val catalogss = dgsQueryExecutor.executeAndGetDocumentContext(query, idD)
-            val response = GraphQLResponse(catalogss.jsonString())
-            val resources = response.extractValue<Collection<String>>("data.belongsToCatalog[*].resources[*].id")
-            // Compruebo que el id de cada dataset ofrecido por el dataService está en los resources de su catalogo
-            assertThat(it).isIn(resources)
-        }
+        val idCatalog = mutableMapOf<String, Any>("idCatalog" to "catalog1","idCatalogFilter" to "catalog1")
+        val catalogs = dgsQueryExecutor.executeAndGetDocumentContext(query,idCatalog)
+        val response = GraphQLResponse(catalogs.jsonString())
+        val resources = response.extractValue<Collection<Collection<Map<String,String>>>>("data.catalog.resources")
+        val idCatalogs = response.extractValue<Collection<Collection<Map<String,String>>>>("data.catalog.resources[*].inCatalog[*].id")
+        //  Filtro para obtener de cada resource el catalog "catalog1"
+        //  Si alguno no tiene dicho catalog el array de resources será de mayor longitud que el de catalogs
+        // Haciendo distinct al array de catalogs me debe quedar solo 1 elemento igual a "catalog1"
+        assertThat(idCatalogs.size).isEqualTo(resources.size)
+        assertThat(idCatalogs.distinct()).isEqualTo(esperado)
+        //Compruebo que cada subCollection tiene un solo elemento y su id es igual a catalog1
+        //[[{id=catalog1}], [{id=catalog1}], [{id=catalog1}], [{id=catalog1}]]
+        /*inCatalogs.forEach {
+            assertThat(it).hasSize(1)
+            assertThat(it.elementAt(0)["id"]).isEqualTo("catalog1")
+        }*/
     }
 }

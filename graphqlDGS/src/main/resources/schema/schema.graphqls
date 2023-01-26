@@ -11,7 +11,6 @@ type Query {
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord
   distribution(id: ID): Distribution
-  belongsToCatalog(id:ID):[Catalog!]
 }
 #
 # type -> final type, cannot be extended
@@ -27,6 +26,9 @@ interface Resource {
   language: [String!]
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
 
 # It can be a Resource, Catalog, dataset or dataservice
@@ -38,6 +40,8 @@ interface ResourceInCatalog implements AbstractDataset & Resource{
   language: [String!]
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
 
 interface DatasetInCatalog implements AbstractDataset & Resource {
@@ -47,6 +51,8 @@ interface DatasetInCatalog implements AbstractDataset & Resource {
   language: [String!]
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
 
 # Concepto dcat:Dataset 
@@ -57,7 +63,8 @@ interface AbstractDataset implements Resource {
   language: [String!]
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
- 
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
 
 # A collection of operations that provides access to one or more datasets or 
@@ -76,6 +83,8 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset {
   language: [String!]
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
  
 #
@@ -104,6 +113,8 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   language: [String!]
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
   # Future:
   #  - A Catalog can record descriptions of resources such as dataset or dataservices
   #    dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
@@ -118,9 +129,11 @@ type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDat
   title: String!
   description: [ResourceDescription!]
   language: [String!]
-  membersDatasets: [Dataset!]
+  seriesMembers(filter:String): [Dataset!] # rename to dcat:seriesMembers due to https://w3c.github.io/dxwg/dcat/#inverse-properties
   fechaHoraCreacion: FechaHora
   ultimaModificacion: FechaHora
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
 
 # Dataset que no es ni Catalogo ni Dataset Series
@@ -132,7 +145,7 @@ type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDat
 type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
   id: ID!
   title: String!  
-  inSeries: [DatasetSeries!] # A dataset series of which the dataset is part.
+  inSeries(filter:String): [DatasetSeries!] # A dataset series of which the dataset is part.
   distributions: [Distribution!] # An available distribution of the dataset.
   description: [ResourceDescription!]
   language: [String!]
@@ -142,6 +155,8 @@ type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   spatial: [String!]
   accrualPeriodicity: Periodicidad
   temporal: CoberturaTemporal
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
 }
 
 # Implemented by CatalogRecordEntity

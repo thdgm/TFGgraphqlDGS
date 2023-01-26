@@ -59,8 +59,4 @@ class CatalogQueries(
         val ct: Catalog? = dfe.getSource()
         return catalogServices.showResourcesCatalog(ct!!.id)
     }
-
-    // @DgsQuery belongsToCatalog: returns the catalog which resource id belongs to
-    @DgsQuery
-    fun belongsToCatalog(@InputArgument id: String): Collection<Catalog?> = catalogServices.getCatalogOfResource(id)
 }
