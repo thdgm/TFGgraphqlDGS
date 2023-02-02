@@ -8,7 +8,7 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "description")
-class DescriptionEntity {
+class ResourceDescriptionsEntity {
     @Id
     lateinit var text: String
 
@@ -17,6 +17,8 @@ class DescriptionEntity {
     lateinit var language: LanguageEntity
 
     @ManyToOne
-    @JoinColumn(name = "resourceId", nullable = true)
+    @JoinColumn(name = "resourceId", referencedColumnName = "id",nullable = true)
     lateinit var resource: ResourceEntity
+
+
 }
