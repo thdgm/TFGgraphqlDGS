@@ -19,7 +19,10 @@ import org.springframework.transaction.annotation.Transactional
 interface CatalogRepository : JpaRepository<CatalogEntity, String> {
     fun findCatalogResourcesByResourcesCatalogId(id: String): Collection<CatalogEntity?>
     fun findCatalogsByRecordsId(id: String): Collection<CatalogEntity?>
-
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO \"relationships\" (\"id_catalog\", \"id_resource\") VALUES (?1, ?2)",nativeQuery = true)
+    fun insertInRelationships(cat:String,res:String)
 
 }
 
@@ -38,11 +41,21 @@ interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String> 
 interface DataServiceRepository : JpaRepository<DataServiceEntity, String> {
     fun findAccessServiceByDistributionsId(id: String): Collection<DataServiceEntity?>
     fun findDatasetServiceByServesDatasetId(id: String): Collection<DataServiceEntity>
+
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO \"serves_dataset\" (\"id_dataservice\", \"id_resource\") VALUES (?1, ?2)",nativeQuery = true)
+    fun insertInServesDataset(dser:String,d:String)
 }
 
 @Repository
 interface DatasetRepository : JpaRepository<DatasetEntity, String> {
     fun findDatasetByInseriesId(id: String): Collection<DatasetEntity?>
+
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO \"inseries\" (\"dataset_id\", \"data_series_id\") VALUES (?1, ?2)",nativeQuery = true)
+    fun insertInInSeries(d:String,dS:String)
 }
 
 @Repository
@@ -53,6 +66,16 @@ interface DatasetSeriesRepository : JpaRepository<DatasetSeriesEntity, String> {
 @Repository
 interface DistributionRepository : JpaRepository<DistributionEntity, String> {
     fun findDistributionsByDatasetsId(id: String): Collection<DistributionEntity?>
+
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO \"distributions\" (\"dataset_id\", \"distribution_id\") VALUES (?1, ?2)",nativeQuery = true)
+    fun insertInDistributions(d:String,dist:String)
+
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO \"acessservice\" (\"distribution_id\", \"data_service_id\") VALUES (?1, ?2)",nativeQuery = true)
+    fun insertInAccessInService(dist:String,ds:String)
 }
 
 @Repository

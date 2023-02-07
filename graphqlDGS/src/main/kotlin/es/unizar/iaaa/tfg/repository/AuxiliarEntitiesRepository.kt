@@ -16,6 +16,11 @@ import org.springframework.transaction.annotation.Transactional
 @Repository
 interface LanguageRepository : JpaRepository<LanguageEntity, String> {
     fun findLanguagesResourcesByResourcesLanguagesId(id: String): Collection<LanguageEntity>
+
+    @Modifying
+    @Transactional
+    @Query("INSERT INTO \"languages_resources\" (\"id_language\", \"id_resource\") VALUES (?1, ?2)",nativeQuery = true)
+    fun insertInLanguagesResources(lang:String,res:String)
 }
 
 @Repository

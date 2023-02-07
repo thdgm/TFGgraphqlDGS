@@ -2,14 +2,21 @@ package es.unizar.iaaa.tfg.services
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
+import com.graphqlDGS.graphqlDGS.model.types.DataService
+import com.graphqlDGS.graphqlDGS.model.types.Dataset
+import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
+import com.graphqlDGS.graphqlDGS.model.types.Distribution
+import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
 import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
 import es.unizar.iaaa.tfg.domain.DataServiceEntity
 import es.unizar.iaaa.tfg.domain.DatasetEntity
+import es.unizar.iaaa.tfg.domain.DatasetSeriesEntity
 import es.unizar.iaaa.tfg.domain.DistributionEntity
 import es.unizar.iaaa.tfg.domain.KeywordEntity
 import es.unizar.iaaa.tfg.domain.LanguageEntity
 import es.unizar.iaaa.tfg.domain.LocationEntity
 import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
+import es.unizar.iaaa.tfg.domain.ResourceEntity
 import es.unizar.iaaa.tfg.domain.TitlesEntity
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
@@ -41,7 +48,7 @@ interface CatalogRecordsServices {
     fun getJSONArray(url: String): Map<JSONObject,String>
     fun processContent(content: String): Collection<Catalog?>
     fun processUrl(map: Map<JSONObject,String> ,idCR:String?): CatalogRecord?
-    fun createCatalogRecord(idCR:String?,idPrimaryTopic:String, titulo:String):CatalogRecord
+    fun createCatalogRecord(idCR:String?,idPrimaryTopic:String, titulo:String):CatalogRecordEntity
 }
 
 @Service
@@ -121,8 +128,8 @@ class CatalogRecordsServicesImpl(
         createDistribution(dsser)
         val idRes = createDataset(keywords,servicesId,lenguages)
         val cr = createCatalogRecord(idCR,idRes,"Title")
-        insertInCatalogRecord(cr)
-        return cr
+        insertIntoCatalogRecord(cr)
+        return converter.toCatalogRecord(cr)
     }
 
     //Auxiliar function: Do appropiate tasks for each type
@@ -349,7 +356,7 @@ class CatalogRecordsServicesImpl(
         }
 
         //Auxiliar function: Create CR
-        override fun createCatalogRecord(idCR:String?,idPrimaryTopic:String, titulo:String):CatalogRecord {
+        override fun createCatalogRecord(idCR:String?,idPrimaryTopic:String, titulo:String):CatalogRecordEntity {
             //INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('','','');
             println("CREATE CR")
             val cr = CatalogRecordEntity()
@@ -368,7 +375,7 @@ class CatalogRecordsServicesImpl(
             catalogRecordsRepository.save(cr)
             //INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('', '');
 
-            return converter.toCatalogRecord(cr)
+            return cr
         }
 
         // Return
@@ -377,7 +384,27 @@ class CatalogRecordsServicesImpl(
         }
 
 
-        fun insertInCatalogRecord(cr:CatalogRecord){
+        fun insertIntoCatalogRecord(cr:CatalogRecordEntity){
             catalogRecordsRepository.insertInCatalogRecord(cr.id,"root")
         }
+        fun insertIntoRelathionships(c:CatalogRecordEntity,res: ResourceEntity){
+            catalogRepository.insertInRelationships(c.id,res.id)
+        }
+        fun insertIntoServesDataset(dser:DataServiceEntity,res:ResourceEntity){
+            datasetServicesRepository.insertInServesDataset(dser.id,res.id)
+        }
+        fun insertIntoInSeries(d:DatasetEntity,ds:DatasetSeriesEntity){
+            datasetRepository.insertInInSeries(d.id,ds.id)
+        }
+        fun insertIntoDistributions(d:DatasetEntity,dist:DistributionEntity){
+            distributionRepository.insertInDistributions(d.id,dist.id)
+        }
+        fun insertIntoAccessInService(dist:DistributionEntity,dser:DataServiceEntity){
+            distributionRepository.insertInAccessInService(dist.id,dser.id)
+        }
+        fun insertIntoLanguagesResources(dist:LanguageEntity,res:ResourceEntity){
+            languageRepository.insertInLanguagesResources(dist.id,res.id)
+        }
+
+
 }

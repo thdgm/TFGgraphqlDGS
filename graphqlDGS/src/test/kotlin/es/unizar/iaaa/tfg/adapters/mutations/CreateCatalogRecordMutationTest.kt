@@ -146,4 +146,40 @@ class CreateCatalogRecordMutationTest {
         assertThat("CRNuevo").isIn(resources)
 
     }
+
+    @Test
+    fun `Creo CR a partir de json y tiene su primaryTopic tiene 2 distributions`() {
+
+
+        var inputParam = "\$input"
+
+        var query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                    primaryTopic{
+                        ... on Dataset{
+                          distributions{
+                           id
+                          }
+                        }                            
+                    }
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>("input" to mapOf<String,Any>(
+            "inCatalog" to "root",
+            "contentType" to "application/json",
+            "contentUrl" to urlRecord,
+            "hints" to listOf("datos.gob.es")
+        ))
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        val resources = response.extractValue<Collection<String>>("data.createCatalogRecord.primaryTopic.distributions[*].id")
+        println("TESTTTTTTTTTTTTTTTTTT")
+        println(response)
+        assertThat(resources).hasSize(2)
+
+    }
 }
