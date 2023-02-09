@@ -47,7 +47,7 @@ class CreateCatalogRecordMutationTest {
         val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
         val response = GraphQLResponse(createCR.jsonString())
         val catalogs = response.extractValue<Collection<String>>("data.createCatalogRecord.primaryTopic.inCatalog[*].id")
-
+        println(response)
         assertThat("root").isIn(catalogs)
 
     }
@@ -166,7 +166,54 @@ class CreateCatalogRecordMutationTest {
     }
 
     @Test
-    fun `El CR tiene inCatalog a root, cuyos services estan en sus resources y el primaryTopic de CR es un dataset cuyo isServedBy esta en services de root`() {
+    fun `El CR tiene inCatalog a root con 1 service 2 resources y es servedBy 1 service`() {
+
+
+        val inputParam = "\$input"
+
+        val query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                       primaryTopic{
+                        
+                        ... on Dataset{
+                         isServedBy{
+                          id
+                         }
+                        }
+                       }
+                       inCatalog{
+                         services{
+                           id
+                         }
+                         resources{
+                           id
+                         }
+                       }
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>("input" to mapOf(
+            "inCatalog" to "root",
+            "contentType" to "application/json",
+            "contentUrl" to urlRecord,
+            "hints" to listOf("datos.gob.es")
+        ))
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        val isServedBy = response.extractValue<Collection<String>>("data.createCatalogRecord.primaryTopic.isServedBy[*].id")
+        val resources = response.extractValue<Collection<String>>("data.createCatalogRecord.inCatalog[*].resources[*].id")
+        val services = response.extractValue<Collection<String>>("data.createCatalogRecord.inCatalog[*].services[*].id")
+
+        assertThat(isServedBy).hasSize(1)
+        assertThat(resources).hasSize(2)
+        assertThat(services).hasSize(1)
+
+    }
+    @Test
+    fun `El CR tiene inCatalog a root cuyos services estan en sus resources y el primaryTopic de CR es un dataset cuyo isServedBy esta en services de root`() {
 
 
         val inputParam = "\$input"
@@ -211,7 +258,6 @@ class CreateCatalogRecordMutationTest {
         assertThat(services).containsAnyElementsOf(isServedBy)
 
     }
-
     @Test
     fun `El CR tiene primaryTopic a un dataset cuyo primaryTopic es dicho CR`() {
 
