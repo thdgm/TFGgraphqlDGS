@@ -1,9 +1,7 @@
 package es.unizar.iaaa.tfg.services.converts
 
 import com.graphqlDGS.graphqlDGS.model.types.CoberturaTemporal
-import com.graphqlDGS.graphqlDGS.model.types.FechaHora
 import com.graphqlDGS.graphqlDGS.model.types.Keywords
-import com.graphqlDGS.graphqlDGS.model.types.ResourceDescription
 import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.Periocidad
 import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
@@ -18,8 +16,6 @@ interface ConvertersAuxiliarEntitiesTo {
     fun toKeywords(keyw: KeywordEntity?): Keywords?
     fun toPeriocidad(value: String?): Periocidad
     fun toCoberturaTemporal(date1: LocalDateTime?, date2: LocalDateTime?): CoberturaTemporal?
-    fun convertToResourceDescription(des: ResourceDescriptionsEntity): ResourceDescription
-    fun datetoFechaHora(d: Date?): FechaHora
     fun toLangString(input: String): LangString
     fun toLaocalDateTime(input: String): LocalDateTime
 }
@@ -29,18 +25,6 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
 
     // Recibe KeywordEntity y crea el Keywords correspondiente
     override fun toKeywords(keyw: KeywordEntity?): Keywords = Keywords(keyw!!.word, keyw.language.id)
-
-    // Recibe un descriptionEntity y crea el ResourceDescription correspondiente
-    override fun convertToResourceDescription(des: ResourceDescriptionsEntity): ResourceDescription = ResourceDescription(
-        des.text,
-        des.language.id
-    )
-
-    // Transform date to FechaHora
-    override fun datetoFechaHora(d: Date?): FechaHora {
-        val fecha = d.toString().split(" ")
-        return FechaHora(fecha.elementAt(0), fecha.elementAt(1))
-    }
 
     // Transform String to Periocidad
     override fun toPeriocidad(value: String?):Periocidad {

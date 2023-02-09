@@ -15,11 +15,11 @@ class DistributionEntity {
     @Id
     lateinit var id: String
 
-   @Column(nullable = true)
+    @Column(nullable = true)
     lateinit var accessUrl: String
 
-   @OneToMany(mappedBy = "distributionTitle")
-   lateinit var title: Collection<TitlesEntity>
+    @OneToMany(mappedBy = "distributionTitle")
+    lateinit var title: Collection<TitlesEntity>
 
     @ManyToMany
     @JoinTable(

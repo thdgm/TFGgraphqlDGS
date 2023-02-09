@@ -25,6 +25,4 @@ class KeywordEntity {
     @ManyToOne
     @JoinColumn(name = "languageId", nullable = true)
     lateinit var language: LanguageEntity
-
-
 }

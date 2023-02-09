@@ -17,8 +17,6 @@ class ResourceDescriptionsEntity {
     lateinit var language: LanguageEntity
 
     @ManyToOne
-    @JoinColumn(name = "resourceId", referencedColumnName = "id",nullable = true)
+    @JoinColumn(name = "resourceId", referencedColumnName = "id", nullable = true)
     lateinit var resource: ResourceEntity
-
-
 }

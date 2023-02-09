@@ -16,8 +16,7 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
   "@graph": [
-
-
+    
     {
       "@id": "https://datos.gob.es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior/PeriodOfTime-1",
       "@type": "dct:PeriodOfTime",

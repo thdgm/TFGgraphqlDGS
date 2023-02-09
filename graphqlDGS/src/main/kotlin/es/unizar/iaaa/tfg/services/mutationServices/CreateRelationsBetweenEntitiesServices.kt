@@ -22,72 +22,66 @@ import org.springframework.stereotype.Service
 
 interface CreateRelationsBetweenEntitiesServices {
 
-    fun insertIntoCatalogRecord(cr:CatalogRecordEntity,idCatalog:String)
+    fun insertIntoCatalogRecord(cr: CatalogRecordEntity, idCatalog: String)
     fun insertIntoRelathionships(c: CatalogEntity, res: ResourceEntity)
-    fun insertIntoServesDataset(dser: DataServiceEntity, res:ResourceEntity)
+    fun insertIntoServesDataset(dser: DataServiceEntity, res: ResourceEntity)
     fun insertIntoInSeries(d: DatasetEntity, ds: DatasetSeriesEntity)
-    fun insertIntoDistributions(d: DatasetEntity, dist:MutableCollection<DistributionEntity>)
-    fun insertIntoAccessInService(dist:MutableCollection<DistributionEntity>,dser: DataServiceEntity)
-    fun insertIntoLanguagesResources(lang:MutableCollection<LanguageEntity>,res:ResourceEntity)
-    fun insertIntoKeywordsDataset(k:Collection<KeywordEntity>,dat: DatasetEntity)
-    fun insertIntoDatasetLocation(loc:Collection<LocationEntity>,dat: DatasetEntity)
-
+    fun insertIntoDistributions(d: DatasetEntity, dist: MutableCollection<DistributionEntity>)
+    fun insertIntoAccessInService(dist: MutableCollection<DistributionEntity>, dser: DataServiceEntity)
+    fun insertIntoLanguagesResources(lang: MutableCollection<LanguageEntity>, res: ResourceEntity)
+    fun insertIntoKeywordsDataset(k: Collection<KeywordEntity>, dat: DatasetEntity)
+    fun insertIntoDatasetLocation(loc: Collection<LocationEntity>, dat: DatasetEntity)
 }
-
 
 @Service
 class CreateRelationsBetweenEntitiesServicesImpl(
-    private val languageRepository:LanguageRepository,
+    private val languageRepository: LanguageRepository,
     private val keywordRepository: KeywordRepository,
-    private val locationRepository:LocationRepository,
+    private val locationRepository: LocationRepository,
     private val catalogRecordsRepository: CatalogRecordsRepository,
     private val catalogRepository: CatalogRepository,
     private val datasetServicesRepository: DataServiceRepository,
     private val datasetRepository: DatasetRepository,
     private val distributionRepository: DistributionRepository,
 
+) : CreateRelationsBetweenEntitiesServices {
 
-    ): CreateRelationsBetweenEntitiesServices{
-
-    override fun insertIntoCatalogRecord(cr:CatalogRecordEntity,idCatalog:String){
-        catalogRecordsRepository.insertInCatalogRecord(cr.id,idCatalog)
+    override fun insertIntoCatalogRecord(cr: CatalogRecordEntity, idCatalog: String) {
+        catalogRecordsRepository.insertInCatalogRecord(cr.id, idCatalog)
     }
-    override fun insertIntoRelathionships(c: CatalogEntity, res: ResourceEntity){
-        catalogRepository.insertInRelationships(c.id,res.id)
+    override fun insertIntoRelathionships(c: CatalogEntity, res: ResourceEntity) {
+        catalogRepository.insertInRelationships(c.id, res.id)
     }
-    override fun insertIntoServesDataset(dser:DataServiceEntity,res:ResourceEntity){
-        datasetServicesRepository.insertInServesDataset(dser.id,res.id)
+    override fun insertIntoServesDataset(dser: DataServiceEntity, res: ResourceEntity) {
+        datasetServicesRepository.insertInServesDataset(dser.id, res.id)
     }
-    override fun insertIntoInSeries(d:DatasetEntity,ds:DatasetSeriesEntity){
-        datasetRepository.insertInInSeries(d.id,ds.id)
+    override fun insertIntoInSeries(d: DatasetEntity, ds: DatasetSeriesEntity) {
+        datasetRepository.insertInInSeries(d.id, ds.id)
     }
-    override fun insertIntoDistributions(d:DatasetEntity,dist:MutableCollection<DistributionEntity>){
-        dist.forEach{
-            distributionRepository.insertInDistributions(d.id,it.id)
+    override fun insertIntoDistributions(d: DatasetEntity, dist: MutableCollection<DistributionEntity>) {
+        dist.forEach {
+            distributionRepository.insertInDistributions(d.id, it.id)
         }
-
     }
-    override fun insertIntoAccessInService(dist:MutableCollection<DistributionEntity>,dser:DataServiceEntity){
-        dist.forEach{
-            distributionRepository.insertInAccessInService(it.id,dser.id)
+    override fun insertIntoAccessInService(dist: MutableCollection<DistributionEntity>, dser: DataServiceEntity) {
+        dist.forEach {
+            distributionRepository.insertInAccessInService(it.id, dser.id)
         }
-
     }
-    override fun insertIntoLanguagesResources(lang:MutableCollection<LanguageEntity>,res:ResourceEntity){
-        lang.forEach{
-            languageRepository.insertInLanguagesResources(it.id,res.id)
+    override fun insertIntoLanguagesResources(lang: MutableCollection<LanguageEntity>, res: ResourceEntity) {
+        lang.forEach {
+            languageRepository.insertInLanguagesResources(it.id, res.id)
         }
     }
 
-    override fun insertIntoKeywordsDataset(k:Collection<KeywordEntity>,dat:DatasetEntity){
-        k.forEach{
-            keywordRepository.insertInKeywordsDataset(it.word,dat.id)
+    override fun insertIntoKeywordsDataset(k: Collection<KeywordEntity>, dat: DatasetEntity) {
+        k.forEach {
+            keywordRepository.insertInKeywordsDataset(it.word, dat.id)
         }
-
     }
-    override fun insertIntoDatasetLocation(loc:Collection<LocationEntity>,dat:DatasetEntity){
-        loc.forEach{
-            locationRepository.insertInDatasetLocation(it.nombre,dat.id)
+    override fun insertIntoDatasetLocation(loc: Collection<LocationEntity>, dat: DatasetEntity) {
+        loc.forEach {
+            locationRepository.insertInDatasetLocation(it.nombre, dat.id)
         }
     }
 }

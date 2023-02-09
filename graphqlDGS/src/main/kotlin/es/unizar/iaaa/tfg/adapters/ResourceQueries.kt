@@ -2,9 +2,7 @@ package es.unizar.iaaa.tfg.adapters
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
-import com.graphqlDGS.graphqlDGS.model.types.FechaHora
 import com.graphqlDGS.graphqlDGS.model.types.Resource
-import com.graphqlDGS.graphqlDGS.model.types.ResourceDescription
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
@@ -30,6 +28,7 @@ class ResourceQueries(
         }
         return resourceServices.showResources(id)
     }
+
     // @DgsData title: Devuelve lista de titulos  del resource
     // junto con el lenguaje en el que esten escritos
     @DgsData(parentType = "Resource")

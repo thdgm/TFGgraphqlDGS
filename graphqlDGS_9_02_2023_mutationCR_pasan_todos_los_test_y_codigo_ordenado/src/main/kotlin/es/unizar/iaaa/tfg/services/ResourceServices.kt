@@ -1,8 +1,6 @@
 package es.unizar.iaaa.tfg.services
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
-import com.graphqlDGS.graphqlDGS.model.types.FechaHora
-import com.graphqlDGS.graphqlDGS.model.types.ResourceDescription
 import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
 import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.repository.CatalogRepository

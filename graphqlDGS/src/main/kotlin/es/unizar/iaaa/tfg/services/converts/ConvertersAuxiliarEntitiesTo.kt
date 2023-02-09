@@ -6,8 +6,8 @@ import com.graphqlDGS.graphqlDGS.model.types.Keywords
 import com.graphqlDGS.graphqlDGS.model.types.ResourceDescription
 import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.Periocidad
-import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
 import es.unizar.iaaa.tfg.domain.KeywordEntity
+import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -43,9 +43,9 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
     }
 
     // Transform String to Periocidad
-    override fun toPeriocidad(value: String?):Periocidad {
-        if (value == null || value == ""){
-            return Periocidad(null,null)
+    override fun toPeriocidad(value: String?): Periocidad {
+        if (value == null || value == "") {
+            return Periocidad(null, null)
         }
         val rango = value.split(" ")
         val periodo = rango.elementAt(0).split(":")
@@ -58,12 +58,13 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
         return CoberturaTemporal(date1, date2)
     }
 
-    //Transform String into LangString
+    // Transform String into LangString
     override fun toLangString(input: String): LangString {
         val s = input.split(',')
-        return LangString(s[0],s[1])
+        return LangString(s[0], s[1])
     }
-    //Transform String into LocalDateTime
+
+    // Transform String into LocalDateTime
     override fun toLaocalDateTime(input: String): LocalDateTime {
         var dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'+'SS:ss")
         return LocalDateTime.parse(input, dateFormatter)

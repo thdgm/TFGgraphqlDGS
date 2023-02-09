@@ -3,7 +3,6 @@ package es.unizar.iaaa.tfg.domain
 import jakarta.persistence.DiscriminatorValue
 import jakarta.persistence.Entity
 import jakarta.persistence.ManyToMany
-import jakarta.persistence.Table
 import java.io.Serializable
 
 // @PrimaryKeyJoinColumn(name = "dataset_series_id")

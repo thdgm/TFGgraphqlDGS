@@ -55,7 +55,7 @@ class ConvertersResourceEntitiesToImpl : ConvertersResourcesEntitiesTo {
 
     // Recibe CatalogRecordEntity y crea el CatalogRecord correspondiente
     override fun toCatalogRecord(cre: CatalogRecordEntity): CatalogRecord =
-        CatalogRecord(cre.id,cre.title, primaryTopic = createResource(cre.resource))
+        CatalogRecord(cre.id, cre.title, primaryTopic = createResource(cre.resource))
 
     // Recibe DatasetSeriesEntity y crea el DatasetSeries correspondiente
     override fun toDatasetSeries(ds: DatasetSeriesEntity): DatasetSeries = DatasetSeries(ds.id)

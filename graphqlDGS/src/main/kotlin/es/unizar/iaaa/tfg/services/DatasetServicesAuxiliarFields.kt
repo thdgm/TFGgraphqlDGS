@@ -2,8 +2,8 @@ package es.unizar.iaaa.tfg.services
 
 import com.graphqlDGS.graphqlDGS.model.types.CoberturaTemporal
 import com.graphqlDGS.graphqlDGS.model.types.DataService
-import es.unizar.iaaa.tfg.annotations.Periocidad
 import es.unizar.iaaa.tfg.annotations.LangString
+import es.unizar.iaaa.tfg.annotations.Periocidad
 import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.repository.KeywordRepository
@@ -36,7 +36,7 @@ class DatasetServicesAuxiliarFieldsImpl(
     override fun getKeywords(id: String): Collection<LangString?> =
         keywordRepository.findKeywordsByDatasetsId(id)
             .map {
-                converterAuxiliar.toLangString(it.word+","+it.language.id)//converterAuxiliar.toKeywords(it)
+                converterAuxiliar.toLangString(it.word + "," + it.language.id) // converterAuxiliar.toKeywords(it)
             }
 
     // Return property Location Dataset

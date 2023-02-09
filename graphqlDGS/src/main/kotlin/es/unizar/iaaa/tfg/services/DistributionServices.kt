@@ -32,20 +32,22 @@ class DistributionServicesImpl(
         val c = distributionRepository.findById(id)
         return if (!c.isEmpty) converter.toDistribution(c.get()) else null
     }
+
     // Returns titles list of id with its language
     override fun getDistributionTitles(id: String): Collection<LangString?> =
         titleRepository.findByDistributionTitleId(id)
             .map {
-                converterAuxiliar.toLangString(it.title+","+it.language.id)
+                converterAuxiliar.toLangString(it.title + "," + it.language.id)
             }
+
     // Return accessService field of Distribution id
     override fun showDistributionAccessService(id: String): Collection<DataService?> =
         dataServiceRepository.findAccessServiceByDistributionsId(id)
             .map {
                 converter.toDataService(it!!)
             }
+
     // Return accessService field of Distribution id
     override fun showDistributionAccessUrl(id: String): String? =
         distributionRepository.findById(id).get().accessUrl
-
 }

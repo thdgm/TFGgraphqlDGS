@@ -11,7 +11,6 @@ import jakarta.persistence.ManyToMany
 import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
 import java.time.LocalDateTime
-import java.util.Date
 
 @Entity
 @DiscriminatorColumn(name = "tipo", discriminatorType = DiscriminatorType.STRING)
@@ -24,8 +23,8 @@ open class ResourceEntity {
 
    /* @Column(nullable = false)
     open lateinit var title: Collection<LangStringEntity>*/
-   @OneToMany(mappedBy = "resourceTitle")
-   open lateinit var title: Collection<TitlesEntity>
+    @OneToMany(mappedBy = "resourceTitle")
+    open lateinit var title: Collection<TitlesEntity>
 
     @Column(name = "tipo", nullable = false, insertable = false, updatable = false)
     open lateinit var type: String

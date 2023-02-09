@@ -4,8 +4,6 @@ import com.graphqlDGS.graphqlDGS.model.types.CoberturaTemporal
 import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
 import com.graphqlDGS.graphqlDGS.model.types.Distribution
-import com.graphqlDGS.graphqlDGS.model.types.Keywords
-import com.graphqlDGS.graphqlDGS.model.types.Periodicidad
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment

@@ -24,12 +24,14 @@ class DistributionQueries(
         }
         return distributionServices.showDistribution(id)
     }
+
     // @DgsData title: returns title as LangString collection
     @DgsData(parentType = "Distribution")
     fun title(dfe: DgsDataFetchingEnvironment): Collection<LangString?> {
         val dist: Distribution? = dfe.getSource()
         return distributionServices.getDistributionTitles(dist!!.id)
     }
+
     // @DgsData accessService: returns accessService field of the corresponding Distribution
     @DgsData(parentType = "Distribution")
     fun accessService(dfe: DgsDataFetchingEnvironment): Collection<DataService?> {

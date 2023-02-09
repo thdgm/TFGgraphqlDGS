@@ -1,6 +1,5 @@
 package es.unizar.iaaa.tfg.services.mutationServices
 
-import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
 import es.unizar.iaaa.tfg.domain.DataServiceEntity
 import es.unizar.iaaa.tfg.domain.DatasetEntity
@@ -11,7 +10,6 @@ import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.repository.DistributionRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
-import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
 import org.json.JSONObject
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
@@ -19,33 +17,34 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 interface CreateResourcesEntitiesServices {
-    fun createDataservices():Collection<DataServiceEntity>
+    fun createDataservices(): Collection<DataServiceEntity>
     fun createDistributions(
         jsonFields: MutableMap<String, Any>,
         service: Collection<DataServiceEntity>
-    ):MutableCollection<DistributionEntity>
+    ): MutableCollection<DistributionEntity>
 
-    fun createDatasets(jsonFields: MutableMap<String, Any>):DatasetEntity
+    fun createDatasets(jsonFields: MutableMap<String, Any>): DatasetEntity
 
-    fun createCatalogRecords(jsonFields: MutableMap<String, Any>,idCR:String?): CatalogRecordEntity
-
+    fun createCatalogRecords(jsonFields: MutableMap<String, Any>, idCR: String?): CatalogRecordEntity
 }
-
 
 @Service
 class CreateResourcesEntitiesServicesImpl(
-    private val resourcesRepository:ResourceRepository,
+    private val resourcesRepository: ResourceRepository,
     private val datasetServicesRepository: DataServiceRepository,
     private val distributionRepository: DistributionRepository,
     private val createAuxiliarEntitiesServices: CreateAuxiliarEntitiesServices,
     private val catalogRecordsRepository: CatalogRecordsRepository,
-    private val datasetRepository:DatasetRepository,
+    private val datasetRepository: DatasetRepository,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
-    private val catalogRepository:CatalogRepository
-): CreateResourcesEntitiesServices{
+    private val catalogRepository: CatalogRepository
+) : CreateResourcesEntitiesServices {
 
-    //Create LanguageEntity entities according to Json
-    override fun createDataservices():Collection<DataServiceEntity>{
+    // Create LanguageEntity entities according to Json
+    var veces = 0
+    override fun createDataservices(): Collection<DataServiceEntity> {
+        println("CREATE DATASERVICEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: $veces")
+        veces = veces + 1
         val dser = DataServiceEntity()
         dser.id = UUID.randomUUID().toString()
         datasetServicesRepository.save(dser)
@@ -53,15 +52,15 @@ class CreateResourcesEntitiesServicesImpl(
         return mutableListOf(dser)
     }
 
-    //Create KeywordEntity entities according to Json
+    // Create KeywordEntity entities according to Json
     override fun createDistributions(
         jsonFields: MutableMap<String, Any>,
         service: Collection<DataServiceEntity>
-    ):MutableCollection<DistributionEntity>{
-
+    ): MutableCollection<DistributionEntity> {
+        println("CREATE DISTRIBUTIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONS: $veces")
         val distributions = mutableListOf<DistributionEntity>()
 
-        val idsDist =  jsonFields.getValue("idDistribution") as Collection<String>
+        val idsDist = jsonFields.getValue("idDistribution") as Collection<String>
         idsDist.forEachIndexed { i, it ->
 
             val accessUrl = jsonFields.getValue("accessURL") as Collection<String>
@@ -74,16 +73,16 @@ class CreateResourcesEntitiesServicesImpl(
             distributions.add(dist)
             distributionRepository.save(dist)
 
-            createAuxiliarEntitiesServices.createTitle(title.elementAt(i),dist)
+            createAuxiliarEntitiesServices.createTitle(title.elementAt(i), dist)
         }
         return distributions
     }
 
-    override fun createCatalogRecords(jsonFields: MutableMap<String, Any>,idCR:String?):CatalogRecordEntity {
-        //Aqui tengo una duda: He pensado en generar el id pe: idPrimaryTopic+"/CatalogRecord
+    override fun createCatalogRecords(jsonFields: MutableMap<String, Any>, idCR: String?): CatalogRecordEntity {
+        // Aqui tengo una duda: He pensado en generar el id pe: idPrimaryTopic+"/CatalogRecord
         // que pasa si existe ya? Puede ocurrir, sería el mismo CR? He supuesto que no pueden repetirse
 
-        //De donde pillar el title del CR ??
+        // De donde pillar el title del CR ??
 
         val idPrimaryTopic = jsonFields.getValue("id") as String
         val cr = CatalogRecordEntity()
@@ -95,8 +94,7 @@ class CreateResourcesEntitiesServicesImpl(
         return cr
     }
 
-    override fun createDatasets(jsonFields: MutableMap<String, Any>):DatasetEntity{
-
+    override fun createDatasets(jsonFields: MutableMap<String, Any>): DatasetEntity {
         var dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'+'SS:ss")
 
         val datasetId = jsonFields.getValue("id") as String
@@ -105,7 +103,6 @@ class CreateResourcesEntitiesServicesImpl(
         val modificacion = jsonFields.getValue("modified") as String
         val start = jsonFields.getValue("start") as String
         val end = jsonFields.getValue("end") as String
-
 
         val dataset = DatasetEntity()
         dataset.id = datasetId
@@ -118,11 +115,10 @@ class CreateResourcesEntitiesServicesImpl(
 
         val locations = createAuxiliarEntitiesServices.createLocation(jsonFields)
 
-        createRelationsBetweenEntitiesServices.insertIntoDatasetLocation(locations,dataset)
+        createRelationsBetweenEntitiesServices.insertIntoDatasetLocation(locations, dataset)
 
-        createAuxiliarEntitiesServices.createResourceDescriptions(jsonFields,dataset)
-        createAuxiliarEntitiesServices.createTitle(title,dataset)
+        createAuxiliarEntitiesServices.createResourceDescriptions(jsonFields, dataset)
+        createAuxiliarEntitiesServices.createTitle(title, dataset)
         return dataset
     }
-
 }

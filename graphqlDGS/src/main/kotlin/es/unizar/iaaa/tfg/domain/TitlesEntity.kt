@@ -17,10 +17,10 @@ class TitlesEntity {
     lateinit var language: LanguageEntity
 
     @ManyToOne
-    @JoinColumn(name = "resourceId",referencedColumnName = "id",nullable = true)
+    @JoinColumn(name = "resourceId", referencedColumnName = "id", nullable = true)
     lateinit var resourceTitle: ResourceEntity
 
     @ManyToOne
-    @JoinColumn(name = "distributionId", referencedColumnName = "id",nullable = true)
+    @JoinColumn(name = "distributionId", referencedColumnName = "id", nullable = true)
     lateinit var distributionTitle: DistributionEntity
 }

@@ -2,8 +2,6 @@ package es.unizar.iaaa.tfg.adapters
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
-import com.graphqlDGS.graphqlDGS.model.types.DataService
-import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
@@ -32,11 +30,10 @@ class CatalogRecordQueries(
         return catalogRecordsServices.getInCatalog(cr!!.id)
     }
 
-
     // @DgsData contentType: returns metadata content type
     @DgsData(parentType = "CatalogRecord")
-    fun contentType(dfe: DgsDataFetchingEnvironment): String{
-        //TODO()
+    fun contentType(dfe: DgsDataFetchingEnvironment): String {
+        // TODO()
         val cr: CatalogRecord? = dfe.getSource()
         return ""
     }
@@ -44,22 +41,23 @@ class CatalogRecordQueries(
     // @DgsData content: returns content as string
     @DgsData(parentType = "CatalogRecord")
     fun content(dfe: DgsDataFetchingEnvironment): String {
-        //TODO()
+        // TODO()
         val cr: CatalogRecord? = dfe.getSource()
         return ""
     }
 
     // @DgsData contentURL: returns record location
     @DgsData(parentType = "CatalogRecord")
-    fun contentURL(dfe: DgsDataFetchingEnvironment): String{
-        //TODO()
+    fun contentURL(dfe: DgsDataFetchingEnvironment): String {
+        // TODO()
         val cr: CatalogRecord? = dfe.getSource()
         return ""
     }
+
     // @DgsData hints: returns extra process apart of contentType
     @DgsData(parentType = "CatalogRecord")
     fun hints(dfe: DgsDataFetchingEnvironment): Collection<String?> {
-        //TODO()
+        // TODO()
         val cr: CatalogRecord? = dfe.getSource()
         return emptyList()
     }

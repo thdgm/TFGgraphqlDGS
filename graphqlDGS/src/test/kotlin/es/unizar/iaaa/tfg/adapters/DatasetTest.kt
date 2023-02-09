@@ -8,8 +8,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @SpringBootTest
 class DatasetTest {
@@ -19,6 +17,7 @@ class DatasetTest {
 
     @Autowired
     lateinit var convertersAuxiliarEntitiesTo: ConvertersAuxiliarEntitiesTo
+
     @Test
     fun `el dataset d1 tiene 1 dataSeries`() {
         val esperado = listOf<String>(ConstantValues.DATASETSERIES)
@@ -127,6 +126,5 @@ class DatasetTest {
         val end = convertersAuxiliarEntitiesTo.toLaocalDateTime(fechaEnd)
 
         assertThat(end).isBefore(start)
-
     }
 }

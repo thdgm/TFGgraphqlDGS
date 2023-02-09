@@ -80,6 +80,7 @@ class CatalogRecordTest {
         )
         assertThat(type).isEqualTo(ConstantValues.DATASETSERIES)
     }
+
     @Test
     fun `el catalogRecord cR1 esta en Catalog1`() {
         val catalogs: Collection<String?> = dgsQueryExecutor.executeAndExtractJsonPath(

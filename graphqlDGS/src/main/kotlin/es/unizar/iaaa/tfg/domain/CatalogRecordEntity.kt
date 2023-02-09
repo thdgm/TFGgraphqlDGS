@@ -6,13 +6,10 @@ import jakarta.persistence.Id
 import jakarta.persistence.ManyToMany
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
-import lombok.Data
 
 @Entity
 @Table(name = "catalogrecord")
-
 class CatalogRecordEntity {
-
 
     @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +23,4 @@ class CatalogRecordEntity {
 
     @ManyToOne
     lateinit var resource: ResourceEntity
-
-
-
 }
