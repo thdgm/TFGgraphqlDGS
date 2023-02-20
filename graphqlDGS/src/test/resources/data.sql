@@ -1,3 +1,17 @@
+---------------------
+---------------------
+---- DATOS DE INICIALIZACION
+---------------------
+---------------------
+
+INSERT INTO "resource" ("id","tipo","fecha_hora_creacion","ultima_modificacion") VALUES ('root','catalog','2023-02-07T18:00:00', '2023-02-07T18:01:00');
+
+---------------------
+---------------------
+---- DATOS DE PRUEBA
+---------------------
+---------------------
+
 --
 ---------------------
 ---------------------
@@ -19,7 +33,7 @@ INSERT INTO "resource" ("id","tipo","fecha_hora_creacion","ultima_modificacion")
 --
 INSERT INTO "resource" ("id","tipo","fecha_hora_creacion","ultima_modificacion") VALUES ('catalog1','catalog','2012-02-21T18:10:00', '2012-01-01T00:00:00');
 INSERT INTO "resource" ("id","tipo","fecha_hora_creacion","ultima_modificacion") VALUES ('catalog2','catalog','2012-02-21T18:10:00', '2012-01-01T00:00:00');
-INSERT INTO "resource" ("id","tipo","fecha_hora_creacion","ultima_modificacion") VALUES ('root','catalog','2023-02-07T18:00:00', '2023-02-07T18:01:00');
+
 
 --INSERT INTO "catalog" ("catalog_id") VALUES ('catalog1');
 --INSERT INTO "resource" ("id", "title","tipo") VALUES ('catalog2','catalogTit2','catalog');
@@ -255,3 +269,21 @@ INSERT INTO "location" ("nombre","tipo")   VALUES ('España','Pais');
 ---------------------
 INSERT INTO "dataset_location" ("location_id","dataset_id")   VALUES ('España/Comunidad de Madrid/Madrid','d1');
 INSERT INTO "dataset_location" ("location_id","dataset_id")   VALUES ('España','d1');
+
+---------------------
+---------------------
+---- Theme
+---------------------
+---------------------
+INSERT INTO "theme" ("id") VALUES ('Theme1');
+INSERT INTO "theme" ("id")  VALUES ('Theme2');
+
+---------------------
+---------------------
+---- themesResources
+---------------------
+---------------------
+
+INSERT INTO "themes_resources" ("id_theme","id_resource") VALUES ('Theme1','d1');
+INSERT INTO "themes_resources" ("id_theme","id_resource") VALUES ('Theme1','catalog1');
+INSERT INTO "themes_resources" ("id_theme","id_resource") VALUES ('Theme2','d1');
