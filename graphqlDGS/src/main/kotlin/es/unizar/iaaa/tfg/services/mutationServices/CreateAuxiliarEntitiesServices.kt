@@ -4,15 +4,19 @@ import es.unizar.iaaa.tfg.domain.DistributionEntity
 import es.unizar.iaaa.tfg.domain.KeywordEntity
 import es.unizar.iaaa.tfg.domain.LanguageEntity
 import es.unizar.iaaa.tfg.domain.LocationEntity
+import es.unizar.iaaa.tfg.domain.PublisherEntity
 import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
 import es.unizar.iaaa.tfg.domain.ResourceEntity
 import es.unizar.iaaa.tfg.domain.TitlesEntity
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.ImtJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.PublisherJsonMapping
 import es.unizar.iaaa.tfg.repository.DescriptionRepository
 import es.unizar.iaaa.tfg.repository.KeywordRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
 import es.unizar.iaaa.tfg.repository.LocationRepository
+import es.unizar.iaaa.tfg.repository.PublisherRepository
 import es.unizar.iaaa.tfg.repository.TitleRepository
 import org.json.JSONArray
 import org.json.JSONObject
@@ -24,6 +28,9 @@ interface CreateAuxiliarEntitiesServices {
     fun createTitle(titleTexts: Collection<String?>, titleLangs: Collection<String?>, res: Any)
     fun createLocation(spatial: Collection<String?>): MutableCollection<LocationEntity>
     fun createResourceDescriptions(descTexts: Collection<String?>, descLangs: Collection<String?>, res: ResourceEntity)
+
+    fun createPublisher(jsonFields: MutableMap<ModelJsonMapping, String>,idPublisher:String?):PublisherEntity?
+    fun createFormat(jsonFields: MutableMap<ModelJsonMapping, String>, idFormat:String?):String?
 }
 
 @Service
@@ -34,8 +41,9 @@ class CreateAuxiliarEntitiesServicesImpl(
     private val locationRepository: LocationRepository,
     private val descriptionRepository: DescriptionRepository,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
+    private val publisherRepository: PublisherRepository,
 
-) : CreateAuxiliarEntitiesServices {
+    ) : CreateAuxiliarEntitiesServices {
 
     // Create LanguageEntity entities according to Json
     override fun createLanguages(jsonFields: MutableMap<ModelJsonMapping, String>): MutableCollection<LanguageEntity> {
@@ -134,6 +142,33 @@ class CreateAuxiliarEntitiesServicesImpl(
                 createRelationsBetweenEntitiesServices.insertIntoLanguageDescriptions(language,desc.text)
             }
         }
+    }
+
+    override fun createPublisher(jsonFields: MutableMap<ModelJsonMapping, String>, idPublisher:String?):PublisherEntity?
+
+    {
+        if (idPublisher == null) return null
+        val publishersJson = jsonFields.filterValues { it == "Publisher" }
+            .keys
+            .map { it as PublisherJsonMapping }
+            .filter { it.id == idPublisher}
+        if (publishersJson.isEmpty()) return null
+        val publisherJson = publishersJson.elementAt(0)
+        val newPublisher = PublisherEntity()
+        newPublisher.id = publisherJson.id
+        newPublisher.label = publisherJson.label
+        newPublisher.notation = publisherJson.notation
+        publisherRepository.save(newPublisher)
+        return newPublisher
+    }
+    override fun createFormat(jsonFields: MutableMap<ModelJsonMapping, String>, idFormat:String?):String?{
+        if (idFormat == null) return null
+        val imtJson = jsonFields.filterValues { it == "Format" }
+            .keys
+            .map { it as ImtJsonMapping }
+            .filter { it.id == idFormat}
+        if (imtJson.isEmpty()) return null
+        return imtJson.elementAt(0).value
     }
 
 }

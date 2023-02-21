@@ -7,6 +7,6 @@ data class DistributionJsonMapping(
         val titlesLang:Collection<String?>,
         val byteSize: Int?,
         val identifier:String?,
-        //FORMAT
+        val format: String?,
     ):ModelJsonMapping
 

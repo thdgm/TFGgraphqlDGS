@@ -17,7 +17,7 @@ data class DatasetJsonMapping (
         val identifier:String?,
         val license:String?,
         val theme:Collection<String?>,
-        //PUBLISHER
+        val publisher:String?,
 
 
     ):ModelJsonMapping

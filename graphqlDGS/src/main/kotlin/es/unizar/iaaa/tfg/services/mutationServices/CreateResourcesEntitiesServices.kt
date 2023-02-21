@@ -12,6 +12,7 @@ import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.repository.DistributionRepository
+import es.unizar.iaaa.tfg.repository.PublisherRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
 import es.unizar.iaaa.tfg.repository.ThemeRepository
 import org.springframework.stereotype.Service
@@ -41,6 +42,7 @@ class CreateResourcesEntitiesServicesImpl(
     private val catalogRecordsRepository: CatalogRecordsRepository,
     private val datasetRepository: DatasetRepository,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
+
 ) : CreateResourcesEntitiesServices {
 
     // Create LanguageEntity entities according to Json
@@ -74,7 +76,10 @@ class CreateResourcesEntitiesServicesImpl(
             if(distribution.byteSize != null){
                 dist.byteSize = distribution.byteSize.toUInt()
             }
-
+            val format = createAuxiliarEntitiesServices.createFormat(jsonFields, distribution.format)
+            if(format != null){
+                dist.format = format
+            }
             distributionRepository.save(dist)
             distributions.add(dist)
             createAuxiliarEntitiesServices.createTitle(distribution.titlesText,distribution.titlesLang,dist)
@@ -111,6 +116,7 @@ class CreateResourcesEntitiesServicesImpl(
         val modificacion = datasetModel.modified
 
 
+
         val dataset = DatasetEntity()
         dataset.id = datasetId
         dataset.type = "dataset"
@@ -122,6 +128,10 @@ class CreateResourcesEntitiesServicesImpl(
         }
         if(datasetModel.identifier != null){
             dataset.identifier = datasetModel.identifier
+        }
+        val publisher = createAuxiliarEntitiesServices.createPublisher(jsonFields,datasetModel.publisher)
+        if(publisher != null){
+            dataset.publisher = publisher
         }
 
         if (periodOfTimeMap.isNotEmpty()){

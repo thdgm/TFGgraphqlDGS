@@ -2,8 +2,10 @@ package es.unizar.iaaa.tfg.services.mutationServices
 
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.DistributionJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.ImtJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.PeriodOfTimeJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.PublisherJsonMapping
 import org.json.JSONArray
 import org.json.JSONObject
 import org.springframework.core.io.ResourceLoader
@@ -104,6 +106,8 @@ class ProcessJsonServicesImpl(
             is DistributionJsonMapping -> goodMap[model] = "Distribution"
             is DatasetJsonMapping -> goodMap[model] = "Dataset"
             is PeriodOfTimeJsonMapping -> goodMap[model] = "PeriodOfTime"
+            is PublisherJsonMapping -> goodMap[model] = "Publisher"
+            is ImtJsonMapping -> goodMap[model] = "Format"
         }
         return goodMap
     }
@@ -264,6 +268,16 @@ class ProcessJsonServicesImpl(
                     println("BYTESIZZZEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: $fieldsByteSize")
                     mapModel["ByteSize"] = fieldsByteSize
                 }
+                "dct:publisher"->{
+                    var fieldsPublisherId= mutableListOf<String>(objeto.getString("@id"))
+                    println("PUBLISHHHHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERRRRRR: $fieldsPublisherId")
+                    mapModel["Publisher"] = fieldsPublisherId
+                }
+                "dct:format"->{
+                    var fieldsFormatId= mutableListOf<String>(objeto.getString("@id"))
+                    println("PUBLISHHHHEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERRRRRR: $fieldsFormatId")
+                    mapModel["Format"] = fieldsFormatId
+                }
 
             }
             return mapModel
@@ -281,6 +295,12 @@ class ProcessJsonServicesImpl(
                 if(type == "dcat:Distribution") {
                     mapModel["DistributionId"] = fieldsId
                 }
+                if(type == "skos:Concept") {
+                    mapModel["PublisherId"] = fieldsId
+                }
+                if(type == "dct:IMT") {
+                    mapModel["ImtId"] = fieldsId
+                }
             } //Distribution o Dataset
             "dcat:accessURL" -> {
                 mapModel["AccessUrl"] = fieldsId
@@ -297,6 +317,19 @@ class ProcessJsonServicesImpl(
                 if (type == "dcat:Distribution") {
                     mapModel["IdentifierDistribution"] = fieldsId
                 }
+            }
+            "skos:notation"->{
+                println("CONNNNNNNNCCEEEEEEEEEEPPPPPPPPPPPPPPPPPPPPPPPPPPPPPTTTTTTTTTTTTTTTTTTTTTTTTT NOTATION")
+
+                mapModel["Notation"] = fieldsId
+            }
+            "skos:prefLabel"->{
+                println("CONNNNNNNNCCEEEEEEEEEEPPPPPPPPPPPPPPPPPPPPPPPPPPPPPTTTTTTTTTTTTTTTTTTTTTTTTT LABEL")
+
+                mapModel["Label"] = fieldsId
+            }
+            "rdf:value"->{
+                mapModel["ValueImt"] = fieldsId
             }
         }
         return mapModel
@@ -349,6 +382,9 @@ class ProcessJsonServicesImpl(
                      theme = if (fields.containsKey("Theme")){
                          fields.getValue("Theme")
                      }else{emptyList()},
+                     publisher = if (fields.containsKey("Publisher")){
+                         fields.getValue("Publisher").elementAt(0)
+                     }else{null}
                 )
             }
             "dct:PeriodOfTime" -> {
@@ -375,6 +411,24 @@ class ProcessJsonServicesImpl(
                     identifier = if (fields.containsKey("IdentifierDistribution")){
                         fields.getValue("IdentifierDistribution").elementAt(0)
                         }else{ null },
+                    format = if (fields.containsKey("Format")){
+                        fields.getValue("Format").elementAt(0)
+                    }else{ null },
+
+                )
+
+            }
+            "skos:Concept" -> {
+                PublisherJsonMapping(
+                    id = fields.getValue("PublisherId").elementAt(0),
+                    notation = fields.getValue("Notation").elementAt(0),
+                    label = fields.getValue("Label").elementAt(0),
+                )
+            }
+            "dct:IMT" -> {
+                ImtJsonMapping(
+                    id = fields.getValue("ImtId").elementAt(0),
+                    value = fields.getValue("ValueImt").elementAt(0),
                 )
             }
             else -> {null}

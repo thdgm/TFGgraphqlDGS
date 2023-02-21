@@ -69,7 +69,7 @@ open class ResourceEntity {
     open lateinit var languagesResources: MutableCollection<LanguageEntity>
 
     @ManyToOne
-    @JoinColumn(name = "publisherId", nullable = true)
+    @JoinColumn(name = "publisherId", referencedColumnName = "id", nullable = true)
     open lateinit var publisher: PublisherEntity
 
 }
