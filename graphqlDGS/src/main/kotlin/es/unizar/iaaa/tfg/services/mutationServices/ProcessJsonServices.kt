@@ -2,6 +2,7 @@ package es.unizar.iaaa.tfg.services.mutationServices
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonElement
 import com.google.gson.reflect.TypeToken
 import es.unizar.iaaa.tfg.services.Logger
 import es.unizar.iaaa.tfg.jsonDataModels.AccrualPeriodicityJsonMapping
@@ -34,89 +35,44 @@ class ProcessJsonServicesImpl(
     val validator = UrlValidator()
 
     // Get JSON using resourceLoader and parse it into [jsonObject-type] map
-    override fun getJSONArray(url: String): Map<JSONObject, String> {
-        val typeJson = mutableMapOf<JSONObject, String>()
-        val resource = resourceLoader.getResource(url)
+    override fun getJSONArray(url: String): Map<JSONObject, String> =
+        JSONObject(String(resourceLoader.getResource(url)
+            .inputStream.readAllBytes())).getJSONArray("@graph").toList()
+            .map{o -> o to o["@type"] as String}.toMap()
 
-        val bytes: ByteArray = resource.inputStream.readAllBytes()
-        val fileContent = JSONObject(String(bytes))
-
-        val types = fileContent.getJSONArray("@graph")
-
-        for (i in 0 until types.length()) {
-            val type = types.getJSONObject(i).getString("@type")
-            typeJson[types.getJSONObject(i)] = type
-
-        }
-
-        return typeJson
-    }
 
     // Get JSON using resourceLoader and parse it into [jsonObject-type] map
-    override fun getJSONArrayfromString(content: String): Map<JSONObject, String> {
+    override fun getJSONArrayfromString(content: String): Map<JSONObject, String> =
+        JSONObject(content).getJSONArray("@graph").toList()
+            .map{o -> o to o["@type"] as String}.toMap()
 
-        val typeJson = mutableMapOf<JSONObject, String>()
-        val fileContent = JSONObject(content) // toJSONObject
-        val types = fileContent.getJSONArray("@graph")//.toList() // List<JSONObject)
-
-
-
-
-        // operator get para JSONObject
-
-        //content.toJSONObject().map { o -> o to o["@type"] }.toMap()
-
-        for (i in 0 until types.length()) {
-            val type = types.getJSONObject(i).getString("@type")
-            typeJson[types.getJSONObject(i)] = type
-        }
-        return typeJson
-    }
 
     // Process map [JsonObject-type] using auxiliar function setupFields
     override fun processJson(map: Map<JSONObject, String>): MutableMap<ModelJsonMapping,String>  {
         var goodMap = mutableMapOf<ModelJsonMapping,String>()
-        map.forEach { (key, value) ->
-            goodMap = setUpFields(value.split(":").elementAt(1), key,goodMap)
-        }
-        return goodMap
-    }
-
-    // Auxiliar function: Do appropiate tasks for each type
-    fun setUpFields(type: String, json: JSONObject, goodMap: MutableMap<ModelJsonMapping,String>): MutableMap<ModelJsonMapping,String> {
         var mapModel = mutableMapOf<String,Collection<String>>()
-        val keys = json.keys()
-        while(keys.hasNext()) {
-            val keys = keys.next().toString()
-            val v = json.get(keys)
-            val keySplit = keys.split(":")
-            var key = keySplit.elementAt(0)
-            var rango:String? = null
-
-            if (keySplit.size == 2 && keySplit.elementAt(0) != "time") {
-                key = keySplit.elementAt(1)
-            }else if( keySplit.elementAt(0) == "time"){
-                rango = keySplit.elementAt(1)
+        map.map { //(key, value) ->
+           // goodMap += setUpFields(value.split(":").elementAt(1), key)
+            val type = it.value.split(":").elementAt(1)
+            val json= it.key
+            it.key.keys().forEach {
+                val keySplit = it.toString().split(":")
+                val element = json.get(it.toString())
+                val key =
+                    if(keySplit.size == 2 && keySplit.elementAt(0) != "time") keySplit.elementAt(1)
+                    else keySplit.elementAt(0)
+                val rango =
+                    if( keySplit.elementAt(0) == "time") keySplit.elementAt(1)
+                    else null
+                mapModel = processJsonElement(element, key,type, mapModel,rango)
             }
-
-            mapModel = when(v){
-                is JSONObject -> processObjectByKey(key, v,type,mapModel,rango)
-                is JSONArray -> processArrayByKey(key,v,type,mapModel)
-                is String -> processStringByKey(key, v,type,mapModel)
-                else -> break
-            }
-        }
-
-        when(val model = createModels(mapModel,type)){
-            is DistributionJsonMapping -> goodMap[model] = "Distribution"
-            is DatasetJsonMapping -> goodMap[model] = "Dataset"
-            is PeriodOfTimeJsonMapping -> goodMap[model] = "PeriodOfTime"
-            is PublisherJsonMapping -> goodMap[model] = "Publisher"
-            is ImtJsonMapping -> goodMap[model] = "Format"
-            is AccrualPeriodicityJsonMapping -> goodMap[model] = "AccrualPeriodicity"
+            goodMap += createModelMapping(mapModel,type)
+            mapModel.clear()
         }
         return goodMap
     }
+
+
     fun processArrayByKey(
         k: String,
         array: JSONArray,
@@ -217,105 +173,54 @@ class ProcessJsonServicesImpl(
     ): MutableMap<String, Collection<String>> {
         when (k) {
             "keyword" -> {
-                val fieldsValue = mutableListOf<String>(objeto.getString("@value"))
-                val fieldsLang = mutableListOf<String>(objeto.getString("@language"))
-                fields["KeywordsWord"] = fieldsValue
-                fields["KeywordsLang"] = fieldsLang
+                fields["KeywordsWord"] = mutableListOf<String>(objeto.getString("@value"))
+                fields["KeywordsLang"] = mutableListOf<String>(objeto.getString("@language"))
             }
 
-            "distribution" -> {
-                val fieldsDistIds = mutableListOf<String>(objeto.getString("@id"))
-                fields["Distributions"] = fieldsDistIds
-            }
+            "distribution" -> fields["Distributions"] = mutableListOf<String>(objeto.getString("@id"))
 
             "description" -> {
-                val fieldsValue = mutableListOf<String>(objeto.getString("@value"))
-                val fieldsLang = mutableListOf<String>(objeto.getString("@language"))
-                fields["DescriptionsText"] = fieldsValue
-                fields["DescriptionsLang"] = fieldsLang
+                fields["DescriptionsText"] = mutableListOf<String>(objeto.getString("@value"))
+                fields["DescriptionsLang"] = mutableListOf<String>(objeto.getString("@language"))
             }
 
-            "language" -> {
-                val fieldsLangs = mutableListOf<String>(objeto.getString("@id"))
-                fields["DatasetLanguages"] = fieldsLangs
-            }
+            "language" -> fields["DatasetLanguages"] = mutableListOf<String>(objeto.getString("@id"))
 
-            "spatial" -> {
-                val fieldsSpatialIds = mutableListOf<String>(objeto.getString("@id"))
-                fields["Spatial"] = fieldsSpatialIds
-            }
+            "spatial" -> fields["Spatial"] = mutableListOf<String>(objeto.getString("@id"))
 
             "title" -> {
-                val fieldsValue = mutableListOf<String>(objeto.getString("@value"))
-                val fieldsLang = mutableListOf<String>(objeto.getString("@language"))
                 val key = when (type) {
                     "Dataset" -> "DatasetTitles"
                     "Distribution" -> "DistributionTitles"
                     else -> null
                 }
                 if (key != null) {
-                    fields[key + "Text"] = fieldsValue
-                    fields[key + "Lang"] = fieldsLang
+                    fields[key + "Text"] = mutableListOf<String>(objeto.getString("@value"))
+                    fields[key + "Lang"] = mutableListOf<String>(objeto.getString("@language"))
                 }
             }
 
-            "modified" -> {
-                val fieldsModified = mutableListOf<String>(objeto.getString("@value"))
-                fields["Modified"] = fieldsModified
-            }
+            "modified" -> fields["Modified"] = mutableListOf<String>(objeto.getString("@value"))
 
-            "issued" -> {
-                val fieldsIssued = mutableListOf<String>(objeto.getString("@value"))
-                fields["Issued"] = fieldsIssued
-            }
+            "issued" -> fields["Issued"] = mutableListOf<String>(objeto.getString("@value"))
 
-            "startDate" -> {
-                val fieldsStart = mutableListOf<String>(objeto.getString("@value"))
-                fields["Start"] = fieldsStart
-            }
+            "startDate" -> fields["Start"] = mutableListOf<String>(objeto.getString("@value"))
 
-            "endDate" -> {
-                val fieldsEnd = mutableListOf<String>(objeto.getString("@value"))
-                fields["End"] = fieldsEnd
-            }
+            "endDate" -> fields["End"] = mutableListOf<String>(objeto.getString("@value"))
 
-            "license" -> {
-                val fieldsLicense = mutableListOf<String>(objeto.getString("@id"))
-                fields["License"] = fieldsLicense
-            }
+            "license" -> fields["License"] = mutableListOf<String>(objeto.getString("@id"))
 
-            "theme" -> {
-                val fieldsTheme = mutableListOf<String>(objeto.getString("@id"))
-                fields["Theme"] = fieldsTheme
-            }
+            "theme" -> fields["Theme"] = mutableListOf<String>(objeto.getString("@id"))
 
-            "byteSize" -> {
-                val fieldsByteSize = mutableListOf<String>(objeto.getString("@value"))
-                fields["ByteSize"] = fieldsByteSize
-            }
+            "byteSize" -> fields["ByteSize"] = mutableListOf<String>(objeto.getString("@value"))
 
-            "publisher" -> {
-                val fieldsPublisherId = mutableListOf<String>(objeto.getString("@id"))
-                fields["Publisher"] = fieldsPublisherId
-            }
+            "publisher" -> fields["Publisher"] = mutableListOf<String>(objeto.getString("@id"))
 
-            "format" -> {
-                val fieldsFormatId = mutableListOf<String>(objeto.getString("@id"))
-                fields["Format"] = fieldsFormatId
-            }
+            "format" -> fields["Format"] = mutableListOf<String>(objeto.getString("@id"))
 
-            "time" -> {
-                val valor = objeto.getString("@value")
-                val time = "time:$rango"
-                val fieldsTime = mutableListOf("$time $valor")
-                fields["AccrualPeriodicity"] = fieldsTime
-                getLogger("logger").debug("AccrualPeriodicity: $fieldsTime")
-            }
+            "time" -> fields["AccrualPeriodicity"] = mutableListOf("time:$rango ${objeto.getString("@value")}")
 
-            "temporal" -> {
-                val fieldsTemporalId = mutableListOf<String>(objeto.getString("@id"))
-                fields["Temporal"] = fieldsTemporalId
-            }
+            "temporal" -> fields["Temporal"] = mutableListOf<String>(objeto.getString("@id"))
 
         }
         return fields
@@ -345,13 +250,9 @@ class ProcessJsonServicesImpl(
                 }
             }
 
-            "accessURL" -> {
-                if (validator.isValid(cadena))   fields["AccessUrl"] = fieldsId
-            }
+            "accessURL" -> if (validator.isValid(cadena)) fields["AccessUrl"] = fieldsId
 
-            "language" -> {
-                fields["DatasetLanguages"] = fieldsId
-            }
+            "language" -> fields["DatasetLanguages"] = fieldsId
 
             "identifier" -> {
 
@@ -366,17 +267,12 @@ class ProcessJsonServicesImpl(
                 }
             }
 
-            "notation" -> {
-                fields["Notation"] = fieldsId
-            }
+            "notation" -> fields["Notation"] = fieldsId
 
-            "prefLabel" -> {
-                fields["Label"] = fieldsId
-            }
+            "prefLabel" -> fields["Label"] = fieldsId
 
-            "value" -> {
-                fields["ValueImt"] = fieldsId
-            }
+            "value" -> fields["ValueImt"] = fieldsId
+
         }
         return fields
     }
@@ -493,6 +389,100 @@ class ProcessJsonServicesImpl(
         }
     }
 
+    /*
+     *  Cast JSONArray into a List in order to make
+     * the processing easier
+     *
+     */
+    fun JSONArray.toList() : List<JSONObject> {
+        var lisJsonObject = listOf<JSONObject>()
+        for (i in 0 until this.length()) {
+            lisJsonObject += this.getJSONObject(i)
+
+        }
+        return lisJsonObject
+    }
+
+    /*
+     *  Process all fields of JsonElement and keep them within a map
+     * in order to create the corresponding ModelJsonMapping
+     */
+    fun processJsonElement(
+        element: Any?,
+        key: String,
+        type: String,
+        mapModel: MutableMap<String, Collection<String>>,
+        rango:String?
+    ): MutableMap<String, Collection<String>> =
+        when(element){
+            is JSONObject -> processObjectByKey(key, element,type,mapModel,rango)
+            is JSONArray -> processArrayByKey(key,element,type,mapModel)
+            is String -> processStringByKey(key, element,type,mapModel)
+            else -> mutableMapOf()
+        }
+
+    /*
+     *  Create and add to the result map a ModelJsonMapping according to type
+     */
+    fun createModelMapping(
+        mapModel: MutableMap<String, Collection<String>>,
+        type:String
+    ): MutableMap<ModelJsonMapping,String> {
+        var goodMap = mutableMapOf<ModelJsonMapping,String>()
+        when(val model = createModels(mapModel,type)){
+            is DistributionJsonMapping -> goodMap[model] = "Distribution"
+            is DatasetJsonMapping -> goodMap[model] = "Dataset"
+            is PeriodOfTimeJsonMapping -> goodMap[model] = "PeriodOfTime"
+            is PublisherJsonMapping -> goodMap[model] = "Publisher"
+            is ImtJsonMapping -> goodMap[model] = "Format"
+            is AccrualPeriodicityJsonMapping -> goodMap[model] = "AccrualPeriodicity"
+        }
+        return goodMap
+    }
 }
+
+
+
+/*
+
+
+
+ // Auxiliar function: Do appropiate tasks for each type
+    fun setUpFields(type: String, json: JSONObject): MutableMap<ModelJsonMapping,String> {
+        var mapModel = mutableMapOf<String,Collection<String>>()
+        var goodMap = mutableMapOf<ModelJsonMapping,String>()
+        val keys = json.keys()
+        while(keys.hasNext()) {
+            val keys = keys.next().toString()
+            val v = json.get(keys)
+            val keySplit = keys.split(":")
+            var key = keySplit.elementAt(0)
+            var rango:String? = null
+
+            if (keySplit.size == 2 && keySplit.elementAt(0) != "time") {
+                key = keySplit.elementAt(1)
+            }else if( keySplit.elementAt(0) == "time"){
+                rango = keySplit.elementAt(1)
+            }
+
+            mapModel = when(v){
+                is JSONObject -> processObjectByKey(key, v,type,mapModel,rango)
+                is JSONArray -> processArrayByKey(key,v,type,mapModel)
+                is String -> processStringByKey(key, v,type,mapModel)
+                else -> break
+            }
+        }
+
+        when(val model = createModels(mapModel,type)){
+            is DistributionJsonMapping -> goodMap[model] = "Distribution"
+            is DatasetJsonMapping -> goodMap[model] = "Dataset"
+            is PeriodOfTimeJsonMapping -> goodMap[model] = "PeriodOfTime"
+            is PublisherJsonMapping -> goodMap[model] = "Publisher"
+            is ImtJsonMapping -> goodMap[model] = "Format"
+            is AccrualPeriodicityJsonMapping -> goodMap[model] = "AccrualPeriodicity"
+        }
+        return goodMap
+    }
+ */
 
 

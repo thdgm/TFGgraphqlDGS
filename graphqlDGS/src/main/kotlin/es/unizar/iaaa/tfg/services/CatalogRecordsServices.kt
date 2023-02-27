@@ -2,7 +2,8 @@ package es.unizar.iaaa.tfg.services
 
 import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
-import es.unizar.iaaa.tfg.services.Logger
+import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordOutput
+import com.graphqlDGS.graphqlDGS.model.types.Error
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
@@ -22,7 +23,7 @@ interface CatalogRecordsServices {
         fieldsMap: MutableMap<ModelJsonMapping,String>,
         idCR: String?,
         idCatalog: String
-    ): CatalogRecord
+    ): CatalogRecordOutput
 }
 
 @Service
@@ -61,20 +62,15 @@ class CatalogRecordsServicesImpl(
         fieldsMap: MutableMap<ModelJsonMapping,String>,
         idCR: String?,
         idCatalog: String
-    ): CatalogRecord {
+    ): CatalogRecordOutput {
         getLogger("logger").debug("START create CR")
+
         val catalog = catalogRepository.findById(idCatalog).get()
-        getLogger("logger").debug("ENTRA1")
-        val languages = createAuxiliarEntitiesServices.createLanguages(fieldsMap)
-        getLogger("logger").debug("ENTRA2")
-        getLogger("logger").debug("ENTRA3")
         val services = createResourcesEntitiesServices.createDataservices()
-        getLogger("logger").debug("ENTRA4")
         val distributions = createResourcesEntitiesServices.createDistributions(fieldsMap, services)
-        getLogger("logger").debug("ENTRA5")
-        val dataset = createResourcesEntitiesServices.createDatasets(fieldsMap)
-        createAuxiliarEntitiesServices.createKeywords(fieldsMap,dataset.id)
-        getLogger("logger").debug("ENTRA6")
+        val dataset = createResourcesEntitiesServices.createDatasets(fieldsMap,distributions)
+            ?: return Error("No se ha creado el dataset")
+
         services.forEach {
             createRelationsBetweenEntitiesServices.insertIntoServesDataset(it, dataset)
             createRelationsBetweenEntitiesServices.insertIntoAccessInService(distributions, it)
@@ -83,13 +79,10 @@ class CatalogRecordsServicesImpl(
         }
 
         createRelationsBetweenEntitiesServices.insertIntoRelathionships(catalog, dataset)
-        createRelationsBetweenEntitiesServices.insertIntoLanguagesResources(languages, dataset)
-        //createRelationsBetweenEntitiesServices.insertIntoKeywordsDataset(keywords, dataset)
-        createRelationsBetweenEntitiesServices.insertIntoDistributions(dataset, distributions)
 
-        val cr = createResourcesEntitiesServices.createCatalogRecords(fieldsMap, idCR)
+        val cr = createResourcesEntitiesServices.createCatalogRecords(fieldsMap, idCR, idCatalog)
+            ?: return Error("No se ha creado el Catalog Record")
 
-        createRelationsBetweenEntitiesServices.insertIntoCatalogRecord(cr, idCatalog)
         return converter.toCatalogRecord(cr)
     }
 }

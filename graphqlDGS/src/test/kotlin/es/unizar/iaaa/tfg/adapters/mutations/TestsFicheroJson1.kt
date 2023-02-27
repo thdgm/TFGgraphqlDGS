@@ -300,6 +300,7 @@ class TestsFicheroJson1 {
         )
         val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
         val response = GraphQLResponse(createCR.jsonString())
+
         val distributions = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].id"
         )

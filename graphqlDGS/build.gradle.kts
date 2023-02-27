@@ -36,6 +36,8 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-validation:3.0.2")
 
@@ -47,10 +49,11 @@ dependencies {
 	implementation("org.json:json:20090211")
 	implementation ("com.google.code.gson:gson:2.8.5")
 
+	implementation("redis.clients:jedis:4.4.0-m2")
+
 	implementation ("io.github.microutils:kotlin-logging-jvm:2.0.11")
 
 	implementation ("commons-validator:commons-validator:1.7")
-
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
@@ -62,6 +65,8 @@ dependencies {
 	testImplementation("org.springframework.graphql:spring-graphql-test")
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0")
+
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 dependencyManagement {

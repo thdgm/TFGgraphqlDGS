@@ -101,17 +101,15 @@ class CreateRelationsBetweenEntitiesServicesImpl(
         descriptionRepository.insertInLanguageDescriptions(languageId,descriptionId,resourceId)
     }
     override fun insertIntoLanguageTitles(languageId: String, titleId: String, resDist:Any){
-        if (resDist is ResourceEntity){
-            titlesResourceRepository.insertInLanguageTitles(languageId,titleId,resDist.id)
-        }else if(resDist is DistributionEntity){
-            titlesDistributionRepository.insertInLanguageTitles(languageId,resDist.id,titleId)
+        when(resDist){
+            is ResourceEntity -> titlesResourceRepository.insertInLanguageTitles(languageId,titleId,resDist.id)
+            is DistributionEntity -> titlesDistributionRepository.insertInLanguageTitles(languageId,resDist.id,titleId)
         }
-
     }
 
     override fun insertIntoThemesResources(themeIds: Collection<String?>, resourceId: String){
         themeIds.forEach {
-            if (it != null){
+            if (!it.isNullOrBlank()){
                 val newTheme = ThemeEntity()
                 newTheme.id = it
                 themeRepository.save(newTheme)
