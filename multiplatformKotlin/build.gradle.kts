@@ -9,6 +9,7 @@ plugins {
     id("com.netflix.dgs.codegen") version "5.6.7" apply false
     id("io.freefair.lombok") version "5.3.0" //apply false
     id("io.gitlab.arturbosch.detekt").version("1.22.0")
+    id("org.jetbrains.kotlinx.kover") version "0.7.0-Alpha"
 
     kotlin("plugin.jpa") version "1.8.0" //apply false
     kotlin("plugin.lombok") version "1.8.10" //apply false
@@ -30,7 +31,7 @@ repositories {
 
 
 kotlin {
-    jvm("graphql") {
+    jvm{
         compilations.all {
             kotlinOptions.jvmTarget = "17"
         }
@@ -56,7 +57,7 @@ kotlin {
             // The package name to use to generate sources
 
 
-            schemaPaths = mutableListOf("src/graphqlMain/resources/schema")
+            schemaPaths = mutableListOf("src/jvmMain/resources/schema")
             packageName = "com.graphqlDGS.graphqlDGS.model"
             language = "kotlin"
             typeMapping=mutableMapOf("LangString" to "es.unizar.iaaa.tfg.annotations.LangString",
@@ -94,7 +95,7 @@ kotlin {
         }
     }
     sourceSets {
-        val graphqlMain by getting{
+        val jvmMain by getting{
             dependencies{
               implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
               implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
@@ -130,7 +131,7 @@ kotlin {
 
             }
         }
-        val graphqlTest by getting{
+        val jvmTest by getting{
             dependencies{
                 implementation("org.springframework.boot:spring-boot-starter-test")
                 implementation("org.springframework:spring-webflux")
@@ -170,12 +171,12 @@ dependencyManagement {
     }
 }
 
-tasks.getByName<Copy>("graphqlProcessResources") {
+tasks.getByName<Copy>("jvmProcessResources") {
     dependsOn(tasks.getByName("jsBrowserDevelopmentWebpack"))
 }
 
 tasks.getByName<JavaExec>("run") {
-    dependsOn(tasks.named<Jar>("graphqlJar"))
+    dependsOn(tasks.named<Jar>("jvmJar"))
 }
 
 
