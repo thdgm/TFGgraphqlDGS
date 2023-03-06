@@ -16,6 +16,9 @@ plugins {
     application
 }
 
+fun kotlinw(target: String): String =
+    "org.jetbrains.kotlin-wrappers:kotlin-$target"
+
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 
@@ -78,13 +81,12 @@ kotlin {
 
     }
 
-    js("react",IR) {
+    js(IR) {
         binaries.executable()
         browser {
             commonWebpackConfig {
                 cssSupport{
                     enabled.set(true)
-                    outputFileName = "main.js"
                     outputPath = File(buildDir, "processedResources/spring/main/static")
                 }
 
@@ -136,14 +138,19 @@ kotlin {
             }
         }
 
-        val reactMain by getting{
+        val jsMain by getting{
             dependencies{
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react:18.2.0-pre.385")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom:18.2.0-pre.385")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion:11.10.4-pre.385")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom:6.3.0-pre.385")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-redux:4.1.2-pre.385")
-                implementation("org.jetbrains.kotlin-wrappers:kotlin-react-redux:7.2.6-pre.385")
+                implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.385")))
+
+                implementation(kotlinw("react"))
+                implementation(kotlinw("react-dom"))
+                implementation(kotlinw("react-router-dom"))
+                implementation(kotlinw("redux"))
+                implementation(kotlinw("react-redux"))
+
+                implementation(kotlinw("emotion"))
+                implementation(kotlinw("mui"))
+                implementation(kotlinw("mui-icons"))
 
                 implementation(npm("todomvc-app-css", "2.0.0"))
                 implementation(npm("todomvc-common", "1.0.0"))
@@ -163,7 +170,13 @@ dependencyManagement {
     }
 }
 
+tasks.getByName<Copy>("graphqlProcessResources") {
+    dependsOn(tasks.getByName("jsBrowserDevelopmentWebpack"))
+}
 
+tasks.getByName<JavaExec>("run") {
+    dependsOn(tasks.named<Jar>("graphqlJar"))
+}
 
 
 
