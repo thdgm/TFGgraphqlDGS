@@ -4,11 +4,11 @@ import com.graphqlDGS.graphqlDGS.model.types.Catalog
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordOutput
 import com.graphqlDGS.graphqlDGS.model.types.Error
+import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
-import es.unizar.iaaa.tfg.services.mutationServices.CreateAuxiliarEntitiesServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateRelationsBetweenEntitiesServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateResourcesEntitiesServices
 import org.slf4j.LoggerFactory.getLogger
@@ -31,7 +31,6 @@ class CatalogRecordsServicesImpl(
     private val catalogRecordsRepository: CatalogRecordsRepository,
     private val converter: ConvertersResourcesEntitiesTo,
     private val catalogRepository: CatalogRepository,
-    private val createAuxiliarEntitiesServices: CreateAuxiliarEntitiesServices,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
     private val createResourcesEntitiesServices: CreateResourcesEntitiesServices,
 ) : CatalogRecordsServices {
@@ -44,10 +43,12 @@ class CatalogRecordsServicesImpl(
 
     // Return de list of catalogRecord which contains de resource id
     override fun getCatalogsRecordOf(filterId: String?, id: String): Collection<CatalogRecord?> {
-        val catalogRecords = catalogRecordsRepository.findCatalogRecordsByResourceId(id)
-            .map {
-                converter.toCatalogRecord(it!!)
-            }
+
+        var catalogRecords = catalogRecordsRepository.findCatalogRecordsByResourceId(id)
+                .map {
+                        if (it != null) converter.toCatalogRecord(it) else null
+                }
+
         return if (filterId == null) catalogRecords else catalogRecords.filter { it?.id == filterId }
     }
 
@@ -64,25 +65,26 @@ class CatalogRecordsServicesImpl(
         idCatalog: String
     ): CatalogRecordOutput {
         getLogger("logger").debug("START create CR")
-
+        var err: Error? = null
+        var cr: CatalogRecordEntity? = null
         val catalog = catalogRepository.findById(idCatalog).get()
         val services = createResourcesEntitiesServices.createDataservices()
         val distributions = createResourcesEntitiesServices.createDistributions(fieldsMap, services)
         val dataset = createResourcesEntitiesServices.createDatasets(fieldsMap,distributions)
-            ?: return Error("No se ha creado el dataset")
 
-        services.forEach {
-            createRelationsBetweenEntitiesServices.insertIntoServesDataset(it, dataset)
-            createRelationsBetweenEntitiesServices.insertIntoAccessInService(distributions, it)
-            createRelationsBetweenEntitiesServices.insertIntoRelathionships(catalog, it)
-            createRelationsBetweenEntitiesServices.insertIntoServesDataset(it, catalog)
+        if (dataset != null){
+            services.forEach {
+                createRelationsBetweenEntitiesServices.insertIntoServesDataset(it, dataset)
+                createRelationsBetweenEntitiesServices.insertIntoAccessInService(distributions, it)
+                createRelationsBetweenEntitiesServices.insertIntoRelathionships(catalog, it)
+                createRelationsBetweenEntitiesServices.insertIntoServesDataset(it, catalog)
+            }
+            createRelationsBetweenEntitiesServices.insertIntoRelathionships(catalog, dataset)
+            cr = createResourcesEntitiesServices.createCatalogRecords(fieldsMap, idCR, idCatalog)
+        }else{
+            err = Error("No se ha creado el Dataset")
         }
 
-        createRelationsBetweenEntitiesServices.insertIntoRelathionships(catalog, dataset)
-
-        val cr = createResourcesEntitiesServices.createCatalogRecords(fieldsMap, idCR, idCatalog)
-            ?: return Error("No se ha creado el Catalog Record")
-
-        return converter.toCatalogRecord(cr)
+        return err ?:  if(cr != null) converter.toCatalogRecord(cr) else Error("No se ha creado el Catalog Record")
     }
 }

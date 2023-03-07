@@ -7,7 +7,7 @@ import graphql.schema.Coercing
 import org.springframework.beans.factory.annotation.Autowired
 
 @DgsScalar(name = "Periocidad")
-class PeriocidadScalar : Coercing<String,Periocidad> { // Coercing Input,Output
+class PeriodicidadScalar : Coercing<String,Periocidad> { // Coercing Input,Output
 
     @Autowired
     lateinit var converter: ConvertersAuxiliarEntitiesTo

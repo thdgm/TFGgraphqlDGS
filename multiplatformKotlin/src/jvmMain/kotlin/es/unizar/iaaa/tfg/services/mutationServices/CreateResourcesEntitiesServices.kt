@@ -54,6 +54,7 @@ class CreateResourcesEntitiesServicesImpl(
     private val catalogRecordsRepository: CatalogRecordsRepository,
     private val datasetRepository: DatasetRepository,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
+    private val createRelationsBetweenEntitiesLanguageServices: CreateRelationsBetweenEntitiesLanguageServices,
     private val checkIfExistResourceServices: CheckIfExistResourceServices,
 
     ) : CreateResourcesEntitiesServices {
@@ -198,7 +199,7 @@ class CreateResourcesEntitiesServicesImpl(
         createAuxiliarEntitiesServices.createKeywords(jsonFields,dataset.id)
 
         val languages = createAuxiliarEntitiesServices.createLanguages(jsonFields)
-        createRelationsBetweenEntitiesServices.insertIntoLanguagesResources(languages, dataset)
+        createRelationsBetweenEntitiesLanguageServices.insertIntoLanguagesResources(languages, dataset)
 
         createAuxiliarEntitiesServices.createTitle(datasetModel.titlesText,datasetModel.titlesLang, dataset)
     }

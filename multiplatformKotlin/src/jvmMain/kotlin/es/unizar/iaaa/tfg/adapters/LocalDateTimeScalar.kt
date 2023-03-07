@@ -1,6 +1,7 @@
 package es.unizar.iaaa.tfg.adapters
 
 import com.netflix.graphql.dgs.DgsScalar
+import es.unizar.iaaa.tfg.constants.ConstantValues.DATE_PATTERN
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import graphql.schema.Coercing
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,7 +14,7 @@ class LocalDateTimeScalar : Coercing<LocalDateTime, String> { // Coercing Input,
     @Autowired
     lateinit var converter: ConvertersAuxiliarEntitiesTo
 
-    var dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'+'SS:ss")
+    var dateFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern(DATE_PATTERN)
 
     override fun serialize(input: Any): String? {
         if (input is LocalDateTime) {

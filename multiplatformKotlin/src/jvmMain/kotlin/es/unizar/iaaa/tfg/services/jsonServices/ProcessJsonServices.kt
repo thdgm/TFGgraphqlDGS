@@ -1,4 +1,4 @@
-package es.unizar.iaaa.tfg.services.mutationServices
+package es.unizar.iaaa.tfg.services.jsonServices
 
 import es.unizar.iaaa.tfg.jsonDataModels.AccrualPeriodicityJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
@@ -10,7 +10,6 @@ import es.unizar.iaaa.tfg.jsonDataModels.PublisherJsonMapping
 import org.apache.commons.validator.routines.UrlValidator
 import org.json.JSONArray
 import org.json.JSONObject
-import org.slf4j.LoggerFactory.getLogger
 import org.springframework.core.io.ResourceLoader
 import org.springframework.stereotype.Service
 
@@ -23,6 +22,7 @@ interface ProcessJsonServices {
 @Service
 class ProcessJsonServicesImpl(
     private val resourceLoader: ResourceLoader,
+    private val jsonModelServices:JsonModelServices,
 
     ) : ProcessJsonServices {
 
@@ -43,13 +43,14 @@ class ProcessJsonServicesImpl(
 
     // Process map [JsonObject-type] using auxiliar function setupFields
     override fun processJson(map: Map<JSONObject, String>): MutableMap<ModelJsonMapping,String>  {
-        var goodMap = mutableMapOf<ModelJsonMapping,String>()
-        var mapModel = mutableMapOf<String,Collection<String>>()
+        val modelTypeMap = mutableMapOf<ModelJsonMapping,String>()
+        val mapModel = mutableMapOf<String,Collection<String>>()
         map.map { //(key, value) ->
            // goodMap += setUpFields(value.split(":").elementAt(1), key)
             val type = it.value.split(":").elementAt(1)
             val json= it.key
             it.key.keys().forEach {
+
                 val keySplit = it.toString().split(":")
                 val element = json.get(it.toString())
                 val key =
@@ -58,14 +59,15 @@ class ProcessJsonServicesImpl(
                 val rango =
                     if( keySplit.elementAt(0) == "time") keySplit.elementAt(1)
                     else null
-                mapModel = processJsonElement(element, key,type, mapModel,rango)
+                mapModel += processJsonElement(element, key,type, mapModel,rango)
             }
-            goodMap += createModelMapping(mapModel,type)
+            modelTypeMap += createModelMapping(mapModel,type)
             mapModel.clear()
         }
-        return goodMap
+        return modelTypeMap
     }
 
+/*
 
     fun processArrayByKey(
         k: String,
@@ -273,115 +275,124 @@ class ProcessJsonServicesImpl(
 
     fun createModels(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping?{
         return when(type){
-            "Dataset" -> {
-                 DatasetJsonMapping(
-                     id = fields.getValue("DatasetId").elementAt(0),
-                     issued = if (fields.containsKey("Issued")){
-                         fields.getValue("Issued").elementAt(0)
-                     }else{null},
-                     modified = if (fields.containsKey("Modified")){
-                         fields.getValue("Modified").elementAt(0)
-                     }else{null},
-                     titlesText = if (fields.containsKey("DatasetTitlesText")){
-                         fields.getValue("DatasetTitlesText")
-                     }else{ emptyList()},
-                     titlesLang = if (fields.containsKey("DatasetTitlesLang")){
-                         fields.getValue("DatasetTitlesLang")
-                     }else{ emptyList()},
-                     distributions = if (fields.containsKey("Distributions")){
-                         fields.getValue("Distributions")
-                     }else{ emptyList()},
-                     descriptionsText = if (fields.containsKey("DescriptionsText")){
-                         fields.getValue("DescriptionsText")
-                     }else{ emptyList()},
-                     descriptionsLang = if (fields.containsKey("DescriptionsLang")){
-                         fields.getValue("DescriptionsLang")
-                     }else{ emptyList()},
-                     keywordsWord = if (fields.containsKey("KeywordsWord")){
-                         fields.getValue("KeywordsWord")
-                     }else{ emptyList()},
-                     keywordsLang = if (fields.containsKey("KeywordsLang")){
-                         fields.getValue("KeywordsLang")
-                     }else{ emptyList()},
-                     languages = if (fields.containsKey("DatasetLanguages")){
-                         fields.getValue("DatasetLanguages")
-                     }else{ emptyList()},
-                     spatial = if (fields.containsKey("Spatial")){
-                         fields.getValue("Spatial")
-                     }else{ emptyList()},
-                     identifier = if (fields.containsKey("DatasetIdentifiers")){
-                         fields.getValue("DatasetIdentifiers")
-                     }else{ emptyList() },
-                     license = if (fields.containsKey("License")){
-                         fields.getValue("License").elementAt(0)
-                     }else{null},
-                     theme = if (fields.containsKey("Theme")){
-                         fields.getValue("Theme")
-                     }else{emptyList()},
-                     publisher = if (fields.containsKey("Publisher")){
-                         fields.getValue("Publisher").elementAt(0)
-                     }else{null},
-                     temporal = if (fields.containsKey("Temporal")){
-                         fields.getValue("Temporal").elementAt(0)
-                     }else{null}
+            "Dataset" -> createDatasetJsonModel(fields,type)
 
-                 )
-            }
-            "PeriodOfTime" -> {
-                PeriodOfTimeJsonMapping(
-                    id= fields.getValue("PeriodOfTimeId").elementAt(0),
-                    start = fields.getValue("Start").elementAt(0),
-                    end = fields.getValue("End").elementAt(0)
-                )
-            }
-            "Distribution" -> {
-                DistributionJsonMapping(
-                    id = fields.getValue("DistributionId").elementAt(0),
-                    accessUrl = if (fields.containsKey("AccessUrl")){
-                        fields.getValue("AccessUrl").elementAt(0)
-                        }else{null},
-                    titlesText = if (fields.containsKey("DistributionTitlesText")){
-                        fields.getValue("DistributionTitlesText")
-                        }else{ emptyList() },
-                    titlesLang = if (fields.containsKey("DistributionTitlesLang")){
-                        fields.getValue("DistributionTitlesLang")
-                        }else{ emptyList() },
-                    byteSize = if (fields.containsKey("ByteSize")){
-                         Integer.parseInt( fields.getValue("ByteSize").elementAt(0))
-                        }else{ null },
-                    identifier = if (fields.containsKey("DistributionIdentifiers")){
-                        fields.getValue("DistributionIdentifiers")
-                        }else{ emptyList() },
-                    format = if (fields.containsKey("Format")){
-                        fields.getValue("Format").elementAt(0)
-                    }else{ null },
+            "PeriodOfTime" -> createPeriodOfTimeJsonModel(fields,type)
 
+            "Distribution" -> createDistributionJsonModel(fields,type)
 
-                )
+            "Concept" -> createPublisherJsonModel(fields,type)
 
-            }
-            "Concept" -> {
-                PublisherJsonMapping(
-                    id = fields.getValue("PublisherId").elementAt(0),
-                    notation = fields.getValue("Notation").elementAt(0),
-                    label = fields.getValue("Label").elementAt(0),
-                )
-            }
-            "IMT" -> {
-                ImtJsonMapping(
-                    id = fields.getValue("ImtId").elementAt(0),
-                    value = fields.getValue("ValueImt").elementAt(0),
-                )
-            }
-            "DurationDescription"->{
-                AccrualPeriodicityJsonMapping(
-                    value = fields.getValue("AccrualPeriodicity").elementAt(0)
-                )
+            "IMT" -> createImtJsonModel(fields,type)
 
-            }
+            "DurationDescription"-> createAccrualPeriodicityJsonModel(fields,type)
+
             else -> {null}
         }
     }
+
+    fun createPeriodOfTimeJsonModel(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping? =
+        PeriodOfTimeJsonMapping(
+            id= fields.getValue("PeriodOfTimeId").elementAt(0),
+            start = fields.getValue("Start").elementAt(0),
+            end = fields.getValue("End").elementAt(0)
+        )
+
+    fun createPublisherJsonModel(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping? =
+        PublisherJsonMapping(
+            id = fields.getValue("PublisherId").elementAt(0),
+            notation = fields.getValue("Notation").elementAt(0),
+            label = fields.getValue("Label").elementAt(0),
+        )
+
+    fun createImtJsonModel(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping? =
+        ImtJsonMapping(
+            id = fields.getValue("ImtId").elementAt(0),
+            value = fields.getValue("ValueImt").elementAt(0),
+        )
+
+    fun createAccrualPeriodicityJsonModel(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping? =
+        AccrualPeriodicityJsonMapping(
+            value = fields.getValue("AccrualPeriodicity").elementAt(0)
+        )
+
+    fun createDatasetJsonModel(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping? =
+        DatasetJsonMapping(
+            id = fields.getValue("DatasetId").elementAt(0),
+            issued = if (fields.containsKey("Issued")){
+                fields.getValue("Issued").elementAt(0)
+            }else{null},
+            modified = if (fields.containsKey("Modified")){
+                fields.getValue("Modified").elementAt(0)
+            }else{null},
+            titlesText = if (fields.containsKey("DatasetTitlesText")){
+                fields.getValue("DatasetTitlesText")
+            }else{ emptyList()},
+            titlesLang = if (fields.containsKey("DatasetTitlesLang")){
+                fields.getValue("DatasetTitlesLang")
+            }else{ emptyList()},
+            distributions = if (fields.containsKey("Distributions")){
+                fields.getValue("Distributions")
+            }else{ emptyList()},
+            descriptionsText = if (fields.containsKey("DescriptionsText")){
+                fields.getValue("DescriptionsText")
+            }else{ emptyList()},
+            descriptionsLang = if (fields.containsKey("DescriptionsLang")){
+                fields.getValue("DescriptionsLang")
+            }else{ emptyList()},
+            keywordsWord = if (fields.containsKey("KeywordsWord")){
+                fields.getValue("KeywordsWord")
+            }else{ emptyList()},
+            keywordsLang = if (fields.containsKey("KeywordsLang")){
+                fields.getValue("KeywordsLang")
+            }else{ emptyList()},
+            languages = if (fields.containsKey("DatasetLanguages")){
+                fields.getValue("DatasetLanguages")
+            }else{ emptyList()},
+            spatial = if (fields.containsKey("Spatial")){
+                fields.getValue("Spatial")
+            }else{ emptyList()},
+            identifier = if (fields.containsKey("DatasetIdentifiers")){
+                fields.getValue("DatasetIdentifiers")
+            }else{ emptyList() },
+            license = if (fields.containsKey("License")){
+                fields.getValue("License").elementAt(0)
+            }else{null},
+            theme = if (fields.containsKey("Theme")){
+                fields.getValue("Theme")
+            }else{emptyList()},
+            publisher = if (fields.containsKey("Publisher")){
+                fields.getValue("Publisher").elementAt(0)
+            }else{null},
+            temporal = if (fields.containsKey("Temporal")){
+                fields.getValue("Temporal").elementAt(0)
+            }else{null}
+        )
+
+    fun createDistributionJsonModel(fields: Map<String,Collection<String>>,type:String): ModelJsonMapping? =
+        DistributionJsonMapping(
+            id = fields.getValue("DistributionId").elementAt(0),
+            accessUrl = if (fields.containsKey("AccessUrl")){
+                fields.getValue("AccessUrl").elementAt(0)
+            }else{null},
+            titlesText = if (fields.containsKey("DistributionTitlesText")){
+                fields.getValue("DistributionTitlesText")
+            }else{ emptyList() },
+            titlesLang = if (fields.containsKey("DistributionTitlesLang")){
+                fields.getValue("DistributionTitlesLang")
+            }else{ emptyList() },
+            byteSize = if (fields.containsKey("ByteSize")){
+                Integer.parseInt( fields.getValue("ByteSize").elementAt(0))
+            }else{ null },
+            identifier = if (fields.containsKey("DistributionIdentifiers")){
+                fields.getValue("DistributionIdentifiers")
+            }else{ emptyList() },
+            format = if (fields.containsKey("Format")){
+                fields.getValue("Format").elementAt(0)
+            }else{ null },
+            )
+*/
+
 
     /*
      *  Cast JSONArray into a List in order to make
@@ -409,9 +420,9 @@ class ProcessJsonServicesImpl(
         rango:String?
     ): MutableMap<String, Collection<String>> =
         when(element){
-            is JSONObject -> processObjectByKey(key, element,type,mapModel,rango)
-            is JSONArray -> processArrayByKey(key,element,type,mapModel)
-            is String -> processStringByKey(key, element,type,mapModel)
+            is JSONObject -> jsonModelServices.processObjectByKey(key, element,type,mapModel,rango)
+            is JSONArray -> jsonModelServices.processArrayByKey(key,element,type,mapModel)
+            is String -> jsonModelServices.processStringByKey(key, element,type,mapModel)
             else -> mutableMapOf()
         }
 
@@ -422,16 +433,16 @@ class ProcessJsonServicesImpl(
         mapModel: MutableMap<String, Collection<String>>,
         type:String
     ): MutableMap<ModelJsonMapping,String> {
-        var goodMap = mutableMapOf<ModelJsonMapping,String>()
-        when(val model = createModels(mapModel,type)){
-            is DistributionJsonMapping -> goodMap[model] = "Distribution"
-            is DatasetJsonMapping -> goodMap[model] = "Dataset"
-            is PeriodOfTimeJsonMapping -> goodMap[model] = "PeriodOfTime"
-            is PublisherJsonMapping -> goodMap[model] = "Publisher"
-            is ImtJsonMapping -> goodMap[model] = "Format"
-            is AccrualPeriodicityJsonMapping -> goodMap[model] = "AccrualPeriodicity"
+        val modelTypeMap = mutableMapOf<ModelJsonMapping,String>()
+        when(val model = jsonModelServices.createModels(mapModel,type)){
+            is DistributionJsonMapping -> modelTypeMap[model] = "Distribution"
+            is DatasetJsonMapping -> modelTypeMap[model] = "Dataset"
+            is PeriodOfTimeJsonMapping -> modelTypeMap[model] = "PeriodOfTime"
+            is PublisherJsonMapping -> modelTypeMap[model] = "Publisher"
+            is ImtJsonMapping -> modelTypeMap[model] = "Format"
+            is AccrualPeriodicityJsonMapping -> modelTypeMap[model] = "AccrualPeriodicity"
         }
-        return goodMap
+        return modelTypeMap
     }
 }
 

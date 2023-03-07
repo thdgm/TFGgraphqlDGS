@@ -35,43 +35,43 @@ class DatasetQueries(
     // @DgsData inSeries: returns inSeries field of the corresponding Dataset
     @DgsData(parentType = "Dataset")
     fun inSeries(filter: String?, dfe: DgsDataFetchingEnvironment): Collection<DatasetSeries?> {
-        val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServices.showInSeriesDataset(filter, dic!!.id)
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServices.showInSeriesDataset(filter, dic.id)
     }
 
     // @DgsData distributions: returns distributions field of the corresponding Dataset
     @DgsData(parentType = "Dataset")
     fun distributions(dfe: DgsDataFetchingEnvironment): Collection<Distribution?> {
-        val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServices.showDistributionsDataset(dic!!.id)
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServices.showDistributionsDataset(dic.id)
     }
 
     // @DgsData keywords: returns keywords field of the corresponding Dataset
     @DgsData(parentType = "Dataset")
     fun keywords(dfe: DgsDataFetchingEnvironment): Collection<LangString?> {
-        val dic: DatasetInCatalog? = dfe.getSource()
+        val dic: DatasetInCatalog = dfe.getSource()
         getLogger("logger").debug("KEYYYYYYYYYYYYYYWOOOOOOORRRRRRRDDDDDDDDSSSSSSSS")
-        return datasetServicesAuxiliarFields.getKeywords(dic!!.id)
+        return datasetServicesAuxiliarFields.getKeywords(dic.id)
     }
 
     // @DgsData spatial: returns locations, spatial field, of the corresponding Dataset
     @DgsData(parentType = "Dataset")
     fun spatial(dfe: DgsDataFetchingEnvironment): Collection<String?> {
-        val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServicesAuxiliarFields.getLocations(dic!!.id)
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getLocations(dic.id)
     }
 
     // @DgsData spatial: returns locations, spatial field, of the corresponding Dataset
     @DgsData(parentType = "Dataset")
     fun accrualPeriodicity(dfe: DgsDataFetchingEnvironment): String? {
-        val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServicesAuxiliarFields.getAccrualPeriodicity(dic!!.id)
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getAccrualPeriodicity(dic.id)
     }
 
     // @DgsData temporal: returns the temporal period that the dataset covers.
     @DgsData(parentType = "Dataset")
     fun temporal(dfe: DgsDataFetchingEnvironment): CoberturaTemporal? {
-        val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServicesAuxiliarFields.getTemporal(dic!!.id)
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getTemporal(dic.id)
     }
 }

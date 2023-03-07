@@ -5,6 +5,7 @@ import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import com.graphqlDGS.graphqlDGS.model.types.DataService
 import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
+import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
@@ -44,11 +45,10 @@ class CatalogServicesImpl(
 
     // Return list with records belonging to catalg id
     override fun showRecordsCatalog(id: String): Collection<CatalogRecord> {
-        return catalogRepository.findByIdOrNull(id)
-            ?.records
-            ?.map {
-                converter.toCatalogRecord(it)
-            } ?: emptyList()
+        val cre = catalogRepository.findByIdOrNull(id)
+        return cre?.records?.map {
+            converter.toCatalogRecord(it)
+        } ?: emptyList()
     }
 
     // Return list with services belonging to catalg id

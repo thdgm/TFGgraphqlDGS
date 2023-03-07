@@ -26,8 +26,8 @@ class CatalogRecordQueries(
     // @DgsData inCatalog: returns catalogs which the CR is in
     @DgsData(parentType = "CatalogRecord")
     fun inCatalog(dfe: DgsDataFetchingEnvironment): Collection<Catalog?> {
-        val cr: CatalogRecord? = dfe.getSource()
-        return catalogRecordsServices.getInCatalog(cr!!.id)
+        val cr: CatalogRecord = dfe.getSource()
+        return catalogRecordsServices.getInCatalog(cr.id)
     }
 
     // @DgsData contentType: returns metadata content type

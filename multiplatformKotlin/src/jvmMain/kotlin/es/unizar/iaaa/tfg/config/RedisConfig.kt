@@ -1,5 +1,7 @@
 package es.unizar.iaaa.tfg.config
 
+import es.unizar.iaaa.tfg.constants.ConstantValues.MAX_IDLE
+import es.unizar.iaaa.tfg.constants.ConstantValues.MIN_IDLE
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -23,18 +25,18 @@ class RedisConfig {
     @Bean
     fun jedisConnectionFactory(): JedisConnectionFactory {
 
-        var redisStandaloneConfiguration = RedisStandaloneConfiguration()
+        val redisStandaloneConfiguration = RedisStandaloneConfiguration()
         redisStandaloneConfiguration.hostName = redisHostName
         redisStandaloneConfiguration.port = redisPort
         val factory = JedisConnectionFactory(redisStandaloneConfiguration)
-        factory.getPoolConfig<String>()?.minIdle = 10
-        factory.getPoolConfig<String>()?.maxIdle = 30
+        factory.getPoolConfig<String>()?.minIdle = MIN_IDLE
+        factory.getPoolConfig<String>()?.maxIdle = MAX_IDLE
         return factory
     }
 
     @Bean
      fun redisTemplate(): RedisTemplate<String, Object> {
-        var template: RedisTemplate<String, Object>  =  RedisTemplate()
+        val template: RedisTemplate<String, Object>  =  RedisTemplate()
         template.setConnectionFactory(jedisConnectionFactory())
 
         template.keySerializer = StringRedisSerializer()

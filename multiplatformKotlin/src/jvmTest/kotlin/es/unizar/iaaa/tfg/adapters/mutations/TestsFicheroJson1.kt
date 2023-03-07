@@ -474,6 +474,7 @@ class TestsFicheroJson1 {
         val title = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].title[*]"
         )
+
         val accessUrl = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].accessUrl"
         )

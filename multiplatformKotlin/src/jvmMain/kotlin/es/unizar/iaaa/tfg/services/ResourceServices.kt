@@ -8,7 +8,6 @@ import es.unizar.iaaa.tfg.constants.ConstantValues.LANGSTRING_SEPARADOR
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.DescriptionRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
-import es.unizar.iaaa.tfg.repository.PublisherRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
 import es.unizar.iaaa.tfg.repository.ThemeRepository
 import es.unizar.iaaa.tfg.repository.TitleResourceRepository
@@ -44,7 +43,6 @@ class ResourceServicesImpl(
     private val catalogRepository: CatalogRepository,
     private val titleRepository: TitleResourceRepository,
     private val themeRepository: ThemeRepository,
-    private val publisherRepository: PublisherRepository,
 
     ) : ResourceServices {
 
@@ -65,17 +63,16 @@ class ResourceServicesImpl(
     override fun getTitles(id: String): Collection<LangString?> {
         var titlesDistribution = listOf<LangString?>()
         getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS")
-        val l = titleRepository.findByResourceTitleId(id)
+        titleRepository.findByResourceTitleId(id)
             .map {
-                getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS2.1 ${it.id} -- ${languageRepository.findLanguagesResourcesByTitlesResourceIdTitleId(it.id.titleId)}")
                 val languageStrings = mutableListOf<LangString?>()
                 val title = it
                 languageRepository.findLanguagesResourcesByTitlesResourceIdTitleId(it.id.titleId)
                     .forEach {
-                        getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS3.1 ${title.id.titleId} -- ${it.id}")
-                        getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS3.2 ${converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.id)}")
 
-                        languageStrings.add(converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.id))
+                        languageStrings.add(
+                            converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.id)
+                        )
                         getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS4")
 
                     }
@@ -98,14 +95,18 @@ class ResourceServicesImpl(
         getLogger("logger").debug("ESTO TENGO: ${descriptionRepository.findByResourceId(id)}")
         var descriptions = listOf<LangString?>()
 
-        val l = descriptionRepository.findByResourceId(id)
+        descriptionRepository.findByResourceId(id)
             .map {
                 val languageStrings = mutableListOf<LangString?>()
                 val description = it
                 languageRepository.findLanguagesResourcesByDescriptionsIdDescriptionId(it.id.descriptionId)
                     .forEach {
 
-                        languageStrings.add(converterAuxiliar.toLangString(description.id.descriptionId + LANGSTRING_SEPARADOR + it.id))
+                        languageStrings.add(
+                            converterAuxiliar.toLangString(
+                                description.id.descriptionId + LANGSTRING_SEPARADOR + it.id
+                            )
+                        )
 
                     }
                 languageStrings
@@ -133,7 +134,7 @@ class ResourceServicesImpl(
 
     // Return theme's list of resource id
     override fun getTheme(id: String): Collection<String?> {
-        getLogger("logger").debug("GEEEEEEETTTTTTTTT THEEEEEEMMMMMMMMEEEEESSSSSSSSS ${themeRepository.findThemeByResourcesId(id)}")
+        getLogger("logger").debug("GEEEEEEETTTTTTTTT THEEEEEEMMMMMMMMEEEEESSSSSSSSS")
         return themeRepository.findThemeByResourcesId(id)
             .map{
                 it?.id

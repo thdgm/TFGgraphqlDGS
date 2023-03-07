@@ -16,7 +16,7 @@ class DatasetInCatalogQueries(
     // @DgsData temporal: returns the inverse of servesDataset DatasetService's property
     @DgsData(parentType = "DatasetInCatalog")
     fun isServedBy(filter: String?, dfe: DgsDataFetchingEnvironment): Collection<DataService?> {
-        val dic: DatasetInCatalog? = dfe.getSource()
-        return datasetServicesAuxiliarFields.getDatasetServices(filter, dic!!.id)
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getDatasetServices(filter, dic.id)
     }
 }

@@ -1,5 +1,6 @@
 package es.unizar.iaaa.tfg.services
 
+import ch.qos.logback.classic.Level
 import ch.qos.logback.classic.Logger as Logging
 import mu.KotlinLogging
 import mu.KLogger
@@ -14,9 +15,10 @@ interface Logger {
 class LoggerImpl: Logger {
     private val logger = KotlinLogging.logger {}
 
-    var mu.KLogger.level
+    var mu.KLogger.level: Level?
         get() = (underlyingLogger as Logging).level
         set(value) { (underlyingLogger as Logging).level = value }
+
 
      constructor() {
         //logger.level = Level.DEBUG
@@ -24,6 +26,4 @@ class LoggerImpl: Logger {
     override fun logger(): KLogger {
         return this.logger
     }
-
-
 }

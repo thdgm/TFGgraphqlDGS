@@ -26,7 +26,7 @@ class DatasetSeriesQueries(
     // @DgsData members: returns members field of the corresponding DatasetSeries
     @DgsData(parentType = "DatasetSeries")
     fun seriesMembers(filter: String?, dfe: DgsDataFetchingEnvironment): Collection<Dataset?> {
-        val ds: DatasetSeries? = dfe.getSource()
-        return datasetSeriesService.showSeriesMembers(filter, ds!!.id)
+        val ds: DatasetSeries = dfe.getSource()
+        return datasetSeriesService.showSeriesMembers(filter, ds.id)
     }
 }

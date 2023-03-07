@@ -18,50 +18,44 @@ import org.springframework.stereotype.Service
 
 interface ConvertersResourcesEntitiesTo {
     fun toCatalogRecord(cre: CatalogRecordEntity): CatalogRecord
-    fun toDataService(res: ResourceEntity): DataService?
+    fun toDataService(res: ResourceEntity?): DataService?
     fun toDataset(res: DatasetEntity?): Dataset?
     fun toCatalog(res: ResourceEntity): Catalog?
     fun createResource(res: ResourceEntity): ResourceInCatalog
     fun createDataset(res: ResourceEntity): DatasetInCatalog
     fun catalogEntitytoCatalog(res: CatalogEntity?): Catalog?
-    fun toDatasetSeries(ds: DatasetSeriesEntity): DatasetSeries
-    fun toDistribution(dist: DistributionEntity): Distribution
+    fun toDatasetSeries(ds: DatasetSeriesEntity?): DatasetSeries?
+    fun toDistribution(dist: DistributionEntity?): Distribution?
 }
 
 @Service
 class ConvertersResourceEntitiesToImpl : ConvertersResourcesEntitiesTo {
 
     // Recibe ResourceEntity y crea el DataService correspondiente
-    override fun toDataService(res: ResourceEntity): DataService? =
-        if (res.type == "data_service") {
-            DataService(res.id)
-        } else {
-            null
-        }
+    override fun toDataService(res: ResourceEntity?): DataService? =
+        if (res != null && res.type == "data_service") DataService(res.id) else null
 
     // Recibe DatasetEntity y crea el Dataset correspondiente
-    override fun toDataset(res: DatasetEntity?): Dataset = Dataset(res!!.id)
+    override fun toDataset(res: DatasetEntity?): Dataset? = if(res != null) Dataset(res.id) else null
 
     // Recibe ResourceEntity y crea el Catalog correspondiente
-    override fun toCatalog(res: ResourceEntity): Catalog? =
-        if (res.type == "catalog") {
-            Catalog(res.id)
-        } else {
-            null
-        }
+    override fun toCatalog(res: ResourceEntity): Catalog? = if (res.type == "catalog")  Catalog(res.id) else null
+
 
     // Recibe CatalogEntity y crea el Catalog correspondiente
-    override fun catalogEntitytoCatalog(res: CatalogEntity?): Catalog = Catalog(res!!.id)
+    override fun catalogEntitytoCatalog(res: CatalogEntity?): Catalog? = if (res != null) Catalog(res.id) else null
 
     // Recibe CatalogRecordEntity y crea el CatalogRecord correspondiente
     override fun toCatalogRecord(cre: CatalogRecordEntity): CatalogRecord =
         CatalogRecord(cre.id, cre.title, primaryTopic = createResource(cre.resource))
 
     // Recibe DatasetSeriesEntity y crea el DatasetSeries correspondiente
-    override fun toDatasetSeries(ds: DatasetSeriesEntity): DatasetSeries = DatasetSeries(ds.id)
+    override fun toDatasetSeries(ds: DatasetSeriesEntity?): DatasetSeries? =
+        if (ds != null) DatasetSeries(ds.id)  else null
 
     // Recibe DsitributionEntity y crea el Distribution correspondiente
-    override fun toDistribution(dist: DistributionEntity): Distribution = Distribution(dist.id)
+    override fun toDistribution(dist: DistributionEntity?): Distribution? =
+        if (dist != null) Distribution(dist.id) else null
 
     // Recibe ResoruceEntity y crea el Resource correspondiente en función del type
     override fun createResource(

@@ -34,7 +34,8 @@ interface DescriptionRepository : JpaRepository<ResourceDescriptionsEntity, Stri
     fun findByResourceId(id: String): Collection<ResourceDescriptionsEntity>
     @Modifying
     @Query(
-        value = "INSERT INTO \"languages_descriptions\" (\"id_language\",\"id_description\",\"id_resource\") VALUES (?1,?2,?3)",
+        value =
+        "INSERT INTO \"languages_descriptions\" (\"id_language\",\"id_description\",\"id_resource\") VALUES (?1,?2,?3)",
         nativeQuery = true
     )
     @Transactional
@@ -48,7 +49,9 @@ interface TitleDistributionRepository : JpaRepository<TitlesDistributionEntity, 
 
     @Modifying
     @Query(
-        value = "INSERT INTO \"languages_titles_distribution\" (\"id_language\",\"id_distribution\",\"id_title\") VALUES (?1,?2,?3)",
+        value =
+        "INSERT INTO \"languages_titles_distribution\" (\"id_language\",\"id_distribution\",\"id_title\") " +
+                "VALUES (?1,?2,?3)",
         nativeQuery = true
     )
     @Transactional
@@ -60,7 +63,8 @@ interface TitleResourceRepository : JpaRepository<TitlesResourceEntity, String> 
 
     @Modifying
     @Query(
-        value = "INSERT INTO \"languages_titles_resources\" (\"id_language\",\"id_title\",\"id_resource\") VALUES (?1,?2,?3)",
+        value =
+        "INSERT INTO \"languages_titles_resources\" (\"id_language\",\"id_title\",\"id_resource\") VALUES (?1,?2,?3)",
         nativeQuery = true
     )
     @Transactional

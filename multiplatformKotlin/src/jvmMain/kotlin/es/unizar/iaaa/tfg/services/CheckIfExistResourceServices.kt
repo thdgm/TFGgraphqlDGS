@@ -3,7 +3,6 @@ package es.unizar.iaaa.tfg.services
 import es.unizar.iaaa.tfg.repository.DistributionRepository
 import es.unizar.iaaa.tfg.repository.IdentifierRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
-import org.slf4j.LoggerFactory.getLogger
 import org.springframework.stereotype.Service
 
 interface CheckIfExistResourceServices {
@@ -34,7 +33,7 @@ class CheckIfExistResourceServicesImpl(
     }
     // Return true if Distribution identifiers exist in the DB
     override fun existDistribution(distIdentifiers: Collection<String?>): Boolean{
-        getLogger("logger").debug("CHEEECKKKK: ${distributionRepository.findAll().map{identifierRepository.findByDistributionId(it.id)}}")
+
         distributionRepository.findAll()
             .map {
                 val identifiers = identifierRepository.findByDistributionId(it.id).map{ ident ->

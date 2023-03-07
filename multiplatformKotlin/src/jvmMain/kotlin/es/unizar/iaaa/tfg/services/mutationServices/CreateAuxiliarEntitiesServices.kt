@@ -55,9 +55,9 @@ class CreateAuxiliarEntitiesServicesImpl(
     private val titlesResourceRepository: TitleResourceRepository,
     private val locationRepository: LocationRepository,
     private val descriptionRepository: DescriptionRepository,
-    private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
     private val publisherRepository: PublisherRepository,
     private val identifierRepository: IdentifierRepository,
+    private val createRelationsBetweenEntitiesLanguageServices: CreateRelationsBetweenEntitiesLanguageServices,
 
     ) : CreateAuxiliarEntitiesServices {
 
@@ -67,7 +67,7 @@ class CreateAuxiliarEntitiesServicesImpl(
         val datasetModel = jsonFields.filterValues { it == DATASET }.keys.elementAt(0) as DatasetJsonMapping
         val languages = mutableListOf<LanguageEntity>()
 
-        if(!datasetModel.languages.isNullOrEmpty()){
+        if(!datasetModel.languages.isEmpty()){
            datasetModel.languages.forEach { language ->
                 val l = LanguageEntity()
                 l.id = language as String
@@ -88,14 +88,16 @@ class CreateAuxiliarEntitiesServicesImpl(
         val datasetModel = jsonFields.filterValues { it == DATASET }.keys.elementAt(0) as DatasetJsonMapping
         val keywords = mutableListOf<KeywordEntity>()
 
-        if(!datasetModel.keywordsWord.isNullOrEmpty()){
+        if(!datasetModel.keywordsWord.isEmpty()){
             datasetModel.keywordsWord.forEachIndexed { index, word ->
                 val kw = KeywordEntity()
+                val language = datasetModel.keywordsLang.elementAt(index)
                 val kwId = KeywordDatasetId()
                 kwId.wordId = word as String
                 kwId.datasetId = idRes
                 kw.id = kwId
-                kw.language = languageRepository.findById(datasetModel.keywordsLang.elementAt(index)!!).get()
+                if (language != null)
+                    kw.language = languageRepository.findById(language).get()
                 keywordRepository.save(kw)
                 keywords.add(kw)
             }
@@ -113,24 +115,28 @@ class CreateAuxiliarEntitiesServicesImpl(
                     is DistributionEntity -> {
                         val tit = TitlesDistributionEntity()
                         val titleId = TitleDistributionId()
-                        titleId.titleId = text ?: ""
+                        titleId.titleId = text.orEmpty()
                         titleId.distributionId = res.id
                         tit.id = titleId
-                        val language = titleLangs.elementAt(index)!!
+                        val language = titleLangs.elementAt(index)
                         tit.distributionTitle = res
                         titlesDistributionRepository.save(tit)
-                        createRelationsBetweenEntitiesServices.insertIntoLanguageTitles(language,tit.id.titleId,res)
+                        if (language != null)
+                            createRelationsBetweenEntitiesLanguageServices
+                                .insertIntoLanguageTitles(language,tit.id.titleId,res)
                     }
                     is ResourceEntity -> {
                         val tit = TitlesResourceEntity()
                         val titleId = TitleResourceId()
-                        titleId.titleId = text ?: ""
+                        titleId.titleId = text.orEmpty()
                         titleId.resourceId = res.id
                         tit.id = titleId
-                        val language = titleLangs.elementAt(index)!!
+                        val language = titleLangs.elementAt(index)
                         tit.resourceTitle = res
                         titlesResourceRepository.save(tit)
-                        createRelationsBetweenEntitiesServices.insertIntoLanguageTitles(language,tit.id.titleId,res)
+                        if (language != null)
+                            createRelationsBetweenEntitiesLanguageServices
+                                .insertIntoLanguageTitles(language,tit.id.titleId,res)
                     }
                 }
               }
@@ -139,18 +145,18 @@ class CreateAuxiliarEntitiesServicesImpl(
 
     override fun createLocation(spatial: Collection<String?>): MutableCollection<LocationEntity> {
         val listLocations = mutableListOf<LocationEntity>()
-        if (spatial.isNotEmpty()) {
-            spatial.forEach {text ->
-                val locate = text?.split(LOCATION_DELIMETER)
-                val loc = LocationEntity()
-                loc.nombre = text as String
-                if (!locate.isNullOrEmpty()) loc.tipo = locate[locate.size - 2]
-                if (!locationRepository.existsById(loc.nombre)) locationRepository.save(loc)
-                listLocations.add(loc)
-            }
-            return listLocations
+
+        spatial.forEach {text ->
+            val locate = text?.split(LOCATION_DELIMETER)
+            val loc = LocationEntity()
+            loc.nombre = text as String
+            if (!locate.isNullOrEmpty()) loc.tipo = locate[locate.size - 2]
+            if (!locationRepository.existsById(loc.nombre)) locationRepository.save(loc)
+            listLocations.add(loc)
         }
-        throw Error("Error al crear locations")
+        return listLocations
+
+
     }
 
     override fun createResourceDescriptions(
@@ -161,17 +167,21 @@ class CreateAuxiliarEntitiesServicesImpl(
         if (descTexts.isNotEmpty()) {
             descTexts.forEachIndexed { index, text ->
                 val desc = ResourceDescriptionsEntity()
-                val language = descLangs.elementAt(index)!!
+                val language = descLangs.elementAt(index)
+
                 val descId = ResourceDescriptionId()
                 descId.descriptionId = text as String
                 descId.resourceId = res.id
                 desc.id = descId
                 descriptionRepository.save(desc)
-                createRelationsBetweenEntitiesServices.insertIntoLanguageDescriptions(
-                    language,
-                    desc.id.descriptionId,
-                    res.id
-                )
+                if (language != null)
+                    createRelationsBetweenEntitiesLanguageServices.insertIntoLanguageDescriptions(
+                        language,
+                        desc.id.descriptionId,
+                        res.id
+                    )
+
+
             }
         }
     }
@@ -179,18 +189,21 @@ class CreateAuxiliarEntitiesServicesImpl(
     override fun createPublisher(jsonFields: MutableMap<ModelJsonMapping, String>, idPublisher:String?):PublisherEntity?
 
     {
+        var newPublisher: PublisherEntity? = null
         if (idPublisher == null) return null
         val publishersJson = jsonFields.filterValues { it == PUBLISHER}
             .keys
             .map { it as PublisherJsonMapping }
             .filter { it.id == idPublisher}
-        if (publishersJson.isEmpty()) return null
-        val publisherJson = publishersJson.elementAt(0)
-        val newPublisher = PublisherEntity()
-        newPublisher.id = publisherJson.id
-        newPublisher.label = publisherJson.label
-        newPublisher.notation = publisherJson.notation
-        if(!publisherRepository.existsById(newPublisher.id)) publisherRepository.save(newPublisher)
+        if (publishersJson.isNotEmpty()){
+            val publisherJson = publishersJson.elementAt(0)
+            newPublisher = PublisherEntity()
+            newPublisher.id = publisherJson.id
+            newPublisher.label = publisherJson.label
+            newPublisher.notation = publisherJson.notation
+            if(!publisherRepository.existsById(newPublisher.id)) publisherRepository.save(newPublisher)
+        }
+
         return newPublisher
     }
     override fun createFormat(jsonFields: MutableMap<ModelJsonMapping, String>, idFormat:String?):String?{
@@ -199,8 +212,8 @@ class CreateAuxiliarEntitiesServicesImpl(
             .keys
             .map { it as ImtJsonMapping }
             .filter { it.id == idFormat}
-        if (imtJson.isEmpty()) return null
-        return imtJson.elementAt(0).value
+        return if (imtJson.isEmpty()) null else imtJson.elementAt(0).value
+
     }
 
     override fun createPeriodOfTime(
@@ -213,26 +226,25 @@ class CreateAuxiliarEntitiesServicesImpl(
             .keys
             .map { it as PeriodOfTimeJsonMapping }
             .filter { it.id == idTemporal}
-        if (periodOfTimeJson.isNullOrEmpty()) return null
-        return periodOfTimeJson.elementAt(0)
+        return  if (periodOfTimeJson.isEmpty()) null else periodOfTimeJson.elementAt(0)
     }
 
     override fun createIdentifier(identifiers:Collection<String?>, resDist:Any){
 
-        if (!identifiers.isNullOrEmpty()){
-            identifiers.forEach {
-                val identifier = IdentifierEntity()
-                if (!it.isNullOrBlank()) {
-                    identifier.id = it
-                    when (resDist) {
-                        is ResourceEntity -> identifier.resource = resDist
-                        is DistributionEntity -> identifier.distribution = resDist
-                        else -> null
-                    }
-                    identifierRepository.save(identifier)
+
+        identifiers.forEach {
+            val identifier = IdentifierEntity()
+            if (!it.isNullOrBlank()) {
+                identifier.id = it
+                when (resDist) {
+                    is ResourceEntity -> identifier.resource = resDist
+                    is DistributionEntity -> identifier.distribution = resDist
+                    else -> null
                 }
+                identifierRepository.save(identifier)
             }
         }
+
     }
 }
 

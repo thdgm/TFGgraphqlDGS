@@ -12,5 +12,7 @@ object ConstantValues {
     const val PUBLISHER = "Publisher"
     const val FORMAT = "Format"
     const val PERIOD_OF_TIME = "PeriodOfTime"
+    const val MAX_IDLE = 30
+    const val MIN_IDLE = 10
 
 }

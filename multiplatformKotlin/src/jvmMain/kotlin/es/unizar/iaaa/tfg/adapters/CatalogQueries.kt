@@ -28,35 +28,35 @@ class CatalogQueries(
     // @DgsData catalogs: returns catalogs field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
     fun catalogs(dfe: DgsDataFetchingEnvironment): Collection<Catalog?> {
-        val ct: Catalog? = dfe.getSource()
-        return catalogServices.showCalogsCatalog(ct!!.id)
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.showCalogsCatalog(ct.id)
     }
 
     // @DgsData records: returns records field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
     fun records(dfe: DgsDataFetchingEnvironment): Collection<CatalogRecord?> {
-        val ct: Catalog? = dfe.getSource()
-        return catalogServices.showRecordsCatalog(ct!!.id)
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.showRecordsCatalog(ct.id)
     }
 
     // @DgsData services: returns services field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
     fun services(dfe: DgsDataFetchingEnvironment): Collection<DataService?> {
-        val ct: Catalog? = dfe.getSource()
-        return catalogServices.showServicesCatalog(ct!!.id)
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.showServicesCatalog(ct.id)
     }
 
     // @DgsData datasets: returns datasets field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
     fun datasets(dfe: DgsDataFetchingEnvironment): Collection<DatasetInCatalog?> {
-        val ct: Catalog? = dfe.getSource()
-        return catalogServices.showDatasetsCatalog(ct!!.id)
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.showDatasetsCatalog(ct.id)
     }
 
     // @DgsData resources: returns resources field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
     fun resources(dfe: DgsDataFetchingEnvironment): Collection<ResourceInCatalog?> {
-        val ct: Catalog? = dfe.getSource()
-        return catalogServices.showResourcesCatalog(ct!!.id)
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.showResourcesCatalog(ct.id)
     }
 }

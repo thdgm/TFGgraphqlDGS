@@ -38,7 +38,7 @@ class DatasetServicesAuxiliarFieldsImpl(
         getLogger("logger").debug("KEYYYYYYYYYYYYYYWOOOOOOORRRRRRRDDDDDDDDSSSSSSSS2")
         return keywordRepository.findKeywordsByDatasetId(id)
             .map {
-                converterAuxiliar.toLangString(it.id.wordId + LANGSTRING_SEPARADOR + it.language.id) // converterAuxiliar.toKeywords(it)
+                converterAuxiliar.toLangString(it.id.wordId + LANGSTRING_SEPARADOR + it.language.id)
             }
     }
     // Return property Location Dataset

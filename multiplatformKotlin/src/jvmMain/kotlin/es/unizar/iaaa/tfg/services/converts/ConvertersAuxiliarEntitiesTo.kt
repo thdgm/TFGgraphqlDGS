@@ -29,13 +29,13 @@ interface ConvertersAuxiliarEntitiesTo {
 class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
 
     // Recibe KeywordEntity y crea el Keywords correspondiente
-    override fun toKeywords(keyw: KeywordEntity?): Keywords = Keywords(keyw!!.id.wordId, keyw.language.id)
+    override fun toKeywords(keyw: KeywordEntity?): Keywords = Keywords(keyw?.id?.wordId, keyw?.language?.id)
 
 
     // Transform String to Periocidad
     override fun toPeriocidad(value: String?): Periocidad {
         getLogger("logger").debug("PERIODIIIICIIIIDADDDDDD: ${value}")
-        if (value == null || value == "") {
+        if (value.isNullOrEmpty()) {
             return Periocidad(null, null)
         }
         val rango = value.split(" ")
@@ -46,9 +46,9 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
 
     // Transform two Dates to CoberturaTemporal
 
-    override fun toCoberturaTemporal(date1: LocalDateTime?, date2: LocalDateTime?): CoberturaTemporal? {
-        return CoberturaTemporal(date1, date2)
-    }
+    override fun toCoberturaTemporal(date1: LocalDateTime?, date2: LocalDateTime?): CoberturaTemporal? =
+        CoberturaTemporal(date1, date2)
+
 
     // Transform String into LangString
     override fun toLangString(input: String): LangString {
@@ -57,10 +57,9 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
     }
 
     // Transform String into LocalDateTime
-    override fun toLaocalDateTime(input: String): LocalDateTime {
-        var dateFormatter = DateTimeFormatter.ofPattern(DATE_PATTERN)
-        return LocalDateTime.parse(input, dateFormatter)
-    }
+    override fun toLaocalDateTime(input: String): LocalDateTime =
+        LocalDateTime.parse(input, DateTimeFormatter.ofPattern(DATE_PATTERN))
+
 
     // Transform String into Concept
     override fun toConcept(input: String): Concept {

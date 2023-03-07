@@ -49,16 +49,16 @@ class DistributionServicesImpl(
         getLogger("logger").debug("${titleDistributionRepository.findByDistributionTitleId(id)}")
 
         var titlesDistribution = listOf<LangString?>()
-        val l = titleDistributionRepository.findByDistributionTitleId(id)
+         titleDistributionRepository.findByDistributionTitleId(id)
             .map {
                 val languageStrings = mutableListOf<LangString?>()
                 val title = it
-                //languageStrings.add(converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.language.id))
-                getLogger("logger").debug("TIITTIIITTIIITTIIIES: ${it.id.titleId} ---- ${languageRepository.findLanguagesResourcesByTitlesDistributionIdTitleId(it.id.titleId)}")
+
                 languageRepository.findLanguagesResourcesByTitlesDistributionIdTitleId(it.id.titleId)
                      .forEach {
                          getLogger("logger").debug("LANGSTRING: ${title.id.titleId} -- ${it.id}")
-                         languageStrings.add(converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.id))
+                         languageStrings.add(
+                             converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.id))
                          getLogger("logger").debug("LANGSTRING2: $languageStrings")
                      }
                 languageStrings
@@ -66,7 +66,8 @@ class DistributionServicesImpl(
                 titlesDistribution += it
             }
         getLogger("logger").debug("A VER $titlesDistribution")
-        getLogger("logger").debug("${titleDistributionRepository.findByDistributionTitleId(id).map { it.id.titleId }}")
+        getLogger("logger")
+            .debug("${titleDistributionRepository.findByDistributionTitleId(id).map { it.id.titleId }}")
 
         return titlesDistribution
     }
@@ -75,7 +76,7 @@ class DistributionServicesImpl(
     override fun showDistributionAccessService(id: String): Collection<DataService?> =
         dataServiceRepository.findAccessServiceByDistributionsId(id)
             .map {
-                converter.toDataService(it!!)
+                converter.toDataService(it)
             }
 
     // Return accessService field of Distribution id

@@ -9,6 +9,7 @@ plugins {
     id("com.netflix.dgs.codegen") version "5.6.7" apply false
     id("io.freefair.lombok") version "5.3.0" //apply false
     id("io.gitlab.arturbosch.detekt").version("1.22.0")
+
     id("org.jetbrains.kotlinx.kover") version "0.7.0-Alpha"
 
     kotlin("plugin.jpa") version "1.8.0" //apply false
@@ -78,6 +79,7 @@ kotlin {
         tasks.withType<Test> {
             useJUnitPlatform()
         }
+
 
 
     }
@@ -163,7 +165,10 @@ kotlin {
 detekt {
     toolVersion = "1.22.0"
     autoCorrect = true
+    config = files("$projectDir/detekt-config.yml")
+    autoCorrect = true
 }
+
 
 dependencyManagement {
     imports {

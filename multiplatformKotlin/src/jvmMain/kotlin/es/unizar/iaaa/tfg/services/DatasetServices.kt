@@ -28,14 +28,14 @@ class DatasetServicesImpl(
     override fun showDistributionsDataset(id: String): Collection<Distribution?> =
         distributionRepository.findDistributionsByDatasetsId(id)
             .map {
-                converter.toDistribution(it!!)
+                converter.toDistribution(it)
             }
 
     // Return property InSeries Dataset
     override fun showInSeriesDataset(filterIdDS: String?, id: String): Collection<DatasetSeries?> {
         val datasetSeries = datasetSeriesRepository.findInseriesByDatasetId(id)
             .map {
-                converter.toDatasetSeries(it!!)
+                converter.toDatasetSeries(it)
             }
         return if (filterIdDS == null) datasetSeries else datasetSeries.filter { it?.id == filterIdDS }
     }

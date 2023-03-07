@@ -1,6 +1,5 @@
 package es.unizar.iaaa.tfg.domain
 
-import jakarta.persistence.Column
 import jakarta.persistence.Id
 import lombok.AllArgsConstructor
 import lombok.Data
@@ -14,6 +13,10 @@ import java.io.Serializable
 @NoArgsConstructor
 @RedisHash("Redis_entity")
 class RedisEntity : Serializable {
+    companion object {
+        private const val serialVersionUID: Long = 123
+    }
+
     @Id
     lateinit var id: String
     @Indexed

@@ -25,7 +25,7 @@ class DataServiceQueries(
     // @DgsData servesDataset: returns servesDataset field of the corresponding DataService
     @DgsData(parentType = "DataService")
     fun servesDataset(dfe: DgsDataFetchingEnvironment): Collection<DatasetInCatalog?> {
-        val dserv: DataService? = dfe.getSource()
-        return dataServicesServices.showServesDataset(dserv!!.id)
+        val dserv: DataService = dfe.getSource()
+        return dataServicesServices.showServesDataset(dserv.id)
     }
 }
