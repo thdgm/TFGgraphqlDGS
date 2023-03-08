@@ -5,26 +5,30 @@ import es.unizar.iaaa.tfg.constants.ConstantValues.FORMAT
 import es.unizar.iaaa.tfg.constants.ConstantValues.LOCATION_DELIMETER
 import es.unizar.iaaa.tfg.constants.ConstantValues.PERIOD_OF_TIME
 import es.unizar.iaaa.tfg.constants.ConstantValues.PUBLISHER
-import es.unizar.iaaa.tfg.domain.DistributionEntity
-import es.unizar.iaaa.tfg.domain.IdentifierEntity
-import es.unizar.iaaa.tfg.domain.KeywordDatasetId
-import es.unizar.iaaa.tfg.domain.KeywordEntity
-import es.unizar.iaaa.tfg.domain.LanguageEntity
-import es.unizar.iaaa.tfg.domain.LocationEntity
-import es.unizar.iaaa.tfg.domain.PublisherEntity
-import es.unizar.iaaa.tfg.domain.ResourceDescriptionId
-import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
-import es.unizar.iaaa.tfg.domain.ResourceEntity
-import es.unizar.iaaa.tfg.domain.TitleDistributionId
-import es.unizar.iaaa.tfg.domain.TitleResourceId
-import es.unizar.iaaa.tfg.domain.TitlesDistributionEntity
-import es.unizar.iaaa.tfg.domain.TitlesResourceEntity
+import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
+import es.unizar.iaaa.tfg.domain.catalogRecordRelations.HintsEntity
+import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.IdentifierEntity
+import es.unizar.iaaa.tfg.domain.ids.KeywordDatasetId
+import es.unizar.iaaa.tfg.domain.resourceRelations.KeywordEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.LanguageEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.LocationEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.PublisherEntity
+import es.unizar.iaaa.tfg.domain.ids.ResourceDescriptionId
+import es.unizar.iaaa.tfg.domain.resourceRelations.ResourceDescriptionsEntity
+import es.unizar.iaaa.tfg.domain.resources.ResourceEntity
+import es.unizar.iaaa.tfg.domain.ids.TitleDistributionId
+import es.unizar.iaaa.tfg.domain.ids.TitleResourceId
+import es.unizar.iaaa.tfg.domain.distributionRelations.TitlesDistributionEntity
+import es.unizar.iaaa.tfg.domain.ids.HintsId
+import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ImtJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.PeriodOfTimeJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.PublisherJsonMapping
 import es.unizar.iaaa.tfg.repository.DescriptionRepository
+import es.unizar.iaaa.tfg.repository.HintsRepository
 import es.unizar.iaaa.tfg.repository.IdentifierRepository
 import es.unizar.iaaa.tfg.repository.KeywordRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
@@ -40,11 +44,12 @@ interface CreateAuxiliarEntitiesServices {
     fun createTitle(titleTexts: Collection<String?>, titleLangs: Collection<String?>, res: Any)
     fun createLocation(spatial: Collection<String?>): MutableCollection<LocationEntity>
     fun createResourceDescriptions(descTexts: Collection<String?>, descLangs: Collection<String?>, res: ResourceEntity)
-    fun createPublisher(jsonFields: MutableMap<ModelJsonMapping, String>,idPublisher:String?):PublisherEntity?
+    fun createPublisher(jsonFields: MutableMap<ModelJsonMapping, String>,idPublisher:String?): PublisherEntity?
     fun createFormat(jsonFields: MutableMap<ModelJsonMapping, String>, idFormat:String?):String?
     fun createPeriodOfTime(
         jsonFields: MutableMap<ModelJsonMapping, String>, idTemporal:String?):PeriodOfTimeJsonMapping?
     fun createIdentifier(identifiers:Collection<String?>, resDist:Any)
+    fun createHints(hints:Collection<String?>, cr:CatalogRecordEntity)
 }
 
 @Service
@@ -57,6 +62,7 @@ class CreateAuxiliarEntitiesServicesImpl(
     private val descriptionRepository: DescriptionRepository,
     private val publisherRepository: PublisherRepository,
     private val identifierRepository: IdentifierRepository,
+    private val hintsRepository: HintsRepository,
     private val createRelationsBetweenEntitiesLanguageServices: CreateRelationsBetweenEntitiesLanguageServices,
 
     ) : CreateAuxiliarEntitiesServices {
@@ -180,13 +186,14 @@ class CreateAuxiliarEntitiesServicesImpl(
                         desc.id.descriptionId,
                         res.id
                     )
-
-
             }
         }
     }
 
-    override fun createPublisher(jsonFields: MutableMap<ModelJsonMapping, String>, idPublisher:String?):PublisherEntity?
+    override fun createPublisher(
+        jsonFields: MutableMap<ModelJsonMapping, String>,
+        idPublisher:String?
+    ): PublisherEntity?
 
     {
         var newPublisher: PublisherEntity? = null
@@ -245,6 +252,19 @@ class CreateAuxiliarEntitiesServicesImpl(
             }
         }
 
+    }
+
+    override fun createHints(hints:Collection<String?>, cr:CatalogRecordEntity){
+        hints.map{
+            if(it != null){
+                val hint = HintsEntity()
+                val id = HintsId()
+                id.hintId = it
+                id.catalogRecordId = cr.id
+                hint.id = id
+                hintsRepository.save(hint)
+            }
+        }
     }
 }
 

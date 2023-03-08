@@ -6,7 +6,7 @@ import com.graphqlDGS.graphqlDGS.model.types.Error
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsMutation
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.services.CatalogRecordsServices
+import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
 import es.unizar.iaaa.tfg.services.jsonServices.ProcessJsonServices
 import org.apache.commons.validator.routines.UrlValidator
 import org.json.JSONObject
@@ -39,7 +39,7 @@ class AddCatalogRecordMutation(
         }
         getLogger("logger").debug("PorcessJson:PorcessJson")
         val jsonFields = processJsonServices.processJson(mapJsonTyped)
-        return catalogRecordServices.createEntitiesAndCR(jsonFields,input.catalogRecorId,catalog)
+        return catalogRecordServices.createEntitiesAndCR(jsonFields,input,catalog)
 
     }
 }

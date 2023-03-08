@@ -10,7 +10,7 @@ import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.services.CatalogServices
+import es.unizar.iaaa.tfg.services.queryServices.CatalogServices
 
 @DgsComponent
 class CatalogQueries(

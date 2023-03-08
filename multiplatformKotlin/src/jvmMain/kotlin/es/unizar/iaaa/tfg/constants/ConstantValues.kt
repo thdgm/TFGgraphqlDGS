@@ -15,4 +15,18 @@ object ConstantValues {
     const val MAX_IDLE = 30
     const val MIN_IDLE = 10
 
+    const val CATALOGS = "catalogs" 
+    const val RECORDS = "records" 
+    const val SERVICES = "services" 
+    const val DATSETS = "datasets" 
+    const val DATASERIES = "dataSeries" 
+    const val ACCESSSERVICE = "accessService" 
+    const val INSERIES = "inSeries" 
+    const val DISTRIBUTIONS = "distributions"
+
+    const val CATALOGENTITY  = "catalogEntity " 
+    const val DATASETENTITY  = "datasetEntity" 
+    const val DATASETSERIESENTITY  = "datasetSeriesEntity" 
+    const val DATASETSERVICEENTITY  = "datasetServiceEntity"
+
 }

@@ -10,9 +10,9 @@ import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.annotations.LangString
-import es.unizar.iaaa.tfg.services.CatalogRecordsServices
-import es.unizar.iaaa.tfg.services.ReferenceWithinExternalContextServices
-import es.unizar.iaaa.tfg.services.ResourceServices
+import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
+import es.unizar.iaaa.tfg.services.queryAuxiliarServices.ReferenceWithinExternalContextServices
+import es.unizar.iaaa.tfg.services.queryServices.ResourceServices
 import java.time.LocalDateTime
 
 @DgsComponent

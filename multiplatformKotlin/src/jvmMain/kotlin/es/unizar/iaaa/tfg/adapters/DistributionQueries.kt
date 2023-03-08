@@ -9,8 +9,8 @@ import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.NonNegativeInt
-import es.unizar.iaaa.tfg.services.DistributionServices
-import es.unizar.iaaa.tfg.services.ReferenceWithinExternalContextServices
+import es.unizar.iaaa.tfg.services.queryServices.DistributionServices
+import es.unizar.iaaa.tfg.services.queryAuxiliarServices.ReferenceWithinExternalContextServices
 
 @DgsComponent
 class DistributionQueries(

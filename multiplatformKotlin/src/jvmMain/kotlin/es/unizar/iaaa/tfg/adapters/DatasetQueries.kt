@@ -10,9 +10,9 @@ import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
 import es.unizar.iaaa.tfg.annotations.LangString
-import es.unizar.iaaa.tfg.services.DatasetInCatalogServices
-import es.unizar.iaaa.tfg.services.DatasetServices
-import es.unizar.iaaa.tfg.services.DatasetServicesAuxiliarFields
+import es.unizar.iaaa.tfg.services.queryServices.DatasetInCatalogServices
+import es.unizar.iaaa.tfg.services.queryServices.DatasetServices
+import es.unizar.iaaa.tfg.services.queryAuxiliarServices.DatasetServicesAuxiliarFields
 import org.slf4j.LoggerFactory.getLogger
 
 @DgsComponent
@@ -21,7 +21,7 @@ class DatasetQueries(
     private val datasetInCatalogServices: DatasetInCatalogServices,
     private val datasetServicesAuxiliarFields: DatasetServicesAuxiliarFields,
 
-) {
+    ) {
 
     // @DgsQuery dataset: returns the dataset which id is the @InputArgument id
     @DgsQuery

@@ -601,4 +601,44 @@ class TestsFicheroJson1 {
         assertThat(primaryTopic).isIn(resources)
         assertThat(primaryTopic).isIn(datasets)
     }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Creo CR a partir de json y tiene contentUrl, contentType y hints correspondientes al input `() {
+        val inputParam = "\$input"
+        val contentUrlEsperado = "classpath:json1.json"
+        val contentTypeEsperado = "application/json"
+        val hintsEsperado = listOf("datos.gob.es")
+        val query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                    contentURL
+                    contentType
+                    hints
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>(
+            "input" to mapOf(
+                "inCatalog" to "root",
+                "contentType" to "application/json",
+                "contentUrl" to urlRecord,
+                "hints" to listOf("datos.gob.es")
+            )
+        )
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        getLogger("loggerTest").debug("RESPONSEE: :::::: $response")
+
+        val contentUrl = response.extractValue<String>("data.createCatalogRecord.contentURL")
+        val contentType = response.extractValue<String>("data.createCatalogRecord.contentType")
+        val hints = response.extractValue<Collection<String>>("data.createCatalogRecord.hints")
+
+        assertThat(contentUrl).isEqualTo(contentUrlEsperado)
+        assertThat(contentType).isEqualTo(contentTypeEsperado)
+        assertThat(hints).containsExactlyInAnyOrderElementsOf(hintsEsperado)
+
+    }
 }

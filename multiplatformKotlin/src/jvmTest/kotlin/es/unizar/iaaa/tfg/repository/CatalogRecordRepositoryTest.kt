@@ -14,7 +14,7 @@ import org.springframework.data.repository.findByIdOrNull
 class CatalogRecordRepositoryTest {
 
     @Autowired lateinit var catalogRecordsRepository: CatalogRecordsRepository
-
+    @Autowired lateinit var hintsRepository: HintsRepository
     @Autowired lateinit var em: TestEntityManager
 
 
@@ -45,5 +45,31 @@ class CatalogRecordRepositoryTest {
     fun `el catalogRecord cR4 tiene 1 primaryTopic dataseries`() {
         val catalogRecord = catalogRecordsRepository.findByIdOrNull("cR4") ?: fail("El catalogRecord no existe")
         assertEquals(ConstantValues.DATASETSERIESTYPE, catalogRecord.resource.type)
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene content`() {
+        val catalogRecord = catalogRecordsRepository.findByIdOrNull("cR1") ?: fail("El catalogRecord no existe")
+        println(catalogRecord.content)
+        assertEquals(catalogRecord.content, "content")
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene contentType`() {
+        val catalogRecord = catalogRecordsRepository.findByIdOrNull("cR1") ?: fail("El catalogRecord no existe")
+        assertEquals(catalogRecord.contentType, "contentType")
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene contentUrl`() {
+        val catalogRecord = catalogRecordsRepository.findByIdOrNull("cR1") ?: fail("El catalogRecord no existe")
+        assertEquals(catalogRecord.contentUrl, "contentUrl")
+
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene hints`() {
+        val hints = hintsRepository.findByCatalogRecordHintsId("cR1")
+        assertEquals(hints.size, 3)
     }
 }

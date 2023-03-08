@@ -1,15 +1,16 @@
 package es.unizar.iaaa.tfg.services.mutationServices
 
+import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordInput
 import es.unizar.iaaa.tfg.constants.ConstantValues.ACCRUAL_PERIODICITY
 import es.unizar.iaaa.tfg.constants.ConstantValues.CR_ID
 import es.unizar.iaaa.tfg.constants.ConstantValues.DATASET
 import es.unizar.iaaa.tfg.constants.ConstantValues.DATASET_TYPE
 import es.unizar.iaaa.tfg.constants.ConstantValues.DATE_PATTERN
 import es.unizar.iaaa.tfg.constants.ConstantValues.DISTRIBUTION
-import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
-import es.unizar.iaaa.tfg.domain.DataServiceEntity
-import es.unizar.iaaa.tfg.domain.DatasetEntity
-import es.unizar.iaaa.tfg.domain.DistributionEntity
+import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
+import es.unizar.iaaa.tfg.domain.resources.DataServiceEntity
+import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
+import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
 import es.unizar.iaaa.tfg.jsonDataModels.AccrualPeriodicityJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.DistributionJsonMapping
@@ -19,7 +20,7 @@ import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.repository.DistributionRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
-import es.unizar.iaaa.tfg.services.CheckIfExistResourceServices
+import es.unizar.iaaa.tfg.services.queryAuxiliarServices.CheckIfExistResourceServices
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -39,7 +40,7 @@ interface CreateResourcesEntitiesServices {
 
     fun createCatalogRecords(
         jsonFields: MutableMap<ModelJsonMapping,String>,
-        idCR: String?,
+        input: CatalogRecordInput,
         idCatalog: String
     ): CatalogRecordEntity?
 }
@@ -107,19 +108,23 @@ class CreateResourcesEntitiesServicesImpl(
 
     override fun createCatalogRecords(
         jsonFields: MutableMap<ModelJsonMapping,String>,
-        idCR: String?,
+        input: CatalogRecordInput,
         idCatalog: String
     ): CatalogRecordEntity? {
 
         val dataset = jsonFields.filterValues { it == DATASET }.keys.elementAt(0)  as DatasetJsonMapping
         val idPrimaryTopic = UUID.nameUUIDFromBytes(dataset.id.toByteArray()).toString()//dataset.id
-        val id: String = idCR ?: "$idPrimaryTopic$CR_ID"
+        val id: String = input.catalogRecorId ?: "$idPrimaryTopic$CR_ID"
         if(!resourcesRepository.existsById(id)){
             val cr = CatalogRecordEntity()
             cr.id = id
             cr.title = "TitleCR"
+            if (input.content != null) cr.content = input.content
+            if (input.contentUrl != null) cr.contentUrl = input.contentUrl
+            if (input.contentType != null) cr.contentType = input.contentType
             cr.resource = resourcesRepository.findById(idPrimaryTopic).get()
             catalogRecordsRepository.save(cr)
+            if (!input.hints.isNullOrEmpty()) createAuxiliarEntitiesServices.createHints(input.hints,cr)
             createRelationsBetweenEntitiesServices.insertIntoCatalogRecord(cr, idCatalog)
             return cr
         }

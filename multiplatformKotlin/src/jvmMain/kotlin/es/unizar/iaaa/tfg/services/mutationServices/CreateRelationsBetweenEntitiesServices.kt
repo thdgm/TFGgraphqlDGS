@@ -1,13 +1,13 @@
 package es.unizar.iaaa.tfg.services.mutationServices
 
-import es.unizar.iaaa.tfg.domain.CatalogEntity
-import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
-import es.unizar.iaaa.tfg.domain.DataServiceEntity
-import es.unizar.iaaa.tfg.domain.DatasetEntity
-import es.unizar.iaaa.tfg.domain.DistributionEntity
-import es.unizar.iaaa.tfg.domain.LocationEntity
-import es.unizar.iaaa.tfg.domain.ResourceEntity
-import es.unizar.iaaa.tfg.domain.ThemeEntity
+import es.unizar.iaaa.tfg.domain.resources.CatalogEntity
+import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
+import es.unizar.iaaa.tfg.domain.resources.DataServiceEntity
+import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
+import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.LocationEntity
+import es.unizar.iaaa.tfg.domain.resources.ResourceEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.ThemeEntity
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.DataServiceRepository

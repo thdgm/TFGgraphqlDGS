@@ -2,9 +2,9 @@ package es.unizar.iaaa.tfg.services.mutationServices
 
 
 
-import es.unizar.iaaa.tfg.domain.DistributionEntity
-import es.unizar.iaaa.tfg.domain.LanguageEntity
-import es.unizar.iaaa.tfg.domain.ResourceEntity
+import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.LanguageEntity
+import es.unizar.iaaa.tfg.domain.resources.ResourceEntity
 import es.unizar.iaaa.tfg.repository.DescriptionRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
 import es.unizar.iaaa.tfg.repository.TitleDistributionRepository

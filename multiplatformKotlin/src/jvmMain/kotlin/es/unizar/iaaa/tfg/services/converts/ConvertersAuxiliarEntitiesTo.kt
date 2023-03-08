@@ -7,8 +7,8 @@ import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.Periocidad
 import es.unizar.iaaa.tfg.constants.ConstantValues.DATE_PATTERN
 import es.unizar.iaaa.tfg.constants.ConstantValues.LANGSTRING_SEPARADOR
-import es.unizar.iaaa.tfg.domain.KeywordEntity
-import es.unizar.iaaa.tfg.domain.PublisherEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.KeywordEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.PublisherEntity
 import org.slf4j.LoggerFactory.getLogger
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime

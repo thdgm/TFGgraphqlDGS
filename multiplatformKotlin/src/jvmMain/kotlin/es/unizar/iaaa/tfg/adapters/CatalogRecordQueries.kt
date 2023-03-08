@@ -7,13 +7,13 @@ import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.services.CatalogRecordsServices
+import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
 
 @DgsComponent
 class CatalogRecordQueries(
     private val catalogRecordsServices: CatalogRecordsServices,
 
-) {
+    ) {
     // @DgsQuery catalogRecord: returns the catalogRecord which id is the @InputArgument id
     @DgsQuery
     fun catalogRecord(@InputArgument id: String?): CatalogRecord? {
@@ -32,33 +32,29 @@ class CatalogRecordQueries(
 
     // @DgsData contentType: returns metadata content type
     @DgsData(parentType = "CatalogRecord")
-    fun contentType(dfe: DgsDataFetchingEnvironment): String {
-        // TODO()
-        val cr: CatalogRecord? = dfe.getSource()
-        return ""
+    fun contentType(dfe: DgsDataFetchingEnvironment): String? {
+        val cr: CatalogRecord = dfe.getSource()
+        return catalogRecordsServices.getContentType(cr.id)
     }
 
     // @DgsData content: returns content as string
     @DgsData(parentType = "CatalogRecord")
-    fun content(dfe: DgsDataFetchingEnvironment): String {
-        // TODO()
-        val cr: CatalogRecord? = dfe.getSource()
-        return ""
+    fun content(dfe: DgsDataFetchingEnvironment): String? {
+        val cr: CatalogRecord = dfe.getSource()
+        return catalogRecordsServices.getContent(cr.id)
     }
 
     // @DgsData contentURL: returns record location
     @DgsData(parentType = "CatalogRecord")
-    fun contentURL(dfe: DgsDataFetchingEnvironment): String {
-        // TODO()
-        val cr: CatalogRecord? = dfe.getSource()
-        return ""
+    fun contentURL(dfe: DgsDataFetchingEnvironment): String? {
+        val cr: CatalogRecord = dfe.getSource()
+        return catalogRecordsServices.getContentUrl(cr.id)
     }
 
     // @DgsData hints: returns extra process apart of contentType
     @DgsData(parentType = "CatalogRecord")
     fun hints(dfe: DgsDataFetchingEnvironment): Collection<String?> {
-        // TODO()
-        val cr: CatalogRecord? = dfe.getSource()
-        return emptyList()
+        val cr: CatalogRecord = dfe.getSource()
+        return catalogRecordsServices.getHints(cr.id)
     }
 }

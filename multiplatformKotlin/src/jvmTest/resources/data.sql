@@ -140,14 +140,14 @@ INSERT INTO "relationships" ("id_catalog", "id_resource") VALUES ('catalog1', 'c
 ---- CATALOG RECORD
 ---------------------
 ---------------------
---
-INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('cR1','cRTit1','catalog1');
+
+
+INSERT INTO "catalogrecord" ("id", "title","resource_id","content", "content_type", "content_url") VALUES ('cR1','cRTit1','catalog1','content','contentType', 'contentUrl');
 INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('cR2','cRTit2','dSer1');
 INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('cR3','cRTit3','d1');
 INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('cR4','cRTit4','dS1');
---INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('cR5','cRTit5','catalog2');
---INSERT INTO "catalogrecord" ("id", "title","resource_id") VALUES ('cR6','cRTit6','catalog3');
---
+
+
 ---------------------
 ---------------------
 ---- CATALOGINRECORD
@@ -158,9 +158,17 @@ INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('cR1'
 INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('cR2', 'catalog1');
 INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('cR3', 'catalog1');
 INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('cR4', 'catalog1');
---INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('cR5', 'catalog2');
---INSERT INTO "cataloginrecord" ("id_catalog_record", "id_resource") VALUES ('cR6', 'catalog3');
---
+
+---------------------
+---------------------
+---- Hints
+---------------------
+---------------------
+
+INSERT INTO "hints" ("id_catalog_record", "id_hint") VALUES ('cR1', 'hint1');
+INSERT INTO "hints" ("id_catalog_record", "id_hint") VALUES ('cR1', 'hint2');
+INSERT INTO "hints" ("id_catalog_record", "id_hint") VALUES ('cR1', 'hint3');
+INSERT INTO "hints" ("id_catalog_record", "id_hint") VALUES ('cR2', 'hint3');
 
 ---------------------
 ---------------------

@@ -102,4 +102,71 @@ class CatalogRecordTest {
         getLogger("loggerTest").debug("$catalogs")
         assertThat("catalog1").isIn(catalogs)
     }
+
+    @Test
+    fun `el catalogRecord cR1 tiene content`() {
+        val content: String? = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
+            {
+                catalogRecord(id: "cR1") {
+                    content
+                }
+            }
+            """.trimIndent(),
+            "data.catalogRecord.content"
+        )
+        getLogger("loggerTest").debug("$content")
+        assertThat(content).isEqualTo("content")
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene contentType`() {
+        val contentType: String? = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
+            {
+                catalogRecord(id: "cR1") {
+                    contentType
+                }
+            }
+            """.trimIndent(),
+            "data.catalogRecord.contentType"
+        )
+        getLogger("loggerTest").debug("$contentType")
+        assertThat(contentType).isEqualTo("contentType")
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene contentUrl`() {
+        val contentURL: String? = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
+            {
+                catalogRecord(id: "cR1") {
+                    contentURL
+                }
+            }
+            """.trimIndent(),
+            "data.catalogRecord.contentURL"
+        )
+        getLogger("loggerTest").debug("$contentURL")
+        assertThat(contentURL).isEqualTo("contentUrl")
+
+    }
+
+    @Test
+    fun `el catalogRecord cR1 tiene hints`() {
+        val hints: Collection<String?> = dgsQueryExecutor.executeAndExtractJsonPath(
+            """
+            {
+                catalogRecord(id: "cR1") {
+                    hints
+                }
+            }
+            """.trimIndent(),
+            "data.catalogRecord.hints[*]"
+        )
+        getLogger("loggerTest").debug("$hints")
+        assertThat(hints).hasSize(3)
+    }
+
+
 }

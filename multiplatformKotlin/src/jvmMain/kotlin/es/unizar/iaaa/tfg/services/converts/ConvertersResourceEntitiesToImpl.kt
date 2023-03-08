@@ -8,12 +8,12 @@ import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
 import com.graphqlDGS.graphqlDGS.model.types.Distribution
 import com.graphqlDGS.graphqlDGS.model.types.ResourceInCatalog
-import es.unizar.iaaa.tfg.domain.CatalogEntity
-import es.unizar.iaaa.tfg.domain.CatalogRecordEntity
-import es.unizar.iaaa.tfg.domain.DatasetEntity
-import es.unizar.iaaa.tfg.domain.DatasetSeriesEntity
-import es.unizar.iaaa.tfg.domain.DistributionEntity
-import es.unizar.iaaa.tfg.domain.ResourceEntity
+import es.unizar.iaaa.tfg.domain.resources.CatalogEntity
+import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
+import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
+import es.unizar.iaaa.tfg.domain.resources.DatasetSeriesEntity
+import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
+import es.unizar.iaaa.tfg.domain.resources.ResourceEntity
 import org.springframework.stereotype.Service
 
 interface ConvertersResourcesEntitiesTo {

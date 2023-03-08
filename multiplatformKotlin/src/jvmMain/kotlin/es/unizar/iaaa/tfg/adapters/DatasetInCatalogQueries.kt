@@ -5,7 +5,7 @@ import com.graphqlDGS.graphqlDGS.model.types.DatasetInCatalog
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
-import es.unizar.iaaa.tfg.services.DatasetServicesAuxiliarFields
+import es.unizar.iaaa.tfg.services.queryAuxiliarServices.DatasetServicesAuxiliarFields
 
 @DgsComponent
 class DatasetInCatalogQueries(

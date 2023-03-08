@@ -1,14 +1,15 @@
 package es.unizar.iaaa.tfg.repository
 
-import es.unizar.iaaa.tfg.domain.IdentifierEntity
-import es.unizar.iaaa.tfg.domain.KeywordEntity
-import es.unizar.iaaa.tfg.domain.LanguageEntity
-import es.unizar.iaaa.tfg.domain.LocationEntity
-import es.unizar.iaaa.tfg.domain.PublisherEntity
-import es.unizar.iaaa.tfg.domain.ResourceDescriptionsEntity
-import es.unizar.iaaa.tfg.domain.ThemeEntity
-import es.unizar.iaaa.tfg.domain.TitlesDistributionEntity
-import es.unizar.iaaa.tfg.domain.TitlesResourceEntity
+import es.unizar.iaaa.tfg.domain.catalogRecordRelations.HintsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.IdentifierEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.KeywordEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.LanguageEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.LocationEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.PublisherEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.ResourceDescriptionsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.ThemeEntity
+import es.unizar.iaaa.tfg.domain.distributionRelations.TitlesDistributionEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
@@ -115,4 +116,9 @@ interface IdentifierRepository : JpaRepository<IdentifierEntity, String>{
     fun findByDistributionId(id: String):Collection<IdentifierEntity?>
 
 }
+@Repository
+interface HintsRepository : JpaRepository<HintsEntity, String>{
+    fun findByCatalogRecordHintsId(id: String): Collection<HintsEntity>
 
+
+}
