@@ -9,8 +9,8 @@ plugins {
     id("com.netflix.dgs.codegen") version "5.6.7" apply false
     id("io.freefair.lombok") version "5.3.0" //apply false
     id("io.gitlab.arturbosch.detekt").version("1.22.0")
-
     id("org.jetbrains.kotlinx.kover") version "0.7.0-Alpha"
+    id("com.apollographql.apollo3").version("3.7.4")
 
     kotlin("plugin.jpa") version "1.8.0" //apply false
     kotlin("plugin.lombok") version "1.8.10" //apply false
@@ -18,11 +18,16 @@ plugins {
     application
 }
 
+val serializationVersion = "1.4.1"
+val ktorVersion = "2.2.4"
+
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
+
+
 
 repositories {
     mavenCentral()
@@ -95,8 +100,17 @@ kotlin {
 
             }
         }
+
     }
     sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("com.apollographql.apollo3:apollo-runtime:3.7.4")
+            }
+        }
+
         val jvmMain by getting{
             dependencies{
               implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
@@ -131,6 +145,7 @@ kotlin {
               runtimeOnly("com.h2database:h2")
 
 
+
             }
         }
         val jvmTest by getting{
@@ -157,6 +172,8 @@ kotlin {
 
                 implementation(npm("todomvc-app-css", "2.0.0"))
                 implementation(npm("todomvc-common", "1.0.0"))
+
+
             }
         }
     }
@@ -176,6 +193,8 @@ dependencyManagement {
     }
 }
 
+
+
 tasks.getByName<Copy>("jvmProcessResources") {
     dependsOn(tasks.getByName("jsBrowserDevelopmentWebpack"))
 }
@@ -184,5 +203,9 @@ tasks.getByName<JavaExec>("run") {
     dependsOn(tasks.named<Jar>("jvmJar"))
 }
 
-
+apollo {
+    service("service") {
+        packageName.set("com.apollo.client")
+    }
+}
 

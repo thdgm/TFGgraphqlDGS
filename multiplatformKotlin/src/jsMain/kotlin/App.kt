@@ -7,11 +7,14 @@ import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 
 
+
 fun main() {
     val container = document.createElement("root")
     document.body!!.appendChild(container)
     val inicio = Inicio.create {
         name = "Localiza tu Dataset"
     }
+
+
     createRoot(container).render(inicio)
 }
