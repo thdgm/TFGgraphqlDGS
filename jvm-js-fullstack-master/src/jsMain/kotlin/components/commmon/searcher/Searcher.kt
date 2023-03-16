@@ -28,6 +28,7 @@ import mui.icons.material.Search
 import mui.material.AppBarColor
 import mui.material.Box
 import mui.material.Container
+import mui.material.Icon
 import mui.material.IconButton
 import mui.material.IconButtonColor
 import mui.material.IconButtonEdge
@@ -55,7 +56,7 @@ val Searcher = FC<Props> {
 
 
 
-    sideLeft{openSide = isOpen}
+    //sideLeft{openSide = isOpen}
 
     Container {
         sx {
@@ -73,7 +74,7 @@ val Searcher = FC<Props> {
                 marginRight= Auto.auto
                 marginLeft = Auto.auto
                 marginTop = 10.px
-                zIndex = integer(1300)
+                //zIndex = integer(1300)
 
             }
             IconButton {
@@ -86,13 +87,7 @@ val Searcher = FC<Props> {
                 ariaHasPopup = AriaHasPopup.`false`
                 size = Size.large
                 color = IconButtonColor.inherit
-                onClick = {
-                    setIsOpen(!isOpen)
-                    console.log("CLICK $isOpen")
-
-
-                }
-                if (!isOpen) Menu() else Save()
+                sideLeft()
             }
             InputBase {
                 sx {
@@ -104,18 +99,18 @@ val Searcher = FC<Props> {
             IconButton {
                 type = ButtonType.button
                 ariaLabel = "search"
-                disabled = isOpen
+
                 Search()
             }
             IconButton {
                 type = ButtonType.button
                 ariaLabel = "info"
-                disabled = isOpen
+
                 dialog()
             }
 
         }
     }
-    filterInfo()
+
 
 }

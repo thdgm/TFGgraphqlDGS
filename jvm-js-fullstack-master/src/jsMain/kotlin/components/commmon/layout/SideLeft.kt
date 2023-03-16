@@ -3,7 +3,11 @@ package components.commmon.layout
 
 import components.commmon.Sizes
 import components.commmon.ThemeContext
+import components.commmon.accordeon.filterInfo
+import components.commmon.filterForm.filterForm
 import components.commmon.themes.Themes
+import csstype.ClassName
+import csstype.Contain.Companion.style
 import csstype.Cursor.Companion.pointer
 import csstype.GridArea
 import csstype.HtmlAttributes
@@ -20,6 +24,8 @@ import csstype.number
 import csstype.pct
 import csstype.px
 import mui.base.ClickAwayListener
+import mui.icons.material.Info
+import mui.icons.material.Menu
 import mui.material.Button
 import mui.material.Checkbox
 import mui.material.Drawer
@@ -54,73 +60,58 @@ external interface SideLeftProps : Props {
 val sideLeft = FC<SideLeftProps> {props->
 
     var isOpen = props.openSide
-    val (isOpenn, setIsOpenn) = useState(props.openSide)
+    val (isOpenn, setIsOpenn) = useState(false)
     val (buttonApply, setbuttonAply) = useState(false)
 
 
 
     console.log("Open $isOpen")
-
+        Button{
+            onClick = {setIsOpenn(true)}
+            disabled = isOpenn
+            Menu()
+        }
 
         Drawer {
 
 
             anchor = DrawerAnchor.left
-            open = isOpen
+            open = isOpenn
             onClick = {
                 console.log("CLICKO")
             }
 
-            ClickAwayListener {
-                onClickAway =
-                    {
-                        console.log("CLICKO LEJOS")
 
-                    }
 
                 Box {
+                    sx{
+                        marginTop = 35.pct
+                        paddingBottom = 100.pct
+                    }
+                    div {
+                        className= ClassName("row")
+                        filterForm()
+                    }
+                    div {
 
+                        className= ClassName("row buttonsFilter")
 
-                    onClick = {
-                        console.log("CLICKO 2")
+                        Button {
+                            onClick = {setIsOpenn(false)}
+                            + "Cancel"
+                        }
+                        Button {
+                            onClick = {setIsOpenn(false)}
+                            + "Continue"
+                        }
                     }
 
-                    List {
 
 
-                        ListItemButton {
-                            ListItemIcon {
-                                Checkbox {
-                                }
-                            }
-                            ListItemText {
-                                primary = ReactNode("Filtro1")
-                            }
-                        }
 
-                        ListItemButton {
-                            ListItemIcon {
-                                Checkbox {
-                                }
-                            }
-                            ListItemText {
-                                primary = ReactNode("Filtro2")
-                            }
-                        }
-
-                        ListItemButton {
-                            ListItemIcon {
-                                Checkbox {
-                                }
-                            }
-                            ListItemText {
-                                primary = ReactNode("Filtro3")
-                            }
-                        }
-                    }
 
                 }
-            }
+
 
         }
 

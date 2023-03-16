@@ -2,9 +2,10 @@ body{
  background-color: rgb(240,240,240);
 }
 
-.MuiPaper-root{
-
+.buttonsFilter{
+    margin-top: 80%;
 }
+
 .MuiDrawer-paper{
   width: 30%;
 }

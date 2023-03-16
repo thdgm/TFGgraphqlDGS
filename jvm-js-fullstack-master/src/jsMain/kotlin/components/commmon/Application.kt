@@ -1,9 +1,9 @@
 package components.commmon
 
+import components.commmon.accordeon.filterInfo
 import components.commmon.layout.header
 import components.commmon.layout.list
 import components.commmon.layout.sideLeft
-import components.commmon.layout.sideRight
 import components.commmon.searcher.Searcher
 import components.commmon.themes.Themes
 import csstype.ClassName
@@ -22,10 +22,16 @@ import mui.material.styles.useTheme
 import react.FC
 import react.Props
 import react.StateInstance
+import react.create
 import react.createContext
 import react.dom.html.ReactHTML.div
+import react.router.Route
+import react.router.Routes
+import react.router.dom.BrowserRouter
+import react.router.dom.HashRouter
 import react.useMemo
 import react.useState
+
 
 external interface ApplicationProps : Props {
     var name: String
@@ -35,6 +41,9 @@ external interface ApplicationProps : Props {
 typealias ThemeState = StateInstance<Theme>
 val ThemeContext = createContext<ThemeState>()
 
+
+
+
 val Application = FC<ApplicationProps> { props ->
     val state = useState(Themes.Light)
 
@@ -43,6 +52,7 @@ val Application = FC<ApplicationProps> { props ->
 
     ThemeContext(state) {
         ThemeProvider{
+
             this.theme = theme//if(actualTheme == "dark") Themes.Dark else Themes.Light
 
             div{
@@ -55,19 +65,26 @@ val Application = FC<ApplicationProps> { props ->
                 }
                 div {
                     className= ClassName("row")
-                    div {
-                        className= ClassName("col")
-                        Searcher()
-                    }
-                    div {
-                        className= ClassName("col")
 
-                    }
-
+                    Searcher()
                 }
+
                 div {
                     className= ClassName("row")
-                    list()
+                    HashRouter{
+                        Routes {
+                            Route {
+                                path = "/info"
+                                element = header.create()
+                            }
+                            Route {
+                                path = "/"
+                                element = list.create()
+                            }
+
+                        }
+                    }
+
 
                 }
             }
