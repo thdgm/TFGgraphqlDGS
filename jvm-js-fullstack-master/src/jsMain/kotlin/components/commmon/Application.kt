@@ -4,6 +4,7 @@ import components.commmon.accordeon.filterInfo
 import components.commmon.layout.header
 import components.commmon.layout.list
 import components.commmon.layout.sideLeft
+import components.commmon.resourceInfo.resourceInfo
 import components.commmon.searcher.Searcher
 import components.commmon.themes.Themes
 import csstype.ClassName
@@ -74,8 +75,8 @@ val Application = FC<ApplicationProps> { props ->
                     HashRouter{
                         Routes {
                             Route {
-                                path = "/info"
-                                element = header.create()
+                                path = "/info/:id"
+                                element = resourceInfo.create()
                             }
                             Route {
                                 path = "/"

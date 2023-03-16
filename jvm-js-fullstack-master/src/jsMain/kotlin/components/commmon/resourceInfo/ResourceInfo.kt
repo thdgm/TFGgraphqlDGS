@@ -1,21 +1,16 @@
-package components.commmon.layout
+package components.commmon.resourceInfo
 
 import components.commmon.Sizes
 import components.commmon.card.CardList
 import components.commmon.pagination.Pagination
 import csstype.Auto
-import csstype.BackgroundColor
 import csstype.Display
 import csstype.Position
-import csstype.Width
-import csstype.number
 import csstype.pct
 import csstype.rgba
 import mui.material.Box
 import mui.material.Card
 import mui.material.CardContent
-import mui.material.List
-import mui.material.ListItem
 import mui.material.ListItemButton
 import mui.material.Paper
 import mui.material.Typography
@@ -23,14 +18,10 @@ import mui.material.styles.TypographyVariant
 import mui.system.sx
 import react.FC
 import react.Props
-import react.router.useNavigate
+import react.useEffect
 
-val list = FC<Props> {
-    val navigate = useNavigate()
 
-    fun handleClick(){
-       navigate("/info/1")
-    }
+val resourceInfo = FC<Props> {
 
     Paper {
         sx{
@@ -45,25 +36,24 @@ val list = FC<Props> {
             backgroundColor = rgba(249,249,249,0.87)
             position = Position.relative
         }
-        Pagination()
-        List {
-
-            ListItemButton{
-                onClick ={
-                    handleClick()
-                }
-                CardList()
+        Card {
+            sx{
+                width = Sizes.CardList.Width
+                display= Display.flex
             }
-            ListItemButton{
-                onClick ={
-                    handleClick()
+            Box {
+                CardContent{
+                    Typography{
+                        variant = TypographyVariant.h6
+                        +"Titulo"
+                    }
+                    Typography{
+                        variant = TypographyVariant.subtitle1
+                        +"Otra info"
+                    }
                 }
-                CardList()
             }
         }
 
     }
-
-
-
 }
