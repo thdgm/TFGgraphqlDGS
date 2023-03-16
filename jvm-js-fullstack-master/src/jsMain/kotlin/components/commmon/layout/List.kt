@@ -4,10 +4,13 @@ import components.commmon.Sizes
 import components.commmon.card.CardList
 import components.commmon.pagination.Pagination
 import csstype.Auto
+import csstype.BackgroundColor
 import csstype.Display
+import csstype.Position
 import csstype.Width
 import csstype.number
 import csstype.pct
+import csstype.rgba
 import mui.material.Box
 import mui.material.Card
 import mui.material.CardContent
@@ -28,8 +31,15 @@ val list = FC<Props> {
             width = Sizes.BoxList.Width
             marginRight= Auto.auto
             marginLeft= Auto.auto
-            marginTop = 10.pct
+            marginTop = 6.pct
+            paddingBottom = 10.pct
+            paddingTop = 6.pct
+            paddingRight = 10.pct
+            paddingLeft = 10.pct
+            backgroundColor = rgba(249,249,249,0.87)
+            position = Position.relative
         }
+        Pagination()
         List {
 
             ListItemButton{
@@ -39,7 +49,7 @@ val list = FC<Props> {
                 CardList()
             }
         }
-        Pagination()
+
     }
 
 

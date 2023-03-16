@@ -1,6 +1,8 @@
 package components.commmon.searcher
 
 
+import components.commmon.accordeon.filterInfo
+import components.commmon.dialog.dialog
 import components.commmon.layout.list
 import components.commmon.layout.sideLeft
 import components.commmon.themes.Themes
@@ -71,7 +73,7 @@ val Searcher = FC<Props> {
                 marginRight= Auto.auto
                 marginLeft = Auto.auto
                 marginTop = 10.px
-                zIndex = integer(3000)
+                zIndex = integer(1300)
 
             }
             IconButton {
@@ -105,8 +107,15 @@ val Searcher = FC<Props> {
                 disabled = isOpen
                 Search()
             }
+            IconButton {
+                type = ButtonType.button
+                ariaLabel = "info"
+                disabled = isOpen
+                dialog()
+            }
 
         }
     }
+    filterInfo()
 
 }
