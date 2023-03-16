@@ -2,6 +2,8 @@ package components.commmon.layout
 
 
 import components.commmon.Sizes
+import components.commmon.ThemeContext
+import components.commmon.themes.Themes
 import csstype.Cursor.Companion.pointer
 import csstype.GridArea
 import csstype.HtmlAttributes
@@ -15,7 +17,10 @@ import react.dom.html.ReactHTML.div
 import csstype.ident
 import csstype.integer
 import csstype.number
+import csstype.pct
 import csstype.px
+import mui.base.ClickAwayListener
+import mui.material.Button
 import mui.material.Checkbox
 import mui.material.Drawer
 import mui.material.DrawerAnchor
@@ -29,79 +34,97 @@ import mui.material.ListItemButton
 import mui.material.ListItemIcon
 import mui.material.ListItemText
 import mui.material.ListSubheader
+import mui.material.styles.Theme
+import org.w3c.dom.events.MouseEvent
 import react.ReactNode
+import react.StateInstance
+import react.createContext
 import react.dom.html.ReactHTML.label
+import react.useEffect
 
 import react.useRef
+import react.useRequiredContext
 import react.useState
 external interface SideLeftProps : Props {
     var openSide: Boolean
 }
 
+
+
 val sideLeft = FC<SideLeftProps> {props->
 
     var isOpen = props.openSide
+    val (isOpenn, setIsOpenn) = useState(props.openSide)
+    val (buttonApply, setbuttonAply) = useState(false)
+
+
 
     console.log("Open $isOpen")
 
-        Drawer {
-            sx {
-                zIndex = integer(-2)
-                marginTop = 10.px
 
-            }
-      
+        Drawer {
+
+
             anchor = DrawerAnchor.left
-            open = props.openSide
+            open = isOpen
             onClick = {
                 console.log("CLICKO")
             }
-            Box {
-                sx {
-                    zIndex = integer(2)
-                }
 
-                onClick = {
-                    console.log("CLICKO 2")
-                }
-                Toolbar()
-                List {
-                    sx {
-                        width = Sizes.Sidebar.Width
+            ClickAwayListener {
+                onClickAway =
+                    {
+                        console.log("CLICKO LEJOS")
+
                     }
 
-                    ListItemButton {
-                        ListItemIcon {
-                            Checkbox{
+                Box {
+
+
+                    onClick = {
+                        console.log("CLICKO 2")
+                    }
+
+                    List {
+
+
+                        ListItemButton {
+                            ListItemIcon {
+                                Checkbox {
+                                }
+                            }
+                            ListItemText {
+                                primary = ReactNode("Filtro1")
                             }
                         }
-                        ListItemText{
-                            primary= ReactNode("Filtro1")
+
+                        ListItemButton {
+                            ListItemIcon {
+                                Checkbox {
+                                }
+                            }
+                            ListItemText {
+                                primary = ReactNode("Filtro2")
+                            }
+                        }
+
+                        ListItemButton {
+                            ListItemIcon {
+                                Checkbox {
+                                }
+                            }
+                            ListItemText {
+                                primary = ReactNode("Filtro3")
+                            }
                         }
                     }
 
-                    ListItemButton {
-                        ListItemIcon {
-                            Checkbox{
-                            }
-                        }
-                        ListItemText{
-                            primary= ReactNode("Filtro2")
-                        }
-                    }
-
-                    ListItemButton {
-                        ListItemIcon {
-                            Checkbox{
-                            }
-                        }
-                        ListItemText{
-                            primary= ReactNode("Filtro3")
-                        }
-                    }
                 }
             }
+
         }
 
-
 }
+
+
+

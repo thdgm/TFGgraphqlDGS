@@ -2,6 +2,7 @@ package components.commmon.layout
 
 
 import components.commmon.ThemeContext
+import components.commmon.searcher.Searcher
 import components.commmon.themes.Themes
 import csstype.Auto
 import csstype.FlexGrow
@@ -11,6 +12,7 @@ import kotlinx.browser.localStorage
 
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
+import mui.icons.material.GitHub
 import mui.material.AppBar
 import mui.material.AppBarPosition
 import mui.material.Box
@@ -45,52 +47,27 @@ external interface HeaderProps : Props {
     var title: String
 }
 
-fun toggleColorMode(){
-    val myTheme = useTheme<Theme>()
-    var themeMode = myTheme.palette.mode
-    val darkMode = Themes.Dark.palette.mode
-    val newMode = if (themeMode == darkMode) "light" else "dark"
-    localStorage.clear()
-    localStorage.setItem("theme",newMode)
-}
+
 
 val header = FC<HeaderProps> { props->
-    var title by useState(props.title)
-    val (isOpen, setIsOpen) = useState(false)
-    val myTheme = useTheme<Theme>()
-    val themeMode = myTheme.palette.mode
-    val darkMode = Themes.Dark.palette.mode
-    val lightMode = Themes.Light.palette.mode
+
     var theme by useRequiredContext(ThemeContext)
 
     Box{
         sx { flexGrow= number(1.0) }
-        onClick = {
-            console.log("CLOSE 2")
 
-        }
-        onKeyDown={
-            console.log("CLOSE 3")
-            if(isOpen){
-
-                setIsOpen(false)
-            }
-        }
         AppBar{
             position= AppBarPosition.static
             Toolbar{
 
                 IconButton{
-                    ariaLabel = "sidebar"
+                    ariaLabel = "githubIcon"
                     edge= IconButtonEdge.start
                     ariaHasPopup = AriaHasPopup.`false`
                     size = Size.large
                     color = IconButtonColor.inherit
-                    onClick = {
-                        setIsOpen(!isOpen)
-                        console.log("CLICK $isOpen")
-                    }
-                    Menu()
+
+                    GitHub()
                 }
 
                 Typography {
@@ -104,6 +81,7 @@ val header = FC<HeaderProps> { props->
                     component = div
                     +"Search your dataset"
                 }
+
 
                 Switch {
                     icon = Brightness7.create()
@@ -120,8 +98,6 @@ val header = FC<HeaderProps> { props->
         }
 
     }
-
-    sideLeft{openSide = isOpen}
 
 
 
