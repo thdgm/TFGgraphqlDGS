@@ -42,7 +42,7 @@ type Error{
 #
 interface ReferenceWithinExternalContext {
   # A unique identifier of the resource being described or cataloged.
-  # The identifier is a text string which is assigned to the resource to provide 
+  # The identifier is a text string which is assigned to the resource to provide
   # an unambiguous reference within a particular context.
   #
   # Implementation note: how many identifiers has a resource?
@@ -53,15 +53,15 @@ interface ReferenceWithinExternalContext {
 # Resource published or curated by a single agent.
 interface Resource implements ReferenceWithinExternalContext{
   #
-  # An identifier unique within this catalogue expressed as an UUID. 
-  # Note: this enable that the underlying storage system can be, for example, a Redis.   
+  # An identifier unique within this catalogue expressed as an UUID.
+  # Note: this enable that the underlying storage system can be, for example, a Redis.
   #
   id: ID!
   # A name given to the resource.
   title: [LangString!]#String!
   description: [LangString!]
 
-  # A language of the resource. 
+  # A language of the resource.
   # This refers to the natural language used for textual metadata (i.e., titles, descriptions, etc.)
   # of a cataloged resource (i.e., dataset or service) or the textual values of a dataset distribution.
   # Usage note: Repeat this property if the resource is available in multiple languages.
@@ -75,7 +75,7 @@ interface Resource implements ReferenceWithinExternalContext{
   theme:[String!]
 
   # A unique identifier of the resource being described or cataloged.
-  # The identifier is a text string which is assigned to the resource to provide 
+  # The identifier is a text string which is assigned to the resource to provide
   # an unambiguous reference within a particular context.
   #
   # Implementation note: how many identifiers has a resource?
@@ -121,7 +121,7 @@ interface DatasetInCatalog implements AbstractDataset & Resource & ReferenceWith
   identifier: [String!]
 }
 
-# Concepto dcat:Dataset 
+# Concepto dcat:Dataset
 interface AbstractDataset implements Resource & ReferenceWithinExternalContext{
   id: ID!
   title: [LangString!]#String!
@@ -137,7 +137,7 @@ interface AbstractDataset implements Resource & ReferenceWithinExternalContext{
   identifier: [String!]
 }
 
-# A collection of operations that provides access to one or more datasets or 
+# A collection of operations that provides access to one or more datasets or
 # data processing functions.
 #
 # Implemented by DataServiceEntity
@@ -147,8 +147,8 @@ interface AbstractDataset implements Resource & ReferenceWithinExternalContext{
 type DataService implements ResourceInCatalog & Resource & AbstractDataset & ReferenceWithinExternalContext{
   id: ID!
   title: [LangString!]#String!
-  servesDataset: [DatasetInCatalog!] # If a DataService is bound to one or more specified 
-                                     # Datasets, they are indicated by the this property.
+  servesDataset: [DatasetInCatalog!] # If a DataService is bound to one or more specified
+  # Datasets, they are indicated by the this property.
   description: [LangString!]
   language: [String!]
   fechaHoraCreacion: LocalDateTime
@@ -161,9 +161,9 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
   identifier: [String!]
 
 }
- 
+
 #
-# A Catalog represents a catalog, which is a Dataset in which each individual item 
+# A Catalog represents a catalog, which is a Dataset in which each individual item
 # is a metadata record describing some resource.
 #
 # Implemented by CatalogEntity
@@ -179,11 +179,11 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   title: [LangString!]#String!
   resources: [ResourceInCatalog!] # A resource that is listed in the catalog.
   datasets: [DatasetInCatalog!]  # A dataset that is listed in the catalog.
-  services: [DataService!] # A service that is listed in the catalog. 
-  catalogs: [Catalog!] # A catalog that is listed in the catalog. 
+  services: [DataService!] # A service that is listed in the catalog.
+  catalogs: [Catalog!] # A catalog that is listed in the catalog.
   records: [CatalogRecord!] # A record describing the registration of a single resource
-                             # (e.g., a dataset, a data service) that is part of the catalog.
-                             # set(records.primaryTopic) == resources
+  # (e.g., a dataset, a data service) that is part of the catalog.
+  # set(records.primaryTopic) == resources
   description: [LangString!]
   language: [String!]
   fechaHoraCreacion: LocalDateTime
@@ -265,7 +265,7 @@ type CatalogRecord {
   inCatalog: [Catalog!] #root por defecto
 }
 
-# A specific representation of a dataset. 
+# A specific representation of a dataset.
 # This represents a general availability of a dataset.
 # That is, represents an accessible form of a dataset such as a downloadable file.
 #
@@ -295,13 +295,13 @@ type Distribution implements ReferenceWithinExternalContext{
 
 # This represents the description of one resource and the language of that description
 #type ResourceDescription{
- # text:String
-  #idioma:String
+# text:String
+#idioma:String
 #}
 
 # scalar LangString {
-#    literal: String!      # En Unicode  
-#.   languageTag: String   # BCP 47   
+#    literal: String!      # En Unicode
+#.   languageTag: String   # BCP 47
 # }
 
 
