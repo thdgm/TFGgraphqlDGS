@@ -1,0 +1,11 @@
+body{
+ background-color: rgb(240,240,240);
+}
+
+.buttonsFilter{
+    margin-top: 80%;
+}
+
+.MuiDrawer-paper{
+  width: 30%;
+}
