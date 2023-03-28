@@ -3,9 +3,25 @@ body{
 }
 
 .buttonsFilter{
-    margin-top: 80%;
+    margin-top: 20%;
 }
 
 .MuiDrawer-paper{
   width: 30%;
+}
+
+.titleInit {
+    margin-left: 10%;
+}
+
+.accordionHeader,.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root{
+    background-color: rgba(217, 217, 217, 0.83) !important;
+}
+
+.pagination{
+    width: fit-content;
+}
+
+.listInfoHeader {
+    display: flex;
 }

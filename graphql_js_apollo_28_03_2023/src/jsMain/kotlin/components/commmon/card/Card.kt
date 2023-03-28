@@ -6,6 +6,7 @@ import csstype.Display
 import csstype.pct
 import mui.material.Box
 import mui.material.Card
+import mui.material.CardActions
 import mui.material.CardContent
 import mui.material.Typography
 import mui.material.styles.TypographyVariant
@@ -27,11 +28,18 @@ val CardList = FC<Props> {
                 }
                 Typography{
                     variant = TypographyVariant.subtitle1
-                    +"Otra info"
+                    +"Publicador: ....."
+                }
+                Typography{
+                    variant = TypographyVariant.subtitle2
+                    +"Description....."
                 }
             }
+            CardActions {
+                + "CSV     JSON"
+            }
         }
-        Box {
+        /*Box {
             sx{
                 marginLeft= 10.pct
             }
@@ -45,6 +53,6 @@ val CardList = FC<Props> {
                     +"Ultima actualización"
                 }
             }
-        }
+        }*/
     }
 }

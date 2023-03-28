@@ -1,6 +1,7 @@
 package components.commmon.accordeon
 
 import components.commmon.filterForm.filterForm
+import components.commmon.layout.ListFilterParams
 import csstype.Auto
 import csstype.ClassName
 import csstype.pct
@@ -19,16 +20,19 @@ val filterInfo = FC<Props> {
     Accordion {
 
 
-        className = ClassName("AccordionFilter")
+        //className = ClassName("AccordionFilter")
 
         AccordionSummary{
+            className = ClassName("accordionHeader")
             expandIcon = ExpandMore.create()
-        }
-        AccordionDetails{
             Typography {
-                +"Filtros info"
+                + "Categoría"
             }
-            filterForm()
+        }
+
+        AccordionDetails{
+            ListFilterParams()
+            //filterForm()
         }
     }
 }

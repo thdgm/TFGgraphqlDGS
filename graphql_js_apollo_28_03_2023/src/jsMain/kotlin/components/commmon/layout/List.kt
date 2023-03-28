@@ -3,8 +3,10 @@ package components.commmon.layout
 import components.commmon.Sizes
 import components.commmon.card.CardList
 import components.commmon.pagination.Pagination
+import components.commmon.selectFilter.selectFilter
 import csstype.Auto
 import csstype.BackgroundColor
+import csstype.ClassName
 import csstype.Display
 import csstype.Position
 import csstype.Width
@@ -23,6 +25,8 @@ import mui.material.styles.TypographyVariant
 import mui.system.sx
 import react.FC
 import react.Props
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.h1
 import react.router.useNavigate
 
 val list = FC<Props> {
@@ -31,13 +35,16 @@ val list = FC<Props> {
     fun handleClick(){
        navigate("/info/1")
     }
-
+    h1 {
+        className= ClassName("titleInit")
+        +"Catálogo de datos"
+    }
     Paper {
         sx{
             width = Sizes.BoxList.Width
             marginRight= Auto.auto
             marginLeft= Auto.auto
-            marginTop = 6.pct
+            marginTop = 1.pct
             paddingBottom = 10.pct
             paddingTop = 6.pct
             paddingRight = 10.pct
@@ -45,7 +52,14 @@ val list = FC<Props> {
             backgroundColor = rgba(249,249,249,0.87)
             position = Position.relative
         }
-        Pagination()
+        div {
+            className = ClassName("row listInfoHeader")
+            Typography{
+                + "66.000 datasets encontrados"
+            }
+            selectFilter()
+        }
+
         List {
 
             ListItemButton{
@@ -61,7 +75,7 @@ val list = FC<Props> {
                 CardList()
             }
         }
-
+        Pagination()
     }
 
 
