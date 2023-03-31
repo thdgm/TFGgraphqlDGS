@@ -5,6 +5,7 @@ import components.commmon.dialog.Dialog
 import components.commmon.layout.sideLeft
 import csstype.AlignItems
 import csstype.Auto
+import csstype.ClassName
 
 import csstype.Display
 import csstype.pct
@@ -47,8 +48,11 @@ val Searcher = FC<Props> {
             marginRight= Auto.auto
             marginLeft = Auto.auto
             marginTop = 10.px
+            marginBottom = 6.pct
+
 
         }
+        className = ClassName("search-container")
         Paper {
             sx {
                 display = Display.flex
@@ -56,6 +60,8 @@ val Searcher = FC<Props> {
                 marginRight= Auto.auto
                 marginLeft = Auto.auto
                 marginTop = 10.px
+                marginBottom= 10.px
+                width= 100.pct
                 //zIndex = integer(1300)
 
             }
@@ -73,7 +79,7 @@ val Searcher = FC<Props> {
             }
             InputBase {
                 sx {
-                    marginRight = 5.px
+                    width= 100.pct
                 }
                 type = "search"
                 placeholder = "Search your content"

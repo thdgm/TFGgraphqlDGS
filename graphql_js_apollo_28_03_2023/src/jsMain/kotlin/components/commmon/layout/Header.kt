@@ -53,16 +53,16 @@ val header = FC<HeaderProps> { props->
 
     var theme by useRequiredContext(ThemeContext)
 
-    Box{
-        sx { flexGrow= number(1.0) }
+    Box {
+        sx { flexGrow = number(1.0) }
 
-        AppBar{
-            position= AppBarPosition.static
-            Toolbar{
+        AppBar {
+            position = AppBarPosition.static
+            Toolbar {
 
-                IconButton{
+                IconButton {
                     ariaLabel = "githubIcon"
-                    edge= IconButtonEdge.start
+                    edge = IconButtonEdge.start
                     ariaHasPopup = AriaHasPopup.`false`
                     size = Size.large
                     color = IconButtonColor.inherit
@@ -98,9 +98,9 @@ val header = FC<HeaderProps> { props->
         }
 
     }
-
-
-
 }
+
+
+
 
 

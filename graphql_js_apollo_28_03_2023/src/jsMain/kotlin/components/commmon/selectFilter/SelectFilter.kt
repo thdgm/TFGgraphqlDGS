@@ -35,7 +35,7 @@ val selectFilter = FC<Props> {
     var orderVal by useState("")
 
     FormControl {
-        sx { minWidth = 120.px }
+        sx { minWidth = 220.px }
         size = Size.small
         InputLabel {
             id = "demo-select-small"

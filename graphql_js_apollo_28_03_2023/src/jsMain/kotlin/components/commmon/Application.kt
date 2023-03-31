@@ -2,6 +2,7 @@ package components.commmon
 
 import com.apollographql.apollo3.ApolloClient
 import components.commmon.accordeon.filterInfo
+import components.commmon.layout.InitPage
 import components.commmon.layout.header
 import components.commmon.layout.list
 import components.commmon.layout.sideLeft
@@ -11,6 +12,8 @@ import components.commmon.themes.Themes
 import csstype.ClassName
 import emotion.react.useTheme
 import kotlinx.browser.localStorage
+import mui.material.Container
+import mui.material.MuiGrid.Companion.container
 import mui.material.PaletteMode
 import mui.material.styles.Palette
 import mui.material.styles.PaletteColor
@@ -57,6 +60,8 @@ val Application = FC<ApplicationProps> { props ->
 
             this.theme = theme//if(actualTheme == "dark") Themes.Dark else Themes.Light
 
+
+
             div{
                 className= ClassName("container")
 
@@ -64,11 +69,6 @@ val Application = FC<ApplicationProps> { props ->
                     className= ClassName("row")
                     header()
 
-                }
-                div {
-                    className= ClassName("row")
-
-                    Searcher()
                 }
 
                 div {
@@ -81,7 +81,7 @@ val Application = FC<ApplicationProps> { props ->
                             }
                             Route {
                                 path = "/"
-                                element = list.create()
+                                element =  InitPage.create()//list.create()
                             }
 
                         }

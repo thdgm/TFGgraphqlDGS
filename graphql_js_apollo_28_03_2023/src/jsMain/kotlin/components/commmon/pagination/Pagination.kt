@@ -34,6 +34,10 @@ val Pagination = FC<Props> {
         className = ClassName("pagination")
          elevation=0
          Pagination {
+             sx {
+                 position = Position.absolute
+                 marginLeft = 50.pct
+             }
              count = 10
              size = Size.small
          }

@@ -3,6 +3,7 @@ package components.commmon.layout
 import components.commmon.Sizes
 import components.commmon.card.CardList
 import components.commmon.pagination.Pagination
+import components.commmon.searcher.Searcher
 import components.commmon.selectFilter.selectFilter
 import csstype.Auto
 import csstype.BackgroundColor
@@ -35,29 +36,40 @@ val list = FC<Props> {
     fun handleClick(){
        navigate("/info/1")
     }
-    h1 {
-        className= ClassName("titleInit")
-        +"Catálogo de datos"
-    }
+
     Paper {
         sx{
             width = Sizes.BoxList.Width
             marginRight= Auto.auto
             marginLeft= Auto.auto
-            marginTop = 1.pct
+            //marginTop = 1.pct
             paddingBottom = 10.pct
-            paddingTop = 6.pct
+            //paddingTop = 6.pct
             paddingRight = 10.pct
             paddingLeft = 10.pct
             backgroundColor = rgba(249,249,249,0.87)
             position = Position.relative
         }
-        div {
-            className = ClassName("row listInfoHeader")
-            Typography{
-                + "66.000 datasets encontrados"
+        Box{
+            Searcher()
+        }
+        Box {
+           sx {
+               display = Display.flex
+           }
+            Box {
+                Typography{
+                    + "66.000 datasets encontrados"
+                }
             }
-            selectFilter()
+            Box {
+                sx {
+                    marginLeft = 50.pct
+
+                }
+                selectFilter()
+            }
+
         }
 
         List {
