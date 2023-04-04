@@ -1,4 +1,4 @@
-package components.commmon.layout
+package components.commmon.accordeon
 
 import components.commmon.Sizes
 import components.commmon.card.CardList
@@ -27,16 +27,20 @@ import react.Props
 import react.dom.html.ReactHTML.h1
 import react.router.useNavigate
 
-val ListFilterParams = FC<Props> {
+external interface ListFilterParamsProps:Props{
+
+    var filterFields: Collection<String>
+
+}
+val ListFilterParams = FC<ListFilterParamsProps> { props ->
 
         List {
+            props.filterFields.forEach {
+                ListItemButton{
+                    + "$it"
+                }
+            }
 
-            ListItemButton{
-                + "Param1"
-            }
-            ListItemButton{
-                + "Param2"
-            }
 
         }
 }

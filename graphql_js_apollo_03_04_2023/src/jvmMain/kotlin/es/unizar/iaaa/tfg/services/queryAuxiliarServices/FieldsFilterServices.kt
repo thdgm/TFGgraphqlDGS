@@ -55,7 +55,7 @@ class FieldsFilterServicesImpl(
     override fun getFrequenciesRanges(): Collection<String?> =
         datasetRepository.findAll()
             .filter { converter.toPeriocidad(it.accrualPeriodicity).range != null }
-            .map { converter.toPeriocidad(it.accrualPeriodicity).range  }.distinct()
+            .map { converter.toUpdateFrequencyFormat(converter.toPeriocidad(it.accrualPeriodicity).toString()) }.distinct()
 
     // Return string list with all the associated values to each publisher's label saved in database.
 

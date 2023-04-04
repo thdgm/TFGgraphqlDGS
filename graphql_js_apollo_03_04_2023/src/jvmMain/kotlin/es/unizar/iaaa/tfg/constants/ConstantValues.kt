@@ -42,5 +42,32 @@ object ConstantValues {
         'U' to "Universidades"
     )
 
+    val FREQUENCY_MAP = mapOf(
+        "time:years 1.0" to  "Anual",
+        "time:months 3.0" to "Trimestral",
+        "time:months 1.0" to "Mensual",
+        "time:days 1.0" to "Diario",
+        "time:days 15.0" to "Bimensual",
 
+        "time:weeks 1.0" to "Semanal",
+        "time:years 3.0" to "Trienal",
+        "time:months 6.0" to "Semestral",
+        "time:seconds 1.0" to "Continuo",
+        "time:years 2.0" to "Bienal",
+
+        "time:weeks 2.0" to "Quincenal",
+        "time:days 3.0" to "Bisemanal",
+        "time:months 4.0" to "Cuatrimestral",
+        "time:days 2.0" to "Tres veces por semana",
+
+    )
+    val FREQUENCY_TRANSLATOR = mapOf(
+        "days" to  "días",
+        "years" to "años",
+        "weeks" to "semanas",
+        "hours" to "horas",
+        "minutes" to "minutos",
+        "seconds" to "segundos",
+        "months" to "meses",
+        )
 }

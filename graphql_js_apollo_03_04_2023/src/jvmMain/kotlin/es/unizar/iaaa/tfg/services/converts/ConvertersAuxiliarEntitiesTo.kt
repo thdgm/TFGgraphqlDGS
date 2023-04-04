@@ -5,6 +5,8 @@ import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.Frequency
 import es.unizar.iaaa.tfg.constants.ConstantValues.ADMON_LEVEL
+import es.unizar.iaaa.tfg.constants.ConstantValues.FREQUENCY_MAP
+import es.unizar.iaaa.tfg.constants.ConstantValues.FREQUENCY_TRANSLATOR
 import es.unizar.iaaa.tfg.constants.ConstantValues.LANGSTRING_SEPARADOR
 import es.unizar.iaaa.tfg.domain.resourceRelations.PublisherEntity
 import org.slf4j.LoggerFactory.getLogger
@@ -25,6 +27,8 @@ interface ConvertersAuxiliarEntitiesTo {
     fun toAdministrationLevel(notation:String): String
 
     fun getAdministrationLevel(firsLetter:String): Char?
+
+    fun toUpdateFrequencyFormat(duration:String?): String
 }
 
 @Service
@@ -79,6 +83,14 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
     override fun toAdministrationLevel(notation:String): String=
         // Search map value for the key that is the first word of notation
          ADMON_LEVEL[notation[0]] ?: "Otra institución"
+
+    // Convert Publisher notation according to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
+    override fun toUpdateFrequencyFormat(duration:String?): String {
+        // Search map value for the key that is the first word of notation
+        if (duration == null) return ""
+        val periocity = toPeriocidad(duration)
+        return  FREQUENCY_MAP[duration] ?: "Cada ${periocity.period?.toInt()} ${FREQUENCY_TRANSLATOR[periocity.range]}"
+    }
 
 
     // Get Publisher notation first letter according to https://datos.gob.es/es/recurso/sector-publico/org/Organismo

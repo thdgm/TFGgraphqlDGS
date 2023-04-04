@@ -1,7 +1,6 @@
 package components.commmon.accordeon
 
 import components.commmon.filterForm.filterForm
-import components.commmon.layout.ListFilterParams
 import csstype.Auto
 import csstype.ClassName
 import csstype.pct
@@ -16,7 +15,15 @@ import react.Props
 import react.ReactNode
 import react.create
 
-val filterInfo = FC<Props> {
+external interface FilterInfoProps:Props{
+    var filterName:String
+    var filterFields: Collection<String>
+
+}
+
+val filterInfo = FC<FilterInfoProps> { props ->
+
+    console.log("FFFIELDS ${props.filterFields}")
     Accordion {
 
 
@@ -26,12 +33,12 @@ val filterInfo = FC<Props> {
             className = ClassName("accordionHeader")
             expandIcon = ExpandMore.create()
             Typography {
-                + "Categoría"
+                + "${props.filterName}"
             }
         }
 
         AccordionDetails{
-            ListFilterParams()
+            ListFilterParams{this.filterFields = props.filterFields}
             //filterForm()
         }
     }

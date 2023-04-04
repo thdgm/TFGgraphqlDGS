@@ -35,7 +35,11 @@ class TestFilterFields {
           "classpath:jsonDayPeriocity.json",
           "classpath:jsonYearPeriocity1.json",
           "classpath:jsonYearPeriocity2.json",
-          "classpath:jsonYearPeriocity3.json"
+          "classpath:jsonYearPeriocity3.json",
+          "classpath:jsonThreeTimesPerWeek.json",
+          "classpath:jsonEach99Years.json",
+          "classpath:jsonCuatrimestral.json",
+          "classpath:jsonContinuo.json",
 
     )
 
@@ -176,7 +180,7 @@ class TestFilterFields {
         LoggerFactory.getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
         val frequencies = response.extractValue<Collection<String>>("data.getAllFrequencies[*]")
 
-        assertThat(frequencies).hasSize(4)
+        assertThat(frequencies).hasSize(8)
 
     }
 

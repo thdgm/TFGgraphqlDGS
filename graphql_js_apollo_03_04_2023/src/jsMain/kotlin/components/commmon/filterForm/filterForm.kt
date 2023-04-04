@@ -27,14 +27,22 @@ import react.create
 
 
 val filtersTypes = listOf(
-    "Catagoría",
+    "Categoría",
     "Formato",
     "Publicador",
     "Nivel de Administración",
-    "Frecuencia de Aztualización",
+    "Frecuencia de Actualización",
     "Etiqueta"
 )
 
+val filtersTypesFields = listOf<Collection<String>>(
+    listOf("Empleo","Medio ambiente"),
+    listOf("CSV","JSON"),
+    listOf("Agencia estatal de meteorología", "Agencia española de protección de datos"),
+    listOf("Administración Local", "Universidades"),
+    listOf("Diario", "Mensual"),
+    listOf("Estadísticas", "Hombres", "Mujeres")
+)
 val filterForm = FC<Props> {
 
     Paper {
@@ -67,9 +75,12 @@ val filterForm = FC<Props> {
                     width = 100.pct
                 }
                 variant = FormControlVariant.standard
-                filtersTypes.forEach{
+                filtersTypes.forEachIndexed{ index, value ->
                     FormLabel {
-                        filterInfo()
+                        filterInfo{
+                            this.filterName = value
+                            this.filterFields = filtersTypesFields.elementAt(index)
+                        }
                     }
                 }
                /* FormLabel {
