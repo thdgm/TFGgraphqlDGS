@@ -6,6 +6,8 @@ package es.unizar.iaaa.tfg.constants
 object ConstantValues {
     const val LANGSTRING_SEPARADOR = "--"
     const val DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss'+'SS:ss"
+    const val DATE_PATTERN_ZONE_OFFSET = "yyyy-MM-dd'T'HH:mm:ssZ"
+    const val REGEX_FREQUENCY = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\+\\d{4}"
     const val DISTRIBUTION = "Distribution"
     const val DATASET = "Dataset"
     const val CR_ID = "/CatalogRecord"
