@@ -473,8 +473,8 @@ class Prueba {
         }
 
 
-        println("ESTO11: ${list.elementAt(0).fromString()}")
-        println("ESTO12: ${list.elementAt(0)}")
+        println("ESTO11: ${list.elementAt(10).fromString()}")
+        println("ESTO12: ${list.elementAt(10)}")
 
         println(i)
        /*list.map{

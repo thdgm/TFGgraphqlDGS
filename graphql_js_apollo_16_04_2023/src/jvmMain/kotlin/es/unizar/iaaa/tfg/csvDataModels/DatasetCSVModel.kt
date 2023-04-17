@@ -52,26 +52,28 @@ data class DatasetCSVModel(
     fun fromString(): DatasetCSVModel{
 
         val m = this.toString().split("[split]")
-        println("MMM: ${ m.elementAt(3).trim().length}")
 
-        println("MMM: ${m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1).split("}")}")
+        println("ESTOO1 ${m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1).split("}").elementAt(1).replace(", {", "")}")
+        println("FILTER ${m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1)}")
 
         return DatasetCSVModel(
             if (m.elementAt(0).trim() == "null") null else m.elementAt(0).trim(),
             if (m.elementAt(1).trim() == "null") null else m.elementAt(1).trim(),
             if (m.elementAt(2).isNotEmpty() && m.elementAt(2).trim() != "null"){
-                m.elementAt(2).trim().substring(1,(m.elementAt(2).trim().length)-1).split(",")
+                m.elementAt(2).trim().substring(1,(m.elementAt(2).trim().length)-1).split(",").map{
+                    it.trim()
+                }
             } else emptyList(),
             if (m.elementAt(3).isNotEmpty() && m.elementAt(3).trim() != "null"){
-                m.elementAt(3).trim().substring(1,(m.elementAt(3).trim().length)-1).split(",").map{it}
+                m.elementAt(3).trim().substring(1,(m.elementAt(3).trim().length)-1).split(",").map{it.trim()}
             } else emptyList(),
             if (m.elementAt(4).isNotEmpty() && m.elementAt(4).trim() != "null"){
-                m.elementAt(4).trim().substring(1,(m.elementAt(4).trim().length)-1).split(",")
+                m.elementAt(4).trim().substring(1,(m.elementAt(4).trim().length)-1).split(",").map{it.trim()}
             } else emptyList(),
             if (!m.elementAt(5).isNullOrEmpty() && m.elementAt(5).trim() != "null") {
-                m.elementAt(5).split(",").associate {
-                    val (left, right) = it.split("-")
-                    left to right
+                m.elementAt(5).trim().substring(1,(m.elementAt(5).trim().length)-1).split(",").associate {
+                    val (left, right) = it.split("=")
+                    left.trim() to right.trim()
                 }
             }else {
                 null
@@ -89,7 +91,7 @@ data class DatasetCSVModel(
             },
             if (m.elementAt(8).trim() == "null") null else m.elementAt(8).trim(),
             if (m.elementAt(9).isNotEmpty() && m.elementAt(9).trim() != "null"){
-                m.elementAt(9).trim().substring(1,(m.elementAt(9).trim().length)-1).split(",")
+                m.elementAt(9).trim().substring(1,(m.elementAt(9).trim().length)-1).split(",").map{it.trim()}
             } else emptyList(),
             if (m.elementAt(10).trim() == "null") null else m.elementAt(10).trim(),
             if (m.elementAt(11).trim() == "null") null else m.elementAt(11).trim(),
@@ -113,18 +115,19 @@ data class DatasetCSVModel(
             if (!m.elementAt(16).isNullOrBlank() && m.elementAt(16).trim() != "null"){
                 m.elementAt(16).trim()
             } else null,
-            if (!m.elementAt(17).isNullOrEmpty() && m.elementAt(17).trim() != "null") {
+           if (!m.elementAt(17).isNullOrEmpty() && m.elementAt(17).trim() != "null") {
                 m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1).split("}").map{
                     if (!it.isNullOrBlank()){
-                        it.trim().split(",").associate {
+                        it.trim().replace(", {", "").split(",").associate {
                             val (left, right) = it.split("=")
-                            println("ESTOOOO ${it.split("=")}")
                             left.trim() to right.trim()
                         }
                     }else null
 
                 }.filterNotNull()
             } else null,
+
+
 
 
         )
