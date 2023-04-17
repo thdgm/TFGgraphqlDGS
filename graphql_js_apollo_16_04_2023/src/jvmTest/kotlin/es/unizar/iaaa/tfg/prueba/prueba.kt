@@ -27,6 +27,7 @@ import es.unizar.iaaa.tfg.domain.resourceRelations.ThemeEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
 import es.unizar.iaaa.tfg.domain.resources.DataServiceEntity
 import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
+import es.unizar.iaaa.tfg.jsonDataModels.DatasetCSVModel
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.DataServiceRepository
@@ -54,7 +55,7 @@ import java.io.InputStream
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
-
+import org.junit.jupiter.api.Assertions.assertEquals
 
 @SpringBootTest
 class Prueba {
@@ -114,7 +115,7 @@ class Prueba {
 
 
 
-    data class DatasetModel(
+    data class DatasetModell(
         val url: String?,
         val identifier: String?,
         val title: Collection<String>,
@@ -152,9 +153,9 @@ class Prueba {
 
     }
 
-    fun readStrictCsv(inputStream: InputStream): List<DatasetModel> = csvReader().open(inputStream) {
+    fun readStrictCsv(inputStream: InputStream): List<DatasetCSVModel> = csvReader().open(inputStream) {
         readAllWithHeaderAsSequence().map {
-            DatasetModel(
+            DatasetCSVModel(
                 it["URL"],
                 if (!it["IDENTIFICADOR"].isNullOrBlank()) it["IDENTIFICADOR"] else null,
                 if (!it["TÍTULO"].isNullOrBlank()){
@@ -214,7 +215,7 @@ class Prueba {
         }.toList()
     }
 
-    fun createDataset(d: DatasetModel, distributions:Collection<DistributionEntity>, dServ: DataServiceEntity, idCatalog: String):String {
+    fun createDataset(d: DatasetModell, distributions:Collection<DistributionEntity>, dServ: DataServiceEntity, idCatalog: String):String {
 
         val dataset = DatasetEntity()
         dataset.id = if (d.url != null) UUID.nameUUIDFromBytes(d.url.toByteArray()).toString() else UUID.randomUUID().toString()
@@ -354,7 +355,7 @@ class Prueba {
 
     }
 
-    fun createDistributions(d: DatasetModel, dServ: DataServiceEntity):Collection<DistributionEntity>{
+    fun createDistributions(d: DatasetModell, dServ: DataServiceEntity):Collection<DistributionEntity>{
         val distributions = mutableListOf<DistributionEntity>()
         if (!d.distributions.isNullOrEmpty()){
             d.distributions.forEachIndexed { index,distributionMap ->
@@ -405,7 +406,7 @@ class Prueba {
         return newDataService
     }
 
-    fun createCatalogRecord(input: CatalogRecordInput, idCatalog: String,d: DatasetModel): CatalogRecordEntity? {
+    fun createCatalogRecord(input: CatalogRecordInput, idCatalog: String,d: DatasetModell): CatalogRecordEntity? {
 
         if (d.url != null) {
             val primaryTopicId = UUID.nameUUIDFromBytes(d.url.toByteArray()).toString()
@@ -459,14 +460,31 @@ class Prueba {
         //val dServ = createDataservice()
         //val distributions = createDistributions(list.elementAt(27),dServ)
         //val idD = createDataset(list.elementAt(27),distributions,dServ)
-        list.map{
+        val d1 = list.elementAt(0)
+        val i = list.elementAt(0).fromString() == list.elementAt(0)
+        println(list.elementAt(0).title)
+        val kk = if (!d1.keywords.isNullOrEmpty() && d1.keywords.toString().trim() != "null") {
+            d1.keywords.toString().trim().split(",").associate {
+                val (left, right) = it.split("-")
+                left to right
+            }
+        }else {
+            null
+        }
+
+
+        println("ESTO11: ${list.elementAt(0).fromString()}")
+        println("ESTO12: ${list.elementAt(0)}")
+
+        println(i)
+       /*list.map{
             val dServ = createDataservice(idCatalog)
             val distributions = createDistributions(it,dServ)
             val idD = createDataset(it,distributions,dServ,idCatalog)
             createCatalogRecord(crInput, idCatalog,it)
-            println(datasetRepository.findByIdOrNull(idD)?.id)
-            println("DISTTSS: $distributions")
-        }
+            assertEquals(distributions.size, it.distributions?.size ?: 0)
+            assertEquals(datasetRepository.existsById(idD),true)
+        }*/
 
 
 

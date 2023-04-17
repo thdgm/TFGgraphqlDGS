@@ -6,11 +6,16 @@ import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordInput
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordOutput
 import com.graphqlDGS.graphqlDGS.model.types.Error
 import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
+import es.unizar.iaaa.tfg.jsonDataModels.DatasetCSVModel
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.HintsRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
+import es.unizar.iaaa.tfg.services.csvServices.CsvCatalogRecordModelService
+import es.unizar.iaaa.tfg.services.csvServices.CsvDataServiceModelServices
+import es.unizar.iaaa.tfg.services.csvServices.CsvDatasetModelServices
+import es.unizar.iaaa.tfg.services.csvServices.CsvDistributionModelServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateRelationsBetweenEntitiesServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateResourcesEntitiesServices
 import org.slf4j.LoggerFactory.getLogger
@@ -28,8 +33,13 @@ interface CatalogRecordsServices {
     fun getContentUrl(id: String): String?
     fun getContentType(id: String): String?
     fun getHints(id: String): Collection<String?>
-    fun createEntitiesAndCR(
+    fun createEntitiesAndCRFromJson(
         fieldsMap: MutableMap<ModelJsonMapping,String>,
+        input: CatalogRecordInput,
+        idCatalog: String
+    ): CatalogRecordOutput
+    fun createEntitiesAndCRFromCsv(
+        datasetFields: DatasetCSVModel,
         input: CatalogRecordInput,
         idCatalog: String
     ): CatalogRecordOutput
@@ -42,8 +52,13 @@ class CatalogRecordsServicesImpl(
     private val catalogRepository: CatalogRepository,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
     private val createResourcesEntitiesServices: CreateResourcesEntitiesServices,
-    private val hintsRepository: HintsRepository
-) : CatalogRecordsServices {
+    private val hintsRepository: HintsRepository,
+    private val csvCatalogRecordModelServices: CsvCatalogRecordModelService,
+    private val csvDataServiceModelServices: CsvDataServiceModelServices,
+    private val csvDatasetModelServices: CsvDatasetModelServices,
+    private val csvDistributionModelServices: CsvDistributionModelServices,
+
+    ) : CatalogRecordsServices {
 
     // Return CatalogRecords id or null
     override fun showCatalogRecord(id: String): CatalogRecord? {
@@ -82,7 +97,7 @@ class CatalogRecordsServicesImpl(
         hintsRepository.findByCatalogRecordHintsId(id).map { it.id.hintId }
 
     // Return new CatalogRecord and creates entities
-    override fun createEntitiesAndCR(
+    override fun createEntitiesAndCRFromJson(
         fieldsMap: MutableMap<ModelJsonMapping,String>,
         input: CatalogRecordInput,
         idCatalog: String
@@ -109,5 +124,19 @@ class CatalogRecordsServicesImpl(
         }
 
         return err ?:  if(cr != null) converter.toCatalogRecord(cr) else Error("No se ha creado el Catalog Record")
+    }
+
+    override fun createEntitiesAndCRFromCsv(
+        datasetFields: DatasetCSVModel,
+        input: CatalogRecordInput,
+        idCatalog: String
+    ): CatalogRecordOutput{
+
+        val dServ = csvDataServiceModelServices.createDataservice(idCatalog)
+        val distributions = csvDistributionModelServices.createDistribution(datasetFields,dServ)
+        csvDatasetModelServices.createDataset(datasetFields,distributions,dServ,idCatalog)
+        val cr =  csvCatalogRecordModelServices.createCatalogRecord(input, idCatalog,datasetFields)
+        return if(cr != null) converter.toCatalogRecord(cr) else Error("No se ha creado el Catalog Record")
+
     }
 }

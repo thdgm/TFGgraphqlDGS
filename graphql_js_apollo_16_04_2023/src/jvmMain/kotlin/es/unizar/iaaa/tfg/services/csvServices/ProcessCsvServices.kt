@@ -1,8 +1,9 @@
-package es.unizar.iaaa.tfg.services.jsonServices
+package es.unizar.iaaa.tfg.services.csvServices
 
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import es.unizar.iaaa.tfg.constants.ConstantValues
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetCSVModel
+import org.springframework.core.io.ResourceLoader
 import org.springframework.stereotype.Service
 import java.io.InputStream
 import java.time.LocalDateTime
@@ -14,16 +15,27 @@ import java.time.format.DateTimeFormatter
  */
 
 interface ProcessCsvServices {
-    fun processCsv(inputStream: InputStream):  List<DatasetCSVModel>
+    fun processCsvService(url: String):  List<DatasetCSVModel>
 }
 
 @Service
-class ProcessCsvServicesImpl: ProcessCsvServices {
+class ProcessCsvServicesImpl(
+    private val resourceLoader: ResourceLoader,
+): ProcessCsvServices {
 
     /*
      * Return a list of DatasetCSVModel wich contains all fields needed to create the models.
      */
-    override fun processCsv(inputStream: InputStream): List<DatasetCSVModel> = csvReader().open(inputStream) {
+
+    override fun processCsvService(url: String):List<DatasetCSVModel>{
+        val inputStream =  resourceLoader.getResource("classpath:datosGob.csv").inputStream
+        return processCsv(inputStream)
+    }
+
+    /*
+     * This function extract all fields from all rows in a CSV file.
+     */
+    fun processCsv(inputStream: InputStream): List<DatasetCSVModel> = csvReader().open(inputStream) {
         readAllWithHeaderAsSequence().map {
             DatasetCSVModel(
                 it["URL"],

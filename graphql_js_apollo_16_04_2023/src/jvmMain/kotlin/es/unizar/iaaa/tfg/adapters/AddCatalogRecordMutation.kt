@@ -6,6 +6,7 @@ import com.graphqlDGS.graphqlDGS.model.types.Error
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsMutation
 import com.netflix.graphql.dgs.InputArgument
+import es.unizar.iaaa.tfg.services.csvServices.ProcessCsvServices
 import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
 import es.unizar.iaaa.tfg.services.jsonServices.ProcessJsonServices
 import org.apache.commons.validator.routines.UrlValidator
@@ -22,6 +23,7 @@ import org.slf4j.LoggerFactory.getLogger
 class AddCatalogRecordMutation(
     private val catalogRecordServices: CatalogRecordsServices,
     private val processJsonServices: ProcessJsonServices,
+    private val processCsvServices: ProcessCsvServices,
 
     ) {
     val validator = UrlValidator()
@@ -29,11 +31,42 @@ class AddCatalogRecordMutation(
     fun createCatalogRecord(@InputArgument input: CatalogRecordInput): CatalogRecordOutput
     {
         val catalog = input.inCatalog ?: "root"
-        var mapJsonTyped: Map<JSONObject, String>
+
         getLogger("logger").debug("CreateCRMutation")
 
+        when(input.contentType){
+            "txt/csv" -> {
+                val listCsvModels = processCsvServices.processCsvService(input.contentUrl!!)
+                return catalogRecordServices.createEntitiesAndCRFromCsv(listCsvModels.elementAt(0),input,catalog)
+            }
+            "application/json" ->{
+                var mapJsonTyped: Map<JSONObject, String>
 
-        if (!input.contentUrl.isNullOrBlank()) {
+                if (!input.contentUrl.isNullOrBlank()) {
+                    mapJsonTyped = processJsonServices.getJSONArray(input.contentUrl!!)
+                }
+                else if(!input.content.isNullOrBlank()) {
+                    mapJsonTyped = processJsonServices.getJSONArrayfromString(input.content)
+                }else {
+                    return Error("Error: CatalogRecord cannot be created due to lack of data")
+                }
+                val jsonFields = processJsonServices.processJson(mapJsonTyped)
+                return catalogRecordServices.createEntitiesAndCRFromJson(jsonFields,input,catalog)
+            }
+            else ->{
+
+                Error("Error: unknown input type")
+
+            }
+        }
+
+        return Error("Error: unknown input type")
+
+    }
+}
+/*
+
+if (!input.contentUrl.isNullOrBlank()) {
             getLogger("logger").debug("PorcessJson: getJSONArray")
             mapJsonTyped = processJsonServices.getJSONArray(input.contentUrl!!)
 
@@ -45,7 +78,4 @@ class AddCatalogRecordMutation(
         }
         getLogger("logger").debug("PorcessJson:PorcessJson")
         val jsonFields = processJsonServices.processJson(mapJsonTyped)
-        return catalogRecordServices.createEntitiesAndCR(jsonFields,input,catalog)
-
-    }
-}
+ */

@@ -1,7 +1,13 @@
 package es.unizar.iaaa.tfg.adapters
 
 import com.netflix.graphql.dgs.DgsQueryExecutor
+import es.unizar.iaaa.tfg.jsonDataModels.AccrualPeriodicityJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.DistributionJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ImtJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.PeriodOfTimeJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.PublisherJsonMapping
 import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.jupiter.api.Test

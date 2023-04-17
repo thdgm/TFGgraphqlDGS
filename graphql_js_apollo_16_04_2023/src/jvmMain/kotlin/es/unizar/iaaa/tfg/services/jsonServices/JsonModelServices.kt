@@ -1,6 +1,12 @@
 package es.unizar.iaaa.tfg.services.jsonServices
 
+import es.unizar.iaaa.tfg.jsonDataModels.AccrualPeriodicityJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.DistributionJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ImtJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.PeriodOfTimeJsonMapping
+import es.unizar.iaaa.tfg.jsonDataModels.PublisherJsonMapping
 import org.apache.commons.validator.routines.UrlValidator
 import org.json.JSONArray
 import org.json.JSONObject

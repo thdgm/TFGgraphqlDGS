@@ -1,4 +1,4 @@
-package es.unizar.iaaa.tfg.services.jsonServices
+package es.unizar.iaaa.tfg.services.csvServices
 
 import es.unizar.iaaa.tfg.domain.resources.DataServiceEntity
 import es.unizar.iaaa.tfg.repository.CatalogRepository

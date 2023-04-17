@@ -1,4 +1,4 @@
-package es.unizar.iaaa.tfg.services.jsonServices
+package es.unizar.iaaa.tfg.services.csvServices
 
 
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordInput
@@ -18,12 +18,12 @@ import java.util.*
  * with other entities.
  */
 
-interface CsvCatalogRecordModelServices {
+interface CsvCatalogRecordModelService {
     fun createCatalogRecord(input: CatalogRecordInput, idCatalog: String, d: DatasetCSVModel): CatalogRecordEntity?
 }
 
 @Service
-class CsvCatalogRecordModelServicesImpl(
+class CsvCatalogRecordModelServiceImpl(
 
 
     private val catalogRecordsRepository: CatalogRecordsRepository,
@@ -31,7 +31,7 @@ class CsvCatalogRecordModelServicesImpl(
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
     private val createAuxiliarEntitiesServices: CreateAuxiliarEntitiesServices,
 
-    ) : CsvCatalogRecordModelServices {
+    ) : CsvCatalogRecordModelService {
 
     override fun createCatalogRecord(input: CatalogRecordInput, idCatalog: String, d: DatasetCSVModel): CatalogRecordEntity? {
 
