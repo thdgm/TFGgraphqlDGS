@@ -139,17 +139,33 @@ class Prueba {
 
     @Test
     fun `temporal amount`() {
+        val s = "[{TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (XLS), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xls/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=XLS}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separados por tabuladores), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separado por ;), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_sc/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separado por coma), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_c/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (XLSX), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xlsx/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=XLSX}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (Pc-Axis), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/px/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=PC-Axis}] "
+        val ss = if (!s.isNullOrEmpty() && s.trim() != "null") {
+            s.trim().substring(2,(s.trim().length)-2).replace("},\\s*\\{".toRegex(),"[separador]").split("[separador]").map{
 
+                if (!it.isNullOrBlank()){
+                    println("ELEM::: ${it.split(",\\s+".toRegex())}")
+                    it.split(",\\s+".toRegex()).associate {
+                        val (left, right) = it.split("=")
+                        left.trim() to right.trim()
+                    }
+                }else null
+
+            }.filterNotNull()
+        } else null
+
+        println("ESTOOO:: $ss")
         //val d = ZonedDateTime.parse("2023-03-17T20:46:12+02:00")
 
         //val p = LocalDateTime.parse("2022-06-06T15:20:37+0200",DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ"))
-        //val d = LocalDateTime.parse("2022-06-06T15:20:37+02:00",DateTimeFormatter.ISO_OFFSET_DATE_TIME)
-        val v = "pc-axis"
+        //val p = LocalDateTime.parse("1960-01-01T09:00",DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+        /*val v = "pc-axis"
         val p = MEDIA_TYPE.get(".$v".toLowerCase())
         if (p != null){
             val mt = MediaType.parseMediaType(p)
             println("MIME TYPE: $p -- $mt")
-        }
+        }*/
+        //println("LD: $p")
 
     }
 

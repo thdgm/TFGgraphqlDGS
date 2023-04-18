@@ -109,7 +109,7 @@ class ProcessCsvServicesImpl(
                         left = "TITLE_$titleNumber"
                         titleNumber += 1
                     }
-                    left to right
+                    "[SPLIT]$left" to right
                 }
             }
         }else null

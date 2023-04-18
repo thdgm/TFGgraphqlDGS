@@ -23,7 +23,7 @@ class CatalogRecordEntity {
     @Column(nullable = false)
     lateinit var title: String
 
-    @Column(nullable = true)
+    @Column(nullable = true,length = 10000)
     lateinit var content: String
 
     @Column(nullable = true)

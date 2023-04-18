@@ -31,8 +31,8 @@ data class DatasetCSVModel(
     override fun toString(): String{
         return "${this.url} [split] " +
                 "${this.identifier} [split] " +
-                "${this.title} [split] " +
-                "${this.description} [split] " +
+                "${this.title} [split] ".replace(",\\s+([a-z]{2}\\-)".toRegex(),"[SPLIT]\$1") +
+                "${this.description} [split] ".replace(",\\s+([a-z]{2}\\-)".toRegex(),"[SPLIT]\$1")+
                 "${this.themes} [split] " +
                 "${this.keywords} [split] " +
                 "${this.issued} [split] " +

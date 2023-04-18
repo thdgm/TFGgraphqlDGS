@@ -6,6 +6,7 @@ import com.graphqlDGS.graphqlDGS.model.types.Error
 import com.netflix.graphql.dgs.DgsComponent
 import com.netflix.graphql.dgs.DgsMutation
 import com.netflix.graphql.dgs.InputArgument
+import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.csvServices.ProcessCsvServices
 import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
 import es.unizar.iaaa.tfg.services.jsonServices.ProcessJsonServices
@@ -23,7 +24,7 @@ import org.slf4j.LoggerFactory.getLogger
 class AddCatalogRecordMutation(
     private val catalogRecordServices: CatalogRecordsServices,
     private val processJsonServices: ProcessJsonServices,
-    private val processCsvServices: ProcessCsvServices,
+    private val converter: ConvertersAuxiliarEntitiesTo,
 
     ) {
     val validator = UrlValidator()
@@ -36,8 +37,11 @@ class AddCatalogRecordMutation(
 
         when(input.contentType){
             "txt/csv" -> {
-                val listCsvModels = processCsvServices.processCsvService(input.contentUrl!!)
-                return catalogRecordServices.createEntitiesAndCRFromCsv(listCsvModels.elementAt(0),input,catalog)
+                if(!input.content.isNullOrBlank()){
+                    return catalogRecordServices.createEntitiesAndCRFromCsv(input, catalog)
+                }else{
+                    return Error("Error: Not data specified in content field.")
+                }
             }
             "application/json" ->{
                 var mapJsonTyped: Map<JSONObject, String>

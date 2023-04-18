@@ -11,6 +11,7 @@ import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.HintsRepository
+import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
 import es.unizar.iaaa.tfg.services.csvServices.CsvCatalogRecordModelService
 import es.unizar.iaaa.tfg.services.csvServices.CsvDataServiceModelServices
@@ -39,7 +40,6 @@ interface CatalogRecordsServices {
         idCatalog: String
     ): CatalogRecordOutput
     fun createEntitiesAndCRFromCsv(
-        datasetFields: DatasetCSVModel,
         input: CatalogRecordInput,
         idCatalog: String
     ): CatalogRecordOutput
@@ -49,6 +49,7 @@ interface CatalogRecordsServices {
 class CatalogRecordsServicesImpl(
     private val catalogRecordsRepository: CatalogRecordsRepository,
     private val converter: ConvertersResourcesEntitiesTo,
+    private val converterAuxiliar: ConvertersAuxiliarEntitiesTo,
     private val catalogRepository: CatalogRepository,
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
     private val createResourcesEntitiesServices: CreateResourcesEntitiesServices,
@@ -127,15 +128,18 @@ class CatalogRecordsServicesImpl(
     }
 
     override fun createEntitiesAndCRFromCsv(
-        datasetFields: DatasetCSVModel,
         input: CatalogRecordInput,
         idCatalog: String
     ): CatalogRecordOutput{
 
+        val datasetFields = converterAuxiliar.toDatasetCsvModeFromString(input.content!!)
+
         val dServ = csvDataServiceModelServices.createDataservice(idCatalog)
         val distributions = csvDistributionModelServices.createDistribution(datasetFields,dServ)
+
         csvDatasetModelServices.createDataset(datasetFields,distributions,dServ,idCatalog)
         val cr =  csvCatalogRecordModelServices.createCatalogRecord(input, idCatalog,datasetFields)
+
         return if(cr != null) converter.toCatalogRecord(cr) else Error("No se ha creado el Catalog Record")
 
     }
