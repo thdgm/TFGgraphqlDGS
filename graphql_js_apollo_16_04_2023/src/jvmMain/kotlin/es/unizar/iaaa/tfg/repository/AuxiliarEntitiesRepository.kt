@@ -63,6 +63,15 @@ interface TitleDistributionRepository : JpaRepository<TitlesDistributionEntity, 
 interface TitleResourceRepository : JpaRepository<TitlesResourceEntity, String> {
     fun findByResourceTitleId(id: String): Collection<TitlesResourceEntity>
 
+
+    @Query(
+        value =
+        "select * from \"titles_resource\" as t WHERE t.\"id_title\" = ?1 and t.\"id_resource\" = ?2",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findTitleByTitleId(titleId: String, resourceId:String): TitlesResourceEntity?
+
     @Modifying
     @Query(
         value =

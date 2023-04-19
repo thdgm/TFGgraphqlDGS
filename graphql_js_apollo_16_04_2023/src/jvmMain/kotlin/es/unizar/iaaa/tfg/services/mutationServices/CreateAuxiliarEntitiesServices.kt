@@ -23,6 +23,7 @@ import es.unizar.iaaa.tfg.domain.ids.TitleResourceId
 import es.unizar.iaaa.tfg.domain.distributionRelations.TitlesDistributionEntity
 import es.unizar.iaaa.tfg.domain.ids.HintsId
 import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
+import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ImtJsonMapping
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
@@ -37,6 +38,8 @@ import es.unizar.iaaa.tfg.repository.LocationRepository
 import es.unizar.iaaa.tfg.repository.PublisherRepository
 import es.unizar.iaaa.tfg.repository.TitleDistributionRepository
 import es.unizar.iaaa.tfg.repository.TitleResourceRepository
+import org.springframework.data.domain.Example
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 
@@ -46,7 +49,7 @@ import org.springframework.stereotype.Service
  * They are used by mutation queries.
  */
 interface CreateAuxiliarEntitiesServices {
-    fun createLanguagesFromCsv(languages: Collection<String>,datasetId: String)
+    fun createLanguagesFromCsv(languages: Collection<String>,datasetId: String):MutableCollection<LanguageEntity>
     fun createLanguages(jsonFields: MutableMap<ModelJsonMapping, String>): MutableCollection<LanguageEntity>
     fun createKeywordsFromCsv(keywords: Map<String, String>, idRes:String)
     fun createKeywords(jsonFields: MutableMap<ModelJsonMapping, String>, idRes:String): Collection<KeywordEntity>
@@ -84,13 +87,16 @@ class CreateAuxiliarEntitiesServicesImpl(
     ) : CreateAuxiliarEntitiesServices {
 
     // Create Language entities according to Csv
-    override fun createLanguagesFromCsv(languages: Collection<String>,datasetId: String){
+    override fun createLanguagesFromCsv(languages: Collection<String>,datasetId: String): MutableCollection<LanguageEntity>{
+        val languagesList = mutableListOf<LanguageEntity>()
         languages.map {
             val newLanguage = LanguageEntity()
             newLanguage.id = it
             if (!languageRepository.existsById(newLanguage.id)) languageRepository.save(newLanguage)
-            languageRepository.insertInLanguagesResources(it, datasetId)
+            //languageRepository.insertInLanguagesResources(it, datasetId)
+            languagesList.add(newLanguage)
         }
+        return languagesList
     }
 
     // Create Language entities according to Json
@@ -163,22 +169,50 @@ class CreateAuxiliarEntitiesServicesImpl(
         title.map {
             when(res) {
                 is ResourceEntity -> {
-                    val newTitle = TitlesResourceEntity()
+                    val tit = TitlesResourceEntity()
                     val titleId = TitleResourceId()
                     val langTitle = it.split("-")
+                    if(!langTitle.elementAt(1).isNullOrBlank()) {
+                        titleId.titleId = langTitle.elementAt(1)
+                        titleId.resourceId = res.id
+                        tit.id = titleId
+                        val language = langTitle.elementAt(0)
+                        tit.resourceTitle = res
+                        titlesResourceRepository.save(tit)
+                        if (language != null)
+                            createRelationsBetweenEntitiesLanguageServices
+                                .insertIntoLanguageTitles(language, tit.id.titleId, res)
+                    }
+                   /* val newTitle = TitlesResourceEntity()
+                    val titleId = TitleResourceId()
+                    val langTitle = it.split("-")
+
                     titleId.titleId = langTitle.elementAt(1)
                     titleId.resourceId = res.id
                     newTitle.id = titleId
                     newTitle.resourceTitle = res
-                    titlesResourceRepository.save(newTitle)
+                    if (titlesResourceRepository.findTitleByTitleId(titleId.titleId,titleId.resourceId) == null){
+                        println("CREATE TITLE2 ID::::::: ${langTitle.elementAt(1)}")
+                        println("CREATE TITLE2 LANG::::::: ${langTitle.elementAt(0)}")
+                        titlesResourceRepository.save(newTitle)
+                    }
                     val language = langTitle.elementAt(0)
+
                     if (!languageRepository.existsById(language)) {
                         val newLanguage = LanguageEntity()
                         newLanguage.id = language
+
+                        println("CREATE LANG::::::: ${newLanguage.id}")
                         languageRepository.save(newLanguage)
+
                     }
+                    languageRepository.insertInLanguagesResources(language,res.id)
                     createRelationsBetweenEntitiesLanguageServices
                         .insertIntoLanguageTitles(language,newTitle.id.titleId,res.id)
+                    //rintln("EXISSTTT: ${titlesResourceRepository.exists(Example.of(newTitle))}")
+
+                    //println("EXISSTTT: ${titlesResourceRepository.findTitleByTitleId(titleId.titleId,titleId.resourceId)}")
+*/
                 }
                 is DistributionEntity -> {
                     val langTitle = it.split("_-_")
@@ -190,11 +224,11 @@ class CreateAuxiliarEntitiesServicesImpl(
                     newTitle.distributionTitle = res
                     titlesDistributionRepository.save(newTitle)
 
-                    if (!languageRepository.existsById(langTitle.elementAt(0))){
+                    /*if (!languageRepository.existsById(langTitle.elementAt(0))){
                         val newLang = LanguageEntity()
                         newLang.id = langTitle.elementAt(0)
                         languageRepository.save(newLang)
-                    }
+                    }*/
                     createRelationsBetweenEntitiesLanguageServices
                         .insertIntoLanguageTitles(langTitle.elementAt(0),newTitle.id.titleId,res.id)
                 }
@@ -213,29 +247,35 @@ class CreateAuxiliarEntitiesServicesImpl(
                     is DistributionEntity -> {
                         val tit = TitlesDistributionEntity()
                         val titleId = TitleDistributionId()
-                        titleId.titleId = text.orEmpty()
-                        titleId.distributionId = res.id
-                        tit.id = titleId
-                        val language = titleLangs.elementAt(index)
-                        tit.distributionTitle = res
-                        titlesDistributionRepository.save(tit)
+                        if(!text.isNullOrBlank()) {
+                            titleId.titleId = text.orEmpty()
+                            titleId.distributionId = res.id
+                            tit.id = titleId
+                            val language = titleLangs.elementAt(index)
+                            tit.distributionTitle = res
+                            titlesDistributionRepository.save(tit)
 
-                        if (language != null)
-                            createRelationsBetweenEntitiesLanguageServices
-                                .insertIntoLanguageTitles(language,tit.id.titleId,res)
+                            if (language != null)
+                                createRelationsBetweenEntitiesLanguageServices
+                                    .insertIntoLanguageTitles(language, tit.id.titleId, res)
+                        }
                     }
                     is ResourceEntity -> {
+
                         val tit = TitlesResourceEntity()
                         val titleId = TitleResourceId()
-                        titleId.titleId = text.orEmpty()
-                        titleId.resourceId = res.id
-                        tit.id = titleId
-                        val language = titleLangs.elementAt(index)
-                        tit.resourceTitle = res
-                        titlesResourceRepository.save(tit)
-                        if (language != null)
-                            createRelationsBetweenEntitiesLanguageServices
-                                .insertIntoLanguageTitles(language,tit.id.titleId,res)
+                        if(!text.isNullOrBlank()){
+                            titleId.titleId = text
+                            titleId.resourceId = res.id
+                            tit.id = titleId
+                            val language = titleLangs.elementAt(index)
+                            tit.resourceTitle = res
+                            titlesResourceRepository.save(tit)
+                            if (language != null)
+                                createRelationsBetweenEntitiesLanguageServices
+                                    .insertIntoLanguageTitles(language,tit.id.titleId,res)
+                        }
+
                     }
                 }
               }

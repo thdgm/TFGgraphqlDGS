@@ -30,7 +30,7 @@ type Mutation {
 
 input CatalogRecordInput{
   inCatalog: ID #root por defecto
-  catalogRecorId: ID
+  catalogRecordId: ID
   contentType: String #metadata content type
   content: String #content as string
   contentUrl:String #record location

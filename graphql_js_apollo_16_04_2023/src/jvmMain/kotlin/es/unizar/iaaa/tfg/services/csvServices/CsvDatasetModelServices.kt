@@ -8,6 +8,7 @@ import es.unizar.iaaa.tfg.jsonDataModels.DatasetCSVModel
 import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.services.mutationServices.CreateAuxiliarEntitiesServices
+import es.unizar.iaaa.tfg.services.mutationServices.CreateRelationsBetweenEntitiesLanguageServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateRelationsBetweenEntitiesServices
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -33,6 +34,7 @@ class CsvDatasetModelServicesImpl(
     private val createRelationsBetweenEntitiesServices: CreateRelationsBetweenEntitiesServices,
     private val catalogRepository: CatalogRepository,
     private val createAuxiliarEntitiesServices: CreateAuxiliarEntitiesServices,
+    private val createRelationsBetweenEntitiesLanguageServices: CreateRelationsBetweenEntitiesLanguageServices
 
 
 
@@ -95,10 +97,12 @@ class CsvDatasetModelServicesImpl(
         }
 
         if (!d.languages.isNullOrEmpty()){
-            createAuxiliarEntitiesServices.createLanguagesFromCsv(d.languages,dataset.id)
+            val languages =createAuxiliarEntitiesServices.createLanguagesFromCsv(d.languages,dataset.id)
+            createRelationsBetweenEntitiesLanguageServices.insertIntoLanguagesResources(languages, dataset)
         }
 
         if (!d.title.isNullOrEmpty()) {
+            println("CREATE TITLE::::::: ${d.title}")
             createAuxiliarEntitiesServices.createTitleFromCsv(d.title, dataset)
         }
 

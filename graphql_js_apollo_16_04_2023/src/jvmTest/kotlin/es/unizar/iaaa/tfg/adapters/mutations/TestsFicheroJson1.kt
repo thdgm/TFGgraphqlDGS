@@ -86,7 +86,7 @@ class TestsFicheroJson1 {
                 "inCatalog" to "root",
                 "contentType" to "application/json",
                 "contentUrl" to urlRecord,
-                "catalogRecorId" to "CRNuevo",
+                "catalogRecordId" to "CRNuevo",
                 "hints" to listOf("datos.gob.es")
             )
         )
@@ -174,7 +174,7 @@ class TestsFicheroJson1 {
                 "inCatalog" to "root",
                 "contentType" to "application/json",
                 "contentUrl" to urlRecord,
-                "catalogRecorId" to "CRNuevo",
+                "catalogRecordId" to "CRNuevo",
                 "hints" to listOf("datos.gob.es")
             )
         )
@@ -212,7 +212,7 @@ class TestsFicheroJson1 {
                 "inCatalog" to "root",
                 "contentType" to "application/json",
                 "contentUrl" to urlRecord,
-                "catalogRecorId" to "CRNuevo",
+                "catalogRecordId" to "CRNuevo",
                 "hints" to listOf("datos.gob.es")
             )
         )
@@ -253,7 +253,7 @@ class TestsFicheroJson1 {
                 "inCatalog" to "root",
                 "contentType" to "application/json",
                 "contentUrl" to urlRecord,
-                "catalogRecorId" to "CRNuevo",
+                "catalogRecordId" to "CRNuevo",
                 "hints" to listOf("datos.gob.es")
             )
         )
@@ -540,7 +540,7 @@ class TestsFicheroJson1 {
                 "inCatalog" to "root",
                 "contentType" to "application/json",
                 "contentUrl" to urlRecord,
-                "catalogRecorId" to "CRTest",
+                "catalogRecordId" to "CRTest",
                 "hints" to listOf("datos.gob.es")
             )
         )

@@ -120,7 +120,7 @@ class CreateResourcesEntitiesServicesImpl(
 
         val dataset = jsonFields.filterValues { it == DATASET }.keys.elementAt(0)  as DatasetJsonMapping
         val idPrimaryTopic = UUID.nameUUIDFromBytes(dataset.id.toByteArray()).toString()//dataset.id
-        val id: String = input.catalogRecorId ?: "$idPrimaryTopic$CR_ID"
+        val id: String = input.catalogRecordId ?: "$idPrimaryTopic$CR_ID"
         if(!resourcesRepository.existsById(id)){
             val cr = CatalogRecordEntity()
             cr.id = id

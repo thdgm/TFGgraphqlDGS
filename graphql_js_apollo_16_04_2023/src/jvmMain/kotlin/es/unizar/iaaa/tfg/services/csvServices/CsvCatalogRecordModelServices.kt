@@ -39,7 +39,7 @@ class CsvCatalogRecordModelServiceImpl(
             val primaryTopicId = UUID.nameUUIDFromBytes(d.url.toByteArray()).toString()
 
             val newCatalogRecord = CatalogRecordEntity()
-            newCatalogRecord.id = input.catalogRecorId ?: "$primaryTopicId${ConstantValues.CR_ID}"
+            newCatalogRecord.id = input.catalogRecordId ?: "$primaryTopicId${ConstantValues.CR_ID}"
             if(!resourcesRepository.existsById(newCatalogRecord.id)) {
                 newCatalogRecord.title = "TitleCR"
                 if (input.content != null) newCatalogRecord.content = input.content!!

@@ -13,6 +13,7 @@ import es.unizar.iaaa.tfg.repository.ThemeRepository
 import es.unizar.iaaa.tfg.repository.TitleResourceRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
+import kotlinx.serialization.json.Json
 import org.slf4j.LoggerFactory.getLogger
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -65,18 +66,22 @@ class ResourceServicesImpl(
     // Returns titles list of id with its language
     override fun getTitles(id: String): Collection<LangString?> {
         var titlesDistribution = listOf<LangString?>()
-        getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS")
+        println("GETTTT TTITLEEEEEES")
+        println(titleRepository.findByResourceTitleId(id))
+
         titleRepository.findByResourceTitleId(id)
             .map {
                 val languageStrings = mutableListOf<LangString?>()
                 val title = it
+                println("GETTTT TTITLEEEEEES LANGG ${it.id.titleId}")
+                println(languageRepository.findLanguagesResourcesByTitlesResourceIdTitleId(it.id.titleId))
+
                 languageRepository.findLanguagesResourcesByTitlesResourceIdTitleId(it.id.titleId)
                     .forEach {
 
                         languageStrings.add(
                             converterAuxiliar.toLangString(title.id.titleId + LANGSTRING_SEPARADOR + it.id)
                         )
-                        getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS4")
 
                     }
 
@@ -85,9 +90,9 @@ class ResourceServicesImpl(
 
             }.map{
                 titlesDistribution += it
-                getLogger("logger").debug("GEEEETTTTTTTT TIIIITTLLLLLLLEEEEEEEEEEEEEEESSSSSSSSSSSS5")
 
             }
+
         getLogger("logger").debug("A VER $titlesDistribution")
 
         return titlesDistribution
