@@ -1,0 +1,37 @@
+{
+    PeriodOfTimeJsonMapping(
+        start=2021-01-01T00:00:00+01:00,
+        end=2021-12-31T00:00:00+01:00
+    )=PeriodOfTime,
+
+    DatasetJsonMapping(
+        id=https://datos.gob.es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior,
+        keywordsWord=[drogas, criminalidad, anuario estadístico del ministerio del interior, seguridad ciudadana],
+        keywordsLang=[es, es, es, es],
+        titlesText=[Estadística de Tráfico de Drogas 2021. Anuario Estadístico del Ministerio del Interior],
+        titlesLang=[es],
+        distributions=[https://datos.gob.es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior/resource/6bf97070-c76c-4aac-b811-579ca56744a0,
+        https://datos.gob.es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior/resource/cc747a4f-348c-41c9-a82a-6c477be280e5],
+        descriptionsText=[Información sobre el tráfico de drogas],
+        descriptionsLang=[es],
+        issued=2022-09-27T00:00:00+02:00,
+        modified=2023-01-11T00:00:00+01:00,
+        languages=[es],
+        spatial=[http://datos.gob.es/recurso/sector-publico/territorio/Pais/España]
+    )=Dataset,
+
+    DistributionJsonMapping(
+        id=https://datos.gob.es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior/resource/6bf97070-c76c-4aac-b811-579ca56744a0,
+        accessUrl=[https://www.interior.gob.es/opencms/pdf/archivos-y-documentacion/documentacion-y-publicaciones/anuarios-y-estadisticas/anuarios-estadisticos-anteriores/anuario-estadistico-de-2021/Anuario-Estadistico-2021_web.pdf],
+        titlesText=[Documento de la publicación Anuario Estadístico del Ministerio del Interior 2021],
+        titlesLang=[es]
+    )=Distribution,
+
+    DistributionJsonMapping(
+        id=https://datos.gob.es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior/resource/cc747a4f-348c-41c9-a82a-6c477be280e5,
+        accessUrl=[https://www.interior.gob.es/opencms/pdf/archivos-y-documentacion/documentacion-y-publicaciones/anuarios-y-estadisticas/anuarios-estadisticos-anteriores/anuario-estadistico-de-2021/03_Tablas_apartado_3_4.xlsx],
+        titlesText=[Fichero con datos de los principales resultados de la Estadística de Tráfico de Drogas 2021],
+        titlesLang=[es]
+    )=Distribution
+
+}
