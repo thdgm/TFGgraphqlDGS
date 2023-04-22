@@ -22,8 +22,8 @@ data class DatasetCSVModel(
     val spatial: String?,
     val period: Pair<LocalDateTime, LocalDateTime>?, //Start-end
     val validity: LocalDateTime?, // No está en el modelo
-    val relatedResources: String?, //No está en el modelo
-    val regulations: String?, // No está en el modelo Es la Normativa
+    val relatedResources: Collection<String>, //No está en el modelo "res1[RES_SPLIT]res2"
+    val regulations: Collection<String>, // No está en el modelo Es la Normativa "res1[RES_SPLIT]res2"
     val distributions: Collection<Map<String,String>?>?,
 
     ){
@@ -52,9 +52,6 @@ data class DatasetCSVModel(
     fun fromString(): DatasetCSVModel{
 
         val m = this.toString().split("[split]")
-
-        println("ESTOO1 ${m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1).split("}").elementAt(1).replace(", {", "")}")
-        println("FILTER ${m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1)}")
 
         return DatasetCSVModel(
             if (m.elementAt(0).trim() == "null") null else m.elementAt(0).trim(),
@@ -97,24 +94,26 @@ data class DatasetCSVModel(
             if (m.elementAt(11).trim() == "null") null else m.elementAt(11).trim(),
             if (m.elementAt(12).trim() == "null") null else m.elementAt(12).trim(),
             if (!m.elementAt(13).isNullOrBlank() && m.elementAt(13).trim() != "null"){
+
                 m.elementAt(13).split(",").let{
                     Pair(
-                        LocalDateTime.parse( it[0],DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ")),
-                        LocalDateTime.parse( it[1],DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ")),
-                    )
+                        LocalDateTime.parse(it[0].trim().replace("(",""),DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+                        LocalDateTime.parse(it[1].trim().replace(")",""),DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+                    )//
                 }
             } else null,
             if (!m.elementAt(14).isNullOrBlank() && m.elementAt(14).trim() != "null"){
-                LocalDateTime.parse( m.elementAt(14),DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ"))
+                LocalDateTime.parse( m.elementAt(14).trim(),DateTimeFormatter.ISO_LOCAL_DATE_TIME)
             }else{
                 null
             },
             if (!m.elementAt(15).isNullOrBlank() && m.elementAt(15).trim() != "null"){
-                m.elementAt(15).trim()
-            } else null,
+                m.elementAt(15).trim().substring(1,(m.elementAt(15).trim().length)-1).split(", ").map{it.trim()}
+
+            } else emptyList(),
             if (!m.elementAt(16).isNullOrBlank() && m.elementAt(16).trim() != "null"){
-                m.elementAt(16).trim()
-            } else null,
+                m.elementAt(16).trim().substring(1,(m.elementAt(16).trim().length)-1).split(", ").map{it.trim()}
+            } else emptyList(),
            if (!m.elementAt(17).isNullOrEmpty() && m.elementAt(17).trim() != "null") {
                 m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-1).split("}").map{
                     if (!it.isNullOrBlank()){

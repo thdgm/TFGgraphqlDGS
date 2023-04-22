@@ -64,7 +64,6 @@ class TestFindResourcesSameTheme {
 
         var respuestas = listOf<GraphQLResponse>()
         urlRecords.forEach {
-            println("EJECUTOOOOOOOOOOOOOOOOOOO::::::::::::::::::::::::::::::::::::::::::::::::: $it")
             respuestas += createCatalogRecord(it,inputParam)
         }
 
@@ -105,7 +104,6 @@ class TestFindResourcesSameTheme {
 
         var respuestas = listOf<GraphQLResponse>()
         urlRecords.forEach {
-            println("EJECUTOOOOOOOOOOOOOOOOOOO::::::::::::::::::::::::::::::::::::::::::::::::: $it")
             respuestas += createCatalogRecord(it,inputParam)
         }
 

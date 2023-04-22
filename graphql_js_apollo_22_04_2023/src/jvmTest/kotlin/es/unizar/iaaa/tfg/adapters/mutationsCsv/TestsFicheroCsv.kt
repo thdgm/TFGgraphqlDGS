@@ -1,21 +1,17 @@
 package es.unizar.iaaa.tfg.adapters.mutationsCsv
 
-//import ch.qos.logback.classic.Logger
-import com.google.gson.JsonElement
 import com.netflix.graphql.dgs.DgsQueryExecutor
 import com.netflix.graphql.dgs.client.GraphQLResponse
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.csvServices.ProcessCsvServices
 import org.assertj.core.api.Assertions.assertThat
-import org.json.JSONArray
-import org.json.JSONObject
 import org.junit.jupiter.api.Test
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.annotation.DirtiesContext
 import org.slf4j.LoggerFactory.getLogger
-import kotlin.reflect.typeOf
+
+
 
 @SpringBootTest
 class TestsFicheroCsv {
@@ -23,9 +19,6 @@ class TestsFicheroCsv {
     @Autowired
     lateinit var dgsQueryExecutor: DgsQueryExecutor
 
-    //private val logger = KotlinLogging.logger {}
-
-    //val urlRecord = "https://datos.gob.es/es/catalogo/e00003801-estadistica-de-trafico-de-drogas-2021-anuario-estadistico-del-ministerio-del-interior.jsonld"
     val urlRecord = "classpath:datosGob.csv"
 
     @Autowired
@@ -41,6 +34,8 @@ class TestsFicheroCsv {
             createCatalogRecord(input:$inputParam){
                 ... on CatalogRecord{
                     primaryTopic{
+                        id
+                        publisher
                         inCatalog{
                             id
                              records { 
@@ -922,6 +917,8 @@ class TestsFicheroCsv {
             "L01290672",
             "EA0001302",
             "E05073401",
+            "EA0028512",
+            "EA0028512"
         )
 
         val label = listOf(
@@ -953,6 +950,8 @@ class TestsFicheroCsv {
             "Ayuntamiento de Málaga",
             "Autoridad Portuaria de Barcelona",
             "Ministerio de Universidades",
+            "Agencia Estatal de Administración Tributaria",
+            "Agencia Estatal de Administración Tributaria",
 
             )
 
@@ -962,15 +961,8 @@ class TestsFicheroCsv {
     }
 
 
-    //TODO(PONER LOS ASSERTS)
-    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
-    @Test
-    fun `El CR tiene primaryTopic a un dataset compruebo sus distributions fields title, accessUrl, tienen 2`() {
+    fun distributionFields(datasetModel: String): GraphQLResponse{
         val inputParam = "\$input"
-        //11 no tiene title
-        // 27 todos los byteSizes 0
-        //
-        var datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(26)
         val query = """
         mutation createCR($inputParam:CatalogRecordInput){
             createCatalogRecord(input:$inputParam){
@@ -1004,31 +996,368 @@ class TestsFicheroCsv {
         )
         val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
         val response = GraphQLResponse(createCR.jsonString())
-        val title = response.extractValue<Collection<String>>(
+        return response
+    }
+
+
+    //TODO(PONER LOS ASSERTS)
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `El CR tiene primaryTopic a un dataset compruebo sus distributions fields title, accessUrl, tienen 2`() {
+
+        //11 no tiene title
+        // 27 todos los byteSizes 0
+        //
+        var datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(11).toString()
+        var response = distributionFields(datasetModel)
+        var title = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].title[*]"
         )
-
-        val accessUrl = response.extractValue<Collection<String>>(
+        var accessUrl = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].accessUrl"
         )
-        val byteSize = response.extractValue<Collection<String>>(
+        var byteSize = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].byteSize"
         )
-        val format = response.extractValue<Collection<String>>(
-            "data.createCatalogRecord.primaryTopic.distributions[*].format"
+        var formatType = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].format.type"
         )
-        val accessService = response.extractValue<Collection<String>>(
+        var formatSubtype = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].format.subtype"
+        )
+        var accessService = response.extractValue<Collection<String>>(
             "data.createCatalogRecord.primaryTopic.distributions[*].accessService[*].id"
         )
-        getLogger("loggerTest").debug("$response")
-        println("TITLE: $title")
-        println("ACCESSURL: $accessUrl")
-        println("ByteSize: $byteSize")
-        println("Format: $format")
-        println("AcessServ: $accessService")
-        //assertThat(accessUrl).hasSize(2)
-        //assertThat(title).hasSize(2)
+
+        assertThat(title).hasSize(0)
+        assertThat(accessService).hasSize(1)
+        assertThat(accessUrl).isEqualTo(listOf("http://www.boe.es/buscar/ayudas.php"))
+        assertThat(formatType).isEqualTo(listOf("text"))
+        assertThat(formatSubtype).isEqualTo(listOf("html"))
+        assertThat(byteSize).isEqualTo(listOf("0"))
+
+        datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(27).toString()
+        response = distributionFields(datasetModel)
+        title = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].title[*]"
+        )
+        accessUrl = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].accessUrl"
+        )
+        byteSize = response.extractValue(
+            "data.createCatalogRecord.primaryTopic.distributions[*].byteSize"
+        )
+        formatType = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].format.type"
+        )
+        formatSubtype = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].format.subtype"
+        )
+        accessService = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].accessService[*].id"
+        )
+
+        assertThat(title).hasSize(6)
+        assertThat(accessService).hasSize(6)
+        assertThat(accessUrl).isEqualTo(listOf("https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xls/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px", "https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px", "https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_sc/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px", "https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_c/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px", "https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xlsx/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px", "https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/px/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px"))
+        assertThat(formatType).isEqualTo(listOf("application", "text", "text", "text", "application", "ine"))
+        assertThat(formatSubtype).isEqualTo(listOf("vnd.ms-excel", "csv", "csv", "csv", "vnd.openxmlformats-officedocument.spreadsheetml.sheet", "pc-axis"))
+        assertThat(byteSize).isEqualTo(listOf("0","0","0","0","0","0"))
+
+        datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(26).toString()
+        response = distributionFields(datasetModel)
+        title = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].title[*]"
+        )
+        accessUrl = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].accessUrl"
+        )
+        byteSize = response.extractValue(
+            "data.createCatalogRecord.primaryTopic.distributions[*].byteSize"
+        )
+        formatType = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].format.type"
+        )
+        formatSubtype = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].format.subtype"
+        )
+        accessService = response.extractValue<Collection<String>>(
+            "data.createCatalogRecord.primaryTopic.distributions[*].accessService[*].id"
+        )
+
+        assertThat(title).hasSize(39)
+        assertThat(accessUrl).hasSize(13)
+        assertThat(accessService).hasSize(13)
+        assertThat(formatType).isEqualTo(listOf("text", "text", "text","text", "text", "text","text", "text", "text","text", "text", "text","text"))
+        assertThat(formatSubtype).isEqualTo(listOf("csv", "csv", "csv","csv", "csv", "csv","csv", "csv", "csv","csv", "csv", "csv","csv"))
+        assertThat(byteSize).isEqualTo(listOf("4415426", "4339699", "4280471", "4920707", "4886996", "4986893", "410733", "3778794", "4068206", "63600", "3830543", "4713526", "4955321"))
+
     }
+
+
+    @Test
+    fun `Creo CR a partir de json y su primaryTopic tiene license, identifier y publisher`() {
+        val inputParam = "\$input"
+
+        val datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(26).toString()
+        val query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                       primaryTopic{
+                        identifier
+                        license
+                        publisher
+                       }
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>(
+            "input" to mapOf(
+                "inCatalog" to "root",
+                "contentType" to "txt/csv",
+                "contentUrl" to urlRecord,
+                "content" to datasetModel,
+                "hints" to listOf("datos.gob.es")
+            )
+        )
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        val identifier = response.extractValue<Collection<String>>("data.createCatalogRecord.primaryTopic.identifier[*]")
+        val license = response.extractValue<String>("data.createCatalogRecord.primaryTopic.license")
+        val publisherNotation = response.extractValue<String>("data.createCatalogRecord.primaryTopic.publisher.notation")
+        getLogger("loggerTest").debug("RESPONSEE: :::::: $response")
+
+
+        assertThat(identifier).hasSize(2)
+        assertThat(license).isEqualTo("https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES")
+        assertThat(publisherNotation).isEqualTo("EA0001302")
+
+    }
+
     //TODO(///////////////////)
+
+
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Creo CRs a partir de json y obtengo los de un admon level concreto`() {
+
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+
+
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+
+        val query = """
+        query getResourcesByAdmonLevel($filterParam:String, $valueParam:[String!]){
+            resourcesByFilter(filter:$filterParam, value:$valueParam){
+                id
+                publisher
+               
+            }
+        }
+        """.trimIndent()
+        val queryParameters = mutableMapOf(
+            "filter" to "adminLevel",
+            "value" to listOf(
+                "Administración del Estado"
+            )
+        )
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(resources.jsonString())
+
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+
+        val publishersNotations = response.extractValue<Collection<String>>("data.resourcesByFilter[*].publisher.notation")
+
+        println(publishersNotations)
+        println(publishersNotations.size)
+
+
+       assertThat(publishersNotations).hasSize(27)
+
+
+    }
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Creo CRs a partir de json y obtengo los de un set de formatos concreto`() {
+
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+
+
+        val query = """
+        query getResourcesByPeriodicity($filterParam:String, $valueParam:[String!]){
+            resourcesByFilter(filter:$filterParam, value:$valueParam){
+                id
+               
+            }
+        }
+        """.trimIndent()
+
+        val queryParameters = mutableMapOf("filter" to "format", "value" to listOf("application/json","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","text/csv","text/html"))
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(resources.jsonString())
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+
+        val resourcesId = response.extractValue<Collection<String>>("data.resourcesByFilter[*].id")
+        getLogger("loggerTest").debug("SIZE:  ${resourcesId.size}")
+        assertThat(resourcesId).hasSize(24)
+
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Creo CRs a partir de json y obtengo los de un set de themes concreto`() {
+
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+
+
+
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+
+        val query = """
+        query getResourcesByTheme($filterParam:String, $valueParam:[String!]){
+            resourcesByFilter(filter:$filterParam, value:$valueParam){
+                id
+               
+            }
+        }
+        """.trimIndent()
+
+        val queryParameters = mutableMapOf<String, Any>(
+            "filter" to "theme",
+            "value" to listOf(
+                "Sector público",
+                "Legislación y justicia"
+            )
+        )
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(resources.jsonString())
+
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+
+        val resourcesId = response.extractValue<Collection<String>>("data.resourcesByFilter[*].id")
+        getLogger("loggerTest").debug("IDDD:  ${resourcesId.size}")
+
+        assertThat(resourcesId).hasSize(10)
+
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Multiple datasets same publisher`() {
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+        // createCatalogRecord("classpath:jsonSamePublisher1.json",inputParam)
+
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+
+        // Aquí cojo todos los dataset con mismo publisher
+        // Se supone que he creado varios CR con primaryTopic p.e: d1,d2,d3
+        // Comparten publisher
+        // Hay que crear: resourcesByPublisher(): Collection<ResourceEntity>
+
+
+        val query = """
+        query getResourcesByPublisher($filterParam:String, $valueParam:[String!]){
+            resourcesByFilter(filter:$filterParam, value:$valueParam){
+                id
+                publisher
+            }
+        }
+        """.trimIndent()
+        //Agencia estatal de meteorología
+        val queryParameters = mutableMapOf<String, Any>("filter" to "publisher", "value" to listOf("EA0022545"))
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(resources.jsonString())
+        val resourcesId = response.extractValue<Collection<String>>("data.resourcesByFilter[*].id")
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $resourcesId")
+        getLogger("loggerTest").debug("IDDD:  ${resourcesId.size}")
+
+        assertThat(resourcesId).hasSize(5)
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Multiple datasets periodicity daily yearly`() {
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+
+
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+
+        val query = """
+        query getResourcesByPeriodicity($filterParam:String, $valueParam:[String!]){
+            resourcesByFilter(filter:$filterParam, value:$valueParam){
+                id
+               
+            }
+        }
+        """.trimIndent()
+
+        val queryParameters = mutableMapOf<String, Any>("filter" to "periodicity", "value" to listOf("years","days"))
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(resources.jsonString())
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+
+        val resourcesId = response.extractValue<Collection<String>>("data.resourcesByFilter[*].id")
+        getLogger("loggerTest").debug("IDS:  ${resourcesId.size}")
+
+        assertThat(resourcesId).hasSize(10)
+
+    }
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Multiple datasets periodicity monthly`() {
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+
+
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+
+        val query = """
+        query getResourcesByPeriodicity($filterParam:String, $valueParam:[String!]){
+            resourcesByFilter(filter:$filterParam, value:$valueParam){
+                id
+               
+            }
+        }
+        """.trimIndent()
+
+        val queryParameters = mutableMapOf<String, Any>("filter" to "periodicity", "value" to listOf("months"))
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(resources.jsonString())
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+
+        val resourcesId = response.extractValue<Collection<String>>("data.resourcesByFilter[*].id")
+        getLogger("loggerTest").debug("IDS:  ${resourcesId.size}")
+
+        assertThat(resourcesId).hasSize(4)
+
+    }
 
 }

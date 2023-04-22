@@ -54,8 +54,8 @@ class ProcessCsvServicesImpl(
                 fieldOrNull(it["COBERTURA GEOGRÁFICA"]),
                 periocity(it["COBERTURA TEMPORAL"]),
                 localDateTimes(it["VIGENCIA DEL RECURSO"]),
-                fieldOrNull(it["RECURSOS RELACIONADOS"]),
-                fieldOrNull(it["NORMATIVA"]),
+                relatedResourcesAndRegulations(it["RECURSOS RELACIONADOS"]),
+                relatedResourcesAndRegulations(it["NORMATIVA"]),
                 distributions(it["DISTRIBUCIONES"]),
             )
         }.toList()
@@ -68,7 +68,10 @@ class ProcessCsvServicesImpl(
     fun fieldOrNull(value: String?): String? =
          if (!value.isNullOrBlank()) value?.replace("Ã±", "ñ")?.replace("Ã­","í")?.replace("Ã¡","á") else null
 
-
+    fun relatedResourcesAndRegulations(value:String?): Collection<String> =
+        if (!value.isNullOrBlank()){
+            value!!.replace("([^:])//".toRegex(),"\$1[RES_SPLIT]").split("[RES_SPLIT]")
+        }else emptyList()
 
     fun fieldSplit(value: String?): Collection<String> =
         if (!value.isNullOrBlank()) value!!.split("//") else emptyList()

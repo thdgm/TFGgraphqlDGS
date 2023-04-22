@@ -131,7 +131,7 @@ class Prueba {
         val spatial: String?,
         val period: Pair<LocalDateTime,LocalDateTime>?, //Start-end
         val validity: LocalDateTime?, // No está en el modelo
-        val relatedResources: String?, //No está en el modelo
+        val relatedResources: String?, //No está en el modelo "res1[RES_SPLIT]res2"
         val regulations: String?, // No está en el modelo Es la Normativa
         val distributions: Collection<Map<String,String>?>?,
 
@@ -210,13 +210,17 @@ class Prueba {
                 if(!it["VIGENCIA DEL RECURSO"].isNullOrBlank()){
                     LocalDateTime.parse(it["VIGENCIA DEL RECURSO"], DateTimeFormatter.ofPattern(DATE_PATTERN_ZONE_OFFSET))
                 }else null,
-                if (!it["RECURSOS RELACIONADOS"].isNullOrBlank()) it["RECURSOS RELACIONADOS"] else null,
-                if (!it["NORMATIVA"].isNullOrBlank()) it["NORMATIVA"] else null,
+                if (!it["RECURSOS RELACIONADOS"].isNullOrBlank()){
+                    it["RECURSOS RELACIONADOS"]!!.replace("([^:])//".toRegex(),"\$1[RES_SPLIT]").split("[RES_SPLIT]")
+                }else emptyList(),
+                if (!it["NORMATIVA"].isNullOrBlank()){
+                    it["NORMATIVA"]!!.replace("([^:])//".toRegex(),"\$1[RES_SPLIT]").split("[RES_SPLIT]")
+                } else emptyList(),
                 if (!it["DISTRIBUCIONES"].isNullOrBlank()){
                     it["DISTRIBUCIONES"]!!.replaceFirst("[","").split("//[")?.map {
                         var titleNumber = 0
                         it?.split("[")?.associate {
-                            println("DISTRIBUTIONNNNN2 $it")
+
                             var (left, right) = it.split("]")
                             if (left.matches("TITLE_.*".toRegex())) {
                                 right = left.split("_").elementAt(1) + "_-_" + right
@@ -459,9 +463,21 @@ class Prueba {
     @Test
     fun `csv reader`() {
         //val list = readStrictCsv()
+        val r =  resourceLoader.getResource("classpath:datosGob.csv")
+        val list = readStrictCsv(r.inputStream)
+        println("DATA: ${list.elementAt(28)}")
+        println("FROM: ${list.elementAt(28).fromString()}")
+        val fs = list.elementAt(28).fromString().toString()
+        val d = list.elementAt(28).toString()
+        val iguales = fs == d
+        println(iguales)
+
+        println(list.elementAt(28).period)
+        println(list.elementAt(28).relatedResources)
+        println(list.elementAt(29).regulations)
 
 //"classpath:CSVReader.csv"
-        val r =  resourceLoader.getResource("classpath:datosGob.csv")
+       /* val r =  resourceLoader.getResource("classpath:datosGob.csv")
         val list = readStrictCsv(r.inputStream)
         val idCatalog = "root"
         val crInput =  CatalogRecordInput(
@@ -492,7 +508,7 @@ class Prueba {
         println("ESTO11: ${list.elementAt(10).fromString()}")
         println("ESTO12: ${list.elementAt(10)}")
 
-        println(i)
+        println(i)*/
        /*list.map{
             val dServ = createDataservice(idCatalog)
             val distributions = createDistributions(it,dServ)

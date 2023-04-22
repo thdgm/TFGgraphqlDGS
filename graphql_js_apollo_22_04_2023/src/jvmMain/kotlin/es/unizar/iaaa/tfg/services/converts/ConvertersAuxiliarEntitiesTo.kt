@@ -162,11 +162,11 @@ class ConvertersAuxiliarEntitiesToImpl : ConvertersAuxiliarEntitiesTo {
                     null
                 },
                 if (!m.elementAt(15).isNullOrBlank() && m.elementAt(15).trim() != "null"){
-                    m.elementAt(15).trim()
-                } else null,
+                    m.elementAt(15).trim().substring(1,(m.elementAt(15).trim().length)-1).split(", ").map{it.trim()}
+                } else emptyList(),
                 if (!m.elementAt(16).isNullOrBlank() && m.elementAt(16).trim() != "null"){
-                    m.elementAt(16).trim()
-                } else null,
+                    m.elementAt(16).trim().substring(1,(m.elementAt(16).trim().length)-1).split(", ").map{it.trim()}
+                } else emptyList(),
                 if (!m.elementAt(17).isNullOrEmpty() && m.elementAt(17).trim() != "null") {
                     m.elementAt(17).trim().substring(2,(m.elementAt(17).trim().length)-2).replace("},\\s*\\{".toRegex(),"[separador]").split("[separador]").map{
                         if (!it.isNullOrBlank()){
