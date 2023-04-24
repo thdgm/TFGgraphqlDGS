@@ -2,6 +2,9 @@ package es.unizar.iaaa.tfg.domain.resources
 
 import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.LocationEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RegulationsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RelatedResourcesEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.ThemeEntity
 import jakarta.persistence.Column
 import jakarta.persistence.DiscriminatorValue
 import jakarta.persistence.Entity
@@ -31,6 +34,9 @@ class DatasetEntity : ResourceEntity(), Serializable {
     @Column(nullable = true)
     var temporalCoverageEnd: LocalDateTime? = null
 
+    @Column(nullable = true)
+    open var validity: LocalDateTime? = null
+
     @ManyToMany(mappedBy = "datasets")
     lateinit var locations: MutableCollection<LocationEntity>
 
@@ -49,4 +55,10 @@ class DatasetEntity : ResourceEntity(), Serializable {
         inverseJoinColumns = [JoinColumn(name = "distribution_id")],
     )
     lateinit var distributions: MutableCollection<DistributionEntity>
+
+    @ManyToMany(mappedBy = "datasets")
+    open lateinit var regulations: MutableCollection<RegulationsEntity>
+
+    @ManyToMany(mappedBy = "datasets")
+    open lateinit var relatedResources: MutableCollection<RelatedResourcesEntity>
 }

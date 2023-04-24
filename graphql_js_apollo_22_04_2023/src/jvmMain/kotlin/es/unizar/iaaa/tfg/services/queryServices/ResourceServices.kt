@@ -66,15 +66,12 @@ class ResourceServicesImpl(
     // Returns titles list of id with its language
     override fun getTitles(id: String): Collection<LangString?> {
         var titlesDistribution = listOf<LangString?>()
-        println("GETTTT TTITLEEEEEES")
-        println(titleRepository.findByResourceTitleId(id))
+
 
         titleRepository.findByResourceTitleId(id)
             .map {
                 val languageStrings = mutableListOf<LangString?>()
                 val title = it
-                println("GETTTT TTITLEEEEEES LANGG ${it.id.titleId}")
-                println(languageRepository.findLanguagesResourcesByTitlesResourceIdTitleId(it.id.titleId))
 
                 languageRepository.findLanguagesResourcesByTitlesResourceIdTitleId(it.id.titleId)
                     .forEach {

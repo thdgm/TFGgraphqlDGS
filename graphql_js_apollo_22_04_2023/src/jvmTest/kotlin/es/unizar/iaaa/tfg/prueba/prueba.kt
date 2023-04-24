@@ -22,6 +22,8 @@ import es.unizar.iaaa.tfg.domain.resourceRelations.KeywordEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.LanguageEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.LocationEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.PublisherEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RegulationsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RelatedResourcesEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.ResourceDescriptionsEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.ThemeEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
@@ -40,6 +42,8 @@ import es.unizar.iaaa.tfg.repository.KeywordRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
 import es.unizar.iaaa.tfg.repository.LocationRepository
 import es.unizar.iaaa.tfg.repository.PublisherRepository
+import es.unizar.iaaa.tfg.repository.RegulationsRepository
+import es.unizar.iaaa.tfg.repository.RelatedResourcesRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
 import es.unizar.iaaa.tfg.repository.ThemeRepository
 import es.unizar.iaaa.tfg.repository.TitleDistributionRepository
@@ -111,8 +115,41 @@ class Prueba {
     @Autowired
     lateinit var hintsRepository:HintsRepository
 
+    @Autowired
+    lateinit var regulationsRepository: RegulationsRepository
 
+    @Autowired
+    lateinit var relatedResourcesRepository: RelatedResourcesRepository
 
+    @Test
+    fun `check Repos`() {
+        val resRel = listOf("https://www.agenciatributaria.es/AEAT.internet/Inicio/La_Agencia_Tributaria/Memorias_y_estadisticas_tributarias/Estadisticas/Estadisticas_por_impuesto/Impuesto_sobre_Sociedades/Cuentas_Anuales_Consolidadas_del_Impuesto_sobre_Sociedades/Documentacion/Documentacion.shtml","https://www.agenciatributaria.es/AEAT/Contenidos_Comunes/La_Agencia_Tributaria/Estadisticas/Publicaciones/sites/sociedadesdc/2016/doc314e0b4d32a47b7ec37e408016d5556c73b7298d.html")
+        val regulations = listOf("http://www.boe.es/buscar/act.php?id=BOE-A-2012-9482","http://www.boe.es/buscar/doc.php?id=BOE-A-2009-2320","http://www.boe.es/diario_boe/txt.php?id=DOUE-L-2008-82259")
+        val newDataset = DatasetEntity()
+        newDataset.id = "newDatasset"
+
+        datasetRepository.save(newDataset)
+        regulations.map{
+            val newRegul = RegulationsEntity()
+            newRegul.id = it
+            regulationsRepository.save(newRegul)
+            regulationsRepository.insertInRegulationsDatasets(newRegul.id, "newDatasset")
+        }
+        print("REGULATIONS: ")
+        println(regulationsRepository.findRegulationsByDatasetsId("newDatasset"))
+        println(regulationsRepository.findRegulationsByDatasetsId("newDatasset").size)
+
+        resRel.map{
+            val newResRel = RelatedResourcesEntity()
+            newResRel.id = it
+            relatedResourcesRepository.save(newResRel)
+            relatedResourcesRepository.insertInRelatedResourcesDatasets(newResRel.id, "newDatasset")
+        }
+        print("RELATED RES: ")
+        println(relatedResourcesRepository.findRelatedResourcesByDatasetsId("newDatasset"))
+        println(relatedResourcesRepository.findRelatedResourcesByDatasetsId("newDatasset").size)
+
+    }
 
 
     data class DatasetModell(
@@ -139,7 +176,7 @@ class Prueba {
 
     @Test
     fun `temporal amount`() {
-        val s = "[{TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (XLS), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xls/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=XLS}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separados por tabuladores), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separado por ;), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_sc/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separado por coma), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_c/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (XLSX), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xlsx/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=XLSX}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (Pc-Axis), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/px/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=PC-Axis}] "
+        /*val s = "[{TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (XLS), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xls/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=XLS}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separados por tabuladores), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separado por ;), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_sc/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (CSV separado por coma), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/csv_c/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=CSV}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (XLSX), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/xlsx/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=XLSX}, {TITLE_0=es_-_Matriculados por sexo, grupo de edad y Ã¡mbito de estudio (Pc-Axis), ACCESS_URL=https://estadisticas.mecd.gob.es/EducaJaxiPx/files/_px/es/px/Universitaria/Alumnado/EEU_2022/GradoCiclo/Matriculados/l0/3_4_Mat_GradCiclo_Sex_Edad(1)_Amb_Univ.px, MEDIA_TYPE=PC-Axis}] "
         val ss = if (!s.isNullOrEmpty() && s.trim() != "null") {
             s.trim().substring(2,(s.trim().length)-2).replace("},\\s*\\{".toRegex(),"[separador]").split("[separador]").map{
 
@@ -154,7 +191,10 @@ class Prueba {
             }.filterNotNull()
         } else null
 
-        println("ESTOOO:: $ss")
+        println("ESTOOO:: $ss")*/
+        val d = LocalDateTime.parse("2023-07-10T00:00:00+02:00",DateTimeFormatter.ISO_DATE_TIME)
+
+
         //val d = ZonedDateTime.parse("2023-03-17T20:46:12+02:00")
 
         //val p = LocalDateTime.parse("2022-06-06T15:20:37+0200",DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ"))

@@ -13,6 +13,8 @@ import es.unizar.iaaa.tfg.repository.CatalogRepository
 import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DistributionRepository
 import es.unizar.iaaa.tfg.repository.LocationRepository
+import es.unizar.iaaa.tfg.repository.RegulationsRepository
+import es.unizar.iaaa.tfg.repository.RelatedResourcesRepository
 import es.unizar.iaaa.tfg.repository.ThemeRepository
 import org.springframework.stereotype.Service
 
@@ -33,6 +35,7 @@ interface CreateRelationsBetweenEntitiesServices {
     fun insertIntoAccessInService(dist: MutableCollection<DistributionEntity>, dser: DataServiceEntity)
     fun insertIntoDatasetLocation(loc: Collection<LocationEntity>, dat: DatasetEntity)
     fun insertIntoThemesResources(themeIds: Collection<String?>, resourceId: String)
+
 }
 
 @Service
@@ -44,6 +47,7 @@ class CreateRelationsBetweenEntitiesServicesImpl(
     private val datasetServicesRepository: DataServiceRepository,
     private val distributionRepository: DistributionRepository,
     private val themeRepository: ThemeRepository,
+
 
     ) : CreateRelationsBetweenEntitiesServices {
 
@@ -99,5 +103,6 @@ class CreateRelationsBetweenEntitiesServicesImpl(
         }
 
     }
+
 
 }

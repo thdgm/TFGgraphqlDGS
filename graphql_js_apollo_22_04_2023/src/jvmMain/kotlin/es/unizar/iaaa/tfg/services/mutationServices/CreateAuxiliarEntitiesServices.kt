@@ -22,6 +22,8 @@ import es.unizar.iaaa.tfg.domain.ids.TitleDistributionId
 import es.unizar.iaaa.tfg.domain.ids.TitleResourceId
 import es.unizar.iaaa.tfg.domain.distributionRelations.TitlesDistributionEntity
 import es.unizar.iaaa.tfg.domain.ids.HintsId
+import es.unizar.iaaa.tfg.domain.resourceRelations.RegulationsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RelatedResourcesEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
 import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetJsonMapping
@@ -36,12 +38,15 @@ import es.unizar.iaaa.tfg.repository.KeywordRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
 import es.unizar.iaaa.tfg.repository.LocationRepository
 import es.unizar.iaaa.tfg.repository.PublisherRepository
+import es.unizar.iaaa.tfg.repository.RegulationsRepository
+import es.unizar.iaaa.tfg.repository.RelatedResourcesRepository
 import es.unizar.iaaa.tfg.repository.ResourceRepository
 import es.unizar.iaaa.tfg.repository.TitleDistributionRepository
 import es.unizar.iaaa.tfg.repository.TitleResourceRepository
 import org.springframework.data.domain.Example
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import javax.print.attribute.standard.PrinterURI
 
 
 /*
@@ -70,6 +75,9 @@ interface CreateAuxiliarEntitiesServices {
         jsonFields: MutableMap<ModelJsonMapping, String>, idTemporal:String?):PeriodOfTimeJsonMapping?
     fun createIdentifier(identifiers:Collection<String?>, resDist:Any)
     fun createHints(hints:Collection<String?>, cr:CatalogRecordEntity)
+
+    fun createRegulations(regulations:Collection<String>, dataset:DatasetEntity)
+    fun createRelatedResources(resRelated:Collection<String>, dataset:DatasetEntity)
 }
 
 @Service
@@ -85,6 +93,8 @@ class CreateAuxiliarEntitiesServicesImpl(
     private val hintsRepository: HintsRepository,
     private val createRelationsBetweenEntitiesLanguageServices: CreateRelationsBetweenEntitiesLanguageServices,
     private val resourceRepository: ResourceRepository,
+    private val regulationsRepository: RegulationsRepository,
+    private val relatedResourcesRepository: RelatedResourcesRepository,
     ) : CreateAuxiliarEntitiesServices {
 
     // Create Language entities according to Csv
@@ -446,6 +456,22 @@ class CreateAuxiliarEntitiesServicesImpl(
                 hint.id = id
                 hintsRepository.save(hint)
             }
+        }
+    }
+    override fun createRegulations(regulations:Collection<String>, dataset:DatasetEntity){
+        regulations.map {
+            val newRegul = RegulationsEntity()
+            newRegul.id = it
+            regulationsRepository.save(newRegul)
+            regulationsRepository.insertInRegulationsDatasets(newRegul.id, dataset.id)
+        }
+    }
+    override fun createRelatedResources(resRelated:Collection<String>, dataset:DatasetEntity){
+        resRelated.map {
+            val newResRel = RelatedResourcesEntity()
+            newResRel.id = it
+            relatedResourcesRepository.save(newResRel)
+            relatedResourcesRepository.insertInRelatedResourcesDatasets(newResRel.id, dataset.id)
         }
     }
 }

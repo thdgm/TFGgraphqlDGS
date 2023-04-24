@@ -9,6 +9,8 @@ import es.unizar.iaaa.tfg.domain.resourceRelations.PublisherEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.ResourceDescriptionsEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.ThemeEntity
 import es.unizar.iaaa.tfg.domain.distributionRelations.TitlesDistributionEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RegulationsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RelatedResourcesEntity
 import es.unizar.iaaa.tfg.domain.resourceRelations.TitlesResourceEntity
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
@@ -127,5 +129,31 @@ interface IdentifierRepository : JpaRepository<IdentifierEntity, String>{
 interface HintsRepository : JpaRepository<HintsEntity, String>{
     fun findByCatalogRecordHintsId(id: String): Collection<HintsEntity>
 
+
+}
+
+@Repository
+interface RegulationsRepository : JpaRepository<RegulationsEntity, String>{
+    fun findRegulationsByDatasetsId(id: String):Collection<RegulationsEntity?>
+    @Modifying
+    @Query(
+        value = "INSERT INTO \"regulations_resources\" (\"id_regulations\",\"id_dataset\") VALUES (?1,?2);",
+        nativeQuery = true
+    )
+    @Transactional
+    fun insertInRegulationsDatasets(regulationId: String, datasetId: String)
+
+}
+
+@Repository
+interface RelatedResourcesRepository : JpaRepository<RelatedResourcesEntity, String>{
+    fun findRelatedResourcesByDatasetsId(id: String):Collection<RelatedResourcesEntity?>
+    @Modifying
+    @Query(
+        value = "INSERT INTO \"resources_related\" (\"id_related_resources\",\"id_dataset\") VALUES (?1,?2);",
+        nativeQuery = true
+    )
+    @Transactional
+    fun insertInRelatedResourcesDatasets(resRelatId: String, datasetId: String)
 
 }

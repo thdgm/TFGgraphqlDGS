@@ -4,6 +4,8 @@ import es.unizar.iaaa.tfg.adapters.FrequencyScalar
 import es.unizar.iaaa.tfg.annotations.Frequency
 import es.unizar.iaaa.tfg.constants.ConstantValues
 import es.unizar.iaaa.tfg.domain.distribution.DistributionEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RegulationsEntity
+import es.unizar.iaaa.tfg.domain.resourceRelations.RelatedResourcesEntity
 import es.unizar.iaaa.tfg.domain.resources.DataServiceEntity
 import es.unizar.iaaa.tfg.domain.resources.DatasetEntity
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetCSVModel
@@ -67,6 +69,7 @@ class CsvDatasetModelServicesImpl(
             dataset.temporalCoverageStart = d.period.first
             dataset.temporalCoverageEnd = d.period.second
         }
+        if(d.validity != null)  dataset.validity = d.validity
 
         if (!datasetRepository.existsById(dataset.id)) datasetRepository.save(dataset)
 
@@ -82,9 +85,9 @@ class CsvDatasetModelServicesImpl(
         dServ: DataServiceEntity,
         idCatalog: String,
         dataset: DatasetEntity
-    ){
+    ) {
 
-        createAuxiliarEntitiesServices.createIdentifier(listOf(d.identifier,d.url), dataset)
+        createAuxiliarEntitiesServices.createIdentifier(listOf(d.identifier, d.url), dataset)
 
         if (d.spatial != null) {
             val locations = createAuxiliarEntitiesServices.createLocationFromCsv(d.spatial)
@@ -92,27 +95,32 @@ class CsvDatasetModelServicesImpl(
         }
 
         if (!d.themes.isNullOrEmpty()) {
-            createRelationsBetweenEntitiesServices.insertIntoThemesResources(d.themes,dataset.id)
+            createRelationsBetweenEntitiesServices.insertIntoThemesResources(d.themes, dataset.id)
         }
 
         if (!d.description.isNullOrEmpty()) {
             createAuxiliarEntitiesServices.createResourceDescriptionsFromCsv(d.description, dataset.id)
         }
 
-        if (!d.keywords.isNullOrEmpty()){
-            createAuxiliarEntitiesServices.createKeywordsFromCsv(d.keywords,dataset.id)
+        if (!d.keywords.isNullOrEmpty()) {
+            createAuxiliarEntitiesServices.createKeywordsFromCsv(d.keywords, dataset.id)
         }
 
-        if (!d.languages.isNullOrEmpty()){
-            val languages =createAuxiliarEntitiesServices.createLanguagesFromCsv(d.languages,dataset.id)
+        if (!d.languages.isNullOrEmpty()) {
+            val languages = createAuxiliarEntitiesServices.createLanguagesFromCsv(d.languages, dataset.id)
             createRelationsBetweenEntitiesLanguageServices.insertIntoLanguagesResources(languages, dataset)
         }
 
         if (!d.title.isNullOrEmpty()) {
-            println("CREATE TITLE::::::: ${d.title}")
             createAuxiliarEntitiesServices.createTitleFromCsv(d.title, dataset)
         }
+        if (!d.regulations.isNullOrEmpty()) {
+            createAuxiliarEntitiesServices.createRegulations(d.regulations, dataset)
+        }
 
+        if (!d.relatedResources.isNullOrEmpty()){
+            createAuxiliarEntitiesServices.createRelatedResources(d.relatedResources, dataset)
+        }
         createRelationsBetweenEntitiesServices.insertIntoDistributionsFromCsv(dataset, distributions)
         createRelationsBetweenEntitiesServices.insertIntoServesDataset(dServ, dataset)
         val catalog = catalogRepository.findByIdOrNull(idCatalog)

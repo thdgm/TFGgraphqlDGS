@@ -8,10 +8,13 @@ import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.repository.KeywordRepository
 import es.unizar.iaaa.tfg.repository.LocationRepository
+import es.unizar.iaaa.tfg.repository.RegulationsRepository
+import es.unizar.iaaa.tfg.repository.RelatedResourcesRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
 import org.slf4j.LoggerFactory.getLogger
 import org.springframework.stereotype.Service
+import java.time.LocalDateTime
 
 /*
  * Services for get Dataset auxiliary fields.
@@ -23,6 +26,9 @@ interface DatasetServicesAuxiliarFields {
     fun getAccrualPeriodicity(id: String): String?
     fun getTemporal(id: String): PeriodOfTime?
     fun getDatasetServices(filterIdDataset: String?, id: String): Collection<DataService?>
+    fun getValidity(id: String): LocalDateTime?
+    fun getRegulations(id: String): Collection<String?>
+    fun getRelatedResources(id: String): Collection<String?>
 }
 
 @Service
@@ -34,8 +40,11 @@ class DatasetServicesAuxiliarFieldsImpl(
     private val converterAuxiliar: ConvertersAuxiliarEntitiesTo,
     private val dataServiceRepository: DataServiceRepository,
     private val converter: ConvertersResourcesEntitiesTo,
+    private val regulationsRepository: RegulationsRepository,
+    private val relatedResourcesRepository: RelatedResourcesRepository,
 
-) : DatasetServicesAuxiliarFields {
+
+    ) : DatasetServicesAuxiliarFields {
 
     // Return property Keywords Dataset
     override fun getKeywords(id: String): Collection<LangString?> {
@@ -72,4 +81,18 @@ class DatasetServicesAuxiliarFieldsImpl(
             }
         return if (filterIdDataset == null) dataservices else dataservices.filter { it?.id == filterIdDataset }
     }
+
+    // Return validity field from DatasetEntity with identifier equal to id parameter
+    override fun getValidity(id: String): LocalDateTime? =
+        datasetRepository.findById(id).get().validity
+
+    // Return regulations field from DatasetEntity with identifier equal to id parameter
+    override fun getRegulations(id: String): Collection<String?> =
+       regulationsRepository.findRegulationsByDatasetsId(id).map{it?.id}
+
+
+    // Return relatedResources field from DatasetEntity with identifier equal to id parameter
+    override fun getRelatedResources(id: String): Collection<String?> =
+        relatedResourcesRepository.findRelatedResourcesByDatasetsId(id).map{it?.id}
+
 }

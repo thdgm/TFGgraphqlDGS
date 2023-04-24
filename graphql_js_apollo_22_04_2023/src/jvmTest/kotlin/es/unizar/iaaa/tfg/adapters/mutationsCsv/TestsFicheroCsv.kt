@@ -513,11 +513,11 @@ class TestsFicheroCsv {
         )
         val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
         val response = GraphQLResponse(createCR.jsonString())
-        val creacion = response.extractValue<String>("data.createCatalogRecord.primaryTopic.issued")
+        /*val creacion = response.extractValue<String>("data.createCatalogRecord.primaryTopic.issued")
         val modificacion = response.extractValue<String>("data.createCatalogRecord.primaryTopic.modified")
         val start = response.extractValue<String>("data.createCatalogRecord.primaryTopic.temporal.start")
         val end = response.extractValue<String>("data.createCatalogRecord.primaryTopic.temporal.end")
-
+        */
         //val creatDate = convertersAuxiliarEntitiesTo.toLocalDateTime(creacion)
         //val modifDate = convertersAuxiliarEntitiesTo.toLocalDateTime(modificacion)
        // val startDate = convertersAuxiliarEntitiesTo.toLocalDateTime(start)
@@ -1357,6 +1357,123 @@ class TestsFicheroCsv {
         getLogger("loggerTest").debug("IDS:  ${resourcesId.size}")
 
         assertThat(resourcesId).hasSize(4)
+
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Create CR using CSV and check its primary topic validity property`() {
+        val inputParam = "\$input"
+
+        val datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(18).toString()
+        val query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                       primaryTopic{
+                       issued
+                       modified
+                        ... on Dataset{
+                            validity
+                        }
+                        
+                       }
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>(
+            "input" to mapOf(
+                "inCatalog" to "root",
+                "contentType" to "txt/csv",
+                "contentUrl" to urlRecord,
+                "content" to datasetModel,
+                "hints" to listOf("datos.gob.es")
+            )
+        )
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        val validity = response.extractValue<String>("data.createCatalogRecord.primaryTopic.validity")
+        val validityDate = convertersAuxiliarEntitiesTo.toLocalDateTime(validity)
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+        assertThat(validityDate).isEqualTo(convertersAuxiliarEntitiesTo.toLocalDateTime("2023-07-10T00:00:00+00:00"))
+
+
+
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Create CR using CSV and check its primary topic regulations property`() {
+        val inputParam = "\$input"
+
+        val datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(29).toString()
+        val query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                       primaryTopic{                  
+                        ... on Dataset{
+                            regulations
+                        }
+                        
+                       }
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>(
+            "input" to mapOf(
+                "inCatalog" to "root",
+                "contentType" to "txt/csv",
+                "contentUrl" to urlRecord,
+                "content" to datasetModel,
+                "hints" to listOf("datos.gob.es")
+            )
+        )
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        val regulations = response.extractValue<Collection<String>>("data.createCatalogRecord.primaryTopic.regulations")
+
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+        assertThat(regulations).hasSize(3)
+
+    }
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Create CR using CSV and check its primary topic relatedResources property`() {
+        val inputParam = "\$input"
+
+        val datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(28).toString()
+        val query = """
+        mutation createCR($inputParam:CatalogRecordInput){
+            createCatalogRecord(input:$inputParam){
+                ... on CatalogRecord{
+                       primaryTopic{                      
+                        ... on Dataset{
+                            relatedResources
+                        }
+                        
+                       }
+                }
+            }
+        }
+        """.trimIndent()
+        val crInput = mutableMapOf<String, Any>(
+            "input" to mapOf(
+                "inCatalog" to "root",
+                "contentType" to "txt/csv",
+                "contentUrl" to urlRecord,
+                "content" to datasetModel,
+                "hints" to listOf("datos.gob.es")
+            )
+        )
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
+        val response = GraphQLResponse(createCR.jsonString())
+        val relatedResources = response.extractValue<Collection<String>>("data.createCatalogRecord.primaryTopic.relatedResources")
+
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+        assertThat(relatedResources).hasSize(2)
 
     }
 

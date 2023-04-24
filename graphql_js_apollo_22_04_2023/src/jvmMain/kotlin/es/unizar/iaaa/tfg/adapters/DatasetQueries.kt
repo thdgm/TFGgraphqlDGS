@@ -14,6 +14,7 @@ import es.unizar.iaaa.tfg.services.queryServices.DatasetInCatalogServices
 import es.unizar.iaaa.tfg.services.queryServices.DatasetServices
 import es.unizar.iaaa.tfg.services.queryAuxiliarServices.DatasetServicesAuxiliarFields
 import org.slf4j.LoggerFactory.getLogger
+import java.time.LocalDateTime
 
 /*
  * Query Graphql implementation. Here there are the different fields of Dataset type.
@@ -77,5 +78,26 @@ class DatasetQueries(
     fun temporal(dfe: DgsDataFetchingEnvironment): PeriodOfTime? {
         val dic: DatasetInCatalog = dfe.getSource()
         return datasetServicesAuxiliarFields.getTemporal(dic.id)
+    }
+
+    // @DgsData validity: returns, if it exists when the resource expires, otherwise returns null.
+    @DgsData(parentType = "Dataset")
+    fun validity(dfe: DgsDataFetchingEnvironment): LocalDateTime? {
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getValidity(dic.id)
+    }
+    // @DgsData regulations: returns, if it exists a list with the regulations
+    // of the dataset with identifier id, otherwise returns null.
+    @DgsData(parentType = "Dataset")
+    fun regulations(dfe: DgsDataFetchingEnvironment): Collection<String?> {
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getRegulations(dic.id)
+    }
+    // @DgsData relatedResources: returns, if it exists a list with the related resources
+    // of the dataset with identifier id, otherwise returns null.
+    @DgsData(parentType = "Dataset")
+    fun relatedResources(dfe: DgsDataFetchingEnvironment): Collection<String?> {
+        val dic: DatasetInCatalog = dfe.getSource()
+        return datasetServicesAuxiliarFields.getRelatedResources(dic.id)
     }
 }

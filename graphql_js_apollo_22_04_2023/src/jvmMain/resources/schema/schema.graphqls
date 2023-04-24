@@ -286,6 +286,10 @@ type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   license:String
   publisher:Concept
   identifier: [String!]
+
+  validity: LocalDateTime #According csv model from https://datos.gob.es Indicates when the resource expires
+  regulations: [String!] #According csv model from https://datos.gob.es.
+  relatedResources: [String!] #According csv model from https://datos.gob.es.
 }
 
 # Implemented by CatalogRecordEntity
