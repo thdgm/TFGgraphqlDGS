@@ -2,6 +2,7 @@ package components.commmon.layout
 
 
 import components.commmon.ThemeContext
+import components.commmon.dialog.Dialog
 import components.commmon.searcher.Searcher
 import components.commmon.themes.Themes
 import csstype.Auto
@@ -36,6 +37,7 @@ import react.dom.aria.AriaHasPopup
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.events.MouseEventHandler
+import react.dom.html.ButtonType
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.onChange
@@ -52,6 +54,7 @@ external interface HeaderProps : Props {
 val header = FC<HeaderProps> { props->
 
     var theme by useRequiredContext(ThemeContext)
+    var openDialog by useState(false)
 
     Box {
         sx { flexGrow = number(1.0) }
@@ -81,7 +84,16 @@ val header = FC<HeaderProps> { props->
                     component = div
                     +"Search your dataset"
                 }
+                IconButton {
+                    type = ButtonType.button
+                    ariaLabel = "info"
 
+                    Dialog{
+                        this.openInfo = openDialog
+                        this.handleClickOpen = {openDialog = true}
+                        this.handleClickClose = {openDialog = false}
+                    }
+                }
 
                 Switch {
                     icon = Brightness7.create()

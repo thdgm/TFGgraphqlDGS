@@ -11,6 +11,7 @@ import csstype.ClassName
 import csstype.Display
 import csstype.pct
 import csstype.px
+import csstype.rgba
 import mui.icons.material.Search
 import mui.material.Container
 import mui.material.IconButton
@@ -80,6 +81,8 @@ val Searcher = FC<SearcherProps> { props->
                 marginTop = 10.px
                 marginBottom= 10.px
                 width= 100.pct
+                borderRadius = 30.px
+                backgroundColor = rgba(231, 35, 35, 0.0)
                 //zIndex = integer(1300)
 
             }
@@ -94,9 +97,9 @@ val Searcher = FC<SearcherProps> { props->
                 ariaHasPopup = AriaHasPopup.`false`
                 size = Size.large
                 color = IconButtonColor.inherit
-                sideLeft()
+                Search()
             }
-            Search {
+            /*Search {
 
                 Search()
                 InputBase {
@@ -104,7 +107,7 @@ val Searcher = FC<SearcherProps> { props->
                     onChange = {onChangee()}
                 }
 
-            }
+            }*/
            InputBase {
                 sx {
                     width= 100.pct
@@ -113,13 +116,13 @@ val Searcher = FC<SearcherProps> { props->
                 placeholder = "Search your content"
                 onChange = props.handleOnChange //{event: ChangeEvent<HTMLElement> -> console.log(props.filterList.filter { it.title!!.contains((event.target as HTMLInputElement).value) })}
             }
-            IconButton {
+            /*IconButton {
                 type = ButtonType.button
                 ariaLabel = "search"
 
                 Search()
-            }
-            IconButton {
+            }*/
+            /*IconButton {
                 type = ButtonType.button
                 ariaLabel = "info"
 
@@ -128,7 +131,7 @@ val Searcher = FC<SearcherProps> { props->
                     this.handleClickOpen = {openDialog = true}
                     this.handleClickClose = {openDialog = false}
                 }
-            }
+            }*/
 
         }
     }

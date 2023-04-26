@@ -1,5 +1,6 @@
 body{
- background-color: rgb(240,240,240);
+ /*background-color: rgb(240,240,240);*/
+ background-image: linear-gradient(189deg, rgba(245, 245, 245, 0.44), #f2f1f1);
 }
 
 .buttonsFilter{
@@ -18,7 +19,11 @@ body{
 }
 
 .accordionHeader,.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root{
-    background-color: rgba(217, 217, 217, 0.83) !important;
+    /*background-color: rgba(217, 217, 217, 0.83) !important;*/
+    background-color: transparent !important; /*rgba(249, 249, 249, 0.87) !important;*/
+    border-bottom-color: rgba(126,125,125,0.22) !important;/*rgba(0,0,0.16) !important;*/
+    border-bottom-width: thin !important;
+    border-bottom-style: inset !important;
 }
 
 .pagination{
@@ -31,7 +36,9 @@ body{
 }
 
 .search-container {
-     background-color: rgba(230, 228, 226) !important;
+     /*background-color: rgba(230, 228, 226) !important;*/
+     background-color: transparent !important;
+
 }
 
 #h1 {
