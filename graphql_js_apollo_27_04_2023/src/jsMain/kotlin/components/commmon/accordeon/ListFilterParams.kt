@@ -2,6 +2,7 @@ package components.commmon.accordeon
 
 import components.commmon.Sizes
 import components.commmon.card.CardList
+import components.commmon.layout.FilterListContext
 import components.commmon.pagination.Pagination
 import csstype.Auto
 import csstype.BackgroundColor
@@ -26,18 +27,24 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML.h1
 import react.router.useNavigate
+import react.useRequiredContext
 
 external interface ListFilterParamsProps:Props{
 
     var filterFields: Collection<String>
+    var category: String
 
 }
 val ListFilterParams = FC<ListFilterParamsProps> { props ->
-
+    var selectedFilters by useRequiredContext(FilterListContext)
+    console.log("CATE: "+props.category)
         List {
             props.filterFields.forEach {
                 ListItemButton{
                     + "$it"
+                    onClick = { _ -> selectedFilters = selectedFilters.toMutableMap().mapValues { (key, filterVal) ->
+                        if (key == props.category && !filterVal.contains(it)) filterVal.plus(it) else filterVal
+                    }.toMutableMap()}
                 }
             }
 

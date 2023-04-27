@@ -25,14 +25,12 @@ external interface FilterInfoProps:Props{
 
 val filterInfo = FC<FilterInfoProps> { props ->
 
-    console.log("FFFIELDS ${props.filterFields}")
+
     Accordion {
         sx {
             boxShadow = None.none
             backgroundColor = NamedColor.white
         }
-
-        //className = ClassName("AccordionFilter")
 
         AccordionSummary{
             sx {
@@ -49,8 +47,10 @@ val filterInfo = FC<FilterInfoProps> { props ->
             sx {
                 boxShadow = None.none
             }
-            ListFilterParams{this.filterFields = props.filterFields}
-            //filterForm()
+            ListFilterParams{
+                this.filterFields = props.filterFields
+                category = props.filterName
+            }
         }
     }
 }

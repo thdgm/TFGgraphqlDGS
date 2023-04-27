@@ -3,7 +3,7 @@ package components.commmon.filterForm
 import commonModels.DatasetModel
 import components.commmon.Sizes
 import components.commmon.accordeon.filterInfo
-import components.commmon.layout.listTestDataset
+import components.commmon.layout.FilterListContext
 import components.commmon.radioGroup.RadioGroup
 import components.commmon.searcher.Searcher
 import csstype.Auto
@@ -37,6 +37,7 @@ import react.ReactNode
 import react.create
 import react.dom.events.ChangeEvent
 import react.dom.html.ReactHTML.b
+import react.useRequiredContext
 import react.useState
 
 
@@ -58,20 +59,20 @@ val filtersTypesFields = listOf<Collection<String>>(
     listOf("Estadísticas", "Hombres", "Mujeres")
 )
 
-val listTestDataset = listOf<DatasetModel>(
-    DatasetModel("Titulo1", "Publisher1","Description1",listOf("JSON","CSV") ),
-    DatasetModel("Titulo2", "Publisher2","Description2",listOf("JSON","CSV") )
-)
+
 
 external interface FilterFormProps:Props{
     var filterList: Collection<DatasetModel>
     var handleOnChange: (event: ChangeEvent<HTMLElement>) -> Unit
+    var addList: Collection<String>
 
 }
 
 val filterForm = FC<FilterFormProps> {props->
-    var datasetList by useState(listTestDataset)
+    var datasetList by useState(props.filterList)
+    //var testList by useState(props.addList)
     var searchFilter by useState("")
+    var testList by useRequiredContext(FilterListContext)
 
     Paper {
         sx {
@@ -80,8 +81,6 @@ val filterForm = FC<FilterFormProps> {props->
             marginLeft = 3.pct//Auto.auto
             paddingBottom = 10.pct
             boxShadow = None.none
-            //paddingTop = 6.pct
-
             backgroundColor = NamedColor.white//rgba(249, 249, 249, 0.87)
             position = Position.relative
             borderRadius = 20.px
@@ -141,67 +140,8 @@ val filterForm = FC<FilterFormProps> {props->
                         }
                     }
                 }
-               /* FormLabel {
-                    filterInfo()
-                }
-                FormLabel {
-                    filterInfo()
-                }
-                FormLabel {
-                    filterInfo()
-                }
-                FormLabel {
-                    filterInfo()
-                }
-                FormLabel {
-                    filterInfo()
-                }
-                FormLabel {
-                    filterInfo()
-                }*/
-                /* FormLabel {
-                + "Filters 1"
-                FormGroup {
-                    FormControlLabel {
-                        control = Checkbox.create()
-                        label = ReactNode("Filter 1.1")
-                    }
-                    FormControlLabel {
-                        control = Checkbox.create()
-                        label = ReactNode("Filter 1.2")
-                    }
-                    FormControlLabel {
-                        control = Checkbox.create()
-                        label = ReactNode("Filter 1.3")
-                    }
-                }
 
-            }*/
             }
-
-            /*FormControl {
-            sx{
-                marginLeft= 20.pct
-            }
-            variant = FormControlVariant.standard
-            FormLabel {
-                + "Filters 2"
-                FormGroup {
-                    FormControlLabel {
-                        control = Checkbox.create()
-                        label = ReactNode("Filter 2.1")
-                    }
-                    FormControlLabel {
-                        control = Checkbox.create()
-                        label = ReactNode("Filter 2.2")
-                    }
-                    FormControlLabel {
-                        control = Checkbox.create()
-                        label = ReactNode("Filter 2.3")
-                    }
-                }
-            }
-        }*/
         }
     }
 }

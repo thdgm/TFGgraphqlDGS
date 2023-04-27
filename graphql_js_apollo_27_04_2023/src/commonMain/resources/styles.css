@@ -69,3 +69,8 @@ body{
   font-size: 16px !important;
   color: rgb(10, 28, 45) !important;
 }
+
+.stackSelectedFilters{
+    display: block !important;
+    margin-top: 3% !important;
+}
