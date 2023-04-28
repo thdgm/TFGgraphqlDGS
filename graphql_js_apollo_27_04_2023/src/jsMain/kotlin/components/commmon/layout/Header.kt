@@ -6,10 +6,12 @@ import components.commmon.dialog.Dialog
 import components.commmon.searcher.Searcher
 import components.commmon.themes.Themes
 import csstype.Auto
+import csstype.ClassName
 import csstype.FlexGrow
 import csstype.NamedColor
 import csstype.number
 import csstype.ident
+import csstype.rgba
 import kotlinx.browser.localStorage
 
 import mui.icons.material.Brightness4
@@ -88,7 +90,7 @@ val header = FC<HeaderProps> { props->
                 IconButton {
                     type = ButtonType.button
                     ariaLabel = "info"
-                    color = IconButtonColor.inherit
+                    className = ClassName("infoButton")
                     Dialog{
                         this.openInfo = openDialog
                         this.handleClickOpen = {openDialog = true}

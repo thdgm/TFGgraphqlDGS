@@ -61,6 +61,7 @@ import react.dom.html.ReactHTML.b
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.pre
+import react.dom.html.ReactHTML.span
 import react.router.useNavigate
 import react.useRequiredContext
 import react.useState
@@ -102,7 +103,16 @@ val list = FC<ListProps> { props ->
         console.log("MAPA: "+ newMap)
         return newMap
     }
+    //Returns true if all of its list are empties
+    fun checkIfSelectedFiltersIsEmpty(): Boolean{
 
+        selectedFilters.map{
+            if (!it.value.isEmpty()){
+               return false
+            }
+        }
+        return true
+    }
     Paper {
         sx{
             width = Sizes.BoxList.Width
@@ -155,7 +165,7 @@ val list = FC<ListProps> { props ->
             }
 
         }
-        if (selectedFilters.isNotEmpty()){
+        if (!checkIfSelectedFiltersIsEmpty()){
 
             Stack{
                 sx{
@@ -165,17 +175,25 @@ val list = FC<ListProps> { props ->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
 
-                selectedFilters.map{valuesList->
+                selectedFilters.map { valuesList ->
+                    if (valuesList.value.isNotEmpty()){
+                        span {
+                            +"${valuesList.key}: "
+                            valuesList.value.map { value ->
 
-                    valuesList.value.map{value->
-                        Chip {
-                            id = value
-                            label = ReactNode(value)
-                            variant = ChipVariant.outlined
-                            onDelete = { _ -> selectedFilters = selectedFilters.toMutableMap().mapValues { (key, filterVal) ->
-                                if (key == valuesList.key) filterVal.filter{it != value} else filterVal //value.plus()
-                            }.toMutableMap()}
-                            deleteIcon
+                                Chip {
+                                    id = value
+                                    label = ReactNode(value)
+                                    variant = ChipVariant.outlined
+                                    onDelete = { _ ->
+                                        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, filterVal) ->
+                                            if (key == valuesList.key) filterVal.filter { it != value } else filterVal //value.plus()
+                                        }.toMutableMap()
+                                    }
+                                    deleteIcon
+                                }
+                                +" "
+                            }
                         }
                     }
 

@@ -19,6 +19,8 @@ import mui.material.List
 import mui.material.CardActions
 import mui.material.CardContent
 import mui.material.Chip
+import mui.material.ChipColor
+import mui.material.ChipVariant
 import mui.material.Grid
 import mui.material.IconButton
 import mui.material.Link
@@ -27,6 +29,7 @@ import mui.material.ListItemButton
 import mui.material.Paper
 import mui.material.SpeedDialIcon
 import mui.material.Stack
+import mui.material.StackDirection
 import mui.material.Table
 import mui.material.TableBody
 import mui.material.TableCell
@@ -101,7 +104,25 @@ val resourceInfo = FC<Props> {
             position = Position.relative
         }
         elevation = 0
-        Grid {
+        Stack{
+            sx{
+                display = Display.block
+            }
+            className = ClassName("stackSelectedFilters")
+            spacing = responsive(4.px)
+            direction = responsive(StackDirection.row)
+                Chip {
+                    label = ReactNode("Theme1")
+                    color = ChipColor.success
+                }
+                Chip {
+                    label = ReactNode("Theme2")
+                    color = ChipColor.success
+                }
+        }
+
+
+        /*Grid {
             container = true
             spacing = responsive(2)
             Grid {
@@ -118,7 +139,7 @@ val resourceInfo = FC<Props> {
                     label = ReactNode("Theme2")
                 }
             }
-        }
+        }*/
     }
     Paper {
         sx {

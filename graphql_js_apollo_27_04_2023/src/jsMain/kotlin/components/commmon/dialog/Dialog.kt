@@ -1,6 +1,7 @@
 package components.commmon.dialog
 
 
+import csstype.ClassName
 import csstype.NamedColor
 import mui.icons.material.Info
 import mui.icons.material.Menu
@@ -10,6 +11,7 @@ import mui.material.DialogActions
 import mui.material.DialogContent
 import mui.material.DialogContentText
 import mui.material.DialogTitle
+import mui.material.SvgIconColor
 import react.FC
 import react.Props
 import react.useState
@@ -25,7 +27,11 @@ val Dialog = FC<DialogProps> { props ->
 
     Button{
         onClick = {props.handleClickOpen()}
-        Info()
+        className = ClassName("infoButton2")
+        Info{
+            className = ClassName("infoIcon")
+            color = SvgIconColor.inherit
+        }
     }
     if (props.openInfo) {
 

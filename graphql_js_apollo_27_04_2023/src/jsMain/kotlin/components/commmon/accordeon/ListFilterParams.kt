@@ -27,7 +27,9 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML.h1
 import react.router.useNavigate
+import react.useEffect
 import react.useRequiredContext
+import react.useState
 
 external interface ListFilterParamsProps:Props{
 
@@ -37,14 +39,20 @@ external interface ListFilterParamsProps:Props{
 }
 val ListFilterParams = FC<ListFilterParamsProps> { props ->
     var selectedFilters by useRequiredContext(FilterListContext)
+    var selectedField by useState(MutableList(props.filterFields.size){false})
+
+
     console.log("CATE: "+props.category)
+
         List {
-            props.filterFields.forEach {
+            props.filterFields.forEachIndexed{ index, it ->
                 ListItemButton{
                     + "$it"
                     onClick = { _ -> selectedFilters = selectedFilters.toMutableMap().mapValues { (key, filterVal) ->
-                        if (key == props.category && !filterVal.contains(it)) filterVal.plus(it) else filterVal
+                        if (key == props.category && !filterVal.contains(it)) filterVal.plus(it) else if(filterVal.contains(it)) filterVal.filter{miVal -> miVal != it} else filterVal
                     }.toMutableMap()}
+
+                    selected = selectedFilters.toMutableMap()[props.category]?.contains(it)
                 }
             }
 

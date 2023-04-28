@@ -60,7 +60,14 @@ val listTestDatasets = listOf<DatasetModel>(
 )
 
 var selectedFiltersList = listOf<String>("CSV", "Ayuntamiento", "Diario")
-val filtersSelectedMap = mutableMapOf<String,Collection<String>>("Categoría" to listOf("cat1","cat2"), "Formato" to listOf("CSV", "JSON"))
+val filtersSelectedMap = mutableMapOf<String,Collection<String>>(
+    "Categoría" to listOf(),
+    "Formato" to listOf(),
+    "Publicador" to listOf(),
+    "Nivel de Administración" to listOf(),
+    "Fecuencia de Actualización" to listOf(),
+    "Etiqueta" to listOf()
+)
 
 
 external interface InitPageProps : Props {}

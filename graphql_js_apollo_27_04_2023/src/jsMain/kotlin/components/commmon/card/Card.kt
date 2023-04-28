@@ -3,6 +3,7 @@ package components.commmon.card
 import commonModels.DatasetModel
 import components.commmon.Sizes
 import components.commmon.layout.HeaderProps
+import csstype.ClassName
 import csstype.Display
 import csstype.pct
 import csstype.px
@@ -10,11 +11,18 @@ import mui.material.Box
 import mui.material.Card
 import mui.material.CardActions
 import mui.material.CardContent
+import mui.material.Chip
+import mui.material.ChipColor
+import mui.material.Stack
+import mui.material.StackDirection
 import mui.material.Typography
 import mui.material.styles.TypographyVariant
+import mui.system.responsive
 import mui.system.sx
 import react.FC
 import react.Props
+import react.dom.html.ReactHTML.b
+import react.dom.html.ReactHTML.span
 
 external interface CardProps:Props{
     var datasetInfo:DatasetModel
@@ -24,7 +32,6 @@ external interface CardProps:Props{
 
 
 val CardList = FC<CardProps> { props->
-    console.log("ESTOO "+ props.datasetInfo)
     Card {
         sx{
             width = Sizes.CardList.Width
@@ -33,25 +40,45 @@ val CardList = FC<CardProps> { props->
         }
         Box {
             CardContent{
-                Typography{
+                Typography {
                     variant = TypographyVariant.h6
-
-                    +"${props.datasetInfo.title}"
+                    +"Titulo: ${props.datasetInfo.title}"
                 }
-                Typography{
+
+                Typography {
                     variant = TypographyVariant.subtitle1
 
-                    +"${props.datasetInfo.publisher}"
+                    +"Publicador: ${props.datasetInfo.publisher}"
                 }
-                Typography{
+
+                Typography {
                     variant = TypographyVariant.subtitle2
 
-                    +"${props.datasetInfo.description}"
+                    +"Descripción: ${props.datasetInfo.description}"
                 }
+
             }
             CardActions {
-                props.datasetInfo.format.map{
-                    Box {
+                Stack {
+                    sx{
+                        display = Display.block
+                    }
+                    direction = responsive(StackDirection.row)
+                    props.datasetInfo.format.map{
+                        if(it != null){
+
+                            className = ClassName("stackSelectedFilters")
+                            spacing = responsive(4.px)
+                            direction = responsive(StackDirection.row)
+                            Chip {
+                                label = react.ReactNode(it)
+                                variant = mui.material.ChipVariant.outlined
+                                color = ChipColor.primary
+
+                            }
+                        }
+                    }
+                    /*Box {
                         sx{
                             display= Display.flex
                         }
@@ -60,7 +87,7 @@ val CardList = FC<CardProps> { props->
                             +"$it"
                         }
 
-                    }
+                    }*/
                 }
                 //+ "CSV     JSON"
             }
@@ -82,3 +109,5 @@ val CardList = FC<CardProps> { props->
         }*/
     }
 }
+
+
