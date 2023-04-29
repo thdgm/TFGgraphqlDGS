@@ -1,0 +1,433 @@
+package components.commmon.resourceInfo
+
+import components.commmon.Sizes
+import components.commmon.card.CardList
+import components.commmon.pagination.Pagination
+import csstype.Auto
+import csstype.ClassName
+import csstype.Display
+import csstype.FlexDirection
+import csstype.NamedColor
+import csstype.Position
+import csstype.pct
+import csstype.px
+import csstype.rgba
+import mui.icons.material.ReplyOutlined
+import mui.material.Box
+import mui.material.Breadcrumbs
+import mui.material.List
+import mui.material.CardActions
+import mui.material.CardContent
+import mui.material.Chip
+import mui.material.ChipColor
+import mui.material.ChipVariant
+import mui.material.Grid
+import mui.material.IconButton
+import mui.material.Link
+import mui.material.LinkUnderline
+import mui.material.ListItemButton
+import mui.material.Paper
+import mui.material.SpeedDialIcon
+import mui.material.Stack
+import mui.material.StackDirection
+import mui.material.Table
+import mui.material.TableBody
+import mui.material.TableCell
+import mui.material.TableContainer
+import mui.material.TableRow
+import mui.material.Typography
+
+import mui.material.styles.TypographyVariant
+import mui.system.Breakpoint
+import mui.system.Theme
+import mui.system.createSpacing
+import mui.system.responsive
+import mui.system.sx
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.aria.ariaLabel
+import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.h1
+import react.router.useNavigate
+import react.useEffect
+
+
+
+val resourceInfo = FC<Props> {
+
+    val navigate = useNavigate()
+
+    fun handleClick() {
+        navigate("/")
+    }
+    Breadcrumbs {
+        sx {
+            marginLeft = 10.pct
+            marginTop = 2.pct
+        }
+        ariaLabel = "breadcrumb"
+
+        Link {
+            underline = LinkUnderline.hover
+            color = "inherit"
+            href = "/"
+            +"/Conjunto de datos"
+        }
+
+        Typography {
+            +"Título dataset"
+        }
+    }
+    ReactHTML.h1 {
+        className = ClassName("titleInit")
+        +"Titulo del Dataset"
+    }
+
+
+
+
+
+    Paper {
+        sx {
+            width = Sizes.BoxList.Width
+            marginRight = Auto.auto
+            marginLeft = Auto.auto
+            marginTop = 2.pct
+            //paddingBottom = 10.pct
+            //paddingTop = 6.pct
+            paddingRight = 10.pct
+            paddingLeft = 6.pct
+            paddingTop = 1.pct
+            paddingBottom = 1.pct
+            backgroundColor = rgba(249, 249, 249, 0.87)
+            position = Position.relative
+        }
+        elevation = 0
+        Stack{
+            sx{
+                display = Display.block
+            }
+            className = ClassName("stackSelectedFilters")
+            spacing = responsive(4.px)
+            direction = responsive(StackDirection.row)
+                Chip {
+                    label = ReactNode("Theme1")
+                    color = ChipColor.success
+                }
+                Chip {
+                    label = ReactNode("Theme2")
+                    color = ChipColor.success
+                }
+        }
+
+
+        /*Grid {
+            container = true
+            spacing = responsive(2)
+            Grid {
+                item = true
+
+                Chip {
+                    label = ReactNode("Theme1")
+                }
+            }
+            Grid {
+                item = true
+
+                Chip {
+                    label = ReactNode("Theme2")
+                }
+            }
+        }*/
+    }
+    Paper {
+        sx {
+            width = Sizes.BoxList.Width
+            marginRight = Auto.auto
+            marginLeft = Auto.auto
+            marginTop = 2.pct
+            //paddingBottom = 10.pct
+            //paddingTop = 6.pct
+            paddingRight = 10.pct
+            paddingLeft = 6.pct
+            paddingTop = 2.pct
+            paddingBottom = 5.pct
+            backgroundColor = NamedColor.white
+            position = Position.relative
+        }
+        elevation = 0
+
+        TableContainer {
+            className = ClassName("tableContainerIntro")
+            Table {
+                className = ClassName("tableInfo")
+                TableBody {
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Publicador"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            + " ........... "
+                        }
+                    }
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Nivel de administración"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            + " ........... "
+                        }
+                    }
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Licencia"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            + " ........... "
+                        }
+                    }
+                }
+            }
+        }
+    }
+    Paper {
+        sx {
+            width = Sizes.BoxList.Width
+            marginRight = Auto.auto
+            marginLeft = Auto.auto
+            marginTop = 2.pct
+            paddingTop = 2.pct
+            paddingBottom = 5.pct
+            backgroundColor = NamedColor.white
+            paddingRight = 10.pct
+            paddingLeft = 6.pct
+            //backgroundColor = NamedColor.transparent
+            position = Position.relative
+        }
+        elevation = 0
+        Typography {
+            className = ClassName("subtitle_info")
+            //variant = TypographyVariant.subtitle1
+            + "Descripción"
+        }
+
+    }
+
+    Paper {
+        sx {
+            width = Sizes.BoxList.Width
+            marginRight = Auto.auto
+            marginLeft = Auto.auto
+            marginTop = 2.pct
+            paddingTop = 2.pct
+            paddingBottom = 5.pct
+            backgroundColor = NamedColor.white
+            paddingRight = 10.pct
+            paddingLeft = 6.pct
+            //backgroundColor = NamedColor.transparent
+            position = Position.relative
+        }
+        elevation = 0
+        Typography {
+            className = ClassName("subtitle_info")
+            //variant = TypographyVariant.subtitle1
+            + "Distribuciones"
+        }
+        List {
+            ListItemButton {
+                + "Distribución 1"
+            }
+            ListItemButton {
+                + "Distribución 2"
+            }
+        }
+
+    }
+
+    Paper {
+        sx {
+            width = Sizes.BoxList.Width
+            marginRight = Auto.auto
+            marginLeft = Auto.auto
+            marginTop = 2.pct
+            //paddingBottom = 10.pct
+            //paddingTop = 6.pct
+            paddingRight = 10.pct
+            paddingLeft = 6.pct
+            backgroundColor = NamedColor.transparent
+            position = Position.relative
+        }
+        elevation = 0
+        Stack{
+            sx{
+                display = Display.block
+            }
+            className = ClassName("stackSelectedFilters")
+            spacing = responsive(4.px)
+            direction = responsive(StackDirection.row)
+            Chip {
+                className = ClassName("keywordsChip")
+                label = ReactNode("Keyword1")
+                //color = NamedColor.lime
+            }
+            Chip {
+                className = ClassName("keywordsChip")
+                label = ReactNode("Keyword2")
+                //color = ChipColor.success
+            }
+        }
+       /* Grid {
+            container = true
+            spacing = responsive(2)
+            Grid {
+                item = true
+
+                Chip {
+                    label = ReactNode("Keyword1")
+                }
+            }
+            Grid {
+                item = true
+
+                Chip {
+                    label = ReactNode("Keyword2")
+                }
+            }
+        }
+*/
+
+    }
+
+    Paper {
+        sx {
+            width = Sizes.BoxList.Width
+            marginRight = Auto.auto
+            marginLeft = Auto.auto
+            marginTop = 2.pct
+            paddingTop = 2.pct
+            paddingBottom = 5.pct
+            backgroundColor = NamedColor.white
+            paddingRight = 10.pct
+            paddingLeft = 6.pct
+            //backgroundColor = NamedColor.transparent
+            position = Position.relative
+        }
+        elevation = 0
+        Typography {
+            className = ClassName("subtitle_info")
+            + "Información adicional"
+        }
+        TableContainer {
+
+            Table {
+                className = ClassName("tableInfo")
+                TableBody {
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Fecha de creación"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            + " ........... "
+                        }
+                    }
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Fecha última modificación"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            + " ........... "
+                        }
+                    }
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Cobertura temporal"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            + " ........... "
+                        }
+                    }
+                    TableRow{
+                        TableCell{
+                            className = ClassName("tableCell1")
+                            + "Idiomas"
+                        }
+                        TableCell{
+                            className = ClassName("tableCell2")
+                            TableRow{
+                                + "Inglés"
+                            }
+                            TableRow{
+                                + "Español"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    /*    Paper {
+        sx{
+            width = Sizes.BoxList.Width
+            marginRight= Auto.auto
+            marginLeft= Auto.auto
+            marginTop = 6.pct
+            paddingBottom = 10.pct
+            paddingTop = 6.pct
+            paddingRight = 10.pct
+            paddingLeft = 10.pct
+            backgroundColor = rgba(249,249,249,0.87)
+            position = Position.relative
+        }
+
+        Card {
+            sx{
+                width = Sizes.CardList.Width
+                display= Display.flex
+            }
+            Box {
+                /*CardActions{
+                    IconButton{
+                        sx{
+                            fontSize = 250.pct
+                        }
+                        onClick ={handleClick()}
+                        ReplyOutlined{
+                            sx{
+                                fontSize = 100.pct
+                            }
+                        }
+                    }
+                }*/
+                CardContent{
+                    Typography{
+                        variant = TypographyVariant.h6
+                        +"Titulo"
+                    }
+                    Typography{
+                        variant = TypographyVariant.subtitle1
+                        +"Otra info"
+                    }
+                }
+            }
+        }*/
+
+
+}
+
+
+
+
