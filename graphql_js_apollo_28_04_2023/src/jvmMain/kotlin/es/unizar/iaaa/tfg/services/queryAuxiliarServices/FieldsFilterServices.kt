@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service
 
 interface FieldsFilterServices {
     fun getThemes(): Collection<String>
-    fun getKeywords(language: String): Collection<String>
+    fun getKeywords(language: String?): Collection<String>
     fun getPublishersLabel(): Collection<String>
     fun getFrequenciesRanges(): Collection<String?>
     fun getAdmonLabel(): Collection<String>
@@ -41,9 +41,9 @@ class FieldsFilterServicesImpl(
             .map { it.id }.distinct()
 
     // Return string list with all the keywords with particular language (language) saved in database.
-    override fun getKeywords(language: String): Collection<String> =
+    override fun getKeywords(language: String?): Collection<String> =
         keywordRepository.findAll()
-            .filter { it.language.id == language }
+            .filter { if (language != null) it.language.id == language else true}
             .map { it.id.wordId }.distinct()
 
     // Return string list with all the publisher's labels saved in database.

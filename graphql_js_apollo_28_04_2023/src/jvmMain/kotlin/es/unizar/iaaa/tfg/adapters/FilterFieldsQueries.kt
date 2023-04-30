@@ -20,7 +20,7 @@ class FilterFieldsQueries(
 
     // @DgsQuery getAllKeywords: returns all existing keywords with particular language without duplicates
     @DgsQuery
-    fun getAllKeywords(@InputArgument language: String): Collection<String> =
+    fun getAllKeywords(@InputArgument language: String?): Collection<String> =
         fieldsFilterServices.getKeywords(language)
 
 

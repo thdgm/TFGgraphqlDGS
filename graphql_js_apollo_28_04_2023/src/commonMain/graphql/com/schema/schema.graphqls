@@ -11,6 +11,17 @@ type Query {
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord
   distribution(id: ID): Distribution
+  resourcesByFilter(filter:String, value: [String!]): [Resource] # Filter could be p.g: publisher
+  findResourceByIdentifier(id: String): Resource
+  getAllThemes: [String]      # Get all existing themes
+  getAllKeywords(language: String): [String] # Get all existing keywords with particular language
+  getAllPublishers: [String]  # Get all existing publisher's labels
+  getAllFrequencies: [String] # Get all existing Frequency's ranges
+  getAllAdminLabel: [String]  # Get all existing Publisher's notations p.g: L02000048
+  # Map them. If starts with L0: Local Administration
+  # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
+
+
 }
 
 type Mutation {
@@ -19,7 +30,7 @@ type Mutation {
 
 input CatalogRecordInput{
   inCatalog: ID #root por defecto
-  catalogRecorId: ID
+  catalogRecordId: ID
   contentType: String #metadata content type
   content: String #content as string
   contentUrl:String #record location
@@ -33,7 +44,7 @@ type Error{
 }
 #
 # type -> final type, cannot be extended
-# interface -> abstrct type, can be extended
+# interface -> abstract type, can be extended
 #
 
 #
@@ -58,7 +69,9 @@ interface Resource implements ReferenceWithinExternalContext{
   #
   id: ID!
   # A name given to the resource.
-  title: [LangString!]#String!
+  # It could be many titles, one another with their own language
+  title: [LangString!]
+  # It could be many descriptions, one another with their own language
   description: [LangString!]
 
   # A language of the resource.
@@ -66,11 +79,14 @@ interface Resource implements ReferenceWithinExternalContext{
   # of a cataloged resource (i.e., dataset or service) or the textual values of a dataset distribution.
   # Usage note: Repeat this property if the resource is available in multiple languages.
   language: [String!]
-
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/
+  # Date of formal issuance of the resource.
+  issued: LocalDateTime
+  # Most recent date on which the resource was changed, updated or modified.
+  modified: LocalDateTime
   # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   theme:[String!]
 
@@ -94,9 +110,11 @@ interface ResourceInCatalog implements AbstractDataset & Resource & ReferenceWit
   title: [LangString!]#String!
   description: [LangString!]
   language: [String!]
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  issued: LocalDateTime
+  modified: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   theme:[String!]
   license:String
@@ -110,10 +128,14 @@ interface DatasetInCatalog implements AbstractDataset & Resource & ReferenceWith
   title: [LangString!]#String!
   description: [LangString!]
   language: [String!]
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  issued: LocalDateTime
+  modified: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  # In dcat(inverse-properties I could not find this one,
+  # which is the inverse of servesDataset. So I decided named it like this.
   isServedBy(filter:String): [DataService!]
   theme:[String!]
   license:String
@@ -127,9 +149,11 @@ interface AbstractDataset implements Resource & ReferenceWithinExternalContext{
   title: [LangString!]#String!
   description: [LangString!]
   language: [String!]
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  issued: LocalDateTime
+  modified: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   theme:[String!]
   license:String
@@ -151,9 +175,11 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
   # Datasets, they are indicated by the this property.
   description: [LangString!]
   language: [String!]
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  issued: LocalDateTime
+  modified: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   theme:[String!]
   license:String
@@ -176,7 +202,7 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
 #.  records => tabla de CatalogInRecord
 type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext{
   id: ID!
-  title: [LangString!]#String!
+  title: [LangString!]
   resources: [ResourceInCatalog!] # A resource that is listed in the catalog.
   datasets: [DatasetInCatalog!]  # A dataset that is listed in the catalog.
   services: [DataService!] # A service that is listed in the catalog.
@@ -186,10 +212,14 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   # set(records.primaryTopic) == resources
   description: [LangString!]
   language: [String!]
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  issued: LocalDateTime
+  modified: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  # In dcat(inverse-properties I could not find this one,
+  # which is the inverse of servesDataset. So I decided named it like this.
   isServedBy(filter:String): [DataService!]
   theme:[String!]
   license:String
@@ -206,14 +236,17 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
 #   title
 type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext{
   id: ID!
-  title: [LangString!]#String!
+  title: [LangString!]
   description: [LangString!]
   language: [String!]
   seriesMembers(filter:String): [Dataset!] # rename to dcat:seriesMembers due to https://w3c.github.io/dxwg/dcat/#inverse-properties
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
+  issued: LocalDateTime
+  modified: LocalDateTime
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  # In dcat(inverse-properties I could not find this one,
+  # which is the inverse of servesDataset. So I decided named it like this.
   isServedBy(filter:String): [DataService!]
   theme:[String!]
   license:String
@@ -235,18 +268,28 @@ type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   description: [LangString!]
   keywords:[LangString!]
   language: [String!]
-  fechaHoraCreacion: LocalDateTime
-  ultimaModificacion: LocalDateTime
-  spatial: [String!]
-  accrualPeriodicity: Periocidad
-  temporal: CoberturaTemporal
+  issued: LocalDateTime
+  modified: LocalDateTime
+
+  spatial: [String!] # The geographical area covered by the dataset
+  accrualPeriodicity: Frequency # The frequency at which a dataset is published. p.e: days, 1
+  temporal: PeriodOfTime # The temporal period that the dataset covers.
+
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   inCatalog(filter:String): [Catalog!]
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  # In dcat(inverse-properties I could not find this one,
+  # which is the inverse of servesDataset. So I decided named it like this.
   isServedBy(filter:String): [DataService!]
   theme:[String!]
   license:String
   publisher:Concept
   identifier: [String!]
+
+  validity: LocalDateTime #According csv model from https://datos.gob.es Indicates when the resource expires
+  regulations: [String!] #According csv model from https://datos.gob.es.
+  relatedResources: [String!] #According csv model from https://datos.gob.es.
 }
 
 # Implemented by CatalogRecordEntity
@@ -305,31 +348,23 @@ type Distribution implements ReferenceWithinExternalContext{
 # }
 
 
-# This represents one keyword of a dataset and its language
-
-type Keywords{
-  word:String
-  idioma:String
-}
-
-
 # This represents the updating frequency
 #type Periodicidad{
 #  rango:String  #day,month,year
 #  periodo:String   #"1.0"...
 #}
 
-type CoberturaTemporal{
+type PeriodOfTime{
   start:LocalDateTime
   end:LocalDateTime
-
 }
+
 
 scalar LangString
 
 scalar LocalDateTime
 
-scalar Periocidad
+scalar Frequency
 
 scalar NonNegativeInt
 

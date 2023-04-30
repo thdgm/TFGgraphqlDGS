@@ -6,6 +6,7 @@ import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordInput
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordOutput
 import com.graphqlDGS.graphqlDGS.model.types.Error
 import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
+import es.unizar.iaaa.tfg.domain.resources.CatalogEntity
 import es.unizar.iaaa.tfg.jsonDataModels.DatasetCSVModel
 import es.unizar.iaaa.tfg.jsonDataModels.ModelJsonMapping
 import es.unizar.iaaa.tfg.repository.CatalogRecordsRepository
@@ -20,7 +21,9 @@ import es.unizar.iaaa.tfg.services.csvServices.CsvDistributionModelServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateRelationsBetweenEntitiesServices
 import es.unizar.iaaa.tfg.services.mutationServices.CreateResourcesEntitiesServices
 import org.slf4j.LoggerFactory.getLogger
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import java.time.LocalDateTime
 
 /*
  * Services for get Dataset fields and entity.
@@ -132,6 +135,14 @@ class CatalogRecordsServicesImpl(
         idCatalog: String
     ): CatalogRecordOutput{
 
+        val catalog = catalogRepository.findByIdOrNull(idCatalog)
+        if (catalog == null) {
+            val newCatalog = CatalogEntity()
+            newCatalog.id  = idCatalog
+            newCatalog.issued = LocalDateTime.now()
+            newCatalog.modified = LocalDateTime.now()
+            catalogRepository.save(newCatalog)
+        }
         val datasetFields = converterAuxiliar.toDatasetCsvModeFromString(input.content!!)
 
         val dServ = csvDataServiceModelServices.createDataservice(idCatalog)

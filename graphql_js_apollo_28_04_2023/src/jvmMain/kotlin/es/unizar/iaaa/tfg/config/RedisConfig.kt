@@ -52,11 +52,11 @@ class RedisConfig {
         return template
     }
 }
-/*
+
 @Configuration
 @EnableWebMvc
 class WebConfig : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
     }
-}*/
+}

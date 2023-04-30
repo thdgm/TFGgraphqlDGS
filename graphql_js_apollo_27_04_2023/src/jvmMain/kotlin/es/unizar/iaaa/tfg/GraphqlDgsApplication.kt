@@ -1,6 +1,9 @@
 package es.unizar.iaaa.tfg
 
 import com.apollographql.apollo3.ApolloClient
+import es.unizar.iaaa.tfg.services.loadInitDataServices.LoadDataFromCsv
+import jakarta.annotation.PostConstruct
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
@@ -23,6 +26,13 @@ fun corsConfigurer(): WebMvcConfigurer {
 }*/
 
 //@CrossOrigin(origins = ["http://localhost:8080"])
+    @Autowired
+    lateinit var loadDataFromCsv: LoadDataFromCsv
+    @PostConstruct
+    fun init() {
+        // Cargo unos datos del fichero de prueba
+        loadDataFromCsv.loadFromCsv()
+    }
 fun main(vararg args: String) {
 
 

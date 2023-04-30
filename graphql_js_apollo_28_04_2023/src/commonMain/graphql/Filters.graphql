@@ -1,0 +1,18 @@
+query Themes{
+    getAllThemes
+}
+
+query Frequencies{
+    getAllFrequencies
+}
+
+query Publishers{
+    getAllPublishers
+}
+
+query AdminLevels{
+    getAllAdminLabel
+}
+query Keywords($language: String){
+    getAllKeywords(language: $language)
+}

@@ -1,5 +1,14 @@
 package components.commmon.filterForm
 
+import com.apollographql.apollo3.ApolloClient
+import com.apollographql.apollo3.api.Optional
+import com.apollographql.apollo3.api.http.HttpHeader
+import com.apollographql.apollo3.api.http.HttpMethod
+import com.schema.AdminLevelsQuery
+import com.schema.FrequenciesQuery
+import com.schema.KeywordsQuery
+import com.schema.PublishersQuery
+import com.schema.ThemesQuery
 import commonModels.DatasetModel
 import components.commmon.Sizes
 import components.commmon.accordeon.filterInfo
@@ -14,6 +23,8 @@ import csstype.Position
 import csstype.pct
 import csstype.px
 import csstype.rgba
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.*
 import mui.icons.material.Sort
 import mui.material.Box
 import mui.material.Checkbox
@@ -37,9 +48,25 @@ import react.ReactNode
 import react.create
 import react.dom.events.ChangeEvent
 import react.dom.html.ReactHTML.b
+import react.useEffect
+import react.useMemo
 import react.useRequiredContext
 import react.useState
+import kotlin.js.Promise
 
+//var okHttpClient = OkHttpClient.Builder().build()
+val apolloClient = ApolloClient.Builder()
+    .serverUrl("http://localhost:8081/graphql")
+    //.okHttpClient(okHttpClient)
+    .httpMethod(HttpMethod.Post)
+    .httpHeaders(
+        listOf(
+            HttpHeader("Access-Control-Allow-Origin","*"),
+            HttpHeader("Access-Control-Allow-Methods", "POST"),
+            HttpHeader("Content-Type", "application/json;"),
+        )
+    )
+    .build()
 
 val filtersTypes = listOf(
     "Categoría",
@@ -49,18 +76,41 @@ val filtersTypes = listOf(
     "Frecuencia de Actualización",
     "Etiqueta"
 )
-
-val filtersTypesFields = listOf<Collection<String>>(
-    listOf("Empleo","Medio ambiente"),
+/*
+val filtersTypesFields = mutableListOf<Collection<String>>(
+    listOf(),
+    listOf(),
+    listOf(),
+    listOf(),
+    listOf(),
+    listOf()
+    /*listOf("Empleo","Medio ambiente"),
     listOf("CSV","JSON"),
     listOf("Agencia estatal de meteorología", "Agencia española de protección de datos"),
     listOf("Administración Local", "Universidades"),
     listOf("Diario", "Mensual"),
-    listOf("Estadísticas", "Hombres", "Mujeres")
+    listOf("Estadísticas", "Hombres", "Mujeres")*/
 )
+*/
 
 
+suspend fun getAllThemes(): Collection<String>{
+    return apolloClient.query(ThemesQuery()).execute().data?.getAllThemes?.filterNotNull() ?: emptyList()
+}
 
+suspend fun getAllFrequencies(): Collection<String>{
+    return apolloClient.query(FrequenciesQuery()).execute().data?.getAllFrequencies?.filterNotNull() ?: emptyList()
+}
+suspend fun getAllPublishers(): Collection<String>{
+    return apolloClient.query(PublishersQuery()).execute().data?.getAllPublishers?.filterNotNull() ?: emptyList()
+}
+suspend fun getAllAdminLevels(): Collection<String>{
+    return apolloClient.query(AdminLevelsQuery()).execute().data?.getAllAdminLabel?.filterNotNull() ?: emptyList()
+}
+
+suspend fun getAllKeywords(): Collection<String>{
+    return apolloClient.query(KeywordsQuery(language = Optional.present(null))).execute().data?.getAllKeywords?.filterNotNull() ?: emptyList()
+}
 external interface FilterFormProps:Props{
     var filterList: Collection<DatasetModel>
     var handleOnChange: (event: ChangeEvent<HTMLElement>) -> Unit
@@ -69,7 +119,28 @@ external interface FilterFormProps:Props{
 }
 
 val filterForm = FC<FilterFormProps> {props->
+
+    var filtersTypesFields by useState(mutableListOf<Collection<String>>(listOf(),listOf(),listOf(),listOf(),listOf(),listOf()))
+
+    useEffect(emptyList<Collection<String>>()) {
+        GlobalScope.launch {
+
+            filtersTypesFields = mutableListOf(
+                getAllThemes(),
+                listOf("CSV","JSON"),
+                getAllPublishers(),
+                getAllAdminLevels(),
+                getAllFrequencies(),
+                getAllKeywords()
+            )
+            console.log("FILTERSS: $filtersTypesFields")
+        }
+
+    }
+
+
     var datasetList by useState(props.filterList)
+
     //var testList by useState(props.addList)
     var searchFilter by useState("")
     var testList by useRequiredContext(FilterListContext)
