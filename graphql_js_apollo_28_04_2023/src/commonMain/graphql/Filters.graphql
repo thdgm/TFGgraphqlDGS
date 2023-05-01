@@ -16,3 +16,7 @@ query AdminLevels{
 query Keywords($language: String){
     getAllKeywords(language: $language)
 }
+
+query Formats {
+    getAllFormats
+}

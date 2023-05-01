@@ -36,9 +36,14 @@ class FilterFieldsQueries(
         fieldsFilterServices.getFrequenciesRanges()
 
 
-    // @DgsQuery getAllFrequencies: returns all existing frequency's ranges without duplicates
+    // @DgsQuery getAllAdminLabel: returns all existing administration's labels without duplicates
     @DgsQuery
     fun getAllAdminLabel(): Collection<String?> =
         fieldsFilterServices.getAdmonLabel()
+
+    // @DgsQuery getAllFormats: returns all existing formats without duplicates
+    @DgsQuery
+    fun getAllFormats(): Collection<String?> =
+        fieldsFilterServices.getFormats()
 
 }

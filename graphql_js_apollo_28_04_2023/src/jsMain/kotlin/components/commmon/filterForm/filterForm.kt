@@ -5,11 +5,13 @@ import com.apollographql.apollo3.api.Optional
 import com.apollographql.apollo3.api.http.HttpHeader
 import com.apollographql.apollo3.api.http.HttpMethod
 import com.schema.AdminLevelsQuery
+import com.schema.FormatsQuery
 import com.schema.FrequenciesQuery
 import com.schema.KeywordsQuery
 import com.schema.PublishersQuery
 import com.schema.ThemesQuery
 import commonModels.DatasetModel
+import commonModels.MediaType
 import components.commmon.Sizes
 import components.commmon.accordeon.filterInfo
 import components.commmon.layout.FilterListContext
@@ -111,6 +113,11 @@ suspend fun getAllAdminLevels(): Collection<String>{
 suspend fun getAllKeywords(): Collection<String>{
     return apolloClient.query(KeywordsQuery(language = Optional.present(null))).execute().data?.getAllKeywords?.filterNotNull() ?: emptyList()
 }
+
+suspend fun getAllFormats(): Collection<String>{
+    return apolloClient.query(FormatsQuery()).execute().data?.getAllFormats?.filterNotNull() ?: emptyList()
+}
+
 external interface FilterFormProps:Props{
     var filterList: Collection<DatasetModel>
     var handleOnChange: (event: ChangeEvent<HTMLElement>) -> Unit
@@ -127,7 +134,7 @@ val filterForm = FC<FilterFormProps> {props->
 
             filtersTypesFields = mutableListOf(
                 getAllThemes(),
-                listOf("CSV","JSON"),
+                getAllFormats(),
                 getAllPublishers(),
                 getAllAdminLevels(),
                 getAllFrequencies(),

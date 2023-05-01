@@ -104,6 +104,34 @@ class TestFilterFields {
 
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     @Test
+    fun `Creo CRs a partir de json y obtengo todos los formats`() {
+
+        val inputParam = "\$input"
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+
+        urlRecords.forEach {
+            createCatalogRecord(it,inputParam)
+        }
+
+        val query = """
+        query getAllFormats{
+            getAllFormats
+        }
+        """.trimIndent()
+
+        val resources = dgsQueryExecutor.executeAndGetDocumentContext(query)
+        val response = GraphQLResponse(resources.jsonString())
+        LoggerFactory.getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+        val formats = response.extractValue<Collection<String>>("data.getAllFormats[*]")
+        LoggerFactory.getLogger("loggerTest").debug("RESPUESTAAAAA2:  $formats")
+
+       // assertThat(themes).hasSize(17)
+
+    }
+
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
     fun `Creo CRs a partir de json y obtengo todos los keywords en español (es)`() {
 
         val inputParam = "\$input"
@@ -124,9 +152,9 @@ class TestFilterFields {
         val resources = dgsQueryExecutor.executeAndGetDocumentContext(query,queryParameters)
         val response = GraphQLResponse(resources.jsonString())
         LoggerFactory.getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
-        val themes = response.extractValue<Collection<String>>("data.getAllKeywords[*]")
+        val keywords = response.extractValue<Collection<String>>("data.getAllKeywords[*]")
 
-        assertThat(themes).hasSize(98)
+        assertThat(keywords).hasSize(98)
 
     }
 

@@ -17,7 +17,8 @@ type Query {
   getAllKeywords(language: String): [String] # Get all existing keywords with particular language
   getAllPublishers: [String]  # Get all existing publisher's labels
   getAllFrequencies: [String] # Get all existing Frequency's ranges
-  getAllAdminLabel: [String]  # Get all existing Publisher's notations p.g: L02000048
+  getAllFormats: [String]     # Get all existing Formats
+  getAllAdminLabel: [String]  # Get all existing Publisher's notations p.g: L02000048 mapped
                               # Map them. If starts with L0: Local Administration
                               # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
 

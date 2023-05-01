@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 @SpringBootApplication
 class GraphqlDgsApplication {
 
-    @Autowired
+   @Autowired
     lateinit var initLoadFromCsvService: InitLoadFromCsvService
 
     @PostConstruct
