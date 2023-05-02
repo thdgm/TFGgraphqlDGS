@@ -36,57 +36,70 @@ class ResourcesByFilterServicesImpl(
      * Return resourceInCatalog collection according to field value.
      * In case filter is periodicity, the value could be days, weeks, months, years.
      */
-    override fun getResourcesByField(filter: String, value: Collection<String>): Collection<Resource?> =
-        when(filter){
+    override fun getResourcesByField(filter: String, value: Collection<String>): Collection<Resource?> {
+        println("GET RESSS BY FIELDDDDDDDDDD:::: $filter")
+       return when (filter) {
             "publisher" -> {
                 if (value.size == 1) { // Just one publisher is allowed to filter by.
                     resourceRepository.findAll().filter { value.contains(it.publisher?.notation) }
                         .map { convertersResourcesEntitiesTo.createResource(it) }
-                }else {
-                    emptyList()
-                }
-            }
-            "periodicity" -> {
-
-                if (value.all{PERIODICITY_RANGE.contains(it)}){
-                    datasetRepository.findAll().filter { value.contains(converterAux.toPeriocidad(it.accrualPeriodicity).range) }
-                        .map {  convertersResourcesEntitiesTo.createResource(it)}
                 } else {
                     emptyList()
                 }
             }
+
+            "periodicity" -> {
+
+                if (value.all { PERIODICITY_RANGE.contains(it) }) {
+                    datasetRepository.findAll()
+                        .filter { value.contains(converterAux.toPeriocidad(it.accrualPeriodicity).range) }
+                        .map { convertersResourcesEntitiesTo.createResource(it) }
+                } else {
+                    emptyList()
+                }
+            }
+
             "keyword" -> {
                 datasetRepository.findAll().filter {
-                    keywordRepository.findKeywordsByDatasetId(it.id).map{it.id.wordId}.any{value.contains(it)}
-                }.map{convertersResourcesEntitiesTo.createResource(it)}
+                    keywordRepository.findKeywordsByDatasetId(it.id).map { it.id.wordId }.any { value.contains(it) }
+                }.map { convertersResourcesEntitiesTo.createResource(it) }
 
             }
+
             "format" -> {
                 distributionRepository.findAll()
-                    .filter{value.contains(it.format)}
-                    .map{it.accessService}.flatten().distinct()
-                    .map{it.servesDataset}.flatten().distinct()
+                    .filter { value.contains(it.format) }
+                    .map { it.accessService }.flatten().distinct()
+                    .map { it.servesDataset }.flatten().distinct()
                     .map { convertersResourcesEntitiesTo.createResource(it) }
             }
+
             "theme" -> {
 
-               resourceRepository.findAll().filter{
-                   themeRepository.findThemeByResourcesId(it.id).map { it?.id }.any{value.contains(it)}
-               }.map { convertersResourcesEntitiesTo.createResource(it) }
+                resourceRepository.findAll().filter {
+                    themeRepository.findThemeByResourcesId(it.id).map { it?.id }.any { value.contains(it) }
+                }.map { convertersResourcesEntitiesTo.createResource(it) }
 
             }
+
             "adminLevel" -> {
 
-                resourceRepository.findAll().filter{
+                resourceRepository.findAll().filter {
                     it.publisher !== null
-                }.filter {  it.publisher!!.notation[0] == converterAux.getAdministrationLevel(value.elementAt(0))}
-                    .map { convertersResourcesEntitiesTo.createResource(it)  }
+                }.filter { it.publisher!!.notation[0] == converterAux.getAdministrationLevel(value.elementAt(0)) }
+                    .map { convertersResourcesEntitiesTo.createResource(it) }
 
             }
-            else -> emptyList()
+
+            "all" -> {
+                println("ENTRAAAAA NULL")
+                resourceRepository.findAll().map { convertersResourcesEntitiesTo.createResource(it) }
+            }
+
+            else -> listOf(null, null)
         }
 
-
+    }
 
 
 }

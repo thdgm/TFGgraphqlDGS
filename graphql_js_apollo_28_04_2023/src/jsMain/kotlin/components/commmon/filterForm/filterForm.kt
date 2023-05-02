@@ -11,30 +11,26 @@ import com.schema.KeywordsQuery
 import com.schema.PublishersQuery
 import com.schema.ThemesQuery
 import commonModels.DatasetModel
-import commonModels.MediaType
 import components.commmon.Sizes
 import components.commmon.accordeon.filterInfo
 import components.commmon.layout.FilterListContext
-import components.commmon.radioGroup.RadioGroup
 import components.commmon.searcher.Searcher
 import csstype.Auto
+import csstype.ClassName
 import csstype.Display
+import csstype.Height
 import csstype.NamedColor
 import csstype.None
 import csstype.Position
 import csstype.pct
 import csstype.px
-import csstype.rgba
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.*
 import mui.icons.material.Sort
 import mui.material.Box
-import mui.material.Checkbox
 import mui.material.Divider
 import mui.material.FormControl
-import mui.material.FormControlLabel
 import mui.material.FormControlVariant
-import mui.material.FormGroup
 import mui.material.FormLabel
 import mui.material.Grid
 import mui.material.Paper
@@ -42,19 +38,13 @@ import mui.material.Typography
 import mui.material.styles.TypographyVariant
 import mui.system.sx
 import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLInputElement
-import react.ElementType
 import react.FC
 import react.Props
-import react.ReactNode
-import react.create
 import react.dom.events.ChangeEvent
 import react.dom.html.ReactHTML.b
 import react.useEffect
-import react.useMemo
 import react.useRequiredContext
 import react.useState
-import kotlin.js.Promise
 
 //var okHttpClient = OkHttpClient.Builder().build()
 val apolloClient = ApolloClient.Builder()
@@ -158,12 +148,13 @@ val filterForm = FC<FilterFormProps> {props->
             marginRight = Auto.auto
             marginLeft = 3.pct//Auto.auto
             paddingBottom = 8.pct
-            boxShadow = None.none
+           // boxShadow = None.none
             backgroundColor = NamedColor.white//rgba(249, 249, 249, 0.87)
             position = Position.relative
             borderRadius = 20.px
-        }
 
+        }
+        className = ClassName("paper-left")
         Box {
             sx {
                 marginLeft = 5.pct

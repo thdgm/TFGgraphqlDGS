@@ -3,3 +3,17 @@ query Resource($id:ID!){
         id
     }
 }
+
+query Datasets($filter:String, $value:[String!]) {
+    resourcesByFilter (filter:$filter, value: $value) {
+        ... on Dataset{
+            id
+            title
+            publisher
+            description
+            distributions {
+                format
+            }
+        }
+    }
+}

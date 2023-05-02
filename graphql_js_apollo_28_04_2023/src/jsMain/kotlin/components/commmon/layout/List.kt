@@ -24,10 +24,12 @@ import mui.material.Box
 import mui.material.Card
 import mui.material.CardContent
 import mui.material.Chip
+import mui.material.ChipColor
 import mui.material.ChipVariant
 import mui.material.Grid
 import mui.material.GridDirection
 import mui.material.IconButton
+import mui.material.LinearProgress
 import mui.material.List
 import mui.material.ListItem
 import mui.material.ListItemButton
@@ -178,6 +180,7 @@ val list = FC<ListProps> { props ->
                 selectedFilters.map { valuesList ->
                     if (valuesList.value.isNotEmpty()){
                         span {
+                            className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
 
@@ -185,6 +188,7 @@ val list = FC<ListProps> { props ->
                                     id = value
                                     label = ReactNode(value)
                                     variant = ChipVariant.outlined
+                                    color = ChipColor.success
                                     onDelete = { _ ->
                                         selectedFilters = selectedFilters.toMutableMap().mapValues { (key, filterVal) ->
                                             if (key == valuesList.key) filterVal.filter { it != value } else filterVal //value.plus()
@@ -202,19 +206,28 @@ val list = FC<ListProps> { props ->
             }
         }
 
-
-        List {
-            datasetList.filter{if (props.searchBy.isNotEmpty())it.title!!.contains(props.searchBy) else true}
-                .map{
-                ListItemButton{
-                    onClick = handleOnClick
-
-                    id = it.title
-                    CardList{this.datasetInfo = it}
+        if (datasetList.isEmpty()){
+            LinearProgress{
+                sx{
+                    width = 100.pct
+                    marginTop = 3.pct
                 }
             }
+        }else{
+            List {
+                datasetList.filter{if (props.searchBy.isNotEmpty())it.title!!.contains(props.searchBy) else true}
+                    .map{
+                        ListItemButton{
+                            onClick = handleOnClick
+
+                            id = it.id
+                            CardList{this.datasetInfo = it}
+                        }
+                    }
+            }
+            Pagination()
         }
-        Pagination()
+
     }
 
 

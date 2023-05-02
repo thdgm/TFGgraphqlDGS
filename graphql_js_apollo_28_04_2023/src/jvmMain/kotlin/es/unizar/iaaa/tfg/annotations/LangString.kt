@@ -5,7 +5,7 @@ import es.unizar.iaaa.tfg.constants.ConstantValues.LANGSTRING_SEPARADOR
 /*
  * Data class. Implementation of type LangString with toString function.
  */
-data class LangString(val literal: String, val tag: String) {
+data class LangString(val literal: String,val tag: String){
 
     override fun toString(): String {
         return literal + LANGSTRING_SEPARADOR + tag

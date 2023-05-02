@@ -102,5 +102,21 @@ body{
 
 .keywordsChip {
     color: white !important;
-    background-color: #43a047 !important
+    background-color: #43a047 !important;
+}
+.paper-left {
+    height: fit-content !important;
+}
+
+.description-content {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    overflow: hidden !important;
+    white-space: normal !important;
+}
+
+.chipsSelectedFilters{
+    font-size: small !important;
+    font-family: "Roboto","Helvetica","Arial",sans-serif !important;
 }

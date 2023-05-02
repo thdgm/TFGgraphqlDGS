@@ -7,15 +7,18 @@ import components.commmon.pagination.Pagination
 import csstype.Auto
 import csstype.BackgroundColor
 import csstype.ClassName
+import csstype.Color
 import csstype.Display
 import csstype.Position
 import csstype.Width
 import csstype.number
 import csstype.pct
+import csstype.rgb
 import csstype.rgba
 import mui.material.Box
 import mui.material.Card
 import mui.material.CardContent
+import mui.material.CircularProgress
 import mui.material.List
 import mui.material.ListItem
 import mui.material.ListItemButton
@@ -42,7 +45,6 @@ val ListFilterParams = FC<ListFilterParamsProps> { props ->
     var selectedField by useState(MutableList(props.filterFields.size){false})
 
 
-    console.log("CATE: "+props.category)
 
         List {
             props.filterFields.forEachIndexed{ index, it ->
@@ -54,8 +56,16 @@ val ListFilterParams = FC<ListFilterParamsProps> { props ->
 
                     selected = selectedFilters.toMutableMap()[props.category]?.contains(it)
                 }
-            }
 
+            }
+            ListItem{
+                sx {
+                    color = Color("white")
+                    backgroundColor = rgb(247,160,93)
+                }
+
+                + "Mostrar más"
+            }
 
         }
 }

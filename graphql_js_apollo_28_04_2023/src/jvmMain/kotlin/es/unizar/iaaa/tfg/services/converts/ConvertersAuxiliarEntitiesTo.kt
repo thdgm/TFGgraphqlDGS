@@ -1,8 +1,8 @@
 package es.unizar.iaaa.tfg.services.converts
 
 import com.graphqlDGS.graphqlDGS.model.types.PeriodOfTime
-import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.annotations.LangString
+import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.annotations.Frequency
 import es.unizar.iaaa.tfg.constants.ConstantValues.ADMON_LEVEL
 import es.unizar.iaaa.tfg.constants.ConstantValues.FREQUENCY_MAP

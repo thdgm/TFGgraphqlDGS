@@ -81,6 +81,8 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-Beta")
+                implementation("com.apollographql.apollo3:apollo-runtime:3.7.4")
+
             }
         }
 
@@ -88,6 +90,7 @@ kotlin {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
+
             }
         }
 
@@ -133,7 +136,6 @@ kotlin {
                 compileOnly("org.projectlombok:lombok")
 
                 runtimeOnly("com.h2database:h2")
-                implementation("com.apollographql.apollo3:apollo-runtime:3.7.4")
 
                 implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.0")
             }
@@ -158,14 +160,12 @@ kotlin {
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-router-dom")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-react-redux")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-redux")
-
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
 
                 //implementation("org.jetbrains.kotlin-wrappers:kotlin-mui")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-mui")
                 implementation("org.jetbrains.kotlin-wrappers:kotlin-mui-icons")
 
-                implementation("com.apollographql.apollo3:apollo-runtime:3.7.4")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
             }
@@ -212,6 +212,14 @@ apollo {
         outputDirConnection {
             connectToKotlinSourceSet("jsMain")
         }
+
+        /*customTypeMapping.put(
+            "LangString", "commonModels.LangString"
+        )*/
+        mapScalar( "LangString", "commonModels.LangStringAdapterScalar", "commonModels.langStringAdapter")
+        mapScalar( "Concept", "commonModels.ConceptAdapterScalar", "commonModels.conceptAdapter")
+        mapScalar("MediaType","commonModels.MediaTypeAdapterScalar", "commonModels.mediaTypeAdapter")
     }
+
 
 }

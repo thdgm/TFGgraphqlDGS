@@ -1444,6 +1444,7 @@ class TestsFicheroCsv {
     fun `Create CR using CSV and check its primary topic relatedResources property`() {
         val inputParam = "\$input"
 
+
         val datasetModel = processCsvServices.processCsvService(urlRecord).elementAt(28).toString()
         val query = """
         mutation createCR($inputParam:CatalogRecordInput){
@@ -1476,5 +1477,56 @@ class TestsFicheroCsv {
         assertThat(relatedResources).hasSize(2)
 
     }
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
+    @Test
+    fun `Check resourcesByFilter if it has null parameter`() {
+        val filterParam = "\$filter"
+        val valueParam = "\$value"
+        val inputParam = "\$input"
 
+        processCsvServices.processCsvService(urlRecord).map {
+            createCatalogRecord(urlRecord,inputParam,it.toString())
+        }
+        val query = """
+        query Datasets($filterParam:String, $valueParam:[String!]) {
+            resourcesByFilter (filter:$filterParam, value: $valueParam) {
+                ... on Dataset{
+                    id
+                    title
+                    publisher
+                    description
+                }
+            }
+        }
+        """.trimIndent()
+        val queryParameters = mutableMapOf(
+            "filter" to "all",
+            "value" to listOf<String>(
+
+            )
+        )
+        //val queryParameters = mutableMapOf<String, Any?>("filter" to null, "value" to listOf<String>())
+        val createCR = dgsQueryExecutor.executeAndGetDocumentContext(query, queryParameters)
+        val response = GraphQLResponse(createCR.jsonString())
+        val relatedResources = response.extractValue<Collection<String>>("data.resourcesByFilter[*].title[*].literal")
+
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $response")
+        getLogger("loggerTest").debug("RESPUESTAAAAA:  $relatedResources")
+        //assertThat(relatedResources).hasSize(2)
+
+    }
 }
+
+
+/*
+query Datasets($filter:String, $value:[String!]) {
+    resourcesByFilter (filter:$filter, value: $value) {
+        ... on Dataset{
+            id
+            title
+            publisher
+            description
+        }
+    }
+}
+ */

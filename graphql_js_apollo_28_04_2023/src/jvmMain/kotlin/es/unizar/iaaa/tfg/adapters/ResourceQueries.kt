@@ -8,8 +8,8 @@ import com.netflix.graphql.dgs.DgsData
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment
 import com.netflix.graphql.dgs.DgsQuery
 import com.netflix.graphql.dgs.InputArgument
-import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.annotations.LangString
+import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
 import es.unizar.iaaa.tfg.services.queryAuxiliarServices.ReferenceWithinExternalContextServices
 import es.unizar.iaaa.tfg.services.queryServices.ResourceServices

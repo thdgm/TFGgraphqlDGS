@@ -5,8 +5,10 @@ import components.commmon.Sizes
 import components.commmon.layout.HeaderProps
 import csstype.ClassName
 import csstype.Display
+import csstype.FontWeight
 import csstype.pct
 import csstype.px
+import csstype.rgb
 import mui.material.Box
 import mui.material.Card
 import mui.material.CardActions
@@ -42,19 +44,26 @@ val CardList = FC<CardProps> { props->
             CardContent{
                 Typography {
                     variant = TypographyVariant.h6
-                    +"Titulo: ${props.datasetInfo.title}"
+                    sx {
+                        color = rgb(34,24,117)
+                        fontWeight = FontWeight.bold
+                    }
+                    +"${props.datasetInfo.title}"
                 }
 
                 Typography {
                     variant = TypographyVariant.subtitle1
+                    sx {
+                        color = rgb(10,72,241)
 
-                    +"Publicador: ${props.datasetInfo.publisher}"
+                    }
+                    +"${props.datasetInfo.publisher}"
                 }
 
                 Typography {
                     variant = TypographyVariant.subtitle2
-
-                    +"Descripción: ${props.datasetInfo.description}"
+                    className = ClassName("description-content")
+                    +"${props.datasetInfo.description}"
                 }
 
             }
