@@ -73,7 +73,7 @@ val CardList = FC<CardProps> { props->
                         display = Display.block
                     }
                     direction = responsive(StackDirection.row)
-                    props.datasetInfo.format.map{
+                    props.datasetInfo.format.distinct().map{
                         if(it != null){
 
                             className = ClassName("stackSelectedFilters")

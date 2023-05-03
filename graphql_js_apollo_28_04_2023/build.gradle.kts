@@ -83,6 +83,8 @@ kotlin {
                 //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0-Beta")
                 implementation("com.apollographql.apollo3:apollo-runtime:3.7.4")
 
+                //implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+
             }
         }
 
@@ -111,18 +113,18 @@ kotlin {
 
                 // Same version as codegen plugin
                 implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-core:5.6.7")
-
+                implementation("org.springframework.boot:spring-boot-starter-web")
                 implementation("org.springframework.boot:spring-boot-starter-data-jpa")
                 implementation("org.springframework.boot:spring-boot-starter-graphql")
                 implementation("org.springframework.boot:spring-boot-starter-data-redis")
                 implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
-                implementation("org.springframework.boot:spring-boot-starter-web")
+                implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
                 implementation("org.springframework.boot:spring-boot-starter-validation:3.0.2")
 
                 implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
                 implementation("org.jetbrains.kotlin:kotlin-reflect")
-                implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
 
                 implementation("org.json:json:20090211")
                 implementation ("com.google.code.gson:gson:2.8.5")
@@ -219,6 +221,8 @@ apollo {
         mapScalar( "LangString", "commonModels.LangStringAdapterScalar", "commonModels.langStringAdapter")
         mapScalar( "Concept", "commonModels.ConceptAdapterScalar", "commonModels.conceptAdapter")
         mapScalar("MediaType","commonModels.MediaTypeAdapterScalar", "commonModels.mediaTypeAdapter")
+        mapScalar("Frequency","commonModels.FrequencyAdapterScalar", "commonModels.frequencyAdapter")
+        //mapScalar("LocalDateTime","kotlinx.datetime.LocalDateTime", "commonModels.localDateTimeAdapter")
     }
 
 

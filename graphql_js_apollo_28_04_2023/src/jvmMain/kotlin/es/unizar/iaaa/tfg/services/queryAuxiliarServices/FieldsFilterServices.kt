@@ -32,7 +32,6 @@ class FieldsFilterServicesImpl(
     private val themeRepository: ThemeRepository,
     private val keywordRepository: KeywordRepository,
     private val publisherRepository: PublisherRepository,
-    private val converterAux: ConvertersAuxiliarEntitiesTo,
     private val datasetRepository: DatasetRepository,
     private val distributionRepository: DistributionRepository
 
@@ -64,7 +63,7 @@ class FieldsFilterServicesImpl(
     // Return string list with all the associated values to each publisher's label saved in database.
     override fun getAdmonLabel(): Collection<String> =
         publisherRepository.findAll()
-            .map { converterAux.toAdministrationLevel(it.notation) }.distinct()
+            .map { converter.toAdministrationLevel(it.notation) }.distinct()
 
     // Return string list with all the formats saved in database.
     override fun getFormats(): Collection<String> =

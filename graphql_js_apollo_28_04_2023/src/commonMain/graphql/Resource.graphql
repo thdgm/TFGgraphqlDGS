@@ -17,3 +17,30 @@ query Datasets($filter:String, $value:[String!]) {
         }
     }
 }
+
+query DatasetInfo($id:ID!) {
+    resource(id:$id){
+        ... on Dataset{
+            id
+            title
+            publisher
+            description
+            license
+            keywords
+            theme
+            language
+            issued
+            modified
+            accrualPeriodicity
+            spatial
+            temporal{
+                start
+                end
+            }
+            distributions {
+                accessUrl
+                format
+            }
+        }
+    }
+}

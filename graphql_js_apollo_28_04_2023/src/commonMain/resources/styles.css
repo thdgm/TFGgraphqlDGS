@@ -103,6 +103,11 @@ body{
 .keywordsChip {
     color: white !important;
     background-color: #43a047 !important;
+    margin-bottom: 8px !important;
+}
+
+.themesChip{
+    margin-bottom: 8px !important;
 }
 .paper-left {
     height: fit-content !important;
@@ -119,4 +124,18 @@ body{
 .chipsSelectedFilters{
     font-size: small !important;
     font-family: "Roboto","Helvetica","Arial",sans-serif !important;
+}
+
+.stackLanguagesChip{
+    display: block !important;
+}
+
+.languagesChip {
+    color: white !important;
+    background-color: #fc9a39 !important;
+     margin-bottom: 8px !important;
+}
+.distributionsList {
+    overflow: scroll !important;
+    white-space: nowrap !important;
 }

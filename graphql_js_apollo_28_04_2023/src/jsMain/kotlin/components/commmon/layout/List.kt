@@ -1,5 +1,6 @@
 package components.commmon.layout
 
+import com.schema.type.LocalDateTime
 import commonModels.DatasetModel
 import components.commmon.Sizes
 import components.commmon.ThemeContext
@@ -94,7 +95,8 @@ val list = FC<ListProps> { props ->
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
         console.log("ID: "+event.currentTarget.id)
-        navigate("/info/"+event.currentTarget.id)
+        //navigate("/info/"+event.currentTarget.id)
+        navigate("/info/${event.currentTarget.id}?id=${event.currentTarget.id}")
     }
     fun handleListChange() {
         props.deleteElement("CSV")
