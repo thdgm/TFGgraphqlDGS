@@ -1,0 +1,46 @@
+query Resource($id:ID!){
+    resource(id:$id){
+        id
+    }
+}
+
+query Datasets($filter:String, $value:[String!]) {
+    resourcesByFilter (filter:$filter, value: $value) {
+        ... on Dataset{
+            id
+            title
+            publisher
+            description
+            distributions {
+                format
+            }
+        }
+    }
+}
+
+query DatasetInfo($id:ID!) {
+    resource(id:$id){
+        ... on Dataset{
+            id
+            title
+            publisher
+            description
+            license
+            keywords
+            theme
+            language
+            issued
+            modified
+            accrualPeriodicity
+            spatial
+            temporal{
+                start
+                end
+            }
+            distributions {
+                accessUrl
+                format
+            }
+        }
+    }
+}
