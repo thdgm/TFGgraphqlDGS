@@ -143,3 +143,15 @@ body{
 .addMoreFilters:hover {
     background-color: rgba(247,160,93,0.62) !important;
 }
+
+.scrollUlFilters {
+    overflow-y: scroll !important;
+    max-height: 400px !important;
+}
+
+.circularProgressInfo{
+width: 60px;
+height: 60px;
+margin-left: 50%!important;
+margin-top: 5% !important;
+}

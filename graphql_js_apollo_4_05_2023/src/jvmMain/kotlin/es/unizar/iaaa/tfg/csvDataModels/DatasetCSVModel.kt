@@ -20,7 +20,7 @@ data class DatasetCSVModel(
     val publisher: String?,
     val license: String?,
     val spatial: String?,
-    val period: Pair<LocalDateTime, LocalDateTime>?, //Start-end
+    val period: Pair<LocalDateTime?, LocalDateTime?>?, //Start-end
     val validity: LocalDateTime?, // No está en el modelo
     val relatedResources: Collection<String>, //No está en el modelo "res1[RES_SPLIT]res2"
     val regulations: Collection<String>, // No está en el modelo Es la Normativa "res1[RES_SPLIT]res2"

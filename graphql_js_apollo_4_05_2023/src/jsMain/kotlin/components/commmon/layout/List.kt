@@ -82,6 +82,7 @@ external interface ListProps:Props{
     var listSelectedFilters: Collection<String>
     var filterList: Collection<DatasetModel>
     var deleteElement: (String) -> Unit
+    var updateDatasetsList: suspend (event: ChangeEvent<*>, value: Number) -> Unit
 
 }
 
@@ -101,7 +102,9 @@ val list = FC<ListProps> { props ->
     fun handleListChange() {
         props.deleteElement("CSV")
     }
-
+    var handleChangePage: (event: ChangeEvent<*>, value: Number) -> Unit = { e,value ->
+        console.log("PAGINAAA:: $value")
+    }
     fun assignMap(newMap: MutableMap<String, Collection<String>>, categoria: String, valor: String): MutableMap<String, Collection<String>>{
         newMap[categoria] = listOf(valor)
         console.log("MAPA: "+ newMap)
@@ -227,7 +230,9 @@ val list = FC<ListProps> { props ->
                         }
                     }
             }
-            Pagination()
+            Pagination{
+                this.changePage = {e, v -> props.updateDatasetsList(e,v)}
+            }
         }
 
     }

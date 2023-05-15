@@ -29,7 +29,9 @@ class ProcessCsvServicesImpl(
      */
 
     override fun processCsvService(url: String):List<DatasetCSVModel>{
-        val inputStream =  resourceLoader.getResource("classpath:datosGob.csv").inputStream
+        val inputStream =  resourceLoader.getResource(url).inputStream
+
+        println("INPUTTTT:: ${csvReader().open(inputStream){ readLine() }}")
         return processCsv(inputStream)
     }
 

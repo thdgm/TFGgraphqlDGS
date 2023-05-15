@@ -50,6 +50,13 @@ import es.unizar.iaaa.tfg.repository.ThemeRepository
 import es.unizar.iaaa.tfg.repository.TitleDistributionRepository
 import es.unizar.iaaa.tfg.repository.TitleResourceRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.joinAll
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -63,6 +70,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.springframework.data.domain.PageRequest
+import java.io.File
 
 @SpringBootTest
 class Prueba {
@@ -605,6 +613,284 @@ class Prueba {
         v = publisherRepository.findAll()
             .map { converter.toAdministrationLevel(it.notation) }.distinct().drop(excludeCount)
         println(v)
+    }
+
+    @Test
+    fun `Check load all csv`() {
+        runBlocking {
+            val inputStream = resourceLoader.getResource("classpath:datosgobes.csv").inputStream
+
+            val reader = csvReader().readAllWithHeader(inputStream)
+            val batches = reader.chunked(1000)
+            var listaDatasets = mutableListOf<DatasetCSVModel>()
+            println(batches.size)
+            var total = 0
+
+            println("TOTAL: $total")
+            println(reader.size)
+            var i = 0
+
+            //reader.map {
+            for (batch in batches) {
+
+                // Procesa cada batch en una coroutine separada
+                coroutineScope {
+                    launch {
+                    for (it in batch) {
+
+                      // procesa la fila según tus necesidades
+
+                            println("Va a cargar")
+                            var d = DatasetCSVModel(
+                                it["URL"],
+                                fieldOrNull(it["IDENTIFICADOR"]),
+                                titleDescription(it["TÍTULO"]),
+                                titleDescription(it["DESCRIPCIÓN"]),
+                                fieldSplit(it["TEMÁTICAS"]),
+                                keywords(it["ETIQUETAS"]),
+                                localDateTimes(it["FECHA DE CREACIÓN"]),
+                                localDateTimes(it["FECHA DE ÚLTIMA MODIFICACIÓN"]),
+                                frequency(it["FRECUENCIA DE ACTUALIZACIÓN"]),
+                                fieldSplit(it["IDIOMAS"]),
+                                fieldOrNull(it["ÓRGANO PUBLICADOR"]),
+                                fieldOrNull(it["CONDICIONES DE USO"]),
+                                fieldOrNull(it["COBERTURA GEOGRÁFICA"]),
+                                periocity(it["COBERTURA TEMPORAL"]),
+                                localDateTimes(it["VIGENCIA DEL RECURSO"]),
+                                relatedResourcesAndRegulations(it["RECURSOS RELACIONADOS"]),
+                                relatedResourcesAndRegulations(it["NORMATIVA"]),
+                                distributions(it["DISTRIBUCIONES"]),
+                            )
+                            //GlobalScope.launch {
+                            println("Carga en BBDD")
+                            //}
+                            println("ELEMENTO CARGADO $i")
+                            i = i + 1
+                        }
+
+                    }
+                }
+
+            }
+
+            Thread.sleep(1000000)
+
+        }
+
+    }
+
+    @Test
+    fun`Un test`(){
+
+        keywords("[en]-25 0 TWYU//0 TWYU//100  TWYU//65 and over//Absolute value//Age//Agrarian structures registers and production methods//Agrcultural Census//Agriculture livestock forestry and hunting//All ages//Basic characteristics of the farm//Females//From 25 to 34 years (current quarter)//From 35 to 44 years//From 45 to 54 years//From 55 to 64 years//Males//Percentage//Percentage of time worked (TWYU section)//Persons//Sex//Statistics//TWYU//Total TWYU sections//Type of data//Under 25 years old//[25-50) TWYU//[50-75) TWYU//[75-100) TWYU[es](0-25)  UTAT//0 UTAT//100  UTAT//65 y más años//Agricultura ganadería selvicultura y caza//Características básicas de la explotación//Censo Agrario//De 25 a 34 años//De 35 a 44 años//De 45 a 54 años//De 55 a 64 años//Edad//Estadísticas//Estructuras agrarias registros y medios de producción//Hombres//Menos de 25 años//Mujeres//Personas//Porcentaje//Porcentaje de tiempo trabajado (tramo UTAT)//Sexo//Tipo de dato//Todas las edades//Total//Total tramos UTAT//UTAT//Valor absoluto//[25-50)  UTAT//[50-75)  UTAT//[75-100)  UTAT//Ámbito territorial")
+
+    }
+    suspend fun prueba (){
+        val inputStream =  resourceLoader.getResource("classpath:datosgobes.csv").inputStream
+
+        val reader = csvReader().readAllWithHeader(inputStream)
+        val batches = reader.chunked(1000)
+        var listaDatasets = mutableListOf<DatasetCSVModel>()
+        println(batches.size)
+        var total = 0
+        /*for (batch in batches) {
+            var i = 0
+            // Procesa cada batch en una coroutine separada
+
+                for (row in batch) {
+                    // Procesa los valores de la fila según tus necesidades
+                    var it = row
+                    println("Va a cargar: $row")
+                    var d = DatasetCSVModel(
+                        it["URL"],
+                        fieldOrNull(it["IDENTIFICADOR"]),
+                        titleDescription(it["TÍTULO"]),
+                        titleDescription(it["DESCRIPCIÓN"]),
+                        fieldSplit(it["TEMÁTICAS"]),
+                        keywords(it["ETIQUETAS"]),
+                        localDateTimes(it["FECHA DE CREACIÓN"]),
+                        localDateTimes(it["FECHA DE ÚLTIMA MODIFICACIÓN"]),
+                        frequency(it["FRECUENCIA DE ACTUALIZACIÓN"]),
+                        fieldSplit(it["IDIOMAS"]),
+                        fieldOrNull(it["ÓRGANO PUBLICADOR"]),
+                        fieldOrNull(it["CONDICIONES DE USO"]),
+                        fieldOrNull(it["COBERTURA GEOGRÁFICA"]),
+                        periocity(it["COBERTURA TEMPORAL"]),
+                        localDateTimes(it["VIGENCIA DEL RECURSO"]),
+                        relatedResourcesAndRegulations(it["RECURSOS RELACIONADOS"]),
+                        relatedResourcesAndRegulations(it["NORMATIVA"]),
+                        distributions(it["DISTRIBUCIONES"]),
+                    )
+                    GlobalScope.launch {
+                        println("Carga en BBDD: $d")
+                    }
+                    println("ELEMENTO CARGADO $i: ${d}")
+                    i = i +1
+                    total = total +1
+                }
+            }*/
+
+
+
+        println("TOTAL: $total")
+        println(reader.size)
+        var i = 0
+        var w = mutableListOf<Job>()
+        reader.map {
+            w.add(GlobalScope.launch {   // procesa la fila según tus necesidades
+
+                println("Va a cargar: $it")
+                var d = DatasetCSVModel(
+                    it["URL"],
+                    fieldOrNull(it["IDENTIFICADOR"]),
+                    titleDescription(it["TÍTULO"]),
+                    titleDescription(it["DESCRIPCIÓN"]),
+                    fieldSplit(it["TEMÁTICAS"]),
+                    keywords(it["ETIQUETAS"]),
+                    localDateTimes(it["FECHA DE CREACIÓN"]),
+                    localDateTimes(it["FECHA DE ÚLTIMA MODIFICACIÓN"]),
+                    frequency(it["FRECUENCIA DE ACTUALIZACIÓN"]),
+                    fieldSplit(it["IDIOMAS"]),
+                    fieldOrNull(it["ÓRGANO PUBLICADOR"]),
+                    fieldOrNull(it["CONDICIONES DE USO"]),
+                    fieldOrNull(it["COBERTURA GEOGRÁFICA"]),
+                    periocity(it["COBERTURA TEMPORAL"]),
+                    localDateTimes(it["VIGENCIA DEL RECURSO"]),
+                    relatedResourcesAndRegulations(it["RECURSOS RELACIONADOS"]),
+                    relatedResourcesAndRegulations(it["NORMATIVA"]),
+                    distributions(it["DISTRIBUCIONES"]),
+                )
+                //GlobalScope.launch {
+                println("Carga en BBDD: $d")
+                //}
+                println("ELEMENTO CARGADO $i: ${d}")
+                i = i +1
+            })
+
+
+
+        }
+        w.joinAll()
+        Thread.sleep(1000000)
+    }
+
+    /*
+    * Auxiliar functions to extract and transform the fields from the csv.
+    */
+
+    fun fieldOrNull(value: String?): String? {
+
+        val v =  if (!value.isNullOrBlank()) value?.replace("Ã±", "ñ")?.replace("Ã­","í")?.replace("Ã¡","á") else null
+        println("ENTRA1")
+        return v
+    }
+
+    fun relatedResourcesAndRegulations(value:String?): Collection<String> {
+
+        val v = if (!value.isNullOrBlank()) {
+            value!!.replace("([^:])//".toRegex(), "\$1[RES_SPLIT]").split("[RES_SPLIT]")
+        } else emptyList()
+        println("ENTRA1")
+        return v
+    }
+
+    fun fieldSplit(value: String?): Collection<String> {
+
+        val v = if (!value.isNullOrBlank()) value!!.split("//") else emptyList()
+        println("ENTRA2")
+        return v
+    }
+
+    fun titleDescription(value: String?): Collection<String> {
+        val v = if (!value.isNullOrBlank()) {
+            value!!.replace("]", "-").replaceFirst("[", "").split("[")
+        } else emptyList()
+        println("ENTRA3")
+        return v
+    }
+    fun keywords(value: String?): Map<String, String>? {
+        println("ENTRA41: $value")
+        val v = if (!value.isNullOrBlank()) {
+            value?.replace("\\[(\\w{2})\\]".toRegex(),"[[SPLIT_FIRS]]\$1[[SPLIT_LAST]]")?.replaceFirst("[[SPLIT_FIRS]]", "")?.split("[[SPLIT_FIRS]]")?.associate {
+                println("ENTRA42: $it")
+                val (left, right) = it.split("[[SPLIT_LAST]]")
+                println("ENTRA43: $left -- $right")
+                left to right
+            }
+        } else null
+        println("ENTRA4")
+        return v
+    }
+    fun localDateTimes(value: String?): LocalDateTime? {
+
+        val v = if (!value.isNullOrBlank()) {
+            LocalDateTime.parse(value, DateTimeFormatter.ofPattern(ConstantValues.DATE_PATTERN_ZONE_OFFSET))
+        } else null
+        println("ENTRA5")
+        return v
+    }
+
+    fun frequency(value: String?): String? {
+
+        val v = if (!value.isNullOrBlank()) {
+            value?.replace("\\[.*#".toRegex(), "")?.replace("[VALUE]", ",")
+        } else null
+        println("ENTRA6")
+        return v
+    }
+
+    fun periocity(value: String?):  Pair<LocalDateTime?, LocalDateTime?>? {
+        println("VA A ENTRAR7: $value ")
+        var value  = value
+        if (!value.isNullOrBlank()) {
+            println("VA A ENTRAR72:  ${value?.get(value.length - 1)}")
+
+        }
+        if (!value.isNullOrBlank()) {
+            println("PROCES 7: ${value}")
+
+
+            val mm = ConstantValues.REGEX_FREQUENCY.toRegex().findAll(value).map {
+                println("${it.value} -- ${"\\+".toRegex().matches(it.value)}")
+                if (".*\\+.*".toRegex().matches(it.value)){
+                    LocalDateTime.parse(it.value, DateTimeFormatter.ofPattern(ConstantValues.DATE_PATTERN_ZONE_OFFSET))
+                }else{
+                    LocalDateTime.parse(it.value, DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+
+                }
+            }.toMutableList()
+
+            if (mm.size > 1) {
+               return mm.zipWithNext().first()
+            }
+            if(mm.size == 1) {
+                mm.add(null)
+                return mm.zipWithNext().first()
+            }
+
+        }
+        return null
+
+    }
+
+    fun distributions(value: String?): Collection<Map<String, String>?>? {
+
+        val v = if (!value.isNullOrBlank()) {
+            value!!.replaceFirst("[", "").split("//[")?.map {
+                var titleNumber = 0
+                it?.split("[")?.associate {
+                    var (left, right) = it.split("]")
+                    if (left.matches("TITLE_.*".toRegex())) {
+                        right = left.split("_").elementAt(1) + "_-_" + right
+                        left = "TITLE_$titleNumber"
+                        titleNumber += 1
+                    }
+                    "[SPLIT]$left" to right
+                }
+            }
+        } else null
+        println("ENTRA8")
+        return v
     }
 }
 
