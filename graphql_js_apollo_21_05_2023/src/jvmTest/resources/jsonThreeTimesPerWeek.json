@@ -1,0 +1,201 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/DurationDescription",
+      "@type": "time:DurationDescription",
+      "time:days": {
+        "@type": "xsd:decimal",
+        "@value": "2"
+      }
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0002",
+      "@type": "skos:Concept",
+      "skos:notation": "E0DAT0002",
+      "skos:prefLabel": "CatÃ¡logo Oficial de Datos y Servicios INSPIRE"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c5f1fd1a-69a9-404b-9f7e-e1e6300382a1/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/xml",
+      "rdfs:label": "XML"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c2fdf360-1baa-4962-98f9-6160de1326dc/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/xml",
+      "rdfs:label": "XML"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c2fdf360-1baa-4962-98f9-6160de1326dc",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://wms.mapama.gob.es/sig/Agua/ZonasSensiblesPoligonos/2019/wms.aspx?Request=GetCapabilities",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "3796"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c2fdf360-1baa-4962-98f9-6160de1326dc/format"
+      },
+      "dct:identifier": "https://wms.mapama.gob.es/sig/Agua/ZonasSensiblesPoligonos/2019/wms.aspx?Request=GetCapabilities",
+      "dct:title": {
+        "@language": "es",
+        "@value": "DescripciÃ³n del Servicio WMS de Zonas sensibles identificadas por polÃ­gonos (Q2019. Dir 91/271/CEE):"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c5f1fd1a-69a9-404b-9f7e-e1e6300382a1",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://wms.mapama.gob.es/sig/Agua/ZonasSensiblesPoligonos/2019/wms.aspx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "426"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c5f1fd1a-69a9-404b-9f7e-e1e6300382a1/format"
+      },
+      "dct:identifier": "https://wms.mapama.gob.es/sig/Agua/ZonasSensiblesPoligonos/2019/wms.aspx",
+      "dct:title": {
+        "@language": "es",
+        "@value": "AM.SensitiveArea"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/Frequency",
+      "@type": "dct:Frequency",
+      "rdf:value": {
+        "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/DurationDescription"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c5f1fd1a-69a9-404b-9f7e-e1e6300382a1"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/resource/c2fdf360-1baa-4962-98f9-6160de1326dc"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "View"
+        },
+        {
+          "@language": "es",
+          "@value": "sistemas de tratamiento de aguas residuales"
+        },
+        {
+          "@language": "es",
+          "@value": "OGC"
+        },
+        {
+          "@language": "es",
+          "@value": "1.3.0"
+        },
+        {
+          "@language": "es",
+          "@value": "a restricciones o reglamentaciones y unidades de notificaciÃ³n"
+        },
+        {
+          "@language": "es",
+          "@value": "mejora de calidad del agua"
+        },
+        {
+          "@language": "es",
+          "@value": "Zonas sujetas a ordenaciÃ³n"
+        },
+        {
+          "@language": "es",
+          "@value": "IDEE"
+        },
+        {
+          "@language": "es",
+          "@value": "contaminaciÃ³n de aguas residuales"
+        },
+        {
+          "@language": "es",
+          "@value": "WMS"
+        },
+        {
+          "@language": "es",
+          "@value": "datos sobre el estado del medio ambiente"
+        },
+        {
+          "@language": "es",
+          "@value": "CartografÃ­a"
+        },
+        {
+          "@language": "es",
+          "@value": "fuentes puntuales"
+        },
+        {
+          "@language": "es",
+          "@value": "MAPAMA"
+        },
+        {
+          "@language": "es",
+          "@value": "Area management/restriction/regulation zones and reporting units"
+        },
+        {
+          "@language": "es",
+          "@value": "contaminantes del agua"
+        },
+        {
+          "@language": "es",
+          "@value": "plantas depuradoras"
+        }
+      ],
+      "dcat:theme": {
+        "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "https://datos.gob.es/catalogo/e0dat0002-servicio-wms-web-map-service-zonas-sensibles-identificadas-por-poligonos-q2019-dir-91-271-cee/Frequency"
+      },
+      "dct:description": {
+        "@language": "es",
+        "@value": "El Servicio WMS (Web Map Service) denominado \"Zonas sensibles identificadas por polÃ­gonos (Q2019. Dir 91/271/CEE)\" permite la visualizaciÃ³n y consulta del conjunto de datos que representan zonas Sensibles a la eutrofizaciÃ³n, con geometrÃ­a poligonal, segÃºn la Directiva 91/271/CEE sobre el tratamiento de las aguas residuales urbanas, versiÃ³n Q2019 (datos de situaciÃ³n a diciembre de 2018 reportados a la ComisiÃ³n Europea en 2020). La informaciÃ³n sobre las depuradoras, sus puntos de vertido y las zonas sensibles ha sido remitida a la ComisiÃ³n Europea segÃºn el modelo de datos especificado en la web del EIONET http://cdr.eionet.europa.eu/help/UWWTD/UWWTD_613 , y su contenido se puede encontrar en la pÃ¡gina web http://cdr.eionet.europa.eu/es/eu/uwwt La URL del Servicio WMS Zonas sensibles identificadas por polÃ­gonos (Q2019. Dir 91/271/CEE) es: https://wms.mapama.gob.es/sig/Agua/ZonasSensiblesPoligonos/2019/wms.aspx Los sistemas de referencia que ofrece este servicio son: - Para coordenadas geogrÃ¡ficas: CRS: 84, EPSG:4230 (ED50), EPSG:4326 (WGS 84), EPSG:4258 (ETRS 89). - Para coordenadas U.T.M: EPSG:32628 (WGS 84 / UTM zone 28N), EPSG:32629 (WGS 84 / UTM zone 29N), EPSG:32630 (WGS 84 / UTM zone 30N), EPSG:32631 (WGS 84 / UTM zone 31N), EPSG:25828 (ETRS 89 / UTM zone 28N), EPSG:25829 (ETRS 89 / UTM zone 29N), EPSG:25830 (ETRS 89 / UTM zone 30N), EPSG:25831 (ETRS 89 / UTM zone 31N), EPSG:23028 (ED50 / UTM zone 28N), EPSG:23029 (ED50 / UTM zone 29N), EPSG:23030 (ED50 / UTM zone 30N), EPSG:23031 (ED50 / UTM zone 31N).\n\nLa cobertura geogrÃ¡ficas estÃ¡ definida por el cuadro delimitador: \noeste: -19.00, \neste: 4.57, \nsur: 27.00, \nnorte: 44.04"
+      },
+      "dct:identifier": "https://www.idee.es/csw-codsi-idee/srv/spa/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecordById&outputSchema=http://www.isotc211.org/2005/gmd&ElementSetName=full&ID=c8a58854-c9d8-4657-8d0d-5dd7f054d790",
+      "dct:language": "es",
+      "dct:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-11-25T01:00:00+01:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/E0DAT0002"
+      },
+      "dct:references": {
+        "@id": "https://www.mapama.gob.es/ide/metadatos/srv/spa/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecordById&outputSchema=http://www.isotc211.org/2005/gmd&ElementSetName=full&ID=eee58029-488b-49c4-8c11-4fab9ebb26c5#ESMTERDDGA_ZZSS_EUTROF_Q2019"
+      },
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Pais/EspaÃ±a"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "Servicio WMS (Web Map Service) Zonas sensibles identificadas por polÃ­gonos (Q2019. Dir 91/271/CEE)"
+      }
+    }
+  ]
+}

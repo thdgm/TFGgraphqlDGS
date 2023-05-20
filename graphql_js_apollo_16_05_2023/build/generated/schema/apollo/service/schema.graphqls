@@ -1,0 +1,379 @@
+schema {
+  query: Query
+}
+
+directive @optional (if: Boolean = true) on FIELD|VARIABLE_DEFINITION
+
+directive @nonnull (fields: String! = "") on OBJECT|FIELD
+
+directive @typePolicy (keyFields: String! = "", embeddedFields: String! = "") on OBJECT|INTERFACE|UNION
+
+directive @fieldPolicy (forField: String!, keyArgs: String! = "", paginationArgs: String! = "") repeatable on OBJECT
+
+"""
+Indicates that the given field, argument, input field or enum value requires
+giving explicit consent before being used.
+"""
+directive @requiresOptIn (feature: String!) repeatable on FIELD_DEFINITION|ARGUMENT_DEFINITION|INPUT_FIELD_DEFINITION|ENUM_VALUE
+
+directive @targetName (name: String!) on OBJECT|ENUM_VALUE
+
+type Query {
+  resource(id: ID): Resource
+
+  catalog(id: ID): Catalog
+
+  dataset(id: ID): DatasetInCatalog
+
+  dataService(id: ID): DataService
+
+  datasetSeries(id: ID): DatasetSeries
+
+  catalogRecord(id: ID): CatalogRecord
+
+  distribution(id: ID): Distribution
+
+  resourcesByFilter(filter: String, value: [String!], page: Int!): [Resource]
+
+  findResourceByIdentifier(id: String): Resource
+
+  getAllThemes(page: Int!, pageSize: Int!): [String]
+
+  getAllKeywords(page: Int!, pageSize: Int!): [String]
+
+  getAllPublishers(page: Int!, pageSize: Int!): [String]
+
+  getAllFrequencies(page: Int!, pageSize: Int!): [String]
+
+  getAllFormats(page: Int!, pageSize: Int!): [String]
+
+  getAllAdminLabel(page: Int!, pageSize: Int!): [String]
+}
+
+type Mutation {
+  createCatalogRecord(input: CatalogRecordInput): CatalogRecordOutput
+}
+
+input CatalogRecordInput {
+  inCatalog: ID
+
+  catalogRecordId: ID
+
+  contentType: String
+
+  content: String
+
+  contentUrl: String
+
+  hints: [String!]
+}
+
+union CatalogRecordOutput = CatalogRecord|Error
+
+type Error {
+  message: String
+}
+
+interface ReferenceWithinExternalContext {
+  identifier: [String!]
+}
+
+interface Resource implements ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  theme: [String!]
+
+  identifier: [String!]
+
+  license: String
+
+  publisher: Concept
+}
+
+interface ResourceInCatalog implements AbstractDataset & Resource & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+}
+
+interface DatasetInCatalog implements AbstractDataset & Resource & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  isServedBy(filter: String): [DataService!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+}
+
+interface AbstractDataset implements Resource & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+}
+
+type DataService implements ResourceInCatalog & Resource & AbstractDataset & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  servesDataset: [DatasetInCatalog!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+}
+
+type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  resources: [ResourceInCatalog!]
+
+  datasets: [DatasetInCatalog!]
+
+  services: [DataService!]
+
+  catalogs: [Catalog!]
+
+  records: [CatalogRecord!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  isServedBy(filter: String): [DataService!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+}
+
+type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  description: [LangString!]
+
+  language: [String!]
+
+  seriesMembers(filter: String): [Dataset!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  isServedBy(filter: String): [DataService!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+}
+
+type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  inSeries(filter: String): [DatasetSeries!]
+
+  distributions: [Distribution!]
+
+  description: [LangString!]
+
+  keywords: [LangString!]
+
+  language: [String!]
+
+  issued: LocalDateTime
+
+  modified: LocalDateTime
+
+  spatial: [String!]
+
+  accrualPeriodicity: Frequency
+
+  temporal: PeriodOfTime
+
+  inCatalog(filter: String): [Catalog!]
+
+  isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  isServedBy(filter: String): [DataService!]
+
+  theme: [String!]
+
+  license: String
+
+  publisher: Concept
+
+  identifier: [String!]
+
+  validity: LocalDateTime
+
+  regulations: [String!]
+
+  relatedResources: [String!]
+}
+
+type CatalogRecord {
+  id: ID!
+
+  title: String
+
+  contentType: String
+
+  content: String
+
+  contentURL: String
+
+  hints: [String!]
+
+  primaryTopic: ResourceInCatalog!
+
+  inCatalog: [Catalog!]
+}
+
+type Distribution implements ReferenceWithinExternalContext {
+  id: ID!
+
+  title: [LangString!]
+
+  accessUrl: String
+
+  accessService: [DataService!]
+
+  byteSize: NonNegativeInt
+
+  format: MediaType
+
+  identifier: [String!]
+}
+
+type PeriodOfTime {
+  start: LocalDateTime
+
+  end: LocalDateTime
+}
+
+scalar LangString
+
+scalar LocalDateTime
+
+scalar Frequency
+
+scalar NonNegativeInt
+
+scalar Concept
+
+scalar MediaType

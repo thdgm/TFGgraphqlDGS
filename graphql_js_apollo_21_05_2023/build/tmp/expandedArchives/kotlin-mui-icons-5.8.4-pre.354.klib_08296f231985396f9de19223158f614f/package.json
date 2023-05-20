@@ -1,0 +1,15 @@
+{
+  "name": "kotlin-wrappers-kotlin-mui-icons-js-ir",
+  "version": "5.8.4-pre.354",
+  "main": "kotlin-wrappers-kotlin-mui-icons-js-ir.js",
+  "types": "kotlin-wrappers-kotlin-mui-icons-js-ir.d.ts",
+  "devDependencies": {
+    "dukat": "0.5.8-rc.4"
+  },
+  "dependencies": {
+    "@mui/icons-material": "^5.8.4"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

@@ -3,6 +3,7 @@ package components.commmon.pages.catalog.infoPage
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.http.HttpHeader
 import com.apollographql.apollo3.api.http.HttpMethod
+import components.commmon.FilterListContextCatalogs
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import models.CatalogInfo
@@ -13,6 +14,7 @@ import react.Props
 import react.router.Params
 import react.router.useParams
 import react.useEffect
+import react.useRequiredContext
 import react.useState
 
 
@@ -42,8 +44,8 @@ val catalogInfo = FC<CatalogInfoProps> {
 
     val params: Params = useParams()
     var listTestCatalogs by useState(mutableListOf<CatalogInfo>())
-
-
+    var selectedFilters by useRequiredContext(FilterListContextCatalogs)
+    console.log("ESTOO: "+ selectedFilters)
 
     useEffect(emptyList<CatalogInfo>()) {
         GlobalScope.launch {

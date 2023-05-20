@@ -1,6 +1,7 @@
 package components.commmon.pages.catalog.mainPage
 
 
+import components.commmon.FilterListContextCatalogs
 import csstype.ClassName
 import csstype.Color
 import csstype.NamedColor
@@ -18,6 +19,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
+import react.useRequiredContext
 import react.useState
 
 external interface FilterInfoCatalogProps:Props{
@@ -31,6 +33,7 @@ external interface FilterInfoCatalogProps:Props{
 val filterInfoCatalog = FC<FilterInfoCatalogProps> { props ->
 
     var showMoreOrLess by useState(false)
+    var selectedFilters by useRequiredContext(FilterListContextCatalogs)
     val handleClickMore = {
         GlobalScope.launch {
             //props.updateFilterListMore()
@@ -65,10 +68,22 @@ val filterInfoCatalog = FC<FilterInfoCatalogProps> { props ->
             }
             mui.material.List {
                 className = ClassName("scrollUlFilters")
-                props.filterFields.forEachIndexed { index, it ->
+                props.filterFields.forEachIndexed { index, value ->
                     ListItemButton {
-                        +"$it"
-
+                        onClick = { selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                            if (key == "Catalogs") {
+                                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                    if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(value)
+                                    else if (filterVal.contains( value)) filterVal.filter { miVal -> miVal != value }
+                                    else filterVal
+                                }.toMutableMap()
+                            } else {
+                                catalogMap
+                            }
+                        }.toMutableMap()
+                        }
+                        +"$value"
+                        selected = selectedFilters["Catalogs"]!!.toMutableMap()[props.filterName]?.contains(value)
                     }
 
                 }

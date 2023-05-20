@@ -23,7 +23,7 @@ import react.FC
 import react.Props
 
 external interface CardProps:Props{
-    var datasetInfo:DatasetModel
+    var datasetInfo: DatasetModel
     var handleClickOpen: () -> Unit
     var handleClickClose: () -> Unit
 }
@@ -69,11 +69,11 @@ val CardListCatalog = FC<CardProps> { props->
             CardActions {
                 Stack {
                     sx{
-                        display = Display.block
+                        display= Display.flex
                     }
                     direction = responsive(StackDirection.row)
 
-                    className = ClassName("stackSelectedFilters")
+
                     spacing = responsive(4.px)
                     direction = responsive(StackDirection.row)
                     Chip {

@@ -11,6 +11,10 @@ import csstype.pct
 import csstype.px
 import csstype.rgba
 import es.unizar.iaaa.tfg.constants.ConstantValues
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import models.DatasetInfo
 import mui.material.Breadcrumbs
 import mui.material.List
 import mui.material.Chip
@@ -31,11 +35,15 @@ import mui.material.TableRow
 import mui.material.Typography
 import mui.system.responsive
 import mui.system.sx
+import org.w3c.dom.HTMLElement
 import react.FC
 import react.Props
 import react.ReactNode
 import react.dom.aria.ariaLabel
+import react.dom.events.MouseEvent
 import react.dom.html.ReactHTML
+import react.router.useNavigate
+import react.useEffect
 import react.useState
 
 
@@ -47,11 +55,28 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
 
 
     var datasetInfo by useState(props.listTestDatasetsInfo)
+    var isLoading by useState(true)
+    val navigate = useNavigate()
 
-
+    val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
+        console.log("ID: "+event.currentTarget.id)
+        navigate("/dataset")
+    }
+    useEffect(listOf(isLoading)) {
+        MainScope().launch {
+            delay(9000)
+            isLoading = false
+            console.log("TIMEOUTTT")
+        }
+    }
     if (datasetInfo.isNullOrEmpty()){
-        CircularProgress{
-            className = ClassName("circularProgressInfo")
+        if (isLoading) {
+            CircularProgress {
+                className = ClassName("circularProgressInfo")
+            }
+        }else{
+            +"No se ha encontrado información del elemento"
+            PruebaInfo()
         }
     }else{
         Breadcrumbs {
@@ -65,7 +90,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                 underline = LinkUnderline.hover
                 color = "inherit"
                 href = "/"
-                +"/Conjunto de datos"
+                +"/datasets"
             }
 
             Typography {
@@ -218,6 +243,35 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
 
             }
         }
+        if(datasetInfo.elementAt(0)?.identifiers!!.isNotEmpty()){
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"Identificadores"
+                }
+                List {
+                    datasetInfo.elementAt(0)?.identifiers?.map {
+                        ListItemButton {
+                            //className = ClassName("tableCell2")
+                            +"$it"
+                        }
+                    }
+                }
+            }
+        }
         if(datasetInfo.elementAt(0)?.description!!.isNotEmpty()){
             Paper {
                 sx {
@@ -245,6 +299,117 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                         }
                     }
                 }
+            }
+        }
+        if(!datasetInfo.elementAt(0)?.servedByID.isNullOrEmpty()) {
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"Served By"
+                }
+                List {
+                    datasetInfo.elementAt(0)?.servedByID?.mapIndexed { i, it ->
+
+                        if (!datasetInfo.elementAt(0)?.servedBytIdentifiers?.elementAt(i).isNullOrEmpty()){
+                            ListItemButton {
+                                +"${datasetInfo.elementAt(0)?.servedBytIdentifiers?.elementAt(i)?.elementAt(0)}"
+                            }
+                        }else{
+                            ListItemButton {
+                                +"${datasetInfo.elementAt(0)?.servedByTitles?.elementAt(i)?.elementAt(0)}"
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+        if(!datasetInfo.elementAt(0)?.inSeriesID.isNullOrEmpty()) {
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"In Series"
+                }
+                List {
+                    datasetInfo.elementAt(0)?.inSeriesID?.mapIndexed { i, it ->
+
+                        if (!datasetInfo.elementAt(0)?.inSeriesIdentifiers?.elementAt(i).isNullOrEmpty()){
+                            ListItemButton {
+                                +"${datasetInfo.elementAt(0)?.inSeriesIdentifiers?.elementAt(i)?.elementAt(0)}"
+                            }
+                        }else{
+                            ListItemButton {
+                                +"${datasetInfo.elementAt(0)?.inSeriesTitle?.elementAt(i)?.elementAt(0)}"
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+        if(!datasetInfo.elementAt(0)?.inCatalogID.isNullOrEmpty()) {
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"In Catalog"
+                }
+                List {
+                    datasetInfo.elementAt(0)?.inCatalogID?.mapIndexed { i, it ->
+
+                        if (!datasetInfo.elementAt(0)?.inCatalogIdentifiers?.elementAt(i).isNullOrEmpty()){
+                            ListItemButton {
+                                +"${datasetInfo.elementAt(0)?.inCatalogIdentifiers?.elementAt(i)?.elementAt(0)}"
+                            }
+                        }else{
+                            ListItemButton {
+                                +"${datasetInfo.elementAt(0)?.inCatalogTitle?.elementAt(i)?.elementAt(0)}"
+                            }
+                        }
+
+                    }
+                }
+
             }
         }
        if(datasetInfo.elementAt(0)?.accessURl!!.isNotEmpty()) {
@@ -380,6 +545,20 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
 
                                     +"${datasetInfo.elementAt(0)?.spatial?.joinToString(separator = " / ")}"
                                 }
+                            }
+                        }
+                        if(!datasetInfo.elementAt(0)?.isPTOID.isNullOrEmpty()) {
+                            TableRow {
+                                TableCell {
+                                    className = ClassName("tableCell1")
+                                    +"Catalog Record"
+                                }
+                                TableCell {
+                                    className = ClassName("tableCell2")
+                                    id = datasetInfo.elementAt(0)?.isPTOID
+                                    +"${datasetInfo.elementAt(0)?.isPTOTitle}"
+                                }
+
                             }
                         }
                         if (datasetInfo.elementAt(0)?.language!!.isNotEmpty()) {

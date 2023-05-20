@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=org.example\:multiplatformKotlin
+compiler_version=1.8.10
+depends=io.ktor\:ktor-serialization-kotlinx-json org.jetbrains.kotlin-wrappers\:kotlin-react-redux org.jetbrains.kotlin-wrappers\:kotlin-redux com.apollographql.apollo3\:apollo-runtime io.ktor\:ktor-client-js io.ktor\:ktor-client-content-negotiation io.ktor\:ktor-client-core io.ktor\:ktor-events io.ktor\:ktor-websocket-serialization io.ktor\:ktor-serialization-kotlinx io.ktor\:ktor-serialization io.ktor\:ktor-websockets io.ktor\:ktor-http io.ktor\:ktor-utils io.ktor\:ktor-io org.jetbrains.kotlinx\:kotlinx-html org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlin-wrappers\:kotlin-emotion org.jetbrains.kotlin-wrappers\:kotlin-mui-icons org.jetbrains.kotlin-wrappers\:kotlin-mui org.jetbrains.kotlin-wrappers\:kotlin-react org.jetbrains.kotlin-wrappers\:kotlin-react-router-dom org.jetbrains.kotlin-wrappers\:kotlin-react-dom org.jetbrains.kotlinx\:atomicfu org.jetbrains.kotlin-wrappers\:kotlin-react-legacy org.jetbrains.kotlin-wrappers\:kotlin-react-core org.jetbrains.kotlin-wrappers\:kotlin-csstype org.jetbrains.kotlin-wrappers\:kotlin-popper org.jetbrains.kotlin-wrappers\:kotlin-browser org.jetbrains.kotlin-wrappers\:kotlin-extensions org.jetbrains.kotlin-wrappers\:kotlin-history org.jetbrains.kotlin-wrappers\:kotlin-js org.jetbrains.kotlinx\:kotlinx-serialization-core com.apollographql.apollo3\:apollo-api com.squareup.okio\:okio uuid com.apollographql.apollo3\:apollo-mpp-utils com.apollographql.apollo3\:apollo-annotations kotlin org.jetbrains.kotlin\:kotlinx-atomicfu-runtime
+jsOutputName=multiplatformKotlin
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

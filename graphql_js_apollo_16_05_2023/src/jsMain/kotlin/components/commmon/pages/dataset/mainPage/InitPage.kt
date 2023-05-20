@@ -1,9 +1,6 @@
 package components.commmon.pages.dataset.mainPage
 
-import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.Optional
-import com.apollographql.apollo3.api.http.HttpHeader
-import com.apollographql.apollo3.api.http.HttpMethod
 import com.schema.DatasetsQuery
 import commonModels.DatasetModel
 import csstype.ClassName
@@ -112,7 +109,7 @@ val InitPage = FC<InitPageProps> { props->
                     }
                     ariaLabel = "breadcrumb"
                     Typography {
-                        +"/Conjunto de datos"
+                        +"/datasets"
                     }
                 }
             }

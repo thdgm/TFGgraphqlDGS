@@ -73,6 +73,10 @@ body{
 .stackSelectedFilters{
     display: block !important;
     margin-top: 3% !important;
+    width: 80%;
+    justify-content: true;
+    margin-left: auto;
+    margin-right: auto;
 }
 .css-1ba2zw7-MuiButtonBase-root-MuiPaginationItem-root{
     background-color: white !important;
@@ -159,4 +163,28 @@ margin-top: 5% !important;
 .menuIcon {
     color: white !important;
     font-size: larger !important;
+}
+
+.titleSelect {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-top: 2% !important;
+}
+
+.titleIcon {
+    background-color: rgb(77, 130, 213);
+    border-radius: 50%;
+    color: white;
+}
+
+.addIcon {
+    background-color: white;
+    border-radius: 50%;
+    color: rgb(70, 125, 182);
+    font-size: larger;
+}
+
+.css-1bhi0za-MuiTypography-root-MuiLink-root{
+    cursor: pointer;
 }

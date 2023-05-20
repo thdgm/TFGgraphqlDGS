@@ -10,6 +10,7 @@ import commonModels.DatasetModel
 import commonModels.FrequencyAdapterScalar
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import models.DatasetInfo
 //import kotlinx.datetime.LocalDateTime
 
 import react.FC
@@ -21,25 +22,7 @@ import react.useEffect
 import react.useState
 
 
-data class DatasetInfo(
-    val id: String,
-    val title: Collection<String>?,
-    val publisher: String?,
-    val description: Collection<String>?,
-    val license: String?,
-    val keywords: Collection<String>?,
-    val theme: Collection<String>?,
-    val language: Collection<String>?,
-    val issued: String?,
-    val modified: String?,
-    val accrualPeriodicity: FrequencyAdapterScalar?,
-    //val accrualPeriodicityPeriod: Float?,
-    val spatial: Collection<String>?,
-    val temporalStart:String?,
-    val temporalEnd: String?,
-    val accessURl: Collection<String>?,
-    val format: Collection<String>?
-)
+
 
 
 val apolloClient = ApolloClient.Builder()
@@ -63,22 +46,33 @@ suspend fun getResourceInfo(id_dataset: String?): Collection<DatasetInfo> {
     if (datasetInfo != null) {
         return listOf(
             DatasetInfo(
-            datasetInfo.id,
-            datasetInfo.title?.map { it.literal },
-            datasetInfo.publisher?.label,
-            datasetInfo.description?.map { it.literal },
-            datasetInfo.license,
-            datasetInfo.keywords?.map { it.literal },
-            datasetInfo.theme,
-            datasetInfo.language,
-            datasetInfo.issued.toString(),
-            datasetInfo.modified.toString(),
-            datasetInfo.accrualPeriodicity,
-            datasetInfo.spatial,
-            datasetInfo.temporal?.start.toString(),
-            datasetInfo.temporal?.end.toString(),
-            datasetInfo.distributions?.map{it.accessUrl!!},
-            datasetInfo.distributions?.map{it.format!!.subtype},
+                datasetInfo.id,
+                datasetInfo.title?.map { it.literal },
+                datasetInfo.publisher?.label,
+                datasetInfo.description?.map { it.literal },
+                datasetInfo.license,
+                datasetInfo.keywords?.map { it.literal },
+                datasetInfo.theme,
+                datasetInfo.language,
+                datasetInfo.issued.toString(),
+                datasetInfo.modified.toString(),
+                datasetInfo.accrualPeriodicity,
+                datasetInfo.spatial,
+                datasetInfo.temporal?.start.toString(),
+                datasetInfo.temporal?.end.toString(),
+                datasetInfo.distributions?.map{it.accessUrl!!},
+                datasetInfo.distributions?.map{it.format!!.subtype},
+                null,
+                null,
+                null,
+                null,
+                emptyList(),
+                null,
+                null,
+                emptyList(),
+                null,
+                null,
+                null,
         )
         )
 

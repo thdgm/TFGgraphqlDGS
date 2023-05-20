@@ -22,7 +22,7 @@ import react.FC
 import react.Props
 
 external interface CardProps:Props{
-    var datasetInfo:DatasetModel
+    var datasetInfo: DatasetModel
     var handleClickOpen: () -> Unit
     var handleClickClose: () -> Unit
 }

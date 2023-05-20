@@ -1,0 +1,29 @@
+{
+  "name": "multiplatformKotlin",
+  "version": "1.0-SNAPSHOT",
+  "private": true,
+  "workspaces": [
+    "packages/multiplatformKotlin",
+    "packages/multiplatformKotlin-test",
+    "packages_imported/kotlin/1.8.10",
+    "packages_imported/ktor-ktor-client-core-js-ir/2.2.4",
+    "packages_imported/kotlin-test-js-runner/1.8.10",
+    "packages_imported/kotlin-wrappers-kotlin-emotion-js-ir/11.9.3-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-react-core-js-ir/18.2.0-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-csstype-js-ir/3.1.0-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-mui-js-ir/5.8.7-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-react-dom-js-ir/18.2.0-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-popper-js-ir/2.11.5-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-mui-icons-js-ir/5.8.4-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-react-redux-js-ir/7.2.6-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-redux-js-ir/4.1.2-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-react-router-dom-js-ir/6.3.0-pre.354",
+    "packages_imported/kotlin-wrappers-kotlin-history-js-ir/5.3.0-pre.354"
+  ],
+  "resolutions": {},
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
