@@ -19,10 +19,10 @@
   var isValidElement = $module$react.isValidElement;
   var Fragment = $module$react.Fragment;
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var interfaceMeta = kotlin_kotlin.$_$.gb;
-  var setMetadataFor = kotlin_kotlin.$_$.cc;
-  var classMeta = kotlin_kotlin.$_$.xa;
-  var single = kotlin_kotlin.$_$.b9;
+  var interfaceMeta = kotlin_kotlin.$_$.hb;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
+  var classMeta = kotlin_kotlin.$_$.ya;
+  var single = kotlin_kotlin.$_$.c9;
   //endregion
   //region block: pre-declaration
   function unaryPlus(_this__u8e3s4) {

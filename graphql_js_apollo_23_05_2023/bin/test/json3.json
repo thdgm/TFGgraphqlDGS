@@ -1,0 +1,407 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0baf9fa5-db9e-4b23-a409-69fda868b116",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/3_ECA_NFR_90a20_es.ods",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "98662"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0baf9fa5-db9e-4b23-a409-69fda868b116/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "3.- EvoluciÃ³n de las emisiones de acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado conforme al formato NFR para el reporte de datos al CRLTAP. C.A del PaÃ­s Vasco. 1990-2020"
+        },
+        {
+          "@language": "eu",
+          "@value": "3.- Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera NFR formatuan. Euskal Autonomia Erkidegoa. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0394cbbf-8b0a-4ddb-a37a-4e18332deb94/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/94671392-f54c-4254-9071-7b814702768f/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/d3cfa3e6-a359-4b8b-a756-c685b8329f5b",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/4_UE_ECA_90a20_es.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "82964"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/d3cfa3e6-a359-4b8b-a756-c685b8329f5b/format"
+      },
+      "dct:title": [
+        {
+          "@language": "eu",
+          "@value": "4.- Euskadi Europar Batasunean. Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera NFR formatuan, herrialdeka eta sektore isurtzaile guztietarako. Euskal Autonomia Erkidegoa. 1990-2020"
+        },
+        {
+          "@language": "es",
+          "@value": "4.- Euskadi en la UE. EvoluciÃ³n de las emisiones totales de sustancias acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado por paÃ­s. Total de sectores emisores para el territorio nacional conforme a la clasificaciÃ³n NFR para el reporte de datos al CLRTAP. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/03d832cd-5f5a-43e8-a1c9-3b43b48273f1/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/429f9e59-eb21-4ccd-a7bb-0c143ba47708/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.oasis.opendocument.spreadsheet",
+      "rdfs:label": "ODS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/41a892e1-93c3-415a-bfa3-b00dc2e1b3d7/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.oasis.opendocument.spreadsheet",
+      "rdfs:label": "ODS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/d3cfa3e6-a359-4b8b-a756-c685b8329f5b/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/c952522f-3dc8-46a0-b5c5-ca8785693801"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/429f9e59-eb21-4ccd-a7bb-0c143ba47708"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/d3cfa3e6-a359-4b8b-a756-c685b8329f5b"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/41a892e1-93c3-415a-bfa3-b00dc2e1b3d7"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0394cbbf-8b0a-4ddb-a37a-4e18332deb94"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0baf9fa5-db9e-4b23-a409-69fda868b116"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/94671392-f54c-4254-9071-7b814702768f"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/03d832cd-5f5a-43e8-a1c9-3b43b48273f1"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "EstadÃ­stica"
+        },
+        {
+          "@language": "eu",
+          "@value": "Ingurumen kontuak"
+        },
+        {
+          "@language": "es",
+          "@value": "Emisiones de contaminantes a la atmÃ³sfera"
+        },
+        {
+          "@language": "eu",
+          "@value": "Estatistika"
+        },
+        {
+          "@language": "es",
+          "@value": "Cuentas Ambientales"
+        },
+        {
+          "@language": "es",
+          "@value": "ECA"
+        },
+        {
+          "@language": "eu",
+          "@value": "Atmosferara igorritako kutsatzaileak"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/medio-rural-pesca"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/economia"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/medio-ambiente"
+        }
+      ],
+      "dct:description": [
+        {
+          "@language": "eu",
+          "@value": "Atmosferarako Kutsatzaileen Isurketen inbentarioaren helburua urtero kutsatzaileen iturrietatik egiten diren isuri antropogenikoak ebaluatu eta eguneratzea da. Kutsatzaile horiek â€œDistantzia Luzeko Mugaz Haraindiko Kutsadura Atmosferikoaren Genevako Hitzarmenakâ€ eta â€œIsurien Sabai Nazionalen Zuzentarauakâ€ arautzen dituzte, indarrean dauden nazioarteko eta Europako Erkidegoko irizpideen eta arauen arabera. Onartutako kalkulu-metodologiek urteko datu-multzoak beste herrialde batzuetakoekin parekatu ahal izatea bermatzen dute, arestian aipatutako nazioarteko hitzarmenen esparruan. Beraz, inbentario horretan informazio estatistikoa gehitzen da, bai gai azidotzaileentzat eta eutrofizatzaileentzat eta bai troposferako ozonoaren eta partikuladun materialaren aurreko gaientzat, serie estatistikoetan, 1990etik gaur arte. Atmosfera kutsatzen duten isurien inguruko sintesi-informazioaz gain, airearen kalitatearen eta atmosferarako isurien gainean dagoen legeria ere kontsulta dezakezu, eta sarbide zuzena izan dezakezu arloaren gaineko gaikako webguneetara."
+        },
+        {
+          "@language": "es",
+          "@value": "El Inventario de Emisiones de Contaminantes a la AtmÃ³sfera se desarrolla con el fin de evaluar y actualizar anualmente las emisiones antropogÃ©nicas por fuentes de los contaminantes regulados por el \"Convenio de Ginebra de ContaminaciÃ³n AtmosfÃ©rica Transfronteriza a Larga Distancia\" y la \"Directiva de Techos Nacionales de EmisiÃ³n\", de acuerdo con los criterios y normas internacionales y comunitarias vigentes. Las metodologÃ­as de cÃ¡lculo adoptadas garantizan la comparabilidad de las series anuales de datos con las de otros paÃ­ses, en el marco de los convenios internacionales anteriormente mencionados. Este inventario incluye, por tanto, informaciÃ³n estadÃ­sticas tanto para sustancias acidificantes y eutrofizantes, como para sustancias precursoras el ozono troposfÃ©rico y material particulado en series estadÃ­sticas desde el aÃ±o 1990 hasta la actualidad. En este contexto, la UniÃ³n Europea ha venido adoptando a lo largo del tiempo un conjunto de disposiciones jurÃ­dicas que requieren a los Estados Miembros la elaboraciÃ³n de sistemas de informaciÃ³n sobre inventarios de emisiones y la elaboraciÃ³n de proyecciones de la evoluciÃ³n futura de contaminantes a la atmÃ³sfera y de gases de efecto invernadero bajo distintos escenarios. AdemÃ¡s de la informaciÃ³n de sÃ­ntesis relativa a las emisiones de contaminantes a la atmÃ³sfera, tambiÃ©n puede consultar la legislaciÃ³n existente sobre calidad del aire y emisiones a la atmÃ³sfera y tener acceso directo a las pÃ¡ginas Web temÃ¡ticas sobre la materia."
+        }
+      ],
+      "dct:identifier": "https://opendata.euskadi.eus/catalogo/-/contenidos/estadistica/amb_ca_eca/es_def/index.shtml",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-06-15T00:00:00+02:00"
+      },
+      "dct:language": [
+        "eu",
+        "es"
+      ],
+      "dct:license": {
+        "@id": "http://www.ingurumena.ejgv.euskadi.eus/r49-565/es/contenidos/informacion/informacion_legal/es_6303/informacion_legal.html"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-06-15T00:00:00+02:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/A16003011"
+      },
+      "dct:references": [
+        {
+          "@id": "http://www.euro.who.int/en/health-topics/environment-and-health/air-quality"
+        },
+        {
+          "@id": "http://www.unece.org/info/ece-homepage.html"
+        },
+        {
+          "@id": "http://ec.europa.eu/eurostat/web/environment/statistics-illustrated"
+        },
+        {
+          "@id": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/es_def/adjuntos/090226_ECA_Ficha_Metodologica_ca_v2.0.pdf"
+        },
+        {
+          "@id": "https://opendata.euskadi.eus/catalogo/-/contenidos/estadistica/amb_ca_eca/es_def/index.shtml"
+        },
+        {
+          "@id": "http://ec.europa.eu/environment/air/index_en.htm"
+        },
+        {
+          "@id": "http://www.eea.europa.eu/data-and-maps/data/national-emissions-reported-to-the-convention-on-long-range-transboundary-air-pollution-lrtap-convention-6"
+        },
+        {
+          "@id": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/es_def/adjuntos/090226_ECA_Definiciones_ca_v3.0.pdf"
+        },
+        {
+          "@id": "http://www.ieta.org/"
+        }
+      ],
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Pais-Vasco"
+      },
+      "dct:temporal": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/PeriodOfTime-1"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Tablas estadÃ­sticas. Inventario de emisiones de contaminantes a la atmÃ³sfera de la C.A. del PaÃ­s Vasco 1990-2020."
+        },
+        {
+          "@language": "eu",
+          "@value": "Estatistikak. Atmosferara igorritako kutsatzaileen inbentarioa.  Euskal Autonomia Erkidegoa. 1990-2020."
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/c952522f-3dc8-46a0-b5c5-ca8785693801",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/2_ECA_SNAP_90a20_es.ods",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "64133"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/c952522f-3dc8-46a0-b5c5-ca8785693801/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "2.- EvoluciÃ³n de las emisiones de acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado conforme al formato SNAP. C.A del PaÃ­s Vasco. 1990-2020"
+        },
+        {
+          "@language": "eu",
+          "@value": "2.- Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera SNAP formatuan. Euskal Autonomia Erkidegoa. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0394cbbf-8b0a-4ddb-a37a-4e18332deb94",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/1_ECA_CAPV_90a20_es.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "48415"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0394cbbf-8b0a-4ddb-a37a-4e18332deb94/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "1.- EvoluciÃ³n de las emisiones de acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado. C.A del PaÃ­s Vasco. 1990-2020"
+        },
+        {
+          "@language": "eu",
+          "@value": "1.- Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera. Euskal Autonomia Erkidegoa. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/03d832cd-5f5a-43e8-a1c9-3b43b48273f1",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/3_ECA_NFR_90a20_es.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "119890"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/03d832cd-5f5a-43e8-a1c9-3b43b48273f1/format"
+      },
+      "dct:title": [
+        {
+          "@language": "eu",
+          "@value": "3.- Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera NFR formatuan. Euskal Autonomia Erkidegoa. 1990-2020"
+        },
+        {
+          "@language": "es",
+          "@value": "3.- EvoluciÃ³n de las emisiones de acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado conforme al formato NFR para el reporte de datos al CRLTAP. C.A del PaÃ­s Vasco. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/PeriodOfTime-1",
+      "@type": "dct:PeriodOfTime",
+      "schema:endDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-12-31T00:00:00+01:00"
+      },
+      "schema:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2020-01-01T00:00:00+01:00"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/94671392-f54c-4254-9071-7b814702768f",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/2_ECA_SNAP_90a20_es.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "84122"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/94671392-f54c-4254-9071-7b814702768f/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "2.- EvoluciÃ³n de las emisiones de acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado conforme al formato SNAP. C.A del PaÃ­s Vasco. 1990-2020"
+        },
+        {
+          "@language": "eu",
+          "@value": "2.- Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera SNAP formatuan. Euskal Autonomia Erkidegoa. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/41a892e1-93c3-415a-bfa3-b00dc2e1b3d7",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/1_ECA_CAPV_90a20_es.ods",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "33362"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/41a892e1-93c3-415a-bfa3-b00dc2e1b3d7/format"
+      },
+      "dct:title": [
+        {
+          "@language": "eu",
+          "@value": "1.- Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera. Euskal Autonomia Erkidegoa. 1990-2020"
+        },
+        {
+          "@language": "es",
+          "@value": "1.- EvoluciÃ³n de las emisiones de acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado. C.A del PaÃ­s Vasco. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/A16003011",
+      "@type": "skos:Concept",
+      "skos:notation": "A16003011",
+      "skos:prefLabel": "Comunidad AutÃ³noma de PaÃ­s Vasco"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/c952522f-3dc8-46a0-b5c5-ca8785693801/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.oasis.opendocument.spreadsheet",
+      "rdfs:label": "ODS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/429f9e59-eb21-4ccd-a7bb-0c143ba47708",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://opendata.euskadi.eus/contenidos/estadistica/amb_ca_eca/opendata/4_UE_ECA_90a20_es.ods",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "78694"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/429f9e59-eb21-4ccd-a7bb-0c143ba47708/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "4.- Euskadi en la UE. EvoluciÃ³n de las emisiones totales de sustancias acidificantes y eutrofizantes, sustancias precursoras del ozono troposfÃ©rico y material particulado por paÃ­s. Total de sectores emisores para el territorio nacional conforme a la clasificaciÃ³n NFR para el reporte de datos al CLRTAP. 1990-2020"
+        },
+        {
+          "@language": "eu",
+          "@value": "4.- Euskadi Europar Batasunean. Substantzia azidotzaileen/eutrofizatzaileen, ozono troposferikoaren aitzindarien eta materia partikulatuaren isurketen bilakaera NFR formatuan, herrialdeka eta sektore isurtzaile guztietarako. Euskal Autonomia Erkidegoa. 1990-2020"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/a16003011-tablas-estadisticas-inventario-de-emisiones-de-contaminantes-a-la-atmosfera-de-la-c-a-del-pais-vasco-1990-20181/resource/0baf9fa5-db9e-4b23-a409-69fda868b116/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.oasis.opendocument.spreadsheet",
+      "rdfs:label": "ODS"
+    }
+  ]
+}

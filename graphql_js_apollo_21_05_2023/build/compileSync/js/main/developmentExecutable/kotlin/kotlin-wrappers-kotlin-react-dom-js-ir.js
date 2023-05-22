@@ -13,8 +13,8 @@
   'use strict';
   //region block: imports
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var objectMeta = kotlin_kotlin.$_$.bc;
-  var setMetadataFor = kotlin_kotlin.$_$.cc;
+  var objectMeta = kotlin_kotlin.$_$.cc;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
   //endregion
   //region block: pre-declaration
   setMetadataFor(ReactHTML, 'ReactHTML', objectMeta, undefined, undefined, undefined, undefined, []);

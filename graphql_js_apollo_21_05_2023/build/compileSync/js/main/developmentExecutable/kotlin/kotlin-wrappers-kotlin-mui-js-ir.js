@@ -13,8 +13,8 @@
   'use strict';
   //region block: imports
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var interfaceMeta = kotlin_kotlin.$_$.gb;
-  var setMetadataFor = kotlin_kotlin.$_$.cc;
+  var interfaceMeta = kotlin_kotlin.$_$.hb;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
   //endregion
   //region block: pre-declaration
   function invoke() {

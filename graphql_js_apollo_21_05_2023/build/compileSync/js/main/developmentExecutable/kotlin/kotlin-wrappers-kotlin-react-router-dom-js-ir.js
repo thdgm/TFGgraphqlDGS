@@ -13,8 +13,8 @@
   'use strict';
   //region block: imports
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var classMeta = kotlin_kotlin.$_$.xa;
-  var setMetadataFor = kotlin_kotlin.$_$.cc;
+  var classMeta = kotlin_kotlin.$_$.ya;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
   //endregion
   //region block: pre-declaration
   setMetadataFor(NavigateFunction, 'NavigateFunction', classMeta, undefined, undefined, undefined, undefined, []);

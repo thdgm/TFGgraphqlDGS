@@ -13,11 +13,11 @@
   'use strict';
   //region block: imports
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var classMeta = kotlin_kotlin.$_$.xa;
-  var setMetadataFor = kotlin_kotlin.$_$.cc;
-  var THROW_CCE = kotlin_kotlin.$_$.jf;
-  var Annotation = kotlin_kotlin.$_$.pe;
-  var interfaceMeta = kotlin_kotlin.$_$.gb;
+  var classMeta = kotlin_kotlin.$_$.ya;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
+  var THROW_CCE = kotlin_kotlin.$_$.kf;
+  var Annotation = kotlin_kotlin.$_$.qe;
+  var interfaceMeta = kotlin_kotlin.$_$.hb;
   //endregion
   //region block: pre-declaration
   setMetadataFor(JsPair, 'JsPair', classMeta, undefined, undefined, undefined, undefined, []);
