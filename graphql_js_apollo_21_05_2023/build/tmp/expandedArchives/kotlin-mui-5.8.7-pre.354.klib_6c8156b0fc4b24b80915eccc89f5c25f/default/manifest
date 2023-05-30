@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=org.jetbrains.kotlin-wrappers\:kotlin-mui
-compiler_version=1.7.10
-depends=org.jetbrains.kotlin-wrappers\:kotlin-react-dom org.jetbrains.kotlin-wrappers\:kotlin-popper org.jetbrains.kotlin-wrappers\:kotlin-browser org.jetbrains.kotlin-wrappers\:kotlin-react-core org.jetbrains.kotlin-wrappers\:kotlin-csstype org.jetbrains.kotlin-wrappers\:kotlin-js kotlin
-jsOutputName=kotlin-wrappers-kotlin-mui-js-ir
-abi_version=1.7.0
-metadata_version=1.4.1
-ir_version=1.0.0
