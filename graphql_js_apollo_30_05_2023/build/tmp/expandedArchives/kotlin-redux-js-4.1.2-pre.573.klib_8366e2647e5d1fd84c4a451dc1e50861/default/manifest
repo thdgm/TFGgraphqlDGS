@@ -1,0 +1,10 @@
+builtins_platform=JS
+unique_name=org.jetbrains.kotlin-wrappers\:kotlin-redux
+compiler_version=1.8.20
+depends=org.jetbrains.kotlin-wrappers\:kotlin-extensions org.jetbrains.kotlin-wrappers\:kotlin-js org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu org.jetbrains.kotlinx\:kotlinx-serialization-core kotlin org.jetbrains.kotlin\:kotlinx-atomicfu-runtime
+serializedKlibFingerprint=1nrgaj8ihml2w.17d98hxtu3suu
+serializedIrFileFingerprints=SerializedIrFileFingerprint(fileFingerprint\=begccetbrzse.3hhp6tgi4ke4u) SerializedIrFileFingerprint(fileFingerprint\=33ohv1dipkli9.3h0169gsblib2) SerializedIrFileFingerprint(fileFingerprint\=1ntcl91g5p9ok.20x6ysculbce7) SerializedIrFileFingerprint(fileFingerprint\=399jxzmndhn4i.w8yak9bgewoo)
+jsOutputName=kotlin-redux
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

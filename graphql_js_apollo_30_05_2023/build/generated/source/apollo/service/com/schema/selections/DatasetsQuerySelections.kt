@@ -70,9 +70,9 @@ public object DatasetsQuerySelections {
           name = "resourcesByFilter",
           type = Resource.type.list()
         ).arguments(listOf(
-          CompiledArgument.Builder("filter", CompiledVariable("filter")).build(),
+          CompiledArgument.Builder("filters", CompiledVariable("filter")).build(),
           CompiledArgument.Builder("page", CompiledVariable("page")).build(),
-          CompiledArgument.Builder("value", CompiledVariable("value")).build()
+          CompiledArgument.Builder("type", CompiledVariable("type")).build()
         ))
         .selections(__resourcesByFilter)
         .build()

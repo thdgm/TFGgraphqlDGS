@@ -315,6 +315,10 @@
   }
   var NullableStringAdapter;
   var NullableDoubleAdapter;
+  function get_NullableIntAdapter() {
+    init_properties_Adapters_kt_a8j8k6();
+    return NullableIntAdapter;
+  }
   var NullableIntAdapter;
   var NullableBooleanAdapter;
   function get_NullableAnyAdapter() {
@@ -6072,33 +6076,34 @@
   _.$_$.u = get_IntAdapter;
   _.$_$.v = Mutation;
   _.$_$.w = get_NullableAnyAdapter;
-  _.$_$.x = get_NullableStringAdapter;
-  _.$_$.y = Present;
-  _.$_$.z = Query;
-  _.$_$.a1 = get_StringAdapter;
-  _.$_$.b1 = Subscription;
-  _.$_$.c1 = evaluate;
-  _.$_$.d1 = list;
-  _.$_$.e1 = nullable;
-  _.$_$.f1 = obj;
-  _.$_$.g1 = parseJsonResponse;
-  _.$_$.h1 = possibleTypes;
-  _.$_$.i1 = present;
-  _.$_$.j1 = withDeferredFragmentIds;
-  _.$_$.k1 = ApolloException;
-  _.$_$.l1 = ApolloNetworkException;
-  _.$_$.m1 = ApolloParseException;
-  _.$_$.n1 = SubscriptionOperationException;
-  _.$_$.o1 = HttpMethod_Post_getInstance;
-  _.$_$.p1 = obj$default;
-  _.$_$.q1 = ApolloException_init_$Create$;
-  _.$_$.r1 = ApolloHttpException_init_$Create$;
-  _.$_$.s1 = ApolloNetworkException_init_$Create$;
-  _.$_$.t1 = Companion_getInstance_4;
-  _.$_$.u1 = Key_getInstance;
-  _.$_$.v1 = Companion_getInstance_1;
-  _.$_$.w1 = Companion_getInstance_2;
-  _.$_$.x1 = Companion_getInstance_3;
+  _.$_$.x = get_NullableIntAdapter;
+  _.$_$.y = get_NullableStringAdapter;
+  _.$_$.z = Present;
+  _.$_$.a1 = Query;
+  _.$_$.b1 = get_StringAdapter;
+  _.$_$.c1 = Subscription;
+  _.$_$.d1 = evaluate;
+  _.$_$.e1 = list;
+  _.$_$.f1 = nullable;
+  _.$_$.g1 = obj;
+  _.$_$.h1 = parseJsonResponse;
+  _.$_$.i1 = possibleTypes;
+  _.$_$.j1 = present;
+  _.$_$.k1 = withDeferredFragmentIds;
+  _.$_$.l1 = ApolloException;
+  _.$_$.m1 = ApolloNetworkException;
+  _.$_$.n1 = ApolloParseException;
+  _.$_$.o1 = SubscriptionOperationException;
+  _.$_$.p1 = HttpMethod_Post_getInstance;
+  _.$_$.q1 = obj$default;
+  _.$_$.r1 = ApolloException_init_$Create$;
+  _.$_$.s1 = ApolloHttpException_init_$Create$;
+  _.$_$.t1 = ApolloNetworkException_init_$Create$;
+  _.$_$.u1 = Companion_getInstance_4;
+  _.$_$.v1 = Key_getInstance;
+  _.$_$.w1 = Companion_getInstance_1;
+  _.$_$.x1 = Companion_getInstance_2;
+  _.$_$.y1 = Companion_getInstance_3;
   //endregion
   return _;
 }));

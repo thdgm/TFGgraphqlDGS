@@ -16,6 +16,7 @@ import com.apollographql.apollo3.api.obj
 import com.schema.adapter.DatasetsQuery_ResponseAdapter
 import com.schema.adapter.DatasetsQuery_VariablesAdapter
 import com.schema.selections.DatasetsQuerySelections
+import com.schema.type.MapInput
 import commonModels.ConceptAdapterScalar
 import commonModels.LangStringAdapterScalar
 import commonModels.MediaTypeAdapterScalar
@@ -25,8 +26,8 @@ import kotlin.Unit
 import kotlin.collections.List
 
 public data class DatasetsQuery(
-  public val filter: Optional<String?> = Optional.Absent,
-  public val `value`: Optional<List<String>?> = Optional.Absent,
+  public val filter: Optional<List<MapInput>?> = Optional.Absent,
+  public val type: String,
   public val page: Int,
 ) : Query<DatasetsQuery.Data> {
   public override fun id(): String = OPERATION_ID
@@ -79,14 +80,14 @@ public data class DatasetsQuery(
 
   public companion object {
     public const val OPERATION_ID: String =
-        "516ee73fa726fb456d75c89f84690a86a2a99829c1bcc863d598383d98dd737b"
+        "786616c542afc4acaf2bc8051e60de6ab6f92a042648b10e01f9d0ad18057548"
 
     /**
      * The minimized GraphQL document being sent to the server to save a few bytes.
      * The un-minimized version is:
      *
-     * query Datasets($filter: String, $value: \[String!\], $page: Int!) {
-     *   resourcesByFilter(filter: $filter, value: $value, page: $page) {
+     * query Datasets($filter: \[MapInput!\], $type: String!, $page: Int!) {
+     *   resourcesByFilter(filters: $filter, type: $type, page: $page) {
      *     __typename
      *     ... on Dataset {
      *       id
@@ -102,7 +103,7 @@ public data class DatasetsQuery(
      */
     public val OPERATION_DOCUMENT: String
       get() =
-          "query Datasets(${'$'}filter: String, ${'$'}value: [String!], ${'$'}page: Int!) { resourcesByFilter(filter: ${'$'}filter, value: ${'$'}value, page: ${'$'}page) { __typename ... on Dataset { id title publisher description distributions { format } } } }"
+          "query Datasets(${'$'}filter: [MapInput!], ${'$'}type: String!, ${'$'}page: Int!) { resourcesByFilter(filters: ${'$'}filter, type: ${'$'}type, page: ${'$'}page) { __typename ... on Dataset { id title publisher description distributions { format } } } }"
 
     public const val OPERATION_NAME: String = "Datasets"
   }

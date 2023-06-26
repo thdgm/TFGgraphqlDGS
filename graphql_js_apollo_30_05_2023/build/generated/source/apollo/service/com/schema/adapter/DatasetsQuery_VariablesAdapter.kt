@@ -8,15 +8,16 @@ package com.schema.adapter
 import com.apollographql.apollo3.api.Adapter
 import com.apollographql.apollo3.api.CustomScalarAdapters
 import com.apollographql.apollo3.api.IntAdapter
-import com.apollographql.apollo3.api.NullableStringAdapter
 import com.apollographql.apollo3.api.Optional
 import com.apollographql.apollo3.api.StringAdapter
 import com.apollographql.apollo3.api.json.JsonReader
 import com.apollographql.apollo3.api.json.JsonWriter
 import com.apollographql.apollo3.api.list
 import com.apollographql.apollo3.api.nullable
+import com.apollographql.apollo3.api.obj
 import com.apollographql.apollo3.api.present
 import com.schema.DatasetsQuery
+import com.schema.type.adapter.MapInput_InputAdapter
 import kotlin.IllegalStateException
 import kotlin.Unit
 
@@ -31,12 +32,11 @@ public object DatasetsQuery_VariablesAdapter : Adapter<DatasetsQuery> {
   ): Unit {
     if (value.filter is Optional.Present) {
       writer.name("filter")
-      NullableStringAdapter.present().toJson(writer, customScalarAdapters, value.filter)
+      MapInput_InputAdapter.obj().list().nullable().present().toJson(writer, customScalarAdapters,
+          value.filter)
     }
-    if (value.`value` is Optional.Present) {
-      writer.name("value")
-      StringAdapter.list().nullable().present().toJson(writer, customScalarAdapters, value.`value`)
-    }
+    writer.name("type")
+    StringAdapter.toJson(writer, customScalarAdapters, value.type)
     writer.name("page")
     IntAdapter.toJson(writer, customScalarAdapters, value.page)
   }

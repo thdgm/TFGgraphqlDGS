@@ -22,6 +22,8 @@
       "skos:notation": "L01502973",
       "skos:prefLabel": "Ayuntamiento de Zaragoza"
     },
+
+    
     {
       "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/e2dbfba7-2a21-4079-a07d-aaea45b84c26/format",
       "@type": "dct:IMT",

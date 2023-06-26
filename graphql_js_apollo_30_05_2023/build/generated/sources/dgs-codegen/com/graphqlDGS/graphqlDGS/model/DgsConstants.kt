@@ -16,6 +16,8 @@ public object DgsConstants {
 
     public const val Dataset: String = "dataset"
 
+    public const val NumberOfResources: String = "numberOfResources"
+
     public const val DataService: String = "dataService"
 
     public const val DatasetSeries: String = "datasetSeries"
@@ -50,6 +52,10 @@ public object DgsConstants {
 
     public object DATASET_INPUT_ARGUMENT {
       public const val Id: String = "id"
+    }
+
+    public object NUMBEROFRESOURCES_INPUT_ARGUMENT {
+      public const val Type: String = "type"
     }
 
     public object DATASERVICE_INPUT_ARGUMENT {

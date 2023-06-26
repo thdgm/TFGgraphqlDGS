@@ -1,0 +1,13 @@
+{
+  "name": "kotlin-react-redux",
+  "version": "7.2.6-pre.573",
+  "main": "kotlin-react-redux.js",
+  "types": "kotlin-react-redux.d.ts",
+  "devDependencies": {},
+  "dependencies": {
+    "react-redux": "^7.2.6"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

@@ -1,2501 +1,0 @@
-
-Ú∫
-ConstantValues
-ConstantValues_instance
-Å/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_js_apollo_21_05_2023/src/commonMain/kotlin/constants/ConstantValues.kt
-LANGSTRING_SEPARADOR_1
---
-DATE_PATTERN_1
-yyyy-MM-dd'T'HH:mm:ss'+'SS:ss
-DATE_PATTERN_ZONE_OFFSET_1
-yyyy-MM-dd'T'HH:mm:ssZ
-REGEX_FREQUENCY_1
--\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\+\d{4})?
-DISTRIBUTION_1
-Distribution
-	DATASET_1
-Dataset
-CR_ID_1
-/CatalogRecord
-ACCRUAL_PERIODICITY_1
-AccrualPeriodicity
-DATASET_TYPE_1
-dataset
-LOCATION_DELIMETER_1
-/
-PUBLISHER_1
-	Publisher
-FORMAT_1
-Format
-PERIOD_OF_TIME_1
-PeriodOfTime
-
-MAX_IDLE_1
-
-MIN_IDLE_1
-
-CATALOGS_1
-catalogs
-	RECORDS_1
-records
-
-SERVICES_1
-services
-	DATSETS_1
-datasets
-DATASERIES_1
-
-dataSeries
-ACCESSSERVICE_1
-accessService
-
-INSERIES_1
-inSeries
-DISTRIBUTIONS_1
-distributions
-CATALOGENTITY_1
-catalogEntity 
-DATASETENTITY_1
-datasetEntity
-DATASETSERIESENTITY_1
-datasetSeriesEntity
-DATASETSERVICEENTITY_1
-datasetServiceEntity
-PERIODICITY_RANGE_1
-listOf
-days
-years
-months
-weeks
-ADMON_LEVEL_1
-mapOf
-to
-Char
-_Char___init__impl__6a9atx
-Administraci√≥n del Estado
-Administraci√≥n Local
-Administraci√≥n Auton√≥mica
-Entidad privada
-Universidades
-FREQUENCY_MAP_1
-time:years 1.0
-Anual
-time:months 3.0
-
-Trimestral
-time:months 1.0
-Mensual
-time:days 1.0
-Diario
-time:days 15.0
-	Bimensual
-time:weeks 1.0
-Semanal
-time:years 3.0
-Trienal
-time:months 6.0
-	Semestral
-time:seconds 1.0
-Continuo
-time:years 2.0
-Bienal
-time:weeks 2.0
-	Quincenal
-time:days 3.0
-	Bisemanal
-time:months 4.0
-Cuatrimestral
-time:days 2.0
-Tres veces por semana
-FREQUENCY_TRANSLATOR_1
-d√≠as
-a√±os
-semanas
-hours
-horas
-minutes
-minutos
-seconds
-segundos
-meses
-
-DIR3_MAP_1
-.Administrador de Infraestructuras Ferroviarias
-	EA0003338
-.Agencia de Informaci√≥n y Control Alimentarios
-	EA0022336
-BAgencia Espa√±ola de Cooperaci√≥n Internacional para el Desarrollo
-	EA0035768
-8Agencia Espa√±ola de Medicamentos y Productos Sanitarios
-	EA0023011
-)Agencia Espa√±ola de Protecci√≥n de Datos
-	I00000121
-7Agencia Espa√±ola de Seguridad Alimentaria y Nutrici√≥n
-	EA0043127
-+Agencia Estatal Bolet√≠n Oficial del Estado
-	EA0040819
-@Agencia Estatal Consejo Superior de Investigaciones Cient√≠ficas
-	EA0020951
--Agencia Estatal de Administraci√≥n Tributaria
-	EA0028512
-!Agencia Estatal de Investigaci√≥n
-	EA0020843
- Agencia Estatal de Meteorolog√≠a
-	EA0022545
-=Agencia Nacional de Evaluaci√≥n de la Calidad y Acreditaci√≥n
-	EA0020877
-ANIMSA
-	A0DAT0002
-Autoridad Portuaria de Alicante
-	EA0001296
-Autoridad Portuaria de Almer√≠a
-	EA0001297
-Autoridad Portuaria de Avil√©s
-	EA0001298
-'Autoridad Portuaria de Bah√≠a de C√°diz
-	EA0001300
-Autoridad Portuaria de Baleares
-	EA0001301
- Autoridad Portuaria de Barcelona
-	EA0001302
-Autoridad Portuaria de Bilbao
-	EA0001303
- Autoridad Portuaria de Cartagena
-	EA0001304
-!Autoridad Portuaria de Castell√≥n
-	EA0001305
-Autoridad Portuaria de Ceuta
-	EA0001306
-(Autoridad Portuaria de Ferrol-San Cibrao
-	EA0001307
-Autoridad Portuaria de Gijon
-	EA0001308
-Autoridad Portuaria de Huelva
-	EA0001309
--Autoridad Portuaria de la Bah√≠a de Algeciras
-	EA0001299
-!Autoridad Portuaria de la Coru√±a
-	EA0001310
-!Autoridad Portuaria de Las Palmas
-	EA0001311
-Autoridad Portuaria de M√°laga
-	EA0001312
-2Autoridad Portuaria de Mar√≠n y R√≠a de Pontevedra
-	EA0001313
-Autoridad Portuaria de Melilla
-	EA0001314
-Autoridad Portuaria de Motril
-	EA0001315
-Autoridad Portuaria de Pasajes
-	EA0001316
--Autoridad Portuaria de Santa Cruz de Tenerife
-	EA0001317
- Autoridad Portuaria de Santander
-	EA0001318
-Autoridad Portuaria de Sevilla
-	EA0001319
- Autoridad Portuaria de Tarragona
-	EA0001320
-Autoridad Portuaria de Valencia
-	EA0001321
-Autoridad Portuaria de Vigo
-	EA0001322
-,Autoridad Portuaria de Villagarc√≠a de Arosa
-	EA0001323
-Ayuntamiento de Abaltzisketa
-	L01200013
-Ayuntamiento de Adamuz
-	L01140018
-Ayuntamiento de Aduna
-	L01200028
-&Ayuntamiento de Aguilar de la Frontera
-	L01140023
-Ayuntamiento de Aia
-	L01200163
-Ayuntamiento de Aizarnazabal
-	L01200034
-Ayuntamiento de Alaior
-	L01070027
-Ayuntamiento de Albacete
-	L01020030
-Ayuntamiento de Albal
-	L01460076
-Ayuntamiento de Albiztur
-	L01200049
-"Ayuntamiento de Alcal√° de Henares
-	L01280053
-Ayuntamiento de Alcantarilla
-	L01300050
-Ayuntamiento de Alcaracejos
-	L01140039
-Ayuntamiento de Alcobendas
-	L01280066
-Ayuntamiento de Alcoy
-	L01030092
-Ayuntamiento de Algue√±a
-	L01030134
-%Ayuntamiento de Alhaur√≠n de la Torre
-	L01290075
-Ayuntamiento de Alhend√≠n
-	L01180140
-Ayuntamiento de Alicante
-	L01030149
-Ayuntamiento de Almedinilla
-	L01140044
-Ayuntamiento de Almendralejo
-	L01060114
-#Ayuntamiento de Almod√≥var del R√≠o
-	L01140057
-Ayuntamiento de Almorad√≠
-	L01030152
-Ayuntamiento de Andoain
-	L01200090
-Ayuntamiento de A√±ora
-	L01140060
-Ayuntamiento de Arganda del Rey
-	L01280148
-Ayuntamiento de Arona
-	L01380064
-Ayuntamiento de Avil√©s
-	L01330045
-Ayuntamiento de Badajoz
-	L01060153
-!Ayuntamiento de Badia del Vall√®s
-	L01089045
-Ayuntamiento de Baena
-	L01140076
-Ayuntamiento de Barakaldo
-	L01480139
-Ayuntamiento de Barcelona
-	L01080193
-Ayuntamiento de Belmez
-	L01140095
-Ayuntamiento de Benamej√≠
-	L01140109
-Ayuntamiento de Bilbao
-	L01480209
-Ayuntamiento de Bl√°zquez, Los
-	L01140116
-Ayuntamiento de Bujalance
-	L01140121
-Ayuntamiento de Burgos
-	L01090597
-Ayuntamiento de Buruj√≥n
-	L01450247
-$Ayuntamiento de Caba√±as de la Sagra
-	L01450250
-Ayuntamiento de C√°ceres
-	L01100377
-Ayuntamiento de Camargo
-	L01390165
-%Ayuntamiento de Ca√±ete de las Torres
-	L01140142
-Ayuntamiento de Carcabuey
-	L01140155
-Ayuntamiento de Carde√±a
-	L01140168
-Ayuntamiento de Carlota, La
-	L01140174
-Ayuntamiento de Carpio, El
-	L01140180
-Ayuntamiento de Cartagena
-	L01300161
-&Ayuntamiento de Castell√≥n de la Plana
-	L01120402
-Ayuntamiento de Catadau
-	L01460930
-&Ayuntamiento de Cerdanyola del Vall√®s
-	L01082665
-Ayuntamiento de Cieza
-	L01300196
-$Ayuntamiento de Conil de la Frontera
-	L01110146
-Ayuntamiento de Conquista
-	L01140207
-Ayuntamiento de C√≥rdoba
-	L01140214
-&Ayuntamiento de Cornell√† de Llobregat
-	L01080734
-Ayuntamiento de Coru√±a, A
-	L01150308
-#Ayuntamiento de Corvera de Asturias
-	L01330208
-Ayuntamiento de D√©nia
-	L01030633
-'Ayuntamiento de Donostia/San Sebasti√°n
-	L01200697
-Ayuntamiento de Do√±a Menc√≠a
-	L01140229
-Ayuntamiento de Dos Torres
-	L01140235
-Ayuntamiento de Encinas Reales
-	L01140240
-Ayuntamiento de Espejo
-	L01140253
-Ayuntamiento de Espiel
-	L01140266
-Ayuntamiento de Fern√°n-N√∫√±ez
-	L01140272
-Ayuntamiento de Ferrol
-	L01150367
- Ayuntamiento de Fuente la Lancha
-	L01140288
-Ayuntamiento de Fuente Obejuna
-	L01140291
-Ayuntamiento de Fuente Palmera
-	L01140305
-Ayuntamiento de Fuente-T√≥jar
-	L01140312
-Ayuntamiento de Gandia
-	L01461311
-Ayuntamiento de Getafe
-	L01280650
-Ayuntamiento de Getxo
-	L01480448
-Ayuntamiento de Gij√≥n
-	L01330241
-Ayuntamiento de Granjuela, La
-	L01140327
-Ayuntamiento de Granollers
-	L01080961
-Ayuntamiento de Guadalajara
-	L01191305
-Ayuntamiento de Guadalc√°zar
-	L01140333
-Ayuntamiento de Guijo, El
-	L01140348
-"Ayuntamiento de Hinojosa del Duque
-	L01140351
-Ayuntamiento de Hornachuelos
-	L01140364
-Ayuntamiento de Hu√©tor Vega
-	L01181015
-Ayuntamiento de Igualada
-	L01081022
-Ayuntamiento de Ingenio
-	L01350115
-Ayuntamiento de Izn√°jar
-	L01140370
-$Ayuntamiento de Jerez de la Frontera
-	L01110201
-$Ayuntamiento de la Pobla de Vallbona
-	L01462021
-*Ayuntamiento de Las Palmas de Gran Canaria
-	L01350167
-Ayuntamiento de Legan√©s
-	L01280745
-)Ayuntamiento de L'Hospitalet de Llobregat
-	L01081017
-Ayuntamiento de Logro√±o
-	L01260892
-Ayuntamiento de Lorca
-	L01300243
-Ayuntamiento de Lucena
-	L01140386
-Ayuntamiento de Luque
-	L01140399
-Ayuntamiento de Madrid
-	L01280796
-Ayuntamiento de Majadahonda
-	L01280800
-Ayuntamiento de M√°laga
-	L01290672
-Ayuntamiento de Manlleu
-	L01081120
-Ayuntamiento de Martos
-	L01230601
-&Ayuntamiento de Montalb√°n de C√≥rdoba
-	L01140403
-Ayuntamiento de Montemayor
-	L01140410
-Ayuntamiento de Montilla
-	L01140425
-Ayuntamiento de Montoro
-	L01140431
-Ayuntamiento de Monturque
-	L01140446
-Ayuntamiento de Moriles
-	L01140459
-Ayuntamiento de M√≥stoles
-	L01280920
-Ayuntamiento de Muras
-	L01270333
-Ayuntamiento de Murcia
-	L01300308
-Ayuntamiento de Obejo
-	L01140478
- Ayuntamiento de Oliva de M√©rida
-	L01060943
-Ayuntamiento de Oviedo
-	L01330447
-Ayuntamiento de Palenciana
-	L01140484
-Ayuntamiento de Palma del R√≠o
-	L01140497
-!Ayuntamiento de Palma de Mallorca
-	L01070407
-Ayuntamiento de Pamplona
-	L01312016
-Ayuntamiento de Pedro Abad
-	L01140500
-Ayuntamiento de Pedroche
-	L01140517
-&Ayuntamiento de Pe√±arroya-Pueblonuevo
-	L01140522
-Ayuntamiento de Pesquera
-	L01390514
-Ayuntamiento de Pinto
-	L01281132
-Ayuntamiento de Ponferrada
-	L01241152
-Ayuntamiento de Posadas
-	L01140538
-#Ayuntamiento de Pozuelo de Alarc√≥n
-	L01281150
-"Ayuntamiento de Priego de C√≥rdoba
-	L01140556
-Ayuntamiento de Rafelbunyol
-	L01462074
-Ayuntamiento de Rairiz de Veiga
-	L01320678
-Ayuntamiento de Rambla, La
-	L01140575
-Ayuntamiento de Reus
-	L01431233
-!Ayuntamiento de Rivas-Vaciamadrid
-	L01281230
-Ayuntamiento de Roda, La
-	L01020693
-Ayuntamiento de Ronda
-	L01290846
-Ayuntamiento de Rosalejo
-	L01109016
-Ayuntamiento de Rub√≠
-	L01081846
-Ayuntamiento de Rute
-	L01140581
-Ayuntamiento de Sabadell
-	L01081878
-Ayuntamiento de Sagunto
-	L01462205
-+Ayuntamiento de San Crist√≥bal de La Laguna
-	L01380239
-1Ayuntamiento de San Sebasti√°n de los Ballesteros
-	L01140594
-+Ayuntamiento de San Sebasti√°n de los Reyes
-	L01281343
-&Ayuntamiento de Santa Cruz de Tenerife
-	L01380380
-Ayuntamiento de Santaella
-	L01140608
-Ayuntamiento de Santa Eufemia
-	L01140615
-Ayuntamiento de Santander
-	L01390759
-%Ayuntamiento de Sant Boi de Llobregat
-	L01082009
-'Ayuntamiento de Sant Feliu de Llobregat
-	L01082114
-!Ayuntamiento de Sant Just Desvern
-	L01082212
-'Ayuntamiento de Sant Quirze del Vall√®s
-	L01082384
-'Ayuntamiento de Sant Vicen√ß Dels Horts
-	L01082634
-Ayuntamiento de Segovia
-	L01401945
-Ayuntamiento de Setcases
-	L01171925
-Ayuntamiento de Sevilla
-	L01410917
-Ayuntamiento de Tarragona
-	L01431482
-Ayuntamiento de Teba
-	L01290897
-Ayuntamiento de Terrassa
-	L01082798
-Ayuntamiento de Toreno
-	L01241699
-Ayuntamiento de Torrecampo
-	L01140620
-Ayuntamiento de Torrelavit
-	L01082877
-Ayuntamiento de Torremolinos
-	L01299018
-Ayuntamiento de Torrent
-	L01462444
-Ayuntamiento de Torre-Pacheco
-	L01300373
-Ayuntamiento de Valencia
-	L01462508
-Ayuntamiento de Valenzuela
-	L01140636
-Ayuntamiento de Valladolid
-	L01471868
-Ayuntamiento de Valsequillo
-	L01140641
-Ayuntamiento de V√©lez-M√°laga
-	L01290944
-Ayuntamiento de Vera
-	L01041002
-Ayuntamiento de Victoria, La
-	L01140654
-Ayuntamiento de Vigo
-	L01360577
-Ayuntamiento de Viladecans
-	L01083015
-Ayuntamiento de Villa del R√≠o
-	L01140667
-'Ayuntamiento de Villafranca de C√≥rdoba
-	L01140673
-Ayuntamiento de Villaharta
-	L01140689
-Ayuntamiento de Villalbilla
-	L01281723
-(Ayuntamiento de Villanueva de Castell√≥n
-	L01462573
-'Ayuntamiento de Villanueva de la Serena
-	L01061535
-$Ayuntamiento de Villanueva del Duque
-	L01140706
-"Ayuntamiento de Villanueva del Rey
-	L01140713
-Ayuntamiento de Villaralto
-	L01140728
-(Ayuntamiento de Villaviciosa de C√≥rdoba
-	L01140734
-Ayuntamiento de Vitoria-Gasteiz
-	L01010590
-Ayuntamiento de Zamora
-	L01492755
-Ayuntamiento de Zaragoza
-	L01502973
-Ayuntamiento de Zuheros
-	L01140752
-Ayuntamiento Leza
-	L01010344
-Biblioteca Nacional de Espa√±a
-	EA0019768
-Cabildo Insular de El Hierro
-	L03380005
- Cabildo Insular de Fuerteventura
-	L03350002
-Cabildo Insular de Lanzarote
-	L03350007
-Cabildo Insular de La Palma
-	L03380010
-Cabildo Insular de Tenerife
-	L03380011
-)Cartogr√°fica de Canarias, S.A. (GRAFCAN)
-	GE0012152
-Casa √Årabe
-	EA0038493
-.Cat√°logo Oficial de Datos y Servicios INSPIRE
-	E0DAT0002
-Centro de Estudios Jur√≠dicos
-	E00131802
-0Centro de Estudios Pol√≠ticos y Constitucionales
-	EA0040767
-8Centro de Estudios y Experimentaci√≥n de Obras P√∫blicas
-	E00125801
-HCentro de Investigaciones Energ√©ticas, Medioambientales y Tecnol√≥gicas
-	EA0020936
-'Centro de Investigaciones Sociol√≥gicas
-	EA0022266
-Centro Espa√±ol de Metrolog√≠a
-	EA0038911
-+Centro Nacional de Informaci√≥n Geogr√°fica
-	E00125901
-Centro Nacional de Inteligencia
-	EA0020816
-1Centro para el Desarrollo Tecnol√≥gico Industrial
-	EA0020855
-&Comisionado para el Mercado de Tabacos
-	EA0023053
-)Comisi√≥n Nacional del Mercado de Valores
-	EA0033574
-3Comisi√≥n Nacional de los Mercados y la Competencia
-	EA0042931
-@Compa√±ia Espa√±ola de Financiacion del Desarrollo Cofides, S.A.
-	EA0038967
-Comunidad Aut√≥noma de Canarias
-	A05003638
-)Comunidad Aut√≥noma de Castilla-La Mancha
-	A08002880
-"Comunidad Aut√≥noma de Pa√≠s Vasco
-	A16003011
-Comunidad de Madrid
-	A13002908
-Comunidad Foral de Navarra
-	A15002917
-"Concello de Santiago de Compostela
-	L01150780
-,Confederaci√≥n Hidrogr√°fica del Cant√°brico
-	EA0022616
-&Confederaci√≥n Hidrogr√°fica del Duero
-	EA0043420
-%Confederaci√≥n Hidrogr√°fica del Ebro
-	EA0022629
--Confederaci√≥n Hidrogr√°fica del Guadalquivir
-	EA0022687
-)Confederaci√≥n Hidrogr√°fica del Guadiana
-	EA0022898
-'Confederaci√≥n Hidrogr√°fica del J√∫car
-	EA0022929
-*Confederaci√≥n Hidrogr√°fica del Mi√±o-Sil
-	EA0022935
-'Confederaci√≥n Hidrogr√°fica del Segura
-	EA0022954
-%Confederaci√≥n Hidrogr√°fica del Tajo
-	EA0022973
-2Consejo de Administraci√≥n del Patrimonio Nacional
-	EA0040781
-(Consejo de Transparencia y Buen Gobierno
-	EA0040111
-"Consejo General del Poder Judicial
-	I00000041
-Consejo Insular de Ibiza
-	L03070006
-Consejo Superior de Deportes
-	E00122805
-Consell Insular de Mallorca
-	L03070008
-+Consorci Administraci√≥ Oberta de Catalunya
-	A09018933
-Consorcio Casa √Åfrica
-
-EEA0038493
- Consorcio Casa del Mediterr√°neo
-	EA0038496
-Consorcio Casa Sefarad-Israel
-	EA0038497
-%Consorcio de Compensaci√≥n de Seguros
-	EA0027989
-%Consorcio de la Zona Franca de C√°diz
-	EA0024049
-+Consorcio de la Zona Franca de Gran Canaria
-	EA0024069
-5Consorcio de la Zona Franca de Santa Cruz de Tenerife
-	EA0024088
-#Consorcio de la Zona Franca de Vigo
-	EA0024162
-Coordinacion Iniciativa Aporta
-	E0DAT0001
-Diputaci√≥n de Pontevedra
-	LA0006111
-Diputaci√≥n Foral de √Ålava
-	L02000001
-Diputaci√≥n Foral de Bizkaia
-	L02000048
-Diputaci√≥n Foral de Gipuzkoa
-	L02000020
-"Diputaci√≥n Provincial de Alicante
-	L01010014
-!Diputaci√≥n Provincial de Badajoz
-	L02000006
-#Diputaci√≥n Provincial de Barcelona
-	L02000008
- Diputaci√≥n Provincial de C√°diz
-	L02000011
-.Diputaci√≥n Provincial de Castell√≥/Castell√≥n
-	L02000012
-"Diputaci√≥n Provincial de C√≥rdoba
-	L02000014
- Diputaci√≥n Provincial de Huelva
-	L02000021
-Diputaci√≥n Provincial de Ja√©n
-	L02000023
-!Diputaci√≥n Provincial de Ourense
-	L02000032
-#Diputaci√≥n Provincial de Salamanca
-	L02000037
-"Diputaci√≥n Provincial de Valencia
-	L02000046
-$Diputaci√≥n Provincial de Valladolid
-	L02000047
-Direcci√≥n General de Tr√°fico
-	E00130502
-*Empresa Municipal de Transportes de Madrid
-	LA0008678
-(Empresa Nacional de Residuos Radiactivos
-	EA0033866
-#Entidad Estatal de Seguros Agrarios
-	EA0022323
-=F√°brica Nacional de Moneda y Timbre - Real Casa de la Moneda
-	EA0023070
-&Federaci√≥n de Municipios de Catalu√±a
-	L0DAT0001
-Fondo de Garant√≠a Salarial
-	EA0021371
-#Fondo Espa√±ol de Garant√≠a Agraria
-	EA0022362
-Fundaci√≥n Biodiversidad
-	EA0022424
-5Fundaci√≥n de Aeron√°utica y Astron√°utica Espa√±olas
-	EA0008341
-Fundaci√≥n del Teatro Real
-	EA0022020
-5Fundaci√≥n Espa√±ola para la Ciencia y la Tecnolog√≠a
-	EA0039433
-QFundaci√≥n Espa√±ola para la Cooperaci√≥n Internacional, Salud y Pol√≠tica Social
-	EA0022189
-Fundaci√≥n ICO
-	EA0028340
-&Fundaci√≥n Instituto de Cultura Gitana
-	EA0022021
-Fundaci√≥n Integra
-	A0DAT0001
-WFundaci√≥n internacional y para Iberoam√©rica de administraci√≥n y pol√≠ticas p√∫blicas
-	EA0038499
-2Fundaci√≥n Laboral de Minusv√°lidos Santa B√°rbara
-	EA0023228
-Fundaci√≥n L√°zaro Galdiano
-	EA0022023
-kFundaci√≥n para el Fomento de la Investigaci√≥n Sanitaria y Biom√©dica de la Comunitat Valenciana (FISABIO)
-	A10018363
-#Fundaci√≥n Pluralismo y Convivencia
-	EA0040811
-#Fundaci√≥n V√≠ctimas del Terrorismo
-	EA0008368
-Generalitat de Catalunya
-	A09002970
-Generalitat Valenciana
-	A10002983
-Gobierno de Arag√≥n
-	A02002834
-Gobierno de La Rioja
-	A17002943
-Gobierno de las Islas Baleares
-	A04003003
-'ICEX Espa√±a Exportaci√≥n e Inversiones
-	EA0038767
-)Inspecci√≥n de Trabajo y Seguridad Social
-	EA0021795
-!Instituto Canario de Estad√≠stica
-	A05003423
-#Instituto C√°ntabro de Estad√≠stica
-	A06004074
-Instituto Cervantes
-	EA0038526
-%Instituto de Astrof√≠sica de Canarias
-	EA0020886
-1Instituto de Contabilidad y Auditor√≠a de Cuentas
-	EA0033662
-Instituto de Cr√©dito Oficial
-	EA0033670
-Instituto de Estudios Fiscales
-	EA0022992
-5Instituto de la Cinematograf√≠a y Artes Audiovisuales
-	EA0019850
-Instituto de la Juventud
-	EA0028493
-9Instituto de la Mujer y para la Igualdad de Oportunidades
-	EA0033560
-)Instituto de Mayores y Servicios Sociales
-	EA0028449
-Instituto de Salud Carlos III
-	EA0020890
-Instituto de Turismo de Espa√±a
-	EA0038886
-4Instituto de Turismo de la Regi√≥n de Murcia (ITREM)
-	A14005495
-OInstituto de Vivienda, Infraestructura y Equipamiento del Ministerio de Defensa
-	E04905001
-#Instituto Espa√±ol de Oceanograf√≠a
-	EA0021100
-(Instituto Geol√≥gico y Minero de Espa√±a
-	EA0010987
-$Instituto Hidrogr√°fico de la Marina
-	E02895901
-7Instituto Insular de Atenci√≥n Social y Socio-Sanitaria
-	LA0000130
-.Instituto Nacional de Administraci√≥n P√∫blica
-	EA0040116
-0Instituto Nacional de Cirberseguridad de Espa√±a
-	EA0028348
-"Instituto Nacional de Estad√≠stica
-	EA0010587
-(Instituto Nacional de Gesti√≥n Sanitaria
-	EA0023096
-HInstituto Nacional de Investigaci√≥n y Tecnolog√≠a Agraria y Alimentaria
-	EA0020924
-:Instituto Nacional de las Artes Esc√©nicas y de la M√∫sica
-	EA0019807
-)Instituto Nacional de la Seguridad Social
-	E00142603
-7Instituto Nacional de Seguridad e Higiene en el Trabajo
-	EA0021624
-<Instituto Nacional de T√©cnica Aeroespacial Esteban Terradas
-	E00116401
-MInstituto Nacional de Tecnolog√≠as Educativas y de Formaci√≥n del Profesorado
-	EA0022045
-:Instituto para la Diversificaci√≥n y Ahorro de la Energ√≠a
-	EA0033869
-5Instituto para la Evaluaci√≥n de Pol√≠ticas P√∫blicas
-	EA0040127
-Instituto Social de la Marina
-	EA0021256
-'Instituto Social de las Fuerzas Armadas
-	E00116901
-Jefatura Central de Tr√°fico
-	E00130201
-Junta de Andaluc√≠a
-	A01002820
-Junta de Castilla y Le√≥n
-	A07002862
-Junta de Extremadura
-	A11002926
-(Mancomunidad de los Canales del Taibilla
-	EA0022979
-)Mercados Centrales de Abastecimiento S.A.
-	EA0023244
-0Ministerio de Agricultura, Pesca y Alimentaci√≥n
-	E05024401
-KMinisterio de Agricultura y Pesca, Alimentaci√≥n y Medio Ambiente [EXTINTO]
-	E04990301
-;Ministerio de Asuntos Econ√≥micos y Transformaci√≥n Digital
-	E05068901
-?Ministerio de Asuntos Exteriores, Uni√≥n Europea y Cooperaci√≥n
-	E05023901
-<Ministerio de Asuntos Exteriores y de Cooperaci√≥n [EXTINTO]
-	E04585801
-#Ministerio de Ciencia e Innovaci√≥n
-	E05071301
-<Ministerio de Ciencia, Innovaci√≥n y Universidades [EXTINTO]
-	E05025101
-Ministerio de Consumo
-	E05072201
-Ministerio de Cultura y Deporte
-	E05024801
-Ministerio de Defensa
-	E00003301
--Ministerio de Derechos Sociales y Agenda 2030
-	E05070401
-5Ministerio de Educaci√≥n, Cultura y Deporte [EXTINTO]
-	E04921401
-1Ministerio de Educaci√≥n y Formaci√≥n Profesional
-	E05024101
-:Ministerio de Energ√≠a, Turismo y Agenda Digital [EXTINTO]
-	E04990201
-*Ministerio de Hacienda y Funci√≥n P√∫blica
-	E05188501
-Ministerio de Igualdad
-	E05071601
-8Ministerio de Inclusi√≥n, Seguridad Social y Migraciones
-	E05072501
-+Ministerio de Industria, Comercio y Turismo
-	E05024301
-Ministerio de Justicia
-	E00003901
-NMinisterio de la Presidencia, Relaciones con las Cortes y Memoria Democr√°tica
-	E05067101
-Ministerio del Interior
-	E00003801
-#Ministerio de Pol√≠tica Territorial
-	E05189101
-Ministerio de Sanidad
-	E05070101
-;Ministerio de Sanidad, Consumo y Bienestar Social [EXTINTO]
-	E05025001
-?Ministerio de Trabajo, Migraciones y Seguridad Social [EXTINTO]
-	E05024201
-(Ministerio de Trabajo y Econom√≠a Social
-	E05066501
-4Ministerio de Transportes, Movilidad y Agenda Urbana
-	E05065601
-Ministerio de Universidades
-	E05073401
-3Ministerio para la Transici√≥n Ecol√≥gica [EXTINTO]
-	E05024701
-@Ministerio para la Transici√≥n Ecol√≥gica y el Reto Demogr√°fico
-	E05068001
-*Museo Nacional Centro de Arte Reina Sof√≠a
-	EA0021786
-'Museo Nacional de Ciencia y Tecnolog√≠a
-	EA0020889
-Museo Nacional del Prado
-	EA0021762
-5Mutualidad General de Funcionarios Civiles del Estado
-	EA0040021
-Mutualidad General Judicial
-	E03134002
-&Oficina Espa√±ola de Patentes y Marcas
-	EA0038829
-	org-1.8.5
-	EA0007777
-&Organismo Aut√≥nomo Parques Nacionales
-	EA0022425
-Organismo Empresa Privada
-	P12345678
-Organismo-SDA Pro
-%Organizaci√≥n Nacional de Trasplantes
-	EA0022388
-Parlamento de Canarias
-	I00000687
-Presidencia del Gobierno
-	EA0008567
-Principado de Asturias
-	A03002951
-Puertos del Estado
-	EA0001277
--Real Academia de Bellas Artes de San Fernando
-	EA0019849
-!Real Patronato sobre Discapacidad
-	EA0022231
-Red.es
-	EA0028346
-Regi√≥n de Murcia
-	A14002961
-Renfe-Operadora
-	EA0003337
-8Secretar√≠a de Estado de la Seguridad Social y Pensiones
-	E04926001
-+SEPES Entidad P√∫blica Empresarial de Suelo
-	EA0000845
-@Servicio Espa√±ol para la Internacionalizaci√≥n de la Educaci√≥n
-	EA0020949
-#Servicio P√∫blico de Empleo Estatal
-	EA0021425
-1Sindicatura de Comptes de la Comunitat Valenciana
-	I00000847
-,Sociedad de Salvamento y Seguridad Mar√≠tima
-	EA0003343
-0Sociedad Estatal de Participaciones Industriales
-	EA0023306
-RSociedad Estatal para la Gesti√≥n de la Innovaci√≥n y las Tecnolog√≠as Tur√≠sticas
-	EA0038897
-)Tesorer√≠a General de la Seguridad Social
-	E00142503
-1Trabajo Penitenciario y Formaci√≥n para el Empleo
-	E00130302
-Universidad Aut√≥noma de Madrid
-	U02300001
- Universidad Carlos III de Madrid
-	U03600001
-!Universidad Complutense de Madrid
-	U01000001
-Universidad de Alicante
-	U00100001
-Universidad de Burgos
-	U05100001
-Universidad de Cantabria
-	U01600001
-!Universidad de Castilla-La Mancha
-	U03400001
-Universidad de Extremadura
-	U00200001
-Universidad de Granada
-	U00800001
-Universidad de Huelva
-	U04900001
-Universidad de Mondrag√≥n
-	PUDAT0001
-Universidad de Valladolid
-	U01900001
-Universidad de Vigo
-	U03800001
-Universidad de Zaragoza
-	U02100001
-*Universidad Internacional Men√©ndez Pelayo
-	EA0020857
-.Universidad Nacional de Educaci√≥n a Distancia
-	U02800001
-Universidad Pablo de Olavide
-	U00000046
-%Universidad Polit√©cnica de Cartagena
-	U06400001
-Universidad Rey Juan Carlos
-	U05600001
-%Universitat Polit√®cnica de Val√®ncia
-	U02700001
-Xunta de Galicia
-	A12002994
-"get_LANGSTRING_SEPARADOR_9cmtvm_k$
-	prototype
-get_DATE_PATTERN_uyz2l4_k$
-&get_DATE_PATTERN_ZONE_OFFSET_zejlsh_k$
-get_REGEX_FREQUENCY_6ayll1_k$
-get_DISTRIBUTION_gq3m4t_k$
-get_DATASET_y0u5jl_k$
-get_CR_ID_i7q0n6_k$
-!get_ACCRUAL_PERIODICITY_hy5hc6_k$
-get_DATASET_TYPE_gm7i16_k$
- get_LOCATION_DELIMETER_tl1gra_k$
-get_PUBLISHER_7i81mb_k$
-get_FORMAT_288mbk_k$
-get_PERIOD_OF_TIME_rtfu80_k$
-get_MAX_IDLE_bmlzyg_k$
-get_MIN_IDLE_u0zzwq_k$
-get_CATALOGS_i30p19_k$
-get_RECORDS_v1km61_k$
-get_SERVICES_3y5wrr_k$
-get_DATSETS_y0ixsx_k$
-get_DATASERIES_nw1gru_k$
-get_ACCESSSERVICE_hyf81k_k$
-get_INSERIES_9wf68r_k$
-get_DISTRIBUTIONS_l9bodi_k$
-get_CATALOGENTITY_ww7i7n_k$
-get_DATASETENTITY_5i3vo2_k$
-!get_DATASETSERIESENTITY_5b3h87_k$
-"get_DATASETSERVICEENTITY_ajp17b_k$
-get_PERIODICITY_RANGE_gmbo7c_k$
-get_ADMON_LEVEL_m01s11_k$
-get_FREQUENCY_MAP_6vryb4_k$
-!get_FREQUENCY_TRANSLATOR_rwjly_k$
-get_DIR3_MAP_f1wc44_k$
-ConstantValues_getInstance
-3es.unizar.iaaa.tfg.constants/ConstantValues|null[0]
-;ic#95:es.unizar.iaaa.tfg.constants/ConstantValues|null[0]-1
-1kotlin.collections/listOf|-7416272812961056307[0]
-2ic#91:kotlin/Char.<init>|-5182794243525578284[0]-0
-kotlin/Char|null[0]
- kotlin/to|9142910121690433229[0]
-/kotlin.collections/mapOf|5848051883920634516[0]
-,kotlin.js/objectMeta|-6597366550536324531[0]
-
-objectMeta
-/kotlin.js/setMetadataFor|-730693805633988211[0]
-setMetadataFor
-;ic#95:es.unizar.iaaa.tfg.constants/ConstantValues|null[0]-0
-kotlin/Any|null[0]
-Any
-	undefined¶
- 
-
- 
- 
- 
- 	
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- !
- #
- %
- '
- )
- +
- -
- /
- 1
- 3
- 5
- 7
-8
- =
->
-?
-@
-A
- G
- d
- o
- È
- 
- Î
- 
- Ï
- 
- Ì
- 	
- Ó
- 
- Ô
- 
- 
- 
- Ò
- 
- Ú
- 
- Û
- 
- Ù
- 
- ı
- 
- ˆ
- 
- ˜
- 
- ¯
- 
- ˘
- 
- ˙
- !
- ˚
- #
- ¸
- %
- ˝
- '
- ˛
- )
- ˇ
- +
- Ä
- -
- Å
- /
- Ç
- 1
- É
- 3
- Ñ
- 5
- Ö
- 7
- Ü
- =
- á
- G
- à
- d
- â
- o
-ä
-ì
-ï
-òˇáäÜ
-°ÖÍúÖ
-∏Í“≥Í
-ØÍ  ä¶Í †Í‚õÍ
- “
-  ö
-  ∞  ∫ 
-≤ 
-?“<
-:%  ö+
-  ∫%  ∫ %  ÿ
-?“<
-:  ö+
-  ∫  ∫   ÿ
-?“<
-:)  ö+
-  ∫)  ∫ )  ÿ
-?“<
-:	   ö+
-  ∫	   ∫ 	   ÿ
-
-?“<
-:
-  ö+
-  ∫
-  ∫ 
-  ÿ
-?“<
-:  ö+
-  ∫  ∫   ÿ
-?“<
-:  ö+
-  ∫  ∫   ÿ
-?“<
-:$  ö+
-  ∫	$  ∫ $  ÿ
-?“<
-:  ö+
-  ∫
-  ∫   ÿ
-?“<
-:#  ö+
-  ∫#  ∫ #  ÿ
-?“<
-:  ö+
-  ∫  ∫   ÿ
-?“<
-:  ö+
-  ∫  ∫   ÿ
-?“<
-:  ö+
-  ∫  ∫   ÿ
-?“<
-:  ö+
-  ∫  ∫   Ë
-?“<
-:  ö+
-  ∫  ∫   Ë
-
-?“<
-:  ö+
-  ∫  ∫   ÿ 
-?“<
-:  ö+
-  ∫  ∫   ÿ"
-?“<
-:  ö+
-  ∫  ∫   ÿ$
-?“<
-:  ö+
-  ∫  ∫   ÿ&
-?“<
-:  ö+
-  ∫  ∫   ÿ(
-?“<
-:  ö+
-  ∫  ∫   ÿ*
-?“<
-:  ö+
-  ∫  ∫   ÿ,
-?“<
-:  ö+
-  ∫  ∫   ÿ.
-?“<
-:  ö+
-  ∫  ∫   ÿ0
-?“<
-:   ö+
-  ∫   ∫    ÿ2
-?“<
-:!%  ö+
-  ∫!%  ∫ !%  ÿ4
-?“<
-:"&  ö+
-  ∫"&  ∫ "&  ÿ6
-ï“ë
-é#  ö
-  ∫#  ∫ a#   T
-  ∞I#$  ˙<
-#$  ÿ9
-#,  ÿ:
-#5  ÿ;
-#?  ÿ<
-Ç“˛
-˚&  öÎ
-  ∫&  ∫ Ã&   æ
-  ∞ ≤'  ˙§
-R'   E
-  ∞!+  “$
-  ∞"   
-  ∞#  ËE'  ÿB
-R(   E
-  ∞!+  “$
-  ∞"   
-  ∞#  ËL(  ÿC
-R)   E
-  ∞!+  “$
-  ∞"   
-  ∞#  ËA)  ÿD
-R*   E
-  ∞!+  “$
-  ∞"   
-  ∞#  ËP*  ÿE
-R+   E
-  ∞!+  “$
-  ∞"   
-  ∞#  ËU+  ÿF
-““Œ
-À.  öª
-  ∫$.  ∫ ú.   é
-  ∞ Ç/  ˙Ù
-4/   '
-  ∞!/	  ÿH/  ÿI
-40   '
-  ∞!0	  ÿJ0  ÿK
-41   '
-  ∞!1	  ÿL1  ÿM
-42   '
-  ∞!2	  ÿN2  ÿO
-43   '
-  ∞!3	  ÿP3  ÿQ
-45   '
-  ∞!5	  ÿR5  ÿS
-46   '
-  ∞!6	  ÿT6  ÿU
-47   '
-  ∞!7	  ÿV7  ÿW
-48   '
-  ∞!8	  ÿX8  ÿY
-49   '
-  ∞!9	  ÿZ9  ÿ[
-4;   '
-  ∞!;	  ÿ\;  ÿ]
-4<   '
-  ∞!<	  ÿ^<  ÿ_
-4=   '
-  ∞!=	  ÿ`=  ÿa
-4>   '
-  ∞!>	  ÿb>  ÿc
-ÿ“‘
-—A  ö¡
-  ∫%A  ∫ ¢A   î
-  ∞ àB  ˙˙
-4B   '
-  ∞!B	  ÿ9B  ÿe
-4C   '
-  ∞!C	  ÿ:C  ÿf
-4D   '
-  ∞!D	  ÿ<D  ÿg
-4E   '
-  ∞!E	  ÿhE  ÿi
-4F   '
-  ∞!F	  ÿjF  ÿk
-4G   '
-  ∞!G	  ÿlG  ÿm
-4H   '
-  ∞!H	  ÿ;H  ÿn
-»Ã“√Ã
-øÃK  öÆÃ
-  ∫&K  ∫ éÃK   ˇÀ
-  ∞ ÚÀL  ˙„À
-4L   '
-  ∞!L	  ÿpL=  ÿq
-4M   '
-  ∞!M	  ÿrM<  ÿs
-4N   '
-  ∞!N	  ÿtNO  ÿu
-4O   '
-  ∞!O	  ÿvOF  ÿw
-4P   '
-  ∞!P	  ÿxP6  ÿy
-4Q   '
-  ∞!Q	  ÿzQD  ÿ{
-4R   '
-  ∞!R	  ÿ|R9  ÿ}
-4S   '
-  ∞!S	  ÿ~SN  ÿ
-6T   )
-  ∞!T	  ÿÄT;  ÿÅ
-6U   )
-  ∞!U	  ÿÇU/  ÿÉ
-6V   )
-  ∞!V	  ÿÑV.  ÿÖ
-6W   )
-  ∞!W	  ÿÜWJ  ÿá
-6X   )
-  ∞!X	  ÿàX  ÿâ
-6Y   )
-  ∞!Y	  ÿäY.  ÿã
-6Z   )
-  ∞!Z	  ÿåZ-  ÿç
-6[   )
-  ∞![	  ÿé[,  ÿè
-6\   )
-  ∞!\	  ÿê\4  ÿë
-6]   )
-  ∞!]	  ÿí].  ÿì
-6^   )
-  ∞!^	  ÿî^/  ÿï
-6_   )
-  ∞!_	  ÿñ_,  ÿó
-6`   )
-  ∞!`	  ÿò`/  ÿô
-6a   )
-  ∞!a	  ÿöa/  ÿõ
-6b   )
-  ∞!b	  ÿúb+  ÿù
-6c   )
-  ∞!c	  ÿûc7  ÿü
-6d   )
-  ∞!d	  ÿ†d+  ÿ°
-6e   )
-  ∞!e	  ÿ¢e,  ÿ£
-6f   )
-  ∞!f	  ÿ§f;  ÿ•
-6g   )
-  ∞!g	  ÿ¶g/  ÿß
-6h   )
-  ∞!h	  ÿ®h0  ÿ©
-6i   )
-  ∞!i	  ÿ™i,  ÿ´
-6j   )
-  ∞!j	  ÿ¨j?  ÿ≠
-6k   )
-  ∞!k	  ÿÆk-  ÿØ
-6l   )
-  ∞!l	  ÿ∞l,  ÿ±
-6m   )
-  ∞!m	  ÿ≤m-  ÿ≥
-6n   )
-  ∞!n	  ÿ¥n<  ÿµ
-6o   )
-  ∞!o	  ÿ∂o/  ÿ∑
-6p   )
-  ∞!p	  ÿ∏p-  ÿπ
-6q   )
-  ∞!q	  ÿ∫q/  ÿª
-6r   )
-  ∞!r	  ÿºr.  ÿΩ
-6s   )
-  ∞!s	  ÿæs*  ÿø
-6t   )
-  ∞!t	  ÿ¿t:  ÿ¡
-6u   )
-  ∞!u	  ÿ¬u+  ÿ√
-6v   )
-  ∞!v	  ÿƒv%  ÿ≈
-6w   )
-  ∞!w	  ÿ∆w$  ÿ«
-6x   )
-  ∞!x	  ÿ»x5  ÿ…
-6y   )
-  ∞!y	  ÿ y"  ÿÀ
-6z   )
-  ∞!z	  ÿÃz+  ÿÕ
-6{   )
-  ∞!{	  ÿŒ{%  ÿœ
-6|   )
-  ∞!|	  ÿ–|'  ÿ—
-6}   )
-  ∞!}	  ÿ“}$  ÿ”
-6~   )
-  ∞!~	  ÿ‘~'  ÿ’
-6   )
-  ∞!	  ÿ÷0  ÿ◊
-9Ä   +
-  ∞!Ä	  ÿÿÄ+  ÿŸ
-9Å   +
-  ∞!Å	  ÿ⁄Å*  ÿ€
-9Ç   +
-  ∞!Ç	  ÿ‹Ç)  ÿ›
-9É   +
-  ∞!É	  ÿﬁÉ$  ÿﬂ
-9Ñ   +
-  ∞!Ñ	  ÿ‡Ñ&  ÿ·
-9Ö   +
-  ∞!Ö	  ÿ‚Ö3  ÿ„
-9Ü   +
-  ∞!Ü	  ÿ‰Ü'  ÿÂ
-9á   +
-  ∞!á	  ÿÊá'  ÿÁ
-9à   +
-  ∞!à	  ÿËà*  ÿÈ
-9â   +
-  ∞!â	  ÿÍâ+  ÿÎ
-9ä   +
-  ∞!ä	  ÿÏä0  ÿÌ
-9ã   +
-  ∞!ã	  ÿÓã'  ÿÔ
-9å   +
-  ∞!å	  ÿå&  ÿÒ
-9ç   +
-  ∞!ç	  ÿÚç$  ÿÛ
-9é   +
-  ∞!é	  ÿÙé.  ÿı
-9è   +
-  ∞!è	  ÿˆè$  ÿ˜
-9ê   +
-  ∞!ê	  ÿ¯ê%  ÿ˘
-9ë   +
-  ∞!ë	  ÿ˙ë&  ÿ˚
-9í   +
-  ∞!í	  ÿ¸í/  ÿ˝
-9ì   +
-  ∞!ì	  ÿ˛ì$  ÿˇ
-9î   +
-  ∞!î	  ÿÄî(  ÿÅ
-9ï   +
-  ∞!ï	  ÿÇï(  ÿÉ
-9ñ   +
-  ∞!ñ	  ÿÑñ%  ÿÖ
-9ó   +
-  ∞!ó	  ÿÜó'  ÿá
-9ò   +
-  ∞!ò	  ÿàò%  ÿâ
-9ô   +
-  ∞!ô	  ÿäô,  ÿã
-9ö   +
-  ∞!ö	  ÿåö(  ÿç
-9õ   +
-  ∞!õ	  ÿéõ%  ÿè
-9ú   +
-  ∞!ú	  ÿêú&  ÿë
-9ù   +
-  ∞!ù	  ÿíù2  ÿì
-9û   +
-  ∞!û	  ÿîû&  ÿï
-9ü   +
-  ∞!ü	  ÿñü&  ÿó
-9†   +
-  ∞!†	  ÿò†3  ÿô
-9°   +
-  ∞!°	  ÿö°(  ÿõ
-9¢   +
-  ∞!¢	  ÿú¢&  ÿù
-9£   +
-  ∞!£	  ÿû£*  ÿü
-9§   +
-  ∞!§	  ÿ†§)  ÿ°
-9•   +
-  ∞!•	  ÿ¢•(  ÿ£
-9¶   +
-  ∞!¶	  ÿ§¶4  ÿ•
-9ß   +
-  ∞!ß	  ÿ¶ß&  ÿß
-9®   +
-  ∞!®	  ÿ®®4  ÿ©
-9©   +
-  ∞!©	  ÿ™©$  ÿ´
-9™   +
-  ∞!™	  ÿ¨™3  ÿ≠
-9´   +
-  ∞!´	  ÿÆ´(  ÿØ
-9¨   +
-  ∞!¨	  ÿ∞¨&  ÿ±
-9≠   +
-  ∞!≠	  ÿ≤≠4  ÿ≥
-9Æ   +
-  ∞!Æ	  ÿ¥Æ(  ÿµ
-9Ø   +
-  ∞!Ø	  ÿ∂Ø2  ÿ∑
-9∞   +
-  ∞!∞	  ÿ∏∞$  ÿπ
-9±   +
-  ∞!±	  ÿ∫±5  ÿª
-9≤   +
-  ∞!≤	  ÿº≤*  ÿΩ
-9≥   +
-  ∞!≥	  ÿæ≥)  ÿø
-9¥   +
-  ∞!¥	  ÿ¿¥-  ÿ¡
-9µ   +
-  ∞!µ	  ÿ¬µ%  ÿ√
-9∂   +
-  ∞!∂	  ÿƒ∂%  ÿ≈
-9∑   +
-  ∞!∑	  ÿ∆∑+  ÿ«
-9∏   +
-  ∞!∏	  ÿ»∏%  ÿ…
-9π   +
-  ∞!π	  ÿ π/  ÿÀ
-9∫   +
-  ∞!∫	  ÿÃ∫-  ÿÕ
-9ª   +
-  ∞!ª	  ÿŒª-  ÿœ
-9º   +
-  ∞!º	  ÿ–º+  ÿ—
-9Ω   +
-  ∞!Ω	  ÿ“Ω%  ÿ”
-9æ   +
-  ∞!æ	  ÿ‘æ%  ÿ’
-9ø   +
-  ∞!ø	  ÿ÷ø$  ÿ◊
-9¿   +
-  ∞!¿	  ÿÿ¿$  ÿŸ
-9¡   +
-  ∞!¡	  ÿ⁄¡,  ÿ€
-9¬   +
-  ∞!¬	  ÿ‹¬)  ÿ›
-9√   +
-  ∞!√	  ÿﬁ√*  ÿﬂ
-9ƒ   +
-  ∞!ƒ	  ÿ‡ƒ*  ÿ·
-9≈   +
-  ∞!≈	  ÿ‚≈(  ÿ„
-9∆   +
-  ∞!∆	  ÿ‰∆1  ÿÂ
-9«   +
-  ∞!«	  ÿÊ«+  ÿÁ
-9»   +
-  ∞!»	  ÿË»*  ÿÈ
-9…   +
-  ∞!…	  ÿÍ…'  ÿÎ
-9    +
-  ∞! 	  ÿÏ &  ÿÌ
-9À   +
-  ∞!À	  ÿÓÀ&  ÿÔ
-9Ã   +
-  ∞!Ã	  ÿÃ3  ÿÒ
-9Õ   +
-  ∞!Õ	  ÿÚÕ3  ÿÛ
-9Œ   +
-  ∞!Œ	  ÿÙŒ9  ÿı
-9œ   +
-  ∞!œ	  ÿˆœ&  ÿ˜
-9–   +
-  ∞!–	  ÿ¯–8  ÿ˘
-9—   +
-  ∞!—	  ÿ˙—&  ÿ˚
-9“   +
-  ∞!“	  ÿ¸“$  ÿ˝
-9”   +
-  ∞!”	  ÿ˛”%  ÿˇ
-9‘   +
-  ∞!‘	  ÿÄ‘$  ÿÅ
-9’   +
-  ∞!’	  ÿÇ’%  ÿÉ
-9÷   +
-  ∞!÷	  ÿÑ÷*  ÿÖ
-9◊   +
-  ∞!◊	  ÿÜ◊%  ÿá
-9ÿ   +
-  ∞!ÿ	  ÿàÿ&  ÿâ
-9Ÿ   +
-  ∞!Ÿ	  ÿäŸ%  ÿã
-9⁄   +
-  ∞!⁄	  ÿå⁄3  ÿç
-9€   +
-  ∞!€	  ÿé€)  ÿè
-9‹   +
-  ∞!‹	  ÿê‹'  ÿë
-9›   +
-  ∞!›	  ÿí›&  ÿì
-9ﬁ   +
-  ∞!ﬁ	  ÿîﬁ(  ÿï
-9ﬂ   +
-  ∞!ﬂ	  ÿñﬂ&  ÿó
-9‡   +
-  ∞!‡	  ÿò‡'  ÿô
-9·   +
-  ∞!·	  ÿö·$  ÿõ
-9‚   +
-  ∞!‚	  ÿú‚%  ÿù
-9„   +
-  ∞!„	  ÿû„$  ÿü
-9‰   +
-  ∞!‰	  ÿ†‰.  ÿ°
-9Â   +
-  ∞!Â	  ÿ¢Â%  ÿ£
-9Ê   +
-  ∞!Ê	  ÿ§Ê)  ÿ•
-9Á   +
-  ∞!Á	  ÿ¶Á,  ÿß
-9Ë   +
-  ∞!Ë	  ÿ®Ë0  ÿ©
-9È   +
-  ∞!È	  ÿ™È'  ÿ´
-9Í   +
-  ∞!Í	  ÿ¨Í)  ÿ≠
-9Î   +
-  ∞!Î	  ÿÆÎ'  ÿØ
-9Ï   +
-  ∞!Ï	  ÿ∞Ï4  ÿ±
-9Ì   +
-  ∞!Ì	  ÿ≤Ì'  ÿ≥
-9Ó   +
-  ∞!Ó	  ÿ¥Ó$  ÿµ
-9Ô   +
-  ∞!Ô	  ÿ∂Ô)  ÿ∑
-9   +
-  ∞!	  ÿ∏&  ÿπ
-9Ò   +
-  ∞!Ò	  ÿ∫Ò1  ÿª
-9Ú   +
-  ∞!Ú	  ÿºÚ0  ÿΩ
-9Û   +
-  ∞!Û	  ÿæÛ*  ÿø
-9Ù   +
-  ∞!Ù	  ÿ¿Ù.  ÿ¡
-9ı   +
-  ∞!ı	  ÿ¬ı)  ÿ√
-9ˆ   +
-  ∞!ˆ	  ÿƒˆ#  ÿ≈
-9˜   +
-  ∞!˜	  ÿ∆˜0  ÿ«
-9¯   +
-  ∞!¯	  ÿ»¯'  ÿ…
-9˘   +
-  ∞!˘	  ÿ ˘$  ÿÀ
-9˙   +
-  ∞!˙	  ÿÃ˙'  ÿÕ
-9˚   +
-  ∞!˚	  ÿŒ˚#  ÿœ
-9¸   +
-  ∞!¸	  ÿ–¸#  ÿ—
-9˝   +
-  ∞!˝	  ÿ“˝'  ÿ”
-9˛   +
-  ∞!˛	  ÿ‘˛&  ÿ’
-9ˇ   +
-  ∞!ˇ	  ÿ÷ˇ9  ÿ◊
-9Ä   +
-  ∞!Ä	  ÿÿÄ?  ÿŸ
-9Å   +
-  ∞!Å	  ÿ⁄Å9  ÿ€
-9Ç   +
-  ∞!Ç	  ÿ‹Ç5  ÿ›
-9É   +
-  ∞!É	  ÿﬁÉ(  ÿﬂ
-9Ñ   +
-  ∞!Ñ	  ÿ‡Ñ,  ÿ·
-9Ö   +
-  ∞!Ö	  ÿ‚Ö(  ÿ„
-9Ü   +
-  ∞!Ü	  ÿ‰Ü4  ÿÂ
-9á   +
-  ∞!á	  ÿÊá6  ÿÁ
-9à   +
-  ∞!à	  ÿËà0  ÿÈ
-9â   +
-  ∞!â	  ÿÍâ5  ÿÎ
-9ä   +
-  ∞!ä	  ÿÏä5  ÿÌ
-9ã   +
-  ∞!ã	  ÿÓã&  ÿÔ
-9å   +
-  ∞!å	  ÿå'  ÿÒ
-9ç   +
-  ∞!ç	  ÿÚç&  ÿÛ
-9é   +
-  ∞!é	  ÿÙé(  ÿı
-9è   +
-  ∞!è	  ÿˆè#  ÿ˜
-9ê   +
-  ∞!ê	  ÿ¯ê'  ÿ˘
-9ë   +
-  ∞!ë	  ÿ˙ë%  ÿ˚
-9í   +
-  ∞!í	  ÿ¸í)  ÿ˝
-9ì   +
-  ∞!ì	  ÿ˛ì)  ÿˇ
-9î   +
-  ∞!î	  ÿÄî+  ÿÅ
-9ï   +
-  ∞!ï	  ÿÇï&  ÿÉ
-9ñ   +
-  ∞!ñ	  ÿÑñ,  ÿÖ
-9ó   +
-  ∞!ó	  ÿÜó'  ÿá
-9ò   +
-  ∞!ò	  ÿàò)  ÿâ
-9ô   +
-  ∞!ô	  ÿäô)  ÿã
-9ö   +
-  ∞!ö	  ÿåö*  ÿç
-9õ   +
-  ∞!õ	  ÿéõ+  ÿè
-9ú   +
-  ∞!ú	  ÿêú#  ÿë
-9ù   +
-  ∞!ù	  ÿíù+  ÿì
-9û   +
-  ∞!û	  ÿîû#  ÿï
-9ü   +
-  ∞!ü	  ÿñü)  ÿó
-9†   +
-  ∞!†	  ÿò†,  ÿô
-9°   +
-  ∞!°	  ÿö°5  ÿõ
-9¢   +
-  ∞!¢	  ÿú¢)  ÿù
-9£   +
-  ∞!£	  ÿû£*  ÿü
-9§   +
-  ∞!§	  ÿ†§6  ÿ°
-9•   +
-  ∞!•	  ÿ¢•6  ÿ£
-9¶   +
-  ∞!¶	  ÿ§¶3  ÿ•
-9ß   +
-  ∞!ß	  ÿ¶ß1  ÿß
-9®   +
-  ∞!®	  ÿ®®)  ÿ©
-9©   +
-  ∞!©	  ÿ™©6  ÿ´
-9™   +
-  ∞!™	  ÿ¨™.  ÿ≠
-9´   +
-  ∞!´	  ÿÆ´%  ÿØ
-9¨   +
-  ∞!¨	  ÿ∞¨'  ÿ±
-9≠   +
-  ∞!≠	  ÿ≤≠&  ÿ≥
-9Æ   +
-  ∞!Æ	  ÿ¥Æ   ÿµ
-9Ø   +
-  ∞!Ø	  ÿ∂Ø,  ÿ∑
-9∞   +
-  ∞!∞	  ÿ∏∞+  ÿπ
-9±   +
-  ∞!±	  ÿ∫±/  ÿª
-9≤   +
-  ∞!≤	  ÿº≤+  ÿΩ
-9≥   +
-  ∞!≥	  ÿæ≥*  ÿø
-9¥   +
-  ∞!¥	  ÿ¿¥*  ÿ¡
-9µ   +
-  ∞!µ	  ÿ¬µ7  ÿ√
-9∂   +
-  ∞!∂	  ÿƒ∂  ÿ≈
-9∑   +
-  ∞!∑	  ÿ∆∑<  ÿ«
-9∏   +
-  ∞!∏	  ÿ»∏+  ÿ…
-9π   +
-  ∞!π	  ÿ π>  ÿÀ
-9∫   +
-  ∞!∫	  ÿÃ∫E  ÿÕ
-9ª   +
-  ∞!ª	  ÿŒªU  ÿœ
-9º   +
-  ∞!º	  ÿ–º5  ÿ—
-9Ω   +
-  ∞!Ω	  ÿ“Ω+  ÿ”
-9æ   +
-  ∞!æ	  ÿ‘æ8  ÿ’
-9ø   +
-  ∞!ø	  ÿ÷ø.  ÿ◊
-9¿   +
-  ∞!¿	  ÿÿ¿?  ÿŸ
-9¡   +
-  ∞!¡	  ÿ⁄¡5  ÿ€
-9¬   +
-  ∞!¬	  ÿ‹¬7  ÿ›
-9√   +
-  ∞!√	  ÿﬁ√A  ÿﬂ
-9ƒ   +
-  ∞!ƒ	  ÿ‡ƒM  ÿ·
-9≈   +
-  ∞!≈	  ÿ‚≈-  ÿ„
-9∆   +
-  ∞!∆	  ÿ‰∆7  ÿÂ
-9«   +
-  ∞!«	  ÿÊ«/  ÿÁ
-9»   +
-  ∞!»	  ÿË»"  ÿÈ
-9…   +
-  ∞!…	  ÿÍ…)  ÿÎ
-9    +
-  ∞! 	  ÿÏ 1  ÿÌ
-9À   +
-  ∞!À	  ÿÓÀ8  ÿÔ
-9Ã   +
-  ∞!Ã	  ÿÃ3  ÿÒ
-9Õ   +
-  ∞!Õ	  ÿÚÕ2  ÿÛ
-9Œ   +
-  ∞!Œ	  ÿÙŒ:  ÿı
-9œ   +
-  ∞!œ	  ÿˆœ6  ÿ˜
-9–   +
-  ∞!–	  ÿ¯–3  ÿ˘
-9—   +
-  ∞!—	  ÿ˙—6  ÿ˚
-9“   +
-  ∞!“	  ÿ¸“4  ÿ˝
-9”   +
-  ∞!”	  ÿ˛”2  ÿˇ
-9‘   +
-  ∞!‘	  ÿÄ‘@  ÿÅ
-9’   +
-  ∞!’	  ÿÇ’7  ÿÉ
-9÷   +
-  ∞!÷	  ÿÑ÷1  ÿÖ
-9◊   +
-  ∞!◊	  ÿÜ◊'  ÿá
-9ÿ   +
-  ∞!ÿ	  ÿàÿ+  ÿâ
-9Ÿ   +
-  ∞!Ÿ	  ÿäŸ*  ÿã
-9⁄   +
-  ∞!⁄	  ÿå⁄9  ÿç
-9€   +
-  ∞!€	  ÿé€$  ÿè
-9‹   +
-  ∞!‹	  ÿê‹.  ÿë
-9›   +
-  ∞!›	  ÿí›,  ÿì
-9ﬁ   +
-  ∞!ﬁ	  ÿîﬁ3  ÿï
-9ﬂ   +
-  ∞!ﬂ	  ÿñﬂ3  ÿó
-9‡   +
-  ∞!‡	  ÿò‡:  ÿô
-9·   +
-  ∞!·	  ÿö·D  ÿõ
-9‚   +
-  ∞!‚	  ÿú‚2  ÿù
-9„   +
-  ∞!„	  ÿû„-  ÿü
-9‰   +
-  ∞!‰	  ÿ†‰'  ÿ°
-9Â   +
-  ∞!Â	  ÿ¢Â(  ÿ£
-9Ê   +
-  ∞!Ê	  ÿ§Ê*  ÿ•
-9Á   +
-  ∞!Á	  ÿ¶Á+  ÿß
-9Ë   +
-  ∞!Ë	  ÿ®Ë0  ÿ©
-9È   +
-  ∞!È	  ÿ™È/  ÿ´
-9Í   +
-  ∞!Í	  ÿ¨Í1  ÿ≠
-9Î   +
-  ∞!Î	  ÿÆÎ-  ÿØ
-9Ï   +
-  ∞!Ï	  ÿ∞Ï:  ÿ±
-9Ì   +
-  ∞!Ì	  ÿ≤Ì/  ÿ≥
-9Ó   +
-  ∞!Ó	  ÿ¥Ó.  ÿµ
-9Ô   +
-  ∞!Ô	  ÿ∂Ô,  ÿ∑
-9   +
-  ∞!	  ÿ∏/  ÿπ
-9Ò   +
-  ∞!Ò	  ÿ∫Ò1  ÿª
-9Ú   +
-  ∞!Ú	  ÿºÚ0  ÿΩ
-9Û   +
-  ∞!Û	  ÿæÛ2  ÿø
-9Ù   +
-  ∞!Ù	  ÿ¿Ù+  ÿ¡
-9ı   +
-  ∞!ı	  ÿ¬ı9  ÿ√
-9ˆ   +
-  ∞!ˆ	  ÿƒˆ7  ÿ≈
-9˜   +
-  ∞!˜	  ÿ∆˜2  ÿ«
-9¯   +
-  ∞!¯	  ÿ»¯K  ÿ…
-9˘   +
-  ∞!˘	  ÿ ˘3  ÿÀ
-9˙   +
-  ∞!˙	  ÿÃ˙)  ÿÕ
-9˚   +
-  ∞!˚	  ÿŒ˚0  ÿœ
-9¸   +
-  ∞!¸	  ÿ–¸&  ÿ—
-9˝   +
-  ∞!˝	  ÿ“˝@  ÿ”
-9˛   +
-  ∞!˛	  ÿ‘˛(  ÿ’
-9ˇ   +
-  ∞!ˇ	  ÿ÷ˇA  ÿ◊
-9Ä   +
-  ∞!Ä	  ÿÿÄ\  ÿŸ
-9Å   +
-  ∞!Å	  ÿ⁄Å  ÿ€
-9Ç   +
-  ∞!Ç	  ÿ‹Ç4  ÿ›
-9É   +
-  ∞!É	  ÿﬁÉ   ÿﬂ
-9Ñ   +
-  ∞!Ñ	  ÿ‡Ña  ÿ·
-9Ö   +
-  ∞!Ö	  ÿ‚Ö>  ÿ„
-9Ü   +
-  ∞!Ü	  ÿ‰Ü(  ÿÂ
-9á   +
-  ∞!á	  ÿÊáw  ÿÁ
-9à   +
-  ∞!à	  ÿËà1  ÿÈ
-9â   +
-  ∞!â	  ÿÍâ0  ÿÎ
-9ä   +
-  ∞!ä	  ÿÏä'  ÿÌ
-9ã   +
-  ∞!ã	  ÿÓã%  ÿÔ
-9å   +
-  ∞!å	  ÿå!  ÿÒ
-9ç   +
-  ∞!ç	  ÿÚç#  ÿÛ
-9é   +
-  ∞!é	  ÿÙé-  ÿı
-9è   +
-  ∞!è	  ÿˆè4  ÿ˜
-9ê   +
-  ∞!ê	  ÿ¯ê7  ÿ˘
-9ë   +
-  ∞!ë	  ÿ˙ë/  ÿ˚
-9í   +
-  ∞!í	  ÿ¸í0  ÿ˝
-9ì   +
-  ∞!ì	  ÿ˛ì"  ÿˇ
-9î   +
-  ∞!î	  ÿÄî3  ÿÅ
-9ï   +
-  ∞!ï	  ÿÇï?  ÿÉ
-9ñ   +
-  ∞!ñ	  ÿÑñ+  ÿÖ
-9ó   +
-  ∞!ó	  ÿÜó-  ÿá
-9ò   +
-  ∞!ò	  ÿàòC  ÿâ
-9ô   +
-  ∞!ô	  ÿäô'  ÿã
-9ö   +
-  ∞!ö	  ÿåöH  ÿç
-9õ   +
-  ∞!õ	  ÿéõ8  ÿè
-9ú   +
-  ∞!ú	  ÿêú,  ÿë
-9ù   +
-  ∞!ù	  ÿíù-  ÿì
-9û   +
-  ∞!û	  ÿîûB  ÿï
-9ü   +
-  ∞!ü	  ÿñü^  ÿó
-9†   +
-  ∞!†	  ÿò†0  ÿô
-9°   +
-  ∞!°	  ÿö°5  ÿõ
-9¢   +
-  ∞!¢	  ÿú¢2  ÿù
-9£   +
-  ∞!£	  ÿû£E  ÿü
-9§   +
-  ∞!§	  ÿ†§;  ÿ°
-9•   +
-  ∞!•	  ÿ¢•>  ÿ£
-9¶   +
-  ∞!¶	  ÿ§¶0  ÿ•
-9ß   +
-  ∞!ß	  ÿ¶ß6  ÿß
-9®   +
-  ∞!®	  ÿ®®U  ÿ©
-9©   +
-  ∞!©	  ÿ™©G  ÿ´
-9™   +
-  ∞!™	  ÿ¨™8  ÿ≠
-9´   +
-  ∞!´	  ÿÆ´F  ÿØ
-9¨   +
-  ∞!¨	  ÿ∞¨J  ÿ±
-9≠   +
-  ∞!≠	  ÿ≤≠Z  ÿ≥
-9Æ   +
-  ∞!Æ	  ÿ¥ÆG  ÿµ
-9Ø   +
-  ∞!Ø	  ÿ∂ØA  ÿ∑
-9∞   +
-  ∞!∞	  ÿ∏∞,  ÿπ
-9±   +
-  ∞!±	  ÿ∫±6  ÿª
-9≤   +
-  ∞!≤	  ÿº≤*  ÿΩ
-9≥   +
-  ∞!≥	  ÿæ≥!  ÿø
-9¥   +
-  ∞!¥	  ÿ¿¥'  ÿ¡
-9µ   +
-  ∞!µ	  ÿ¬µ#  ÿ√
-9∂   +
-  ∞!∂	  ÿƒ∂7  ÿ≈
-9∑   +
-  ∞!∑	  ÿ∆∑8  ÿ«
-9∏   +
-  ∞!∏	  ÿ»∏>  ÿ…
-9π   +
-  ∞!π	  ÿ πY  ÿÀ
-9∫   +
-  ∞!∫	  ÿÃ∫H  ÿÕ
-9ª   +
-  ∞!ª	  ÿŒªL  ÿœ
-9º   +
-  ∞!º	  ÿ–ºJ  ÿ—
-9Ω   +
-  ∞!Ω	  ÿ“Ω1  ÿ”
-9æ   +
-  ∞!æ	  ÿ‘æJ  ÿ’
-9ø   +
-  ∞!ø	  ÿ÷ø$  ÿ◊
-9¿   +
-  ∞!¿	  ÿÿ¿.  ÿŸ
-9¡   +
-  ∞!¡	  ÿ⁄¡$  ÿ€
-9¬   +
-  ∞!¬	  ÿ‹¬<  ÿ›
-9√   +
-  ∞!√	  ÿﬁ√C  ÿﬂ
-9ƒ   +
-  ∞!ƒ	  ÿ‡ƒ>  ÿ·
-9≈   +
-  ∞!≈	  ÿ‚≈H  ÿ„
-9∆   +
-  ∞!∆	  ÿ‰∆7  ÿÂ
-9«   +
-  ∞!«	  ÿÊ«%  ÿÁ
-9»   +
-  ∞!»	  ÿË»F  ÿÈ
-9…   +
-  ∞!…	  ÿÍ…:  ÿÎ
-9    +
-  ∞! 	  ÿÏ %  ÿÌ
-9À   +
-  ∞!À	  ÿÓÀ\  ÿÔ
-9Ã   +
-  ∞!Ã	  ÿÃ&  ÿÒ
-9Õ   +
-  ∞!Õ	  ÿÚÕ1  ÿÛ
-9Œ   +
-  ∞!Œ	  ÿÙŒ$  ÿı
-9œ   +
-  ∞!œ	  ÿˆœJ  ÿ˜
-9–   +
-  ∞!–	  ÿ¯–N  ÿ˘
-9—   +
-  ∞!—	  ÿ˙—6  ÿ˚
-9“   +
-  ∞!“	  ÿ¸“C  ÿ˝
-9”   +
-  ∞!”	  ÿ˛”*  ÿˇ
-9‘   +
-  ∞!‘	  ÿÄ‘@  ÿÅ
-9’   +
-  ∞!’	  ÿÇ’L  ÿÉ
-9÷   +
-  ∞!÷	  ÿÑ÷8  ÿÖ
-9◊   +
-  ∞!◊	  ÿÜ◊5  ÿá
-9ÿ   +
-  ∞!ÿ	  ÿàÿ'  ÿâ
-9Ÿ   +
-  ∞!Ÿ	  ÿäŸD  ÿã
-9⁄   +
-  ∞!⁄	  ÿå⁄*  ÿç
-9€   +
-  ∞!€	  ÿé€4  ÿè
-9‹   +
-  ∞!‹	  ÿê‹  ÿë
-9›   +
-  ∞!›	  ÿí›4  ÿì
-9ﬁ   +
-  ∞!ﬁ	  ÿîﬁ(  ÿï
-9ﬂ   +
-  ∞!ﬂ	  ÿñﬂ   ÿë
-9‡   +
-  ∞!‡	  ÿó‡3  ÿò
-9·   +
-  ∞!·	  ÿô·%  ÿö
-9‚   +
-  ∞!‚	  ÿõ‚'  ÿú
-9„   +
-  ∞!„	  ÿù„%  ÿû
-9‰   +
-  ∞!‰	  ÿü‰!  ÿ†
-9Â   +
-  ∞!Â	  ÿ°Â<  ÿ¢
-9Ê   +
-  ∞!Ê	  ÿ£Ê0  ÿ§
-9Á   +
-  ∞!Á	  ÿ•Á  ÿ¶
-9Ë   +
-  ∞!Ë	  ÿßË  ÿ®
-9È   +
-  ∞!È	  ÿ©È  ÿ™
-9Í   +
-  ∞!Í	  ÿ´ÍF  ÿ¨
-9Î   +
-  ∞!Î	  ÿ≠Î9  ÿÆ
-9Ï   +
-  ∞!Ï	  ÿØÏL  ÿ∞
-9Ì   +
-  ∞!Ì	  ÿ±Ì1  ÿ≤
-9Ó   +
-  ∞!Ó	  ÿ≥Ó@  ÿ¥
-9Ô   +
-  ∞!Ô	  ÿµÔ:  ÿ∂
-9   +
-  ∞!	  ÿ∑?  ÿ∏
-9Ò   +
-  ∞!Ò	  ÿπÒ]  ÿ∫
-9Ú   +
-  ∞!Ú	  ÿªÚ7  ÿº
-9Û   +
-  ∞!Û	  ÿΩÛ?  ÿæ
-9Ù   +
-  ∞!Ù	  ÿøÙ-  ÿ¿
-9ı   +
-  ∞!ı	  ÿ¡ı/  ÿ¬
-9ˆ   +
-  ∞!ˆ	  ÿ√ˆ0  ÿƒ
-9˜   +
-  ∞!˜	  ÿ≈˜&  ÿ∆
-9¯   +
-  ∞!¯	  ÿ«¯$  ÿ»
-9˘   +
-  ∞!˘	  ÿ…˘'  ÿ 
-9˙   +
-  ∞!˙	  ÿÀ˙0  ÿÃ
-9˚   +
-  ∞!˚	  ÿÕ˚)  ÿŒ
-9¸   +
-  ∞!¸	  ÿœ¸%  ÿ–
-9˝   +
-  ∞!˝	  ÿ—˝$  ÿ“
-9˛   +
-  ∞!˛	  ÿ”˛'  ÿ‘
-9ˇ   +
-  ∞!ˇ	  ÿ’ˇ(  ÿ÷
-9Ä   +
-  ∞!Ä	  ÿ◊Ä"  ÿÿ
-9Å   +
-  ∞!Å	  ÿŸÅ&  ÿ⁄
-9Ç   +
-  ∞!Ç	  ÿ€Ç8  ÿ‹
-9É   +
-  ∞!É	  ÿ›É<  ÿﬁ
-9Ñ   +
-  ∞!Ñ	  ÿﬂÑ+  ÿ‡
-9Ö   +
-  ∞!Ö	  ÿ·Ö3  ÿ‚
-9Ü   +
-  ∞!Ü	  ÿ„Ü*  ÿ‰
-9á   +
-  ∞!á	  ÿÂá2  ÿÊ
-9à   +
-  ∞!à	  ÿÁà  ÿË
-i“f
-d  ö]
-  ∫'  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫(
-  ∫ 
-i“f
-d  ö]
-  ∫)  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫*
-  ∫ 
-i“f
-d  ö]
-  ∫+  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫,
-  ∫ 
-i“f
-d  ö]
-  ∫-  ¬Í  ∞ 9  ä20‚-
-+	
-™ 
-	
-  ∫.	
-  ∫ 
-i“f
-d  ö]
-  ∫/  ¬Í  ∞ 9  ä20‚-
-+
-
-™ 
-
-
-  ∫0
-
-  ∫ 
-i“f
-d  ö]
-  ∫1  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫2
-  ∫ 
-i“f
-d  ö]
-  ∫3  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫4
-  ∫ 
-i“f
-d  ö]
-  ∫5  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫6
-  ∫ 
-i“f
-d  ö]
-  ∫7  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫8
-  ∫ 
-i“f
-d  ö]
-  ∫9  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫:
-  ∫ 
-i“f
-d  ö]
-  ∫;  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫<
-  ∫ 
-i“f
-d  ö]
-  ∫=  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫>
-  ∫ 
-i“f
-d  ö]
-  ∫?  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫@
-  ∫ 
-i“f
-d  ö]
-  ∫A  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫B
-  ∫ 
-i“f
-d  ö]
-  ∫C  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫D
-  ∫ 
-i“f
-d  ö]
-  ∫E  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫F
-  ∫ 
-i“f
-d  ö]
-  ∫G  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫H
-  ∫ 
-i“f
-d  ö]
-  ∫I  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫J
-  ∫ 
-i“f
-d  ö]
-  ∫K  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫L
-  ∫ 
-i“f
-d  ö]
-  ∫M  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫N
-  ∫ 
-i“f
-d  ö]
-  ∫O  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫P
-  ∫ 
-i“f
-d  ö]
-  ∫Q  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫R
-  ∫ 
-i“f
-d  ö]
-  ∫S  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫T
-  ∫ 
-i“f
-d  ö]
-  ∫U  ¬Í  ∞ 9  ä20‚-
-+
-™ 
-
-  ∫V
-  ∫ 
-i“f
-d  ö]
-  ∫W  ¬Í  ∞ 9  ä20‚-
-+ 
-™ 
- 
-  ∫X 
-  ∫ 
-i“f
-d  ö]
-  ∫Y  ¬Í  ∞ 9  ä20‚-
-+!
-™ 
-!
-  ∫Z!
-  ∫ 
-i“f
-d  ö]
-  ∫[  ¬Í  ∞ 9  ä20‚-
-+"
-™ 
-"
-  ∫\"
-  ∫ 
-i“f
-d  ö]
-  ∫]  ¬Í  ∞ 9  ä20‚-
-+#™ 
-#  ∫^#  ∫ 
-i“f
-d  ö]
-  ∫_  ¬Í  ∞ 9  ä20‚-
-+&™ 
-&  ∫`&  ∫ 
-i“f
-d  ö]
-  ∫a  ¬Í  ∞ 9  ä20‚-
-+.™ 
-.  ∫b.  ∫ 
-i“f
-d  ö]
-  ∫c  ¬Í  ∞ 9  ä20‚-
-+A™ 
-A  ∫dA  ∫ 
-i“f
-d  ö]
-  ∫e  ¬Í  ∞ 9  ä20‚-
-+K™ 
-K  ∫fK  ∫ 
-⁄
-
-Z“W
-U  äNgJ‚G
-7˙4
-  ö
-  ∞  ¬ “
-  “	
-  ∞ 
-™	
-  ∞" * 2ã 2å2ç2é#2è"2ê!2ë 2íh2îi2ñg2ójRes.unizar.iaaa.tfg.constantsrq jk
-i“f
-d   ]
-  ∞i  ∞   ÿ   ∞h
-  ¬ô
-  ¬ô
-  ¬ô
-  ¬ô  ˙ àãàåàñí 

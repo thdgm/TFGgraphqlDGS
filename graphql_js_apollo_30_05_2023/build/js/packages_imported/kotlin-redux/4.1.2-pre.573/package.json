@@ -1,0 +1,13 @@
+{
+  "name": "kotlin-redux",
+  "version": "4.1.2-pre.573",
+  "main": "kotlin-redux.js",
+  "types": "kotlin-redux.d.ts",
+  "devDependencies": {},
+  "dependencies": {
+    "redux": "^4.1.2"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

@@ -18,39 +18,79 @@
 }(this, function (_, kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core, kotlin_kotlin, kotlin_io_ktor_ktor_utils) {
   'use strict';
   //region block: imports
-  var LinkedListNode = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.j1;
-  var classMeta = kotlin_kotlin.$_$.t6;
-  var setMetadataFor = kotlin_kotlin.$_$.o7;
-  var CopyOnWriteHashMap = kotlin_io_ktor_ktor_utils.$_$.f;
-  var equals = kotlin_kotlin.$_$.v6;
-  var THROW_CCE = kotlin_kotlin.$_$.o9;
-  var addSuppressed = kotlin_kotlin.$_$.s9;
-  var Unit_getInstance = kotlin_kotlin.$_$.a3;
+  var LinkedListNode = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.o1;
+  var DisposableHandle = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.x1;
+  var classMeta = kotlin_kotlin.$_$.ya;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
+  var LinkedListHead = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.n1;
+  var CopyOnWriteHashMap = kotlin_io_ktor_ktor_utils.$_$.g;
+  var equals = kotlin_kotlin.$_$.ab;
+  var THROW_CCE = kotlin_kotlin.$_$.kf;
+  var addSuppressed = kotlin_kotlin.$_$.xf;
+  var Unit_getInstance = kotlin_kotlin.$_$.s5;
   //endregion
   //region block: pre-declaration
-  setMetadataFor(HandlerRegistration, 'HandlerRegistration', classMeta, LinkedListNode, undefined, undefined, undefined, []);
+  setMetadataFor(HandlerRegistration, 'HandlerRegistration', classMeta, LinkedListNode, [LinkedListNode, DisposableHandle], undefined, undefined, []);
   setMetadataFor(Events, 'Events', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(EventDefinition, 'EventDefinition', classMeta, undefined, undefined, undefined, undefined, []);
   //endregion
-  function HandlerRegistration() {
+  function _get_handlers__pkfn2a($this) {
+    return $this.handlers_1;
+  }
+  function HandlerRegistration(handler) {
+    LinkedListNode.call(this);
+    this.handler_1 = handler;
+  }
+  HandlerRegistration.prototype.get_handler_cq14kh_k$ = function () {
+    return this.handler_1;
+  };
+  HandlerRegistration.prototype.dispose_3n44we_k$ = function () {
+    this.remove_fgfybg_k$();
+  };
+  function Events$subscribe$lambda(it) {
+    return new LinkedListHead();
   }
   function Events() {
-    this.r2j_1 = new CopyOnWriteHashMap();
+    this.handlers_1 = new CopyOnWriteHashMap();
   }
-  Events.prototype.s2j = function (definition, value) {
-    var exception = null;
-    var tmp0_safe_receiver = this.r2j_1.b2(definition);
+  Events.prototype.subscribe_uolsjj_k$ = function (definition, handler) {
+    var registration = new HandlerRegistration(handler);
+    this.handlers_1.computeIfAbsent_uwu79p_k$(definition, Events$subscribe$lambda).addLast_uyctnf_k$(registration);
+    return registration;
+  };
+  Events.prototype.unsubscribe_4y4hkn_k$ = function (definition, handler) {
+    var tmp0_safe_receiver = this.handlers_1.get_1mhr4y_k$(definition);
     if (tmp0_safe_receiver == null)
       null;
     else {
       // Inline function 'kotlinx.coroutines.internal.LinkedListHead.forEach' call
-      var cur = tmp0_safe_receiver.di_1;
+      var cur = tmp0_safe_receiver.get__next_inmai1_k$();
+      while (!equals(cur, tmp0_safe_receiver)) {
+        if (cur instanceof HandlerRegistration) {
+          // Inline function 'io.ktor.events.Events.unsubscribe.<anonymous>' call
+          var tmp0__anonymous__q1qw7t = cur;
+          if (equals(tmp0__anonymous__q1qw7t.handler_1, handler)) {
+            tmp0__anonymous__q1qw7t.remove_fgfybg_k$();
+          }
+        }
+        cur = cur.get__next_inmai1_k$();
+      }
+    }
+  };
+  Events.prototype.raise_ojaa37_k$ = function (definition, value) {
+    var exception = null;
+    var tmp0_safe_receiver = this.handlers_1.get_1mhr4y_k$(definition);
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      // Inline function 'kotlinx.coroutines.internal.LinkedListHead.forEach' call
+      var cur = tmp0_safe_receiver.get__next_inmai1_k$();
       while (!equals(cur, tmp0_safe_receiver)) {
         if (cur instanceof HandlerRegistration) {
           // Inline function 'io.ktor.events.Events.raise.<anonymous>' call
           var tmp0__anonymous__q1qw7t = cur;
           try {
-            var tmp = tmp0__anonymous__q1qw7t.w2j_1;
+            var tmp = tmp0__anonymous__q1qw7t.handler_1;
             (typeof tmp === 'function' ? tmp : THROW_CCE())(value);
           } catch ($p) {
             if ($p instanceof Error) {
@@ -76,7 +116,7 @@
             }
           }
         }
-        cur = cur.di_1;
+        cur = cur.get__next_inmai1_k$();
       }
     }
     var tmp1_safe_receiver = exception;

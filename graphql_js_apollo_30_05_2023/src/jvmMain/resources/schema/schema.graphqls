@@ -7,6 +7,7 @@ type Query {
   resource(id: ID): Resource
   catalog(id: ID): Catalog
   dataset(id: ID): DatasetInCatalog
+  numberOfResources(type: String!): Int
   dataService(id: ID): DataService
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord
@@ -19,8 +20,8 @@ type Query {
   getAllFrequencies(page: Int!, pageSize: Int!): [String] # Get all existing Frequency's ranges
   getAllFormats(page: Int!, pageSize: Int!): [String]     # Get all existing Formats
   getAllAdminLabel(page: Int!, pageSize: Int!): [String]  # Get all existing Publisher's notations p.g: L02000048 mapped
-                              # Map them. If starts with L0: Local Administration
-                              # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
+  # Map them. If starts with L0: Local Administration
+  # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
 
 
 }

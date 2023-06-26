@@ -1,0 +1,10 @@
+builtins_platform=JS
+unique_name=org.jetbrains.kotlin-wrappers\:kotlin-react-redux
+compiler_version=1.8.20
+depends=org.jetbrains.kotlin-wrappers\:kotlin-react-legacy org.jetbrains.kotlin-wrappers\:kotlin-redux org.jetbrains.kotlin-wrappers\:kotlin-extensions org.jetbrains.kotlin-wrappers\:kotlin-react-core org.jetbrains.kotlin-wrappers\:kotlin-csstype org.jetbrains.kotlin-wrappers\:kotlin-browser org.jetbrains.kotlin-wrappers\:kotlin-cssom-core org.jetbrains.kotlin-wrappers\:kotlin-web org.jetbrains.kotlin-wrappers\:kotlin-js org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlinx\:atomicfu org.jetbrains.kotlinx\:kotlinx-serialization-core kotlin org.jetbrains.kotlin\:kotlinx-atomicfu-runtime
+serializedKlibFingerprint=2o6ky4fgh1ezf.156nbouqsfdfh
+serializedIrFileFingerprints=SerializedIrFileFingerprint(fileFingerprint\=2prmu3fd0179f.3ekgrbekrf3jp) SerializedIrFileFingerprint(fileFingerprint\=3ouj5kkfi35kf.wofki3zfhr5p) SerializedIrFileFingerprint(fileFingerprint\=2ym7qrhkudtrj.jdh9pbir99bv) SerializedIrFileFingerprint(fileFingerprint\=24o4zz1b9a7j4.236fbpqeuk552)
+jsOutputName=kotlin-react-redux
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

@@ -25,6 +25,8 @@ type Query {
 
   dataset(id: ID): DatasetInCatalog
 
+  numberOfResources(type: String!): Int
+
   dataService(id: ID): DataService
 
   datasetSeries(id: ID): DatasetSeries
@@ -33,7 +35,7 @@ type Query {
 
   distribution(id: ID): Distribution
 
-  resourcesByFilter(filter: String, value: [String!], page: Int!): [Resource]
+  resourcesByFilter(filters: [MapInput!], type: String!, page: Int!): [Resource]
 
   findResourceByIdentifier(id: String): Resource
 
@@ -66,6 +68,12 @@ input CatalogRecordInput {
   contentUrl: String
 
   hints: [String!]
+}
+
+input MapInput {
+  key: String!
+
+  values: [String!]!
 }
 
 union CatalogRecordOutput = CatalogRecord|Error
@@ -202,6 +210,8 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
   inCatalog(filter: String): [Catalog!]
 
   isPrimaryTopicOf(filter: String): [CatalogRecord!]
+
+  isAccessedBy: [Distribution!]
 
   theme: [String!]
 
@@ -350,6 +360,8 @@ type Distribution implements ReferenceWithinExternalContext {
   title: [LangString!]
 
   accessUrl: String
+
+  isDistributionOf: [Dataset!]
 
   accessService: [DataService!]
 

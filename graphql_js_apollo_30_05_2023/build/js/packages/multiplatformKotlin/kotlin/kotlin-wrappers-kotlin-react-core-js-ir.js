@@ -17,12 +17,25 @@
   //region block: imports
   var useEffect = $module$react.useEffect;
   var useContext = $module$react.useContext;
-  var Unit_getInstance = kotlin_kotlin.$_$.a3;
-  var toString = kotlin_kotlin.$_$.s7;
-  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.o1;
+  var Unit_getInstance = kotlin_kotlin.$_$.s5;
+  var classMeta = kotlin_kotlin.$_$.ya;
+  var setMetadataFor = kotlin_kotlin.$_$.dc;
+  var toString = kotlin_kotlin.$_$.hc;
+  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.h2;
   //endregion
   //region block: pre-declaration
+  setMetadataFor(EffectBuilder, 'EffectBuilder', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(StateInstance, 'StateInstance', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(StateSetter, 'StateSetter', classMeta, undefined, undefined, undefined, undefined, []);
   //endregion
+  function EffectBuilder() {
+  }
+  EffectBuilder.prototype.cleanup_hwidaq_k$ = function (block) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    tmp$ret$0.push(block);
+  };
   function createEffectCallback(effect) {
     return createEffectCallback$lambda(effect);
   }
@@ -69,6 +82,64 @@
       return Unit_getInstance();
     };
   }
+  function IntrinsicType(tagName) {
+    var tmp$ret$1;
+    // Inline function 'kotlin.js.unsafeCast' call
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = tagName;
+    tmp$ret$1 = tmp$ret$0;
+    return tmp$ret$1;
+  }
+  function ReactNode(source) {
+    var tmp$ret$1;
+    // Inline function 'kotlin.js.unsafeCast' call
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = source;
+    tmp$ret$1 = tmp$ret$0;
+    return tmp$ret$1;
+  }
+  function StateInstance() {
+  }
+  StateInstance.prototype.component1_7eebsc_k$ = function () {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    return tmp$ret$0[0];
+  };
+  StateInstance.prototype.component2_7eebsb_k$ = function () {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    return tmp$ret$0[1];
+  };
+  StateInstance.prototype.getValue_elrtsm_k$ = function (thisRef, property) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    return tmp$ret$0[0];
+  };
+  StateInstance.prototype.setValue_r8gule_k$ = function (thisRef, property, value) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    tmp$ret$0[1](value);
+  };
+  function StateSetter() {
+  }
+  StateSetter.prototype.invoke_n4yk90_k$ = function (value) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    tmp$ret$0(value);
+  };
+  StateSetter.prototype.invoke_bmpgyi_k$ = function (transform) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = this;
+    tmp$ret$0(transform);
+  };
   function useEffect_0(dependencies, effect) {
     var callback = createEffectCallback(effect);
     useEffect(callback, dependencies);

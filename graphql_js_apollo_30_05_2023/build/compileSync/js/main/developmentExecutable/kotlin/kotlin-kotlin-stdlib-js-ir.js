@@ -11274,6 +11274,9 @@ if (typeof Math.imul === 'undefined') {
   function TODO() {
     throw NotImplementedError_init_$Create$(null, 1, null);
   }
+  function TODO_0(reason) {
+    throw new NotImplementedError('An operation is not implemented: ' + reason);
+  }
   function Pair(first, second) {
     this.first_1 = first;
     this.second_1 = second;
