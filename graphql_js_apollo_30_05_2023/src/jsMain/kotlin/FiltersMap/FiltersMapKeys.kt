@@ -20,6 +20,8 @@ class FiltersMapKeys {
             "Formato" to listOf(),
             "PrimaryTopic" to listOf(),
             "Page" to listOf(),
+            "OrderBy" to listOf("ASC"),
+            "SortBy" to listOf(""),
         ),
         "DatasetSeries" to mutableMapOf(
             "Categoría" to listOf(),

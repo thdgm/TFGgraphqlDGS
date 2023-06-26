@@ -55540,6 +55540,8 @@
     var handleChange = selectFilter$lambda$lambda(orderVal$delegate);
     var tmp = default_51;
     $this$FC.invoke_hixay3_k$(tmp, selectFilter$lambda$lambda_0(handleChange, orderVal$delegate));
+    var tmp_0 = default_51;
+    $this$FC.invoke_hixay3_k$(tmp_0, selectFilter$lambda$lambda_1);
     return Unit_getInstance();
   }
   function invoke$lambda_160($orderVal$delegate) {
@@ -55585,14 +55587,38 @@
   }
   function selectFilter$lambda$lambda$lambda$lambda_0($this$invoke) {
     init_properties_SelectFilter_kt_630vei();
-    $this$invoke.value = 'ASC';
-    $this$invoke.unaryPlus_g7ydph_k$('Ascendente');
+    $this$invoke.value = '0';
+    $this$invoke.unaryPlus_g7ydph_k$('Fecha creaci\xF3n');
     return Unit_getInstance();
   }
   function selectFilter$lambda$lambda$lambda$lambda_1($this$invoke) {
     init_properties_SelectFilter_kt_630vei();
-    $this$invoke.value = 'DESC';
-    $this$invoke.unaryPlus_g7ydph_k$('Descendente');
+    $this$invoke.value = '1';
+    $this$invoke.unaryPlus_g7ydph_k$('\xDAltima modificaci\xF3n');
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda_2($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$invoke.value = '2';
+    $this$invoke.unaryPlus_g7ydph_k$('Publicador');
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda_3($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$invoke.value = '3';
+    $this$invoke.unaryPlus_g7ydph_k$('T\xEDtulo');
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda_4($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$invoke.value = '4';
+    $this$invoke.unaryPlus_g7ydph_k$('Categoria');
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda_5($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$invoke.value = '5';
+    $this$invoke.unaryPlus_g7ydph_k$('Nivel de Admon');
     return Unit_getInstance();
   }
   function selectFilter$lambda$lambda$lambda_0($handleChange, $orderVal$delegate) {
@@ -55632,6 +55658,14 @@
       $this$invoke.invoke_hixay3_k$(tmp_0, selectFilter$lambda$lambda$lambda$lambda_0);
       var tmp_1 = default_67;
       $this$invoke.invoke_hixay3_k$(tmp_1, selectFilter$lambda$lambda$lambda$lambda_1);
+      var tmp_2 = default_67;
+      $this$invoke.invoke_hixay3_k$(tmp_2, selectFilter$lambda$lambda$lambda$lambda_2);
+      var tmp_3 = default_67;
+      $this$invoke.invoke_hixay3_k$(tmp_3, selectFilter$lambda$lambda$lambda$lambda_3);
+      var tmp_4 = default_67;
+      $this$invoke.invoke_hixay3_k$(tmp_4, selectFilter$lambda$lambda$lambda$lambda_4);
+      var tmp_5 = default_67;
+      $this$invoke.invoke_hixay3_k$(tmp_5, selectFilter$lambda$lambda$lambda$lambda_5);
       return Unit_getInstance();
     };
   }
@@ -55669,6 +55703,136 @@
       $this$invoke.invoke_hixay3_k$(tmp_0, selectFilter$lambda$lambda$lambda_0($handleChange, $orderVal$delegate));
       return Unit_getInstance();
     };
+  }
+  function selectFilter$lambda$lambda_1($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    var tmp = default_61;
+    $this$invoke.invoke_hixay3_k$(tmp, selectFilter$lambda$lambda$lambda_1);
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda_1($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    // Inline function 'mui.system.sx' call
+    var tmp0_sx = $this$invoke;
+    var tmp$ret$2;
+    // Inline function 'kotlinx.js.jso' call
+    var tmp$ret$1;
+    // Inline function 'kotlin.apply' call
+    var tmp$ret$0;
+    // Inline function 'kotlinx.js.jso' call
+    tmp$ret$0 = {};
+    var tmp0_apply = tmp$ret$0;
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'components.commmon.selectFilter.selectFilter.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+    tmp0_apply.flexDirection = (/*union*/{column: 'column', columnReverse: 'column-reverse', row: 'row', rowReverse: 'row-reverse'}/*union*/).row;
+    tmp$ret$1 = tmp0_apply;
+    tmp$ret$2 = tmp$ret$1;
+    tmp0_sx.sx = tmp$ret$2;
+    $this$invoke.row = true;
+    $this$invoke.defaultValue = 'asc';
+    var tmp = default_62;
+    $this$invoke.invoke_hixay3_k$(tmp, selectFilter$lambda$lambda$lambda$lambda_6);
+    var tmp_0 = default_62;
+    $this$invoke.invoke_hixay3_k$(tmp_0, selectFilter$lambda$lambda$lambda$lambda_7);
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda_6($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$invoke.value = 'asc';
+    var tmp = default_63;
+    $this$invoke.control = create(tmp, selectFilter$lambda$lambda$lambda$lambda$lambda);
+    var tmp_0 = default_14;
+    $this$invoke.label = create(tmp_0, selectFilter$lambda$lambda$lambda$lambda$lambda_0);
+    $this$invoke.labelPlacement = (/*union*/{end: 'end', start: 'start', top: 'top', bottom: 'bottom'}/*union*/).start;
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda$lambda($this$create) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$create.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda$lambda_0($this$create) {
+    init_properties_SelectFilter_kt_630vei();
+    // Inline function 'mui.system.sx' call
+    var tmp0_sx = $this$create;
+    var tmp$ret$2;
+    // Inline function 'kotlinx.js.jso' call
+    var tmp$ret$1;
+    // Inline function 'kotlin.apply' call
+    var tmp$ret$0;
+    // Inline function 'kotlinx.js.jso' call
+    tmp$ret$0 = {};
+    var tmp0_apply = tmp$ret$0;
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'components.commmon.selectFilter.selectFilter.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+    tmp0_apply.fontSize = (/*union*/{large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', larger: 'larger', smaller: 'smaller'}/*union*/).smaller;
+    tmp$ret$1 = tmp0_apply;
+    tmp$ret$2 = tmp$ret$1;
+    tmp0_sx.sx = tmp$ret$2;
+    $this$create.unaryPlus_g7ydph_k$('ASC');
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda_7($this$invoke) {
+    init_properties_SelectFilter_kt_630vei();
+    $this$invoke.value = 'desc';
+    var tmp = default_63;
+    $this$invoke.control = create(tmp, selectFilter$lambda$lambda$lambda$lambda$lambda_1);
+    var tmp_0 = default_14;
+    $this$invoke.label = create(tmp_0, selectFilter$lambda$lambda$lambda$lambda$lambda_2);
+    $this$invoke.labelPlacement = (/*union*/{end: 'end', start: 'start', top: 'top', bottom: 'bottom'}/*union*/).end;
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda$lambda_1($this$create) {
+    init_properties_SelectFilter_kt_630vei();
+    // Inline function 'mui.system.sx' call
+    var tmp0_sx = $this$create;
+    var tmp$ret$5;
+    // Inline function 'kotlinx.js.jso' call
+    var tmp$ret$4;
+    // Inline function 'kotlin.apply' call
+    var tmp$ret$0;
+    // Inline function 'kotlinx.js.jso' call
+    tmp$ret$0 = {};
+    var tmp0_apply = tmp$ret$0;
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'components.commmon.selectFilter.selectFilter.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+    var tmp$ret$3;
+    // Inline function 'csstype.pct' call
+    var tmp$ret$2;
+    // Inline function 'kotlin.js.unsafeCast' call
+    var tmp0_unsafeCast = '6%';
+    var tmp$ret$1;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$1 = tmp0_unsafeCast;
+    tmp$ret$2 = tmp$ret$1;
+    tmp$ret$3 = tmp$ret$2;
+    tmp0_apply.marginLeft = tmp$ret$3;
+    tmp$ret$4 = tmp0_apply;
+    tmp$ret$5 = tmp$ret$4;
+    tmp0_sx.sx = tmp$ret$5;
+    $this$create.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
+    return Unit_getInstance();
+  }
+  function selectFilter$lambda$lambda$lambda$lambda$lambda_2($this$create) {
+    init_properties_SelectFilter_kt_630vei();
+    // Inline function 'mui.system.sx' call
+    var tmp0_sx = $this$create;
+    var tmp$ret$2;
+    // Inline function 'kotlinx.js.jso' call
+    var tmp$ret$1;
+    // Inline function 'kotlin.apply' call
+    var tmp$ret$0;
+    // Inline function 'kotlinx.js.jso' call
+    tmp$ret$0 = {};
+    var tmp0_apply = tmp$ret$0;
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'components.commmon.selectFilter.selectFilter.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+    tmp0_apply.fontSize = (/*union*/{large: 'large', medium: 'medium', small: 'small', xLarge: 'x-large', xSmall: 'x-small', xxLarge: 'xx-large', xxSmall: 'xx-small', xxxLarge: 'xxx-large', larger: 'larger', smaller: 'smaller'}/*union*/).smaller;
+    tmp$ret$1 = tmp0_apply;
+    tmp$ret$2 = tmp$ret$1;
+    tmp0_sx.sx = tmp$ret$2;
+    $this$create.unaryPlus_g7ydph_k$('DESC');
+    return Unit_getInstance();
   }
   var properties_initialized_SelectFilter_kt_gzrh9m;
   function init_properties_SelectFilter_kt_630vei() {

@@ -42,7 +42,7 @@ suspend fun getDatasets(filters: MutableMap<String, MutableMap<String, Collectio
     val filter = if (checkIfSelectedFiltersIsEmpty(selectedFilters?.filter { it.key != "Page" })){
         emptyList()
     }else{
-        selectedFilters?.filter { it.key != "Page" }
+        selectedFilters?.filter { it.key != "Page" && it.key != "OrderBy" && it.key != "SortBy" }
 
     }
     console.log("FILTROO: "+filter)

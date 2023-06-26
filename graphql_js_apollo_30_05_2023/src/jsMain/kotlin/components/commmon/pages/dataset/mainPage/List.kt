@@ -155,6 +155,7 @@ val list = FC<ListProps> { props ->
                 selectFilter()
             }
 
+
         }
         if (!checkIfSelectedFiltersIsEmpty()){
 
