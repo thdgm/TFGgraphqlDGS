@@ -160,6 +160,8 @@ public object DgsConstants {
 
     public const val IsPrimaryTopicOf: String = "isPrimaryTopicOf"
 
+    public const val IsAccessedBy: String = "isAccessedBy"
+
     public const val Theme: String = "theme"
 
     public const val License: String = "license"
@@ -369,6 +371,8 @@ public object DgsConstants {
     public const val Title: String = "title"
 
     public const val AccessUrl: String = "accessUrl"
+
+    public const val IsDistributionOf: String = "isDistributionOf"
 
     public const val AccessService: String = "accessService"
 

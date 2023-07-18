@@ -43,6 +43,11 @@ if (typeof Math.clz32 === 'undefined') {
     };
   }(Math.log, Math.LN2);
 }
+if (typeof Math.log10 === 'undefined') {
+  Math.log10 = function (x) {
+    return Math.log(x) * Math.LOG10E;
+  };
+}
 if (typeof Math.sign === 'undefined') {
   Math.sign = function (x) {
     x = +x; // convert to a number
@@ -50,11 +55,6 @@ if (typeof Math.sign === 'undefined') {
       return Number(x);
     }
     return x > 0 ? 1 : -1;
-  };
-}
-if (typeof Math.log10 === 'undefined') {
-  Math.log10 = function (x) {
-    return Math.log(x) * Math.LOG10E;
   };
 }
 if (typeof String.prototype.startsWith === 'undefined') {

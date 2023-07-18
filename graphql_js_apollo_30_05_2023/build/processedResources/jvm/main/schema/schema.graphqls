@@ -1,7 +1,7 @@
 schema {
   query: Query
+  mutation: Mutation
 }
-
 
 type Query {
   resource(id: ID): Resource
@@ -24,6 +24,8 @@ type Query {
   # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
 
 
+
+
 }
 
 type Mutation {
@@ -43,8 +45,6 @@ input MapInput {
   key: String!
   values: [String!]!
 }
-
-
 union CatalogRecordOutput = CatalogRecord | Error
 
 type Error{
@@ -189,6 +189,9 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
   inCatalog(filter:String): [Catalog!]
   # From https://w3c.github.io/dxwg/dcat/#inverse-properties
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
+
+  isAccessedBy :[Distribution!]
+
   theme:[String!]
   license:String
   publisher:Concept
@@ -332,6 +335,8 @@ type Distribution implements ReferenceWithinExternalContext{
   # e.g. with UrlValidator or URL(url).toURI()
   accessUrl:String
 
+  isDistributionOf: [Dataset!]
+
   accessService: [DataService!] # A data service that gives access to the distribution of the dataset
   byteSize: NonNegativeInt
 
@@ -379,4 +384,3 @@ scalar NonNegativeInt
 scalar Concept
 
 scalar MediaType
-

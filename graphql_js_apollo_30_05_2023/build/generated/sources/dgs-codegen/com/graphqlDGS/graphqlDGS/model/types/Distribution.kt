@@ -16,6 +16,8 @@ public data class Distribution(
   public val title: List<LangString>? = null,
   @JsonProperty("accessUrl")
   public val accessUrl: String? = null,
+  @JsonProperty("isDistributionOf")
+  public val isDistributionOf: List<Dataset>? = null,
   @JsonProperty("accessService")
   public val accessService: List<DataService>? = null,
   @JsonProperty("byteSize")

@@ -28,6 +28,8 @@ public data class DataService(
   public override val inCatalog: List<Catalog>? = null,
   @JsonProperty("isPrimaryTopicOf")
   public override val isPrimaryTopicOf: List<CatalogRecord>? = null,
+  @JsonProperty("isAccessedBy")
+  public val isAccessedBy: List<Distribution>? = null,
   @JsonProperty("theme")
   public override val theme: List<String>? = null,
   @JsonProperty("license")
