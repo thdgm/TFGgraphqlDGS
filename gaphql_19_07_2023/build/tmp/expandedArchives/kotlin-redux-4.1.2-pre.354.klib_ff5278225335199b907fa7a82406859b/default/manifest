@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=org.jetbrains.kotlin-wrappers\:kotlin-redux
+compiler_version=1.7.10
+depends=org.jetbrains.kotlin-wrappers\:kotlin-extensions org.jetbrains.kotlin-wrappers\:kotlin-js org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlinx\:kotlinx-serialization-core kotlin
+jsOutputName=kotlin-wrappers-kotlin-redux-js-ir
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0
