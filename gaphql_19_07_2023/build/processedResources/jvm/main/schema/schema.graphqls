@@ -7,7 +7,7 @@ type Query {
   resource(id: ID): Resource
   catalog(id: ID): Catalog
   dataset(id: ID): DatasetInCatalog
-  numberOfResources(type: String!): Int
+  numberOfResources(filters:[MapInput!],type: String!): Int
   dataService(id: ID): DataService
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord

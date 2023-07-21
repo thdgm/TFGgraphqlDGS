@@ -442,6 +442,7 @@
   var mutableListOf = kotlin_kotlin.$_$.r8;
   var contains$default = kotlin_kotlin.$_$.n;
   var println = kotlin_kotlin.$_$.oa;
+  var charSequenceGet = kotlin_kotlin.$_$.va;
   var numberToInt = kotlin_kotlin.$_$.ac;
   var joinToString$default = kotlin_kotlin.$_$.l;
   var distinct = kotlin_kotlin.$_$.m7;
@@ -666,14 +667,14 @@
   setMetadataFor(filterInfoDServ$lambda$lambda$slambda_1, 'filterInfoDServ$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(listDataServ$lambda$lambda$slambda, 'listDataServ$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(resourceInfo$lambda$lambda$slambda, 'resourceInfo$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
-  setMetadataFor($getResourceInfoCOROUTINE$18, '$getResourceInfoCOROUTINE$18', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getResourceInfoCOROUTINE$0, '$getResourceInfoCOROUTINE$0', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
   setMetadataFor(ResourceInfoElements$lambda$lambda$slambda, 'ResourceInfoElements$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(filterInfo$lambda$lambda$slambda, 'filterInfo$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(filterInfo$lambda$lambda$slambda_1, 'filterInfo$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(InitPage$lambda$lambda$slambda, 'InitPage$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(InitPage$lambda$lambda$slambda_1, 'InitPage$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
-  setMetadataFor($getDatasetsCOROUTINE$0, '$getDatasetsCOROUTINE$0', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
-  setMetadataFor($getResourcesNumberCOROUTINE$1, '$getResourcesNumberCOROUTINE$1', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getDatasetsCOROUTINE$19, '$getDatasetsCOROUTINE$19', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getResourcesNumberCOROUTINE$20, '$getResourcesNumberCOROUTINE$20', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
   setMetadataFor(list$lambda$lambda$lambda$slambda, 'list$lambda$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [2]);
   setMetadataFor(filterForm$lambda$lambda$slambda, 'filterForm$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(filterForm$lambda$lambda$lambda$lambda$lambda$lambda$slambda, 'filterForm$lambda$lambda$lambda$lambda$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [0]);
@@ -2402,6 +2403,15 @@
       return false;
     return true;
   };
+  function NumberOfResourcesQuery_init_$Init$(filter, type, $mask0, $marker, $this) {
+    if (!(($mask0 & 1) === 0))
+      filter = Absent_getInstance();
+    NumberOfResourcesQuery.call($this, filter, type);
+    return $this;
+  }
+  function NumberOfResourcesQuery_init_$Create$(filter, type, $mask0, $marker) {
+    return NumberOfResourcesQuery_init_$Init$(filter, type, $mask0, $marker, Object.create(NumberOfResourcesQuery.prototype));
+  }
   function Data_7(numberOfResources) {
     this.numberOfResources_1 = numberOfResources;
   }
@@ -2437,14 +2447,14 @@
   };
   function Companion_6() {
     Companion_instance_6 = this;
-    this.OPERATION_ID_1 = '33803b08f552f01c486f94d2e619328b050f98c7c4a3697379d15e597c794c42';
+    this.OPERATION_ID_1 = '2aae12f5e33e31ccd9265a47cb80e20951e7c4c4aa4d2adb54d5bd86b2f2a5ca';
     this.OPERATION_NAME_1 = 'NumberOfResources';
   }
   Companion_6.prototype.get_OPERATION_ID_wp2zs4_k$ = function () {
     return this.OPERATION_ID_1;
   };
   Companion_6.prototype.get_OPERATION_DOCUMENT_t250nw_k$ = function () {
-    return 'query NumberOfResources($type: String!) { numberOfResources(type: $type) }';
+    return 'query NumberOfResources($filter: [MapInput!], $type: String!) { numberOfResources(filters: $filter, type: $type) }';
   };
   Companion_6.prototype.get_OPERATION_NAME_px1ppw_k$ = function () {
     return this.OPERATION_NAME_1;
@@ -2455,16 +2465,20 @@
       new Companion_6();
     return Companion_instance_6;
   }
-  function NumberOfResourcesQuery(type) {
+  function NumberOfResourcesQuery(filter, type) {
     Companion_getInstance_7();
+    this.filter_1 = filter;
     this.type_1 = type;
   }
+  NumberOfResourcesQuery.prototype.get_filter_dbzd6p_k$ = function () {
+    return this.filter_1;
+  };
   NumberOfResourcesQuery.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
   };
   NumberOfResourcesQuery.prototype.operationId_2580de_k$ = function () {
     Companion_getInstance_7();
-    return '33803b08f552f01c486f94d2e619328b050f98c7c4a3697379d15e597c794c42';
+    return '2aae12f5e33e31ccd9265a47cb80e20951e7c4c4aa4d2adb54d5bd86b2f2a5ca';
   };
   NumberOfResourcesQuery.prototype.operationId = function () {
     return this.operationId_2580de_k$();
@@ -2487,21 +2501,28 @@
     return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(NumberOfResourcesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   NumberOfResourcesQuery.prototype.component1_7eebsc_k$ = function () {
+    return this.filter_1;
+  };
+  NumberOfResourcesQuery.prototype.component2_7eebsb_k$ = function () {
     return this.type_1;
   };
-  NumberOfResourcesQuery.prototype.copy_3t26ic_k$ = function (type) {
-    return new NumberOfResourcesQuery(type);
+  NumberOfResourcesQuery.prototype.copy_kf2znz_k$ = function (filter, type) {
+    return new NumberOfResourcesQuery(filter, type);
   };
-  NumberOfResourcesQuery.prototype.copy$default_q3pzg4_k$ = function (type, $mask0, $handler) {
+  NumberOfResourcesQuery.prototype.copy$default_m0lu04_k$ = function (filter, type, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
+      filter = this.filter_1;
+    if (!(($mask0 & 2) === 0))
       type = this.type_1;
-    return this.copy_3t26ic_k$(type);
+    return this.copy_kf2znz_k$(filter, type);
   };
   NumberOfResourcesQuery.prototype.toString = function () {
-    return 'NumberOfResourcesQuery(type=' + this.type_1 + ')';
+    return 'NumberOfResourcesQuery(filter=' + this.filter_1 + ', type=' + this.type_1 + ')';
   };
   NumberOfResourcesQuery.prototype.hashCode = function () {
-    return getStringHashCode(this.type_1);
+    var result = hashCode(this.filter_1);
+    result = imul(result, 31) + getStringHashCode(this.type_1) | 0;
+    return result;
   };
   NumberOfResourcesQuery.prototype.equals = function (other) {
     if (this === other)
@@ -2509,6 +2530,8 @@
     if (!(other instanceof NumberOfResourcesQuery))
       return false;
     var tmp0_other_with_cast = other instanceof NumberOfResourcesQuery ? other : THROW_CCE();
+    if (!equals(this.filter_1, tmp0_other_with_cast.filter_1))
+      return false;
     if (!(this.type_1 === tmp0_other_with_cast.type_1))
       return false;
     return true;
@@ -4023,6 +4046,12 @@
     throw IllegalStateException_init_$Create$('Input type used in output position');
   };
   NumberOfResourcesQuery_VariablesAdapter.prototype.toJson_yltl90_k$ = function (writer, customScalarAdapters, value) {
+    var tmp = value.get_filter_dbzd6p_k$();
+    if (tmp instanceof Present) {
+      writer.name_u79i4q_k$('filter');
+      var tmp_0 = MapInput_InputAdapter_getInstance();
+      present(nullable(list(obj$default(tmp_0, false, 1, null)))).toJson_pbe5tt_k$(writer, customScalarAdapters, value.get_filter_dbzd6p_k$());
+    }
     writer.name_u79i4q_k$('type');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_type_wovaf7_k$());
   };
@@ -4390,7 +4419,7 @@
   }
   function NumberOfResourcesQuerySelections() {
     NumberOfResourcesQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('numberOfResources', Companion_getInstance_23().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$())).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('numberOfResources', Companion_getInstance_23().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf_0([(new Builder_0('filters', new CompiledVariable('filter'))).build_1k0s4u_k$(), (new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   NumberOfResourcesQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -30414,7 +30443,7 @@
   }
   var resourceInfo;
   function getResourceInfo(id_dataset, $cont) {
-    var tmp = new $getResourceInfoCOROUTINE$18(id_dataset, $cont);
+    var tmp = new $getResourceInfoCOROUTINE$0(id_dataset, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
@@ -30598,11 +30627,11 @@
       return Unit_getInstance();
     };
   }
-  function $getResourceInfoCOROUTINE$18(id_dataset, resultContinuation) {
+  function $getResourceInfoCOROUTINE$0(id_dataset, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.id_dataset_1 = id_dataset;
   }
-  $getResourceInfoCOROUTINE$18.prototype.doResume_5yljmg_k$ = function () {
+  $getResourceInfoCOROUTINE$0.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -30650,168 +30679,177 @@
               var tmp_2 = tmp_1;
               var tmp3_safe_receiver = this.datasetInfo0__1.get_publisher_wg9par_k$();
               var tmp_3 = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_label_iuj8p7_k$();
-              var tmp4_safe_receiver = this.datasetInfo0__1.get_description_emjre5_k$();
               var tmp_4;
-              if (tmp4_safe_receiver == null) {
-                tmp_4 = null;
+              var tmp4_safe_receiver = this.datasetInfo0__1.get_publisher_wg9par_k$();
+              var tmp0_isNullOrBlank = tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_notation_5p7b5h_k$();
+              if (!(tmp0_isNullOrBlank == null ? true : isBlank(tmp0_isNullOrBlank))) {
+                tmp_4 = ConstantValues_getInstance().get_ADMON_LEVEL_m01s11_k$().get_1mhr4y_k$(new Char(charSequenceGet(ensureNotNull(this.datasetInfo0__1.get_publisher_wg9par_k$()).get_notation_5p7b5h_k$(), 0)));
               } else {
-                var tmp0_mapTo_0 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp4_safe_receiver, 10));
-                var tmp0_iterator_0 = tmp4_safe_receiver.iterator_jk1svi_k$();
+                tmp_4 = null;
+              }
+              var tmp_5 = tmp_4;
+              var tmp5_safe_receiver = this.datasetInfo0__1.get_description_emjre5_k$();
+              var tmp_6;
+              if (tmp5_safe_receiver == null) {
+                tmp_6 = null;
+              } else {
+                var tmp0_mapTo_0 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp5_safe_receiver, 10));
+                var tmp0_iterator_0 = tmp5_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_0.hasNext_bitz1p_k$()) {
                   var item_0 = tmp0_iterator_0.next_20eer_k$();
                   tmp0_mapTo_0.add_1j60pz_k$(item_0.get_literal_4a6pja_k$());
                 }
-                tmp_4 = tmp0_mapTo_0;
+                tmp_6 = tmp0_mapTo_0;
               }
-              var tmp_5 = tmp_4;
-              var tmp_6 = this.datasetInfo0__1.get_license_40u4wo_k$();
-              var tmp5_safe_receiver = this.datasetInfo0__1.get_keywords_n5gu4t_k$();
-              var tmp_7;
-              if (tmp5_safe_receiver == null) {
-                tmp_7 = null;
+              var tmp_7 = tmp_6;
+              var tmp_8 = this.datasetInfo0__1.get_license_40u4wo_k$();
+              var tmp6_safe_receiver = this.datasetInfo0__1.get_keywords_n5gu4t_k$();
+              var tmp_9;
+              if (tmp6_safe_receiver == null) {
+                tmp_9 = null;
               } else {
-                var tmp0_mapTo_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp5_safe_receiver, 10));
-                var tmp0_iterator_1 = tmp5_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_1 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp6_safe_receiver, 10));
+                var tmp0_iterator_1 = tmp6_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_1.hasNext_bitz1p_k$()) {
                   var item_1 = tmp0_iterator_1.next_20eer_k$();
                   tmp0_mapTo_1.add_1j60pz_k$(item_1.get_literal_4a6pja_k$());
                 }
-                tmp_7 = tmp0_mapTo_1;
+                tmp_9 = tmp0_mapTo_1;
               }
-              var tmp_8 = tmp_7;
-              var tmp_9 = this.datasetInfo0__1.get_theme_iz24rk_k$();
-              var tmp_10 = this.datasetInfo0__1.get_language_cjhhk1_k$();
-              var tmp_11 = toString(this.datasetInfo0__1.get_issued_ewqnxw_k$());
-              var tmp_12 = toString(this.datasetInfo0__1.get_modified_t1pq4y_k$());
-              var tmp_13 = this.datasetInfo0__1.get_accrualPeriodicity_m1omtp_k$();
-              var tmp_14 = this.datasetInfo0__1.get_spatial_w04r8l_k$();
-              var tmp6_safe_receiver = this.datasetInfo0__1.get_temporal_hdf8iz_k$();
-              var tmp_15 = toString(tmp6_safe_receiver == null ? null : tmp6_safe_receiver.get_start_iypx6h_k$());
+              var tmp_10 = tmp_9;
+              var tmp_11 = this.datasetInfo0__1.get_theme_iz24rk_k$();
+              var tmp_12 = this.datasetInfo0__1.get_language_cjhhk1_k$();
+              var tmp_13 = toString(this.datasetInfo0__1.get_issued_ewqnxw_k$());
+              var tmp_14 = toString(this.datasetInfo0__1.get_modified_t1pq4y_k$());
+              var tmp_15 = this.datasetInfo0__1.get_accrualPeriodicity_m1omtp_k$();
+              var tmp_16 = this.datasetInfo0__1.get_spatial_w04r8l_k$();
               var tmp7_safe_receiver = this.datasetInfo0__1.get_temporal_hdf8iz_k$();
-              var tmp_16 = toString(tmp7_safe_receiver == null ? null : tmp7_safe_receiver.get_end_18j6ha_k$());
-              var tmp8_safe_receiver = this.datasetInfo0__1.get_distributions_ua081m_k$();
-              var tmp_17;
-              if (tmp8_safe_receiver == null) {
-                tmp_17 = null;
+              var tmp_17 = toString(tmp7_safe_receiver == null ? null : tmp7_safe_receiver.get_start_iypx6h_k$());
+              var tmp8_safe_receiver = this.datasetInfo0__1.get_temporal_hdf8iz_k$();
+              var tmp_18 = toString(tmp8_safe_receiver == null ? null : tmp8_safe_receiver.get_end_18j6ha_k$());
+              var tmp9_safe_receiver = this.datasetInfo0__1.get_distributions_ua081m_k$();
+              var tmp_19;
+              if (tmp9_safe_receiver == null) {
+                tmp_19 = null;
               } else {
-                var tmp0_mapTo_2 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp8_safe_receiver, 10));
-                var tmp0_iterator_2 = tmp8_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_2 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp9_safe_receiver, 10));
+                var tmp0_iterator_2 = tmp9_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_2.hasNext_bitz1p_k$()) {
                   var item_2 = tmp0_iterator_2.next_20eer_k$();
                   var tmp0_elvis_lhs = item_2.get_accessUrl_qgq0ce_k$();
                   tmp0_mapTo_2.add_1j60pz_k$(tmp0_elvis_lhs == null ? '' : tmp0_elvis_lhs);
                 }
-                tmp_17 = tmp0_mapTo_2;
+                tmp_19 = tmp0_mapTo_2;
               }
-              var tmp9_safe_receiver = tmp_17;
-              var tmp_18;
-              if (tmp9_safe_receiver == null) {
-                tmp_18 = null;
+              var tmp10_safe_receiver = tmp_19;
+              var tmp_20;
+              if (tmp10_safe_receiver == null) {
+                tmp_20 = null;
               } else {
                 var tmp0_filterTo = ArrayList_init_$Create$();
-                var tmp0_iterator_3 = tmp9_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_iterator_3 = tmp10_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_3.hasNext_bitz1p_k$()) {
                   var element = tmp0_iterator_3.next_20eer_k$();
                   if (!(element === '')) {
                     tmp0_filterTo.add_1j60pz_k$(element);
                   }
                 }
-                tmp_18 = tmp0_filterTo;
+                tmp_20 = tmp0_filterTo;
               }
-              var tmp_19 = tmp_18;
-              var tmp10_safe_receiver = this.datasetInfo0__1.get_distributions_ua081m_k$();
-              var tmp_20;
-              if (tmp10_safe_receiver == null) {
-                tmp_20 = null;
+              var tmp_21 = tmp_20;
+              var tmp11_safe_receiver = this.datasetInfo0__1.get_distributions_ua081m_k$();
+              var tmp_22;
+              if (tmp11_safe_receiver == null) {
+                tmp_22 = null;
               } else {
-                var tmp0_mapTo_3 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp10_safe_receiver, 10));
-                var tmp0_iterator_4 = tmp10_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_3 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp11_safe_receiver, 10));
+                var tmp0_iterator_4 = tmp11_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_4.hasNext_bitz1p_k$()) {
                   var item_3 = tmp0_iterator_4.next_20eer_k$();
                   var tmp0_safe_receiver_0 = item_3.get_format_dfdtds_k$();
                   var tmp1_elvis_lhs = tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.get_subtype_tmcigf_k$();
                   tmp0_mapTo_3.add_1j60pz_k$(tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs);
                 }
-                tmp_20 = tmp0_mapTo_3;
+                tmp_22 = tmp0_mapTo_3;
               }
-              var tmp11_safe_receiver = tmp_20;
-              var tmp_21;
-              if (tmp11_safe_receiver == null) {
-                tmp_21 = null;
+              var tmp12_safe_receiver = tmp_22;
+              var tmp_23;
+              if (tmp12_safe_receiver == null) {
+                tmp_23 = null;
               } else {
                 var tmp0_filterTo_0 = ArrayList_init_$Create$();
-                var tmp0_iterator_5 = tmp11_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_iterator_5 = tmp12_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_5.hasNext_bitz1p_k$()) {
                   var element_0 = tmp0_iterator_5.next_20eer_k$();
                   if (!(element_0 === '')) {
                     tmp0_filterTo_0.add_1j60pz_k$(element_0);
                   }
                 }
-                tmp_21 = tmp0_filterTo_0;
+                tmp_23 = tmp0_filterTo_0;
               }
-              var tmp_22 = tmp_21;
-              var tmp12_elvis_lhs = this.datasetInfo0__1.get_identifier_o3acky_k$();
-              var tmp_23 = tmp12_elvis_lhs == null ? emptyList() : tmp12_elvis_lhs;
-              var tmp13_safe_receiver = this.datasetInfo0__1.get_isPrimaryTopicOf_r508lz_k$();
-              var tmp_24;
-              if (tmp13_safe_receiver == null) {
-                tmp_24 = null;
+              var tmp_24 = tmp_23;
+              var tmp13_elvis_lhs = this.datasetInfo0__1.get_identifier_o3acky_k$();
+              var tmp_25 = tmp13_elvis_lhs == null ? emptyList() : tmp13_elvis_lhs;
+              var tmp14_safe_receiver = this.datasetInfo0__1.get_isPrimaryTopicOf_r508lz_k$();
+              var tmp_26;
+              if (tmp14_safe_receiver == null) {
+                tmp_26 = null;
               } else {
-                var tmp0_mapTo_4 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp13_safe_receiver, 10));
-                var tmp0_iterator_6 = tmp13_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_4 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp14_safe_receiver, 10));
+                var tmp0_iterator_6 = tmp14_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_6.hasNext_bitz1p_k$()) {
                   var item_4 = tmp0_iterator_6.next_20eer_k$();
                   tmp0_mapTo_4.add_1j60pz_k$(item_4.get_id_kntnx8_k$());
                 }
-                tmp_24 = tmp0_mapTo_4;
+                tmp_26 = tmp0_mapTo_4;
               }
-              var tmp14_elvis_lhs = tmp_24;
-              var tmp_25 = tmp14_elvis_lhs == null ? emptyList() : tmp14_elvis_lhs;
-              var tmp15_safe_receiver = this.datasetInfo0__1.get_inCatalog_62ajyj_k$();
-              var tmp_26;
-              if (tmp15_safe_receiver == null) {
-                tmp_26 = null;
+              var tmp15_elvis_lhs = tmp_26;
+              var tmp_27 = tmp15_elvis_lhs == null ? emptyList() : tmp15_elvis_lhs;
+              var tmp16_safe_receiver = this.datasetInfo0__1.get_inCatalog_62ajyj_k$();
+              var tmp_28;
+              if (tmp16_safe_receiver == null) {
+                tmp_28 = null;
               } else {
-                var tmp0_mapTo_5 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp15_safe_receiver, 10));
-                var tmp0_iterator_7 = tmp15_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_5 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp16_safe_receiver, 10));
+                var tmp0_iterator_7 = tmp16_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_7.hasNext_bitz1p_k$()) {
                   var item_5 = tmp0_iterator_7.next_20eer_k$();
                   tmp0_mapTo_5.add_1j60pz_k$(item_5.get_id_kntnx8_k$());
                 }
-                tmp_26 = tmp0_mapTo_5;
+                tmp_28 = tmp0_mapTo_5;
               }
-              var tmp16_elvis_lhs = tmp_26;
-              var tmp_27 = tmp16_elvis_lhs == null ? emptyList() : tmp16_elvis_lhs;
-              var tmp17_safe_receiver = this.datasetInfo0__1.get_inSeries_x1aked_k$();
-              var tmp_28;
-              if (tmp17_safe_receiver == null) {
-                tmp_28 = null;
+              var tmp17_elvis_lhs = tmp_28;
+              var tmp_29 = tmp17_elvis_lhs == null ? emptyList() : tmp17_elvis_lhs;
+              var tmp18_safe_receiver = this.datasetInfo0__1.get_inSeries_x1aked_k$();
+              var tmp_30;
+              if (tmp18_safe_receiver == null) {
+                tmp_30 = null;
               } else {
-                var tmp0_mapTo_6 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp17_safe_receiver, 10));
-                var tmp0_iterator_8 = tmp17_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_6 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp18_safe_receiver, 10));
+                var tmp0_iterator_8 = tmp18_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_8.hasNext_bitz1p_k$()) {
                   var item_6 = tmp0_iterator_8.next_20eer_k$();
                   tmp0_mapTo_6.add_1j60pz_k$(item_6.get_id_kntnx8_k$());
                 }
-                tmp_28 = tmp0_mapTo_6;
+                tmp_30 = tmp0_mapTo_6;
               }
-              var tmp18_elvis_lhs = tmp_28;
-              var tmp_29 = tmp18_elvis_lhs == null ? emptyList() : tmp18_elvis_lhs;
-              var tmp19_safe_receiver = this.datasetInfo0__1.get_isServedBy_ahgxc1_k$();
-              var tmp_30;
-              if (tmp19_safe_receiver == null) {
-                tmp_30 = null;
+              var tmp19_elvis_lhs = tmp_30;
+              var tmp_31 = tmp19_elvis_lhs == null ? emptyList() : tmp19_elvis_lhs;
+              var tmp20_safe_receiver = this.datasetInfo0__1.get_isServedBy_ahgxc1_k$();
+              var tmp_32;
+              if (tmp20_safe_receiver == null) {
+                tmp_32 = null;
               } else {
-                var tmp0_mapTo_7 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp19_safe_receiver, 10));
-                var tmp0_iterator_9 = tmp19_safe_receiver.iterator_jk1svi_k$();
+                var tmp0_mapTo_7 = ArrayList_init_$Create$_0(collectionSizeOrDefault(tmp20_safe_receiver, 10));
+                var tmp0_iterator_9 = tmp20_safe_receiver.iterator_jk1svi_k$();
                 while (tmp0_iterator_9.hasNext_bitz1p_k$()) {
                   var item_7 = tmp0_iterator_9.next_20eer_k$();
                   tmp0_mapTo_7.add_1j60pz_k$(item_7.get_id_kntnx8_k$());
                 }
-                tmp_30 = tmp0_mapTo_7;
+                tmp_32 = tmp0_mapTo_7;
               }
-              var tmp20_elvis_lhs = tmp_30;
-              return listOf(new DatasetInfo(tmp_0, tmp_2, tmp_3, tmp_5, tmp_6, tmp_8, tmp_9, tmp_10, tmp_11, tmp_12, tmp_13, tmp_14, tmp_15, tmp_16, tmp_19, tmp_22, tmp_23, tmp_25, tmp_27, tmp_29, tmp20_elvis_lhs == null ? emptyList() : tmp20_elvis_lhs));
+              var tmp21_elvis_lhs = tmp_32;
+              return listOf(new DatasetInfo(tmp_0, tmp_2, tmp_3, tmp_5, tmp_7, tmp_8, tmp_10, tmp_11, tmp_12, tmp_13, tmp_14, tmp_15, tmp_16, tmp_17, tmp_18, tmp_21, tmp_24, tmp_25, tmp_27, tmp_29, tmp_31, tmp21_elvis_lhs == null ? emptyList() : tmp21_elvis_lhs));
             }
 
             return emptyList();
@@ -30860,9 +30898,6 @@
       if (invoke$lambda_78(isLoading$delegate)) {
         var tmp_0 = default_26;
         $this$FC.invoke_hixay3_k$(tmp_0, ResourceInfoElements$lambda$lambda_1);
-      } else {
-        $this$FC.unaryPlus_g7ydph_k$('No se ha encontrado informaci\xF3n del elemento');
-        $this$FC.invoke_7r4cgu_k$(get_PruebaInfo_2());
       }
     } else {
       var tmp$ret$4;
@@ -32204,14 +32239,6 @@
       return Unit_getInstance();
     };
   }
-  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_0($this$invoke) {
-    init_properties_ResourceInfoElements_kt_1pl5mh();
-    var tmp = default_30;
-    $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_1);
-    var tmp_0 = default_30;
-    $this$invoke.invoke_hixay3_k$(tmp_0, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_2);
-    return Unit_getInstance();
-  }
   function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_1($this$invoke) {
     init_properties_ResourceInfoElements_kt_1pl5mh();
     var tmp$ret$2;
@@ -32227,37 +32254,7 @@
     $this$invoke.unaryPlus_g7ydph_k$('Nivel de administraci\xF3n');
     return Unit_getInstance();
   }
-  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_2($this$invoke) {
-    init_properties_ResourceInfoElements_kt_1pl5mh();
-    var tmp$ret$2;
-    // Inline function 'csstype.ClassName' call
-    var tmp$ret$1;
-    // Inline function 'kotlin.js.unsafeCast' call
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = 'tableCell2';
-    tmp$ret$1 = tmp$ret$0;
-    tmp$ret$2 = tmp$ret$1;
-    $this$invoke.className = tmp$ret$2;
-    $this$invoke.unaryPlus_g7ydph_k$(' ........... ');
-    return Unit_getInstance();
-  }
-  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_3($this$invoke) {
-    init_properties_ResourceInfoElements_kt_1pl5mh();
-    var tmp$ret$2;
-    // Inline function 'csstype.ClassName' call
-    var tmp$ret$1;
-    // Inline function 'kotlin.js.unsafeCast' call
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = 'tableCell1';
-    tmp$ret$1 = tmp$ret$0;
-    tmp$ret$2 = tmp$ret$1;
-    $this$invoke.className = tmp$ret$2;
-    $this$invoke.unaryPlus_g7ydph_k$('Licencia');
-    return Unit_getInstance();
-  }
-  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_4($datasetInfo$delegate) {
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_2($datasetInfo$delegate) {
     return function ($this$invoke) {
       var tmp$ret$2;
       // Inline function 'csstype.ClassName' call
@@ -32274,7 +32271,65 @@
       var tmp0_elementAt = invoke$lambda_76($datasetInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
-      $this$invoke.unaryPlus_g7ydph_k$('' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_license_40u4wo_k$()));
+      $this$invoke.unaryPlus_g7ydph_k$('' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_notation_5p7b5h_k$()));
+      return Unit_getInstance();
+    };
+  }
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_0($datasetInfo$delegate) {
+    return function ($this$invoke) {
+      var tmp = default_30;
+      $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_1);
+      var tmp_0 = default_30;
+      $this$invoke.invoke_hixay3_k$(tmp_0, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_2($datasetInfo$delegate));
+      return Unit_getInstance();
+    };
+  }
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_3($this$invoke) {
+    init_properties_ResourceInfoElements_kt_1pl5mh();
+    var tmp$ret$2;
+    // Inline function 'csstype.ClassName' call
+    var tmp$ret$1;
+    // Inline function 'kotlin.js.unsafeCast' call
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = 'tableCell1';
+    tmp$ret$1 = tmp$ret$0;
+    tmp$ret$2 = tmp$ret$1;
+    $this$invoke.className = tmp$ret$2;
+    $this$invoke.unaryPlus_g7ydph_k$('Licencia');
+    return Unit_getInstance();
+  }
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda($datasetInfo$delegate) {
+    return function ($this$invoke) {
+      var tmp$ret$0;
+      // Inline function 'kotlin.collections.elementAt' call
+      var tmp0_elementAt = invoke$lambda_76($datasetInfo$delegate);
+      tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
+      var tmp0_safe_receiver = tmp$ret$0;
+      $this$invoke.href = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_license_40u4wo_k$());
+      var tmp$ret$1;
+      // Inline function 'kotlin.collections.elementAt' call
+      var tmp1_elementAt = invoke$lambda_76($datasetInfo$delegate);
+      tmp$ret$1 = tmp1_elementAt.get_fkrdnv_k$(0);
+      var tmp1_safe_receiver = tmp$ret$1;
+      $this$invoke.unaryPlus_g7ydph_k$('' + (tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_license_40u4wo_k$()));
+      return Unit_getInstance();
+    };
+  }
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_4($datasetInfo$delegate) {
+    return function ($this$invoke) {
+      var tmp$ret$2;
+      // Inline function 'csstype.ClassName' call
+      var tmp$ret$1;
+      // Inline function 'kotlin.js.unsafeCast' call
+      var tmp$ret$0;
+      // Inline function 'kotlin.js.asDynamic' call
+      tmp$ret$0 = 'tableCell2';
+      tmp$ret$1 = tmp$ret$0;
+      tmp$ret$2 = tmp$ret$1;
+      $this$invoke.className = tmp$ret$2;
+      var tmp = default_27;
+      $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda($datasetInfo$delegate));
       return Unit_getInstance();
     };
   }
@@ -32367,9 +32422,7 @@
         $this$invoke.invoke_hixay3_k$(tmp_0, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda($datasetInfo$delegate));
         tmp = Unit_getInstance();
       }
-      var tmp_1 = default_31;
-      $this$invoke.invoke_hixay3_k$(tmp_1, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_0);
-      var tmp_2;
+      var tmp_1;
       var tmp$ret$3;
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$2;
@@ -32377,24 +32430,40 @@
       var tmp2_elementAt = invoke$lambda_76($datasetInfo$delegate);
       tmp$ret$2 = tmp2_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$2;
-      var tmp3_isNullOrBlank = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_license_40u4wo_k$();
+      var tmp3_isNullOrBlank = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_notation_5p7b5h_k$();
       // Inline function 'kotlin.contracts.contract' call
       tmp$ret$3 = tmp3_isNullOrBlank == null ? true : isBlank(tmp3_isNullOrBlank);
       if (!tmp$ret$3) {
-        var tmp_3 = default_31;
-        $this$invoke.invoke_hixay3_k$(tmp_3, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_1($datasetInfo$delegate));
-        tmp_2 = Unit_getInstance();
+        var tmp_2 = default_31;
+        $this$invoke.invoke_hixay3_k$(tmp_2, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_0($datasetInfo$delegate));
+        tmp_1 = Unit_getInstance();
       }
-      var tmp_4;
+      var tmp_3;
+      var tmp$ret$5;
+      // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$4;
       // Inline function 'kotlin.collections.elementAt' call
       var tmp4_elementAt = invoke$lambda_76($datasetInfo$delegate);
       tmp$ret$4 = tmp4_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$4;
-      if (!((tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_accrualPeriodicity_m1omtp_k$()) == null)) {
-        var tmp_5 = default_31;
-        $this$invoke.invoke_hixay3_k$(tmp_5, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_2($datasetInfo$delegate));
-        tmp_4 = Unit_getInstance();
+      var tmp5_isNullOrBlank = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_license_40u4wo_k$();
+      // Inline function 'kotlin.contracts.contract' call
+      tmp$ret$5 = tmp5_isNullOrBlank == null ? true : isBlank(tmp5_isNullOrBlank);
+      if (!tmp$ret$5) {
+        var tmp_4 = default_31;
+        $this$invoke.invoke_hixay3_k$(tmp_4, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_1($datasetInfo$delegate));
+        tmp_3 = Unit_getInstance();
+      }
+      var tmp_5;
+      var tmp$ret$6;
+      // Inline function 'kotlin.collections.elementAt' call
+      var tmp6_elementAt = invoke$lambda_76($datasetInfo$delegate);
+      tmp$ret$6 = tmp6_elementAt.get_fkrdnv_k$(0);
+      var tmp3_safe_receiver = tmp$ret$6;
+      if (!((tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_accrualPeriodicity_m1omtp_k$()) == null)) {
+        var tmp_6 = default_31;
+        $this$invoke.invoke_hixay3_k$(tmp_6, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda_2($datasetInfo$delegate));
+        tmp_5 = Unit_getInstance();
       }
       return Unit_getInstance();
     };
@@ -32533,10 +32602,10 @@
   function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_7($this$invoke) {
     init_properties_ResourceInfoElements_kt_1pl5mh();
     var tmp = default_35;
-    $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda);
+    $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda_0);
     return Unit_getInstance();
   }
-  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda($this$invoke) {
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda_0($this$invoke) {
     init_properties_ResourceInfoElements_kt_1pl5mh();
     var tmp$ret$2;
     // Inline function 'csstype.ClassName' call
@@ -35457,7 +35526,7 @@
       return Unit_getInstance();
     };
   }
-  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda_0($datasetInfo$delegate) {
+  function ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda_1($datasetInfo$delegate) {
     return function ($this$invoke) {
       var tmp0_sx = $this$invoke;
       var tmp$ret$2;
@@ -35556,7 +35625,7 @@
       tmp$ret$2 = tmp$ret$1;
       $this$invoke.className = tmp$ret$2;
       var tmp = default_24;
-      $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda_0($datasetInfo$delegate));
+      $this$invoke.invoke_hixay3_k$(tmp, ResourceInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda$lambda_1($datasetInfo$delegate));
       return Unit_getInstance();
     };
   }
@@ -38875,13 +38944,13 @@
   }
   var InitPage;
   function getDatasets(filters, values, page, $cont) {
-    var tmp = new $getDatasetsCOROUTINE$0(filters, values, page, $cont);
+    var tmp = new $getDatasetsCOROUTINE$19(filters, values, page, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
-  function getResourcesNumber(resType, $cont) {
-    var tmp = new $getResourcesNumberCOROUTINE$1(resType, $cont);
+  function getResourcesNumber(filters, resType, $cont) {
+    var tmp = new $getResourcesNumberCOROUTINE$20(filters, resType, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
@@ -38934,8 +39003,8 @@
     var numberDatasets$delegate = useState(0);
     var tmp = [invoke$lambda_94(selectedFiltersContext$delegate)];
     useEffect(tmp, InitPage$lambda$lambda(coroutineScope, selectedFiltersContext$delegate, listTestDatasets$delegate));
-    var tmp_0 = [invoke$lambda_98(numberDatasets$delegate)];
-    useEffect(tmp_0, InitPage$lambda$lambda_0(numberDatasets$delegate));
+    var tmp_0 = [invoke$lambda_94(selectedFiltersContext$delegate)];
+    useEffect(tmp_0, InitPage$lambda$lambda_0(selectedFiltersContext$delegate, numberDatasets$delegate));
     var filtersMap = new FiltersMapKeys();
     var state = useState(filtersMap.get_disabled_rbmjej_k$());
     var tmp0_container = state;
@@ -39128,7 +39197,8 @@
       return Unit_getInstance();
     };
   }
-  function InitPage$lambda$lambda$slambda_1($numberDatasets$delegate, resultContinuation) {
+  function InitPage$lambda$lambda$slambda_1($selectedFiltersContext$delegate, $numberDatasets$delegate, resultContinuation) {
+    this.$selectedFiltersContext$delegate_1 = $selectedFiltersContext$delegate;
     this.$numberDatasets$delegate_1 = $numberDatasets$delegate;
     CoroutineImpl.call(this, resultContinuation);
   }
@@ -39151,7 +39221,7 @@
             this.set_exceptionState_s9sevl_k$(2);
             console.log('TOTAL NUMBER');
             this.set_state_a96kl8_k$(1);
-            suspendResult = getResourcesNumber('dataset', this);
+            suspendResult = getResourcesNumber(invoke$lambda_94(this.$selectedFiltersContext$delegate_1), 'dataset', this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -39175,25 +39245,25 @@
      while (true);
   };
   InitPage$lambda$lambda$slambda_1.prototype.create_b6qu53_k$ = function ($this$launch, completion) {
-    var i = new InitPage$lambda$lambda$slambda_1(this.$numberDatasets$delegate_1, completion);
+    var i = new InitPage$lambda$lambda$slambda_1(this.$selectedFiltersContext$delegate_1, this.$numberDatasets$delegate_1, completion);
     i.$this$launch_1 = $this$launch;
     return i;
   };
   InitPage$lambda$lambda$slambda_1.prototype.create_xubfvz_k$ = function (value, completion) {
     return this.create_b6qu53_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
-  function InitPage$lambda$lambda$slambda_2($numberDatasets$delegate, resultContinuation) {
-    var i = new InitPage$lambda$lambda$slambda_1($numberDatasets$delegate, resultContinuation);
+  function InitPage$lambda$lambda$slambda_2($selectedFiltersContext$delegate, $numberDatasets$delegate, resultContinuation) {
+    var i = new InitPage$lambda$lambda$slambda_1($selectedFiltersContext$delegate, $numberDatasets$delegate, resultContinuation);
     var l = function ($this$launch, $cont) {
       return i.invoke_d6gbsu_k$($this$launch, $cont);
     };
     l.$arity = 1;
     return l;
   }
-  function InitPage$lambda$lambda_0($numberDatasets$delegate) {
+  function InitPage$lambda$lambda_0($selectedFiltersContext$delegate, $numberDatasets$delegate) {
     return function ($this$useEffect) {
       var tmp = GlobalScope_getInstance();
-      launch$default(tmp, null, null, InitPage$lambda$lambda$slambda_2($numberDatasets$delegate, null), 3, null);
+      launch$default(tmp, null, null, InitPage$lambda$lambda$slambda_2($selectedFiltersContext$delegate, $numberDatasets$delegate, null), 3, null);
       return Unit_getInstance();
     };
   }
@@ -39352,13 +39422,13 @@
       return Unit_getInstance();
     };
   }
-  function $getDatasetsCOROUTINE$0(filters, values, page, resultContinuation) {
+  function $getDatasetsCOROUTINE$19(filters, values, page, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.filters_1 = filters;
     this.values_1 = values;
     this.page_1 = page;
   }
-  $getDatasetsCOROUTINE$0.prototype.doResume_5yljmg_k$ = function () {
+  $getDatasetsCOROUTINE$19.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -39519,11 +39589,12 @@
       }
      while (true);
   };
-  function $getResourcesNumberCOROUTINE$1(resType, resultContinuation) {
+  function $getResourcesNumberCOROUTINE$20(filters, resType, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
+    this.filters_1 = filters;
     this.resType_1 = resType;
   }
-  $getResourcesNumberCOROUTINE$1.prototype.doResume_5yljmg_k$ = function () {
+  $getResourcesNumberCOROUTINE$20.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -39531,8 +39602,66 @@
         switch (tmp) {
           case 0:
             this.set_exceptionState_s9sevl_k$(2);
+            var tmp_0 = this;
+            var tmp0_safe_receiver = this.filters_1.get_1mhr4y_k$('Datasets');
+            var tmp_1;
+            if (tmp0_safe_receiver == null) {
+              tmp_1 = null;
+            } else {
+              var tmp0_mapTo = ArrayList_init_$Create$_0(tmp0_safe_receiver.get_size_woubt6_k$());
+              var tmp0_iterator = tmp0_safe_receiver.get_entries_p20ztl_k$().iterator_jk1svi_k$();
+              while (tmp0_iterator.hasNext_bitz1p_k$()) {
+                var item = tmp0_iterator.next_20eer_k$();
+                var key = item.get_key_18j28a_k$();
+                var values = item.get_value_j01efc_k$();
+                tmp0_mapTo.add_1j60pz_k$(new MapInput(key, isInterface(values, List) ? values : THROW_CCE()));
+              }
+              tmp_1 = tmp0_mapTo;
+            }
+
+            tmp_0.selectedFilters0__1 = tmp_1;
+            var tmp_2 = this;
+            var tmp_3;
+            var tmp1_safe_receiver = this.selectedFilters0__1;
+            var tmp_4;
+            if (tmp1_safe_receiver == null) {
+              tmp_4 = null;
+            } else {
+              var tmp0_filterTo = ArrayList_init_$Create$();
+              var tmp0_iterator_0 = tmp1_safe_receiver.iterator_jk1svi_k$();
+              while (tmp0_iterator_0.hasNext_bitz1p_k$()) {
+                var element = tmp0_iterator_0.next_20eer_k$();
+                if (!(element.get_key_18j28a_k$() === 'Page')) {
+                  tmp0_filterTo.add_1j60pz_k$(element);
+                }
+              }
+              tmp_4 = tmp0_filterTo;
+            }
+
+            if (checkIfSelectedFiltersIsEmpty(tmp_4)) {
+              tmp_3 = emptyList();
+            } else {
+              var tmp2_safe_receiver = this.selectedFilters0__1;
+              var tmp_5;
+              if (tmp2_safe_receiver == null) {
+                tmp_5 = null;
+              } else {
+                var tmp0_filterTo_0 = ArrayList_init_$Create$();
+                var tmp0_iterator_1 = tmp2_safe_receiver.iterator_jk1svi_k$();
+                while (tmp0_iterator_1.hasNext_bitz1p_k$()) {
+                  var element_0 = tmp0_iterator_1.next_20eer_k$();
+                  if (!(element_0.get_key_18j28a_k$() === 'Page')) {
+                    tmp0_filterTo_0.add_1j60pz_k$(element_0);
+                  }
+                }
+                tmp_5 = tmp0_filterTo_0;
+              }
+              tmp_3 = tmp_5;
+            }
+
+            tmp_2.filter1__1 = tmp_3;
             this.set_state_a96kl8_k$(1);
-            suspendResult = get_apolloClient_7().query_4nubzp_k$(new NumberOfResourcesQuery(this.resType_1)).execute_qhiagk_k$(this);
+            suspendResult = get_apolloClient_7().query_4nubzp_k$(new NumberOfResourcesQuery(Companion_getInstance().present_iakpq_k$(this.filter1__1), this.resType_1)).execute_qhiagk_k$(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -39540,10 +39669,10 @@
             continue $sm;
           case 1:
             var ARGUMENT = suspendResult;
-            var tmp0_safe_receiver = ARGUMENT.get_data_wokkxf_k$();
-            var number = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_numberOfResources_8fodk4_k$();
-            var tmp1_elvis_lhs = number;
-            return tmp1_elvis_lhs == null ? 0 : tmp1_elvis_lhs;
+            var tmp3_safe_receiver = ARGUMENT.get_data_wokkxf_k$();
+            var number = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_numberOfResources_8fodk4_k$();
+            var tmp4_elvis_lhs = number;
+            return tmp4_elvis_lhs == null ? 0 : tmp4_elvis_lhs;
           case 2:
             throw this.get_exception_x0n6w6_k$();
         }
@@ -54792,10 +54921,20 @@
   function Pagination$lambda($this$FC, props) {
     init_properties_Pagination_kt_wjieio();
     var selectedFilters$delegate = useRequiredContext(get_FilterListContextAll());
-    var numberOfPages$delegate = useState(props.numberOfPages);
+    var tmp = console;
+    var tmp$ret$0;
+    // Inline function 'kotlin.math.ceil' call
+    var tmp0_ceil = props.numberOfPages / 10;
+    tmp$ret$0 = Math.ceil(tmp0_ceil);
+    tmp.log('NUMBER: ' + numberToInt(tmp$ret$0));
+    var tmp$ret$1;
+    // Inline function 'kotlin.math.ceil' call
+    var tmp1_ceil = props.numberOfPages / 10;
+    tmp$ret$1 = Math.ceil(tmp1_ceil);
+    var numberOfPages$delegate = useState(numberToInt(tmp$ret$1));
     var handleChange = Pagination$lambda$lambda(props);
-    var tmp = default_25;
-    $this$FC.invoke_hixay3_k$(tmp, Pagination$lambda$lambda_0(numberOfPages$delegate, selectedFilters$delegate));
+    var tmp_0 = default_25;
+    $this$FC.invoke_hixay3_k$(tmp_0, Pagination$lambda$lambda_0(numberOfPages$delegate, selectedFilters$delegate));
     return Unit_getInstance();
   }
   function invoke$lambda_154($selectedFilters$delegate) {
@@ -55039,7 +55178,7 @@
       tmp$ret$4 = tmp0_apply;
       tmp$ret$5 = tmp$ret$4;
       tmp0_sx.sx = tmp$ret$5;
-      $this$invoke.count = invoke$lambda_156($numberOfPages$delegate) / 10 | 0;
+      $this$invoke.count = invoke$lambda_156($numberOfPages$delegate);
       $this$invoke.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
       $this$invoke.onChange = Pagination$lambda$lambda$lambda$lambda($selectedFilters$delegate);
       return Unit_getInstance();
@@ -61962,10 +62101,11 @@
       return false;
     return true;
   };
-  function DatasetInfo(id, title, publisher, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID) {
+  function DatasetInfo(id, title, publisher, notation, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID) {
     this.id_1 = id;
     this.title_1 = title;
     this.publisher_1 = publisher;
+    this.notation_1 = notation;
     this.description_1 = description;
     this.license_1 = license;
     this.keywords_1 = keywords;
@@ -61993,6 +62133,9 @@
   };
   DatasetInfo.prototype.get_publisher_wg9par_k$ = function () {
     return this.publisher_1;
+  };
+  DatasetInfo.prototype.get_notation_5p7b5h_k$ = function () {
+    return this.notation_1;
   };
   DatasetInfo.prototype.get_description_emjre5_k$ = function () {
     return this.description_1;
@@ -62058,63 +62201,66 @@
     return this.publisher_1;
   };
   DatasetInfo.prototype.component4_7eebs9_k$ = function () {
-    return this.description_1;
+    return this.notation_1;
   };
   DatasetInfo.prototype.component5_7eebs8_k$ = function () {
-    return this.license_1;
+    return this.description_1;
   };
   DatasetInfo.prototype.component6_7eebs7_k$ = function () {
-    return this.keywords_1;
+    return this.license_1;
   };
   DatasetInfo.prototype.component7_7eebs6_k$ = function () {
-    return this.theme_1;
+    return this.keywords_1;
   };
   DatasetInfo.prototype.component8_7eebs5_k$ = function () {
-    return this.language_1;
+    return this.theme_1;
   };
   DatasetInfo.prototype.component9_7eebs4_k$ = function () {
-    return this.issued_1;
+    return this.language_1;
   };
   DatasetInfo.prototype.component10_gazzfo_k$ = function () {
-    return this.modified_1;
+    return this.issued_1;
   };
   DatasetInfo.prototype.component11_gazzfn_k$ = function () {
-    return this.accrualPeriodicity_1;
+    return this.modified_1;
   };
   DatasetInfo.prototype.component12_gazzfm_k$ = function () {
-    return this.spatial_1;
+    return this.accrualPeriodicity_1;
   };
   DatasetInfo.prototype.component13_gazzfl_k$ = function () {
-    return this.temporalStart_1;
+    return this.spatial_1;
   };
   DatasetInfo.prototype.component14_gazzfk_k$ = function () {
-    return this.temporalEnd_1;
+    return this.temporalStart_1;
   };
   DatasetInfo.prototype.component15_gazzfj_k$ = function () {
-    return this.accessURl_1;
+    return this.temporalEnd_1;
   };
   DatasetInfo.prototype.component16_gazzfi_k$ = function () {
-    return this.formats_1;
+    return this.accessURl_1;
   };
   DatasetInfo.prototype.component17_gazzfh_k$ = function () {
-    return this.identifiers_1;
+    return this.formats_1;
   };
   DatasetInfo.prototype.component18_gazzfg_k$ = function () {
-    return this.isPTOID_1;
+    return this.identifiers_1;
   };
   DatasetInfo.prototype.component19_gazzff_k$ = function () {
-    return this.inCatalogID_1;
+    return this.isPTOID_1;
   };
   DatasetInfo.prototype.component20_gazzet_k$ = function () {
-    return this.inSeriesID_1;
+    return this.inCatalogID_1;
   };
   DatasetInfo.prototype.component21_gazzes_k$ = function () {
+    return this.inSeriesID_1;
+  };
+  DatasetInfo.prototype.component22_gazzer_k$ = function () {
     return this.servedByID_1;
   };
-  DatasetInfo.prototype.copy_hl8fnc_k$ = function (id, title, publisher, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID) {
-    return new DatasetInfo(id, title, publisher, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID);
+  DatasetInfo.prototype.copy_wiqvjg_k$ = function (id, title, publisher, notation, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID) {
+    return new DatasetInfo(id, title, publisher, notation, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID);
   };
-  DatasetInfo.prototype.copy$default_mgfzi9_k$ = function (id, title, publisher, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID, $mask0, $handler) {
+  DatasetInfo.prototype.copy$default_e51x1b_k$ = function (id, title, publisher, notation, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
       id = this.id_1;
     if (!(($mask0 & 2) === 0))
@@ -62122,50 +62268,53 @@
     if (!(($mask0 & 4) === 0))
       publisher = this.publisher_1;
     if (!(($mask0 & 8) === 0))
-      description = this.description_1;
+      notation = this.notation_1;
     if (!(($mask0 & 16) === 0))
-      license = this.license_1;
+      description = this.description_1;
     if (!(($mask0 & 32) === 0))
-      keywords = this.keywords_1;
+      license = this.license_1;
     if (!(($mask0 & 64) === 0))
-      theme = this.theme_1;
+      keywords = this.keywords_1;
     if (!(($mask0 & 128) === 0))
-      language = this.language_1;
+      theme = this.theme_1;
     if (!(($mask0 & 256) === 0))
-      issued = this.issued_1;
+      language = this.language_1;
     if (!(($mask0 & 512) === 0))
-      modified = this.modified_1;
+      issued = this.issued_1;
     if (!(($mask0 & 1024) === 0))
-      accrualPeriodicity = this.accrualPeriodicity_1;
+      modified = this.modified_1;
     if (!(($mask0 & 2048) === 0))
-      spatial = this.spatial_1;
+      accrualPeriodicity = this.accrualPeriodicity_1;
     if (!(($mask0 & 4096) === 0))
-      temporalStart = this.temporalStart_1;
+      spatial = this.spatial_1;
     if (!(($mask0 & 8192) === 0))
-      temporalEnd = this.temporalEnd_1;
+      temporalStart = this.temporalStart_1;
     if (!(($mask0 & 16384) === 0))
-      accessURl = this.accessURl_1;
+      temporalEnd = this.temporalEnd_1;
     if (!(($mask0 & 32768) === 0))
-      formats = this.formats_1;
+      accessURl = this.accessURl_1;
     if (!(($mask0 & 65536) === 0))
-      identifiers = this.identifiers_1;
+      formats = this.formats_1;
     if (!(($mask0 & 131072) === 0))
-      isPTOID = this.isPTOID_1;
+      identifiers = this.identifiers_1;
     if (!(($mask0 & 262144) === 0))
-      inCatalogID = this.inCatalogID_1;
+      isPTOID = this.isPTOID_1;
     if (!(($mask0 & 524288) === 0))
-      inSeriesID = this.inSeriesID_1;
+      inCatalogID = this.inCatalogID_1;
     if (!(($mask0 & 1048576) === 0))
+      inSeriesID = this.inSeriesID_1;
+    if (!(($mask0 & 2097152) === 0))
       servedByID = this.servedByID_1;
-    return this.copy_hl8fnc_k$(id, title, publisher, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID);
+    return this.copy_wiqvjg_k$(id, title, publisher, notation, description, license, keywords, theme, language, issued, modified, accrualPeriodicity, spatial, temporalStart, temporalEnd, accessURl, formats, identifiers, isPTOID, inCatalogID, inSeriesID, servedByID);
   };
   DatasetInfo.prototype.toString = function () {
-    return 'DatasetInfo(id=' + this.id_1 + ', title=' + this.title_1 + ', publisher=' + this.publisher_1 + ', description=' + this.description_1 + ', license=' + this.license_1 + ', keywords=' + this.keywords_1 + ', theme=' + this.theme_1 + ', language=' + this.language_1 + ', issued=' + this.issued_1 + ', modified=' + this.modified_1 + ', accrualPeriodicity=' + this.accrualPeriodicity_1 + ', spatial=' + this.spatial_1 + ', temporalStart=' + this.temporalStart_1 + ', temporalEnd=' + this.temporalEnd_1 + ', accessURl=' + this.accessURl_1 + ', formats=' + this.formats_1 + ', identifiers=' + this.identifiers_1 + ', isPTOID=' + this.isPTOID_1 + ', inCatalogID=' + this.inCatalogID_1 + ', inSeriesID=' + this.inSeriesID_1 + ', servedByID=' + this.servedByID_1 + ')';
+    return 'DatasetInfo(id=' + this.id_1 + ', title=' + this.title_1 + ', publisher=' + this.publisher_1 + ', notation=' + this.notation_1 + ', description=' + this.description_1 + ', license=' + this.license_1 + ', keywords=' + this.keywords_1 + ', theme=' + this.theme_1 + ', language=' + this.language_1 + ', issued=' + this.issued_1 + ', modified=' + this.modified_1 + ', accrualPeriodicity=' + this.accrualPeriodicity_1 + ', spatial=' + this.spatial_1 + ', temporalStart=' + this.temporalStart_1 + ', temporalEnd=' + this.temporalEnd_1 + ', accessURl=' + this.accessURl_1 + ', formats=' + this.formats_1 + ', identifiers=' + this.identifiers_1 + ', isPTOID=' + this.isPTOID_1 + ', inCatalogID=' + this.inCatalogID_1 + ', inSeriesID=' + this.inSeriesID_1 + ', servedByID=' + this.servedByID_1 + ')';
   };
   DatasetInfo.prototype.hashCode = function () {
     var result = getStringHashCode(this.id_1);
     result = imul(result, 31) + (this.title_1 == null ? 0 : hashCode(this.title_1)) | 0;
     result = imul(result, 31) + (this.publisher_1 == null ? 0 : getStringHashCode(this.publisher_1)) | 0;
+    result = imul(result, 31) + (this.notation_1 == null ? 0 : getStringHashCode(this.notation_1)) | 0;
     result = imul(result, 31) + (this.description_1 == null ? 0 : hashCode(this.description_1)) | 0;
     result = imul(result, 31) + (this.license_1 == null ? 0 : getStringHashCode(this.license_1)) | 0;
     result = imul(result, 31) + (this.keywords_1 == null ? 0 : hashCode(this.keywords_1)) | 0;
@@ -62197,6 +62346,8 @@
     if (!equals(this.title_1, tmp0_other_with_cast.title_1))
       return false;
     if (!(this.publisher_1 == tmp0_other_with_cast.publisher_1))
+      return false;
+    if (!(this.notation_1 == tmp0_other_with_cast.notation_1))
       return false;
     if (!equals(this.description_1, tmp0_other_with_cast.description_1))
       return false;

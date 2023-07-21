@@ -9,17 +9,21 @@ import com.apollographql.apollo3.annotations.ApolloAdaptableWith
 import com.apollographql.apollo3.api.Adapter
 import com.apollographql.apollo3.api.CompiledField
 import com.apollographql.apollo3.api.CustomScalarAdapters
+import com.apollographql.apollo3.api.Optional
 import com.apollographql.apollo3.api.Query
 import com.apollographql.apollo3.api.json.JsonWriter
 import com.apollographql.apollo3.api.obj
 import com.schema.adapter.NumberOfResourcesQuery_ResponseAdapter
 import com.schema.adapter.NumberOfResourcesQuery_VariablesAdapter
 import com.schema.selections.NumberOfResourcesQuerySelections
+import com.schema.type.MapInput
 import kotlin.Int
 import kotlin.String
 import kotlin.Unit
+import kotlin.collections.List
 
 public data class NumberOfResourcesQuery(
+  public val filter: Optional<List<MapInput>?> = Optional.Absent,
   public val type: String,
 ) : Query<NumberOfResourcesQuery.Data> {
   public override fun id(): String = OPERATION_ID
@@ -49,18 +53,19 @@ public data class NumberOfResourcesQuery(
 
   public companion object {
     public const val OPERATION_ID: String =
-        "33803b08f552f01c486f94d2e619328b050f98c7c4a3697379d15e597c794c42"
+        "2aae12f5e33e31ccd9265a47cb80e20951e7c4c4aa4d2adb54d5bd86b2f2a5ca"
 
     /**
      * The minimized GraphQL document being sent to the server to save a few bytes.
      * The un-minimized version is:
      *
-     * query NumberOfResources($type: String!) {
-     *   numberOfResources(type: $type)
+     * query NumberOfResources($filter: \[MapInput!\], $type: String!) {
+     *   numberOfResources(filters: $filter, type: $type)
      * }
      */
     public val OPERATION_DOCUMENT: String
-      get() = "query NumberOfResources(${'$'}type: String!) { numberOfResources(type: ${'$'}type) }"
+      get() =
+          "query NumberOfResources(${'$'}filter: [MapInput!], ${'$'}type: String!) { numberOfResources(filters: ${'$'}filter, type: ${'$'}type) }"
 
     public const val OPERATION_NAME: String = "NumberOfResources"
   }

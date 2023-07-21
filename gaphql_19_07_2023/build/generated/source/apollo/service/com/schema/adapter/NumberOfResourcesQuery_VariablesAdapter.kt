@@ -7,10 +7,16 @@ package com.schema.adapter
 
 import com.apollographql.apollo3.api.Adapter
 import com.apollographql.apollo3.api.CustomScalarAdapters
+import com.apollographql.apollo3.api.Optional
 import com.apollographql.apollo3.api.StringAdapter
 import com.apollographql.apollo3.api.json.JsonReader
 import com.apollographql.apollo3.api.json.JsonWriter
+import com.apollographql.apollo3.api.list
+import com.apollographql.apollo3.api.nullable
+import com.apollographql.apollo3.api.obj
+import com.apollographql.apollo3.api.present
 import com.schema.NumberOfResourcesQuery
+import com.schema.type.adapter.MapInput_InputAdapter
 import kotlin.IllegalStateException
 import kotlin.Unit
 
@@ -23,6 +29,11 @@ public object NumberOfResourcesQuery_VariablesAdapter : Adapter<NumberOfResource
     customScalarAdapters: CustomScalarAdapters,
     `value`: NumberOfResourcesQuery,
   ): Unit {
+    if (value.filter is Optional.Present) {
+      writer.name("filter")
+      MapInput_InputAdapter.obj().list().nullable().present().toJson(writer, customScalarAdapters,
+          value.filter)
+    }
     writer.name("type")
     StringAdapter.toJson(writer, customScalarAdapters, value.type)
   }

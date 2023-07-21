@@ -18,6 +18,7 @@ public object NumberOfResourcesQuerySelections {
           name = "numberOfResources",
           type = GraphQLInt.type
         ).arguments(listOf(
+          CompiledArgument.Builder("filters", CompiledVariable("filter")).build(),
           CompiledArgument.Builder("type", CompiledVariable("type")).build()
         ))
         .build()

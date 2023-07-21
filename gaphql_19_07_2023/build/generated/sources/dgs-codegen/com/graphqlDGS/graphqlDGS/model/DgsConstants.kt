@@ -55,6 +55,8 @@ public object DgsConstants {
     }
 
     public object NUMBEROFRESOURCES_INPUT_ARGUMENT {
+      public const val Filters: String = "filters"
+
       public const val Type: String = "type"
     }
 
