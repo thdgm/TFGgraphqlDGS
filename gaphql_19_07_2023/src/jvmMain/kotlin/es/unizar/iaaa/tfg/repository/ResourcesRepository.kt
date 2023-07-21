@@ -386,7 +386,9 @@ class ResourceRepositoryExtra(){
     ): Collection<ResourceEntity>?{
         val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
 
-        val formats = appliedFilters.find { it.key == "Formato" }?.values ?: listOf()
+        val mediaTypeMap = MediaTypeMap.MEDIA_TYPE
+        val formats_pre = appliedFilters.find { it.key == "Formato" }?.values ?: listOf()
+        val formats = formats_pre.mapNotNull { mediaTypeMap[it] }
         val periods = period
         val keywords = appliedFilters.find { it.key == "Etiqueta" }?.values ?: listOf()
         val notations = notation
@@ -452,10 +454,12 @@ FROM resource r
             querySplit[querySplit.size-2] = ""
         }
         println("222222222222222222222222222222222222222: ${querySplit[querySplit.size-2]}")
-
+        println("ORDER BYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY: $orderBy")
+        println("SORTT BYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY: $sortBy")
+        println("PAGEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE: $page ${page*10}")
         queryString = querySplit.joinToString(" ")
-        queryString += "ORDER BY tt.id ASC " +
-                "OFFSET 0 ROWS FETCH FIRST 10 ROWS ONLY;"
+        queryString += "ORDER BY tt.${sortBy} $orderBy " +
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
             /*"SELECT distinct r1_0.id, r1_0.tipo, r1_0.issued, r1_0.license, r1_0.modified, r1_0.publisher_id, r1_0.accrual_periodicity, r1_0.temporal_coverage_end, r1_0.temporal_coverage_start, r1_0.validity " +
                 "FROM resource r1_0 " +
@@ -469,13 +473,13 @@ FROM resource r
         val pageSize = 10
         println("RRREESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS: ${queryString}")
         val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
-
-        if(formats.isNotEmpty()) nativeQuery.setParameter("format", listOf("application/rss+xml"))
-        if (periods.isNotEmpty())nativeQuery.setParameter("period", listOf("time:years 6.0"))
-        if(keywords.isNotEmpty()) nativeQuery.setParameter("keyword", listOf("nucleo-común"))
-        if (notations.isNotEmpty()) nativeQuery.setParameter("notation", listOf("E%"))
-        if(publishers.isNotEmpty()) nativeQuery.setParameter("publisher", listOf("Administración Local"))
-        if(themes.isNotEmpty()) nativeQuery.setParameter("theme", listOf("Sector público"))
+        println("FORMAAAtTTTTTTTTTSTSSSSSSSSSSSSSSSSSSS: ${formats}")
+        if(formats.isNotEmpty()) nativeQuery.setParameter("format", formats)
+        if (periods.isNotEmpty())nativeQuery.setParameter("period", periods)
+        if(keywords.isNotEmpty()) nativeQuery.setParameter("keyword", keywords)
+        if (notations.isNotEmpty()) nativeQuery.setParameter("notation", notations)
+        if(publishers.isNotEmpty()) nativeQuery.setParameter("publisher", publishers)
+        if(themes.isNotEmpty()) nativeQuery.setParameter("theme", themes)
 
             //.setParameter("format", listOf("application/rss+xml"))
             //.setParameter("period", listOf("time:years 6.0"))

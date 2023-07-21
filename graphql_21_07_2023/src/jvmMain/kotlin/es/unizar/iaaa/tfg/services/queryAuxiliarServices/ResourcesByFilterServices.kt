@@ -112,7 +112,16 @@ class ResourcesByFilterServicesImpl(
 
     override fun getResourcesByFilters(filters: Collection<MapInput>, type: String,page: Int): Collection<Resource>{
         val orderBy = filters.firstOrNull { it.key == "OrderBy" }?.values?.firstOrNull()
-        val sortBy = filters.firstOrNull { it.key == "SortBy" }?.values?.firstOrNull()
+        var sortBy = filters.firstOrNull { it.key == "SortBy" }?.values?.firstOrNull()
+
+
+        sortBy = when(sortBy){
+            "issued" -> {"issued"}
+            "modified" -> {"modified"}
+            "notation" -> {"publisher_id"}
+            else ->{"id"}
+        }
+
         var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
         //Conversiones de issued, modified y period
         val issued = appliedFilters.find { it.key == "Fecha creación"}?.values?.map{converterAux.toLocalDateTimeSimple(it)} ?: listOf()
@@ -125,7 +134,7 @@ class ResourcesByFilterServicesImpl(
             return resourceRepository.findAllDatasets(PageRequest.of(page,20)).content.map { convertersResourcesEntitiesTo.createResource(it) }
         }
         //return resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
-        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,"","",0,issued, modified, period, notation) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
         println("RESSS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: $res")
         println("RESSS2::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()}")
 
