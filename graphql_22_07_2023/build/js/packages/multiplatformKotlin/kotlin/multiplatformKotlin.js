@@ -354,20 +354,20 @@
   var default_71 = $module$_mui_material_FormHelperText_bxt53n.default;
   var default_72 = $module$_mui_material_styles_createTheme_jr6jji.default;
   var filterNotNull = kotlin_kotlin.$_$.v7;
-  var hashCode = kotlin_kotlin.$_$.gb;
-  var THROW_CCE = kotlin_kotlin.$_$.kf;
-  var equals = kotlin_kotlin.$_$.ab;
+  var hashCode = kotlin_kotlin.$_$.hb;
+  var THROW_CCE = kotlin_kotlin.$_$.lf;
+  var equals = kotlin_kotlin.$_$.bb;
   var Data = kotlin_com_apollographql_apollo3_apollo_api.$_$.o1;
-  var classMeta = kotlin_kotlin.$_$.ya;
-  var setMetadataFor = kotlin_kotlin.$_$.dc;
-  var objectMeta = kotlin_kotlin.$_$.cc;
+  var classMeta = kotlin_kotlin.$_$.za;
+  var setMetadataFor = kotlin_kotlin.$_$.ec;
+  var objectMeta = kotlin_kotlin.$_$.dc;
   var obj$default = kotlin_com_apollographql_apollo3_apollo_api.$_$.j2;
   var Builder = kotlin_com_apollographql_apollo3_apollo_api.$_$.s;
   var Query = kotlin_com_apollographql_apollo3_apollo_api.$_$.p1;
-  var getStringHashCode = kotlin_kotlin.$_$.fb;
-  var toString = kotlin_kotlin.$_$.qg;
+  var getStringHashCode = kotlin_kotlin.$_$.gb;
+  var toString = kotlin_kotlin.$_$.rg;
   var Absent_getInstance = kotlin_com_apollographql_apollo3_apollo_api.$_$.s2;
-  var listOf = kotlin_kotlin.$_$.l8;
+  var listOf = kotlin_kotlin.$_$.m8;
   var get_NullableStringAdapter = kotlin_com_apollographql_apollo3_apollo_api.$_$.l1;
   var list = kotlin_com_apollographql_apollo3_apollo_api.$_$.u1;
   var nullable = kotlin_com_apollographql_apollo3_apollo_api.$_$.w1;
@@ -375,13 +375,13 @@
   var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.m2;
   var get_IntAdapter = kotlin_com_apollographql_apollo3_apollo_api.$_$.f1;
   var get_StringAdapter = kotlin_com_apollographql_apollo3_apollo_api.$_$.q1;
-  var ensureNotNull = kotlin_kotlin.$_$.bg;
+  var ensureNotNull = kotlin_kotlin.$_$.cg;
   var obj = kotlin_com_apollographql_apollo3_apollo_api.$_$.x1;
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var toString_0 = kotlin_kotlin.$_$.hc;
+  var toString_0 = kotlin_kotlin.$_$.ic;
   var possibleTypes = kotlin_com_apollographql_apollo3_apollo_api.$_$.z1;
   var evaluate = kotlin_com_apollographql_apollo3_apollo_api.$_$.s1;
-  var listOf_0 = kotlin_kotlin.$_$.m8;
+  var listOf_0 = kotlin_kotlin.$_$.n8;
   var get_NullableAnyAdapter = kotlin_com_apollographql_apollo3_apollo_api.$_$.j1;
   var present = kotlin_com_apollographql_apollo3_apollo_api.$_$.a2;
   var Present = kotlin_com_apollographql_apollo3_apollo_api.$_$.n1;
@@ -402,62 +402,62 @@
   var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.c2;
   var split$default = kotlin_kotlin.$_$.w;
   var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.c3;
-  var Char = kotlin_kotlin.$_$.se;
-  var to = kotlin_kotlin.$_$.rg;
-  var mapOf = kotlin_kotlin.$_$.p8;
+  var Char = kotlin_kotlin.$_$.te;
+  var to = kotlin_kotlin.$_$.sg;
+  var mapOf = kotlin_kotlin.$_$.q8;
   var emptyList = kotlin_kotlin.$_$.q7;
-  var mutableMapOf = kotlin_kotlin.$_$.s8;
+  var mutableMapOf = kotlin_kotlin.$_$.t8;
   var GlobalScope_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a1;
   var launch$default = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.u;
   var create = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react.$_$.c;
-  var CoroutineImpl = kotlin_kotlin.$_$.la;
+  var CoroutineImpl = kotlin_kotlin.$_$.ma;
   var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.w1;
-  var isInterface = kotlin_kotlin.$_$.qb;
+  var isInterface = kotlin_kotlin.$_$.rb;
   var Builder_4 = kotlin_com_apollographql_apollo3_apollo_runtime.$_$.a;
   var HttpMethod_Post_getInstance = kotlin_com_apollographql_apollo3_apollo_api.$_$.i2;
   var HttpHeader = kotlin_com_apollographql_apollo3_apollo_api.$_$.c;
-  var NotImplementedError = kotlin_kotlin.$_$.ff;
+  var NotImplementedError = kotlin_kotlin.$_$.gf;
   var rEnhancer = kotlin_org_jetbrains_kotlin_wrappers_kotlin_redux.$_$.a;
   var ReactHTML_getInstance = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_dom.$_$.a;
   var create_0 = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react.$_$.b;
   var FC = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react.$_$.a;
   var useRequiredContext = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core.$_$.b;
-  var KMutableProperty0 = kotlin_kotlin.$_$.tc;
-  var THROW_ISE = kotlin_kotlin.$_$.lf;
-  var getLocalDelegateReference = kotlin_kotlin.$_$.db;
+  var KMutableProperty0 = kotlin_kotlin.$_$.uc;
+  var THROW_ISE = kotlin_kotlin.$_$.mf;
+  var getLocalDelegateReference = kotlin_kotlin.$_$.eb;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.c1;
   var useEffect = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core.$_$.a;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.v9;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.w9;
   var collectionSizeOrDefault = kotlin_kotlin.$_$.t6;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.b1;
-  var KProperty0 = kotlin_kotlin.$_$.vc;
-  var Long = kotlin_kotlin.$_$.df;
+  var KProperty0 = kotlin_kotlin.$_$.wc;
+  var Long = kotlin_kotlin.$_$.ef;
   var delay = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.e;
   var MainScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b2;
   var elementAt = kotlin_kotlin.$_$.p7;
-  var toMutableMap = kotlin_kotlin.$_$.n9;
-  var mapCapacity = kotlin_kotlin.$_$.n8;
+  var toMutableMap = kotlin_kotlin.$_$.o9;
+  var mapCapacity = kotlin_kotlin.$_$.o8;
   var LinkedHashMap_init_$Create$ = kotlin_kotlin.$_$.k1;
-  var plus = kotlin_kotlin.$_$.w8;
-  var isBlank = kotlin_kotlin.$_$.kd;
+  var plus = kotlin_kotlin.$_$.x8;
+  var isBlank = kotlin_kotlin.$_$.ld;
   var drop = kotlin_kotlin.$_$.o7;
   var checkIndexOverflow = kotlin_kotlin.$_$.s6;
-  var charSequenceLength = kotlin_kotlin.$_$.wa;
-  var mutableListOf = kotlin_kotlin.$_$.r8;
+  var charSequenceLength = kotlin_kotlin.$_$.xa;
+  var mutableListOf = kotlin_kotlin.$_$.s8;
   var contains$default = kotlin_kotlin.$_$.n;
-  var println = kotlin_kotlin.$_$.oa;
-  var charSequenceGet = kotlin_kotlin.$_$.va;
-  var numberToInt = kotlin_kotlin.$_$.ac;
+  var println = kotlin_kotlin.$_$.pa;
+  var charSequenceGet = kotlin_kotlin.$_$.wa;
+  var numberToInt = kotlin_kotlin.$_$.bc;
   var joinToString$default = kotlin_kotlin.$_$.l;
   var distinct = kotlin_kotlin.$_$.m7;
   var Dispatchers_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.z;
   var CoroutineScope_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.v1;
-  var toInt = kotlin_kotlin.$_$.de;
+  var toInt = kotlin_kotlin.$_$.ee;
   var List = kotlin_kotlin.$_$.d6;
   var Companion_getInstance = kotlin_com_apollographql_apollo3_apollo_api.$_$.t2;
-  var isObject = kotlin_kotlin.$_$.tb;
-  var isNumber = kotlin_kotlin.$_$.sb;
-  var LinkedHashMap_init_$Create$_0 = kotlin_kotlin.$_$.l1;
+  var isObject = kotlin_kotlin.$_$.ub;
+  var isNumber = kotlin_kotlin.$_$.tb;
+  var firstOrNull = kotlin_kotlin.$_$.x7;
   var MutableCollection = kotlin_kotlin.$_$.g6;
   //endregion
   //region block: pre-declaration
@@ -40657,28 +40657,11 @@
         var tmp_5 = get_Pagination();
         $this$invoke.invoke_hixay3_k$(tmp_5, list$lambda$lambda$lambda_3($props));
         var tmp_6 = console;
-        var tmp$ret$15;
-        // Inline function 'kotlin.collections.filter' call
-        var tmp1_filter = invoke$lambda_102($selectedFilters$delegate);
-        var tmp$ret$14;
-        // Inline function 'kotlin.collections.filterTo' call
-        var tmp0_filterTo = LinkedHashMap_init_$Create$_0();
-        var tmp$ret$12;
-        // Inline function 'kotlin.collections.iterator' call
-        tmp$ret$12 = tmp1_filter.get_entries_p20ztl_k$().iterator_jk1svi_k$();
-        var tmp0_iterator = tmp$ret$12;
-        while (tmp0_iterator.hasNext_bitz1p_k$()) {
-          var element = tmp0_iterator.next_20eer_k$();
-          var tmp$ret$13;
-          // Inline function 'components.commmon.pages.dataset.mainPage.list.<anonymous>.<anonymous>.<anonymous>' call
-          tmp$ret$13 = element.get_key_18j28a_k$() === 'Datasets';
-          if (tmp$ret$13) {
-            tmp0_filterTo.put_3mhbri_k$(element.get_key_18j28a_k$(), element.get_value_j01efc_k$());
-          }
-        }
-        tmp$ret$14 = tmp0_filterTo;
-        tmp$ret$15 = tmp$ret$14;
-        tmp_6.log('PAAGINASSSS: ' + tmp$ret$15);
+        var tmp0_safe_receiver = invoke$lambda_102($selectedFilters$delegate).get_1mhr4y_k$('Datasets');
+        var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_1mhr4y_k$('Page');
+        var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : firstOrNull(tmp1_safe_receiver);
+        var tmp3_elvis_lhs = 'PAAGINASSSS1: ' + (tmp2_safe_receiver == null ? null : toInt(tmp2_safe_receiver));
+        tmp_6.log(tmp3_elvis_lhs == null ? 1 : tmp3_elvis_lhs);
         tmp_2 = Unit_getInstance();
       }
       return Unit_getInstance();
@@ -55124,7 +55107,7 @@
     var numberOfPages$delegate = useState(numberToInt(tmp$ret$1));
     var handleChange = Pagination$lambda$lambda(props);
     var tmp_0 = default_25;
-    $this$FC.invoke_hixay3_k$(tmp_0, Pagination$lambda$lambda_0(numberOfPages$delegate, selectedFilters$delegate));
+    $this$FC.invoke_hixay3_k$(tmp_0, Pagination$lambda$lambda_0(selectedFilters$delegate, numberOfPages$delegate));
     return Unit_getInstance();
   }
   function invoke$lambda_154($selectedFilters$delegate) {
@@ -55340,7 +55323,7 @@
       return Unit_getInstance();
     };
   }
-  function Pagination$lambda$lambda$lambda($numberOfPages$delegate, $selectedFilters$delegate) {
+  function Pagination$lambda$lambda$lambda($selectedFilters$delegate, $numberOfPages$delegate) {
     return function ($this$invoke) {
       var tmp0_sx = $this$invoke;
       var tmp$ret$5;
@@ -55368,6 +55351,11 @@
       tmp$ret$4 = tmp0_apply;
       tmp$ret$5 = tmp$ret$4;
       tmp0_sx.sx = tmp$ret$5;
+      var tmp0_safe_receiver = invoke$lambda_154($selectedFilters$delegate).get_1mhr4y_k$('Datasets');
+      var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_1mhr4y_k$('Page');
+      var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : firstOrNull(tmp1_safe_receiver);
+      var tmp3_elvis_lhs = tmp2_safe_receiver == null ? null : toInt(tmp2_safe_receiver);
+      $this$invoke.page = tmp3_elvis_lhs == null ? 1 : tmp3_elvis_lhs;
       $this$invoke.color = (/*union*/{primary: 'primary', secondary: 'secondary', standard: 'standard'}/*union*/).primary;
       $this$invoke.count = invoke$lambda_156($numberOfPages$delegate);
       $this$invoke.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
@@ -55375,7 +55363,7 @@
       return Unit_getInstance();
     };
   }
-  function Pagination$lambda$lambda_0($numberOfPages$delegate, $selectedFilters$delegate) {
+  function Pagination$lambda$lambda_0($selectedFilters$delegate, $numberOfPages$delegate) {
     return function ($this$invoke) {
       var tmp0_sx = $this$invoke;
       var tmp$ret$8;
@@ -55425,7 +55413,7 @@
       $this$invoke.className = tmp$ret$11;
       $this$invoke.elevation = 0;
       var tmp = default_61;
-      $this$invoke.invoke_hixay3_k$(tmp, Pagination$lambda$lambda$lambda($numberOfPages$delegate, $selectedFilters$delegate));
+      $this$invoke.invoke_hixay3_k$(tmp, Pagination$lambda$lambda$lambda($selectedFilters$delegate, $numberOfPages$delegate));
       return Unit_getInstance();
     };
   }

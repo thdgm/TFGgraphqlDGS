@@ -13,14 +13,14 @@
   'use strict';
   //region block: imports
   var imul = Math.imul;
-  var THROW_ISE = kotlin_kotlin.$_$.lf;
+  var THROW_ISE = kotlin_kotlin.$_$.mf;
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var Enum = kotlin_kotlin.$_$.xe;
-  var classMeta = kotlin_kotlin.$_$.ya;
-  var setMetadataFor = kotlin_kotlin.$_$.dc;
-  var THROW_CCE = kotlin_kotlin.$_$.kf;
-  var getStringHashCode = kotlin_kotlin.$_$.fb;
-  var Annotation = kotlin_kotlin.$_$.qe;
+  var Enum = kotlin_kotlin.$_$.ye;
+  var classMeta = kotlin_kotlin.$_$.za;
+  var setMetadataFor = kotlin_kotlin.$_$.ec;
+  var THROW_CCE = kotlin_kotlin.$_$.lf;
+  var getStringHashCode = kotlin_kotlin.$_$.gb;
+  var Annotation = kotlin_kotlin.$_$.re;
   //endregion
   //region block: pre-declaration
   setMetadataFor(Version, 'Version', classMeta, Enum, undefined, undefined, undefined, []);

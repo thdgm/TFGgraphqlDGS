@@ -13,10 +13,10 @@
   'use strict';
   //region block: imports
   var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var interfaceMeta = kotlin_kotlin.$_$.hb;
-  var setMetadataFor = kotlin_kotlin.$_$.dc;
-  var toString = kotlin_kotlin.$_$.hc;
-  var classMeta = kotlin_kotlin.$_$.ya;
+  var interfaceMeta = kotlin_kotlin.$_$.ib;
+  var setMetadataFor = kotlin_kotlin.$_$.ec;
+  var toString = kotlin_kotlin.$_$.ic;
+  var classMeta = kotlin_kotlin.$_$.za;
   //endregion
   //region block: pre-declaration
   function fontFace(block) {
