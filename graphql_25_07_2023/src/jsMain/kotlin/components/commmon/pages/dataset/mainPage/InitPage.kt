@@ -47,7 +47,7 @@ suspend fun getDatasets(filters: MutableMap<String, MutableMap<String, Collectio
     }
     console.log("FILTROO: "+selectedFilters)
     console.log("PAGEEE: "+page)
-    val l =  apolloClient.query(DatasetsQuery(filter=Optional.present(filter), type=values, page = page)).execute().data?.resourcesByFilter?.filterNotNull() ?: emptyList()
+    val l =  apolloClient.query(DatasetsQuery(filter=Optional.present(filter), type=values, page = page, isDataset = true, isCatalog = false)).execute().data?.resourcesByFilter?.filterNotNull() ?: emptyList()
     val ll =  l.map{
         if (it.onDataset != null) {
             val title = if(!it.onDataset.title.isNullOrEmpty()) it.onDataset.title?.elementAt(0)?.literal ?: "No tiene título" else "No tiene título"
@@ -94,11 +94,12 @@ val InitPage = FC<InitPageProps> { props->
     val coroutineScope = CoroutineScope(Dispatchers.Default)
     var searchFilter by useState("")
     var selectedFiltersContext by useRequiredContext(FilterListContextAll)
-
     var listTestDatasets by useState(mutableListOf<DatasetModel>())
     var numberDatasets by useState(0)
-    //var pageNumber by useState(0)
 
+    //var pageNumber by useState(0)
+   /* var miVariable: MutableMap<String, MutableMap<String, Collection<String>>> =
+        selectedFiltersContext.mapValues { it.value.toMutableMap() }.toMutableMap()*/
     useEffect(selectedFiltersContext) {
 
         coroutineScope.launch {
@@ -117,12 +118,13 @@ val InitPage = FC<InitPageProps> { props->
     }
 
     useEffect(/*numberDatasets*/selectedFiltersContext) {
-        GlobalScope.launch {
+        coroutineScope.launch {
             console.log("TOTAL NUMBER")
             numberDatasets = getResourcesNumber(selectedFiltersContext,"dataset")
         }
 
     }
+
 
     val filtersMap = FiltersMapKeys()
 
@@ -139,7 +141,7 @@ val InitPage = FC<InitPageProps> { props->
 
                 ReactHTML.h1 {
                     className = ClassName("titleInit")
-                    +"Catálogo de datos"
+                    +"Conjuntos de datos"
                 }
                 Breadcrumbs {
                     sx {
@@ -161,16 +163,16 @@ val InitPage = FC<InitPageProps> { props->
                 filterForm {
 
                     filterList = listTestDatasets
-                    this.handleOnChange = { event ->
+                    /*this.handleOnChange = { event ->
                         searchFilter =
                             (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/
-                    }
+                    }*/
                 }
 
                 list {
                    // flag = pageNumber
                     numberOfDatasets = numberDatasets
-                    searchBy = searchFilter
+                  //  searchBy = searchFilter
                     filterList = listTestDatasets
                     //this.updateDatasetsList = {e,v -> pageNumber = v.toInt()}
                 }

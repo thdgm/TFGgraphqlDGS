@@ -1,5 +1,5 @@
 let config = {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: [
       "node_modules"
@@ -20,8 +20,8 @@ config.output = {
     path: "/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_js_apollo_30_05_2023/build/distributions",
     filename: (chunkData) => {
         return chunkData.chunk.name === 'main'
-            ? "index.html"
-            : "index.html-[name].js";
+            ? "multiplatformKotlin.js"
+            : "multiplatformKotlin-[name].js";
     },
     library: "multiplatformKotlin",
     libraryTarget: "umd",
@@ -34,8 +34,22 @@ config.module.rules.push({
         use: ["source-map-loader"],
         enforce: "pre"
 });
-config.devtool = 'source-map';
+config.devtool = 'eval-source-map';
 config.ignoreWarnings = [/Failed to parse source map/]
+
+// dev server
+config.devServer = {
+  "open": true,
+  "static": [
+    "/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_js_apollo_30_05_2023/build/processedResources/js/main"
+  ],
+  "client": {
+    "overlay": {
+      "errors": true,
+      "warnings": false
+    }
+  }
+};
 
 // Report progress to console
 // noinspection JSUnnecessarySemicolon

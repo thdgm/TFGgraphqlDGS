@@ -33,36 +33,42 @@ class CatalogQueries(
 
     // @DgsData catalogs: returns catalogs field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
-    fun catalogs(dfe: DgsDataFetchingEnvironment): Collection<Catalog?> {
+    fun catalogs(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int): Collection<Catalog?> {
         val ct: Catalog = dfe.getSource()
-        return catalogServices.getCalogsCatalog(ct.id)
+        return catalogServices.getCalogsCatalog(ct.id,page,pageSize)
     }
 
     // @DgsData records: returns records field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
-    fun records(dfe: DgsDataFetchingEnvironment): Collection<CatalogRecord?> {
+    fun records(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int): Collection<CatalogRecord?> {
         val ct: Catalog = dfe.getSource()
-        return catalogServices.getRecordsCatalog(ct.id)
+        return catalogServices.getRecordsCatalog(ct.id,page,pageSize)
     }
 
     // @DgsData services: returns services field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
-    fun services(dfe: DgsDataFetchingEnvironment): Collection<DataService?> {
+    fun services(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int): Collection<DataService?> {
         val ct: Catalog = dfe.getSource()
-        return catalogServices.getServicesCatalog(ct.id)
+        return catalogServices.getServicesCatalog(ct.id,page,pageSize)
     }
 
     // @DgsData datasets: returns datasets field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
-    fun datasets(dfe: DgsDataFetchingEnvironment): Collection<DatasetInCatalog?> {
+    fun datasets(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int): Collection<DatasetInCatalog?> {
         val ct: Catalog = dfe.getSource()
-        return catalogServices.getDatasetsCatalog(ct.id)
+        return catalogServices.getDatasetsCatalog(ct.id,page,pageSize)
     }
 
     // @DgsData resources: returns resources field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
-    fun resources(dfe: DgsDataFetchingEnvironment): Collection<ResourceInCatalog?> {
+    fun resources(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int): Collection<ResourceInCatalog?> {
         val ct: Catalog = dfe.getSource()
-        return catalogServices.getResourcesCatalog(ct.id)
+        return catalogServices.getResourcesCatalog(ct.id,page,pageSize)
+    }
+    // @DgsData numberOfResources: returns number of resources within the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfResources(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberResourcesCatalog(ct.id)
     }
 }

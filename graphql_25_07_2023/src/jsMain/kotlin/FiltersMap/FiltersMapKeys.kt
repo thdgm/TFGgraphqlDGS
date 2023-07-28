@@ -36,6 +36,9 @@ class FiltersMapKeys {
             "Fecha creación" to listOf(),
             "Fecha última modificación" to listOf(),
             "PrimaryTopic" to listOf(),
+            "Page" to listOf(),
+            "OrderBy" to listOf("ASC"),
+            "SortBy" to listOf("No Order"),
         ),
 
 
@@ -52,7 +55,10 @@ class FiltersMapKeys {
             "Licenses" to listOf(),
             "Nivel de Administración" to listOf(),
             "Fecha creación" to listOf(),
-            "Fecha última modificación" to listOf()
+            "Fecha última modificación" to listOf(),
+            "Page" to listOf(),
+            "OrderBy" to listOf("ASC"),
+            "SortBy" to listOf("No Order"),
         ),
         "DataServices" to mutableMapOf(
             "Categoría" to listOf(),
@@ -66,6 +72,9 @@ class FiltersMapKeys {
             "Descripciones" to listOf(),
             "Títulos" to listOf(),
             "Licenses" to listOf(),
+            "Page" to listOf(),
+            "OrderBy" to listOf("ASC"),
+            "SortBy" to listOf("No Order"),
 
         ),
         "Distributions" to mutableMapOf(
@@ -74,12 +83,18 @@ class FiltersMapKeys {
             "Formato" to listOf(),
             "Títulos" to listOf(),
             "DataServices" to listOf(),
+            "Page" to listOf(),
+            "OrderBy" to listOf("ASC"),
+            "SortBy" to listOf("No Order"),
         ),
         "CatalogRecords" to mutableMapOf(
             "Hints" to listOf(),
             "Tipo del contenido" to listOf(),
             "ContentUrl" to listOf(),
             "PrimaryTopic" to listOf(),
+            "Page" to listOf(),
+            "OrderBy" to listOf("ASC"),
+            "SortBy" to listOf("No Order"),
         )
 
 

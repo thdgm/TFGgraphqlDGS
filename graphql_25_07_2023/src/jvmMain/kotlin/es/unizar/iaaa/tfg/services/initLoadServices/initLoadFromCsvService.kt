@@ -3,6 +3,7 @@ package es.unizar.iaaa.tfg.services.initLoadServices
 
 import com.netflix.graphql.dgs.DgsQueryExecutor
 import es.unizar.iaaa.tfg.services.csvServices.ProcessCsvServices
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 /*
@@ -19,6 +20,7 @@ class InitLoadFromCsvServiceImpl(
     private val processCsvServices: ProcessCsvServices
 
 ) : InitLoadFromCsvService {
+
 
     override fun loadFromCsv() {
         val inputParam = "\$input"

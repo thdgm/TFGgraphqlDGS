@@ -16,6 +16,7 @@ import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
 import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
+import java.time.LocalDateTime
 
 interface ResourcesByFilterServices {
     fun getResourcesByField(filter: String, value: Collection<String>, page: Int): Collection<Resource?>
@@ -109,52 +110,104 @@ class ResourcesByFilterServicesImpl(
 
     }
 
+    fun getDatasetsByFilters(appliedFilters: List<MapInput>, type: String,page: Int,sortBy: String, orderBy: String?): Collection<Resource>{
+        //Conversiones de issued, modified y period
+        val issued = appliedFilters.find { it.key == "Fecha creación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
+        val modified = appliedFilters.find { it.key == "Fecha última modificación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
+        val period = appliedFilters.find { it.key == "Frecuencia de Actualización"}?.values?.map{converterAux.castFrequencyFilter(it)} ?: listOf()
+        val notation = appliedFilters.find { it.key == "Nivel de Administración"}?.values?.map{"${converterAux.getAdministrationLevel(it)}%"} ?: listOf()
+
+        val startEnd = appliedFilters.find { it.key == "Frecuencia de Actualización" }?.values
+        var start: LocalDateTime? = null
+        var end:LocalDateTime? = null
+        if (!startEnd.isNullOrEmpty()){
+            start = if (startEnd.first().split("--").first().trim() != ""){
+                converterAux.toLocalDateTime(startEnd.first().split("--").first().trim())
+            } else null
+            end = if (startEnd.first().split("--").last().trim() != ""){
+                converterAux.toLocalDateTime(startEnd.first().split("--").last().trim())
+            } else null
+        }
+
+        if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)){
+            return resourceRepository.findAllDatasets(PageRequest.of(page,20)).content.map { convertersResourcesEntitiesTo.createResource(it) }
+        }
+        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation, start, end) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        return res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()
+    }
+
+    fun getCatalogsByFilters(appliedFilters: List<MapInput>, type: String,page: Int, sortBy: String, orderBy: String?): Collection<Resource>{
+        //Conversiones de issued, modified y period
+
+        val issued = appliedFilters.find { it.key == "Fecha creación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
+        val modified = appliedFilters.find { it.key == "Fecha última modificación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
+        val period = appliedFilters.find { it.key == "Frecuencia de Actualización"}?.values?.map{converterAux.castFrequencyFilter(it)} ?: listOf()
+        val notation = appliedFilters.find { it.key == "Nivel de Administración"}?.values?.map{"${converterAux.getAdministrationLevel(it)}%"} ?: listOf()
+
+        val startEnd = appliedFilters.find { it.key == "Frecuencia de Actualización" }?.values
+        var start: LocalDateTime? = null
+        var end:LocalDateTime? = null
+        if (!startEnd.isNullOrEmpty()){
+            start = if (startEnd.first().split("--").first().trim() != ""){
+                converterAux.toLocalDateTime(startEnd.first().split("--").first().trim())
+            } else null
+            end = if (startEnd.first().split("--").last().trim() != ""){
+                converterAux.toLocalDateTime(startEnd.first().split("--").last().trim())
+            } else null
+        }
+
+        if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)){
+            return resourceRepository.findAllCatalogs(PageRequest.of(page,20)).content.map { convertersResourcesEntitiesTo.createResource(it) }
+        }
+        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation, start, end) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        return res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()
+    }
+
 
     override fun getResourcesByFilters(filters: Collection<MapInput>, type: String,page: Int): Collection<Resource>{
         val orderBy = filters.firstOrNull { it.key == "OrderBy" }?.values?.firstOrNull()
         var sortBy = filters.firstOrNull { it.key == "SortBy" }?.values?.firstOrNull()
 
-
+        var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
         sortBy = when(sortBy){
             "issued" -> {"issued"}
             "modified" -> {"modified"}
             "notation" -> {"publisher_id"}
             else ->{"id"}
         }
-
-        var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+        return when (type){
+            "dataset" -> getDatasetsByFilters(appliedFilters, type, page,sortBy,orderBy)
+            "catalog" -> getCatalogsByFilters(appliedFilters, type, page,sortBy,orderBy)
+            else -> emptyList()
+        }
+        /*var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
         //Conversiones de issued, modified y period
         val issued = appliedFilters.find { it.key == "Fecha creación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
         val modified = appliedFilters.find { it.key == "Fecha última modificación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
         val period = appliedFilters.find { it.key == "Frecuencia de Actualización"}?.values?.map{converterAux.castFrequencyFilter(it)} ?: listOf()
         val notation = appliedFilters.find { it.key == "Nivel de Administración"}?.values?.map{"${converterAux.getAdministrationLevel(it)}%"} ?: listOf()
-        println("TIIIITTTTLLLEESSSSSSSSSSS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${appliedFilters.find { it.key == "Títulos" }?.values}")
 
+        val startEnd = appliedFilters.find { it.key == "Frecuencia de Actualización" }?.values
+        var start: LocalDateTime? = null
+        var end:LocalDateTime? = null
+        if (!startEnd.isNullOrEmpty()){
+             start = if (startEnd.first().split("--").first().trim() != ""){
+                converterAux.toLocalDateTime(startEnd.first().split("--").first().trim())
+            } else null
+             end = if (startEnd.first().split("--").last().trim() != ""){
+                converterAux.toLocalDateTime(startEnd.first().split("--").last().trim())
+            } else null
+        }
 
         if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)){
             return resourceRepository.findAllDatasets(PageRequest.of(page,20)).content.map { convertersResourcesEntitiesTo.createResource(it) }
         }
-        //return resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
-        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
-        println("RESSS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: $res")
-        println("RESSS2::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()}")
+        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation, start, end) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        return res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()*/
 
-        return res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()
-        /*val orderResources= mutableListOf<Pair<Resource, LocalDateTime?>>()
-        val resources = getResources(filters, type,page)
-        println("ESTOoooooooooo::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: $orderBy $sortBy")
-        resources.map {
-            orderResources.add(Pair(it, resourceRepository.findById(it.id).get().issued))
-        }
-        println("ESTOoooooooooo1::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${orderResources.map{it.first}}")
-
-        val v = orderResources.sortedBy { it.second }.map { it.first }
-        println("ESTOoooooooooo2::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${v}")
-
-        return resources*/
 
     }
-    fun getResources(filters: Collection<MapInput>, type: String,page: Int): Collection<Resource>{
+   /* fun getResources(filters: Collection<MapInput>, type: String,page: Int): Collection<Resource>{
         val orderBy = filters.firstOrNull { it.key == "OrderBy" }?.values?.firstOrNull()
         val sortBy = filters.firstOrNull { it.key == "SortBy" }?.values?.firstOrNull()
         val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
@@ -204,7 +257,7 @@ class ResourcesByFilterServicesImpl(
             }
         }.flatten().filter { it.type == type }.map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
             .toList()
-    }
+    }*/
 
     fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{
         if (selectedFilters.isNullOrEmpty()){

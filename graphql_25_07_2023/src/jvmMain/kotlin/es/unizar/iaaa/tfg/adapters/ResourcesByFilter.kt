@@ -15,7 +15,7 @@ class ResourcesByFilter(
 
     // @DgsQuery resourcesByFilter: return resources filtered by filters values
     @DgsQuery
-    fun resourcesByFilter(@InputArgument filters: Collection<MapInput>, @InputArgument type: String, @InputArgument page: Int): Collection<Resource?>{
+    fun resourcesByFilter(@InputArgument filters: Collection<MapInput>, @InputArgument type: String, @InputArgument page: Int,@InputArgument isDataset: Boolean,@InputArgument isCatalog: Boolean): Collection<Resource?>{
         println("ENTRA::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
         return resourcesByFilterServices.getResourcesByFilters(filters,type,page)
     }

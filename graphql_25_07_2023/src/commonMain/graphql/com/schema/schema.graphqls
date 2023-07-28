@@ -1,10 +1,23 @@
+
+scalar LangString
+
+scalar LocalDateTime
+
+scalar Frequency
+
+scalar NonNegativeInt
+
+scalar Concept
+
+scalar MediaType
+
 schema {
   query: Query
-
+  mutation: Mutation
 }
 
 type Query {
-  resource(id: ID): Resource
+  resource(id: ID,isDataset: Boolean, isCatalog: Boolean,page: Int!): Resource
   catalog(id: ID): Catalog
   dataset(id: ID): DatasetInCatalog
   numberOfResources(filters:[MapInput!],type: String!): Int
@@ -12,7 +25,7 @@ type Query {
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord
   distribution(id: ID): Distribution
-  resourcesByFilter(filters:[MapInput!], type: String!, page: Int!): [Resource] # Filter could be p.g: publisher
+  resourcesByFilter(filters:[MapInput!], type: String!, page: Int!, isDataset: Boolean, isCatalog: Boolean): [Resource] # Filter could be p.g: publisher
   findResourceByIdentifier(id: String): Resource
   getAllThemes(page: Int!, pageSize: Int!): [String]      # Get all existing themes
   getAllKeywords(page: Int!, pageSize: Int!): [String] # Get all existing keywords with particular language
@@ -20,8 +33,8 @@ type Query {
   getAllFrequencies(page: Int!, pageSize: Int!): [String] # Get all existing Frequency's ranges
   getAllFormats(page: Int!, pageSize: Int!): [String]     # Get all existing Formats
   getAllAdminLabel(page: Int!, pageSize: Int!): [String]  # Get all existing Publisher's notations p.g: L02000048 mapped
-                                                                              # Map them. If starts with L0: Local Administration
-                                                                              # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
+  # Map them. If starts with L0: Local Administration
+  # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
 
 
 
@@ -214,11 +227,11 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
 type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext{
   id: ID!
   title: [LangString!]
-  resources: [ResourceInCatalog!] # A resource that is listed in the catalog.
-  datasets: [DatasetInCatalog!]  # A dataset that is listed in the catalog.
-  services: [DataService!] # A service that is listed in the catalog.
-  catalogs: [Catalog!] # A catalog that is listed in the catalog.
-  records: [CatalogRecord!] # A record describing the registration of a single resource
+  resources(page: Int!, pageSize: Int!): [ResourceInCatalog!] # A resource that is listed in the catalog.
+  datasets(page: Int!, pageSize: Int!): [DatasetInCatalog!]  # A dataset that is listed in the catalog.
+  services(page: Int!, pageSize: Int!): [DataService!] # A service that is listed in the catalog.
+  catalogs(page: Int!, pageSize: Int!): [Catalog!] # A catalog that is listed in the catalog.
+  records(page: Int!, pageSize: Int!): [CatalogRecord!] # A record describing the registration of a single resource
   # (e.g., a dataset, a data service) that is part of the catalog.
   # set(records.primaryTopic) == resources
   description: [LangString!]
@@ -236,6 +249,7 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   license:String
   publisher:Concept
   identifier: [String!]
+  numberOfResources: Int
   # Future:
   #  - A Catalog can record descriptions of resources such as dataset or dataservices
   #    dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
@@ -372,15 +386,3 @@ type PeriodOfTime{
   end:LocalDateTime
 }
 
-
-scalar LangString
-
-scalar LocalDateTime
-
-scalar Frequency
-
-scalar NonNegativeInt
-
-scalar Concept
-
-scalar MediaType

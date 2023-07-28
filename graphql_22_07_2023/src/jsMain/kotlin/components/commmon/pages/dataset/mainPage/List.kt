@@ -233,7 +233,6 @@ val list = FC<ListProps> { props ->
                 numberOfPages = props.numberOfDatasets
             }
             //val v = selectedFilters.filter { it.key == "Datasets" }
-            console.log("PAAGINASSSS1: "+ selectedFilters["Datasets"]?.get("Page")?.firstOrNull()?.toInt() ?: 1)
 
         }
 

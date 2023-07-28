@@ -2,11 +2,13 @@ package components.commmon.searcher
 
 
 import commonModels.DatasetModel
+import components.commmon.pages.dataset.mainPage.IsLoadingContext
 import csstype.AlignItems
 import csstype.Auto
 import csstype.ClassName
 
 import csstype.Display
+import csstype.NamedColor
 import csstype.pct
 import csstype.px
 import csstype.rgba
@@ -26,6 +28,7 @@ import react.dom.aria.AriaHasPopup
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.events.ChangeEvent
+import react.useRequiredContext
 import react.useState
 
 
@@ -40,6 +43,7 @@ val Searcher = FC<SearcherProps> { props->
 
     var openDialog by useState(false)
 
+    var isDisabled by useRequiredContext(IsLoadingContext)
     val handleChange: (event: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?) -> Unit = {event ->
         console.log(event)
     //props.filterList.filter { it.title!!.contains(event.target.value) }
@@ -74,7 +78,7 @@ val Searcher = FC<SearcherProps> { props->
                 marginBottom= 10.px
                 width= 100.pct
                 borderRadius = 30.px
-                backgroundColor = rgba(247, 247, 247, 1.0)
+                backgroundColor = NamedColor.white//rgba(247, 247, 247, 1.0)
                 //zIndex = integer(1300)
 
             }
@@ -84,6 +88,7 @@ val Searcher = FC<SearcherProps> { props->
                     marginLeft = 2.pct
 
                 }
+                disabled = isDisabled
                 ariaLabel = "filter"
                 edge = IconButtonEdge.start
                 ariaHasPopup = AriaHasPopup.`false`
@@ -105,7 +110,7 @@ val Searcher = FC<SearcherProps> { props->
                     width= 100.pct
                 }
                // type = "search"
-                placeholder = "Search your content"
+                placeholder = "Search in this page"
                 onChange = props.handleOnChange //{event: ChangeEvent<HTMLElement> -> console.log(props.filterList.filter { it.title!!.contains((event.target as HTMLInputElement).value) })}
             }
             /*IconButton {

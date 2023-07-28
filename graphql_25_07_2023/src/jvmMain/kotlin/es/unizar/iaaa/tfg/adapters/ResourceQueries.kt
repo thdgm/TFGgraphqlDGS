@@ -30,7 +30,7 @@ class ResourceQueries(
 
     // @DgsQuery resource: returns the resource which id is the @InputArgument id
     @DgsQuery
-    fun resource(@InputArgument id: String?): Resource? {
+    fun resource(@InputArgument id: String?,@InputArgument isDataset: Boolean,@InputArgument isCatalog: Boolean,@InputArgument page: Int): Resource? {
         if (id == null) {
             return null
         }

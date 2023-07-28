@@ -1,0 +1,102 @@
+
+query NumberOfResources($filter:[MapInput!],$type:String!){
+    numberOfResources(filters:$filter,type:$type)
+}
+
+query Datasets($filter:[MapInput!], $type:String!,$page: Int!, $isDataset: Boolean!, $isCatalog: Boolean!) {
+    resourcesByFilter (filters:$filter, type:$type, page: $page, isDataset:$isDataset, isCatalog:$isCatalog) {
+        ... on Dataset @include(if: $isDataset) {
+            id
+            title
+            publisher
+            description
+            distributions {
+                format
+            }
+        }
+        ... on Catalog @include(if: $isCatalog) {
+            id
+            title
+            description
+            issued
+            modified
+            numberOfResources
+        }
+    }
+}
+
+
+query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!) {
+    resource(id:$id,isDataset:$isDataset, isCatalog:$isCatalog, page:$page){
+        ... on Dataset @include(if: $isDataset){
+            id
+            title
+            publisher
+            description
+            license
+            keywords
+            theme
+            language
+            issued
+            modified
+            accrualPeriodicity
+            identifier
+            inCatalog{
+                id
+                identifier
+                title
+            }
+            isPrimaryTopicOf{
+                id
+                title
+            }
+            inSeries{
+                id
+                title
+                identifier
+            }
+            isServedBy{
+                id
+                identifier
+                title
+            }
+            spatial
+            temporal{
+                start
+                end
+            }
+            distributions {
+                accessUrl
+                format
+            }
+        }
+        ... on Catalog @include(if: $isCatalog) {
+            id
+            title
+            description
+            issued
+            modified
+            numberOfResources
+            publisher
+            license
+            resources(page:$page,pageSize: 10) {
+                __typename
+                id
+                identifier
+            }
+            records(page:$page,pageSize: 10) {
+                id
+                title
+            }
+            inCatalog{
+                id
+                identifier
+            }
+
+            isPrimaryTopicOf{
+                id
+                title
+            }
+        }
+    }
+}

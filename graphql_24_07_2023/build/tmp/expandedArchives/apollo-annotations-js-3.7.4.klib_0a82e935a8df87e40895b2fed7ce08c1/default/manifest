@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=com.apollographql.apollo3\:apollo-annotations
+compiler_version=1.7.21
+depends=kotlin
+jsOutputName=apollo-kotlin-apollo-annotations
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

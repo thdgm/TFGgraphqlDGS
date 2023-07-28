@@ -212,7 +212,7 @@ val selectFilterDataset = FC<SelectedFilterProps> { props ->
                         }.toMutableMap()
                     }
                     accessKey = "Frecuencia de Actualización"
-                    id = "${datasetInfo.elementAt(0)?.accrualPeriodicity}"
+                    id = "${datasetInfo.elementAt(0)?.temporalStart} -- ${datasetInfo.elementAt(0)?.temporalEnd}"
                     value = "Frecuencia de Actualización"
                     +"Frecuencia de Actualización"
                 }

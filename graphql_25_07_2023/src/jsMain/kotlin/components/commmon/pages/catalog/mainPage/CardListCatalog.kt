@@ -1,5 +1,6 @@
 package components.commmon.pages.catalog.mainPage
 
+import commonModels.CatalogModel
 import commonModels.DatasetModel
 import components.commmon.Sizes
 import csstype.ClassName
@@ -23,7 +24,7 @@ import react.FC
 import react.Props
 
 external interface CardProps:Props{
-    var datasetInfo: DatasetModel
+    var catalogInfo: CatalogModel
     var handleClickOpen: () -> Unit
     var handleClickClose: () -> Unit
 }
@@ -44,26 +45,33 @@ val CardListCatalog = FC<CardProps> { props->
                         color = rgb(34,24,117)
                         fontWeight = FontWeight.bold
                     }
-                    //+"${props.datasetInfo.title}"
-                    + "CATALOG TITLE"
-                }
+                    +"${props.catalogInfo.id}"
 
+                }
                 Typography {
                     variant = TypographyVariant.subtitle1
                     sx {
                         color = rgb(10,72,241)
-
                     }
-                    //+"${props.datasetInfo.publisher}"
-                    + "CATALOG PUBLISHER"
+                    +"${props.catalogInfo.title}"
                 }
-
                 Typography {
                     variant = TypographyVariant.subtitle2
                     className = ClassName("description-content")
-                    //+"${props.datasetInfo.description}"
-                    + "CATALOG DESCRIPTION"
+                    +"${props.catalogInfo.description}"
                 }
+                Typography {
+                    variant = TypographyVariant.subtitle2
+
+                    +"Emitido: ${props.catalogInfo.issued}"
+                }
+                Typography {
+                    variant = TypographyVariant.subtitle2
+
+                    +"Última modificación: ${props.catalogInfo.modified}"
+
+                }
+
 
             }
             CardActions {
@@ -77,26 +85,26 @@ val CardListCatalog = FC<CardProps> { props->
                     spacing = responsive(4.px)
                     direction = responsive(StackDirection.row)
                     Chip {
-                        label = react.ReactNode("10 resources")
+                        label = react.ReactNode("${props.catalogInfo.numberOfResources} resources")
                         variant = mui.material.ChipVariant.outlined
                         color = ChipColor.primary
 
                     }
-                    Chip {
-                        label = react.ReactNode("5 datasets")
-                        variant = mui.material.ChipVariant.outlined
-                        color = ChipColor.secondary
-                    }
-                    Chip {
-                        label = react.ReactNode("4 dataservices")
-                        variant = mui.material.ChipVariant.outlined
-                        color = ChipColor.warning
-                    }
-                    Chip {
-                        label = react.ReactNode("10 CR")
-                        variant = mui.material.ChipVariant.outlined
-                        color = ChipColor.success
-                    }
+                    /*Chip {
+                       label = react.ReactNode("5 datasets")
+                       variant = mui.material.ChipVariant.outlined
+                       color = ChipColor.secondary
+                   }
+                  Chip {
+                       label = react.ReactNode("4 dataservices")
+                       variant = mui.material.ChipVariant.outlined
+                       color = ChipColor.warning
+                   }
+                   Chip {
+                       label = react.ReactNode("10 CR")
+                       variant = mui.material.ChipVariant.outlined
+                       color = ChipColor.success
+                   }*/
 
 
                 }

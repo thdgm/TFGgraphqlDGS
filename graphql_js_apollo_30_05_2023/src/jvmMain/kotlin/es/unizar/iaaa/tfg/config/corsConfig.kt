@@ -5,11 +5,13 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
-/*
+
 @Configuration
 @EnableWebMvc
 class WebConfig : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
+            .allowedOrigins("http://localhost:8081/graphql") // Reemplaza con el origen desde donde provienen tus solicitudes
+            .allowedMethods("GET", "POST", "PUT", "DELETE")
     }
-}*/
+}

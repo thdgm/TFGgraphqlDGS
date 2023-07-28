@@ -9,6 +9,7 @@ import com.schema.FrequenciesQuery
 import com.schema.KeywordsQuery
 import com.schema.PublishersQuery
 import com.schema.ThemesQuery
+import commonModels.CatalogModel
 
 
 import commonModels.DatasetModel
@@ -125,7 +126,7 @@ suspend fun getAllFormats(more: Boolean): Collection<String>{
 }
 
 external interface FilterFormCatalogProps:Props{
-    var filterList: Collection<DatasetModel>
+    var filterList: Collection<CatalogModel>
     var handleOnChange: (event: ChangeEvent<HTMLElement>) -> Unit
     var addList: Collection<String>
 
@@ -171,11 +172,11 @@ val filterFormCatalog = FC<FilterFormCatalogProps> {props->
                 boxShadow = None.none
             }
             Box{
-                Searcher{
+                /*Searcher{
                     this.filterList = catalogsList
                     this.handleOnChange = props.handleOnChange//{event -> searchFilter= (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/}
 
-                }
+                }*/
             }
             Divider {}
             Grid {

@@ -1,0 +1,160 @@
+{
+  "version": "9",
+  "items": {
+    "f759a84445cc1297e3b0e2d63d08b9ad": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.8.10/a61b182458550492c12aee66157d7b524a63a5ec/kotlin-stdlib-common-1.8.10.jar"
+    },
+    "e6f8215fb23aaaf229550cd496a7bede": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-json-js/1.4.1/c917f54185a5e5d0fa89fe4306459f02f43995e5/kotlinx-serialization-json-jsir-1.4.1.klib"
+    },
+    "f87e1091f3042c2a72bd4350c41785fa": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-core-js/1.4.1/f6e619b57ae5a92c2247f92e8e6712cedc0b81c2/kotlinx-serialization-core-jsir-1.4.1.klib"
+    },
+    "3820b665aa959d051951e0d695374c0e": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/1.8.10/7f93c25deb9f979fa60c91720d1b0b6bfcb678e3/kotlin-stdlib-js-1.8.10.jar",
+      "target": "kotlin/1.8.10"
+    },
+    "21ecb09f997651b4ac62ad993f255dfb": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core-js/2.2.4/90a5bf42820e8d487a3c08ca5bcef438814a3ed5/ktor-client-core-jsir-2.2.4.klib",
+      "target": "ktor-ktor-client-core-js-ir/2.2.4"
+    },
+    "576a0a09f10a658c39d555110e8649c2": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-events-js/2.2.4/f581b2464fc68e9a63edd4fd99159d5b90502ecb/ktor-events-jsir-2.2.4.klib"
+    },
+    "ee7d90a1e16f90e2840c1c956556fef1": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-js/2.2.4/cbb5200f4727fae910558fe9bc0b642ba15e6690/ktor-http-jsir-2.2.4.klib"
+    },
+    "400eb4c6d74b172b03782f48547e2c68": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils-js/2.2.4/8a1ca968393d045173775bd5230afe27073a8baa/ktor-utils-jsir-2.2.4.klib"
+    },
+    "1551e4d64818cb66ac3c4c1ae9232d23": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-io-js/2.2.4/bc6a5009b497192e023ea40a20ef3cbb4fa68f0f/ktor-io-jsir-2.2.4.klib"
+    },
+    "87b37b026e9680692b36e7c4c08334c2": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.6.4/791d62c16e6fad7cc9b1e6fafe88a3d454744d99/kotlinx-coroutines-core-jsir-1.6.4.klib"
+    },
+    "489089308e6bacd4b18fc93c501bb01c": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.17.3/5fd992f78532945e29a1c54279eafffe2a0c95fe/atomicfu-jsir-0.17.3.klib"
+    },
+    "68b4fc3260b20bef86b65f0a39fae75a": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/atomicfu/1.6.21/f486917a9c89e5c7d5d08009d58ad810a57a7011/atomicfu-1.6.21.jar"
+    },
+    "a8a3fc1a85c71a190c460252c10e836e": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-websocket-serialization-js/2.2.4/e904d7564f4dfca85d3eb9c68d29d6f79b735631/ktor-websocket-serialization-jsir-2.2.4.klib"
+    },
+    "2f0585b7047012447e220a764c3e9926": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-serialization-js/2.2.4/1e6499af35632c95c89fd7db2d72c056319c75a0/ktor-serialization-jsir-2.2.4.klib"
+    },
+    "fc5c56718e32ed0b85af93585233307e": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-websockets-js/2.2.4/d26b5d7bd38d43780c63a23369b4c3220d42a5f4/ktor-websockets-jsir-2.2.4.klib"
+    },
+    "e0d78fa72a0ff5c61690c6ae514b8622": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-runtime-js/3.7.4/b7ab4756f9a08aebc84da492ac568ed49fff25d9/apollo-runtime-js-3.7.4.klib"
+    },
+    "220aaf69b52eb7a744dd06792b745abd": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-js-js/2.2.4/79fea070cc5a2c479b66d445665dbd74290d3bbb/ktor-client-js-jsir-2.2.4.klib"
+    },
+    "054ca76a07e55b035443a7b4809b47cb": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-api-js/3.7.4/1cf58f3547c6c264c1925ba7900810085465e9fa/apollo-api-js-3.7.4.klib"
+    },
+    "ee43f6a6ced8da47fcfa9f33c31e8474": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-js/3.2.0/f38125aaf2ff6107cc53f45d83a4652b8422acce/okio-jsir-3.2.0.klib"
+    },
+    "9b06cc555e8222df992c8ef42110d959": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/com.benasher44/uuid-js/0.3.1/dda123a9057b0a2b221838b0fac66b3774c0e6f1/uuid-jsir-0.3.1.klib"
+    },
+    "0a82e935a8df87e40895b2fed7ce08c1": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-annotations-js/3.7.4/69741c9b5e07fec0c935a54d232c00cf448669da/apollo-annotations-js-3.7.4.klib"
+    },
+    "194e962e40cd58ab9c4623688cde0036": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.22/9fb43bccb6cf8cfaaf3776c75f5df4f052f09b72/kotlin-stdlib-1.7.22.jar"
+    },
+    "1663777da75e29d30820be50c37d3400": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/23.0.0/8cc20c07506ec18e0834947b84a864bfc094484e/annotations-23.0.0.jar"
+    },
+    "92f80e0dfa818dde9946ef38bdb2c773": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-mpp-utils-js/3.7.4/41b6a776c4c49e00fbc7880dc1f3021ed6e16c43/apollo-mpp-utils-js-3.7.4.klib"
+    },
+    "adf739e042d8054766161e02719700ba": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-content-negotiation-js/2.2.4/402fbc3a2401dbf70f9f8a595b7816df075d8a2/ktor-client-content-negotiation-jsir-2.2.4.klib"
+    },
+    "78957761e7a6ec93fdb532c7c55f0fd4": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-serialization-kotlinx-json-js/2.2.4/8ebca766ae895904c60912115abbb0df796106d4/ktor-serialization-kotlinx-json-jsir-2.2.4.klib"
+    },
+    "efe2e47c0e64df045fb7e57fa33b70b0": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-serialization-kotlinx-js/2.2.4/8a3103f72bc09fea178eb6bd3d7aa827546ec899/ktor-serialization-kotlinx-jsir-2.2.4.klib"
+    },
+    "b16e351f6caf53ac12449928a903ddc6": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-html-js/0.7.3/32f189139d9200d2c7c8c0b050e907788113609/kotlinx-html-jsir-0.7.3.klib"
+    },
+    "1ac085e2f277a9a2ed0382b398248c53": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-js-runner/1.8.10/b4f77e5ecd9c56fc312d90cb0ab919ee452dfb4/kotlin-test-js-runner-1.8.10.jar",
+      "target": "kotlin-test-js-runner/1.8.10"
+    },
+    "f9b0018b4466d87c5580a9adc3f4433d": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-emotion/11.9.3-pre.354/c4d23486bd5650bc8643ee7cc5ac68ce16ef358c/kotlin-emotion-11.9.3-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-emotion-js-ir/11.9.3-pre.354"
+    },
+    "61d85ca3ca498380a38f9e50bb14fcc5": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-react-core/18.2.0-pre.354/52d403c81ef290d66beac526358ea53df4a0f36f/kotlin-react-core-18.2.0-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-react-core-js-ir/18.2.0-pre.354"
+    },
+    "124eeb3642318695917f58bea1b36027": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-csstype/3.1.0-pre.354/4be2329e97aaba5ac5a198fdde6b9b678845c635/kotlin-csstype-3.1.0-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-csstype-js-ir/3.1.0-pre.354"
+    },
+    "d31a0c186bef5b40961ef09a5ad8eca7": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-js/1.0.0-pre.354/13eef5056a6fa945860a937393577cd5b40a68b7/kotlin-js-1.0.0-pre.354.klib"
+    },
+    "6c8156b0fc4b24b80915eccc89f5c25f": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-mui/5.8.7-pre.354/29c49082d8ded3105c369eb57d89da2ac14edb36/kotlin-mui-5.8.7-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-mui-js-ir/5.8.7-pre.354"
+    },
+    "9e1a4742ecf0d7f798b48fd50edc78e1": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-react-dom/18.2.0-pre.354/2fe456cd06755910291b385d62d7882d52a6747c/kotlin-react-dom-18.2.0-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-react-dom-js-ir/18.2.0-pre.354"
+    },
+    "6cc717d579c75759b7b37019a2dba91c": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-browser/0.0.1-pre.354/149172d8bd4765695076642dbb253a594fad3b15/kotlin-browser-0.0.1-pre.354.klib"
+    },
+    "12b179a0f13d8f39592077887fdce01e": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-popper/2.11.5-pre.354/caac7151d52fd86d69b3b08fc7d6103d14fea6ad/kotlin-popper-2.11.5-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-popper-js-ir/2.11.5-pre.354"
+    },
+    "08296f231985396f9de19223158f614f": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-mui-icons/5.8.4-pre.354/27373551ffc528370f915ec29712f59344a75ef6/kotlin-mui-icons-5.8.4-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-mui-icons-js-ir/5.8.4-pre.354"
+    },
+    "225681e8cdca9e79f8f6523ff070a319": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-react/18.2.0-pre.354/3495f9684688935d7fc43e289b4e66b2fed9b66a/kotlin-react-18.2.0-pre.354.klib"
+    },
+    "6cfa0ef4e2f31ba2c0eed0ca695aa086": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-react-redux/7.2.6-pre.354/f98bd2e4fa7150c2c12ec37dc7e5400310d67d48/kotlin-react-redux-7.2.6-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-react-redux-js-ir/7.2.6-pre.354"
+    },
+    "ff5278225335199b907fa7a82406859b": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-redux/4.1.2-pre.354/7ed4107dc3307e41076895baca6bb1fb9663cfd2/kotlin-redux-4.1.2-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-redux-js-ir/4.1.2-pre.354"
+    },
+    "2a6a165c67aaca7a6372cc163d3dc26e": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-extensions/1.0.1-pre.354/eb7a0dcee9b1cd7208f2fff00e52bb61107ec4dd/kotlin-extensions-1.0.1-pre.354.klib"
+    },
+    "5fac66f798ed48bae4ee628a49254071": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-react-legacy/18.2.0-pre.354/b5b3b5e9c1496f99b33c318d12444bed2e804db7/kotlin-react-legacy-18.2.0-pre.354.klib"
+    },
+    "1ea83698a1e6c16d01b5efc1dcd85266": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-react-router-dom/6.3.0-pre.354/2982302dbd10f11de2fc3e8f58a8aa2ad90d74a3/kotlin-react-router-dom-6.3.0-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-react-router-dom-js-ir/6.3.0-pre.354"
+    },
+    "46994b34ae1691e8dc4794f8eccf49d5": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin-wrappers/kotlin-history/5.3.0-pre.354/48eafc94f09a6e33d0d9e5de3dc7d5caf7ac1b46/kotlin-history-5.3.0-pre.354.klib",
+      "target": "kotlin-wrappers-kotlin-history-js-ir/5.3.0-pre.354"
+    },
+    "9cdf5d4f20c1ed91dea2f9d3a176c414": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-common/1.8.10/1da8086c87a846e6fa99a4f01380d0adb78cde3e/kotlin-test-common-1.8.10.jar"
+    },
+    "ca7dd8445de9ef2af75ba1d669e15868": {
+      "src": "/Users/diegogarcia/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-annotations-common/1.8.10/b3015327d703b67b7450bf6714e3854d7130efdc/kotlin-test-annotations-common-1.8.10.jar"
+    }
+  }
+}

@@ -154,6 +154,7 @@ val filterInfo = FC<FilterInfoProps> { props ->
                 }
 
             }
+        if (props.filterName != "Etiquetas más comunes"){
             mui.material.List {
                 ListItemButton {
                     sx {
@@ -162,16 +163,16 @@ val filterInfo = FC<FilterInfoProps> { props ->
                     }
                     className = ClassName("addMoreFilters")
 
-                    if (!showMoreOrLess){
-                        onClick = {handleClickMore(); showMoreOrLess = true}
-                        +"Mostrar más"
-                    }else{
-                        onClick = {handleClickLess(); showMoreOrLess = false}
-                        +"Mostrar menos"
-                    }
-
+                        if (!showMoreOrLess) {
+                            onClick = { handleClickMore(); showMoreOrLess = true }
+                            +"Mostrar más"
+                        } else {
+                            onClick = { handleClickLess(); showMoreOrLess = false }
+                            +"Mostrar menos"
+                        }
                 }
             }
+        }
             /*ListFilterParams{
                 this.filterFields = props.filterFields
                 category = props.filterName

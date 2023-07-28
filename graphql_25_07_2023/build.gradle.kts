@@ -113,18 +113,10 @@ kotlin {
 
         val jvmMain by getting {
             dependencies {
-                /*implementation("io.ktor:ktor-serialization:$ktorVersion")
-                implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-                implementation("io.ktor:ktor-server-cors:$ktorVersion")
-                implementation("io.ktor:ktor-server-compression:$ktorVersion")
-                implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-                implementation("io.ktor:ktor-server-netty:$ktorVersion")*/
-                //implementation("ch.qos.logback:logback-classic:$logbackVersion")
-                //implementation("org.litote.kmongo:kmongo-coroutine-serialization:$kmongoVersion")
+
                 implementation("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
 
-                implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
+                implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:7.3.4"))
                 implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
 
                 // Same version as codegen plugin
@@ -132,6 +124,7 @@ kotlin {
                 implementation("org.springframework.boot:spring-boot-starter-web")
                 implementation("org.springframework.boot:spring-boot-starter-data-jpa")
                 implementation("org.springframework.boot:spring-boot-starter-graphql")
+
                 implementation("org.springframework.boot:spring-boot-starter-data-redis")
                 implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -214,7 +207,7 @@ detekt {
 
 dependencyManagement {
     imports {
-        mavenBom ("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release")
+        mavenBom ("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:7.3.4")
     }
 }
 

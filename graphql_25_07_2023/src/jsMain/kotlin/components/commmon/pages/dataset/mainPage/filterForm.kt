@@ -16,6 +16,7 @@ import commonModels.DatasetModel
 import components.commmon.FilterListContextAll
 import components.commmon.Sizes
 import components.commmon.searcher.Searcher
+import components.commmon.searcher.SearcherByKeywords
 import csstype.Auto
 import csstype.ClassName
 import csstype.Display
@@ -69,7 +70,7 @@ val filtersTypes = listOf(
     "Publicador",
     "Nivel de Administración",
     "Frecuencia de Actualización",
-    "Etiqueta"
+    "Etiquetas más comunes"
 )
 /*
 val filtersTypesFields = mutableListOf<Collection<String>>(
@@ -197,7 +198,7 @@ val filterForm = FC<FilterFormProps> { props->
                 boxShadow = None.none
             }
             Box {
-                Searcher {
+                SearcherByKeywords {
                     this.filterList = datasetList
                     this.handleOnChange =
                         props.handleOnChange//{event -> searchFilter= (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/}
@@ -259,7 +260,7 @@ val filterForm = FC<FilterFormProps> { props->
                                     if (value == "Frecuencia de Actualización") getAllFrequencies(false) else filtersTypesFields.elementAt(
                                         4
                                     ),
-                                    if (value == "Etiqueta") getAllKeywords(false) else filtersTypesFields.elementAt(5),
+                                    if (value == "Etiquetas más comunes") getAllKeywords(false) else filtersTypesFields.elementAt(5),
                                 )
                             }
                             this.updateFilterListLess = {
@@ -275,7 +276,7 @@ val filterForm = FC<FilterFormProps> { props->
                                     if (value == "Frecuencia de Actualización") getAllFrequencies(true) else filtersTypesFields.elementAt(
                                         4
                                     ),
-                                    if (value == "Etiqueta") getAllKeywords(true) else filtersTypesFields.elementAt(5),
+                                    if (value == "Etiquetas más comunes") getAllKeywords(true) else filtersTypesFields.elementAt(5),
                                 )
                             }
                         }

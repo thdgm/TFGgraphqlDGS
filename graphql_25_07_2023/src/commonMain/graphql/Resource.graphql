@@ -1,15 +1,11 @@
-query Resource($id:ID!){
-    resource(id:$id){
-        id
-    }
-}
+
 query NumberOfResources($filter:[MapInput!],$type:String!){
     numberOfResources(filters:$filter,type:$type)
 }
 
-query Datasets($filter:[MapInput!], $type:String!,$page: Int!) {
-    resourcesByFilter (filters:$filter, type:$type, page: $page) {
-        ... on Dataset{
+query Datasets($filter:[MapInput!], $type:String!,$page: Int!, $isDataset: Boolean!, $isCatalog: Boolean!) {
+    resourcesByFilter (filters:$filter, type:$type, page: $page, isDataset:$isDataset, isCatalog:$isCatalog) {
+        ... on Dataset @include(if: $isDataset) {
             id
             title
             publisher
@@ -18,13 +14,21 @@ query Datasets($filter:[MapInput!], $type:String!,$page: Int!) {
                 format
             }
         }
+        ... on Catalog @include(if: $isCatalog) {
+            id
+            title
+            description
+            issued
+            modified
+            numberOfResources
+        }
     }
 }
 
 
-query DatasetInfo($id:ID!) {
-    resource(id:$id){
-        ... on Dataset{
+query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!) {
+    resource(id:$id,isDataset:$isDataset, isCatalog:$isCatalog, page:$page){
+        ... on Dataset @include(if: $isDataset){
             id
             title
             publisher
@@ -64,6 +68,34 @@ query DatasetInfo($id:ID!) {
             distributions {
                 accessUrl
                 format
+            }
+        }
+        ... on Catalog @include(if: $isCatalog) {
+            id
+            title
+            description
+            issued
+            modified
+            numberOfResources
+            publisher
+            license
+            resources(page:$page,pageSize: 10) {
+                __typename
+                id
+                identifier
+            }
+            records(page:$page,pageSize: 10) {
+                id
+                title
+            }
+            inCatalog{
+                id
+                identifier
+            }
+
+            isPrimaryTopicOf{
+                id
+                title
             }
         }
     }

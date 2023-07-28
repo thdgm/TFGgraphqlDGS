@@ -104,16 +104,15 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
         return true
     }
 
-    if (catalogInfo.isEmpty()) {
-        if (isLoading) {
+    if (catalogInfo.isNullOrEmpty()) {
+       // if (isLoading) {
             CircularProgress {
                 className = ClassName("circularProgressInfo")
             }
-        } else {
-            +"No se ha encontrado información del elemento"
-            PruebaInfo()
-        }
+        //}
     } else {
+        console.log("CAATTTTTTTTT:::::::::: "+catalogInfo)
+        console.log("INCATALOGGGGGG:::::: "+catalogInfo.elementAt(0).records)
         div {
             className = ClassName("titleSelect")
             Breadcrumbs {
@@ -135,8 +134,10 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                 }
 
                 Typography {
-                    if (catalogInfo.elementAt(0).title!!.isNotEmpty()) {
+                    if (!catalogInfo.elementAt(0).title.isNullOrEmpty()) {
                         +"${catalogInfo.elementAt(0).title?.elementAt(0)}"
+                    }else{
+                        +"${catalogInfo.first().id}"
                     }
 
                 }
@@ -226,54 +227,11 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
             className = ClassName("titleInit")
             if (catalogInfo.elementAt(0).title!!.isNotEmpty()) {
                 +"${catalogInfo.elementAt(0).title?.elementAt(0)}"
+            }else{
+                +"${catalogInfo.first().id}"
             }
         }
-        if (catalogInfo.elementAt(0).theme!!.isNotEmpty()) {
-            Paper {
-                sx {
-                    width = Sizes.BoxList.Width
-                    marginRight = Auto.auto
-                    marginLeft = Auto.auto
-                    marginTop = 2.pct
-                    paddingRight = 10.pct
-                    paddingLeft = 6.pct
-                    paddingTop = 1.pct
-                    paddingBottom = 1.pct
-                    backgroundColor = rgba(249, 249, 249, 0.87)
-                    position = Position.relative
-                }
-                elevation = 0
-                Stack {
-                    sx {
-                        display = Display.block
-                    }
-                    className = ClassName("stackSelectedFilters")
-                    spacing = responsive(4.px)
-                    direction = responsive(StackDirection.row)
-                    catalogInfo.elementAt(0).theme?.map {chipValue ->
-                        Chip {
-                            className = ClassName("themesChip")
-                            label = ReactNode(chipValue)
-                            color = ChipColor.success
-                            onClick = {
-                                selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                    if (key == "Catalogs") {
-                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                            if (innerKey == "Categoría" && !filterVal.contains(chipValue)) filterVal.plus(chipValue)
-                                            else if (filterVal.contains(chipValue)) filterVal.filter { miVal -> miVal != chipValue }
-                                            else filterVal
-                                        }.toMutableMap()
-                                    } else {
-                                        catalogMap
-                                    }
-                                }.toMutableMap()
-                            }
-                            clickable
-                        }
-                    }
-                }
-            }
-        }
+
 
         Paper {
             sx {
@@ -307,14 +265,16 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                 }
                             }
                         }
-                        TableRow {
-                            TableCell {
-                                className = ClassName("tableCell1")
-                                +"Nivel de administración"
-                            }
-                            TableCell {
-                                className = ClassName("tableCell2")
-                                +" ........... "
+                        if (!catalogInfo.elementAt(0).notation.isNullOrBlank()) {
+                            TableRow {
+                                TableCell {
+                                    className = ClassName("tableCell1")
+                                    +"Nivel de administración"
+                                }
+                                TableCell {
+                                    className = ClassName("tableCell2")
+                                    +"${catalogInfo.elementAt(0)?.notation}"
+                                }
                             }
                         }
                         if (!catalogInfo.elementAt(0).license.isNullOrBlank()) {
@@ -326,6 +286,204 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                 TableCell {
                                     className = ClassName("tableCell2")
                                     +"${catalogInfo.elementAt(0).license}"
+                                }
+                            }
+                        }
+                        if (!catalogInfo.elementAt(0).issued.isNullOrEmpty() && catalogInfo.elementAt(0).issued != "null") {
+                            TableRow {
+                                TableCell {
+                                    className = ClassName("tableCell1")
+                                    +"Fecha de creación"
+                                }
+                                TableCell {
+                                    className = ClassName("tableCell2")
+                                    +"${catalogInfo.elementAt(0).issued}"
+                                }
+                            }
+                        }
+                        if (!catalogInfo.elementAt(0).modified.isNullOrEmpty() && catalogInfo.elementAt(0).modified != "null") {
+                            TableRow {
+                                TableCell {
+                                    className = ClassName("tableCell1")
+                                    +"Fecha última modificación"
+                                }
+                                TableCell {
+                                    className = ClassName("tableCell2")
+                                    +"${catalogInfo.elementAt(0).modified}"
+                                }
+                            }
+                        }
+
+
+                        if (catalogInfo.elementAt(0).isPTO != null) {
+                            TableRow {
+                                TableCell {
+                                    className = ClassName("tableCell1")
+                                    +"Catalog Record"
+                                }
+                                TableCell {
+                                    className = ClassName("tableCell2")
+                                    id = catalogInfo.elementAt(0).isPTO?.recordId
+                                    Link {
+                                        if(catalogInfo.elementAt(0).isPTO?.recordTitle.isNullOrEmpty()){
+                                            +"${catalogInfo.elementAt(0).isPTO?.recordId}"
+                                        }else{
+                                            +"${catalogInfo.elementAt(0).isPTO?.recordTitle}"
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if(!catalogInfo.elementAt(0).resources.isNullOrEmpty()) {
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"Resources"
+                }
+                List {
+                    catalogInfo.elementAt(0).resources?.map {
+                        ListItem {
+                            className = ClassName("distributionsList")
+
+                            secondaryAction = addToFiltersButton.create {
+                                addToFilters = {
+
+                                    selectedFilters =
+                                        selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                            if (key == "Catalogs") {
+                                                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                    if (innerKey == "Resources" && !filterVal.contains(it.resourceId)) filterVal.plus(
+                                                        it.resourceId
+                                                    )
+                                                    else if (filterVal.contains(it.resourceId)) filterVal.filter { miVal -> miVal != it.resourceId }
+                                                    else filterVal
+                                                }.toMutableMap()
+                                            } else {
+                                                catalogMap
+                                            }
+                                        }.toMutableMap()
+                                }
+                            }
+                            ListItemAvatar {
+                                Tooltip {
+                                    title = ReactNode(it.resourceType)
+
+                                    if (it.resourceType == "Dataset") {
+                                        TextSnippet {
+                                            color = SvgIconColor.primary
+                                        }
+                                    } else if (it.resourceType == "Catalog") {
+                                        Folder {
+                                            color = SvgIconColor.primary
+                                        }
+                                    } else if (it.resourceType == "DatasetSeries") {
+                                        Source {
+                                            color = SvgIconColor.primary
+                                        }
+                                    } else {
+                                        RssFeed {
+                                            color = SvgIconColor.primary
+                                        }
+                                    }
+                                }
+                            }
+                            ListItemText {
+                                Link {
+                                    if (it.resourceIdentifier.isNullOrEmpty()) +"${it.resourceId}"
+                                    else +"${it.resourceIdentifier.first()}"
+                                }
+                            }
+                            ListItemAvatar {
+                                Chip {
+                                    className = ClassName("keywordsChip")
+                                    label = ReactNode("${it.resourceType}")
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        if (!catalogInfo.elementAt(0).inCatalog.isNullOrEmpty()) {
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"Catalogos contenedores"
+                }
+                List {
+                    catalogInfo.elementAt(0).inCatalog?.mapIndexed { index, it ->
+                        if (it.catalogId != null) {
+                            ListItem {
+                                className = ClassName("distributionsList")
+                                secondaryAction = addToFiltersButton.create {
+                                    addToFilters = {
+
+                                        selectedFilters =
+                                            selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                                if (key == "Catalogs") {
+                                                    catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                        if (innerKey == "Catalogs" && !filterVal.contains(
+                                                                it.catalogId
+                                                            )
+                                                        ) filterVal.plus(
+                                                            it.catalogId
+                                                        )
+                                                        else if (filterVal.contains(it.catalogId)) filterVal.filter { miVal ->
+                                                            miVal != it.catalogId
+                                                        }
+                                                        else filterVal
+                                                    }.toMutableMap()
+                                                } else {
+                                                    catalogMap
+                                                }
+                                            }.toMutableMap()
+                                    }
+                                }
+
+                                ListItemAvatar {
+                                    Folder {
+                                        color = SvgIconColor.primary
+                                    }
+                                }
+                                ListItemText {
+                                    Link {
+                                        if (it.catalogIdentifiers.isNullOrEmpty()) +"${it.catalogId}"
+                                        else +"${it.catalogIdentifiers.first()}"
+                                    }
                                 }
                             }
                         }
@@ -445,92 +603,10 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                     }
                 }
             }
-            if (catalogInfo.elementAt(0).resources!!.isNotEmpty()) {
-                Paper {
-                    sx {
-                        width = Sizes.BoxList.Width
-                        marginRight = Auto.auto
-                        marginLeft = Auto.auto
-                        marginTop = 2.pct
-                        paddingTop = 2.pct
-                        paddingBottom = 5.pct
-                        backgroundColor = NamedColor.white
-                        paddingRight = 10.pct
-                        paddingLeft = 6.pct
-                        position = Position.relative
-                    }
-                    elevation = 0
-                    Typography {
-                        className = ClassName("subtitle_info")
-                        +"Resources"
-                    }
-                    List {
-                        catalogInfo.elementAt(0).resources?.map {
-                            var valueToShow = if (it.resourceIdentifier.isNullOrEmpty()) {
-                                if (!it.resourceTitles.isNullOrEmpty()) {
-                                    it.resourceTitles.elementAt(0)
-                                } else {
-                                    "Sin título o identificador"
-                                }
-                            } else it.resourceIdentifier.elementAt(0)
-                            ListItem {
-                                className = ClassName("distributionsList")
 
-                                secondaryAction = addToFiltersButton.create {
-                                    addToFilters = {
 
-                                        selectedFilters =
-                                            selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                                if (key == "Catalogs") {
-                                                    catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                        if (innerKey == "Resources" && !filterVal.contains(valueToShow)) filterVal.plus(
-                                                            valueToShow
-                                                        )
-                                                        else if (filterVal.contains(valueToShow)) filterVal.filter { miVal -> miVal != valueToShow }
-                                                        else filterVal
-                                                    }.toMutableMap()
-                                                } else {
-                                                    catalogMap
-                                                }
-                                            }.toMutableMap()
-                                    }
-                                }
 
-                                ListItemAvatar {
-                                    Tooltip {
-                                        title = ReactNode(it.resourceType)
-
-                                        if (it.resourceType == "dataset") {
-                                            TextSnippet {
-                                                color = SvgIconColor.primary
-                                            }
-                                        } else if (it.resourceType == "catalog") {
-                                            Folder {
-                                                color = SvgIconColor.primary
-                                            }
-                                        } else if (it.resourceType == "datasetSeries") {
-                                            Source {
-                                                color = SvgIconColor.primary
-                                            }
-                                        } else {
-                                            RssFeed {
-                                                color = SvgIconColor.primary
-                                            }
-                                        }
-                                    }
-                                }
-                                ListItemText {
-                                    Link {
-                                        +valueToShow
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-            if (catalogInfo.elementAt(0).records!!.isNotEmpty()) {
+            /*if (catalogInfo.elementAt(0).records!!.isNotEmpty()) {
                 Paper {
                     sx {
                         width = Sizes.BoxList.Width
@@ -560,10 +636,10 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                             selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
                                                 if (key == "Catalogs") {
                                                     catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                        if (innerKey == "CatalogRecords" && !filterVal.contains(it)) filterVal.plus(
-                                                            it
+                                                        if (innerKey == "CatalogRecords" && !filterVal.contains(it.recordId)) filterVal.plus(
+                                                            it.recordId
                                                         )
-                                                        else if (filterVal.contains(it)) filterVal.filter { miVal -> miVal != it }
+                                                        else if (filterVal.contains(it.recordId)) filterVal.filter { miVal -> miVal != it.recordId }
                                                         else filterVal
                                                     }.toMutableMap()
                                                 } else {
@@ -580,7 +656,8 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                 }
                                 ListItemText {
                                     Link {
-                                        +it
+                                        if (it.recordTitle.isNullOrEmpty()) it.recordId
+                                        else it.recordTitle.first()
                                     }
                                 }
                             }
@@ -588,9 +665,9 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                     }
 
                 }
-            }
+            }*/
 ////////////////////////
-        if (!catalogInfo.elementAt(0).isServedByID.isNullOrEmpty()) {
+        /*if (!catalogInfo.elementAt(0).isServedBy.isNullOrEmpty()) {
             Paper {
                 sx {
                     width = Sizes.BoxList.Width
@@ -610,8 +687,8 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                     +"Servido por: "
                 }
                 List {
-                    catalogInfo.elementAt(0).isServedByTitle?.mapIndexed { index, it ->
-                        if (it?.elementAt(0) != null) {
+                    catalogInfo.elementAt(0).isServedBy?.mapIndexed { index, it ->
+                        if (it.serviceId != null) {
                             ListItem {
                                 className = ClassName("distributionsList")
                                 secondaryAction = addToFiltersButton.create {
@@ -621,10 +698,10 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                             selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
                                                 if (key == "Catalogs") {
                                                     catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                        if (innerKey == "DataServices" && !filterVal.contains(it.elementAt(0))) filterVal.plus(
-                                                            it.elementAt(0)
+                                                        if (innerKey == "DataServices" && !filterVal.contains(it.serviceId)) filterVal.plus(
+                                                            it.serviceId
                                                         )
-                                                        else if (filterVal.contains(it.elementAt(0))) filterVal.filter { miVal -> miVal != it.elementAt(0) }
+                                                        else if (filterVal.contains(it.serviceId)) filterVal.filter { miVal -> miVal != it.serviceId }
                                                         else filterVal
                                                     }.toMutableMap()
                                                 } else {
@@ -641,7 +718,8 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                 }
                                 ListItemText {
                                     Link {
-                                        it.elementAt(0)
+                                        if (it.serviceIdentifiers.isNullOrEmpty()) it.serviceId
+                                        else it.serviceIdentifiers?.first()
                                     }
                                 }
                             }
@@ -650,177 +728,12 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                 }
 
             }
-        }
-            if (!catalogInfo.elementAt(0).inCatalogID.isEmpty()) {
-                Paper {
-                    sx {
-                        width = Sizes.BoxList.Width
-                        marginRight = Auto.auto
-                        marginLeft = Auto.auto
-                        marginTop = 2.pct
-                        paddingTop = 2.pct
-                        paddingBottom = 5.pct
-                        backgroundColor = NamedColor.white
-                        paddingRight = 10.pct
-                        paddingLeft = 6.pct
-                        position = Position.relative
-                    }
-                    elevation = 0
-                    Typography {
-                        className = ClassName("subtitle_info")
-                        +"Catalogos contenedores"
-                    }
-                    List {
-                        catalogInfo.elementAt(0).inCatalogTitle?.mapIndexed { index, it ->
-                            if (it?.elementAt(0) != null) {
-                                ListItem {
-                                    className = ClassName("distributionsList")
-                                    secondaryAction = addToFiltersButton.create {
-                                        addToFilters = {
+        }*/
 
-                                            selectedFilters =
-                                                selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                                    if (key == "Catalogs") {
-                                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                            if (innerKey == "Catalogs" && !filterVal.contains(
-                                                                    it.elementAt(
-                                                                        0
-                                                                    )
-                                                                )
-                                                            ) filterVal.plus(
-                                                                it.elementAt(0)
-                                                            )
-                                                            else if (filterVal.contains(it.elementAt(0))) filterVal.filter { miVal ->
-                                                                miVal != it.elementAt(
-                                                                    0
-                                                                )
-                                                            }
-                                                            else filterVal
-                                                        }.toMutableMap()
-                                                    } else {
-                                                        catalogMap
-                                                    }
-                                                }.toMutableMap()
-                                        }
-                                    }
-
-                                    ListItemAvatar {
-                                        Folder {
-                                            color = SvgIconColor.primary
-                                        }
-                                    }
-                                    ListItemText {
-                                        Link {
-                                            it.elementAt(0)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
 
 ////////////////////////////
 
-            Paper {
-                sx {
-                    width = Sizes.BoxList.Width
-                    marginRight = Auto.auto
-                    marginLeft = Auto.auto
-                    marginTop = 2.pct
-                    paddingTop = 2.pct
-                    paddingBottom = 5.pct
-                    backgroundColor = NamedColor.white
-                    paddingRight = 10.pct
-                    paddingLeft = 6.pct
-                    //backgroundColor = NamedColor.transparent
-                    position = Position.relative
-                }
-                elevation = 0
-                Typography {
-                    className = ClassName("subtitle_info")
-                    +"Información adicional"
-                }
-                TableContainer {
 
-                    Table {
-                        className = ClassName("tableInfo")
-                        TableBody {
-                            if (!catalogInfo.elementAt(0).issued.isNullOrEmpty() && catalogInfo.elementAt(0).issued != "null") {
-                                TableRow {
-                                    TableCell {
-                                        className = ClassName("tableCell1")
-                                        +"Fecha de creación"
-                                    }
-                                    TableCell {
-                                        className = ClassName("tableCell2")
-                                        +"${catalogInfo.elementAt(0).issued}"
-                                    }
-                                }
-                            }
-                            if (!catalogInfo.elementAt(0).modified.isNullOrEmpty() && catalogInfo.elementAt(0).modified != "null") {
-                                TableRow {
-                                    TableCell {
-                                        className = ClassName("tableCell1")
-                                        +"Fecha última modificación"
-                                    }
-                                    TableCell {
-                                        className = ClassName("tableCell2")
-                                        +"${catalogInfo.elementAt(0).modified}"
-                                    }
-                                }
-                            }
-
-
-                            if (!catalogInfo.elementAt(0).isPTOID.isNullOrEmpty()) {
-                                TableRow {
-                                    TableCell {
-                                        className = ClassName("tableCell1")
-                                        +"Catalog Record"
-                                    }
-                                    TableCell {
-                                        className = ClassName("tableCell2")
-                                        id = catalogInfo.elementAt(0).isPTOID
-                                        Link {
-                                            catalogInfo.elementAt(0).isPTOTitle
-                                        }
-
-                                    }
-
-                                }
-                            }
-                            if (catalogInfo.elementAt(0).language!!.isNotEmpty()) {
-                                TableRow {
-                                    TableCell {
-                                        className = ClassName("tableCell1")
-                                        +"Idiomas"
-                                    }
-                                    TableCell {
-                                        className = ClassName("tableCell2")
-                                        Stack {
-                                            sx {
-                                                display = Display.block
-                                            }
-                                            className = ClassName("stackLanguagesChip")
-                                            spacing = responsive(4.px)
-                                            direction = responsive(StackDirection.row)
-                                            catalogInfo.elementAt(0).language?.map {
-                                                Chip {
-                                                    className = ClassName("languagesChip")
-                                                    label = ReactNode(it)
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
 
         }
     }

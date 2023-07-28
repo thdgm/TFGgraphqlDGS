@@ -409,7 +409,6 @@
   var CoroutineImpl = kotlin_kotlin.$_$.la;
   var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.w1;
   var isInterface = kotlin_kotlin.$_$.qb;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.v9;
   var Builder_4 = kotlin_com_apollographql_apollo3_apollo_runtime.$_$.a;
   var HttpMethod_Post_getInstance = kotlin_com_apollographql_apollo3_apollo_api.$_$.i2;
   var HttpHeader = kotlin_com_apollographql_apollo3_apollo_api.$_$.c;
@@ -424,6 +423,7 @@
   var getLocalDelegateReference = kotlin_kotlin.$_$.db;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.c1;
   var useEffect = kotlin_org_jetbrains_kotlin_wrappers_kotlin_react_core.$_$.a;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.v9;
   var collectionSizeOrDefault = kotlin_kotlin.$_$.t6;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.b1;
   var KProperty0 = kotlin_kotlin.$_$.vc;
@@ -495,56 +495,72 @@
   setMetadataFor(Companion_7, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(PublishersQuery, 'PublishersQuery', classMeta, undefined, [Query], undefined, undefined, []);
   setMetadataFor(Data_9, 'Data', classMeta, undefined, [Data], undefined, {0: Data_getInstance_8}, []);
+  setMetadataFor(ResourcesByFilter_0, 'ResourcesByFilter', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(OnDataset_1, 'OnDataset', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Distribution_1, 'Distribution', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(InCatalog_0, 'InCatalog', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Resource_0, 'Resource', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_8, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(ResourceQuery, 'ResourceQuery', classMeta, undefined, [Query], undefined, undefined, []);
+  setMetadataFor(QueryTestQuery, 'QueryTestQuery', classMeta, undefined, [Query], undefined, undefined, []);
   setMetadataFor(Data_10, 'Data', classMeta, undefined, [Data], undefined, {0: Data_getInstance_9}, []);
+  setMetadataFor(Resource_1, 'Resource', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_9, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(ResourceQuery, 'ResourceQuery', classMeta, undefined, [Query], undefined, undefined, []);
+  setMetadataFor(Data_11, 'Data', classMeta, undefined, [Data], undefined, {0: Data_getInstance_10}, []);
+  setMetadataFor(Companion_10, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ThemesQuery, 'ThemesQuery', classMeta, undefined, [Query], undefined, undefined, []);
-  setMetadataFor(Data_11, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_12, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(AdminLevelsQuery_ResponseAdapter, 'AdminLevelsQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(AdminLevelsQuery_VariablesAdapter, 'AdminLevelsQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_12, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_13, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(Catalog_0, 'Catalog', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(CatalogQuery_ResponseAdapter, 'CatalogQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(CatalogQuery_VariablesAdapter, 'CatalogQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_13, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Resource_1, 'Resource', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(OnDataset_1, 'OnDataset', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(InCatalog_0, 'InCatalog', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_14, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Resource_2, 'Resource', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(OnDataset_2, 'OnDataset', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(InCatalog_1, 'InCatalog', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(IsPrimaryTopicOf_0, 'IsPrimaryTopicOf', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(InSeries_0, 'InSeries', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(IsServedBy_0, 'IsServedBy', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(Temporal_0, 'Temporal', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Distribution_1, 'Distribution', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Distribution_2, 'Distribution', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(DatasetInfoQuery_ResponseAdapter, 'DatasetInfoQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(DatasetInfoQuery_VariablesAdapter, 'DatasetInfoQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_14, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(ResourcesByFilter_0, 'ResourcesByFilter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(OnDataset_2, 'OnDataset', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Distribution_2, 'Distribution', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_15, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(ResourcesByFilter_1, 'ResourcesByFilter', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(OnDataset_3, 'OnDataset', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Distribution_3, 'Distribution', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(DatasetsQuery_ResponseAdapter, 'DatasetsQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(DatasetsQuery_VariablesAdapter, 'DatasetsQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_15, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_16, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(FormatsQuery_ResponseAdapter, 'FormatsQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(FormatsQuery_VariablesAdapter, 'FormatsQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_16, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_17, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(FrequenciesQuery_ResponseAdapter, 'FrequenciesQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(FrequenciesQuery_VariablesAdapter, 'FrequenciesQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_17, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_18, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(KeywordsQuery_ResponseAdapter, 'KeywordsQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(KeywordsQuery_VariablesAdapter, 'KeywordsQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_18, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_19, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(NumberOfResourcesQuery_ResponseAdapter, 'NumberOfResourcesQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(NumberOfResourcesQuery_VariablesAdapter, 'NumberOfResourcesQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_19, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_20, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(PublishersQuery_ResponseAdapter, 'PublishersQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(PublishersQuery_VariablesAdapter, 'PublishersQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_20, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Resource_2, 'Resource', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_21, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(ResourcesByFilter_2, 'ResourcesByFilter', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(OnDataset_4, 'OnDataset', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Distribution_4, 'Distribution', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(InCatalog_2, 'InCatalog', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Resource_3, 'Resource', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(QueryTestQuery_ResponseAdapter, 'QueryTestQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(QueryTestQuery_VariablesAdapter, 'QueryTestQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_22, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Resource_4, 'Resource', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(ResourceQuery_ResponseAdapter, 'ResourceQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ResourceQuery_VariablesAdapter, 'ResourceQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(Data_21, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(Data_23, 'Data', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(ThemesQuery_ResponseAdapter, 'ThemesQuery_ResponseAdapter', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ThemesQuery_VariablesAdapter, 'ThemesQuery_VariablesAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(AdminLevelsQuerySelections, 'AdminLevelsQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
@@ -556,56 +572,57 @@
   setMetadataFor(KeywordsQuerySelections, 'KeywordsQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(NumberOfResourcesQuerySelections, 'NumberOfResourcesQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(PublishersQuerySelections, 'PublishersQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(QueryTestQuerySelections, 'QueryTestQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ResourceQuerySelections, 'ResourceQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ThemesQuerySelections, 'ThemesQuerySelections', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Companion_10, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(AbstractDataset, 'AbstractDataset', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_11, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Catalog_1, 'Catalog', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(AbstractDataset, 'AbstractDataset', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_12, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CatalogRecord, 'CatalogRecord', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Catalog_1, 'Catalog', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_13, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Concept, 'Concept', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(CatalogRecord, 'CatalogRecord', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_14, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(DataService, 'DataService', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Concept, 'Concept', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_15, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(DatasetInCatalog, 'DatasetInCatalog', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(DataService, 'DataService', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_16, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(DatasetSeries, 'DatasetSeries', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(DatasetInCatalog, 'DatasetInCatalog', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_17, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Distribution_3, 'Distribution', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(DatasetSeries, 'DatasetSeries', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_18, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Frequency, 'Frequency', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Distribution_5, 'Distribution', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_19, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(GraphQLBoolean, 'GraphQLBoolean', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Frequency, 'Frequency', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_20, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(GraphQLFloat, 'GraphQLFloat', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(GraphQLBoolean, 'GraphQLBoolean', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_21, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(GraphQLID, 'GraphQLID', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(GraphQLFloat, 'GraphQLFloat', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_22, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(GraphQLInt, 'GraphQLInt', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(GraphQLID, 'GraphQLID', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_23, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(GraphQLString, 'GraphQLString', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(GraphQLInt, 'GraphQLInt', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_24, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(LangString, 'LangString', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(GraphQLString, 'GraphQLString', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_25, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(LangString, 'LangString', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Companion_26, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(LocalDateTime, 'LocalDateTime', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(MapInput, 'MapInput', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Companion_26, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(MediaType, 'MediaType', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_27, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(PeriodOfTime, 'PeriodOfTime', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(MediaType, 'MediaType', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_28, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Query_0, 'Query', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(PeriodOfTime, 'PeriodOfTime', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_29, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(ReferenceWithinExternalContext, 'ReferenceWithinExternalContext', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Query_0, 'Query', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_30, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Resource_3, 'Resource', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(ReferenceWithinExternalContext, 'ReferenceWithinExternalContext', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Companion_31, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Resource_5, 'Resource', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Companion_32, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ResourceInCatalog, 'ResourceInCatalog', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(MapInput_InputAdapter, 'MapInput_InputAdapter', objectMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(CatalogModel, 'CatalogModel', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(Companion_32, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Companion_33, 'Companion', objectMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor($serializer, '$serializer', objectMeta, undefined, [GeneratedSerializer], undefined, undefined, []);
   setMetadataFor(Concept_0, 'Concept', classMeta, undefined, undefined, undefined, {0: $serializer_getInstance}, []);
   setMetadataFor(ConceptAdapterScalar, 'ConceptAdapterScalar', classMeta, undefined, undefined, undefined, undefined, []);
@@ -808,7 +825,7 @@
     return obj$default(tmp, false, 1, null);
   };
   AdminLevelsQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(AdminLevelsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(AdminLevelsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   AdminLevelsQuery.prototype.component1_7eebsc_k$ = function () {
     return this.page_1;
@@ -961,7 +978,7 @@
     return obj$default(tmp, false, 1, null);
   };
   CatalogQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(CatalogQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(CatalogQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   CatalogQuery.prototype.component1_7eebsc_k$ = function () {
     return this.id_1;
@@ -1680,7 +1697,7 @@
     return obj$default(tmp, false, 1, null);
   };
   DatasetInfoQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(DatasetInfoQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(DatasetInfoQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   DatasetInfoQuery.prototype.component1_7eebsc_k$ = function () {
     return this.id_1;
@@ -1973,7 +1990,7 @@
     return obj$default(tmp, false, 1, null);
   };
   DatasetsQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(DatasetsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(DatasetsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   DatasetsQuery.prototype.component1_7eebsc_k$ = function () {
     return this.filter_1;
@@ -2109,7 +2126,7 @@
     return obj$default(tmp, false, 1, null);
   };
   FormatsQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(FormatsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(FormatsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   FormatsQuery.prototype.component1_7eebsc_k$ = function () {
     return this.page_1;
@@ -2237,7 +2254,7 @@
     return obj$default(tmp, false, 1, null);
   };
   FrequenciesQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(FrequenciesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(FrequenciesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   FrequenciesQuery.prototype.component1_7eebsc_k$ = function () {
     return this.page_1;
@@ -2365,7 +2382,7 @@
     return obj$default(tmp, false, 1, null);
   };
   KeywordsQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(KeywordsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(KeywordsQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   KeywordsQuery.prototype.component1_7eebsc_k$ = function () {
     return this.page_1;
@@ -2485,7 +2502,7 @@
     return obj$default(tmp, false, 1, null);
   };
   NumberOfResourcesQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(NumberOfResourcesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(NumberOfResourcesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   NumberOfResourcesQuery.prototype.component1_7eebsc_k$ = function () {
     return this.type_1;
@@ -2604,7 +2621,7 @@
     return obj$default(tmp, false, 1, null);
   };
   PublishersQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(PublishersQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(PublishersQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   PublishersQuery.prototype.component1_7eebsc_k$ = function () {
     return this.page_1;
@@ -2642,28 +2659,41 @@
       return false;
     return true;
   };
-  function Data_9(resource) {
-    this.resource_1 = resource;
+  function QueryTestQuery_init_$Init$(filter, type, page, $mask0, $marker, $this) {
+    if (!(($mask0 & 1) === 0))
+      filter = Absent_getInstance();
+    QueryTestQuery.call($this, filter, type, page);
+    return $this;
   }
-  Data_9.prototype.get_resource_xl4447_k$ = function () {
-    return this.resource_1;
+  function QueryTestQuery_init_$Create$(filter, type, page, $mask0, $marker) {
+    return QueryTestQuery_init_$Init$(filter, type, page, $mask0, $marker, Object.create(QueryTestQuery.prototype));
+  }
+  function Data_9(resourcesByFilter) {
+    this.resourcesByFilter_1 = resourcesByFilter;
+  }
+  Data_9.prototype.get_resourcesByFilter_5kup8r_k$ = function () {
+    return this.resourcesByFilter_1;
+  };
+  Data_9.prototype.resourcesByFilterFilterNotNull_8dp16a_k$ = function () {
+    var tmp0_safe_receiver = this.resourcesByFilter_1;
+    return tmp0_safe_receiver == null ? null : filterNotNull(tmp0_safe_receiver);
   };
   Data_9.prototype.component1_7eebsc_k$ = function () {
-    return this.resource_1;
+    return this.resourcesByFilter_1;
   };
-  Data_9.prototype.copy_tygr1h_k$ = function (resource) {
-    return new Data_9(resource);
+  Data_9.prototype.copy_q9smeu_k$ = function (resourcesByFilter) {
+    return new Data_9(resourcesByFilter);
   };
-  Data_9.prototype.copy$default_3jel9g_k$ = function (resource, $mask0, $handler) {
+  Data_9.prototype.copy$default_vys7sr_k$ = function (resourcesByFilter, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
-      resource = this.resource_1;
-    return this.copy_tygr1h_k$(resource);
+      resourcesByFilter = this.resourcesByFilter_1;
+    return this.copy_q9smeu_k$(resourcesByFilter);
   };
   Data_9.prototype.toString = function () {
-    return 'Data(resource=' + this.resource_1 + ')';
+    return 'Data(resourcesByFilter=' + this.resourcesByFilter_1 + ')';
   };
   Data_9.prototype.hashCode = function () {
-    return this.resource_1 == null ? 0 : this.resource_1.hashCode();
+    return this.resourcesByFilter_1 == null ? 0 : hashCode(this.resourcesByFilter_1);
   };
   Data_9.prototype.equals = function (other) {
     if (this === other)
@@ -2671,7 +2701,214 @@
     if (!(other instanceof Data_9))
       return false;
     var tmp0_other_with_cast = other instanceof Data_9 ? other : THROW_CCE();
-    if (!equals(this.resource_1, tmp0_other_with_cast.resource_1))
+    if (!equals(this.resourcesByFilter_1, tmp0_other_with_cast.resourcesByFilter_1))
+      return false;
+    return true;
+  };
+  function ResourcesByFilter_0(__typename, onDataset) {
+    this.__typename_1 = __typename;
+    this.onDataset_1 = onDataset;
+  }
+  ResourcesByFilter_0.prototype.get___typename_gk319q_k$ = function () {
+    return this.__typename_1;
+  };
+  ResourcesByFilter_0.prototype.get_onDataset_gjr1n4_k$ = function () {
+    return this.onDataset_1;
+  };
+  ResourcesByFilter_0.prototype.component1_7eebsc_k$ = function () {
+    return this.__typename_1;
+  };
+  ResourcesByFilter_0.prototype.component2_7eebsb_k$ = function () {
+    return this.onDataset_1;
+  };
+  ResourcesByFilter_0.prototype.copy_jzdcwr_k$ = function (__typename, onDataset) {
+    return new ResourcesByFilter_0(__typename, onDataset);
+  };
+  ResourcesByFilter_0.prototype.copy$default_z8hjxp_k$ = function (__typename, onDataset, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      __typename = this.__typename_1;
+    if (!(($mask0 & 2) === 0))
+      onDataset = this.onDataset_1;
+    return this.copy_jzdcwr_k$(__typename, onDataset);
+  };
+  ResourcesByFilter_0.prototype.toString = function () {
+    return 'ResourcesByFilter(__typename=' + this.__typename_1 + ', onDataset=' + this.onDataset_1 + ')';
+  };
+  ResourcesByFilter_0.prototype.hashCode = function () {
+    var result = getStringHashCode(this.__typename_1);
+    result = imul(result, 31) + (this.onDataset_1 == null ? 0 : this.onDataset_1.hashCode()) | 0;
+    return result;
+  };
+  ResourcesByFilter_0.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof ResourcesByFilter_0))
+      return false;
+    var tmp0_other_with_cast = other instanceof ResourcesByFilter_0 ? other : THROW_CCE();
+    if (!(this.__typename_1 === tmp0_other_with_cast.__typename_1))
+      return false;
+    if (!equals(this.onDataset_1, tmp0_other_with_cast.onDataset_1))
+      return false;
+    return true;
+  };
+  function OnDataset_1(id, title, publisher, distributions, inCatalog) {
+    this.id_1 = id;
+    this.title_1 = title;
+    this.publisher_1 = publisher;
+    this.distributions_1 = distributions;
+    this.inCatalog_1 = inCatalog;
+  }
+  OnDataset_1.prototype.get_id_kntnx8_k$ = function () {
+    return this.id_1;
+  };
+  OnDataset_1.prototype.get_title_iz32un_k$ = function () {
+    return this.title_1;
+  };
+  OnDataset_1.prototype.get_publisher_wg9par_k$ = function () {
+    return this.publisher_1;
+  };
+  OnDataset_1.prototype.get_distributions_ua081m_k$ = function () {
+    return this.distributions_1;
+  };
+  OnDataset_1.prototype.get_inCatalog_62ajyj_k$ = function () {
+    return this.inCatalog_1;
+  };
+  OnDataset_1.prototype.component1_7eebsc_k$ = function () {
+    return this.id_1;
+  };
+  OnDataset_1.prototype.component2_7eebsb_k$ = function () {
+    return this.title_1;
+  };
+  OnDataset_1.prototype.component3_7eebsa_k$ = function () {
+    return this.publisher_1;
+  };
+  OnDataset_1.prototype.component4_7eebs9_k$ = function () {
+    return this.distributions_1;
+  };
+  OnDataset_1.prototype.component5_7eebs8_k$ = function () {
+    return this.inCatalog_1;
+  };
+  OnDataset_1.prototype.copy_y1sjhb_k$ = function (id, title, publisher, distributions, inCatalog) {
+    return new OnDataset_1(id, title, publisher, distributions, inCatalog);
+  };
+  OnDataset_1.prototype.copy$default_1698nx_k$ = function (id, title, publisher, distributions, inCatalog, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      id = this.id_1;
+    if (!(($mask0 & 2) === 0))
+      title = this.title_1;
+    if (!(($mask0 & 4) === 0))
+      publisher = this.publisher_1;
+    if (!(($mask0 & 8) === 0))
+      distributions = this.distributions_1;
+    if (!(($mask0 & 16) === 0))
+      inCatalog = this.inCatalog_1;
+    return this.copy_y1sjhb_k$(id, title, publisher, distributions, inCatalog);
+  };
+  OnDataset_1.prototype.toString = function () {
+    return 'OnDataset(id=' + this.id_1 + ', title=' + this.title_1 + ', publisher=' + this.publisher_1 + ', distributions=' + this.distributions_1 + ', inCatalog=' + this.inCatalog_1 + ')';
+  };
+  OnDataset_1.prototype.hashCode = function () {
+    var result = getStringHashCode(this.id_1);
+    result = imul(result, 31) + (this.title_1 == null ? 0 : hashCode(this.title_1)) | 0;
+    result = imul(result, 31) + (this.publisher_1 == null ? 0 : hashCode(this.publisher_1)) | 0;
+    result = imul(result, 31) + (this.distributions_1 == null ? 0 : hashCode(this.distributions_1)) | 0;
+    result = imul(result, 31) + (this.inCatalog_1 == null ? 0 : hashCode(this.inCatalog_1)) | 0;
+    return result;
+  };
+  OnDataset_1.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof OnDataset_1))
+      return false;
+    var tmp0_other_with_cast = other instanceof OnDataset_1 ? other : THROW_CCE();
+    if (!(this.id_1 === tmp0_other_with_cast.id_1))
+      return false;
+    if (!equals(this.title_1, tmp0_other_with_cast.title_1))
+      return false;
+    if (!equals(this.publisher_1, tmp0_other_with_cast.publisher_1))
+      return false;
+    if (!equals(this.distributions_1, tmp0_other_with_cast.distributions_1))
+      return false;
+    if (!equals(this.inCatalog_1, tmp0_other_with_cast.inCatalog_1))
+      return false;
+    return true;
+  };
+  function Distribution_1(format) {
+    this.format_1 = format;
+  }
+  Distribution_1.prototype.get_format_dfdtds_k$ = function () {
+    return this.format_1;
+  };
+  Distribution_1.prototype.component1_7eebsc_k$ = function () {
+    return this.format_1;
+  };
+  Distribution_1.prototype.copy_mjq6st_k$ = function (format) {
+    return new Distribution_1(format);
+  };
+  Distribution_1.prototype.copy$default_348p90_k$ = function (format, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      format = this.format_1;
+    return this.copy_mjq6st_k$(format);
+  };
+  Distribution_1.prototype.toString = function () {
+    return 'Distribution(format=' + this.format_1 + ')';
+  };
+  Distribution_1.prototype.hashCode = function () {
+    return this.format_1 == null ? 0 : hashCode(this.format_1);
+  };
+  Distribution_1.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof Distribution_1))
+      return false;
+    var tmp0_other_with_cast = other instanceof Distribution_1 ? other : THROW_CCE();
+    if (!equals(this.format_1, tmp0_other_with_cast.format_1))
+      return false;
+    return true;
+  };
+  function InCatalog_0(id, resources) {
+    this.id_1 = id;
+    this.resources_1 = resources;
+  }
+  InCatalog_0.prototype.get_id_kntnx8_k$ = function () {
+    return this.id_1;
+  };
+  InCatalog_0.prototype.get_resources_oa59xg_k$ = function () {
+    return this.resources_1;
+  };
+  InCatalog_0.prototype.component1_7eebsc_k$ = function () {
+    return this.id_1;
+  };
+  InCatalog_0.prototype.component2_7eebsb_k$ = function () {
+    return this.resources_1;
+  };
+  InCatalog_0.prototype.copy_qhmwiu_k$ = function (id, resources) {
+    return new InCatalog_0(id, resources);
+  };
+  InCatalog_0.prototype.copy$default_xkzovy_k$ = function (id, resources, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      id = this.id_1;
+    if (!(($mask0 & 2) === 0))
+      resources = this.resources_1;
+    return this.copy_qhmwiu_k$(id, resources);
+  };
+  InCatalog_0.prototype.toString = function () {
+    return 'InCatalog(id=' + this.id_1 + ', resources=' + this.resources_1 + ')';
+  };
+  InCatalog_0.prototype.hashCode = function () {
+    var result = getStringHashCode(this.id_1);
+    result = imul(result, 31) + (this.resources_1 == null ? 0 : hashCode(this.resources_1)) | 0;
+    return result;
+  };
+  InCatalog_0.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof InCatalog_0))
+      return false;
+    var tmp0_other_with_cast = other instanceof InCatalog_0 ? other : THROW_CCE();
+    if (!(this.id_1 === tmp0_other_with_cast.id_1))
+      return false;
+    if (!equals(this.resources_1, tmp0_other_with_cast.resources_1))
       return false;
     return true;
   };
@@ -2710,14 +2947,14 @@
   };
   function Companion_8() {
     Companion_instance_8 = this;
-    this.OPERATION_ID_1 = 'fd9bf884cd8f29eb3bc2d533aa597414d7c9b908e123422002fc1bea62404619';
-    this.OPERATION_NAME_1 = 'Resource';
+    this.OPERATION_ID_1 = '63a63697d01216e83a3c821efc748ef946792a8ebe44295550ae6b5137632cc5';
+    this.OPERATION_NAME_1 = 'QueryTest';
   }
   Companion_8.prototype.get_OPERATION_ID_wp2zs4_k$ = function () {
     return this.OPERATION_ID_1;
   };
   Companion_8.prototype.get_OPERATION_DOCUMENT_t250nw_k$ = function () {
-    return 'query Resource($id: ID!) { resource(id: $id) { id } }';
+    return 'query QueryTest($filter: [MapInput!], $type: String!, $page: Int!) { resourcesByFilter(filters: $filter, type: $type, page: $page) { __typename ... on Dataset { id title publisher distributions { format } inCatalog { id resources { id } } } } }';
   };
   Companion_8.prototype.get_OPERATION_NAME_px1ppw_k$ = function () {
     return this.OPERATION_NAME_1;
@@ -2728,36 +2965,205 @@
       new Companion_8();
     return Companion_instance_8;
   }
-  function ResourceQuery(id) {
+  function QueryTestQuery(filter, type, page) {
     Companion_getInstance_9();
+    this.filter_1 = filter;
+    this.type_1 = type;
+    this.page_1 = page;
+  }
+  QueryTestQuery.prototype.get_filter_dbzd6p_k$ = function () {
+    return this.filter_1;
+  };
+  QueryTestQuery.prototype.get_type_wovaf7_k$ = function () {
+    return this.type_1;
+  };
+  QueryTestQuery.prototype.get_page_wos8go_k$ = function () {
+    return this.page_1;
+  };
+  QueryTestQuery.prototype.operationId_2580de_k$ = function () {
+    Companion_getInstance_9();
+    return '63a63697d01216e83a3c821efc748ef946792a8ebe44295550ae6b5137632cc5';
+  };
+  QueryTestQuery.prototype.operationId = function () {
+    return this.operationId_2580de_k$();
+  };
+  QueryTestQuery.prototype.document_e91o2j_k$ = function () {
+    return Companion_getInstance_9().get_OPERATION_DOCUMENT_t250nw_k$();
+  };
+  QueryTestQuery.prototype.name_20b63_k$ = function () {
+    Companion_getInstance_9();
+    return 'QueryTest';
+  };
+  QueryTestQuery.prototype.serializeVariables_7jkd78_k$ = function (writer, customScalarAdapters) {
+    QueryTestQuery_VariablesAdapter_getInstance().toJson_a7faaf_k$(writer, customScalarAdapters, this);
+  };
+  QueryTestQuery.prototype.adapter_j0zdtd_k$ = function () {
+    var tmp = Data_getInstance_8();
+    return obj$default(tmp, false, 1, null);
+  };
+  QueryTestQuery.prototype.rootField_eq4ki0_k$ = function () {
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(QueryTestQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+  };
+  QueryTestQuery.prototype.component1_7eebsc_k$ = function () {
+    return this.filter_1;
+  };
+  QueryTestQuery.prototype.component2_7eebsb_k$ = function () {
+    return this.type_1;
+  };
+  QueryTestQuery.prototype.component3_7eebsa_k$ = function () {
+    return this.page_1;
+  };
+  QueryTestQuery.prototype.copy_wietn6_k$ = function (filter, type, page) {
+    return new QueryTestQuery(filter, type, page);
+  };
+  QueryTestQuery.prototype.copy$default_kevj21_k$ = function (filter, type, page, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      filter = this.filter_1;
+    if (!(($mask0 & 2) === 0))
+      type = this.type_1;
+    if (!(($mask0 & 4) === 0))
+      page = this.page_1;
+    return this.copy_wietn6_k$(filter, type, page);
+  };
+  QueryTestQuery.prototype.toString = function () {
+    return 'QueryTestQuery(filter=' + this.filter_1 + ', type=' + this.type_1 + ', page=' + this.page_1 + ')';
+  };
+  QueryTestQuery.prototype.hashCode = function () {
+    var result = hashCode(this.filter_1);
+    result = imul(result, 31) + getStringHashCode(this.type_1) | 0;
+    result = imul(result, 31) + this.page_1 | 0;
+    return result;
+  };
+  QueryTestQuery.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof QueryTestQuery))
+      return false;
+    var tmp0_other_with_cast = other instanceof QueryTestQuery ? other : THROW_CCE();
+    if (!equals(this.filter_1, tmp0_other_with_cast.filter_1))
+      return false;
+    if (!(this.type_1 === tmp0_other_with_cast.type_1))
+      return false;
+    if (!(this.page_1 === tmp0_other_with_cast.page_1))
+      return false;
+    return true;
+  };
+  function Data_10(resource) {
+    this.resource_1 = resource;
+  }
+  Data_10.prototype.get_resource_xl4447_k$ = function () {
+    return this.resource_1;
+  };
+  Data_10.prototype.component1_7eebsc_k$ = function () {
+    return this.resource_1;
+  };
+  Data_10.prototype.copy_tygr1h_k$ = function (resource) {
+    return new Data_10(resource);
+  };
+  Data_10.prototype.copy$default_3jel9g_k$ = function (resource, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      resource = this.resource_1;
+    return this.copy_tygr1h_k$(resource);
+  };
+  Data_10.prototype.toString = function () {
+    return 'Data(resource=' + this.resource_1 + ')';
+  };
+  Data_10.prototype.hashCode = function () {
+    return this.resource_1 == null ? 0 : this.resource_1.hashCode();
+  };
+  Data_10.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof Data_10))
+      return false;
+    var tmp0_other_with_cast = other instanceof Data_10 ? other : THROW_CCE();
+    if (!equals(this.resource_1, tmp0_other_with_cast.resource_1))
+      return false;
+    return true;
+  };
+  function Resource_1(id) {
+    this.id_1 = id;
+  }
+  Resource_1.prototype.get_id_kntnx8_k$ = function () {
+    return this.id_1;
+  };
+  Resource_1.prototype.component1_7eebsc_k$ = function () {
+    return this.id_1;
+  };
+  Resource_1.prototype.copy_3t26ic_k$ = function (id) {
+    return new Resource_1(id);
+  };
+  Resource_1.prototype.copy$default_q3pzg4_k$ = function (id, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      id = this.id_1;
+    return this.copy_3t26ic_k$(id);
+  };
+  Resource_1.prototype.toString = function () {
+    return 'Resource(id=' + this.id_1 + ')';
+  };
+  Resource_1.prototype.hashCode = function () {
+    return getStringHashCode(this.id_1);
+  };
+  Resource_1.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof Resource_1))
+      return false;
+    var tmp0_other_with_cast = other instanceof Resource_1 ? other : THROW_CCE();
+    if (!(this.id_1 === tmp0_other_with_cast.id_1))
+      return false;
+    return true;
+  };
+  function Companion_9() {
+    Companion_instance_9 = this;
+    this.OPERATION_ID_1 = 'fd9bf884cd8f29eb3bc2d533aa597414d7c9b908e123422002fc1bea62404619';
+    this.OPERATION_NAME_1 = 'Resource';
+  }
+  Companion_9.prototype.get_OPERATION_ID_wp2zs4_k$ = function () {
+    return this.OPERATION_ID_1;
+  };
+  Companion_9.prototype.get_OPERATION_DOCUMENT_t250nw_k$ = function () {
+    return 'query Resource($id: ID!) { resource(id: $id) { id } }';
+  };
+  Companion_9.prototype.get_OPERATION_NAME_px1ppw_k$ = function () {
+    return this.OPERATION_NAME_1;
+  };
+  var Companion_instance_9;
+  function Companion_getInstance_10() {
+    if (Companion_instance_9 == null)
+      new Companion_9();
+    return Companion_instance_9;
+  }
+  function ResourceQuery(id) {
+    Companion_getInstance_10();
     this.id_1 = id;
   }
   ResourceQuery.prototype.get_id_kntnx8_k$ = function () {
     return this.id_1;
   };
   ResourceQuery.prototype.operationId_2580de_k$ = function () {
-    Companion_getInstance_9();
+    Companion_getInstance_10();
     return 'fd9bf884cd8f29eb3bc2d533aa597414d7c9b908e123422002fc1bea62404619';
   };
   ResourceQuery.prototype.operationId = function () {
     return this.operationId_2580de_k$();
   };
   ResourceQuery.prototype.document_e91o2j_k$ = function () {
-    return Companion_getInstance_9().get_OPERATION_DOCUMENT_t250nw_k$();
+    return Companion_getInstance_10().get_OPERATION_DOCUMENT_t250nw_k$();
   };
   ResourceQuery.prototype.name_20b63_k$ = function () {
-    Companion_getInstance_9();
+    Companion_getInstance_10();
     return 'Resource';
   };
   ResourceQuery.prototype.serializeVariables_7jkd78_k$ = function (writer, customScalarAdapters) {
     ResourceQuery_VariablesAdapter_getInstance().toJson_dirsb3_k$(writer, customScalarAdapters, this);
   };
   ResourceQuery.prototype.adapter_j0zdtd_k$ = function () {
-    var tmp = Data_getInstance_8();
+    var tmp = Data_getInstance_9();
     return obj$default(tmp, false, 1, null);
   };
   ResourceQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(ResourceQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(ResourceQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   ResourceQuery.prototype.component1_7eebsc_k$ = function () {
     return this.id_1;
@@ -2786,65 +3192,65 @@
       return false;
     return true;
   };
-  function Data_10(getAllThemes) {
+  function Data_11(getAllThemes) {
     this.getAllThemes_1 = getAllThemes;
   }
-  Data_10.prototype.get_getAllThemes_2gtlsy_k$ = function () {
+  Data_11.prototype.get_getAllThemes_2gtlsy_k$ = function () {
     return this.getAllThemes_1;
   };
-  Data_10.prototype.getAllThemesFilterNotNull_4bqtsd_k$ = function () {
+  Data_11.prototype.getAllThemesFilterNotNull_4bqtsd_k$ = function () {
     var tmp0_safe_receiver = this.getAllThemes_1;
     return tmp0_safe_receiver == null ? null : filterNotNull(tmp0_safe_receiver);
   };
-  Data_10.prototype.component1_7eebsc_k$ = function () {
+  Data_11.prototype.component1_7eebsc_k$ = function () {
     return this.getAllThemes_1;
   };
-  Data_10.prototype.copy_2jn3dy_k$ = function (getAllThemes) {
-    return new Data_10(getAllThemes);
+  Data_11.prototype.copy_2jn3dy_k$ = function (getAllThemes) {
+    return new Data_11(getAllThemes);
   };
-  Data_10.prototype.copy$default_bq2vev_k$ = function (getAllThemes, $mask0, $handler) {
+  Data_11.prototype.copy$default_bq2vev_k$ = function (getAllThemes, $mask0, $handler) {
     if (!(($mask0 & 1) === 0))
       getAllThemes = this.getAllThemes_1;
     return this.copy_2jn3dy_k$(getAllThemes);
   };
-  Data_10.prototype.toString = function () {
+  Data_11.prototype.toString = function () {
     return 'Data(getAllThemes=' + this.getAllThemes_1 + ')';
   };
-  Data_10.prototype.hashCode = function () {
+  Data_11.prototype.hashCode = function () {
     return this.getAllThemes_1 == null ? 0 : hashCode(this.getAllThemes_1);
   };
-  Data_10.prototype.equals = function (other) {
+  Data_11.prototype.equals = function (other) {
     if (this === other)
       return true;
-    if (!(other instanceof Data_10))
+    if (!(other instanceof Data_11))
       return false;
-    var tmp0_other_with_cast = other instanceof Data_10 ? other : THROW_CCE();
+    var tmp0_other_with_cast = other instanceof Data_11 ? other : THROW_CCE();
     if (!equals(this.getAllThemes_1, tmp0_other_with_cast.getAllThemes_1))
       return false;
     return true;
   };
-  function Companion_9() {
-    Companion_instance_9 = this;
+  function Companion_10() {
+    Companion_instance_10 = this;
     this.OPERATION_ID_1 = '4fe697cce9fcd3b9d9436297f95170d00991d5a92986904eca2e2d036d157c72';
     this.OPERATION_NAME_1 = 'Themes';
   }
-  Companion_9.prototype.get_OPERATION_ID_wp2zs4_k$ = function () {
+  Companion_10.prototype.get_OPERATION_ID_wp2zs4_k$ = function () {
     return this.OPERATION_ID_1;
   };
-  Companion_9.prototype.get_OPERATION_DOCUMENT_t250nw_k$ = function () {
+  Companion_10.prototype.get_OPERATION_DOCUMENT_t250nw_k$ = function () {
     return 'query Themes($page: Int!, $pageSize: Int!) { getAllThemes(page: $page, pageSize: $pageSize) }';
   };
-  Companion_9.prototype.get_OPERATION_NAME_px1ppw_k$ = function () {
+  Companion_10.prototype.get_OPERATION_NAME_px1ppw_k$ = function () {
     return this.OPERATION_NAME_1;
   };
-  var Companion_instance_9;
-  function Companion_getInstance_10() {
-    if (Companion_instance_9 == null)
-      new Companion_9();
-    return Companion_instance_9;
+  var Companion_instance_10;
+  function Companion_getInstance_11() {
+    if (Companion_instance_10 == null)
+      new Companion_10();
+    return Companion_instance_10;
   }
   function ThemesQuery(page, pageSize) {
-    Companion_getInstance_10();
+    Companion_getInstance_11();
     this.page_1 = page;
     this.pageSize_1 = pageSize;
   }
@@ -2855,28 +3261,28 @@
     return this.pageSize_1;
   };
   ThemesQuery.prototype.operationId_2580de_k$ = function () {
-    Companion_getInstance_10();
+    Companion_getInstance_11();
     return '4fe697cce9fcd3b9d9436297f95170d00991d5a92986904eca2e2d036d157c72';
   };
   ThemesQuery.prototype.operationId = function () {
     return this.operationId_2580de_k$();
   };
   ThemesQuery.prototype.document_e91o2j_k$ = function () {
-    return Companion_getInstance_10().get_OPERATION_DOCUMENT_t250nw_k$();
+    return Companion_getInstance_11().get_OPERATION_DOCUMENT_t250nw_k$();
   };
   ThemesQuery.prototype.name_20b63_k$ = function () {
-    Companion_getInstance_10();
+    Companion_getInstance_11();
     return 'Themes';
   };
   ThemesQuery.prototype.serializeVariables_7jkd78_k$ = function (writer, customScalarAdapters) {
     ThemesQuery_VariablesAdapter_getInstance().toJson_h6c7fx_k$(writer, customScalarAdapters, this);
   };
   ThemesQuery.prototype.adapter_j0zdtd_k$ = function () {
-    var tmp = Data_getInstance_9();
+    var tmp = Data_getInstance_10();
     return obj$default(tmp, false, 1, null);
   };
   ThemesQuery.prototype.rootField_eq4ki0_k$ = function () {
-    return (new Builder('data', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(ThemesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
+    return (new Builder('data', Companion_getInstance_30().get_type_wovaf7_k$())).selections_qw7166_k$(ThemesQuerySelections_getInstance().get___root_9v9sy3_k$()).build_1k0s4u_k$();
   };
   ThemesQuery.prototype.component1_7eebsc_k$ = function () {
     return this.page_1;
@@ -2914,14 +3320,14 @@
       return false;
     return true;
   };
-  function Data_11() {
+  function Data_12() {
     Data_instance = this;
     this.RESPONSE_NAMES_1 = listOf('getAllAdminLabel');
   }
-  Data_11.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_12.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_11.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_12.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _getAllAdminLabel = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -2932,17 +3338,17 @@
     }
     return new Data_0(_getAllAdminLabel);
   };
-  Data_11.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_12.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('getAllAdminLabel');
     nullable(list(get_NullableStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_getAllAdminLabel_9mdfuh_k$());
   };
-  Data_11.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_12.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_0 ? value : THROW_CCE());
   };
   var Data_instance;
   function Data_getInstance() {
     if (Data_instance == null)
-      new Data_11();
+      new Data_12();
     return Data_instance;
   }
   function AdminLevelsQuery_ResponseAdapter() {
@@ -2975,14 +3381,14 @@
       new AdminLevelsQuery_VariablesAdapter();
     return AdminLevelsQuery_VariablesAdapter_instance;
   }
-  function Data_12() {
+  function Data_13() {
     Data_instance_0 = this;
     this.RESPONSE_NAMES_1 = listOf('catalog');
   }
-  Data_12.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_13.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_12.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_13.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _catalog = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -2994,18 +3400,18 @@
     }
     return new Data_1(_catalog);
   };
-  Data_12.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_13.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('catalog');
     var tmp = Catalog_getInstance();
     nullable(obj$default(tmp, false, 1, null)).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_catalog_agem9c_k$());
   };
-  Data_12.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_13.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_1 ? value : THROW_CCE());
   };
   var Data_instance_0;
   function Data_getInstance_0() {
     if (Data_instance_0 == null)
-      new Data_12();
+      new Data_13();
     return Data_instance_0;
   }
   function Catalog_0() {
@@ -3067,14 +3473,14 @@
       new CatalogQuery_VariablesAdapter();
     return CatalogQuery_VariablesAdapter_instance;
   }
-  function Data_13() {
+  function Data_14() {
     Data_instance_1 = this;
     this.RESPONSE_NAMES_1 = listOf('resource');
   }
-  Data_13.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_14.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_13.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_14.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _resource = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3085,27 +3491,27 @@
     }
     return new Data_2(_resource);
   };
-  Data_13.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_14.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('resource');
     nullable(obj(Resource_getInstance(), true)).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_resource_xl4447_k$());
   };
-  Data_13.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_14.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_2 ? value : THROW_CCE());
   };
   var Data_instance_1;
   function Data_getInstance_1() {
     if (Data_instance_1 == null)
-      new Data_13();
+      new Data_14();
     return Data_instance_1;
   }
-  function Resource_1() {
+  function Resource_2() {
     Resource_instance = this;
     this.RESPONSE_NAMES_1 = listOf('__typename');
   }
-  Resource_1.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Resource_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Resource_1.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Resource_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var __typename = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3131,30 +3537,30 @@
     }
     return new Resource(__typename, _onDataset);
   };
-  Resource_1.prototype.toJson_8jg4qx_k$ = function (writer, customScalarAdapters, value) {
+  Resource_2.prototype.toJson_8jg4qx_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('__typename');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get___typename_gk319q_k$());
     if (!(value.get_onDataset_gjr1n4_k$() == null)) {
       OnDataset_getInstance().toJson_g905gy_k$(writer, customScalarAdapters, value.get_onDataset_gjr1n4_k$());
     }
   };
-  Resource_1.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Resource_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_8jg4qx_k$(writer, customScalarAdapters, value instanceof Resource ? value : THROW_CCE());
   };
   var Resource_instance;
   function Resource_getInstance() {
     if (Resource_instance == null)
-      new Resource_1();
+      new Resource_2();
     return Resource_instance;
   }
-  function OnDataset_1() {
+  function OnDataset_2() {
     OnDataset_instance = this;
     this.RESPONSE_NAMES_1 = listOf_0(['id', 'title', 'publisher', 'description', 'license', 'keywords', 'theme', 'language', 'issued', 'modified', 'accrualPeriodicity', 'identifier', 'inCatalog', 'isPrimaryTopicOf', 'inSeries', 'isServedBy', 'spatial', 'temporal', 'distributions']);
   }
-  OnDataset_1.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  OnDataset_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  OnDataset_1.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  OnDataset_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _id = null;
     var _title = null;
     var _publisher = null;
@@ -3246,7 +3652,7 @@
     }
     return new OnDataset(ensureNotNull(_id), _title, _publisher, _description, _license, _keywords, _theme, _language, _issued, _modified, _accrualPeriodicity, _identifier, _inCatalog, _isPrimaryTopicOf, _inSeries, _isServedBy, _spatial, _temporal, _distributions);
   };
-  OnDataset_1.prototype.toJson_g905gy_k$ = function (writer, customScalarAdapters, value) {
+  OnDataset_2.prototype.toJson_g905gy_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('id');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
     writer.name_u79i4q_k$('title');
@@ -3292,23 +3698,23 @@
     var tmp_4 = Distribution_getInstance();
     nullable(list(obj$default(tmp_4, false, 1, null))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_distributions_ua081m_k$());
   };
-  OnDataset_1.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  OnDataset_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_g905gy_k$(writer, customScalarAdapters, value instanceof OnDataset ? value : THROW_CCE());
   };
   var OnDataset_instance;
   function OnDataset_getInstance() {
     if (OnDataset_instance == null)
-      new OnDataset_1();
+      new OnDataset_2();
     return OnDataset_instance;
   }
-  function InCatalog_0() {
+  function InCatalog_1() {
     InCatalog_instance = this;
     this.RESPONSE_NAMES_1 = listOf_0(['id', 'identifier', 'title']);
   }
-  InCatalog_0.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  InCatalog_1.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  InCatalog_0.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  InCatalog_1.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _id = null;
     var _identifier = null;
     var _title = null;
@@ -3330,7 +3736,7 @@
     }
     return new InCatalog(ensureNotNull(_id), _identifier, _title);
   };
-  InCatalog_0.prototype.toJson_oa85bd_k$ = function (writer, customScalarAdapters, value) {
+  InCatalog_1.prototype.toJson_oa85bd_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('id');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
     writer.name_u79i4q_k$('identifier');
@@ -3338,13 +3744,13 @@
     writer.name_u79i4q_k$('title');
     nullable(list(get_langStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_title_iz32un_k$());
   };
-  InCatalog_0.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  InCatalog_1.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_oa85bd_k$(writer, customScalarAdapters, value instanceof InCatalog ? value : THROW_CCE());
   };
   var InCatalog_instance;
   function InCatalog_getInstance() {
     if (InCatalog_instance == null)
-      new InCatalog_0();
+      new InCatalog_1();
     return InCatalog_instance;
   }
   function IsPrimaryTopicOf_0() {
@@ -3519,14 +3925,14 @@
       new Temporal_0();
     return Temporal_instance;
   }
-  function Distribution_1() {
+  function Distribution_2() {
     Distribution_instance = this;
     this.RESPONSE_NAMES_1 = listOf_0(['accessUrl', 'format']);
   }
-  Distribution_1.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Distribution_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Distribution_1.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Distribution_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _accessUrl = null;
     var _format = null;
     $l$loop: while (true) {
@@ -3544,19 +3950,19 @@
     }
     return new Distribution(_accessUrl, _format);
   };
-  Distribution_1.prototype.toJson_ig83v7_k$ = function (writer, customScalarAdapters, value) {
+  Distribution_2.prototype.toJson_ig83v7_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('accessUrl');
     get_NullableStringAdapter().toJson_r81dz4_k$(writer, customScalarAdapters, value.get_accessUrl_qgq0ce_k$());
     writer.name_u79i4q_k$('format');
     nullable(get_mediaTypeAdapter()).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_format_dfdtds_k$());
   };
-  Distribution_1.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Distribution_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_ig83v7_k$(writer, customScalarAdapters, value instanceof Distribution ? value : THROW_CCE());
   };
   var Distribution_instance;
   function Distribution_getInstance() {
     if (Distribution_instance == null)
-      new Distribution_1();
+      new Distribution_2();
     return Distribution_instance;
   }
   function DatasetInfoQuery_ResponseAdapter() {
@@ -3587,14 +3993,14 @@
       new DatasetInfoQuery_VariablesAdapter();
     return DatasetInfoQuery_VariablesAdapter_instance;
   }
-  function Data_14() {
+  function Data_15() {
     Data_instance_2 = this;
     this.RESPONSE_NAMES_1 = listOf('resourcesByFilter');
   }
-  Data_14.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_15.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_14.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_15.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _resourcesByFilter = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3605,27 +4011,27 @@
     }
     return new Data_3(_resourcesByFilter);
   };
-  Data_14.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_15.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('resourcesByFilter');
     nullable(list(nullable(obj(ResourcesByFilter_getInstance(), true)))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_resourcesByFilter_5kup8r_k$());
   };
-  Data_14.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_15.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_3 ? value : THROW_CCE());
   };
   var Data_instance_2;
   function Data_getInstance_2() {
     if (Data_instance_2 == null)
-      new Data_14();
+      new Data_15();
     return Data_instance_2;
   }
-  function ResourcesByFilter_0() {
+  function ResourcesByFilter_1() {
     ResourcesByFilter_instance = this;
     this.RESPONSE_NAMES_1 = listOf('__typename');
   }
-  ResourcesByFilter_0.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  ResourcesByFilter_1.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  ResourcesByFilter_0.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  ResourcesByFilter_1.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var __typename = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3651,30 +4057,30 @@
     }
     return new ResourcesByFilter(__typename, _onDataset);
   };
-  ResourcesByFilter_0.prototype.toJson_c5wqc7_k$ = function (writer, customScalarAdapters, value) {
+  ResourcesByFilter_1.prototype.toJson_c5wqc7_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('__typename');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get___typename_gk319q_k$());
     if (!(value.get_onDataset_gjr1n4_k$() == null)) {
       OnDataset_getInstance_0().toJson_g905gy_k$(writer, customScalarAdapters, value.get_onDataset_gjr1n4_k$());
     }
   };
-  ResourcesByFilter_0.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  ResourcesByFilter_1.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_c5wqc7_k$(writer, customScalarAdapters, value instanceof ResourcesByFilter ? value : THROW_CCE());
   };
   var ResourcesByFilter_instance;
   function ResourcesByFilter_getInstance() {
     if (ResourcesByFilter_instance == null)
-      new ResourcesByFilter_0();
+      new ResourcesByFilter_1();
     return ResourcesByFilter_instance;
   }
-  function OnDataset_2() {
+  function OnDataset_3() {
     OnDataset_instance_0 = this;
     this.RESPONSE_NAMES_1 = listOf_0(['id', 'title', 'publisher', 'description', 'distributions']);
   }
-  OnDataset_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  OnDataset_3.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  OnDataset_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  OnDataset_3.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _id = null;
     var _title = null;
     var _publisher = null;
@@ -3705,7 +4111,7 @@
     }
     return new OnDataset_0(ensureNotNull(_id), _title, _publisher, _description, _distributions);
   };
-  OnDataset_2.prototype.toJson_g905gy_k$ = function (writer, customScalarAdapters, value) {
+  OnDataset_3.prototype.toJson_g905gy_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('id');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
     writer.name_u79i4q_k$('title');
@@ -3718,23 +4124,23 @@
     var tmp = Distribution_getInstance_0();
     nullable(list(obj$default(tmp, false, 1, null))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_distributions_ua081m_k$());
   };
-  OnDataset_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  OnDataset_3.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_g905gy_k$(writer, customScalarAdapters, value instanceof OnDataset_0 ? value : THROW_CCE());
   };
   var OnDataset_instance_0;
   function OnDataset_getInstance_0() {
     if (OnDataset_instance_0 == null)
-      new OnDataset_2();
+      new OnDataset_3();
     return OnDataset_instance_0;
   }
-  function Distribution_2() {
+  function Distribution_3() {
     Distribution_instance_0 = this;
     this.RESPONSE_NAMES_1 = listOf('format');
   }
-  Distribution_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Distribution_3.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Distribution_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Distribution_3.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _format = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3745,17 +4151,17 @@
     }
     return new Distribution_0(_format);
   };
-  Distribution_2.prototype.toJson_ig83v7_k$ = function (writer, customScalarAdapters, value) {
+  Distribution_3.prototype.toJson_ig83v7_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('format');
     nullable(get_mediaTypeAdapter()).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_format_dfdtds_k$());
   };
-  Distribution_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Distribution_3.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_ig83v7_k$(writer, customScalarAdapters, value instanceof Distribution_0 ? value : THROW_CCE());
   };
   var Distribution_instance_0;
   function Distribution_getInstance_0() {
     if (Distribution_instance_0 == null)
-      new Distribution_2();
+      new Distribution_3();
     return Distribution_instance_0;
   }
   function DatasetsQuery_ResponseAdapter() {
@@ -3794,14 +4200,14 @@
       new DatasetsQuery_VariablesAdapter();
     return DatasetsQuery_VariablesAdapter_instance;
   }
-  function Data_15() {
+  function Data_16() {
     Data_instance_3 = this;
     this.RESPONSE_NAMES_1 = listOf('getAllFormats');
   }
-  Data_15.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_16.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_15.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_16.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _getAllFormats = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3812,17 +4218,17 @@
     }
     return new Data_4(_getAllFormats);
   };
-  Data_15.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_16.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('getAllFormats');
     nullable(list(get_NullableStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_getAllFormats_5nv2h4_k$());
   };
-  Data_15.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_16.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_4 ? value : THROW_CCE());
   };
   var Data_instance_3;
   function Data_getInstance_3() {
     if (Data_instance_3 == null)
-      new Data_15();
+      new Data_16();
     return Data_instance_3;
   }
   function FormatsQuery_ResponseAdapter() {
@@ -3855,14 +4261,14 @@
       new FormatsQuery_VariablesAdapter();
     return FormatsQuery_VariablesAdapter_instance;
   }
-  function Data_16() {
+  function Data_17() {
     Data_instance_4 = this;
     this.RESPONSE_NAMES_1 = listOf('getAllFrequencies');
   }
-  Data_16.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_17.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_16.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_17.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _getAllFrequencies = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3873,17 +4279,17 @@
     }
     return new Data_5(_getAllFrequencies);
   };
-  Data_16.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_17.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('getAllFrequencies');
     nullable(list(get_NullableStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_getAllFrequencies_lmvehm_k$());
   };
-  Data_16.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_17.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_5 ? value : THROW_CCE());
   };
   var Data_instance_4;
   function Data_getInstance_4() {
     if (Data_instance_4 == null)
-      new Data_16();
+      new Data_17();
     return Data_instance_4;
   }
   function FrequenciesQuery_ResponseAdapter() {
@@ -3916,14 +4322,14 @@
       new FrequenciesQuery_VariablesAdapter();
     return FrequenciesQuery_VariablesAdapter_instance;
   }
-  function Data_17() {
+  function Data_18() {
     Data_instance_5 = this;
     this.RESPONSE_NAMES_1 = listOf('getAllKeywords');
   }
-  Data_17.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_18.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_17.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_18.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _getAllKeywords = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3934,17 +4340,17 @@
     }
     return new Data_6(_getAllKeywords);
   };
-  Data_17.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_18.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('getAllKeywords');
     nullable(list(get_NullableStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_getAllKeywords_yaqqm6_k$());
   };
-  Data_17.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_18.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_6 ? value : THROW_CCE());
   };
   var Data_instance_5;
   function Data_getInstance_5() {
     if (Data_instance_5 == null)
-      new Data_17();
+      new Data_18();
     return Data_instance_5;
   }
   function KeywordsQuery_ResponseAdapter() {
@@ -3977,14 +4383,14 @@
       new KeywordsQuery_VariablesAdapter();
     return KeywordsQuery_VariablesAdapter_instance;
   }
-  function Data_18() {
+  function Data_19() {
     Data_instance_6 = this;
     this.RESPONSE_NAMES_1 = listOf('numberOfResources');
   }
-  Data_18.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_19.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_18.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_19.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _numberOfResources = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -3995,17 +4401,17 @@
     }
     return new Data_7(_numberOfResources);
   };
-  Data_18.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_19.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('numberOfResources');
     get_NullableIntAdapter().toJson_r81dz4_k$(writer, customScalarAdapters, value.get_numberOfResources_8fodk4_k$());
   };
-  Data_18.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_19.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_7 ? value : THROW_CCE());
   };
   var Data_instance_6;
   function Data_getInstance_6() {
     if (Data_instance_6 == null)
-      new Data_18();
+      new Data_19();
     return Data_instance_6;
   }
   function NumberOfResourcesQuery_ResponseAdapter() {
@@ -4036,14 +4442,14 @@
       new NumberOfResourcesQuery_VariablesAdapter();
     return NumberOfResourcesQuery_VariablesAdapter_instance;
   }
-  function Data_19() {
+  function Data_20() {
     Data_instance_7 = this;
     this.RESPONSE_NAMES_1 = listOf('getAllPublishers');
   }
-  Data_19.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_20.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_19.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_20.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _getAllPublishers = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -4054,17 +4460,17 @@
     }
     return new Data_8(_getAllPublishers);
   };
-  Data_19.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_20.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('getAllPublishers');
     nullable(list(get_NullableStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_getAllPublishers_uai9vv_k$());
   };
-  Data_19.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_20.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_8 ? value : THROW_CCE());
   };
   var Data_instance_7;
   function Data_getInstance_7() {
     if (Data_instance_7 == null)
-      new Data_19();
+      new Data_20();
     return Data_instance_7;
   }
   function PublishersQuery_ResponseAdapter() {
@@ -4097,47 +4503,229 @@
       new PublishersQuery_VariablesAdapter();
     return PublishersQuery_VariablesAdapter_instance;
   }
-  function Data_20() {
+  function Data_21() {
     Data_instance_8 = this;
-    this.RESPONSE_NAMES_1 = listOf('resource');
+    this.RESPONSE_NAMES_1 = listOf('resourcesByFilter');
   }
-  Data_20.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_21.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_20.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
-    var _resource = null;
+  Data_21.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var _resourcesByFilter = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
-      if (tmp0_subject === 0) {
-        var tmp = Resource_getInstance_0();
-        _resource = nullable(obj$default(tmp, false, 1, null)).fromJson_vznj7e_k$(reader, customScalarAdapters);
-      } else
+      if (tmp0_subject === 0)
+        _resourcesByFilter = nullable(list(nullable(obj(ResourcesByFilter_getInstance_0(), true)))).fromJson_vznj7e_k$(reader, customScalarAdapters);
+      else
         break $l$loop;
     }
-    return new Data_9(_resource);
+    return new Data_9(_resourcesByFilter);
   };
-  Data_20.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
-    writer.name_u79i4q_k$('resource');
-    var tmp = Resource_getInstance_0();
-    nullable(obj$default(tmp, false, 1, null)).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_resource_xl4447_k$());
+  Data_21.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('resourcesByFilter');
+    nullable(list(nullable(obj(ResourcesByFilter_getInstance_0(), true)))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_resourcesByFilter_5kup8r_k$());
   };
-  Data_20.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Data_21.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_9 ? value : THROW_CCE());
   };
   var Data_instance_8;
   function Data_getInstance_8() {
     if (Data_instance_8 == null)
-      new Data_20();
+      new Data_21();
     return Data_instance_8;
   }
-  function Resource_2() {
+  function ResourcesByFilter_2() {
+    ResourcesByFilter_instance_0 = this;
+    this.RESPONSE_NAMES_1 = listOf('__typename');
+  }
+  ResourcesByFilter_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+    return this.RESPONSE_NAMES_1;
+  };
+  ResourcesByFilter_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var __typename = null;
+    $l$loop: while (true) {
+      var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
+      if (tmp0_subject === 0)
+        __typename = get_StringAdapter().fromJson_vznj7e_k$(reader, customScalarAdapters);
+      else
+        break $l$loop;
+    }
+    // Inline function 'kotlin.check' call
+    var tmp0_check = !(__typename == null);
+    // Inline function 'kotlin.contracts.contract' call
+    if (!tmp0_check) {
+      var tmp$ret$0;
+      // Inline function 'com.schema.adapter.ResourcesByFilter.fromJson.<anonymous>' call
+      tmp$ret$0 = '__typename was not found';
+      var message = tmp$ret$0;
+      throw IllegalStateException_init_$Create$(toString_0(message));
+    }
+    var _onDataset = null;
+    if (evaluate(possibleTypes(['Dataset']), customScalarAdapters.get_adapterContext_no3aeh_k$().variables_1d3s7d_k$(), __typename, customScalarAdapters.get_adapterContext_no3aeh_k$(), null)) {
+      reader.rewind_xapxey_k$();
+      _onDataset = OnDataset_getInstance_1().fromJson_vznj7e_k$(reader, customScalarAdapters);
+    }
+    return new ResourcesByFilter_0(__typename, _onDataset);
+  };
+  ResourcesByFilter_2.prototype.toJson_c5wqc7_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('__typename');
+    get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get___typename_gk319q_k$());
+    if (!(value.get_onDataset_gjr1n4_k$() == null)) {
+      OnDataset_getInstance_1().toJson_g905gy_k$(writer, customScalarAdapters, value.get_onDataset_gjr1n4_k$());
+    }
+  };
+  ResourcesByFilter_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_c5wqc7_k$(writer, customScalarAdapters, value instanceof ResourcesByFilter_0 ? value : THROW_CCE());
+  };
+  var ResourcesByFilter_instance_0;
+  function ResourcesByFilter_getInstance_0() {
+    if (ResourcesByFilter_instance_0 == null)
+      new ResourcesByFilter_2();
+    return ResourcesByFilter_instance_0;
+  }
+  function OnDataset_4() {
+    OnDataset_instance_1 = this;
+    this.RESPONSE_NAMES_1 = listOf_0(['id', 'title', 'publisher', 'distributions', 'inCatalog']);
+  }
+  OnDataset_4.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+    return this.RESPONSE_NAMES_1;
+  };
+  OnDataset_4.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var _id = null;
+    var _title = null;
+    var _publisher = null;
+    var _distributions = null;
+    var _inCatalog = null;
+    $l$loop: while (true) {
+      var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
+      switch (tmp0_subject) {
+        case 0:
+          _id = get_StringAdapter().fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        case 1:
+          _title = nullable(list(get_langStringAdapter())).fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        case 2:
+          _publisher = nullable(get_conceptAdapter()).fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        case 3:
+          var tmp = Distribution_getInstance_1();
+          _distributions = nullable(list(obj$default(tmp, false, 1, null))).fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        case 4:
+          var tmp_0 = InCatalog_getInstance_0();
+          _inCatalog = nullable(list(obj$default(tmp_0, false, 1, null))).fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        default:
+          break $l$loop;
+      }
+    }
+    return new OnDataset_1(ensureNotNull(_id), _title, _publisher, _distributions, _inCatalog);
+  };
+  OnDataset_4.prototype.toJson_g905gy_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('id');
+    get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
+    writer.name_u79i4q_k$('title');
+    nullable(list(get_langStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_title_iz32un_k$());
+    writer.name_u79i4q_k$('publisher');
+    nullable(get_conceptAdapter()).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_publisher_wg9par_k$());
+    writer.name_u79i4q_k$('distributions');
+    var tmp = Distribution_getInstance_1();
+    nullable(list(obj$default(tmp, false, 1, null))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_distributions_ua081m_k$());
+    writer.name_u79i4q_k$('inCatalog');
+    var tmp_0 = InCatalog_getInstance_0();
+    nullable(list(obj$default(tmp_0, false, 1, null))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_inCatalog_62ajyj_k$());
+  };
+  OnDataset_4.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_g905gy_k$(writer, customScalarAdapters, value instanceof OnDataset_1 ? value : THROW_CCE());
+  };
+  var OnDataset_instance_1;
+  function OnDataset_getInstance_1() {
+    if (OnDataset_instance_1 == null)
+      new OnDataset_4();
+    return OnDataset_instance_1;
+  }
+  function Distribution_4() {
+    Distribution_instance_1 = this;
+    this.RESPONSE_NAMES_1 = listOf('format');
+  }
+  Distribution_4.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+    return this.RESPONSE_NAMES_1;
+  };
+  Distribution_4.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var _format = null;
+    $l$loop: while (true) {
+      var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
+      if (tmp0_subject === 0)
+        _format = nullable(get_mediaTypeAdapter()).fromJson_vznj7e_k$(reader, customScalarAdapters);
+      else
+        break $l$loop;
+    }
+    return new Distribution_1(_format);
+  };
+  Distribution_4.prototype.toJson_ig83v7_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('format');
+    nullable(get_mediaTypeAdapter()).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_format_dfdtds_k$());
+  };
+  Distribution_4.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_ig83v7_k$(writer, customScalarAdapters, value instanceof Distribution_1 ? value : THROW_CCE());
+  };
+  var Distribution_instance_1;
+  function Distribution_getInstance_1() {
+    if (Distribution_instance_1 == null)
+      new Distribution_4();
+    return Distribution_instance_1;
+  }
+  function InCatalog_2() {
+    InCatalog_instance_0 = this;
+    this.RESPONSE_NAMES_1 = listOf_0(['id', 'resources']);
+  }
+  InCatalog_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+    return this.RESPONSE_NAMES_1;
+  };
+  InCatalog_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var _id = null;
+    var _resources = null;
+    $l$loop: while (true) {
+      var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
+      switch (tmp0_subject) {
+        case 0:
+          _id = get_StringAdapter().fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        case 1:
+          var tmp = Resource_getInstance_0();
+          _resources = nullable(list(obj$default(tmp, false, 1, null))).fromJson_vznj7e_k$(reader, customScalarAdapters);
+          break;
+        default:
+          break $l$loop;
+      }
+    }
+    return new InCatalog_0(ensureNotNull(_id), _resources);
+  };
+  InCatalog_2.prototype.toJson_oa85bd_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('id');
+    get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
+    writer.name_u79i4q_k$('resources');
+    var tmp = Resource_getInstance_0();
+    nullable(list(obj$default(tmp, false, 1, null))).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_resources_oa59xg_k$());
+  };
+  InCatalog_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_oa85bd_k$(writer, customScalarAdapters, value instanceof InCatalog_0 ? value : THROW_CCE());
+  };
+  var InCatalog_instance_0;
+  function InCatalog_getInstance_0() {
+    if (InCatalog_instance_0 == null)
+      new InCatalog_2();
+    return InCatalog_instance_0;
+  }
+  function Resource_3() {
     Resource_instance_0 = this;
     this.RESPONSE_NAMES_1 = listOf('id');
   }
-  Resource_2.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Resource_3.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Resource_2.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Resource_3.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _id = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -4148,18 +4736,118 @@
     }
     return new Resource_0(ensureNotNull(_id));
   };
-  Resource_2.prototype.toJson_8jg4qx_k$ = function (writer, customScalarAdapters, value) {
+  Resource_3.prototype.toJson_8jg4qx_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('id');
     get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
   };
-  Resource_2.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+  Resource_3.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_8jg4qx_k$(writer, customScalarAdapters, value instanceof Resource_0 ? value : THROW_CCE());
   };
   var Resource_instance_0;
   function Resource_getInstance_0() {
     if (Resource_instance_0 == null)
-      new Resource_2();
+      new Resource_3();
     return Resource_instance_0;
+  }
+  function QueryTestQuery_ResponseAdapter() {
+    QueryTestQuery_ResponseAdapter_instance = this;
+  }
+  var QueryTestQuery_ResponseAdapter_instance;
+  function QueryTestQuery_ResponseAdapter_getInstance() {
+    if (QueryTestQuery_ResponseAdapter_instance == null)
+      new QueryTestQuery_ResponseAdapter();
+    return QueryTestQuery_ResponseAdapter_instance;
+  }
+  function QueryTestQuery_VariablesAdapter() {
+    QueryTestQuery_VariablesAdapter_instance = this;
+  }
+  QueryTestQuery_VariablesAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    throw IllegalStateException_init_$Create$('Input type used in output position');
+  };
+  QueryTestQuery_VariablesAdapter.prototype.toJson_a7faaf_k$ = function (writer, customScalarAdapters, value) {
+    var tmp = value.get_filter_dbzd6p_k$();
+    if (tmp instanceof Present) {
+      writer.name_u79i4q_k$('filter');
+      var tmp_0 = MapInput_InputAdapter_getInstance();
+      present(nullable(list(obj$default(tmp_0, false, 1, null)))).toJson_pbe5tt_k$(writer, customScalarAdapters, value.get_filter_dbzd6p_k$());
+    }
+    writer.name_u79i4q_k$('type');
+    get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_type_wovaf7_k$());
+    writer.name_u79i4q_k$('page');
+    get_IntAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_page_wos8go_k$());
+  };
+  QueryTestQuery_VariablesAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_a7faaf_k$(writer, customScalarAdapters, value instanceof QueryTestQuery ? value : THROW_CCE());
+  };
+  var QueryTestQuery_VariablesAdapter_instance;
+  function QueryTestQuery_VariablesAdapter_getInstance() {
+    if (QueryTestQuery_VariablesAdapter_instance == null)
+      new QueryTestQuery_VariablesAdapter();
+    return QueryTestQuery_VariablesAdapter_instance;
+  }
+  function Data_22() {
+    Data_instance_9 = this;
+    this.RESPONSE_NAMES_1 = listOf('resource');
+  }
+  Data_22.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+    return this.RESPONSE_NAMES_1;
+  };
+  Data_22.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var _resource = null;
+    $l$loop: while (true) {
+      var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
+      if (tmp0_subject === 0) {
+        var tmp = Resource_getInstance_1();
+        _resource = nullable(obj$default(tmp, false, 1, null)).fromJson_vznj7e_k$(reader, customScalarAdapters);
+      } else
+        break $l$loop;
+    }
+    return new Data_10(_resource);
+  };
+  Data_22.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('resource');
+    var tmp = Resource_getInstance_1();
+    nullable(obj$default(tmp, false, 1, null)).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_resource_xl4447_k$());
+  };
+  Data_22.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_10 ? value : THROW_CCE());
+  };
+  var Data_instance_9;
+  function Data_getInstance_9() {
+    if (Data_instance_9 == null)
+      new Data_22();
+    return Data_instance_9;
+  }
+  function Resource_4() {
+    Resource_instance_1 = this;
+    this.RESPONSE_NAMES_1 = listOf('id');
+  }
+  Resource_4.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+    return this.RESPONSE_NAMES_1;
+  };
+  Resource_4.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var _id = null;
+    $l$loop: while (true) {
+      var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
+      if (tmp0_subject === 0)
+        _id = get_StringAdapter().fromJson_vznj7e_k$(reader, customScalarAdapters);
+      else
+        break $l$loop;
+    }
+    return new Resource_1(ensureNotNull(_id));
+  };
+  Resource_4.prototype.toJson_8jg4qx_k$ = function (writer, customScalarAdapters, value) {
+    writer.name_u79i4q_k$('id');
+    get_StringAdapter().toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_id_kntnx8_k$());
+  };
+  Resource_4.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_8jg4qx_k$(writer, customScalarAdapters, value instanceof Resource_1 ? value : THROW_CCE());
+  };
+  var Resource_instance_1;
+  function Resource_getInstance_1() {
+    if (Resource_instance_1 == null)
+      new Resource_4();
+    return Resource_instance_1;
   }
   function ResourceQuery_ResponseAdapter() {
     ResourceQuery_ResponseAdapter_instance = this;
@@ -4189,14 +4877,14 @@
       new ResourceQuery_VariablesAdapter();
     return ResourceQuery_VariablesAdapter_instance;
   }
-  function Data_21() {
-    Data_instance_9 = this;
+  function Data_23() {
+    Data_instance_10 = this;
     this.RESPONSE_NAMES_1 = listOf('getAllThemes');
   }
-  Data_21.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
+  Data_23.prototype.get_RESPONSE_NAMES_jmqgtv_k$ = function () {
     return this.RESPONSE_NAMES_1;
   };
-  Data_21.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+  Data_23.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
     var _getAllThemes = null;
     $l$loop: while (true) {
       var tmp0_subject = reader.selectName_7r3epc_k$(this.RESPONSE_NAMES_1);
@@ -4205,20 +4893,20 @@
       else
         break $l$loop;
     }
-    return new Data_10(_getAllThemes);
+    return new Data_11(_getAllThemes);
   };
-  Data_21.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
+  Data_23.prototype.toJson_emftlf_k$ = function (writer, customScalarAdapters, value) {
     writer.name_u79i4q_k$('getAllThemes');
     nullable(list(get_NullableStringAdapter())).toJson_r81dz4_k$(writer, customScalarAdapters, value.get_getAllThemes_2gtlsy_k$());
   };
-  Data_21.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
-    return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_10 ? value : THROW_CCE());
+  Data_23.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_emftlf_k$(writer, customScalarAdapters, value instanceof Data_11 ? value : THROW_CCE());
   };
-  var Data_instance_9;
-  function Data_getInstance_9() {
-    if (Data_instance_9 == null)
-      new Data_21();
-    return Data_instance_9;
+  var Data_instance_10;
+  function Data_getInstance_10() {
+    if (Data_instance_10 == null)
+      new Data_23();
+    return Data_instance_10;
   }
   function ThemesQuery_ResponseAdapter() {
     ThemesQuery_ResponseAdapter_instance = this;
@@ -4252,7 +4940,7 @@
   }
   function AdminLevelsQuerySelections() {
     AdminLevelsQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('getAllAdminLabel', list_0(Companion_getInstance_24().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('getAllAdminLabel', list_0(Companion_getInstance_25().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   AdminLevelsQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4268,8 +4956,8 @@
   }
   function CatalogQuerySelections() {
     CatalogQuerySelections_instance = this;
-    this.__catalog_1 = listOf((new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$());
-    this.__root_1 = listOf((new Builder('catalog', Companion_getInstance_12().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('id', new CompiledVariable('id'))).build_1k0s4u_k$())).selections_qw7166_k$(this.__catalog_1).build_1k0s4u_k$());
+    this.__catalog_1 = listOf((new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('catalog', Companion_getInstance_13().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('id', new CompiledVariable('id'))).build_1k0s4u_k$())).selections_qw7166_k$(this.__catalog_1).build_1k0s4u_k$());
   }
   CatalogQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4306,15 +4994,15 @@
   }
   function DatasetInfoQuerySelections() {
     DatasetInfoQuerySelections_instance = this;
-    this.__inCatalog_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$()]);
-    this.__isPrimaryTopicOf_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', Companion_getInstance_24().get_type_wovaf7_k$())).build_1k0s4u_k$()]);
-    this.__inSeries_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$()]);
-    this.__isServedBy_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$()]);
-    this.__temporal_1 = listOf_0([(new Builder('start', Companion_getInstance_26().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('end', Companion_getInstance_26().get_type_wovaf7_k$())).build_1k0s4u_k$()]);
-    this.__distributions_1 = listOf_0([(new Builder('accessUrl', Companion_getInstance_24().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('format', Companion_getInstance_27().get_type_wovaf7_k$())).build_1k0s4u_k$()]);
-    this.__onDataset_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('publisher', Companion_getInstance_14().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('description', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('license', Companion_getInstance_24().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('keywords', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('theme', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('language', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('issued', Companion_getInstance_26().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('modified', Companion_getInstance_26().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('accrualPeriodicity', Companion_getInstance_19().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('inCatalog', list_0(notNull(Companion_getInstance_12().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__inCatalog_1).build_1k0s4u_k$(), (new Builder('isPrimaryTopicOf', list_0(notNull(Companion_getInstance_13().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__isPrimaryTopicOf_1).build_1k0s4u_k$(), (new Builder('inSeries', list_0(notNull(Companion_getInstance_17().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__inSeries_1).build_1k0s4u_k$(), (new Builder('isServedBy', list_0(notNull(Companion_getInstance_15().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__isServedBy_1).build_1k0s4u_k$(), (new Builder('spatial', list_0(notNull(Companion_getInstance_24().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('temporal', Companion_getInstance_28().get_type_wovaf7_k$())).selections_qw7166_k$(this.__temporal_1).build_1k0s4u_k$(), (new Builder('distributions', list_0(notNull(Companion_getInstance_18().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__distributions_1).build_1k0s4u_k$()]);
-    this.__resource_1 = listOf_0([(new Builder('__typename', notNull(Companion_getInstance_24().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder_1('Dataset', listOf('Dataset'))).selections_qw7166_k$(this.__onDataset_1).build_1k0s4u_k$()]);
-    this.__root_1 = listOf((new Builder('resource', Companion_getInstance_31().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('id', new CompiledVariable('id'))).build_1k0s4u_k$())).selections_qw7166_k$(this.__resource_1).build_1k0s4u_k$());
+    this.__inCatalog_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$()]);
+    this.__isPrimaryTopicOf_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', Companion_getInstance_25().get_type_wovaf7_k$())).build_1k0s4u_k$()]);
+    this.__inSeries_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$()]);
+    this.__isServedBy_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$()]);
+    this.__temporal_1 = listOf_0([(new Builder('start', Companion_getInstance_27().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('end', Companion_getInstance_27().get_type_wovaf7_k$())).build_1k0s4u_k$()]);
+    this.__distributions_1 = listOf_0([(new Builder('accessUrl', Companion_getInstance_25().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('format', Companion_getInstance_28().get_type_wovaf7_k$())).build_1k0s4u_k$()]);
+    this.__onDataset_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('publisher', Companion_getInstance_15().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('description', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('license', Companion_getInstance_25().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('keywords', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('theme', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('language', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('issued', Companion_getInstance_27().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('modified', Companion_getInstance_27().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('accrualPeriodicity', Companion_getInstance_20().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('identifier', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('inCatalog', list_0(notNull(Companion_getInstance_13().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__inCatalog_1).build_1k0s4u_k$(), (new Builder('isPrimaryTopicOf', list_0(notNull(Companion_getInstance_14().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__isPrimaryTopicOf_1).build_1k0s4u_k$(), (new Builder('inSeries', list_0(notNull(Companion_getInstance_18().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__inSeries_1).build_1k0s4u_k$(), (new Builder('isServedBy', list_0(notNull(Companion_getInstance_16().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__isServedBy_1).build_1k0s4u_k$(), (new Builder('spatial', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('temporal', Companion_getInstance_29().get_type_wovaf7_k$())).selections_qw7166_k$(this.__temporal_1).build_1k0s4u_k$(), (new Builder('distributions', list_0(notNull(Companion_getInstance_19().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__distributions_1).build_1k0s4u_k$()]);
+    this.__resource_1 = listOf_0([(new Builder('__typename', notNull(Companion_getInstance_25().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder_1('Dataset', listOf('Dataset'))).selections_qw7166_k$(this.__onDataset_1).build_1k0s4u_k$()]);
+    this.__root_1 = listOf((new Builder('resource', Companion_getInstance_32().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('id', new CompiledVariable('id'))).build_1k0s4u_k$())).selections_qw7166_k$(this.__resource_1).build_1k0s4u_k$());
   }
   DatasetInfoQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4336,10 +5024,10 @@
   }
   function DatasetsQuerySelections() {
     DatasetsQuerySelections_instance = this;
-    this.__distributions_1 = listOf((new Builder('format', Companion_getInstance_27().get_type_wovaf7_k$())).build_1k0s4u_k$());
-    this.__onDataset_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('publisher', Companion_getInstance_14().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('description', list_0(notNull(Companion_getInstance_25().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('distributions', list_0(notNull(Companion_getInstance_18().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__distributions_1).build_1k0s4u_k$()]);
-    this.__resourcesByFilter_1 = listOf_0([(new Builder('__typename', notNull(Companion_getInstance_24().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder_1('Dataset', listOf('Dataset'))).selections_qw7166_k$(this.__onDataset_1).build_1k0s4u_k$()]);
-    this.__root_1 = listOf((new Builder('resourcesByFilter', list_0(Companion_getInstance_31().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('filters', new CompiledVariable('filter'))).build_1k0s4u_k$(), (new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$()])).selections_qw7166_k$(this.__resourcesByFilter_1).build_1k0s4u_k$());
+    this.__distributions_1 = listOf((new Builder('format', Companion_getInstance_28().get_type_wovaf7_k$())).build_1k0s4u_k$());
+    this.__onDataset_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('publisher', Companion_getInstance_15().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('description', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('distributions', list_0(notNull(Companion_getInstance_19().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__distributions_1).build_1k0s4u_k$()]);
+    this.__resourcesByFilter_1 = listOf_0([(new Builder('__typename', notNull(Companion_getInstance_25().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder_1('Dataset', listOf('Dataset'))).selections_qw7166_k$(this.__onDataset_1).build_1k0s4u_k$()]);
+    this.__root_1 = listOf((new Builder('resourcesByFilter', list_0(Companion_getInstance_32().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('filters', new CompiledVariable('filter'))).build_1k0s4u_k$(), (new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$()])).selections_qw7166_k$(this.__resourcesByFilter_1).build_1k0s4u_k$());
   }
   DatasetsQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4352,7 +5040,7 @@
   }
   function FormatsQuerySelections() {
     FormatsQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('getAllFormats', list_0(Companion_getInstance_24().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('getAllFormats', list_0(Companion_getInstance_25().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   FormatsQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4365,7 +5053,7 @@
   }
   function FrequenciesQuerySelections() {
     FrequenciesQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('getAllFrequencies', list_0(Companion_getInstance_24().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('getAllFrequencies', list_0(Companion_getInstance_25().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   FrequenciesQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4378,7 +5066,7 @@
   }
   function KeywordsQuerySelections() {
     KeywordsQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('getAllKeywords', list_0(Companion_getInstance_24().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('getAllKeywords', list_0(Companion_getInstance_25().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   KeywordsQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4391,7 +5079,7 @@
   }
   function NumberOfResourcesQuerySelections() {
     NumberOfResourcesQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('numberOfResources', Companion_getInstance_23().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$())).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('numberOfResources', Companion_getInstance_24().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$())).build_1k0s4u_k$());
   }
   NumberOfResourcesQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4404,7 +5092,7 @@
   }
   function PublishersQuerySelections() {
     PublishersQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('getAllPublishers', list_0(Companion_getInstance_24().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('getAllPublishers', list_0(Companion_getInstance_25().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   PublishersQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4415,13 +5103,46 @@
       new PublishersQuerySelections();
     return PublishersQuerySelections_instance;
   }
+  function _get___distributions__6he4ri_1($this) {
+    return $this.__distributions_1;
+  }
+  function _get___resources__ctakmk($this) {
+    return $this.__resources_1;
+  }
+  function _get___inCatalog__u4glh9_0($this) {
+    return $this.__inCatalog_1;
+  }
+  function _get___onDataset__vkwidk_1($this) {
+    return $this.__onDataset_1;
+  }
+  function _get___resourcesByFilter__b2q77h_0($this) {
+    return $this.__resourcesByFilter_1;
+  }
+  function QueryTestQuerySelections() {
+    QueryTestQuerySelections_instance = this;
+    this.__distributions_1 = listOf((new Builder('format', Companion_getInstance_28().get_type_wovaf7_k$())).build_1k0s4u_k$());
+    this.__resources_1 = listOf((new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$());
+    this.__inCatalog_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('resources', list_0(notNull(Companion_getInstance_33().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__resources_1).build_1k0s4u_k$()]);
+    this.__onDataset_1 = listOf_0([(new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder('title', list_0(notNull(Companion_getInstance_26().get_type_wovaf7_k$())))).build_1k0s4u_k$(), (new Builder('publisher', Companion_getInstance_15().get_type_wovaf7_k$())).build_1k0s4u_k$(), (new Builder('distributions', list_0(notNull(Companion_getInstance_19().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__distributions_1).build_1k0s4u_k$(), (new Builder('inCatalog', list_0(notNull(Companion_getInstance_13().get_type_wovaf7_k$())))).selections_qw7166_k$(this.__inCatalog_1).build_1k0s4u_k$()]);
+    this.__resourcesByFilter_1 = listOf_0([(new Builder('__typename', notNull(Companion_getInstance_25().get_type_wovaf7_k$()))).build_1k0s4u_k$(), (new Builder_1('Dataset', listOf('Dataset'))).selections_qw7166_k$(this.__onDataset_1).build_1k0s4u_k$()]);
+    this.__root_1 = listOf((new Builder('resourcesByFilter', list_0(Companion_getInstance_32().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('filters', new CompiledVariable('filter'))).build_1k0s4u_k$(), (new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('type', new CompiledVariable('type'))).build_1k0s4u_k$()])).selections_qw7166_k$(this.__resourcesByFilter_1).build_1k0s4u_k$());
+  }
+  QueryTestQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
+    return this.__root_1;
+  };
+  var QueryTestQuerySelections_instance;
+  function QueryTestQuerySelections_getInstance() {
+    if (QueryTestQuerySelections_instance == null)
+      new QueryTestQuerySelections();
+    return QueryTestQuerySelections_instance;
+  }
   function _get___resource__evp0d_0($this) {
     return $this.__resource_1;
   }
   function ResourceQuerySelections() {
     ResourceQuerySelections_instance = this;
-    this.__resource_1 = listOf((new Builder('id', notNull(Companion_getInstance_22().get_type_wovaf7_k$()))).build_1k0s4u_k$());
-    this.__root_1 = listOf((new Builder('resource', Companion_getInstance_31().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('id', new CompiledVariable('id'))).build_1k0s4u_k$())).selections_qw7166_k$(this.__resource_1).build_1k0s4u_k$());
+    this.__resource_1 = listOf((new Builder('id', notNull(Companion_getInstance_23().get_type_wovaf7_k$()))).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('resource', Companion_getInstance_32().get_type_wovaf7_k$())).arguments_rqepyo_k$(listOf((new Builder_0('id', new CompiledVariable('id'))).build_1k0s4u_k$())).selections_qw7166_k$(this.__resource_1).build_1k0s4u_k$());
   }
   ResourceQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4434,7 +5155,7 @@
   }
   function ThemesQuerySelections() {
     ThemesQuerySelections_instance = this;
-    this.__root_1 = listOf((new Builder('getAllThemes', list_0(Companion_getInstance_24().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
+    this.__root_1 = listOf((new Builder('getAllThemes', list_0(Companion_getInstance_25().get_type_wovaf7_k$()))).arguments_rqepyo_k$(listOf_0([(new Builder_0('page', new CompiledVariable('page'))).build_1k0s4u_k$(), (new Builder_0('pageSize', new CompiledVariable('pageSize'))).build_1k0s4u_k$()])).build_1k0s4u_k$());
   }
   ThemesQuerySelections.prototype.get___root_9v9sy3_k$ = function () {
     return this.__root_1;
@@ -4445,25 +5166,9 @@
       new ThemesQuerySelections();
     return ThemesQuerySelections_instance;
   }
-  function Companion_10() {
-    Companion_instance_10 = this;
-    this.type_1 = (new Builder_2('AbstractDataset')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_30().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$()])).build_1k0s4u_k$();
-  }
-  Companion_10.prototype.get_type_wovaf7_k$ = function () {
-    return this.type_1;
-  };
-  var Companion_instance_10;
-  function Companion_getInstance_11() {
-    if (Companion_instance_10 == null)
-      new Companion_10();
-    return Companion_instance_10;
-  }
-  function AbstractDataset() {
-    Companion_getInstance_11();
-  }
   function Companion_11() {
     Companion_instance_11 = this;
-    this.type_1 = (new Builder_3('Catalog')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_11().get_type_wovaf7_k$(), Companion_getInstance_16().get_type_wovaf7_k$(), Companion_getInstance_30().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$()])).build_1k0s4u_k$();
+    this.type_1 = (new Builder_2('AbstractDataset')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$()])).build_1k0s4u_k$();
   }
   Companion_11.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4474,12 +5179,12 @@
       new Companion_11();
     return Companion_instance_11;
   }
-  function Catalog_1() {
+  function AbstractDataset() {
     Companion_getInstance_12();
   }
   function Companion_12() {
     Companion_instance_12 = this;
-    this.type_1 = (new Builder_3('CatalogRecord')).build_1k0s4u_k$();
+    this.type_1 = (new Builder_3('Catalog')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_12().get_type_wovaf7_k$(), Companion_getInstance_17().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$(), Companion_getInstance_33().get_type_wovaf7_k$()])).build_1k0s4u_k$();
   }
   Companion_12.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4490,12 +5195,12 @@
       new Companion_12();
     return Companion_instance_12;
   }
-  function CatalogRecord() {
+  function Catalog_1() {
     Companion_getInstance_13();
   }
   function Companion_13() {
     Companion_instance_13 = this;
-    this.type_1 = new CustomScalarType('Concept', 'commonModels.ConceptAdapterScalar');
+    this.type_1 = (new Builder_3('CatalogRecord')).build_1k0s4u_k$();
   }
   Companion_13.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4506,12 +5211,12 @@
       new Companion_13();
     return Companion_instance_13;
   }
-  function Concept() {
+  function CatalogRecord() {
     Companion_getInstance_14();
   }
   function Companion_14() {
     Companion_instance_14 = this;
-    this.type_1 = (new Builder_3('DataService')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_11().get_type_wovaf7_k$(), Companion_getInstance_30().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$()])).build_1k0s4u_k$();
+    this.type_1 = new CustomScalarType('Concept', 'commonModels.ConceptAdapterScalar');
   }
   Companion_14.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4522,12 +5227,12 @@
       new Companion_14();
     return Companion_instance_14;
   }
-  function DataService() {
+  function Concept() {
     Companion_getInstance_15();
   }
   function Companion_15() {
     Companion_instance_15 = this;
-    this.type_1 = (new Builder_2('DatasetInCatalog')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_11().get_type_wovaf7_k$(), Companion_getInstance_30().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$()])).build_1k0s4u_k$();
+    this.type_1 = (new Builder_3('DataService')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_12().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$(), Companion_getInstance_33().get_type_wovaf7_k$()])).build_1k0s4u_k$();
   }
   Companion_15.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4538,12 +5243,12 @@
       new Companion_15();
     return Companion_instance_15;
   }
-  function DatasetInCatalog() {
+  function DataService() {
     Companion_getInstance_16();
   }
   function Companion_16() {
     Companion_instance_16 = this;
-    this.type_1 = (new Builder_3('DatasetSeries')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_11().get_type_wovaf7_k$(), Companion_getInstance_16().get_type_wovaf7_k$(), Companion_getInstance_30().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$()])).build_1k0s4u_k$();
+    this.type_1 = (new Builder_2('DatasetInCatalog')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_12().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$()])).build_1k0s4u_k$();
   }
   Companion_16.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4554,12 +5259,12 @@
       new Companion_16();
     return Companion_instance_16;
   }
-  function DatasetSeries() {
+  function DatasetInCatalog() {
     Companion_getInstance_17();
   }
   function Companion_17() {
     Companion_instance_17 = this;
-    this.type_1 = (new Builder_3('Distribution')).interfaces_t23zo9_k$(listOf(Companion_getInstance_30().get_type_wovaf7_k$())).build_1k0s4u_k$();
+    this.type_1 = (new Builder_3('DatasetSeries')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_12().get_type_wovaf7_k$(), Companion_getInstance_17().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$(), Companion_getInstance_33().get_type_wovaf7_k$()])).build_1k0s4u_k$();
   }
   Companion_17.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4570,12 +5275,12 @@
       new Companion_17();
     return Companion_instance_17;
   }
-  function Distribution_3() {
+  function DatasetSeries() {
     Companion_getInstance_18();
   }
   function Companion_18() {
     Companion_instance_18 = this;
-    this.type_1 = new CustomScalarType('Frequency', 'commonModels.FrequencyAdapterScalar');
+    this.type_1 = (new Builder_3('Distribution')).interfaces_t23zo9_k$(listOf(Companion_getInstance_31().get_type_wovaf7_k$())).build_1k0s4u_k$();
   }
   Companion_18.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4586,12 +5291,12 @@
       new Companion_18();
     return Companion_instance_18;
   }
-  function Frequency() {
+  function Distribution_5() {
     Companion_getInstance_19();
   }
   function Companion_19() {
     Companion_instance_19 = this;
-    this.type_1 = new CustomScalarType('Boolean', 'kotlin.Boolean');
+    this.type_1 = new CustomScalarType('Frequency', 'commonModels.FrequencyAdapterScalar');
   }
   Companion_19.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4602,12 +5307,12 @@
       new Companion_19();
     return Companion_instance_19;
   }
-  function GraphQLBoolean() {
+  function Frequency() {
     Companion_getInstance_20();
   }
   function Companion_20() {
     Companion_instance_20 = this;
-    this.type_1 = new CustomScalarType('Float', 'kotlin.Float');
+    this.type_1 = new CustomScalarType('Boolean', 'kotlin.Boolean');
   }
   Companion_20.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4618,12 +5323,12 @@
       new Companion_20();
     return Companion_instance_20;
   }
-  function GraphQLFloat() {
+  function GraphQLBoolean() {
     Companion_getInstance_21();
   }
   function Companion_21() {
     Companion_instance_21 = this;
-    this.type_1 = new CustomScalarType('ID', 'kotlin.String');
+    this.type_1 = new CustomScalarType('Float', 'kotlin.Float');
   }
   Companion_21.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4634,12 +5339,12 @@
       new Companion_21();
     return Companion_instance_21;
   }
-  function GraphQLID() {
+  function GraphQLFloat() {
     Companion_getInstance_22();
   }
   function Companion_22() {
     Companion_instance_22 = this;
-    this.type_1 = new CustomScalarType('Int', 'kotlin.Int');
+    this.type_1 = new CustomScalarType('ID', 'kotlin.String');
   }
   Companion_22.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4650,12 +5355,12 @@
       new Companion_22();
     return Companion_instance_22;
   }
-  function GraphQLInt() {
+  function GraphQLID() {
     Companion_getInstance_23();
   }
   function Companion_23() {
     Companion_instance_23 = this;
-    this.type_1 = new CustomScalarType('String', 'kotlin.String');
+    this.type_1 = new CustomScalarType('Int', 'kotlin.Int');
   }
   Companion_23.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4666,12 +5371,12 @@
       new Companion_23();
     return Companion_instance_23;
   }
-  function GraphQLString() {
+  function GraphQLInt() {
     Companion_getInstance_24();
   }
   function Companion_24() {
     Companion_instance_24 = this;
-    this.type_1 = new CustomScalarType('LangString', 'commonModels.LangStringAdapterScalar');
+    this.type_1 = new CustomScalarType('String', 'kotlin.String');
   }
   Companion_24.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4682,12 +5387,12 @@
       new Companion_24();
     return Companion_instance_24;
   }
-  function LangString() {
+  function GraphQLString() {
     Companion_getInstance_25();
   }
   function Companion_25() {
     Companion_instance_25 = this;
-    this.type_1 = new CustomScalarType('LocalDateTime', 'kotlin.Any');
+    this.type_1 = new CustomScalarType('LangString', 'commonModels.LangStringAdapterScalar');
   }
   Companion_25.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4698,8 +5403,24 @@
       new Companion_25();
     return Companion_instance_25;
   }
-  function LocalDateTime() {
+  function LangString() {
     Companion_getInstance_26();
+  }
+  function Companion_26() {
+    Companion_instance_26 = this;
+    this.type_1 = new CustomScalarType('LocalDateTime', 'kotlin.Any');
+  }
+  Companion_26.prototype.get_type_wovaf7_k$ = function () {
+    return this.type_1;
+  };
+  var Companion_instance_26;
+  function Companion_getInstance_27() {
+    if (Companion_instance_26 == null)
+      new Companion_26();
+    return Companion_instance_26;
+  }
+  function LocalDateTime() {
+    Companion_getInstance_27();
   }
   function MapInput(key, values) {
     this.key_1 = key;
@@ -4747,25 +5468,9 @@
       return false;
     return true;
   };
-  function Companion_26() {
-    Companion_instance_26 = this;
-    this.type_1 = new CustomScalarType('MediaType', 'commonModels.MediaTypeAdapterScalar');
-  }
-  Companion_26.prototype.get_type_wovaf7_k$ = function () {
-    return this.type_1;
-  };
-  var Companion_instance_26;
-  function Companion_getInstance_27() {
-    if (Companion_instance_26 == null)
-      new Companion_26();
-    return Companion_instance_26;
-  }
-  function MediaType() {
-    Companion_getInstance_27();
-  }
   function Companion_27() {
     Companion_instance_27 = this;
-    this.type_1 = (new Builder_3('PeriodOfTime')).build_1k0s4u_k$();
+    this.type_1 = new CustomScalarType('MediaType', 'commonModels.MediaTypeAdapterScalar');
   }
   Companion_27.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4776,12 +5481,12 @@
       new Companion_27();
     return Companion_instance_27;
   }
-  function PeriodOfTime() {
+  function MediaType() {
     Companion_getInstance_28();
   }
   function Companion_28() {
     Companion_instance_28 = this;
-    this.type_1 = (new Builder_3('Query')).build_1k0s4u_k$();
+    this.type_1 = (new Builder_3('PeriodOfTime')).build_1k0s4u_k$();
   }
   Companion_28.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4792,12 +5497,12 @@
       new Companion_28();
     return Companion_instance_28;
   }
-  function Query_0() {
+  function PeriodOfTime() {
     Companion_getInstance_29();
   }
   function Companion_29() {
     Companion_instance_29 = this;
-    this.type_1 = (new Builder_2('ReferenceWithinExternalContext')).build_1k0s4u_k$();
+    this.type_1 = (new Builder_3('Query')).build_1k0s4u_k$();
   }
   Companion_29.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4808,12 +5513,12 @@
       new Companion_29();
     return Companion_instance_29;
   }
-  function ReferenceWithinExternalContext() {
+  function Query_0() {
     Companion_getInstance_30();
   }
   function Companion_30() {
     Companion_instance_30 = this;
-    this.type_1 = (new Builder_2('Resource')).interfaces_t23zo9_k$(listOf(Companion_getInstance_30().get_type_wovaf7_k$())).build_1k0s4u_k$();
+    this.type_1 = (new Builder_2('ReferenceWithinExternalContext')).build_1k0s4u_k$();
   }
   Companion_30.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4824,12 +5529,12 @@
       new Companion_30();
     return Companion_instance_30;
   }
-  function Resource_3() {
+  function ReferenceWithinExternalContext() {
     Companion_getInstance_31();
   }
   function Companion_31() {
     Companion_instance_31 = this;
-    this.type_1 = (new Builder_2('ResourceInCatalog')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_11().get_type_wovaf7_k$(), Companion_getInstance_30().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$()])).build_1k0s4u_k$();
+    this.type_1 = (new Builder_2('Resource')).interfaces_t23zo9_k$(listOf(Companion_getInstance_31().get_type_wovaf7_k$())).build_1k0s4u_k$();
   }
   Companion_31.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
@@ -4840,8 +5545,24 @@
       new Companion_31();
     return Companion_instance_31;
   }
-  function ResourceInCatalog() {
+  function Resource_5() {
     Companion_getInstance_32();
+  }
+  function Companion_32() {
+    Companion_instance_32 = this;
+    this.type_1 = (new Builder_2('ResourceInCatalog')).interfaces_t23zo9_k$(listOf_0([Companion_getInstance_12().get_type_wovaf7_k$(), Companion_getInstance_31().get_type_wovaf7_k$(), Companion_getInstance_32().get_type_wovaf7_k$()])).build_1k0s4u_k$();
+  }
+  Companion_32.prototype.get_type_wovaf7_k$ = function () {
+    return this.type_1;
+  };
+  var Companion_instance_32;
+  function Companion_getInstance_33() {
+    if (Companion_instance_32 == null)
+      new Companion_32();
+    return Companion_instance_32;
+  }
+  function ResourceInCatalog() {
+    Companion_getInstance_33();
   }
   function MapInput_InputAdapter() {
     MapInput_InputAdapter_instance = this;
@@ -4946,17 +5667,17 @@
       return false;
     return true;
   };
-  function Companion_32() {
-    Companion_instance_32 = this;
+  function Companion_33() {
+    Companion_instance_33 = this;
   }
-  Companion_32.prototype.serializer_9w0wvi_k$ = function () {
+  Companion_33.prototype.serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance();
   };
-  var Companion_instance_32;
-  function Companion_getInstance_33() {
-    if (Companion_instance_32 == null)
-      new Companion_32();
-    return Companion_instance_32;
+  var Companion_instance_33;
+  function Companion_getInstance_34() {
+    if (Companion_instance_33 == null)
+      new Companion_33();
+    return Companion_instance_33;
   }
   function $serializer() {
     $serializer_instance = this;
@@ -5044,7 +5765,7 @@
     return Concept_init_$Init$(seen1, literal, tag, serializationConstructorMarker, Object.create(Concept_0.prototype));
   }
   function Concept_0(literal, tag) {
-    Companion_getInstance_33();
+    Companion_getInstance_34();
     this.literal_1 = literal;
     this.tag_1 = tag;
   }
@@ -5867,29 +6588,14 @@
     $sm: do
       try {
         var tmp = this.get_state_iypx7s_k$();
-        switch (tmp) {
-          case 0:
-            this.set_exceptionState_s9sevl_k$(2);
-            this.set_state_a96kl8_k$(1);
-            suspendResult = get_apolloClient().query_4nubzp_k$(new CatalogQuery('root')).execute_qhiagk_k$(this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 1:
-            var response = suspendResult;
-            return Unit_getInstance();
-          case 2:
-            throw this.get_exception_x0n6w6_k$();
+        if (tmp === 0) {
+          this.set_exceptionState_s9sevl_k$(1);
+          return Unit_getInstance();
+        } else if (tmp === 1) {
+          throw this.get_exception_x0n6w6_k$();
         }
       } catch ($p) {
-        if (this.get_exceptionState_wflpxn_k$() === 2) {
-          throw $p;
-        } else {
-          this.set_state_a96kl8_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_pwgeox_k$($p);
-        }
+        throw $p;
       }
      while (true);
   };

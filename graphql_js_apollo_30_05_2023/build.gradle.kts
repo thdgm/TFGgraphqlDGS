@@ -110,34 +110,26 @@ kotlin {
 
         val jvmMain by getting {
             dependencies {
-                /*implementation("io.ktor:ktor-serialization:$ktorVersion")
-                implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
-                implementation("io.ktor:ktor-server-cors:$ktorVersion")
-                implementation("io.ktor:ktor-server-compression:$ktorVersion")
-                implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-                implementation("io.ktor:ktor-server-netty:$ktorVersion")*/
-                //implementation("ch.qos.logback:logback-classic:$logbackVersion")
-                //implementation("org.litote.kmongo:kmongo-coroutine-serialization:$kmongoVersion")
+
                 implementation("com.graphql-java:graphiql-spring-boot-starter:5.0.2")
 
                 implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:latest.release"))
                 implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
 
+
                 // Same version as codegen plugin
                 implementation("com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-core:5.6.7")
-                implementation("org.springframework.boot:spring-boot-starter-web")
-                implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-                implementation("org.springframework.boot:spring-boot-starter-graphql")
-                implementation("org.springframework.boot:spring-boot-starter-data-redis")
-                implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
+                implementation("org.springframework.boot:spring-boot-starter-web:3.1.1")
+                implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.1")
+                implementation("org.springframework.boot:spring-boot-starter-graphql:3.1.1")
+                implementation("org.springframework.boot:spring-boot-starter-data-redis:3.1.1")
+                implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive:3.1.1")
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
                 implementation("org.springframework.boot:spring-boot-starter-validation:3.0.2")
 
                 implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
                 implementation("org.jetbrains.kotlin:kotlin-reflect")
-
 
                 implementation("org.json:json:20090211")
                 implementation ("com.google.code.gson:gson:2.8.5")

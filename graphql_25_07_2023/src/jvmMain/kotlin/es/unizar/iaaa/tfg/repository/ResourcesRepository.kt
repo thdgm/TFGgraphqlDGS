@@ -39,15 +39,35 @@ interface CatalogRepository : JpaRepository<CatalogEntity, String> {
     fun findCatalogResourcesByResourcesCatalogId(id: String): Collection<CatalogEntity?>
     fun findCatalogsByRecordsId(id: String): Collection<CatalogEntity?>
 
+    @Query(
+        value =
+        "select cr from catalogrecord cr, cataloginrecord c where c.id_resource = ?1 and c.id_catalog_record = cr.id",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findRecordsByCatalogId(id: String, page: Pageable): Page<CatalogRecordEntity>
+
+    fun findRecordsById(id: String, pageable: Pageable): Page<CatalogRecordEntity>
+
     @Modifying
     @Transactional
     @Query("INSERT INTO \"relationships\" (\"id_catalog\", \"id_resource\") VALUES (?1, ?2)", nativeQuery = true)
     fun insertInRelationships(cat: String, res: String)
+
+
+    @Query(
+        value = "select COUNT(DISTINCT id_resource) from relationships where id_catalog = ?1",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findNumberOfResourcesById(id: String): Int
 }
 
 @Repository
 interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String> {
     fun findCatalogRecordsByResourceId(id: String): Collection<CatalogRecordEntity?>
+
+    //fun findRecordsByCatalogsId(id: String, page: Pageable): Collection<CatalogRecordEntity?>
 
     @Modifying
     @Transactional
@@ -378,7 +398,9 @@ class ResourceRepositoryExtra(){
         issued: List<LocalDateTime>,
         modified: List<LocalDateTime>,
         period: List<String>,
-        notation: List<String>): Long?{
+        notation: List<String>,
+        start: LocalDateTime?,
+        end: LocalDateTime?): Long?{
         val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
 
         val mediaTypeMap = MediaTypeMap.MEDIA_TYPE
@@ -394,8 +416,7 @@ class ResourceRepositoryExtra(){
         val descriptions = appliedFilters.find { it.key == "Descripciones" }?.values ?: listOf()
         var queryString = "SELECT COUNT(DISTINCT tt.id) as total_rows " +
                 "FROM ( " +
-                "SELECT r.id, r.tipo,tit_res.id_title, descr.id_description, r.issued, r.license, r.modified, tr.id_theme,k1_0.id_word, pub.label, pub.notation,dd.format " +
-                "FROM resource r " +
+                "SELECT r.id, r.tipo, tit_res.id_title, descr.id_description, r.issued, r.license, r.modified, r.publisher_id, r.accrual_periodicity, r.temporal_coverage_end, r.temporal_coverage_start, r.validity, tr.id_theme,k1_0.id_word, pub.label, pub.notation,dd.format " +                "FROM resource r " +
                 "LEFT JOIN themes_resources tr ON r.id = tr.id_resource " +
                 "LEFT JOIN keyword k1_0 ON r.id = k1_0.id_dataset " +
                 "LEFT JOIN publisher pub ON r.publisher_id = pub.id " +
@@ -419,6 +440,8 @@ class ResourceRepositoryExtra(){
         if (licenses.isNotEmpty()) queryString += "tt.license IN :licenses OR "
         if (titles.isNotEmpty()) queryString += "tt.id_title IN :titles OR "
         if (descriptions.isNotEmpty()) queryString += "tt.id_description IN :descriptions OR "
+        if (start != null && end != null) queryString += "(tt.temporal_coverage_start = :start AND tt.temporal_coverage_end = :end) OR "
+
         var querySplit = queryString.split(' ').toMutableList()
         if(querySplit[querySplit.size-2] == "OR") querySplit[querySplit.size-2] = ""
         queryString = querySplit.joinToString(" ")
@@ -435,6 +458,8 @@ class ResourceRepositoryExtra(){
         if(licenses.isNotEmpty()) nativeQuery.setParameter("licenses", licenses)
         if (descriptions.isNotEmpty()) nativeQuery.setParameter("descriptions", descriptions)
         if (titles.isNotEmpty()) nativeQuery.setParameter("titles", titles)
+        if (start != null) nativeQuery.setParameter("start", start)
+        if (end != null) nativeQuery.setParameter("end", end)
         println("RRRRREEEEE ----------------- ${nativeQuery.resultList}")
         return kotlin.runCatching {
             nativeQuery.resultList.first() as Long?
@@ -451,7 +476,9 @@ class ResourceRepositoryExtra(){
         issued: List<LocalDateTime>,
         modified: List<LocalDateTime>,
         period: List<String>,
-        notation: List<String>
+        notation: List<String>,
+        start: LocalDateTime?,
+        end: LocalDateTime?
     ): Collection<ResourceEntity>?{
         val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
 
@@ -493,6 +520,8 @@ class ResourceRepositoryExtra(){
         if (licenses.isNotEmpty()) queryString += "tt.license IN :licenses OR "
         if (titles.isNotEmpty()) queryString += "tt.id_title IN :titles OR "
         if (descriptions.isNotEmpty()) queryString += "tt.id_description IN :descriptions OR "
+        if (start != null && end != null) queryString += "(tt.temporal_coverage_start = :start AND tt.temporal_coverage_end = :end) OR "
+
 
         var querySplit = queryString.split(' ').toMutableList()
 
@@ -513,6 +542,8 @@ class ResourceRepositoryExtra(){
         if(licenses.isNotEmpty()) nativeQuery.setParameter("licenses", licenses)
         if (descriptions.isNotEmpty()) nativeQuery.setParameter("descriptions", descriptions)
         if (titles.isNotEmpty()) nativeQuery.setParameter("titles", titles)
+        if (start != null) nativeQuery.setParameter("start", start)
+        if (end != null) nativeQuery.setParameter("end", end)
         return kotlin.runCatching {
             nativeQuery.resultList as Collection<ResourceEntity>?
         }.getOrNull()
@@ -543,6 +574,14 @@ interface ResourceRepository : JpaRepository<ResourceEntity, String> {
     )
     @Transactional
     fun findAllDatasets(pageable: Pageable): Page<ResourceEntity>
+
+    @Query(
+        value =
+        "select * from \"resource\" as t WHERE t.\"tipo\" = 'catalog'",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findAllCatalogs(pageable: Pageable): Page<ResourceEntity>
 
     @Query(
         value =

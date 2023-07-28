@@ -1,5 +1,5 @@
 {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: [
       'node_modules'
@@ -42,10 +42,22 @@
     libraryTarget: 'umd',
     globalObject: 'this'
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   ignoreWarnings: [
     /Failed to parse source map/
   ],
+  devServer: {
+    open: true,
+    static: [
+      '/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_js_apollo_30_05_2023/build/processedResources/js/main'
+    ],
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false
+      }
+    }
+  },
   stats: {
     warnings: false,
     errors: false

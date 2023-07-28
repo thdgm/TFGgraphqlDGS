@@ -18,11 +18,12 @@ import org.springframework.stereotype.Service
 
 interface CatalogServices {
     fun getCatalog(id: String): Catalog?
-    fun getCalogsCatalog(id: String): Collection<Catalog?>
-    fun getRecordsCatalog(id: String): Collection<CatalogRecord?>
-    fun getServicesCatalog(id: String): Collection<DataService?>
-    fun getResourcesCatalog(id: String): Collection<ResourceInCatalog?>
-    fun getDatasetsCatalog(id: String): Collection<DatasetInCatalog?>
+    fun getCalogsCatalog(id: String,page: Int, pageSize: Int): Collection<Catalog?>
+    fun getRecordsCatalog(id: String,page: Int, pageSize: Int): Collection<CatalogRecord?>
+    fun getServicesCatalog(id: String,page: Int, pageSize: Int): Collection<DataService?>
+    fun getResourcesCatalog(id: String,page: Int, pageSize: Int): Collection<ResourceInCatalog?>
+    fun getDatasetsCatalog(id: String,page: Int, pageSize: Int): Collection<DatasetInCatalog?>
+    fun getNumberResourcesCatalog(id: String): Int?
 }
 
 @Service
@@ -40,43 +41,55 @@ class CatalogServicesImpl(
     }
 
     // Return list with catalogs belonging to catalg id
-    override fun getCalogsCatalog(id: String): Collection<Catalog?> =
-        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(0,5))
+    override fun getCalogsCatalog(id: String,page: Int, pageSize: Int): Collection<Catalog?> =
+        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
             .filter { it.type == "catalog" }
             .map {
                 converter.toCatalog(it)
             }.toList()
 
     // Return list with records belonging to catalg id
-    override fun getRecordsCatalog(id: String): Collection<CatalogRecord> {
-        val cre = catalogRepository.findByIdOrNull(id)
-        return cre?.records?.map {
-            converter.toCatalogRecord(it)
-        }.orEmpty()
+    override fun getRecordsCatalog(id: String,page: Int, pageSize: Int): Collection<CatalogRecord> {
+        println("CRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
+        println(catalogRepository.findRecordsByCatalogId(id, PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)))
+       return catalogRepository.findRecordsByCatalogId(id, PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
+            .map {
+                converter.toCatalogRecord(it)
+            }.filterNotNull()
     }
 
+        /*val cre = catalogRepository.findByIdOrNull(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
+        return cre?.records?.map {
+            converter.toCatalogRecord(it)
+        }.orEmpty()*/
+
+
     // Return list with services belonging to catalg id
-    override fun getServicesCatalog(id: String): Collection<DataService?> =
-        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(0,5))
+    override fun getServicesCatalog(id: String,page: Int, pageSize: Int): Collection<DataService?> =
+        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
             .filter { it.type == "data_service" }
             .map {
                 converter.toDataService(it)
             }.toList()
 
     // Return list with resources belonging to catalg id
-    override fun getResourcesCatalog(id: String): Collection<ResourceInCatalog?> {
+    override fun getResourcesCatalog(id: String,page: Int, pageSize: Int): Collection<ResourceInCatalog?> {
         val id_catalog = id
         println("IDDDD:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: $id")
         println("RESOURCESSSSSS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${resourceRepository.findResourcesCatalogByCatalogResourcesId(id_catalog,PageRequest.of(0,5))}")
-        return resourceRepository.findResourcesCatalogByCatalogResourcesId(id_catalog,PageRequest.of(0,5)).map {converter.createResource(it) }.distinct().toList()//resourceRepository.findResourcesCatalog(id).map {converter.createResource(it) }
+        return resourceRepository.findResourcesCatalogByCatalogResourcesId(id_catalog,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map {converter.createResource(it) }.distinct().toList()//resourceRepository.findResourcesCatalog(id).map {converter.createResource(it) }
     }
 
 
-    // Return list with resources belonging to catalg id
-    override fun getDatasetsCatalog(id: String): Collection<DatasetInCatalog?> =
-        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(0,5))
+    // Return list with resources belonging to catalog id
+    override fun getDatasetsCatalog(id: String,page: Int, pageSize: Int): Collection<DatasetInCatalog?> =
+        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
             .filter { it.type != "data_service" }
             .map {
                 converter.createDataset(it)
             }.toList()
+
+    // Return the number of resources inside the Catalog id
+    override fun getNumberResourcesCatalog(id: String): Int? =
+        catalogRepository.findNumberOfResourcesById(id)
 }

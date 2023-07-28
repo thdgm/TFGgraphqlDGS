@@ -3,11 +3,14 @@ package es.unizar.iaaa.tfg.services.initLoadServices
 
 import com.netflix.graphql.dgs.DgsQueryExecutor
 import es.unizar.iaaa.tfg.services.csvServices.ProcessCsvServices
+import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 
 /*
  * Services for load in database some resources reading csv file.
  */
+
+
 
 interface InitLoadFromCsvService {
     fun loadFromCsv()
@@ -15,13 +18,13 @@ interface InitLoadFromCsvService {
 
 @Service
 class InitLoadFromCsvServiceImpl(
-    private val dgsQueryExecutor: DgsQueryExecutor,
+   // private val dgsQueryExecutor: DgsQueryExecutor,
     private val processCsvServices: ProcessCsvServices
 
 ) : InitLoadFromCsvService {
 
-    override fun loadFromCsv() {
-        val inputParam = "\$input"
+    override fun loadFromCsv() {}
+       /* val inputParam = "\$input"
         val urlRecord = "classpath:datosgobes.csv" //"classpath:datosGob.csv"
 
         processCsvServices.processCsvService(urlRecord).map {
@@ -62,6 +65,6 @@ class InitLoadFromCsvServiceImpl(
         )
         dgsQueryExecutor.executeAndGetDocumentContext(query, crInput)
 
-    }
+    }*/
 
 }

@@ -194,3 +194,7 @@ margin-top: 5% !important;
 .downloadIcon{
     cursor: pointer;
 }
+
+.css-518kzi-MuiListItemSecondaryAction-root{
+    right: 1px !important;
+}

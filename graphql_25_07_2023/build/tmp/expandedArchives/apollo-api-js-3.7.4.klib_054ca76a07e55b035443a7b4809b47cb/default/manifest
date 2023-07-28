@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=com.apollographql.apollo3\:apollo-api
+compiler_version=1.7.21
+depends=com.apollographql.apollo3\:apollo-annotations com.squareup.okio\:okio uuid kotlin
+jsOutputName=apollo-kotlin-apollo-api
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

@@ -47,8 +47,10 @@ class FieldsFilterServicesImpl(
             .map { it!!.id }.distinct()*/
 
     // Return string list with all the keywords with particular language (language) saved in database.
-    override fun getKeywords(page: Int, pageSize: Int): Collection<String> =
-        keywordRepository.findAllWordIsNotNull(PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map { it.id.wordId }.distinct()
+    override fun getKeywords(page: Int, pageSize: Int): Collection<String> {
+        return keywordRepository.findMoreUsedWords()
+        //        keywordRepository.findAllWordIsNotNull(PageRequest.of(page,if(pageSize >= 0) pageSize else 20/*Integer.MAX_VALUE*/)).map { it.id.wordId }.distinct()
+    }
 
        // keywordRepository.findAll().map { it.id.wordId }.distinct()
         /*keywordRepository.findAll()

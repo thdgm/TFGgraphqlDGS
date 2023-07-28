@@ -171,7 +171,18 @@ class ResourceServicesImpl(
             val modified = appliedFilters.find { it.key == "Fecha última modificación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
             val period = appliedFilters.find { it.key == "Frecuencia de Actualización"}?.values?.map{converterAux.castFrequencyFilter(it)} ?: listOf()
             val notation = appliedFilters.find { it.key == "Nivel de Administración"}?.values?.map{"${converterAux.getAdministrationLevel(it)}%"} ?: listOf()
-            repoCriteria.findNumberOfDatasetsByFilters(appliedFilters,type,issued, modified, period, notation)?.toInt() ?: 0
+            val startEnd = appliedFilters.find { it.key == "Frecuencia de Actualización" }?.values
+            var start: LocalDateTime? = null
+            var end:LocalDateTime? = null
+            if (!startEnd.isNullOrEmpty()){
+                start = if (startEnd.first().split("--").first().trim() != ""){
+                    converterAux.toLocalDateTime(startEnd.first().split("--").first().trim())
+                } else null
+                end = if (startEnd.first().split("--").last().trim() != ""){
+                    converterAux.toLocalDateTime(startEnd.first().split("--").last().trim())
+                } else null
+            }
+            repoCriteria.findNumberOfDatasetsByFilters(appliedFilters,type,issued, modified, period, notation, start, end)?.toInt() ?: 0
         }
     }
     fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{

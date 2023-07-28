@@ -30,7 +30,7 @@ val apolloClient = ApolloClient.Builder()
     .httpHeaders(
         listOf(
             HttpHeader("Access-Control-Allow-Origin","*"),
-            HttpHeader("Access-Control-Allow-Methods", "POST"),
+            HttpHeader("Access-Control-Allow-Methods", "POST, GET"),
             HttpHeader("Content-Type", "application/json;"),
         )
     )

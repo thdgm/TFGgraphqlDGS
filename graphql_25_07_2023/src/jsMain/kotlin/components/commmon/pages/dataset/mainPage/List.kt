@@ -11,6 +11,7 @@ import components.commmon.FilterListContextAll
 import components.commmon.Sizes
 import components.commmon.pages.datasetSeries.mainPage.CardListDatasetSeries
 import components.commmon.pagination.Pagination
+import components.commmon.searcher.Searcher
 import components.commmon.selectFilter.selectFilter
 import csstype.Auto
 import csstype.ClassName
@@ -23,6 +24,7 @@ import csstype.rgba
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import mui.material.Box
 import mui.material.Chip
 import mui.material.ChipColor
 import mui.material.ChipVariant
@@ -39,6 +41,7 @@ import mui.material.Typography
 import mui.system.responsive
 import mui.system.sx
 import org.w3c.dom.HTMLElement
+import org.w3c.dom.HTMLInputElement
 import react.Dispatch
 import react.FC
 import react.Props
@@ -74,7 +77,7 @@ val list = FC<ListProps> { props ->
     val navigate = useNavigate()
 
     var datasetList by useState(props.filterList)
-
+    var searchBy by useState("")
     var selectedFilters by useRequiredContext(FilterListContextAll)
     var isDisabled by useRequiredContext(IsLoadingContext)
 
@@ -85,7 +88,7 @@ val list = FC<ListProps> { props ->
 
     fun checkIfSelectedFiltersIsEmpty(): Boolean{
 
-        selectedFilters.map{
+        selectedFilters["Datasets"]?.map{
             if (!it.value.isEmpty()){
                return false
             }
@@ -156,6 +159,16 @@ val list = FC<ListProps> { props ->
 
 
         }
+        Box {
+            Searcher {
+                this.filterList = datasetList
+                this.handleOnChange = { event ->
+                    searchBy =
+                        (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/
+                }
+
+            }
+        }
         if (!checkIfSelectedFiltersIsEmpty()){
 
             Stack {
@@ -218,7 +231,7 @@ val list = FC<ListProps> { props ->
 
             isDisabled = false
             List {
-                datasetList.filter{if (props.searchBy.isNotEmpty())it.title!!.contains(props.searchBy) else true}
+                datasetList.filter{if (searchBy.isNotEmpty())it.title!!.contains(searchBy) || it.description!!.contains(searchBy) else true}
                     .map{
                         ListItemButton{
                             onClick = handleOnClick
@@ -231,6 +244,7 @@ val list = FC<ListProps> { props ->
             Pagination{
                 this.changePage = {e, v -> props.updateDatasetsList(e,v)}
                 numberOfPages = props.numberOfDatasets
+                resType = "Datasets"
             }
             //val v = selectedFilters.filter { it.key == "Datasets" }
             console.log("PAAGINASSSS1: "+ selectedFilters["Datasets"]?.get("Page")?.firstOrNull()?.toInt() ?: 1)

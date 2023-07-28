@@ -20,6 +20,7 @@ class InitLoadFromCsvServiceImpl(
 
 ) : InitLoadFromCsvService {
 
+
     override fun loadFromCsv() {
         val inputParam = "\$input"
         val urlRecord = "classpath:datosgobes.csv" //"classpath:datosGob.csv"

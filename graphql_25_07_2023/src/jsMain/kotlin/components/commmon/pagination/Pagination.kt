@@ -23,6 +23,7 @@ external interface PaginationProps:Props{
 
     var changePage: suspend (event: ChangeEvent<*>, value: Number) -> Unit
     var numberOfPages: Int
+    var resType: String
 
 }
 val Pagination = FC<PaginationProps> { props ->
@@ -51,13 +52,13 @@ val Pagination = FC<PaginationProps> { props ->
              }
             // val v = selectedFilters.filter { it.key == "Datasets" }.filter{it.key == "Page"}.values.first()
            //  page = selectedFilters.filter { it.key == "Datasets" }.filter{it.key == "Page"}.values.first().toInt()
-             page = selectedFilters["Datasets"]?.get("Page")?.firstOrNull()?.toInt() ?: 1
+             page = selectedFilters["${props.resType}"]?.get("Page")?.firstOrNull()?.toInt() ?: 1
              color = PaginationColor.primary
              count = numberOfPages
              size = Size.small
              onChange = {e,v ->
                  selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                     if (key == "Datasets") {
+                     if (key == "${props.resType}") {
                          catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                              if (innerKey == "Page") filterVal.filter { false }.plus(
                                  v.toString()

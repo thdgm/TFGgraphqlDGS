@@ -787,7 +787,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                     +"Distribuciones"
                 }
                 List {
-                    datasetInfo.elementAt(0)?.accessURl?.map { valueToShow->
+                    datasetInfo.elementAt(0)?.accessURl?.mapIndexed { i,valueToShow->
 
                         ListItem {
                             className = ClassName("distributionsList2")

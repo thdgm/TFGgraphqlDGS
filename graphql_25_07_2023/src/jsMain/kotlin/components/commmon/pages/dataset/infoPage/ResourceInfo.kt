@@ -10,6 +10,7 @@ import commonModels.DatasetModel
 import commonModels.FrequencyAdapterScalar
 import es.unizar.iaaa.tfg.constants.ConstantValues
 import es.unizar.iaaa.tfg.constants.ConstantValues.ADMON_LEVEL
+import es.unizar.iaaa.tfg.constants.MediaTypeMap.MEDIA_TYPE
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import models.DatasetInfo
@@ -42,9 +43,12 @@ val apolloClient = ApolloClient.Builder()
 
 suspend fun getResourceInfo(id_dataset: String?): Collection<DatasetInfo> {
     var datasetInfo: DatasetInfoQuery.OnDataset? = null
+    val mediaTypeReverse: Map<String, String> = MEDIA_TYPE.entries.associate { (key, value) -> value to key }
+
     if (id_dataset != null){
-        datasetInfo =  apolloClient.query(DatasetInfoQuery(id= id_dataset!!)).execute().data?.resource?.onDataset
+        datasetInfo =  apolloClient.query(DatasetInfoQuery(id= id_dataset!!,isDataset = true, isCatalog = false, page = 0)).execute().data?.resource?.onDataset
     }
+
     if (datasetInfo != null) {
 
         return listOf(
@@ -65,7 +69,7 @@ suspend fun getResourceInfo(id_dataset: String?): Collection<DatasetInfo> {
                 datasetInfo.temporal?.start.toString(),
                 datasetInfo.temporal?.end.toString(),
                 datasetInfo.distributions?.map{it.accessUrl ?: ""}?.filter{it != ""},
-                datasetInfo.distributions?.map{it.format?.subtype ?: ""}?.filter{it != ""},
+                datasetInfo.distributions?.map{it.format?.type + "/"+it.format?.subtype}?.map{mediaTypeReverse[it]}?.filterNotNull(),
                 datasetInfo.identifier ?: emptyList(),
                 datasetInfo.isPrimaryTopicOf?.map{it.id} ?: emptyList(),
                 datasetInfo.inCatalog?.map{it.id} ?: emptyList(),

@@ -4,6 +4,7 @@ package components.commmon.selectFilter
 
 
 import components.commmon.FilterListContextAll
+import components.commmon.pages.dataset.mainPage.IsLoadingContext
 import csstype.FlexDirection
 import csstype.FontSize
 import csstype.HtmlAttributes
@@ -38,6 +39,7 @@ val selectFilter = FC<Props> {
     var orderBy by useState("")
     var sortBy by useState("asc")
     var selectedFilters by useRequiredContext(FilterListContextAll)
+    var isDisabled by useRequiredContext(IsLoadingContext)
 
     val handleChange: (event: ChangeEvent<HTMLInputElement>, child: ReactNode) -> Unit = {event,_ ->
         orderBy = event.target.value
@@ -90,6 +92,7 @@ val selectFilter = FC<Props> {
             sx {
                 backgroundColor = NamedColor.white
             }
+            disabled = isDisabled
             labelId = "demo-select-small"
             id = "demo-select-small"
             value = orderBy
@@ -135,6 +138,7 @@ val selectFilter = FC<Props> {
             sx {
                 flexDirection = FlexDirection.row
             }
+
             row = true
             value = sortBy
             onChange= handleChangeRadio
@@ -143,6 +147,7 @@ val selectFilter = FC<Props> {
                 value="asc"
                 control= Radio.create{
                     size = Size.small
+                    disabled = isDisabled
                 }
                 label=Typography.create{
                     sx{
@@ -159,6 +164,7 @@ val selectFilter = FC<Props> {
                     sx{
                         marginLeft = 6.pct
                     }
+                    disabled = isDisabled
                     size = Size.small
                 }
                 label=Typography.create{

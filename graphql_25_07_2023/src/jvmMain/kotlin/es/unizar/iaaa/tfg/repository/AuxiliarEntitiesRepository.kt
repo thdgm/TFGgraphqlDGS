@@ -93,12 +93,19 @@ interface TitleResourceRepository : JpaRepository<TitlesResourceEntity, String> 
 interface KeywordRepository : JpaRepository<KeywordEntity, String> {
     fun findKeywordsByDatasetId(id: String): Collection<KeywordEntity>
     @Query(
-        value =
-        "select * from \"keyword\" as t WHERE t.\"id_word\" is not null and t.\"id_word\" <> ''",
+        value = "select distinct * from \"keyword\" as t WHERE t.\"id_word\" is not null and t.\"id_word\" <> ''",
         nativeQuery = true
     )
     @Transactional
     fun findAllWordIsNotNull(pageable: Pageable): Page<KeywordEntity>
+    @Query(
+        value = "select k.id_word from (select distinct id_word, COUNT(id_word) from keyword WHERE id_word IS NOT NULL GROUP BY id_word ORDER BY COUNT(id_word) DESC LIMIT 10) as k",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findMoreUsedWords(): Collection<String>
+
+
 
 }
 
