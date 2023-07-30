@@ -30,11 +30,15 @@ data class CatalogInfo(
     val license: String?,
     val issued: String?,
     val modified: String?,
-    val resources: Collection<ResourceInfo>?,
+    var resources: Collection<ResourceInfo>?,
     val records: Collection<RecordsInfo>?,
     val inCatalog: Collection<InCatalogInfo>?,
-   // val isServedBy: Collection<IsServedInfo>?,
+    val isServedBy: Collection<IsServedInfo>?,
     val isPTO: RecordsInfo?,
-
+    val numberOfResources: Int,
+    val numberOfCatalogs: Int,
+    val numberOfDataServices: Int,
+    val numberOfDatasets: Int,
+    val numberOfDatasetSeries: Int
     )
 

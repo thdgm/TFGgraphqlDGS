@@ -232,10 +232,20 @@ public object DgsConstants {
 
     public const val NumberOfResources: String = "numberOfResources"
 
+    public const val NumberOfDatasets: String = "numberOfDatasets"
+
+    public const val NumberOfDatasetSeries: String = "numberOfDatasetSeries"
+
+    public const val NumberOfDataServices: String = "numberOfDataServices"
+
+    public const val NumberOfCatalogs: String = "numberOfCatalogs"
+
     public object RESOURCES_INPUT_ARGUMENT {
       public const val Page: String = "page"
 
       public const val PageSize: String = "pageSize"
+
+      public const val Type: String = "type"
     }
 
     public object DATASETS_INPUT_ARGUMENT {
@@ -272,6 +282,10 @@ public object DgsConstants {
 
     public object ISSERVEDBY_INPUT_ARGUMENT {
       public const val Filter: String = "filter"
+
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
     }
   }
 
@@ -320,6 +334,10 @@ public object DgsConstants {
 
     public object ISSERVEDBY_INPUT_ARGUMENT {
       public const val Filter: String = "filter"
+
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
     }
   }
 
@@ -384,6 +402,10 @@ public object DgsConstants {
 
     public object ISSERVEDBY_INPUT_ARGUMENT {
       public const val Filter: String = "filter"
+
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
     }
   }
 

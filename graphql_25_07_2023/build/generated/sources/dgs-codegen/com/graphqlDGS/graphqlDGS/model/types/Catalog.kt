@@ -49,6 +49,14 @@ public data class Catalog(
   public override val identifier: List<String>? = null,
   @JsonProperty("numberOfResources")
   public val numberOfResources: Int? = null,
+  @JsonProperty("numberOfDatasets")
+  public val numberOfDatasets: Int? = null,
+  @JsonProperty("numberOfDatasetSeries")
+  public val numberOfDatasetSeries: Int? = null,
+  @JsonProperty("numberOfDataServices")
+  public val numberOfDataServices: Int? = null,
+  @JsonProperty("numberOfCatalogs")
+  public val numberOfCatalogs: Int? = null,
 ) : ResourceInCatalog, DatasetInCatalog, AbstractDataset, Resource, ReferenceWithinExternalContext {
   public companion object
 }

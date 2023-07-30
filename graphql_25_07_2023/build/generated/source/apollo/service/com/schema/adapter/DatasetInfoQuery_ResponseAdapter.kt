@@ -511,8 +511,9 @@ public object DatasetInfoQuery_ResponseAdapter {
 
   public object OnCatalog : Adapter<DatasetInfoQuery.OnCatalog> {
     public val RESPONSE_NAMES: List<String> = listOf("id", "title", "description", "issued",
-        "modified", "numberOfResources", "publisher", "license", "resources", "records",
-        "inCatalog", "isPrimaryTopicOf")
+        "modified", "numberOfResources", "publisher", "license", "numberOfCatalogs",
+        "numberOfDataServices", "numberOfDatasets", "numberOfDatasetSeries", "resources", "records",
+        "isServedBy", "inCatalog", "isPrimaryTopicOf")
 
     public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
         DatasetInfoQuery.OnCatalog {
@@ -524,8 +525,13 @@ public object DatasetInfoQuery_ResponseAdapter {
       var _numberOfResources: Int? = null
       var _publisher: ConceptAdapterScalar? = null
       var _license: String? = null
+      var _numberOfCatalogs: Int? = null
+      var _numberOfDataServices: Int? = null
+      var _numberOfDatasets: Int? = null
+      var _numberOfDatasetSeries: Int? = null
       var _resources: List<DatasetInfoQuery.Resource1>? = null
       var _records: List<DatasetInfoQuery.Record>? = null
+      var _isServedBy: List<DatasetInfoQuery.IsServedBy1>? = null
       var _inCatalog: List<DatasetInfoQuery.InCatalog1>? = null
       var _isPrimaryTopicOf: List<DatasetInfoQuery.IsPrimaryTopicOf1>? = null
 
@@ -542,11 +548,18 @@ public object DatasetInfoQuery_ResponseAdapter {
           6 -> _publisher = commonModels.conceptAdapter.nullable().fromJson(reader,
               customScalarAdapters)
           7 -> _license = NullableStringAdapter.fromJson(reader, customScalarAdapters)
-          8 -> _resources = Resource1.obj().list().nullable().fromJson(reader, customScalarAdapters)
-          9 -> _records = Record.obj().list().nullable().fromJson(reader, customScalarAdapters)
-          10 -> _inCatalog = InCatalog1.obj().list().nullable().fromJson(reader,
+          8 -> _numberOfCatalogs = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          9 -> _numberOfDataServices = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          10 -> _numberOfDatasets = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          11 -> _numberOfDatasetSeries = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          12 -> _resources = Resource1.obj().list().nullable().fromJson(reader,
               customScalarAdapters)
-          11 -> _isPrimaryTopicOf = IsPrimaryTopicOf1.obj().list().nullable().fromJson(reader,
+          13 -> _records = Record.obj().list().nullable().fromJson(reader, customScalarAdapters)
+          14 -> _isServedBy = IsServedBy1.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          15 -> _inCatalog = InCatalog1.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          16 -> _isPrimaryTopicOf = IsPrimaryTopicOf1.obj().list().nullable().fromJson(reader,
               customScalarAdapters)
           else -> break
         }
@@ -561,8 +574,13 @@ public object DatasetInfoQuery_ResponseAdapter {
         numberOfResources = _numberOfResources,
         publisher = _publisher,
         license = _license,
+        numberOfCatalogs = _numberOfCatalogs,
+        numberOfDataServices = _numberOfDataServices,
+        numberOfDatasets = _numberOfDatasets,
+        numberOfDatasetSeries = _numberOfDatasetSeries,
         resources = _resources,
         records = _records,
+        isServedBy = _isServedBy,
         inCatalog = _inCatalog,
         isPrimaryTopicOf = _isPrimaryTopicOf
       )
@@ -599,11 +617,26 @@ public object DatasetInfoQuery_ResponseAdapter {
       writer.name("license")
       NullableStringAdapter.toJson(writer, customScalarAdapters, value.license)
 
+      writer.name("numberOfCatalogs")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfCatalogs)
+
+      writer.name("numberOfDataServices")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfDataServices)
+
+      writer.name("numberOfDatasets")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfDatasets)
+
+      writer.name("numberOfDatasetSeries")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfDatasetSeries)
+
       writer.name("resources")
       Resource1.obj().list().nullable().toJson(writer, customScalarAdapters, value.resources)
 
       writer.name("records")
       Record.obj().list().nullable().toJson(writer, customScalarAdapters, value.records)
+
+      writer.name("isServedBy")
+      IsServedBy1.obj().list().nullable().toJson(writer, customScalarAdapters, value.isServedBy)
 
       writer.name("inCatalog")
       InCatalog1.obj().list().nullable().toJson(writer, customScalarAdapters, value.inCatalog)
@@ -687,6 +720,41 @@ public object DatasetInfoQuery_ResponseAdapter {
 
       writer.name("title")
       NullableStringAdapter.toJson(writer, customScalarAdapters, value.title)
+    }
+  }
+
+  public object IsServedBy1 : Adapter<DatasetInfoQuery.IsServedBy1> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "identifier")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.IsServedBy1 {
+      var _id: String? = null
+      var _identifier: List<String>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _identifier = StringAdapter.list().nullable().fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.IsServedBy1(
+        id = _id!!,
+        identifier = _identifier
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.IsServedBy1,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("identifier")
+      StringAdapter.list().nullable().toJson(writer, customScalarAdapters, value.identifier)
     }
   }
 

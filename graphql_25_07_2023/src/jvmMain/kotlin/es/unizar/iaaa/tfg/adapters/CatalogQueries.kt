@@ -61,14 +61,40 @@ class CatalogQueries(
 
     // @DgsData resources: returns resources field of the corresponding Catalog
     @DgsData(parentType = "Catalog")
-    fun resources(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int): Collection<ResourceInCatalog?> {
+    fun resources(dfe: DgsDataFetchingEnvironment,@InputArgument page: Int, @InputArgument pageSize: Int, @InputArgument type: String): Collection<ResourceInCatalog?> {
         val ct: Catalog = dfe.getSource()
-        return catalogServices.getResourcesCatalog(ct.id,page,pageSize)
+        return catalogServices.getResourcesCatalog(ct.id,page,pageSize, type)
     }
     // @DgsData numberOfResources: returns number of resources within the catalog
     @DgsData(parentType = "Catalog")
     fun numberOfResources(dfe: DgsDataFetchingEnvironment): Int? {
         val ct: Catalog = dfe.getSource()
         return catalogServices.getNumberResourcesCatalog(ct.id)
+    }
+
+    // @DgsData numberOfDatasets: returns number of datasets within the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfDatasets(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberDatasetsCatalog(ct.id)
+    }
+
+    // @DgsData numberOfDatasetSeries: returns number of datasetSeries within the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfDatasetSeries(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberDatasetSeriesCatalog(ct.id)
+    }
+    // @DgsData numberOfDataServices: returns number of dataServices within the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfDataServices(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberDataServicesCatalog(ct.id)
+    }
+    // @DgsData numberOfResources: returns number of catalogs within the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfCatalogs(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberCatalogsCatalog(ct.id)
     }
 }

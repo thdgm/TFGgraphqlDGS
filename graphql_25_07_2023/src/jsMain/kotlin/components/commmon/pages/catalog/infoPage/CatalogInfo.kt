@@ -60,6 +60,7 @@ suspend fun getCatalogInfo(id_catalog: String?, page: Int): Collection<CatalogIn
         console.log("INFOOOOOO10   "+ catalogInfo.inCatalog?.map{ InCatalogInfo(it.identifier,it.id) })
         console.log("INFOOOOOO11  "+ if(!catalogInfo.isPrimaryTopicOf.isNullOrEmpty()) catalogInfo.isPrimaryTopicOf?.map{ RecordsInfo(it.id, it.title) }?.first() else null)
         console.log("INFOOOOOO12  "+ catalogInfo.records)
+        console.log("INFOOOOOO13  "+ catalogInfo.isServedBy)
 
 
 
@@ -74,11 +75,16 @@ suspend fun getCatalogInfo(id_catalog: String?, page: Int): Collection<CatalogIn
                 catalogInfo.issued.toString(),
                 catalogInfo.modified.toString(),
                 if(!catalogInfo.resources.isNullOrEmpty()) catalogInfo.resources?.map{ ResourceInfo(it.identifier, it.id, it.__typename)} else null,
-                emptyList(),
+                if(!catalogInfo.records.isNullOrEmpty()) catalogInfo.records?.map{RecordsInfo(it.id, it.title)} else null,
                 if(!catalogInfo.inCatalog.isNullOrEmpty()) catalogInfo.inCatalog?.map{ InCatalogInfo(it.identifier,it.id) } else null,
-               // catalogInfo.isServedBy?.map{ IsServedInfo(it.identifier,it.id) },
-                if(!catalogInfo.isPrimaryTopicOf.isNullOrEmpty()) catalogInfo.isPrimaryTopicOf?.map{ RecordsInfo(it.id, it.title) }?.first() else null
-                )
+                if(!catalogInfo.isServedBy.isNullOrEmpty()) catalogInfo.isServedBy?.map{ IsServedInfo(it.identifier,it.id) } else null,
+                if(!catalogInfo.isPrimaryTopicOf.isNullOrEmpty()) catalogInfo.isPrimaryTopicOf?.map{ RecordsInfo(it.id, it.title) }?.first() else null,
+                catalogInfo.numberOfResources ?: 0,
+                catalogInfo.numberOfCatalogs ?: 0,
+                catalogInfo.numberOfDataServices ?: 0,
+                catalogInfo.numberOfDatasets ?: 0,
+                catalogInfo.numberOfDatasetSeries ?: 0
+            )
         )
 
     }

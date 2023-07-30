@@ -168,7 +168,7 @@ interface DatasetInCatalog implements AbstractDataset & Resource & ReferenceWith
 
   isPrimaryTopicOf(filter: String): [CatalogRecord!]
 
-  isServedBy(filter: String): [DataService!]
+  isServedBy(filter: String, page: Int!, pageSize: Int!): [DataService!]
 
   theme: [String!]
 
@@ -262,7 +262,7 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
 
   isPrimaryTopicOf(filter: String): [CatalogRecord!]
 
-  isServedBy(filter: String): [DataService!]
+  isServedBy(filter: String, page: Int!, pageSize: Int!): [DataService!]
 
   theme: [String!]
 
@@ -294,7 +294,7 @@ type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDat
 
   isPrimaryTopicOf(filter: String): [CatalogRecord!]
 
-  isServedBy(filter: String): [DataService!]
+  isServedBy(filter: String, page: Int!, pageSize: Int!): [DataService!]
 
   theme: [String!]
 
@@ -334,7 +334,7 @@ type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
 
   isPrimaryTopicOf(filter: String): [CatalogRecord!]
 
-  isServedBy(filter: String): [DataService!]
+  isServedBy(filter: String, page: Int!, pageSize: Int!): [DataService!]
 
   theme: [String!]
 

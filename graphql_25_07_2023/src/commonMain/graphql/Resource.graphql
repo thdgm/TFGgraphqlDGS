@@ -25,6 +25,15 @@ query Datasets($filter:[MapInput!], $type:String!,$page: Int!, $isDataset: Boole
     }
 }
 
+query ResourcesFromCatalog($id:ID!,$page: Int!,$type: String!){
+    catalog(id:$id){
+        resources(page:$page,pageSize: 10, type: $type){
+            __typename
+            id
+            identifier
+        }
+    }
+}
 
 query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!) {
     resource(id:$id,isDataset:$isDataset, isCatalog:$isCatalog, page:$page){
@@ -55,7 +64,7 @@ query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!
                 title
                 identifier
             }
-            isServedBy{
+            isServedBy(page:$page,pageSize: -1){
                 id
                 identifier
                 title
@@ -79,7 +88,12 @@ query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!
             numberOfResources
             publisher
             license
-            resources(page:$page,pageSize: 10) {
+            numberOfResources
+            numberOfCatalogs
+            numberOfDataServices
+            numberOfDatasets
+            numberOfDatasetSeries
+            resources(page:$page,pageSize: 10, type: "All") {
                 __typename
                 id
                 identifier
@@ -87,6 +101,10 @@ query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!
             records(page:$page,pageSize: 10) {
                 id
                 title
+            }
+            isServedBy(page:$page,pageSize: 10){
+                id
+                identifier
             }
             inCatalog{
                 id

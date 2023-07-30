@@ -157,7 +157,7 @@ interface DatasetInCatalog implements AbstractDataset & Resource & ReferenceWith
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   # In dcat(inverse-properties I could not find this one,
   # which is the inverse of servesDataset. So I decided named it like this.
-  isServedBy(filter:String): [DataService!]
+  isServedBy(filter:String,page: Int!, pageSize: Int!): [DataService!]
   theme:[String!]
   license:String
   publisher:Concept
@@ -227,7 +227,7 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
 type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext{
   id: ID!
   title: [LangString!]
-  resources(page: Int!, pageSize: Int!): [ResourceInCatalog!] # A resource that is listed in the catalog.
+  resources(page: Int!, pageSize: Int!, type: String!): [ResourceInCatalog!] # A resource that is listed in the catalog.
   datasets(page: Int!, pageSize: Int!): [DatasetInCatalog!]  # A dataset that is listed in the catalog.
   services(page: Int!, pageSize: Int!): [DataService!] # A service that is listed in the catalog.
   catalogs(page: Int!, pageSize: Int!): [Catalog!] # A catalog that is listed in the catalog.
@@ -244,12 +244,16 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   # In dcat(inverse-properties I could not find this one,
   # which is the inverse of servesDataset. So I decided named it like this.
-  isServedBy(filter:String): [DataService!]
+  isServedBy(filter:String,page: Int!, pageSize: Int!): [DataService!]
   theme:[String!]
   license:String
   publisher:Concept
   identifier: [String!]
   numberOfResources: Int
+  numberOfDatasets: Int
+  numberOfDatasetSeries: Int
+  numberOfDataServices: Int
+  numberOfCatalogs: Int
   # Future:
   #  - A Catalog can record descriptions of resources such as dataset or dataservices
   #    dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
@@ -272,7 +276,7 @@ type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDat
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   # In dcat(inverse-properties I could not find this one,
   # which is the inverse of servesDataset. So I decided named it like this.
-  isServedBy(filter:String): [DataService!]
+  isServedBy(filter:String,page: Int!, pageSize: Int!): [DataService!]
   theme:[String!]
   license:String
   publisher:Concept
@@ -306,7 +310,7 @@ type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   isPrimaryTopicOf(filter:String): [CatalogRecord!]
   # In dcat(inverse-properties I could not find this one,
   # which is the inverse of servesDataset. So I decided named it like this.
-  isServedBy(filter:String): [DataService!]
+  isServedBy(filter:String,page: Int!, pageSize: Int!): [DataService!]
   theme:[String!]
   license:String
   publisher:Concept

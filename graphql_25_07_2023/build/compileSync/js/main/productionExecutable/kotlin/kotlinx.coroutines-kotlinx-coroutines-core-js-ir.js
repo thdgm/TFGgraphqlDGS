@@ -1609,9 +1609,6 @@
       new GlobalScope();
     return GlobalScope_instance;
   }
-  function MainScope() {
-    return new ContextScope(SupervisorJob$default(null, 1, null).q3(Dispatchers_getInstance().sk()));
-  }
   function CoroutineScope_0(context) {
     var tmp;
     if (!(context.j3(Key_getInstance_3()) == null)) {
@@ -1620,6 +1617,9 @@
       tmp = context.q3(Job$default(null, 1, null));
     }
     return new ContextScope(tmp);
+  }
+  function MainScope() {
+    return new ContextScope(SupervisorJob$default(null, 1, null).q3(Dispatchers_getInstance().sk()));
   }
   function coroutineScope(block, $cont) {
     // Inline function 'kotlin.contracts.contract' call

@@ -39,15 +39,7 @@ interface CatalogRepository : JpaRepository<CatalogEntity, String> {
     fun findCatalogResourcesByResourcesCatalogId(id: String): Collection<CatalogEntity?>
     fun findCatalogsByRecordsId(id: String): Collection<CatalogEntity?>
 
-    @Query(
-        value =
-        "select cr from catalogrecord cr, cataloginrecord c where c.id_resource = ?1 and c.id_catalog_record = cr.id",
-        nativeQuery = true
-    )
-    @Transactional
-    fun findRecordsByCatalogId(id: String, page: Pageable): Page<CatalogRecordEntity>
 
-    fun findRecordsById(id: String, pageable: Pageable): Page<CatalogRecordEntity>
 
     @Modifying
     @Transactional
@@ -61,14 +53,33 @@ interface CatalogRepository : JpaRepository<CatalogEntity, String> {
     )
     @Transactional
     fun findNumberOfResourcesById(id: String): Int
+
+    @Query(
+        value = "select COUNT(DISTINCT relat.id_resource) from relationships relat, resource r where relat.id_catalog = ?1 and relat.id_resource = r.id and r.tipo = ?2",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findNumberOfResourcesByIdAndType(id: String, type: String): Int
 }
 
 @Repository
 interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String> {
-    fun findCatalogRecordsByResourceId(id: String): Collection<CatalogRecordEntity?>
+    fun findCatalogRecordsByResourceId(id: String,page: Pageable): Page<CatalogRecordEntity?>
 
-    //fun findRecordsByCatalogsId(id: String, page: Pageable): Collection<CatalogRecordEntity?>
-
+    @Query(
+        value =
+        "select cr.id from catalogrecord cr, cataloginrecord c where c.id_resource = ?1 and c.id_catalog_record = cr.id",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findRecordsByCatalogsId(id: String, page: Pageable): Page<String?>
+    @Query(
+        value =
+        "select cr from catalogrecord cr, cataloginrecord c where c.id_resource = ?1 and c.id_catalog_record = cr.id",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findRecordsByCatalogId(id: String, page: Pageable): Page<CatalogRecordEntity>
     @Modifying
     @Transactional
     @Query(
@@ -81,7 +92,13 @@ interface CatalogRecordsRepository : JpaRepository<CatalogRecordEntity, String> 
 @Repository
 interface DataServiceRepository : JpaRepository<DataServiceEntity, String> {
     fun findAccessServiceByDistributionsId(id: String): Collection<DataServiceEntity?>
-    fun findDatasetServiceByServesDatasetId(id: String): Collection<DataServiceEntity>
+    @Query(
+        value =
+        "select * from resource r, (select id_dataservice from serves_dataset where id_resource = ?1) as dServ where dServ.id_dataservice = r.id",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findDatasetServiceByServesDatasetId(id: String, page: Pageable): Page<DataServiceEntity>
 
     @Modifying
     @Transactional
@@ -562,6 +579,7 @@ interface ResourceRepository : JpaRepository<ResourceEntity, String> {
     )
     @Transactional*/
     fun findResourcesCatalogByCatalogResourcesId(id_catalog: String, page: Pageable): Page<ResourceEntity>
+    fun findResourcesCatalogByCatalogResourcesIdAndType(id_catalog: String, type:String,page: Pageable): Page<ResourceEntity>
     fun findServesDatasetByDatasetServiceId(id: String): Collection<ResourceEntity>
 
     //@Query("select COUNT(r) from \"resource\" as r WHERE r.\"tipo\" = ?1")

@@ -39,6 +39,7 @@
   var emptyList = kotlin_kotlin.$_$.q7;
   var plus = kotlin_kotlin.$_$.y8;
   var emptyMap = kotlin_kotlin.$_$.r7;
+  var drop = kotlin_kotlin.$_$.o7;
   var toSet = kotlin_kotlin.$_$.r9;
   var objectMeta = kotlin_kotlin.$_$.ec;
   var hashCode = kotlin_kotlin.$_$.ib;
@@ -47,7 +48,6 @@
   var toSet_0 = kotlin_kotlin.$_$.q9;
   var first = kotlin_kotlin.$_$.y7;
   var joinToString$default = kotlin_kotlin.$_$.l;
-  var drop = kotlin_kotlin.$_$.o7;
   var toList = kotlin_kotlin.$_$.l9;
   var getStringHashCode = kotlin_kotlin.$_$.hb;
   var noWhenBranchMatchedException = kotlin_kotlin.$_$.lg;
@@ -127,11 +127,11 @@
   setMetadataFor(Builder, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(AdapterContext, 'AdapterContext', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(NullableAdapter, 'NullableAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(ApolloOptionalAdapter, 'ApolloOptionalAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
+  setMetadataFor(PassThroughAdapter, 'PassThroughAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(ObjectAdapter, 'ObjectAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(ListAdapter, 'ListAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(PresentAdapter, 'PresentAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(ApolloOptionalAdapter, 'ApolloOptionalAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
-  setMetadataFor(PassThroughAdapter, 'PassThroughAdapter', classMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(StringAdapter$1, undefined, classMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(IntAdapter$1, undefined, classMeta, undefined, [Adapter], undefined, undefined, []);
   setMetadataFor(DoubleAdapter$1, undefined, classMeta, undefined, [Adapter], undefined, undefined, []);
@@ -159,26 +159,26 @@
   setMetadataFor(BLabel, 'BLabel', classMeta, BTerm, undefined, undefined, undefined, []);
   setMetadataFor(CompiledType, 'CompiledType', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(CompiledNamedType, 'CompiledNamedType', classMeta, CompiledType, undefined, undefined, undefined, []);
-  setMetadataFor(CustomScalarType, 'CustomScalarType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
-  setMetadataFor(Builder_2, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledSelection, 'CompiledSelection', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledField, 'CompiledField', classMeta, CompiledSelection, undefined, undefined, undefined, []);
-  setMetadataFor(Builder_3, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(ObjectType, 'ObjectType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
-  setMetadataFor(Builder_4, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledArgument, 'CompiledArgument', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledVariable, 'CompiledVariable', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledListType, 'CompiledListType', classMeta, CompiledType, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledNotNullType, 'CompiledNotNullType', classMeta, CompiledType, undefined, undefined, undefined, []);
-  setMetadataFor(Builder_5, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledFragment, 'CompiledFragment', classMeta, CompiledSelection, undefined, undefined, undefined, []);
-  setMetadataFor(Builder_6, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
-  setMetadataFor(InterfaceType, 'InterfaceType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
-  setMetadataFor(CompiledCondition, 'CompiledCondition', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ScalarType, 'ScalarType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
+  setMetadataFor(Builder_2, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(ObjectType, 'ObjectType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
+  setMetadataFor(Builder_3, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(InterfaceType, 'InterfaceType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
+  setMetadataFor(CustomScalarType, 'CustomScalarType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
   setMetadataFor(EnumType, 'EnumType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
   setMetadataFor(InputObjectType, 'InputObjectType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
   setMetadataFor(UnionType, 'UnionType', classMeta, CompiledNamedType, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledListType, 'CompiledListType', classMeta, CompiledType, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledNotNullType, 'CompiledNotNullType', classMeta, CompiledType, undefined, undefined, undefined, []);
+  setMetadataFor(Builder_4, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledSelection, 'CompiledSelection', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledField, 'CompiledField', classMeta, CompiledSelection, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledCondition, 'CompiledCondition', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Builder_5, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledArgument, 'CompiledArgument', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(Builder_6, 'Builder', classMeta, undefined, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledFragment, 'CompiledFragment', classMeta, CompiledSelection, undefined, undefined, undefined, []);
+  setMetadataFor(CompiledVariable, 'CompiledVariable', classMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(sam$kotlin_Comparator$0, 'sam$kotlin_Comparator$0', classMeta, undefined, [Comparator], undefined, undefined, []);
   setMetadataFor(Key_0, 'Key', interfaceMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(Key, 'Key', objectMeta, undefined, [Key_0], undefined, undefined, []);
@@ -464,10 +464,6 @@
     return ApolloOptionalAnyAdapter;
   }
   var ApolloOptionalAnyAdapter;
-  function nullable(_this__u8e3s4) {
-    init_properties_Adapters_kt_a8j8k6();
-    return new NullableAdapter(_this__u8e3s4);
-  }
   function _get_wrappedAdapter__23dfsx($this) {
     return $this.wrappedAdapter_1;
   }
@@ -505,118 +501,11 @@
   NullableAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
     return this.toJson_r81dz4_k$(writer, customScalarAdapters, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
-  function obj(_this__u8e3s4, buffered) {
+  function nullable(_this__u8e3s4) {
     init_properties_Adapters_kt_a8j8k6();
-    return new ObjectAdapter(_this__u8e3s4, buffered);
-  }
-  function obj$default(_this__u8e3s4, buffered, $mask0, $handler) {
-    if (!(($mask0 & 1) === 0))
-      buffered = false;
-    return obj(_this__u8e3s4, buffered);
+    return new NullableAdapter(_this__u8e3s4);
   }
   function _get_wrappedAdapter__23dfsx_0($this) {
-    return $this.wrappedAdapter_1;
-  }
-  function _get_buffered__piv6x8($this) {
-    return $this.buffered_1;
-  }
-  function ObjectAdapter(wrappedAdapter, buffered) {
-    this.wrappedAdapter_1 = wrappedAdapter;
-    this.buffered_1 = buffered;
-  }
-  ObjectAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
-    var tmp;
-    if (this.buffered_1) {
-      tmp = Companion_getInstance_8().buffer_f9k3tr_k$(reader);
-    } else {
-      tmp = reader;
-    }
-    var actualReader = tmp;
-    actualReader.beginObject_5wddq0_k$();
-    var tmp$ret$0;
-    // Inline function 'kotlin.also' call
-    var tmp0_also = this.wrappedAdapter_1.fromJson_vznj7e_k$(actualReader, customScalarAdapters);
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.ObjectAdapter.fromJson.<anonymous>' call
-    actualReader.endObject_ofuv3u_k$();
-    tmp$ret$0 = tmp0_also;
-    return tmp$ret$0;
-  };
-  ObjectAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
-    var tmp;
-    if (this.buffered_1) {
-      tmp = !(writer instanceof MapJsonWriter);
-    } else {
-      tmp = false;
-    }
-    if (tmp) {
-      var mapWriter = new MapJsonWriter();
-      mapWriter.beginObject_5wddq0_k$();
-      this.wrappedAdapter_1.toJson_gtgp5p_k$(mapWriter, customScalarAdapters, value);
-      mapWriter.endObject_ofuv3u_k$();
-      writeAny(writer, ensureNotNull(mapWriter.root_235k2_k$()));
-    } else {
-      writer.beginObject_5wddq0_k$();
-      this.wrappedAdapter_1.toJson_gtgp5p_k$(writer, customScalarAdapters, value);
-      writer.endObject_ofuv3u_k$();
-    }
-  };
-  function list(_this__u8e3s4) {
-    init_properties_Adapters_kt_a8j8k6();
-    return new ListAdapter(_this__u8e3s4);
-  }
-  function _get_wrappedAdapter__23dfsx_1($this) {
-    return $this.wrappedAdapter_1;
-  }
-  function ListAdapter(wrappedAdapter) {
-    this.wrappedAdapter_1 = wrappedAdapter;
-  }
-  ListAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
-    reader.beginArray_hxn19s_k$();
-    var tmp$ret$0;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp$ret$0 = ArrayList_init_$Create$();
-    var list = tmp$ret$0;
-    while (reader.hasNext_bitz1p_k$()) {
-      list.add_1j60pz_k$(this.wrappedAdapter_1.fromJson_vznj7e_k$(reader, customScalarAdapters));
-    }
-    reader.endArray_s2tmpq_k$();
-    return list;
-  };
-  ListAdapter.prototype.toJson_ievkeh_k$ = function (writer, customScalarAdapters, value) {
-    writer.beginArray_hxn19s_k$();
-    // Inline function 'kotlin.collections.forEach' call
-    var tmp0_iterator = value.iterator_jk1svi_k$();
-    while (tmp0_iterator.hasNext_bitz1p_k$()) {
-      var element = tmp0_iterator.next_20eer_k$();
-      // Inline function 'com.apollographql.apollo3.api.ListAdapter.toJson.<anonymous>' call
-      this.wrappedAdapter_1.toJson_gtgp5p_k$(writer, customScalarAdapters, element);
-    }
-    writer.endArray_s2tmpq_k$();
-  };
-  ListAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
-    return this.toJson_ievkeh_k$(writer, customScalarAdapters, (!(value == null) ? isInterface(value, List) : false) ? value : THROW_CCE());
-  };
-  function present(_this__u8e3s4) {
-    init_properties_Adapters_kt_a8j8k6();
-    return new PresentAdapter(_this__u8e3s4);
-  }
-  function _get_wrappedAdapter__23dfsx_2($this) {
-    return $this.wrappedAdapter_1;
-  }
-  function PresentAdapter(wrappedAdapter) {
-    this.wrappedAdapter_1 = wrappedAdapter;
-  }
-  PresentAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
-    return new Present(this.wrappedAdapter_1.fromJson_vznj7e_k$(reader, customScalarAdapters));
-  };
-  PresentAdapter.prototype.toJson_pbe5tt_k$ = function (writer, customScalarAdapters, value) {
-    this.wrappedAdapter_1.toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_value_j01efc_k$());
-  };
-  PresentAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
-    return this.toJson_pbe5tt_k$(writer, customScalarAdapters, value instanceof Present ? value : THROW_CCE());
-  };
-  function _get_wrappedAdapter__23dfsx_3($this) {
     return $this.wrappedAdapter_1;
   }
   function ApolloOptionalAdapter(wrappedAdapter) {
@@ -669,6 +558,117 @@
     }
     writer.value_oig1rm_k$(value);
   };
+  function _get_wrappedAdapter__23dfsx_1($this) {
+    return $this.wrappedAdapter_1;
+  }
+  function _get_buffered__piv6x8($this) {
+    return $this.buffered_1;
+  }
+  function ObjectAdapter(wrappedAdapter, buffered) {
+    this.wrappedAdapter_1 = wrappedAdapter;
+    this.buffered_1 = buffered;
+  }
+  ObjectAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    var tmp;
+    if (this.buffered_1) {
+      tmp = Companion_getInstance_8().buffer_f9k3tr_k$(reader);
+    } else {
+      tmp = reader;
+    }
+    var actualReader = tmp;
+    actualReader.beginObject_5wddq0_k$();
+    var tmp$ret$0;
+    // Inline function 'kotlin.also' call
+    var tmp0_also = this.wrappedAdapter_1.fromJson_vznj7e_k$(actualReader, customScalarAdapters);
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.ObjectAdapter.fromJson.<anonymous>' call
+    actualReader.endObject_ofuv3u_k$();
+    tmp$ret$0 = tmp0_also;
+    return tmp$ret$0;
+  };
+  ObjectAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    var tmp;
+    if (this.buffered_1) {
+      tmp = !(writer instanceof MapJsonWriter);
+    } else {
+      tmp = false;
+    }
+    if (tmp) {
+      var mapWriter = new MapJsonWriter();
+      mapWriter.beginObject_5wddq0_k$();
+      this.wrappedAdapter_1.toJson_gtgp5p_k$(mapWriter, customScalarAdapters, value);
+      mapWriter.endObject_ofuv3u_k$();
+      writeAny(writer, ensureNotNull(mapWriter.root_235k2_k$()));
+    } else {
+      writer.beginObject_5wddq0_k$();
+      this.wrappedAdapter_1.toJson_gtgp5p_k$(writer, customScalarAdapters, value);
+      writer.endObject_ofuv3u_k$();
+    }
+  };
+  function obj(_this__u8e3s4, buffered) {
+    init_properties_Adapters_kt_a8j8k6();
+    return new ObjectAdapter(_this__u8e3s4, buffered);
+  }
+  function obj$default(_this__u8e3s4, buffered, $mask0, $handler) {
+    if (!(($mask0 & 1) === 0))
+      buffered = false;
+    return obj(_this__u8e3s4, buffered);
+  }
+  function _get_wrappedAdapter__23dfsx_2($this) {
+    return $this.wrappedAdapter_1;
+  }
+  function ListAdapter(wrappedAdapter) {
+    this.wrappedAdapter_1 = wrappedAdapter;
+  }
+  ListAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    reader.beginArray_hxn19s_k$();
+    var tmp$ret$0;
+    // Inline function 'kotlin.collections.mutableListOf' call
+    tmp$ret$0 = ArrayList_init_$Create$();
+    var list = tmp$ret$0;
+    while (reader.hasNext_bitz1p_k$()) {
+      list.add_1j60pz_k$(this.wrappedAdapter_1.fromJson_vznj7e_k$(reader, customScalarAdapters));
+    }
+    reader.endArray_s2tmpq_k$();
+    return list;
+  };
+  ListAdapter.prototype.toJson_ievkeh_k$ = function (writer, customScalarAdapters, value) {
+    writer.beginArray_hxn19s_k$();
+    // Inline function 'kotlin.collections.forEach' call
+    var tmp0_iterator = value.iterator_jk1svi_k$();
+    while (tmp0_iterator.hasNext_bitz1p_k$()) {
+      var element = tmp0_iterator.next_20eer_k$();
+      // Inline function 'com.apollographql.apollo3.api.ListAdapter.toJson.<anonymous>' call
+      this.wrappedAdapter_1.toJson_gtgp5p_k$(writer, customScalarAdapters, element);
+    }
+    writer.endArray_s2tmpq_k$();
+  };
+  ListAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_ievkeh_k$(writer, customScalarAdapters, (!(value == null) ? isInterface(value, List) : false) ? value : THROW_CCE());
+  };
+  function list(_this__u8e3s4) {
+    init_properties_Adapters_kt_a8j8k6();
+    return new ListAdapter(_this__u8e3s4);
+  }
+  function _get_wrappedAdapter__23dfsx_3($this) {
+    return $this.wrappedAdapter_1;
+  }
+  function PresentAdapter(wrappedAdapter) {
+    this.wrappedAdapter_1 = wrappedAdapter;
+  }
+  PresentAdapter.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
+    return new Present(this.wrappedAdapter_1.fromJson_vznj7e_k$(reader, customScalarAdapters));
+  };
+  PresentAdapter.prototype.toJson_pbe5tt_k$ = function (writer, customScalarAdapters, value) {
+    this.wrappedAdapter_1.toJson_gtgp5p_k$(writer, customScalarAdapters, value.get_value_j01efc_k$());
+  };
+  PresentAdapter.prototype.toJson_gtgp5p_k$ = function (writer, customScalarAdapters, value) {
+    return this.toJson_pbe5tt_k$(writer, customScalarAdapters, value instanceof Present ? value : THROW_CCE());
+  };
+  function present(_this__u8e3s4) {
+    init_properties_Adapters_kt_a8j8k6();
+    return new PresentAdapter(_this__u8e3s4);
+  }
   function StringAdapter$1() {
   }
   StringAdapter$1.prototype.fromJson_vznj7e_k$ = function (reader, customScalarAdapters) {
@@ -1152,8 +1152,10 @@
   ApolloResponse.prototype.newBuilder_dnl2aj_k$ = function () {
     return (new Builder_1(this.operation_1, this.requestUuid_1, this.data_1)).errors_fkcc82_k$(this.errors_1).extensions_iukunq_k$(this.extensions_1).addExecutionContext_h7mjnh_k$(this.executionContext_1).isLast_p26n52_k$(this.isLast_1);
   };
-  function possibleTypes(typenames) {
-    return new Element(new BPossibleTypes(toSet(typenames)));
+  function evaluate(_this__u8e3s4, variables, typename, adapterContext, path) {
+    var tmp0_safe_receiver = path;
+    var croppedPath = tmp0_safe_receiver == null ? null : drop(tmp0_safe_receiver, 1);
+    return evaluate_0(_this__u8e3s4, evaluate$lambda(variables, adapterContext, croppedPath, typename));
   }
   function Or_init_$Init$(operands, $this) {
     Or.call($this, toSet(operands));
@@ -1488,6 +1490,11 @@
   };
   function BooleanExpression() {
   }
+  function BTerm() {
+  }
+  function and(other) {
+    return new And(toSet_0(toList(other)));
+  }
   function BPossibleTypes_init_$Init$(types, $this) {
     BPossibleTypes.call($this, toSet(types));
     return $this;
@@ -1529,16 +1536,8 @@
       return false;
     return true;
   };
-  function evaluate(_this__u8e3s4, variables, typename, adapterContext, path) {
-    var tmp0_safe_receiver = path;
-    var croppedPath = tmp0_safe_receiver == null ? null : drop(tmp0_safe_receiver, 1);
-    return evaluate_0(_this__u8e3s4, evaluate$lambda(variables, adapterContext, croppedPath, typename));
-  }
-  function and(other) {
-    return new And(toSet_0(toList(other)));
-  }
-  function variable(name) {
-    return new Element(new BVariable(name));
+  function possibleTypes(typenames) {
+    return new Element(new BPossibleTypes(toSet(typenames)));
   }
   function BVariable(name) {
     BTerm.call(this);
@@ -1574,7 +1573,8 @@
       return false;
     return true;
   };
-  function BTerm() {
+  function variable(name) {
+    return new Element(new BVariable(name));
   }
   function evaluate_0(_this__u8e3s4, block) {
     var tmp0_subject = _this__u8e3s4;
@@ -1769,12 +1769,286 @@
     return CompiledDirectiveType;
   }
   var CompiledDirectiveType;
+  function ScalarType(name) {
+    CompiledNamedType.call(this, name);
+  }
+  function _set_keyFields__c23r9p($this, _set____db54di) {
+    $this.keyFields_1 = _set____db54di;
+  }
+  function _get_keyFields__to5uav($this) {
+    return $this.keyFields_1;
+  }
+  function _set_implements__bs365j($this, _set____db54di) {
+    $this.implements_1 = _set____db54di;
+  }
+  function _get_implements__3a5ezp($this) {
+    return $this.implements_1;
+  }
+  function _set_embeddedFields__h4sk9g($this, _set____db54di) {
+    $this.embeddedFields_1 = _set____db54di;
+  }
+  function _get_embeddedFields__sd81o8($this) {
+    return $this.embeddedFields_1;
+  }
+  function Builder_init_$Init$(objectType, $this) {
+    Builder_2.call($this, objectType.name_1);
+    $this.keyFields_1 = objectType.keyFields_1;
+    $this.implements_1 = objectType.implements_1;
+    $this.embeddedFields_1 = objectType.embeddedFields_1;
+    return $this;
+  }
+  function Builder_init_$Create$(objectType) {
+    return Builder_init_$Init$(objectType, Object.create(Builder_2.prototype));
+  }
+  function ObjectType_init_$Init$(name, keyFields, implements_0, $this) {
+    ObjectType.call($this, name, keyFields, implements_0, emptyList());
+    return $this;
+  }
+  function ObjectType_init_$Create$(name, keyFields, implements_0) {
+    return ObjectType_init_$Init$(name, keyFields, implements_0, Object.create(ObjectType.prototype));
+  }
+  function ObjectType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, $this) {
+    if (!(($mask0 & 2) === 0))
+      keyFields = emptyList();
+    if (!(($mask0 & 4) === 0))
+      implements_0 = emptyList();
+    ObjectType_init_$Init$(name, keyFields, implements_0, $this);
+    return $this;
+  }
+  function ObjectType_init_$Create$_0(name, keyFields, implements_0, $mask0, $marker) {
+    return ObjectType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, Object.create(ObjectType.prototype));
+  }
+  function Builder_2(name) {
+    this.name_1 = name;
+    this.keyFields_1 = emptyList();
+    this.implements_1 = emptyList();
+    this.embeddedFields_1 = emptyList();
+  }
+  Builder_2.prototype.get_name_woqyms_k$ = function () {
+    return this.name_1;
+  };
+  Builder_2.prototype.keyFields_ua67j5_k$ = function (keyFields) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.keyFields.<anonymous>' call
+    this.keyFields_1 = keyFields;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_2.prototype.interfaces_t23zo9_k$ = function (implements_0) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.interfaces.<anonymous>' call
+    this.implements_1 = implements_0;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_2.prototype.embeddedFields_2q7d3o_k$ = function (embeddedFields) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.embeddedFields.<anonymous>' call
+    this.embeddedFields_1 = embeddedFields;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_2.prototype.build_1k0s4u_k$ = function () {
+    return new ObjectType(this.name_1, this.keyFields_1, this.implements_1, this.embeddedFields_1);
+  };
+  function ObjectType(name, keyFields, implements_0, embeddedFields) {
+    CompiledNamedType.call(this, name);
+    this.keyFields_1 = keyFields;
+    this.implements_1 = implements_0;
+    this.embeddedFields_1 = embeddedFields;
+  }
+  ObjectType.prototype.get_keyFields_up3sfl_k$ = function () {
+    return this.keyFields_1;
+  };
+  ObjectType.prototype.get_implements_zb8xqf_k$ = function () {
+    return this.implements_1;
+  };
+  ObjectType.prototype.get_embeddedFields_lgs25o_k$ = function () {
+    return this.embeddedFields_1;
+  };
+  ObjectType.prototype.newBuilder_dnl2aj_k$ = function () {
+    return Builder_init_$Create$(this);
+  };
+  function CompiledNamedType(name) {
+    CompiledType.call(this);
+    this.name_1 = name;
+  }
+  CompiledNamedType.prototype.get_name_woqyms_k$ = function () {
+    return this.name_1;
+  };
+  CompiledNamedType.prototype.leafType_pu6uuw_k$ = function () {
+    return this;
+  };
+  CompiledNamedType.prototype.rawType_gaw48y_k$ = function () {
+    return this;
+  };
+  function _set_keyFields__c23r9p_0($this, _set____db54di) {
+    $this.keyFields_1 = _set____db54di;
+  }
+  function _get_keyFields__to5uav_0($this) {
+    return $this.keyFields_1;
+  }
+  function _set_implements__bs365j_0($this, _set____db54di) {
+    $this.implements_1 = _set____db54di;
+  }
+  function _get_implements__3a5ezp_0($this) {
+    return $this.implements_1;
+  }
+  function _set_embeddedFields__h4sk9g_0($this, _set____db54di) {
+    $this.embeddedFields_1 = _set____db54di;
+  }
+  function _get_embeddedFields__sd81o8_0($this) {
+    return $this.embeddedFields_1;
+  }
+  function Builder_init_$Init$_0(interfaceType, $this) {
+    Builder_3.call($this, interfaceType.name_1);
+    $this.keyFields_1 = interfaceType.keyFields_1;
+    $this.implements_1 = interfaceType.implements_1;
+    $this.embeddedFields_1 = interfaceType.embeddedFields_1;
+    return $this;
+  }
+  function Builder_init_$Create$_0(interfaceType) {
+    return Builder_init_$Init$_0(interfaceType, Object.create(Builder_3.prototype));
+  }
+  function InterfaceType_init_$Init$(name, keyFields, implements_0, $this) {
+    InterfaceType.call($this, name, keyFields, implements_0, emptyList());
+    return $this;
+  }
+  function InterfaceType_init_$Create$(name, keyFields, implements_0) {
+    return InterfaceType_init_$Init$(name, keyFields, implements_0, Object.create(InterfaceType.prototype));
+  }
+  function InterfaceType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, $this) {
+    if (!(($mask0 & 2) === 0))
+      keyFields = emptyList();
+    if (!(($mask0 & 4) === 0))
+      implements_0 = emptyList();
+    InterfaceType_init_$Init$(name, keyFields, implements_0, $this);
+    return $this;
+  }
+  function InterfaceType_init_$Create$_0(name, keyFields, implements_0, $mask0, $marker) {
+    return InterfaceType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, Object.create(InterfaceType.prototype));
+  }
+  function Builder_3(name) {
+    this.name_1 = name;
+    this.keyFields_1 = emptyList();
+    this.implements_1 = emptyList();
+    this.embeddedFields_1 = emptyList();
+  }
+  Builder_3.prototype.get_name_woqyms_k$ = function () {
+    return this.name_1;
+  };
+  Builder_3.prototype.keyFields_ua67j5_k$ = function (keyFields) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.keyFields.<anonymous>' call
+    this.keyFields_1 = keyFields;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_3.prototype.interfaces_t23zo9_k$ = function (implements_0) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.interfaces.<anonymous>' call
+    this.implements_1 = implements_0;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_3.prototype.embeddedFields_2q7d3o_k$ = function (embeddedFields) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.embeddedFields.<anonymous>' call
+    this.embeddedFields_1 = embeddedFields;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_3.prototype.build_1k0s4u_k$ = function () {
+    return new InterfaceType(this.name_1, this.keyFields_1, this.implements_1, this.embeddedFields_1);
+  };
+  function InterfaceType(name, keyFields, implements_0, embeddedFields) {
+    CompiledNamedType.call(this, name);
+    this.keyFields_1 = keyFields;
+    this.implements_1 = implements_0;
+    this.embeddedFields_1 = embeddedFields;
+  }
+  InterfaceType.prototype.get_keyFields_up3sfl_k$ = function () {
+    return this.keyFields_1;
+  };
+  InterfaceType.prototype.get_implements_zb8xqf_k$ = function () {
+    return this.implements_1;
+  };
+  InterfaceType.prototype.get_embeddedFields_lgs25o_k$ = function () {
+    return this.embeddedFields_1;
+  };
+  InterfaceType.prototype.newBuilder_dnl2aj_k$ = function () {
+    return Builder_init_$Create$_0(this);
+  };
+  function CompiledType() {
+  }
   function CustomScalarType(name, className) {
     CompiledNamedType.call(this, name);
     this.className_1 = className;
   }
   CustomScalarType.prototype.get_className_8cmv0a_k$ = function () {
     return this.className_1;
+  };
+  function EnumType_init_$Init$(name, $this) {
+    EnumType.call($this, name, emptyList());
+    return $this;
+  }
+  function EnumType_init_$Create$(name) {
+    return EnumType_init_$Init$(name, Object.create(EnumType.prototype));
+  }
+  function EnumType(name, values) {
+    CompiledNamedType.call(this, name);
+    this.values_1 = values;
+  }
+  EnumType.prototype.get_values_ksazhn_k$ = function () {
+    return this.values_1;
+  };
+  function InputObjectType(name) {
+    CompiledNamedType.call(this, name);
+  }
+  function UnionType(name, members) {
+    CompiledNamedType.call(this, name);
+    this.members_1 = members;
+  }
+  UnionType.prototype.get_members_gyhru8_k$ = function () {
+    return this.members_1;
+  };
+  function CompiledListType(ofType) {
+    CompiledType.call(this);
+    this.ofType_1 = ofType;
+  }
+  CompiledListType.prototype.get_ofType_hjbd8a_k$ = function () {
+    return this.ofType_1;
+  };
+  CompiledListType.prototype.leafType_pu6uuw_k$ = function () {
+    return this.ofType_1.rawType_gaw48y_k$();
+  };
+  CompiledListType.prototype.rawType_gaw48y_k$ = function () {
+    return this.ofType_1.rawType_gaw48y_k$();
+  };
+  function CompiledNotNullType(ofType) {
+    CompiledType.call(this);
+    this.ofType_1 = ofType;
+  }
+  CompiledNotNullType.prototype.get_ofType_hjbd8a_k$ = function () {
+    return this.ofType_1;
+  };
+  CompiledNotNullType.prototype.leafType_pu6uuw_k$ = function () {
+    return this.ofType_1.rawType_gaw48y_k$();
+  };
+  CompiledNotNullType.prototype.rawType_gaw48y_k$ = function () {
+    return this.ofType_1.rawType_gaw48y_k$();
   };
   function _set_alias__c52a5x($this, _set____db54di) {
     $this.alias_1 = _set____db54di;
@@ -1800,18 +2074,18 @@
   function _get_selections__rhd798($this) {
     return $this.selections_1;
   }
-  function Builder_init_$Init$(compiledField, $this) {
-    Builder_2.call($this, compiledField.name_1, compiledField.type_1);
+  function Builder_init_$Init$_1(compiledField, $this) {
+    Builder_4.call($this, compiledField.name_1, compiledField.type_1);
     $this.alias_1 = compiledField.alias_1;
     $this.condition_1 = compiledField.condition_1;
     $this.arguments_1 = compiledField.arguments_1;
     $this.selections_1 = compiledField.selections_1;
     return $this;
   }
-  function Builder_init_$Create$(compiledField) {
-    return Builder_init_$Init$(compiledField, Object.create(Builder_2.prototype));
+  function Builder_init_$Create$_1(compiledField) {
+    return Builder_init_$Init$_1(compiledField, Object.create(Builder_4.prototype));
   }
-  function Builder_2(name, type) {
+  function Builder_4(name, type) {
     this.name_1 = name;
     this.type_1 = type;
     this.alias_1 = null;
@@ -1819,13 +2093,13 @@
     this.arguments_1 = emptyList();
     this.selections_1 = emptyList();
   }
-  Builder_2.prototype.get_name_woqyms_k$ = function () {
+  Builder_4.prototype.get_name_woqyms_k$ = function () {
     return this.name_1;
   };
-  Builder_2.prototype.get_type_wovaf7_k$ = function () {
+  Builder_4.prototype.get_type_wovaf7_k$ = function () {
     return this.type_1;
   };
-  Builder_2.prototype.alias_2qrk0g_k$ = function (alias) {
+  Builder_4.prototype.alias_2qrk0g_k$ = function (alias) {
     var tmp$ret$0;
     // Inline function 'kotlin.apply' call
     // Inline function 'kotlin.contracts.contract' call
@@ -1834,7 +2108,7 @@
     tmp$ret$0 = this;
     return tmp$ret$0;
   };
-  Builder_2.prototype.condition_i03xqp_k$ = function (condition) {
+  Builder_4.prototype.condition_i03xqp_k$ = function (condition) {
     var tmp$ret$0;
     // Inline function 'kotlin.apply' call
     // Inline function 'kotlin.contracts.contract' call
@@ -1843,7 +2117,7 @@
     tmp$ret$0 = this;
     return tmp$ret$0;
   };
-  Builder_2.prototype.arguments_rqepyo_k$ = function (arguments_0) {
+  Builder_4.prototype.arguments_rqepyo_k$ = function (arguments_0) {
     var tmp$ret$0;
     // Inline function 'kotlin.apply' call
     // Inline function 'kotlin.contracts.contract' call
@@ -1852,7 +2126,7 @@
     tmp$ret$0 = this;
     return tmp$ret$0;
   };
-  Builder_2.prototype.selections_qw7166_k$ = function (selections) {
+  Builder_4.prototype.selections_qw7166_k$ = function (selections) {
     var tmp$ret$0;
     // Inline function 'kotlin.apply' call
     // Inline function 'kotlin.contracts.contract' call
@@ -1861,7 +2135,7 @@
     tmp$ret$0 = this;
     return tmp$ret$0;
   };
-  Builder_2.prototype.build_1k0s4u_k$ = function () {
+  Builder_4.prototype.build_1k0s4u_k$ = function () {
     var tmp0_name = this.name_1;
     var tmp1_alias = this.alias_1;
     var tmp2_type = this.type_1;
@@ -2040,412 +2314,10 @@
     return tmp_2;
   };
   CompiledField.prototype.newBuilder_dnl2aj_k$ = function () {
-    return Builder_init_$Create$(this);
-  };
-  function CompiledType() {
-  }
-  function CompiledSelection() {
-  }
-  function _set_keyFields__c23r9p($this, _set____db54di) {
-    $this.keyFields_1 = _set____db54di;
-  }
-  function _get_keyFields__to5uav($this) {
-    return $this.keyFields_1;
-  }
-  function _set_implements__bs365j($this, _set____db54di) {
-    $this.implements_1 = _set____db54di;
-  }
-  function _get_implements__3a5ezp($this) {
-    return $this.implements_1;
-  }
-  function _set_embeddedFields__h4sk9g($this, _set____db54di) {
-    $this.embeddedFields_1 = _set____db54di;
-  }
-  function _get_embeddedFields__sd81o8($this) {
-    return $this.embeddedFields_1;
-  }
-  function Builder_init_$Init$_0(objectType, $this) {
-    Builder_3.call($this, objectType.name_1);
-    $this.keyFields_1 = objectType.keyFields_1;
-    $this.implements_1 = objectType.implements_1;
-    $this.embeddedFields_1 = objectType.embeddedFields_1;
-    return $this;
-  }
-  function Builder_init_$Create$_0(objectType) {
-    return Builder_init_$Init$_0(objectType, Object.create(Builder_3.prototype));
-  }
-  function ObjectType_init_$Init$(name, keyFields, implements_0, $this) {
-    ObjectType.call($this, name, keyFields, implements_0, emptyList());
-    return $this;
-  }
-  function ObjectType_init_$Create$(name, keyFields, implements_0) {
-    return ObjectType_init_$Init$(name, keyFields, implements_0, Object.create(ObjectType.prototype));
-  }
-  function ObjectType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, $this) {
-    if (!(($mask0 & 2) === 0))
-      keyFields = emptyList();
-    if (!(($mask0 & 4) === 0))
-      implements_0 = emptyList();
-    ObjectType_init_$Init$(name, keyFields, implements_0, $this);
-    return $this;
-  }
-  function ObjectType_init_$Create$_0(name, keyFields, implements_0, $mask0, $marker) {
-    return ObjectType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, Object.create(ObjectType.prototype));
-  }
-  function Builder_3(name) {
-    this.name_1 = name;
-    this.keyFields_1 = emptyList();
-    this.implements_1 = emptyList();
-    this.embeddedFields_1 = emptyList();
-  }
-  Builder_3.prototype.get_name_woqyms_k$ = function () {
-    return this.name_1;
-  };
-  Builder_3.prototype.keyFields_ua67j5_k$ = function (keyFields) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.keyFields.<anonymous>' call
-    this.keyFields_1 = keyFields;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_3.prototype.interfaces_t23zo9_k$ = function (implements_0) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.interfaces.<anonymous>' call
-    this.implements_1 = implements_0;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_3.prototype.embeddedFields_2q7d3o_k$ = function (embeddedFields) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.embeddedFields.<anonymous>' call
-    this.embeddedFields_1 = embeddedFields;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_3.prototype.build_1k0s4u_k$ = function () {
-    return new ObjectType(this.name_1, this.keyFields_1, this.implements_1, this.embeddedFields_1);
-  };
-  function ObjectType(name, keyFields, implements_0, embeddedFields) {
-    CompiledNamedType.call(this, name);
-    this.keyFields_1 = keyFields;
-    this.implements_1 = implements_0;
-    this.embeddedFields_1 = embeddedFields;
-  }
-  ObjectType.prototype.get_keyFields_up3sfl_k$ = function () {
-    return this.keyFields_1;
-  };
-  ObjectType.prototype.get_implements_zb8xqf_k$ = function () {
-    return this.implements_1;
-  };
-  ObjectType.prototype.get_embeddedFields_lgs25o_k$ = function () {
-    return this.embeddedFields_1;
-  };
-  ObjectType.prototype.newBuilder_dnl2aj_k$ = function () {
-    return Builder_init_$Create$_0(this);
-  };
-  function _get_name__das4rk($this) {
-    return $this.name_1;
-  }
-  function _get_value__a43j40($this) {
-    return $this.value_1;
-  }
-  function _set_isKey__g0qqz4($this, _set____db54di) {
-    $this.isKey_1 = _set____db54di;
-  }
-  function _get_isKey__g0dpic($this) {
-    return $this.isKey_1;
-  }
-  function _set_isPagination__h55aq5($this, _set____db54di) {
-    $this.isPagination_1 = _set____db54di;
-  }
-  function _get_isPagination__1lek61($this) {
-    return $this.isPagination_1;
-  }
-  function CompiledArgument_init_$Init$(name, value, isKey, isPagination, $mask0, $marker, $this) {
-    if (!(($mask0 & 4) === 0))
-      isKey = false;
-    if (!(($mask0 & 8) === 0))
-      isPagination = false;
-    CompiledArgument.call($this, name, value, isKey, isPagination);
-    return $this;
-  }
-  function CompiledArgument_init_$Create$(name, value, isKey, isPagination, $mask0, $marker) {
-    return CompiledArgument_init_$Init$(name, value, isKey, isPagination, $mask0, $marker, Object.create(CompiledArgument.prototype));
-  }
-  function CompiledArgument_init_$Init$_0(name, value, isKey, $this) {
-    CompiledArgument.call($this, name, value, isKey, false);
-    return $this;
-  }
-  function CompiledArgument_init_$Create$_0(name, value, isKey) {
-    return CompiledArgument_init_$Init$_0(name, value, isKey, Object.create(CompiledArgument.prototype));
-  }
-  function CompiledArgument_init_$Init$_1(name, value, isKey, $mask0, $marker, $this) {
-    if (!(($mask0 & 4) === 0))
-      isKey = false;
-    CompiledArgument_init_$Init$_0(name, value, isKey, $this);
-    return $this;
-  }
-  function CompiledArgument_init_$Create$_1(name, value, isKey, $mask0, $marker) {
-    return CompiledArgument_init_$Init$_1(name, value, isKey, $mask0, $marker, Object.create(CompiledArgument.prototype));
-  }
-  function Builder_4(name, value) {
-    this.name_1 = name;
-    this.value_1 = value;
-    this.isKey_1 = false;
-    this.isPagination_1 = false;
-  }
-  Builder_4.prototype.isKey_9jm24b_k$ = function (isKey) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.isKey.<anonymous>' call
-    this.isKey_1 = isKey;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_4.prototype.isPagination_zg6cly_k$ = function (isPagination) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.isPagination.<anonymous>' call
-    this.isPagination_1 = isPagination;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_4.prototype.build_1k0s4u_k$ = function () {
-    return new CompiledArgument(this.name_1, this.value_1, this.isKey_1, this.isPagination_1);
-  };
-  function CompiledArgument(name, value, isKey, isPagination) {
-    this.name_1 = name;
-    this.value_1 = value;
-    this.isKey_1 = isKey;
-    this.isPagination_1 = isPagination;
-  }
-  CompiledArgument.prototype.get_name_woqyms_k$ = function () {
-    return this.name_1;
-  };
-  CompiledArgument.prototype.get_value_j01efc_k$ = function () {
-    return this.value_1;
-  };
-  CompiledArgument.prototype.get_isKey_it6vn0_k$ = function () {
-    return this.isKey_1;
-  };
-  CompiledArgument.prototype.get_isPagination_947sr7_k$ = function () {
-    return this.isPagination_1;
-  };
-  function CompiledVariable(name) {
-    this.name_1 = name;
-  }
-  CompiledVariable.prototype.get_name_woqyms_k$ = function () {
-    return this.name_1;
-  };
-  function list_0(_this__u8e3s4) {
-    init_properties_CompiledGraphQL_kt_nwteck();
-    return new CompiledListType(_this__u8e3s4);
-  }
-  function CompiledListType(ofType) {
-    CompiledType.call(this);
-    this.ofType_1 = ofType;
-  }
-  CompiledListType.prototype.get_ofType_hjbd8a_k$ = function () {
-    return this.ofType_1;
-  };
-  CompiledListType.prototype.leafType_pu6uuw_k$ = function () {
-    return this.ofType_1.rawType_gaw48y_k$();
-  };
-  CompiledListType.prototype.rawType_gaw48y_k$ = function () {
-    return this.ofType_1.rawType_gaw48y_k$();
-  };
-  function CompiledNotNullType(ofType) {
-    CompiledType.call(this);
-    this.ofType_1 = ofType;
-  }
-  CompiledNotNullType.prototype.get_ofType_hjbd8a_k$ = function () {
-    return this.ofType_1;
-  };
-  CompiledNotNullType.prototype.leafType_pu6uuw_k$ = function () {
-    return this.ofType_1.rawType_gaw48y_k$();
-  };
-  CompiledNotNullType.prototype.rawType_gaw48y_k$ = function () {
-    return this.ofType_1.rawType_gaw48y_k$();
-  };
-  function notNull(_this__u8e3s4) {
-    init_properties_CompiledGraphQL_kt_nwteck();
-    return new CompiledNotNullType(_this__u8e3s4);
-  }
-  function Builder_5(typeCondition, possibleTypes) {
-    this.typeCondition_1 = typeCondition;
-    this.possibleTypes_1 = possibleTypes;
-    this.condition_1 = emptyList();
-    this.selections_1 = emptyList();
-  }
-  Builder_5.prototype.get_typeCondition_y5k7vc_k$ = function () {
-    return this.typeCondition_1;
-  };
-  Builder_5.prototype.get_possibleTypes_8irdlt_k$ = function () {
-    return this.possibleTypes_1;
-  };
-  Builder_5.prototype.set_condition_uqjbbv_k$ = function (_set____db54di) {
-    this.condition_1 = _set____db54di;
-  };
-  Builder_5.prototype.get_condition_5qa366_k$ = function () {
-    return this.condition_1;
-  };
-  Builder_5.prototype.set_selections_oh8twc_k$ = function (_set____db54di) {
-    this.selections_1 = _set____db54di;
-  };
-  Builder_5.prototype.get_selections_nhbmr4_k$ = function () {
-    return this.selections_1;
-  };
-  Builder_5.prototype.condition_i03xqp_k$ = function (condition) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.condition.<anonymous>' call
-    this.condition_1 = condition;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_5.prototype.selections_qw7166_k$ = function (selections) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.selections.<anonymous>' call
-    this.selections_1 = selections;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_5.prototype.build_1k0s4u_k$ = function () {
-    return new CompiledFragment(this.typeCondition_1, this.possibleTypes_1, this.condition_1, this.selections_1);
-  };
-  function CompiledFragment(typeCondition, possibleTypes, condition, selections) {
-    CompiledSelection.call(this);
-    this.typeCondition_1 = typeCondition;
-    this.possibleTypes_1 = possibleTypes;
-    this.condition_1 = condition;
-    this.selections_1 = selections;
-  }
-  CompiledFragment.prototype.get_typeCondition_y5k7vc_k$ = function () {
-    return this.typeCondition_1;
-  };
-  CompiledFragment.prototype.get_possibleTypes_8irdlt_k$ = function () {
-    return this.possibleTypes_1;
-  };
-  CompiledFragment.prototype.get_condition_5qa366_k$ = function () {
-    return this.condition_1;
-  };
-  CompiledFragment.prototype.get_selections_nhbmr4_k$ = function () {
-    return this.selections_1;
-  };
-  function _set_keyFields__c23r9p_0($this, _set____db54di) {
-    $this.keyFields_1 = _set____db54di;
-  }
-  function _get_keyFields__to5uav_0($this) {
-    return $this.keyFields_1;
-  }
-  function _set_implements__bs365j_0($this, _set____db54di) {
-    $this.implements_1 = _set____db54di;
-  }
-  function _get_implements__3a5ezp_0($this) {
-    return $this.implements_1;
-  }
-  function _set_embeddedFields__h4sk9g_0($this, _set____db54di) {
-    $this.embeddedFields_1 = _set____db54di;
-  }
-  function _get_embeddedFields__sd81o8_0($this) {
-    return $this.embeddedFields_1;
-  }
-  function Builder_init_$Init$_1(interfaceType, $this) {
-    Builder_6.call($this, interfaceType.name_1);
-    $this.keyFields_1 = interfaceType.keyFields_1;
-    $this.implements_1 = interfaceType.implements_1;
-    $this.embeddedFields_1 = interfaceType.embeddedFields_1;
-    return $this;
-  }
-  function Builder_init_$Create$_1(interfaceType) {
-    return Builder_init_$Init$_1(interfaceType, Object.create(Builder_6.prototype));
-  }
-  function InterfaceType_init_$Init$(name, keyFields, implements_0, $this) {
-    InterfaceType.call($this, name, keyFields, implements_0, emptyList());
-    return $this;
-  }
-  function InterfaceType_init_$Create$(name, keyFields, implements_0) {
-    return InterfaceType_init_$Init$(name, keyFields, implements_0, Object.create(InterfaceType.prototype));
-  }
-  function InterfaceType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, $this) {
-    if (!(($mask0 & 2) === 0))
-      keyFields = emptyList();
-    if (!(($mask0 & 4) === 0))
-      implements_0 = emptyList();
-    InterfaceType_init_$Init$(name, keyFields, implements_0, $this);
-    return $this;
-  }
-  function InterfaceType_init_$Create$_0(name, keyFields, implements_0, $mask0, $marker) {
-    return InterfaceType_init_$Init$_0(name, keyFields, implements_0, $mask0, $marker, Object.create(InterfaceType.prototype));
-  }
-  function Builder_6(name) {
-    this.name_1 = name;
-    this.keyFields_1 = emptyList();
-    this.implements_1 = emptyList();
-    this.embeddedFields_1 = emptyList();
-  }
-  Builder_6.prototype.get_name_woqyms_k$ = function () {
-    return this.name_1;
-  };
-  Builder_6.prototype.keyFields_ua67j5_k$ = function (keyFields) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.keyFields.<anonymous>' call
-    this.keyFields_1 = keyFields;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_6.prototype.interfaces_t23zo9_k$ = function (implements_0) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.interfaces.<anonymous>' call
-    this.implements_1 = implements_0;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_6.prototype.embeddedFields_2q7d3o_k$ = function (embeddedFields) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.apollographql.apollo3.api.Builder.embeddedFields.<anonymous>' call
-    this.embeddedFields_1 = embeddedFields;
-    tmp$ret$0 = this;
-    return tmp$ret$0;
-  };
-  Builder_6.prototype.build_1k0s4u_k$ = function () {
-    return new InterfaceType(this.name_1, this.keyFields_1, this.implements_1, this.embeddedFields_1);
-  };
-  function InterfaceType(name, keyFields, implements_0, embeddedFields) {
-    CompiledNamedType.call(this, name);
-    this.keyFields_1 = keyFields;
-    this.implements_1 = implements_0;
-    this.embeddedFields_1 = embeddedFields;
-  }
-  InterfaceType.prototype.get_keyFields_up3sfl_k$ = function () {
-    return this.keyFields_1;
-  };
-  InterfaceType.prototype.get_implements_zb8xqf_k$ = function () {
-    return this.implements_1;
-  };
-  InterfaceType.prototype.get_embeddedFields_lgs25o_k$ = function () {
-    return this.embeddedFields_1;
-  };
-  InterfaceType.prototype.newBuilder_dnl2aj_k$ = function () {
     return Builder_init_$Create$_1(this);
   };
+  function CompiledSelection() {
+  }
   function CompiledCondition(name, inverted) {
     this.name_1 = name;
     this.inverted_1 = inverted;
@@ -2492,21 +2364,95 @@
       return false;
     return true;
   };
-  function ScalarType(name) {
-    CompiledNamedType.call(this, name);
+  function _get_name__das4rk($this) {
+    return $this.name_1;
   }
-  function CompiledNamedType(name) {
-    CompiledType.call(this);
+  function _get_value__a43j40($this) {
+    return $this.value_1;
+  }
+  function _set_isKey__g0qqz4($this, _set____db54di) {
+    $this.isKey_1 = _set____db54di;
+  }
+  function _get_isKey__g0dpic($this) {
+    return $this.isKey_1;
+  }
+  function _set_isPagination__h55aq5($this, _set____db54di) {
+    $this.isPagination_1 = _set____db54di;
+  }
+  function _get_isPagination__1lek61($this) {
+    return $this.isPagination_1;
+  }
+  function CompiledArgument_init_$Init$(name, value, isKey, isPagination, $mask0, $marker, $this) {
+    if (!(($mask0 & 4) === 0))
+      isKey = false;
+    if (!(($mask0 & 8) === 0))
+      isPagination = false;
+    CompiledArgument.call($this, name, value, isKey, isPagination);
+    return $this;
+  }
+  function CompiledArgument_init_$Create$(name, value, isKey, isPagination, $mask0, $marker) {
+    return CompiledArgument_init_$Init$(name, value, isKey, isPagination, $mask0, $marker, Object.create(CompiledArgument.prototype));
+  }
+  function CompiledArgument_init_$Init$_0(name, value, isKey, $this) {
+    CompiledArgument.call($this, name, value, isKey, false);
+    return $this;
+  }
+  function CompiledArgument_init_$Create$_0(name, value, isKey) {
+    return CompiledArgument_init_$Init$_0(name, value, isKey, Object.create(CompiledArgument.prototype));
+  }
+  function CompiledArgument_init_$Init$_1(name, value, isKey, $mask0, $marker, $this) {
+    if (!(($mask0 & 4) === 0))
+      isKey = false;
+    CompiledArgument_init_$Init$_0(name, value, isKey, $this);
+    return $this;
+  }
+  function CompiledArgument_init_$Create$_1(name, value, isKey, $mask0, $marker) {
+    return CompiledArgument_init_$Init$_1(name, value, isKey, $mask0, $marker, Object.create(CompiledArgument.prototype));
+  }
+  function Builder_5(name, value) {
     this.name_1 = name;
+    this.value_1 = value;
+    this.isKey_1 = false;
+    this.isPagination_1 = false;
   }
-  CompiledNamedType.prototype.get_name_woqyms_k$ = function () {
+  Builder_5.prototype.isKey_9jm24b_k$ = function (isKey) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.isKey.<anonymous>' call
+    this.isKey_1 = isKey;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_5.prototype.isPagination_zg6cly_k$ = function (isPagination) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.isPagination.<anonymous>' call
+    this.isPagination_1 = isPagination;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_5.prototype.build_1k0s4u_k$ = function () {
+    return new CompiledArgument(this.name_1, this.value_1, this.isKey_1, this.isPagination_1);
+  };
+  function CompiledArgument(name, value, isKey, isPagination) {
+    this.name_1 = name;
+    this.value_1 = value;
+    this.isKey_1 = isKey;
+    this.isPagination_1 = isPagination;
+  }
+  CompiledArgument.prototype.get_name_woqyms_k$ = function () {
     return this.name_1;
   };
-  CompiledNamedType.prototype.leafType_pu6uuw_k$ = function () {
-    return this;
+  CompiledArgument.prototype.get_value_j01efc_k$ = function () {
+    return this.value_1;
   };
-  CompiledNamedType.prototype.rawType_gaw48y_k$ = function () {
-    return this;
+  CompiledArgument.prototype.get_isKey_it6vn0_k$ = function () {
+    return this.isKey_1;
+  };
+  CompiledArgument.prototype.get_isPagination_947sr7_k$ = function () {
+    return this.isPagination_1;
   };
   function resolveVariables(value, variables) {
     init_properties_CompiledGraphQL_kt_nwteck();
@@ -2583,30 +2529,84 @@
     }
     return tmp;
   }
-  function EnumType_init_$Init$(name, $this) {
-    EnumType.call($this, name, emptyList());
-    return $this;
+  function Builder_6(typeCondition, possibleTypes) {
+    this.typeCondition_1 = typeCondition;
+    this.possibleTypes_1 = possibleTypes;
+    this.condition_1 = emptyList();
+    this.selections_1 = emptyList();
   }
-  function EnumType_init_$Create$(name) {
-    return EnumType_init_$Init$(name, Object.create(EnumType.prototype));
-  }
-  function EnumType(name, values) {
-    CompiledNamedType.call(this, name);
-    this.values_1 = values;
-  }
-  EnumType.prototype.get_values_ksazhn_k$ = function () {
-    return this.values_1;
+  Builder_6.prototype.get_typeCondition_y5k7vc_k$ = function () {
+    return this.typeCondition_1;
   };
-  function InputObjectType(name) {
-    CompiledNamedType.call(this, name);
-  }
-  function UnionType(name, members) {
-    CompiledNamedType.call(this, name);
-    this.members_1 = members;
-  }
-  UnionType.prototype.get_members_gyhru8_k$ = function () {
-    return this.members_1;
+  Builder_6.prototype.get_possibleTypes_8irdlt_k$ = function () {
+    return this.possibleTypes_1;
   };
+  Builder_6.prototype.set_condition_uqjbbv_k$ = function (_set____db54di) {
+    this.condition_1 = _set____db54di;
+  };
+  Builder_6.prototype.get_condition_5qa366_k$ = function () {
+    return this.condition_1;
+  };
+  Builder_6.prototype.set_selections_oh8twc_k$ = function (_set____db54di) {
+    this.selections_1 = _set____db54di;
+  };
+  Builder_6.prototype.get_selections_nhbmr4_k$ = function () {
+    return this.selections_1;
+  };
+  Builder_6.prototype.condition_i03xqp_k$ = function (condition) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.condition.<anonymous>' call
+    this.condition_1 = condition;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_6.prototype.selections_qw7166_k$ = function (selections) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.apollographql.apollo3.api.Builder.selections.<anonymous>' call
+    this.selections_1 = selections;
+    tmp$ret$0 = this;
+    return tmp$ret$0;
+  };
+  Builder_6.prototype.build_1k0s4u_k$ = function () {
+    return new CompiledFragment(this.typeCondition_1, this.possibleTypes_1, this.condition_1, this.selections_1);
+  };
+  function CompiledFragment(typeCondition, possibleTypes, condition, selections) {
+    CompiledSelection.call(this);
+    this.typeCondition_1 = typeCondition;
+    this.possibleTypes_1 = possibleTypes;
+    this.condition_1 = condition;
+    this.selections_1 = selections;
+  }
+  CompiledFragment.prototype.get_typeCondition_y5k7vc_k$ = function () {
+    return this.typeCondition_1;
+  };
+  CompiledFragment.prototype.get_possibleTypes_8irdlt_k$ = function () {
+    return this.possibleTypes_1;
+  };
+  CompiledFragment.prototype.get_condition_5qa366_k$ = function () {
+    return this.condition_1;
+  };
+  CompiledFragment.prototype.get_selections_nhbmr4_k$ = function () {
+    return this.selections_1;
+  };
+  function CompiledVariable(name) {
+    this.name_1 = name;
+  }
+  CompiledVariable.prototype.get_name_woqyms_k$ = function () {
+    return this.name_1;
+  };
+  function list_0(_this__u8e3s4) {
+    init_properties_CompiledGraphQL_kt_nwteck();
+    return new CompiledListType(_this__u8e3s4);
+  }
+  function notNull(_this__u8e3s4) {
+    init_properties_CompiledGraphQL_kt_nwteck();
+    return new CompiledNotNullType(_this__u8e3s4);
+  }
   function sam$kotlin_Comparator$0(function_0) {
     this.function_1 = function_0;
   }
@@ -2640,12 +2640,12 @@
       CompiledFloatType = new ScalarType('Float');
       CompiledBooleanType = new ScalarType('Boolean');
       CompiledIDType = new ScalarType('ID');
-      CompiledSchemaType = (new Builder_3('__Schema')).build_1k0s4u_k$();
-      CompiledTypeType = (new Builder_3('__Type')).build_1k0s4u_k$();
-      CompiledFieldType = (new Builder_3('__Field')).build_1k0s4u_k$();
-      CompiledInputValueType = (new Builder_3('__InputValue')).build_1k0s4u_k$();
-      CompiledEnumValueType = (new Builder_3('__EnumValue')).build_1k0s4u_k$();
-      CompiledDirectiveType = (new Builder_3('__Directive')).build_1k0s4u_k$();
+      CompiledSchemaType = (new Builder_2('__Schema')).build_1k0s4u_k$();
+      CompiledTypeType = (new Builder_2('__Type')).build_1k0s4u_k$();
+      CompiledFieldType = (new Builder_2('__Field')).build_1k0s4u_k$();
+      CompiledInputValueType = (new Builder_2('__InputValue')).build_1k0s4u_k$();
+      CompiledEnumValueType = (new Builder_2('__EnumValue')).build_1k0s4u_k$();
+      CompiledDirectiveType = (new Builder_2('__Directive')).build_1k0s4u_k$();
     }
   }
   function _get_adaptersMap__r82k9z($this) {
@@ -8704,10 +8704,10 @@
   _.$_$.p = Builder_0;
   _.$_$.q = ApolloResponse;
   _.$_$.r = get_BooleanAdapter;
-  _.$_$.s = Builder_4;
+  _.$_$.s = Builder_5;
   _.$_$.t = CompiledCondition;
-  _.$_$.u = Builder_2;
-  _.$_$.v = Builder_5;
+  _.$_$.u = Builder_4;
+  _.$_$.v = Builder_6;
   _.$_$.w = CompiledVariable;
   _.$_$.x = Builder_7;
   _.$_$.y = CustomScalarType;
@@ -8720,13 +8720,13 @@
   _.$_$.f1 = plus_2;
   _.$_$.g1 = ExecutionOptions;
   _.$_$.h1 = get_IntAdapter;
-  _.$_$.i1 = Builder_6;
+  _.$_$.i1 = Builder_3;
   _.$_$.j1 = MutableExecutionOptions;
   _.$_$.k1 = Mutation;
   _.$_$.l1 = get_NullableAnyAdapter;
   _.$_$.m1 = get_NullableIntAdapter;
   _.$_$.n1 = get_NullableStringAdapter;
-  _.$_$.o1 = Builder_3;
+  _.$_$.o1 = Builder_2;
   _.$_$.p1 = Present;
   _.$_$.q1 = Data_2;
   _.$_$.r1 = Query;

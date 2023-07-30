@@ -177,7 +177,11 @@ public object DatasetInfoQuerySelections {
         CompiledField.Builder(
           name = "isServedBy",
           type = DataService.type.notNull().list()
-        ).selections(__isServedBy)
+        ).arguments(listOf(
+          CompiledArgument.Builder("page", CompiledVariable("page")).build(),
+          CompiledArgument.Builder("pageSize", -1).build()
+        ))
+        .selections(__isServedBy)
         .build(),
         CompiledField.Builder(
           name = "spatial",
@@ -218,6 +222,17 @@ public object DatasetInfoQuerySelections {
         CompiledField.Builder(
           name = "title",
           type = GraphQLString.type
+        ).build()
+      )
+
+  private val __isServedBy1: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "identifier",
+          type = GraphQLString.type.notNull().list()
         ).build()
       )
 
@@ -277,11 +292,32 @@ public object DatasetInfoQuerySelections {
           type = GraphQLString.type
         ).build(),
         CompiledField.Builder(
+          name = "numberOfResources",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfCatalogs",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfDataServices",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfDatasets",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfDatasetSeries",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
           name = "resources",
           type = ResourceInCatalog.type.notNull().list()
         ).arguments(listOf(
           CompiledArgument.Builder("page", CompiledVariable("page")).build(),
-          CompiledArgument.Builder("pageSize", 10).build()
+          CompiledArgument.Builder("pageSize", 10).build(),
+          CompiledArgument.Builder("type", "All").build()
         ))
         .selections(__resources)
         .build(),
@@ -293,6 +329,15 @@ public object DatasetInfoQuerySelections {
           CompiledArgument.Builder("pageSize", 10).build()
         ))
         .selections(__records)
+        .build(),
+        CompiledField.Builder(
+          name = "isServedBy",
+          type = DataService.type.notNull().list()
+        ).arguments(listOf(
+          CompiledArgument.Builder("page", CompiledVariable("page")).build(),
+          CompiledArgument.Builder("pageSize", 10).build()
+        ))
+        .selections(__isServedBy1)
         .build(),
         CompiledField.Builder(
           name = "inCatalog",

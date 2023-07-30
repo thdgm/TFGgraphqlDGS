@@ -24,6 +24,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory.getLogger
+import org.springframework.data.domain.PageRequest
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
@@ -82,10 +83,10 @@ class CatalogRecordsServicesImpl(
     // Return de list of catalogRecord which contains de resource id
     override fun getCatalogsRecordOf(filterId: String?, id: String): Collection<CatalogRecord?> {
 
-        val catalogRecords = catalogRecordsRepository.findCatalogRecordsByResourceId(id)
+        val catalogRecords = catalogRecordsRepository.findCatalogRecordsByResourceId(id, PageRequest.of(0,Integer.MAX_VALUE))
                 .map {
                         if (it != null) converter.toCatalogRecord(it) else null
-                }
+                }.filterNotNull() as Collection<CatalogRecord>
 
         return if (filterId == null) catalogRecords else catalogRecords.filter { it?.id == filterId }
     }

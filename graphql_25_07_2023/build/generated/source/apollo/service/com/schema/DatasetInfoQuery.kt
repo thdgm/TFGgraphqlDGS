@@ -133,8 +133,13 @@ public data class DatasetInfoQuery(
     public val numberOfResources: Int?,
     public val publisher: ConceptAdapterScalar?,
     public val license: String?,
+    public val numberOfCatalogs: Int?,
+    public val numberOfDataServices: Int?,
+    public val numberOfDatasets: Int?,
+    public val numberOfDatasetSeries: Int?,
     public val resources: List<Resource1>?,
     public val records: List<Record>?,
+    public val isServedBy: List<IsServedBy1>?,
     public val inCatalog: List<InCatalog1>?,
     public val isPrimaryTopicOf: List<IsPrimaryTopicOf1>?,
   )
@@ -150,6 +155,11 @@ public data class DatasetInfoQuery(
     public val title: String?,
   )
 
+  public data class IsServedBy1(
+    public val id: String,
+    public val identifier: List<String>?,
+  )
+
   public data class InCatalog1(
     public val id: String,
     public val identifier: List<String>?,
@@ -162,7 +172,7 @@ public data class DatasetInfoQuery(
 
   public companion object {
     public const val OPERATION_ID: String =
-        "323febe905f1e67505ca08cfc056948ef091d4bbf21eb201aba0ab1c89fa324e"
+        "bbc9c6bc768e59f7832e836f67cbdf01d1438f5386b4fcb986df9e20fd6835ed"
 
     /**
      * The minimized GraphQL document being sent to the server to save a few bytes.
@@ -198,7 +208,7 @@ public data class DatasetInfoQuery(
      *         title
      *         identifier
      *       }
-     *       isServedBy {
+     *       isServedBy(page: $page, pageSize: -1) {
      *         id
      *         identifier
      *         title
@@ -222,7 +232,12 @@ public data class DatasetInfoQuery(
      *       numberOfResources
      *       publisher
      *       license
-     *       resources(page: $page, pageSize: 10) {
+     *       numberOfResources
+     *       numberOfCatalogs
+     *       numberOfDataServices
+     *       numberOfDatasets
+     *       numberOfDatasetSeries
+     *       resources(page: $page, pageSize: 10, type: "All") {
      *         __typename
      *         id
      *         identifier
@@ -230,6 +245,10 @@ public data class DatasetInfoQuery(
      *       records(page: $page, pageSize: 10) {
      *         id
      *         title
+     *       }
+     *       isServedBy(page: $page, pageSize: 10) {
+     *         id
+     *         identifier
      *       }
      *       inCatalog {
      *         id
@@ -245,7 +264,7 @@ public data class DatasetInfoQuery(
      */
     public val OPERATION_DOCUMENT: String
       get() =
-          "query DatasetInfo(${'$'}id: ID!, ${'$'}isDataset: Boolean!, ${'$'}isCatalog: Boolean!, ${'$'}page: Int!) { resource(id: ${'$'}id, isDataset: ${'$'}isDataset, isCatalog: ${'$'}isCatalog, page: ${'$'}page) { __typename ... on Dataset @include(if: ${'$'}isDataset) { id title publisher description license keywords theme language issued modified accrualPeriodicity identifier inCatalog { id identifier title } isPrimaryTopicOf { id title } inSeries { id title identifier } isServedBy { id identifier title } spatial temporal { start end } distributions { accessUrl format } } ... on Catalog @include(if: ${'$'}isCatalog) { id title description issued modified numberOfResources publisher license resources(page: ${'$'}page, pageSize: 10) { __typename id identifier } records(page: ${'$'}page, pageSize: 10) { id title } inCatalog { id identifier } isPrimaryTopicOf { id title } } } }"
+          "query DatasetInfo(${'$'}id: ID!, ${'$'}isDataset: Boolean!, ${'$'}isCatalog: Boolean!, ${'$'}page: Int!) { resource(id: ${'$'}id, isDataset: ${'$'}isDataset, isCatalog: ${'$'}isCatalog, page: ${'$'}page) { __typename ... on Dataset @include(if: ${'$'}isDataset) { id title publisher description license keywords theme language issued modified accrualPeriodicity identifier inCatalog { id identifier title } isPrimaryTopicOf { id title } inSeries { id title identifier } isServedBy(page: ${'$'}page, pageSize: -1) { id identifier title } spatial temporal { start end } distributions { accessUrl format } } ... on Catalog @include(if: ${'$'}isCatalog) { id title description issued modified numberOfResources publisher license numberOfResources numberOfCatalogs numberOfDataServices numberOfDatasets numberOfDatasetSeries resources(page: ${'$'}page, pageSize: 10, type: \"All\") { __typename id identifier } records(page: ${'$'}page, pageSize: 10) { id title } isServedBy(page: ${'$'}page, pageSize: 10) { id identifier } inCatalog { id identifier } isPrimaryTopicOf { id title } } } }"
 
     public const val OPERATION_NAME: String = "DatasetInfo"
   }

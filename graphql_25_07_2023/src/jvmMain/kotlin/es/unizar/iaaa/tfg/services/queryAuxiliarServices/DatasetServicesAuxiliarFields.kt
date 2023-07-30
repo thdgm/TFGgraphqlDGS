@@ -13,6 +13,7 @@ import es.unizar.iaaa.tfg.repository.RelatedResourcesRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
 import org.slf4j.LoggerFactory.getLogger
+import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
@@ -25,7 +26,7 @@ interface DatasetServicesAuxiliarFields {
     fun getLocations(id: String): Collection<String?>
     fun getAccrualPeriodicity(id: String): String?
     fun getTemporal(id: String): PeriodOfTime?
-    fun getDatasetServices(filterIdDataset: String?, id: String): Collection<DataService?>
+    fun getDatasetServices(filterIdDataset: String?, id: String, page: Int, pageSize: Int): Collection<DataService?>
     fun getValidity(id: String): LocalDateTime?
     fun getRegulations(id: String): Collection<String?>
     fun getRelatedResources(id: String): Collection<String?>
@@ -74,12 +75,14 @@ class DatasetServicesAuxiliarFieldsImpl(
         )
 
     // Return datasetServices which contains the dataset's id
-    override fun getDatasetServices(filterIdDataset: String?, id: String): Collection<DataService?> {
-        val dataservices = dataServiceRepository.findDatasetServiceByServesDatasetId(id)
+    override fun getDatasetServices(filterIdDataset: String?, id: String, page: Int, pageSize: Int): Collection<DataService?> {
+        println("FINDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD: $id")
+       // println(dataServiceRepository.findDatasetServiceByServesDatasetId(id))
+       return dataServiceRepository.findDatasetServiceByServesDatasetId(id, PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).distinctBy { it.id }
             .map {
                 converter.toDataService(it)
-            }
-        return if (filterIdDataset == null) dataservices else dataservices.filter { it?.id == filterIdDataset }
+            }.filterNotNull()
+        //return if (filterIdDataset == null) dataservices else dataservices.filter { it?.id == filterIdDataset }
     }
 
     // Return validity field from DatasetEntity with identifier equal to id parameter
