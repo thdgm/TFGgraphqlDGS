@@ -254,6 +254,8 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   numberOfDatasetSeries: Int
   numberOfDataServices: Int
   numberOfCatalogs: Int
+  numberOfRecords: Int
+  numberOfServedBy: Int
   # Future:
   #  - A Catalog can record descriptions of resources such as dataset or dataservices
   #    dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]

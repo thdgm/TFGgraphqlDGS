@@ -83,7 +83,9 @@ suspend fun getCatalogInfo(id_catalog: String?, page: Int): Collection<CatalogIn
                 catalogInfo.numberOfCatalogs ?: 0,
                 catalogInfo.numberOfDataServices ?: 0,
                 catalogInfo.numberOfDatasets ?: 0,
-                catalogInfo.numberOfDatasetSeries ?: 0
+                catalogInfo.numberOfDatasetSeries ?: 0,
+                catalogInfo.numberOfRecords ?: 0,
+                catalogInfo.numberOfServedBy ?: 0
             )
         )
 

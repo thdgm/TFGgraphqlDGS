@@ -312,6 +312,14 @@ public object DatasetInfoQuerySelections {
           type = GraphQLInt.type
         ).build(),
         CompiledField.Builder(
+          name = "numberOfRecords",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfServedBy",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
           name = "resources",
           type = ResourceInCatalog.type.notNull().list()
         ).arguments(listOf(

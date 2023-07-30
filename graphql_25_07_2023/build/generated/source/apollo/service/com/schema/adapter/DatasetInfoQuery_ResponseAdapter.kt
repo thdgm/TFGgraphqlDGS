@@ -512,8 +512,8 @@ public object DatasetInfoQuery_ResponseAdapter {
   public object OnCatalog : Adapter<DatasetInfoQuery.OnCatalog> {
     public val RESPONSE_NAMES: List<String> = listOf("id", "title", "description", "issued",
         "modified", "numberOfResources", "publisher", "license", "numberOfCatalogs",
-        "numberOfDataServices", "numberOfDatasets", "numberOfDatasetSeries", "resources", "records",
-        "isServedBy", "inCatalog", "isPrimaryTopicOf")
+        "numberOfDataServices", "numberOfDatasets", "numberOfDatasetSeries", "numberOfRecords",
+        "numberOfServedBy", "resources", "records", "isServedBy", "inCatalog", "isPrimaryTopicOf")
 
     public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
         DatasetInfoQuery.OnCatalog {
@@ -529,6 +529,8 @@ public object DatasetInfoQuery_ResponseAdapter {
       var _numberOfDataServices: Int? = null
       var _numberOfDatasets: Int? = null
       var _numberOfDatasetSeries: Int? = null
+      var _numberOfRecords: Int? = null
+      var _numberOfServedBy: Int? = null
       var _resources: List<DatasetInfoQuery.Resource1>? = null
       var _records: List<DatasetInfoQuery.Record>? = null
       var _isServedBy: List<DatasetInfoQuery.IsServedBy1>? = null
@@ -552,14 +554,16 @@ public object DatasetInfoQuery_ResponseAdapter {
           9 -> _numberOfDataServices = NullableIntAdapter.fromJson(reader, customScalarAdapters)
           10 -> _numberOfDatasets = NullableIntAdapter.fromJson(reader, customScalarAdapters)
           11 -> _numberOfDatasetSeries = NullableIntAdapter.fromJson(reader, customScalarAdapters)
-          12 -> _resources = Resource1.obj().list().nullable().fromJson(reader,
+          12 -> _numberOfRecords = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          13 -> _numberOfServedBy = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          14 -> _resources = Resource1.obj().list().nullable().fromJson(reader,
               customScalarAdapters)
-          13 -> _records = Record.obj().list().nullable().fromJson(reader, customScalarAdapters)
-          14 -> _isServedBy = IsServedBy1.obj().list().nullable().fromJson(reader,
+          15 -> _records = Record.obj().list().nullable().fromJson(reader, customScalarAdapters)
+          16 -> _isServedBy = IsServedBy1.obj().list().nullable().fromJson(reader,
               customScalarAdapters)
-          15 -> _inCatalog = InCatalog1.obj().list().nullable().fromJson(reader,
+          17 -> _inCatalog = InCatalog1.obj().list().nullable().fromJson(reader,
               customScalarAdapters)
-          16 -> _isPrimaryTopicOf = IsPrimaryTopicOf1.obj().list().nullable().fromJson(reader,
+          18 -> _isPrimaryTopicOf = IsPrimaryTopicOf1.obj().list().nullable().fromJson(reader,
               customScalarAdapters)
           else -> break
         }
@@ -578,6 +582,8 @@ public object DatasetInfoQuery_ResponseAdapter {
         numberOfDataServices = _numberOfDataServices,
         numberOfDatasets = _numberOfDatasets,
         numberOfDatasetSeries = _numberOfDatasetSeries,
+        numberOfRecords = _numberOfRecords,
+        numberOfServedBy = _numberOfServedBy,
         resources = _resources,
         records = _records,
         isServedBy = _isServedBy,
@@ -628,6 +634,12 @@ public object DatasetInfoQuery_ResponseAdapter {
 
       writer.name("numberOfDatasetSeries")
       NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfDatasetSeries)
+
+      writer.name("numberOfRecords")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfRecords)
+
+      writer.name("numberOfServedBy")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfServedBy)
 
       writer.name("resources")
       Resource1.obj().list().nullable().toJson(writer, customScalarAdapters, value.resources)

@@ -53,6 +53,27 @@ interface CatalogRepository : JpaRepository<CatalogEntity, String> {
     )
     @Transactional
     fun findNumberOfResourcesById(id: String): Int
+
+    @Query(
+        value = "select COUNT(DISTINCT relat.id_resource) from relationships relat, resource r where relat.id_catalog = ?1 and relat.id_resource = r.id and r.tipo = ?2",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findNumberOfResourcesByIdAndType(id: String, type: String): Int
+
+    @Query(
+        value = "select COUNT(DISTINCT id_catalog_record) from cataloginrecord where id_resource = ?1",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findNumberOfRecordsByIdAndType(id: String): Int
+
+    @Query(
+        value = "select COUNT(DISTINCT id_dataservice) from serves_dataset where id_resource = ?1",
+        nativeQuery = true
+    )
+    @Transactional
+    fun findNumberOfServedServicesByIdAndType(id: String): Int
 }
 
 @Repository
@@ -87,7 +108,7 @@ interface DataServiceRepository : JpaRepository<DataServiceEntity, String> {
     fun findAccessServiceByDistributionsId(id: String): Collection<DataServiceEntity?>
     @Query(
         value =
-        "select * from resource r, (select id_dataservice from serves_dataset where id_resource = ?1) as dServ where dServ.id_dataservice = r.id",
+        "select * from resource r, (select id_dataservice from serves_dataset where id_resource = ?1) as dServ where dServ.id_dataservice = r.id ORDER BY r.id",
         nativeQuery = true
     )
     @Transactional

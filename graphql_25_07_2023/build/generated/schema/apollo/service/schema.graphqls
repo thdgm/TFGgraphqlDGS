@@ -240,7 +240,7 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
 
   title: [LangString!]
 
-  resources(page: Int!, pageSize: Int!): [ResourceInCatalog!]
+  resources(page: Int!, pageSize: Int!, type: String!): [ResourceInCatalog!]
 
   datasets(page: Int!, pageSize: Int!): [DatasetInCatalog!]
 
@@ -273,6 +273,18 @@ type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset &
   identifier: [String!]
 
   numberOfResources: Int
+
+  numberOfDatasets: Int
+
+  numberOfDatasetSeries: Int
+
+  numberOfDataServices: Int
+
+  numberOfCatalogs: Int
+
+  numberOfRecords: Int
+
+  numberOfServedBy: Int
 }
 
 type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource & ReferenceWithinExternalContext {

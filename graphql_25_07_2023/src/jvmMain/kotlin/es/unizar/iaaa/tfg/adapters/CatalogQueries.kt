@@ -97,4 +97,16 @@ class CatalogQueries(
         val ct: Catalog = dfe.getSource()
         return catalogServices.getNumberCatalogsCatalog(ct.id)
     }
+    // @DgsData numberOfRecords: returns number of records within the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfRecords(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberRecordsCatalog(ct.id)
+    }
+    // @DgsData numberOfServedBy: returns number of services which served  the catalog
+    @DgsData(parentType = "Catalog")
+    fun numberOfServedBy(dfe: DgsDataFetchingEnvironment): Int? {
+        val ct: Catalog = dfe.getSource()
+        return catalogServices.getNumberServedServicesCatalog(ct.id)
+    }
 }

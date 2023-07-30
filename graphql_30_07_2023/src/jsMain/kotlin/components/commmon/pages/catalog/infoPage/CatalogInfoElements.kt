@@ -1,12 +1,12 @@
 package components.commmon.pages.catalog.infoPage
 
 
-import com.schema.DatasetInfoQuery
+import com.schema.IsServedByFromCatalogQuery
+import com.schema.RecordsFromCatalogQuery
 import com.schema.ResourcesFromCatalogQuery
 import components.commmon.FilterListContextAll
 import components.commmon.Sizes
 import components.commmon.pages.dataset.infoPage.addToFiltersButton
-import components.commmon.selectFilter.catalogResourcesInfo
 import components.commmon.selectFilter.selectResourcesType
 import components.commmon.selectFilter.selectedCatalog.selectFilterCatalog
 import csstype.AlignItems
@@ -18,21 +18,18 @@ import csstype.NamedColor
 import csstype.Position
 import csstype.pct
 import csstype.px
-import csstype.rgba
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import models.CatalogInfo
+import models.IsServedInfo
+import models.RecordsInfo
 import models.ResourceInfo
 import mui.icons.material.Description
 import mui.icons.material.Folder
-import mui.icons.material.RssFeed
-import mui.icons.material.Source
-import mui.icons.material.TextSnippet
 import mui.icons.material.Title
-import mui.icons.material.Topic
 import mui.material.Box
 import mui.material.Breadcrumbs
 import mui.material.Button
@@ -49,9 +46,7 @@ import mui.material.Link
 import mui.material.LinkUnderline
 import mui.material.ListItem
 import mui.material.ListItemAvatar
-import mui.material.ListItemButton
 import mui.material.ListItemText
-import mui.material.MuiListItem.Companion.secondaryAction
 import mui.material.Paper
 import mui.material.Stack
 import mui.material.StackDirection
@@ -61,12 +56,13 @@ import mui.material.TableBody
 import mui.material.TableCell
 import mui.material.TableContainer
 import mui.material.TableRow
-import mui.material.Tooltip
 import mui.material.Typography
 import mui.system.responsive
 import mui.system.sx
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
+import paginationIsServedByCatalog
+import paginationRecordsCatalog
 import paginationResourcesCatalog
 import react.FC
 import react.Props
@@ -92,7 +88,25 @@ suspend fun getCatalogResources(id_catalog: String?, page: Int, type: String): C
     return resourceInfo?.map{ResourceInfo(it.identifier, it.id, it.__typename)} ?: emptyList()
 }
 
+suspend fun getCatalogRecords(id_catalog: String?, page: Int): Collection<RecordsInfo> {
 
+    var recordsInfo: List<RecordsFromCatalogQuery.Record>? = null
+    if (id_catalog != null){
+        recordsInfo =  apolloClient.query(RecordsFromCatalogQuery(id= id_catalog!!, page = page)).execute().data?.catalog?.records
+    }
+    console.log("NEW RECORDSSS:: "+recordsInfo)
+    return recordsInfo?.map{RecordsInfo(it.id, it.title)} ?: emptyList()
+}
+suspend fun getCatalogServedBy(id_catalog: String?, page: Int): Collection<IsServedInfo> {
+
+    var servedByInfo: List<IsServedByFromCatalogQuery.IsServedBy>? = null
+    console.log("PAGEEE LOOK:::: "+ page)
+    if (id_catalog != null){
+        servedByInfo =  apolloClient.query(IsServedByFromCatalogQuery(id= id_catalog!!, page = page)).execute().data?.catalog?.isServedBy
+    }
+    console.log("NEW SERVED BYYY:: "+servedByInfo)
+    return servedByInfo?.map{IsServedInfo(it.identifier, it.id)} ?: emptyList()
+}
 
 external interface CatalogInfoElementsProps : Props {
     var listTestCatalogInfo: MutableList<CatalogInfo>
@@ -106,6 +120,9 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
     var isLoading by useState(true)
     var filterResourcesByType by useState("All")
     var newResources by useState(mutableListOf<ResourceInfo>())
+    var newRecords by useState(mutableListOf<RecordsInfo>())
+    var newServedBy by useState(mutableListOf<IsServedInfo>())
+    var numberPages by useState(if (catalogInfo.isNullOrEmpty()) 0 else catalogInfo.elementAt(0).numberOfResources)
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event ->
         //console.log("ID: " + event.currentTarget.id)
@@ -113,6 +130,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
     }
     useEffect(filterResourcesByType){
         console.log("FILTROOOO POR:::: "+filterResourcesByType)
+
        /* if (!catalogInfo.isNullOrEmpty()){
             catalogInfo.elementAt(0).resources = newResources
         }*/
@@ -127,7 +145,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
             //console.log("TIMEOUTTT")
         }
     }
-    val handleChangePage: (event: ChangeEvent<*>, number: Number) -> Unit = { event, number ->
+    val handleChangePageResources: (event: ChangeEvent<*>, number: Number) -> Unit = { event, number ->
         console.log("NUMBER: "+ number)
         console.log("EVENT: "+event)
         coroutineScope.launch {
@@ -139,6 +157,29 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
             }
             catalogInfo.elementAt(0).resources = newResources
             console.log("NEW ASISGNEDDD BY PAGEEE::: " + catalogInfo.elementAt(0).resources)
+
+        }
+    }
+    val handleChangePageRecords: (event: ChangeEvent<*>, number: Number) -> Unit = { event, number ->
+        coroutineScope.launch {
+            val newRes = getCatalogRecords(catalogInfo.first().id, number.toInt())
+            newRecords = newRecords.filter { it == null } as MutableList<RecordsInfo>
+            newRes.map {
+                newRecords.add(it)
+            }
+            catalogInfo.elementAt(0).records = newRecords
+            console.log("NEW ASISGNEDDD BY PAGEEE RECORDDSS::: " + catalogInfo.elementAt(0).records)
+        }
+    }
+    val handleChangePageServedBy: (event: ChangeEvent<*>, number: Number) -> Unit = { event, number ->
+        coroutineScope.launch {
+            val newRes = getCatalogServedBy(catalogInfo.first().id, number.toInt())
+            newServedBy = newServedBy.filter { it == null } as MutableList<IsServedInfo>
+            newRes.map {
+                newServedBy.add(it)
+            }
+            catalogInfo.elementAt(0).isServedBy = newServedBy
+            console.log("NEW ASISGNEDDD BY PAGEEE::: " + catalogInfo.elementAt(0).isServedBy)
         }
     }
     val handleChange: (event: ChangeEvent<HTMLInputElement>, child: ReactNode) -> Unit = { event, _ ->
@@ -152,6 +193,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
             }
             filterResourcesByType = event.target.value
             catalogInfo.elementAt(0).resources = newResources
+
             console.log("NEW ASISGNEDDD::: "+ catalogInfo.elementAt(0).resources)
         }
     }
@@ -557,7 +599,14 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                         item = true
                         direction = responsive(GridDirection.row)
                         Chip {
-                            label = ReactNode("${catalogInfo.elementAt(0).numberOfResources}")
+                            label = when(filterResourcesByType){
+                                "All" -> ReactNode("${catalogInfo.elementAt(0).numberOfResources}")
+                                "data_service" -> ReactNode("${catalogInfo.elementAt(0).numberOfDataServices}")
+                                "dataset" ->ReactNode("${catalogInfo.elementAt(0).numberOfDatasets}")
+                                "catalog" -> ReactNode("${catalogInfo.elementAt(0).numberOfCatalogs}")
+                                "dataset_series" -> ReactNode("${catalogInfo.elementAt(0).numberOfDatasetSeries}")
+                                else -> ReactNode("0")
+                            }
                             variant = ChipVariant.outlined
                             color = ChipColor.primary
                         }
@@ -581,8 +630,11 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                         item = true
                         direction = responsive(GridDirection.row)
                         paginationResourcesCatalog{
-                            this.filterResourcesByType = handleChangePage
-                            this.numberOfPages = catalogInfo.elementAt(0).numberOfResources
+                            this.filterResourcesByType = handleChangePageResources
+                           this.numberOfPages = catalogInfo.elementAt(0).numberOfResources
+                            this.filterType = filterResourcesByType
+                            this.catalogInfo = catalogInfo
+                        //catalogInfo.elementAt(0).numberOfResources
                         }
                     }
 
@@ -737,11 +789,57 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                     position = Position.relative
                 }
                 elevation = 0
-                Typography {
-                    className = ClassName("subtitle_info")
-                    +"Records"
+                Grid {
+                    sx {
+                        display = Display.flex
+                    }
+                    container = true
+                    spacing = responsive(2.px)
+                    direction = responsive(GridDirection.row)
+                    Grid {
+                        sx {
+                            display = Display.flex
+                        }
+                        item = true
+                        direction = responsive(GridDirection.row)
+                        Typography {
+                            className = ClassName("subtitle_info")
+                            +"Records"
+                        }
+                    }
+                    Grid{
+                        sx {
+                            display = Display.flex
+                            marginLeft = 5.pct
+                        }
+                        item = true
+                        direction = responsive(GridDirection.row)
+                        Chip {
+                            label = ReactNode("${catalogInfo.elementAt(0).numberOfRecords}")
+                            variant = ChipVariant.outlined
+                            color = ChipColor.primary
+                        }
+                    }
+                    Grid{
+                        sx {
+                            display = Display.flex
+                            marginLeft = 10.pct
+                        }
+                        item = true
+                        direction = responsive(GridDirection.row)
+                        paginationRecordsCatalog{
+                            this.filterResourcesByType = handleChangePageRecords
+                            this.numberOfPages = catalogInfo.elementAt(0).numberOfRecords
+                            this.filterType = filterResourcesByType
+                            this.catalogInfo = catalogInfo
+                            //catalogInfo.elementAt(0).numberOfResources
+                        }
+                    }
                 }
-                List {
+                catalogRecordsInfo{
+                    listRecordsInfo = catalogInfo.elementAt(0).records
+                }
+                /*List {
                     catalogInfo.elementAt(0).records?.map {
                         ListItem {
                             className = ClassName("distributionsList")
@@ -778,11 +876,11 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                             }
                         }
                     }
-                }
+                }*/
 
             }
         }
-        if (!catalogInfo.elementAt(0).isServedBy.isNullOrEmpty()) {
+        //if (!catalogInfo.elementAt(0).isServedBy.isNullOrEmpty()) {
             Paper {
                 sx {
                     width = Sizes.BoxList.Width
@@ -797,11 +895,57 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                     position = Position.relative
                 }
                 elevation = 0
-                Typography {
-                    className = ClassName("subtitle_info")
-                    +"Servido por: "
+                Grid {
+                    sx {
+                        display = Display.flex
+                    }
+                    container = true
+                    spacing = responsive(2.px)
+                    direction = responsive(GridDirection.row)
+                    Grid {
+                        sx {
+                            display = Display.flex
+                        }
+                        item = true
+                        direction = responsive(GridDirection.row)
+                        Typography {
+                            className = ClassName("subtitle_info")
+                            +"Servido por: "
+                        }
+                    }
+                    Grid{
+                        sx {
+                            display = Display.flex
+                            marginLeft = 5.pct
+                        }
+                        item = true
+                        direction = responsive(GridDirection.row)
+                        Chip {
+                            label = ReactNode("${catalogInfo.elementAt(0).numberOfServedBy}")
+                            variant = ChipVariant.outlined
+                            color = ChipColor.primary
+                        }
+                    }
+                    Grid{
+                        sx {
+                            display = Display.flex
+                            marginLeft = 10.pct
+                        }
+                        item = true
+                        direction = responsive(GridDirection.row)
+                        paginationIsServedByCatalog{
+                            this.filterResourcesByType = handleChangePageServedBy
+                            this.numberOfPages = catalogInfo.elementAt(0).numberOfServedBy
+                            this.filterType = filterResourcesByType
+                            this.catalogInfo = catalogInfo
+                            //catalogInfo.elementAt(0).numberOfResources
+                        }
+                    }
                 }
-                List {
+                catalogIsServedByInfo{
+                    listIsServedInfo = catalogInfo.elementAt(0).isServedBy
+                }
+                /*List {
                     catalogInfo.elementAt(0).isServedBy?.mapIndexed { index, it ->
                         if (it.serviceId != null) {
                             ListItem {
@@ -840,9 +984,9 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                             }
                         }
                     }
-                }
+                }*/
 
-            }
+            //}
         }
 
     }

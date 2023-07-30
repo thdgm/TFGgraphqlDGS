@@ -57,6 +57,10 @@ public data class Catalog(
   public val numberOfDataServices: Int? = null,
   @JsonProperty("numberOfCatalogs")
   public val numberOfCatalogs: Int? = null,
+  @JsonProperty("numberOfRecords")
+  public val numberOfRecords: Int? = null,
+  @JsonProperty("numberOfServedBy")
+  public val numberOfServedBy: Int? = null,
 ) : ResourceInCatalog, DatasetInCatalog, AbstractDataset, Resource, ReferenceWithinExternalContext {
   public companion object
 }

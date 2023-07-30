@@ -25,6 +25,12 @@ interface CatalogServices {
     fun getResourcesCatalog(id: String,page: Int, pageSize: Int, type: String): Collection<ResourceInCatalog?>
     fun getDatasetsCatalog(id: String,page: Int, pageSize: Int): Collection<DatasetInCatalog?>
     fun getNumberResourcesCatalog(id: String): Int?
+    fun getNumberDatasetsCatalog(id: String): Int?
+    fun getNumberDataServicesCatalog(id: String): Int?
+    fun getNumberDatasetSeriesCatalog(id: String): Int?
+    fun getNumberCatalogsCatalog(id: String): Int?
+    fun getNumberRecordsCatalog(id: String): Int?
+    fun getNumberServedServicesCatalog(id: String): Int?
 }
 
 @Service
@@ -44,7 +50,7 @@ class CatalogServicesImpl(
 
     // Return list with catalogs belonging to catalg id
     override fun getCalogsCatalog(id: String,page: Int, pageSize: Int): Collection<Catalog?> =
-        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
+        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(if(page != 0) page-1 else 0,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
             .filter { it.type == "catalog" }
             .map {
                 converter.toCatalog(it)
@@ -52,7 +58,7 @@ class CatalogServicesImpl(
 
     // Return list with records belonging to catalg id
     override fun getRecordsCatalog(id: String,page: Int, pageSize: Int): Collection<CatalogRecord> {
-        val crIds = catalogRecordsRepository.findRecordsByCatalogsId(id, PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
+        val crIds = catalogRecordsRepository.findRecordsByCatalogsId(id, PageRequest.of(if(page != 0) page-1 else 0,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
         return crIds.filterNotNull().map{catalogRecordsRepository.findById(it)}
             .map {
                 converter.toCatalogRecord(it.get())
@@ -67,7 +73,7 @@ class CatalogServicesImpl(
 
     // Return list with services belonging to catalg id
     override fun getServicesCatalog(id: String,page: Int, pageSize: Int): Collection<DataService?> =
-        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
+        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(if(page != 0) page-1 else 0,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
             .filter { it.type == "data_service" }
             .map {
                 converter.toDataService(it)
@@ -79,16 +85,16 @@ class CatalogServicesImpl(
         println("IDDDD:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: $id")
         //println("RESOURCESSSSSS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ${resourceRepository.findResourcesCatalogByCatalogResourcesIdAndType(id_catalog,"dataset",PageRequest.of(0,5))}")
         return if (type == "All"){
-            resourceRepository.findResourcesCatalogByCatalogResourcesId(id_catalog,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map {converter.createResource(it) }.distinct().toList()//resourceRepository.findResourcesCatalog(id).map {converter.createResource(it) }
+            resourceRepository.findResourcesCatalogByCatalogResourcesId(id_catalog,PageRequest.of(if(page != 0) page-1 else 0,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map {converter.createResource(it) }.distinct().toList()//resourceRepository.findResourcesCatalog(id).map {converter.createResource(it) }
         }else{
-            resourceRepository.findResourcesCatalogByCatalogResourcesIdAndType(id_catalog,type,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map {converter.createResource(it) }.distinct().toList()
+            resourceRepository.findResourcesCatalogByCatalogResourcesIdAndType(id_catalog,type,PageRequest.of(if(page != 0) page-1 else 0,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map {converter.createResource(it) }.distinct().toList()
         }
     }
 
 
-    // Return list with resources belonging to catalog id
+    // Return list with datasets belonging to catalog id
     override fun getDatasetsCatalog(id: String,page: Int, pageSize: Int): Collection<DatasetInCatalog?> =
-        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
+        resourceRepository.findResourcesCatalogByCatalogResourcesId(id,PageRequest.of(if(page != 0) page-1 else 0,if(pageSize >= 0) pageSize else Integer.MAX_VALUE))
             .filter { it.type != "data_service" }
             .map {
                 converter.createDataset(it)
@@ -97,4 +103,28 @@ class CatalogServicesImpl(
     // Return the number of resources inside the Catalog id
     override fun getNumberResourcesCatalog(id: String): Int? =
         catalogRepository.findNumberOfResourcesById(id)
+
+    // Return the number of datasets inside the Catalog id
+    override fun getNumberDatasetsCatalog(id: String): Int? =
+        catalogRepository.findNumberOfResourcesByIdAndType(id, "dataset")
+
+    // Return the number of dataServices inside the Catalog id
+    override fun getNumberDataServicesCatalog(id: String): Int? =
+        catalogRepository.findNumberOfResourcesByIdAndType(id, "data_service")
+
+    // Return the number of datasetSeries inside the Catalog id
+    override fun getNumberDatasetSeriesCatalog(id: String): Int? =
+        catalogRepository.findNumberOfResourcesByIdAndType(id, "dataset_series")
+
+    // Return the number of catalogs inside the Catalog id
+    override fun getNumberCatalogsCatalog(id: String): Int? =
+        catalogRepository.findNumberOfResourcesByIdAndType(id, "catalog")
+
+    // Return the number of records inside the Catalog id
+    override fun getNumberRecordsCatalog(id: String): Int? =
+        catalogRepository.findNumberOfRecordsByIdAndType(id)
+
+    // Return the number of services which served the Catalog id
+    override fun getNumberServedServicesCatalog(id: String): Int? =
+        catalogRepository.findNumberOfServedServicesByIdAndType(id)
 }

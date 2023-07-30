@@ -76,9 +76,10 @@ class DatasetServicesAuxiliarFieldsImpl(
 
     // Return datasetServices which contains the dataset's id
     override fun getDatasetServices(filterIdDataset: String?, id: String, page: Int, pageSize: Int): Collection<DataService?> {
-        println("FINDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD: $id")
-       // println(dataServiceRepository.findDatasetServiceByServesDatasetId(id))
-       return dataServiceRepository.findDatasetServiceByServesDatasetId(id, PageRequest.of(page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).distinctBy { it.id }
+        println("FINDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD: $id - $page - $pageSize ${page/pageSize}")
+        // println(dataServiceRepository.findDatasetServiceByServesDatasetId(id))
+        ///println(dataServiceRepository.findDatasetServiceByServesDatasetId(id, PageRequest.of(page/pageSize,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).map{it.id})
+       return dataServiceRepository.findDatasetServiceByServesDatasetId(id, PageRequest.of(if(page != 0) page-1 else page,if(pageSize >= 0) pageSize else Integer.MAX_VALUE)).distinctBy { it.id }
             .map {
                 converter.toDataService(it)
             }.filterNotNull()

@@ -1,4 +1,4 @@
-package components.commmon.selectFilter
+package components.commmon.pages.catalog.infoPage
 
 
 

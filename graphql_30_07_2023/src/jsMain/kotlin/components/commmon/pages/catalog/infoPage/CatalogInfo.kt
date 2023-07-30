@@ -79,7 +79,13 @@ suspend fun getCatalogInfo(id_catalog: String?, page: Int): Collection<CatalogIn
                 if(!catalogInfo.inCatalog.isNullOrEmpty()) catalogInfo.inCatalog?.map{ InCatalogInfo(it.identifier,it.id) } else null,
                 if(!catalogInfo.isServedBy.isNullOrEmpty()) catalogInfo.isServedBy?.map{ IsServedInfo(it.identifier,it.id) } else null,
                 if(!catalogInfo.isPrimaryTopicOf.isNullOrEmpty()) catalogInfo.isPrimaryTopicOf?.map{ RecordsInfo(it.id, it.title) }?.first() else null,
-                catalogInfo.numberOfResources ?: 0
+                catalogInfo.numberOfResources ?: 0,
+                catalogInfo.numberOfCatalogs ?: 0,
+                catalogInfo.numberOfDataServices ?: 0,
+                catalogInfo.numberOfDatasets ?: 0,
+                catalogInfo.numberOfDatasetSeries ?: 0,
+                catalogInfo.numberOfRecords ?: 0,
+                catalogInfo.numberOfServedBy ?: 0
             )
         )
 

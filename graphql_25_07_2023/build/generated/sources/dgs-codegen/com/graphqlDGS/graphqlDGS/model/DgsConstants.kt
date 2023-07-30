@@ -240,6 +240,10 @@ public object DgsConstants {
 
     public const val NumberOfCatalogs: String = "numberOfCatalogs"
 
+    public const val NumberOfRecords: String = "numberOfRecords"
+
+    public const val NumberOfServedBy: String = "numberOfServedBy"
+
     public object RESOURCES_INPUT_ARGUMENT {
       public const val Page: String = "page"
 

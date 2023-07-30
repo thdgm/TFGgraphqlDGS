@@ -35,6 +35,23 @@ query ResourcesFromCatalog($id:ID!,$page: Int!,$type: String!){
     }
 }
 
+query RecordsFromCatalog($id:ID!,$page: Int!){
+    catalog(id:$id){
+        records(page:$page,pageSize: 10){
+            id
+            title
+        }
+    }
+}
+
+query IsServedByFromCatalog($id:ID!,$page: Int!){
+    catalog(id:$id){
+        isServedBy(page:$page,pageSize: 10){
+            id
+            identifier
+        }
+    }
+}
 query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!) {
     resource(id:$id,isDataset:$isDataset, isCatalog:$isCatalog, page:$page){
         ... on Dataset @include(if: $isDataset){
@@ -89,6 +106,12 @@ query DatasetInfo($id:ID!,$isDataset: Boolean!, $isCatalog: Boolean!,$page: Int!
             publisher
             license
             numberOfResources
+            numberOfCatalogs
+            numberOfDataServices
+            numberOfDatasets
+            numberOfDatasetSeries
+            numberOfRecords
+            numberOfServedBy
             resources(page:$page,pageSize: 10, type: "All") {
                 __typename
                 id
