@@ -436,7 +436,6 @@ class ResourceRepositoryExtra(){
         val formats = formats_pre.mapNotNull { mediaTypeMap[it] }
         val periods = period
         val keywords = appliedFilters.find { it.key == "Etiqueta" }?.values ?: listOf()
-        val notations = notation
         val publishers = appliedFilters.find { it.key == "Publicador" }?.values ?: listOf()
         val themes = appliedFilters.find { it.key == "Categoría" }?.values ?: listOf()
         val licenses = appliedFilters.find { it.key == "Licenses" }?.values ?: listOf()
@@ -460,7 +459,13 @@ class ResourceRepositoryExtra(){
         if (formats.isNotEmpty()) queryString += "tt.format IN :format OR "
         if (periods.isNotEmpty()) queryString += "tt.accrual_periodicity IN :period OR "
         if (keywords.isNotEmpty()) queryString += "tt.id_word IN :keyword OR "
-        if (notations.isNotEmpty()) queryString += "tt.notation LIKE :notation ESCAPE '' OR "
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, _ ->
+                if (index == notation.size-1 && notation.size > 1) queryString += "tt.notation LIKE :notation$index ESCAPE '') OR "
+                else if (index == 0 && notation.size > 1)  queryString += "(tt.notation LIKE :notation$index ESCAPE '' OR "
+                else queryString += "tt.notation LIKE :notation$index ESCAPE '' OR "
+            }
+        }
         if (publishers.isNotEmpty()) queryString += "tt.label IN :publisher OR "
         if (themes.isNotEmpty()) queryString += "tt.id_theme IN :theme OR "
         if (issued.isNotEmpty()) queryString += "tt.issued IN :issued OR "
@@ -478,7 +483,11 @@ class ResourceRepositoryExtra(){
         if(formats.isNotEmpty()) nativeQuery.setParameter("format", formats)
         if (periods.isNotEmpty())nativeQuery.setParameter("period", periods)
         if(keywords.isNotEmpty()) nativeQuery.setParameter("keyword", keywords)
-        if (notations.isNotEmpty()) nativeQuery.setParameter("notation", notations)
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, v ->
+                nativeQuery.setParameter("notation$index", v)
+            }
+        }
         if(publishers.isNotEmpty()) nativeQuery.setParameter("publisher", publishers)
         if(themes.isNotEmpty()) nativeQuery.setParameter("theme", themes)
         if(issued.isNotEmpty()) nativeQuery.setParameter("issued", issued)
@@ -515,7 +524,6 @@ class ResourceRepositoryExtra(){
         val formats = formats_pre.mapNotNull { mediaTypeMap[it] }
         val periods = period
         val keywords = appliedFilters.find { it.key == "Etiqueta" }?.values ?: listOf()
-        val notations = notation
         val publishers = appliedFilters.find { it.key == "Publicador" }?.values ?: listOf()
         val themes = appliedFilters.find { it.key == "Categoría" }?.values ?: listOf()
         val licenses = appliedFilters.find { it.key == "Licenses" }?.values ?: listOf()
@@ -540,7 +548,13 @@ class ResourceRepositoryExtra(){
         if (formats.isNotEmpty()) queryString += "tt.format IN :format OR "
         if (periods.isNotEmpty()) queryString += "tt.accrual_periodicity IN :period OR "
         if (keywords.isNotEmpty()) queryString += "tt.id_word IN :keyword OR "
-        if (notations.isNotEmpty()) queryString += "tt.notation LIKE :notation ESCAPE '' OR "
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, _ ->
+                if (index == notation.size-1 && notation.size > 1) queryString += "tt.notation LIKE :notation$index ESCAPE '') OR "
+                else if (index == 0 && notation.size > 1)  queryString += "(tt.notation LIKE :notation$index ESCAPE '' OR "
+                else queryString += "tt.notation LIKE :notation$index ESCAPE '' OR "
+            }
+        }
         if (publishers.isNotEmpty()) queryString += "tt.label IN :publisher OR "
         if (themes.isNotEmpty()) queryString += "tt.id_theme IN :theme OR "
         if (issued.isNotEmpty()) queryString += "tt.issued IN :issued OR "
@@ -562,7 +576,11 @@ class ResourceRepositoryExtra(){
         if(formats.isNotEmpty()) nativeQuery.setParameter("format", formats)
         if (periods.isNotEmpty())nativeQuery.setParameter("period", periods)
         if(keywords.isNotEmpty()) nativeQuery.setParameter("keyword", keywords)
-        if (notations.isNotEmpty()) nativeQuery.setParameter("notation", notations)
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, v ->
+                nativeQuery.setParameter("notation$index", v)
+            }
+        }
         if(publishers.isNotEmpty()) nativeQuery.setParameter("publisher", publishers)
         if(themes.isNotEmpty()) nativeQuery.setParameter("theme", themes)
         if(issued.isNotEmpty()) nativeQuery.setParameter("issued", issued)
@@ -603,7 +621,13 @@ class ResourceRepositoryExtra(){
                 "LEFT JOIN description descr ON r.id = descr.id_resource) as tt " +
                 "WHERE tt.tipo = 'catalog' AND "
 
-        if (notation.isNotEmpty()) queryString += "tt.notation LIKE :notation ESCAPE '' OR "
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, _ ->
+                if (index == notation.size-1 && notation.size > 1) queryString += "tt.notation LIKE :notation$index ESCAPE '') OR "
+                else if (index == 0 && notation.size > 1)  queryString += "(tt.notation LIKE :notation$index ESCAPE '' OR "
+                else queryString += "tt.notation LIKE :notation$index ESCAPE '' OR "
+            }
+        }
         if (publishers.isNotEmpty()) queryString += "tt.label IN :publisher OR "
         if (issued.isNotEmpty()) queryString += "tt.issued IN :issued OR "
         if (modified.isNotEmpty()) queryString += "tt.modified IN :modified OR "
@@ -622,7 +646,11 @@ class ResourceRepositoryExtra(){
 
         val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
 
-        if (notation.isNotEmpty()) nativeQuery.setParameter("notation", notation)
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, v ->
+                nativeQuery.setParameter("notation$index", v)
+            }
+        }
         if(publishers.isNotEmpty()) nativeQuery.setParameter("publisher", publishers)
         if(issued.isNotEmpty()) nativeQuery.setParameter("issued", issued)
         if(modified.isNotEmpty()) nativeQuery.setParameter("modified", modified)
@@ -646,10 +674,11 @@ class ResourceRepositoryExtra(){
         val publishers = appliedFilters.find { it.key == "Publicador" }?.values ?: listOf()
         val titles = appliedFilters.find { it.key == "Títulos" }?.values ?: listOf()
         val descriptions = appliedFilters.find { it.key == "Descripciones" }?.values ?: listOf()
-
+println("NUMBERSSSSSSSSSSSSSSSSS")
         var queryString = "SELECT COUNT(DISTINCT tt.id) as total_rows " +
                 "FROM ( " +
-                "SELECT r.id, r.tipo, tit_res.id_title, descr.id_description, r.issued, r.license, r.modified, r.publisher_id, r.accrual_periodicity, r.temporal_coverage_end, r.temporal_coverage_start, r.validity, tr.id_theme,k1_0.id_word, pub.label, pub.notation,dd.format " +                "FROM resource r " +
+                "SELECT r.id, r.tipo, tit_res.id_title, descr.id_description, r.issued, r.license, r.modified, r.publisher_id, r.accrual_periodicity, r.temporal_coverage_end, r.temporal_coverage_start, r.validity, pub.label, pub.notation " +
+                "FROM resource r " +
                 "LEFT JOIN publisher pub ON r.publisher_id = pub.id " +
                 "LEFT JOIN titles_resource tit_res ON r.id = tit_res.id_resource "+
                 "LEFT JOIN relationships res ON r.id = res.id_catalog " +
@@ -657,7 +686,13 @@ class ResourceRepositoryExtra(){
                 ") as tt " +
                 "WHERE tt.tipo = 'catalog' AND "
 
-        if (notation.isNotEmpty()) queryString += "tt.notation LIKE :notation ESCAPE '' OR "
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, _ ->
+                if (index == notation.size-1 && notation.size > 1) queryString += "tt.notation LIKE :notation$index ESCAPE '') OR "
+                else if (index == 0 && notation.size > 1)  queryString += "(tt.notation LIKE :notation$index ESCAPE '' OR "
+                else queryString += "tt.notation LIKE :notation$index ESCAPE '' OR "
+            }
+        }
         if (publishers.isNotEmpty()) queryString += "tt.label IN :publisher OR "
         if (issued.isNotEmpty()) queryString += "tt.issued IN :issued OR "
         if (modified.isNotEmpty()) queryString += "tt.modified IN :modified OR "
@@ -673,16 +708,22 @@ class ResourceRepositoryExtra(){
 
         queryString = queryString.trimEnd() + " ;"
 
-        val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
+        val nativeQuery = entityManager.createNativeQuery(queryString)
 
-        if (notation.isNotEmpty()) nativeQuery.setParameter("notation", notation)
+        if (notation.isNotEmpty()) {
+            notation.mapIndexed { index, v ->
+                nativeQuery.setParameter("notation$index", v)
+            }
+        }
         if(publishers.isNotEmpty()) nativeQuery.setParameter("publisher", publishers)
         if(issued.isNotEmpty()) nativeQuery.setParameter("issued", issued)
         if(modified.isNotEmpty()) nativeQuery.setParameter("modified", modified)
         if (descriptions.isNotEmpty()) nativeQuery.setParameter("descriptions", descriptions)
         if (titles.isNotEmpty()) nativeQuery.setParameter("titles", titles)
+       // val n = nativeQuery.resultList.first() as Long?
+        println("NUMBERSSSSSSSSSSSSSSSSS 2")
         return kotlin.runCatching {
-            nativeQuery.resultList as Long?
+            nativeQuery.resultList.first() as Long?
         }.getOrNull()
     }
 }

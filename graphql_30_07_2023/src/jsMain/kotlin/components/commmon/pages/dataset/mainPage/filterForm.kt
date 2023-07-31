@@ -148,35 +148,21 @@ external interface FilterFormProps:Props{
 val filterForm = FC<FilterFormProps> { props->
 
     var filtersTypesFields by useState(mutableListOf<MutableCollection<String>>())
-
+    var datasetList by useState(props.filterList)
     useEffect(emptyList<Collection<String>>()) {
         val coroutineScope = CoroutineScope(Dispatchers.Default)
         coroutineScope.launch {
-           // launch {
-                //val filtersTypesFields2 = mutableListOf<Collection<String>>()
-               // console.log("FILTERSS")
             val themes = getAllThemes(true)
             val formats = getAllFormats(true)
             val publishers = getAllPublishers(true)
             val adminLevels = getAllAdminLevels(true)
             val frequencies = getAllFrequencies(true)
             val keywords = getAllKeywords(true)
-
             filtersTypesFields = mutableListOf(themes, formats, publishers, adminLevels, frequencies, keywords)
-
-           // console.log("FILTERSS: ${filtersTypesFields.size}")
-            //}
-
         }
 
 
     }
-    var datasetList by useState(props.filterList)
-
-    //var testList by useState(props.addList)
-    var searchFilter by useState("")
-
-    var testList by useRequiredContext(FilterListContextAll)
 
     Paper {
         sx {

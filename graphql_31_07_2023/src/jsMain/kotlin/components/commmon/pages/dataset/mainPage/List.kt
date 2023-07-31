@@ -100,7 +100,6 @@ val list = FC<ListProps> { props ->
         console.log("CAMBIA EL SELECTED FILTERSSSSS")
         datasetList = props.filterList
 
-
     }
 
 

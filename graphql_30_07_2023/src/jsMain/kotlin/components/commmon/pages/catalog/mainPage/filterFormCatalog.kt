@@ -94,10 +94,13 @@ suspend fun getAllPublishers(more: Boolean): Collection<String>{
     return apolloClient.query(PublishersQuery(page = 0, pageSize = 6)).execute().data?.getAllPublishers?.filterNotNull() ?: emptyList()
 }
 suspend fun getAllAdminLevels(more: Boolean): Collection<String>{
+    console.log("AQUÍIIIIIIIII11111")
     if(!more){
         return apolloClient.query(AdminLevelsQuery(page = 0, pageSize = -1)).execute().data?.getAllAdminLabel?.filterNotNull() ?: emptyList()
     }
-    return apolloClient.query(AdminLevelsQuery(page = 0, pageSize = 6)).execute().data?.getAllAdminLabel?.filterNotNull() ?: emptyList()
+    val res = apolloClient.query(AdminLevelsQuery(page = 0, pageSize = 6)).execute().data?.getAllAdminLabel?.filterNotNull() ?: emptyList()
+    console.log("AQUÍIIIIIIIII "+ res)
+    return res
 }
 
 
@@ -112,9 +115,6 @@ external interface FilterFormCatalogProps:Props{
 val filterFormCatalog = FC<FilterFormCatalogProps> {props->
 
     var filtersTypesFields by useState(mutableListOf<Collection<String>>(listOf(),listOf(),listOf()))
-
-    var catalogsList by useState(props.filterList)
-
 
     useEffect(emptyList<Collection<String>>()) {
         val coroutineScope = CoroutineScope(Dispatchers.Default)
@@ -147,13 +147,6 @@ val filterFormCatalog = FC<FilterFormCatalogProps> {props->
                 marginLeft = 5.pct
                 marginRight = 5.pct
                 boxShadow = None.none
-            }
-            Box{
-                /*Searcher{
-                    this.filterList = catalogsList
-                    this.handleOnChange = props.handleOnChange//{event -> searchFilter= (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/}
-
-                }*/
             }
             Divider {}
             Grid {
@@ -193,20 +186,20 @@ val filterFormCatalog = FC<FilterFormCatalogProps> {props->
                             this.filterName = value
                             this.filterFields = filtersTypesFields.elementAt(index)
                             this.updateFilterListMore = {
+                                console.log("MOREEE2: "+value)
                                 filtersTypesFields = mutableListOf(
-                                    if (value == "Publicador") getAllPublishers(false)
-                                    else filtersTypesFields.elementAt(2),
-                                    if (value == "Nivel de Administración") getAllAdminLevels(false)
-                                    else filtersTypesFields.elementAt(3),
-
+                                    if (value == "Publicador") getAllPublishers(false) else filtersTypesFields.elementAt(0),
+                                    if (value == "Nivel de administración") getAllAdminLevels(false) else filtersTypesFields.elementAt(1),
+                                    filtersTypesFields.elementAt(2),
                                 )
                             }
                             this.updateFilterListLess = {
                                 filtersTypesFields = mutableListOf(
                                     if (value == "Publicador") getAllPublishers(true)
-                                    else filtersTypesFields.elementAt(2),
-                                    if (value == "Nivel de Administración")getAllAdminLevels(true)
-                                    else filtersTypesFields.elementAt(3),
+                                    else filtersTypesFields.elementAt(0),
+                                    if (value == "Nivel de administración")getAllAdminLevels(true)
+                                    else filtersTypesFields.elementAt(1),
+                                    filtersTypesFields.elementAt(2),
 
                                 )
                             }

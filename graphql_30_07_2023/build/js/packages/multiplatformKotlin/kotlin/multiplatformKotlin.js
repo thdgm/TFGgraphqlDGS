@@ -745,12 +745,12 @@
   setMetadataFor(filterForm$lambda$lambda$slambda, 'filterForm$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(filterForm$lambda$lambda$lambda$lambda$lambda$lambda$slambda, 'filterForm$lambda$lambda$lambda$lambda$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [0]);
   setMetadataFor(filterForm$lambda$lambda$lambda$lambda$lambda$lambda$slambda_1, 'filterForm$lambda$lambda$lambda$lambda$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [0]);
-  setMetadataFor($getAllThemesCOROUTINE$27, '$getAllThemesCOROUTINE$27', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
-  setMetadataFor($getAllFrequenciesCOROUTINE$28, '$getAllFrequenciesCOROUTINE$28', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
-  setMetadataFor($getAllPublishersCOROUTINE$29, '$getAllPublishersCOROUTINE$29', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
-  setMetadataFor($getAllAdminLevelsCOROUTINE$30, '$getAllAdminLevelsCOROUTINE$30', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
-  setMetadataFor($getAllKeywordsCOROUTINE$31, '$getAllKeywordsCOROUTINE$31', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
-  setMetadataFor($getAllFormatsCOROUTINE$32, '$getAllFormatsCOROUTINE$32', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getAllThemesCOROUTINE$2, '$getAllThemesCOROUTINE$2', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getAllFrequenciesCOROUTINE$3, '$getAllFrequenciesCOROUTINE$3', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getAllPublishersCOROUTINE$4, '$getAllPublishersCOROUTINE$4', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getAllAdminLevelsCOROUTINE$5, '$getAllAdminLevelsCOROUTINE$5', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getAllKeywordsCOROUTINE$6, '$getAllKeywordsCOROUTINE$6', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
+  setMetadataFor($getAllFormatsCOROUTINE$7, '$getAllFormatsCOROUTINE$7', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
   setMetadataFor(datasetSeriesInfo$lambda$lambda$slambda, 'datasetSeriesInfo$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor(DatasetSeriesInfoElements$lambda$lambda$slambda, 'DatasetSeriesInfoElements$lambda$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], undefined, undefined, [1]);
   setMetadataFor($getAllThemesCOROUTINE$33, '$getAllThemesCOROUTINE$33', classMeta, CoroutineImpl, undefined, undefined, undefined, []);
@@ -7818,7 +7818,7 @@
     var tmp$ret$40;
     // Inline function 'kotlin.collections.listOf' call
     tmp$ret$40 = emptyList();
-    var tmp_40 = to('Nivel de Administraci\xF3n', tmp$ret$40);
+    var tmp_40 = to('Nivel de administraci\xF3n', tmp$ret$40);
     var tmp$ret$41;
     // Inline function 'kotlin.collections.listOf' call
     tmp$ret$41 = emptyList();
@@ -20748,7 +20748,6 @@
     // Inline function 'kotlin.collections.listOf' call
     tmp$ret$2 = emptyList();
     var filtersTypesFields$delegate = useState(mutableListOf([tmp, tmp_0, tmp$ret$2]));
-    var catalogsList$delegate = useState(props.filterList);
     var tmp_1 = [emptyList()];
     useEffect(tmp_1, filterFormCatalog$lambda$lambda(filtersTypesFields$delegate));
     var tmp_2 = default_25;
@@ -20776,29 +20775,6 @@
     var tmp$ret$0;
     // Inline function 'kotlin.js.asDynamic' call
     tmp$ret$0 = $filtersTypesFields$delegate;
-    return tmp$ret$0[1](value);
-  }
-  function invoke$lambda_50($catalogsList$delegate) {
-    init_properties_filterFormCatalog_kt_fayzc9();
-    var tmp$ret$1;
-    // Inline function 'react.StateInstance.getValue' call
-    var tmp0_getValue = getLocalDelegateReference('catalogsList', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $catalogsList$delegate;
-    tmp$ret$1 = tmp$ret$0[0];
-    return tmp$ret$1;
-  }
-  function invoke$lambda_51($catalogsList$delegate, value) {
-    init_properties_filterFormCatalog_kt_fayzc9();
-    var tmp0_setValue = getLocalDelegateReference('catalogsList', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $catalogsList$delegate;
     return tmp$ret$0[1](value);
   }
   function filterFormCatalog$lambda$lambda$slambda($filtersTypesFields$delegate, resultContinuation) {
@@ -20883,10 +20859,6 @@
     return Unit_getInstance();
   }
   function filterFormCatalog$lambda$lambda$lambda$lambda_0($this$invoke) {
-    init_properties_filterFormCatalog_kt_fayzc9();
-    return Unit_getInstance();
-  }
-  function filterFormCatalog$lambda$lambda$lambda$lambda_1($this$invoke) {
     init_properties_filterFormCatalog_kt_fayzc9();
     $this$invoke.container;
     // Inline function 'mui.system.sx' call
@@ -20997,11 +20969,11 @@
     $this$invoke.unaryPlus_g7ydph_k$('Filtros');
     return Unit_getInstance();
   }
-  function filterFormCatalog$lambda$lambda$lambda$lambda_2($this$invoke) {
+  function filterFormCatalog$lambda$lambda$lambda$lambda_1($this$invoke) {
     init_properties_filterFormCatalog_kt_fayzc9();
     return Unit_getInstance();
   }
-  function filterFormCatalog$lambda$lambda$lambda$lambda_3($this$invoke) {
+  function filterFormCatalog$lambda$lambda$lambda$lambda_2($this$invoke) {
     init_properties_filterFormCatalog_kt_fayzc9();
     return Unit_getInstance();
   }
@@ -21027,6 +20999,7 @@
         switch (tmp) {
           case 0:
             this.set_exceptionState_s9sevl_k$(5);
+            console.log('MOREEE2: ' + this.$item_1);
             if (this.$item_1 === 'Publicador') {
               this.set_state_a96kl8_k$(1);
               suspendResult = getAllPublishers(false, this);
@@ -21037,7 +21010,7 @@
             } else {
               var tmp_0 = this;
               var tmp0_elementAt = invoke$lambda_48(this.$filtersTypesFields$delegate_1);
-              tmp_0.WHEN_RESULT0__1 = tmp0_elementAt.get_fkrdnv_k$(2);
+              tmp_0.WHEN_RESULT0__1 = tmp0_elementAt.get_fkrdnv_k$(0);
               this.set_state_a96kl8_k$(2);
               continue $sm;
             }
@@ -21049,7 +21022,7 @@
             continue $sm;
           case 2:
             this.ARGUMENT1__1 = this.WHEN_RESULT0__1;
-            if (this.$item_1 === 'Nivel de Administraci\xF3n') {
+            if (this.$item_1 === 'Nivel de administraci\xF3n') {
               this.set_state_a96kl8_k$(3);
               suspendResult = getAllAdminLevels(false, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -21059,7 +21032,7 @@
             } else {
               var tmp_1 = this;
               var tmp1_elementAt = invoke$lambda_48(this.$filtersTypesFields$delegate_1);
-              tmp_1.WHEN_RESULT2__1 = tmp1_elementAt.get_fkrdnv_k$(3);
+              tmp_1.WHEN_RESULT2__1 = tmp1_elementAt.get_fkrdnv_k$(1);
               this.set_state_a96kl8_k$(4);
               continue $sm;
             }
@@ -21072,7 +21045,8 @@
             continue $sm;
           case 4:
             var ARGUMENT = this.WHEN_RESULT2__1;
-            var ARGUMENT_0 = [this.ARGUMENT1__1, ARGUMENT];
+            var tmp2_elementAt = invoke$lambda_48(this.$filtersTypesFields$delegate_1);
+            var ARGUMENT_0 = [this.ARGUMENT1__1, ARGUMENT, tmp2_elementAt.get_fkrdnv_k$(2)];
             var ARGUMENT_1 = mutableListOf(ARGUMENT_0);
             invoke$lambda_49(this.$filtersTypesFields$delegate_1, ARGUMENT_1);
             return Unit_getInstance();
@@ -21133,7 +21107,7 @@
             } else {
               var tmp_0 = this;
               var tmp0_elementAt = invoke$lambda_48(this.$filtersTypesFields$delegate_1);
-              tmp_0.WHEN_RESULT0__1 = tmp0_elementAt.get_fkrdnv_k$(2);
+              tmp_0.WHEN_RESULT0__1 = tmp0_elementAt.get_fkrdnv_k$(0);
               this.set_state_a96kl8_k$(2);
               continue $sm;
             }
@@ -21145,7 +21119,7 @@
             continue $sm;
           case 2:
             this.ARGUMENT1__1 = this.WHEN_RESULT0__1;
-            if (this.$item_1 === 'Nivel de Administraci\xF3n') {
+            if (this.$item_1 === 'Nivel de administraci\xF3n') {
               this.set_state_a96kl8_k$(3);
               suspendResult = getAllAdminLevels(true, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -21155,7 +21129,7 @@
             } else {
               var tmp_1 = this;
               var tmp1_elementAt = invoke$lambda_48(this.$filtersTypesFields$delegate_1);
-              tmp_1.WHEN_RESULT2__1 = tmp1_elementAt.get_fkrdnv_k$(3);
+              tmp_1.WHEN_RESULT2__1 = tmp1_elementAt.get_fkrdnv_k$(1);
               this.set_state_a96kl8_k$(4);
               continue $sm;
             }
@@ -21168,7 +21142,8 @@
             continue $sm;
           case 4:
             var ARGUMENT = this.WHEN_RESULT2__1;
-            var ARGUMENT_0 = [this.ARGUMENT1__1, ARGUMENT];
+            var tmp2_elementAt = invoke$lambda_48(this.$filtersTypesFields$delegate_1);
+            var ARGUMENT_0 = [this.ARGUMENT1__1, ARGUMENT, tmp2_elementAt.get_fkrdnv_k$(2)];
             var ARGUMENT_1 = mutableListOf(ARGUMENT_0);
             invoke$lambda_49(this.$filtersTypesFields$delegate_1, ARGUMENT_1);
             return Unit_getInstance();
@@ -21217,7 +21192,7 @@
       return Unit_getInstance();
     };
   }
-  function filterFormCatalog$lambda$lambda$lambda$lambda_4($filtersTypesFields$delegate) {
+  function filterFormCatalog$lambda$lambda$lambda$lambda_3($filtersTypesFields$delegate) {
     return function ($this$invoke) {
       var tmp0_sx = $this$invoke;
       var tmp$ret$5;
@@ -21299,18 +21274,16 @@
       tmp$ret$7 = tmp0_apply;
       tmp$ret$8 = tmp$ret$7;
       tmp0_sx.sx = tmp$ret$8;
-      var tmp = default_9;
+      var tmp = default_56;
       $this$invoke.invoke_hixay3_k$(tmp, filterFormCatalog$lambda$lambda$lambda$lambda);
-      var tmp_0 = default_56;
+      var tmp_0 = default_39;
       $this$invoke.invoke_hixay3_k$(tmp_0, filterFormCatalog$lambda$lambda$lambda$lambda_0);
-      var tmp_1 = default_39;
+      var tmp_1 = default_56;
       $this$invoke.invoke_hixay3_k$(tmp_1, filterFormCatalog$lambda$lambda$lambda$lambda_1);
       var tmp_2 = default_56;
       $this$invoke.invoke_hixay3_k$(tmp_2, filterFormCatalog$lambda$lambda$lambda$lambda_2);
-      var tmp_3 = default_56;
-      $this$invoke.invoke_hixay3_k$(tmp_3, filterFormCatalog$lambda$lambda$lambda$lambda_3);
-      var tmp_4 = default_47;
-      $this$invoke.invoke_hixay3_k$(tmp_4, filterFormCatalog$lambda$lambda$lambda$lambda_4($filtersTypesFields$delegate));
+      var tmp_3 = default_47;
+      $this$invoke.invoke_hixay3_k$(tmp_3, filterFormCatalog$lambda$lambda$lambda$lambda_3($filtersTypesFields$delegate));
       return Unit_getInstance();
     };
   }
@@ -21452,6 +21425,7 @@
         switch (tmp) {
           case 0:
             this.set_exceptionState_s9sevl_k$(4);
+            console.log('AQU\xCDIIIIIIIII11111');
             if (!this.more_1) {
               this.set_state_a96kl8_k$(3);
               suspendResult = get_apolloClient_1().query_4nubzp_k$(new AdminLevelsQuery(0, -1)).execute_qhiagk_k$(this);
@@ -21478,7 +21452,9 @@
             var tmp3_safe_receiver = ARGUMENT.get_data_wokkxf_k$();
             var tmp4_safe_receiver = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_getAllAdminLabel_9mdfuh_k$();
             var tmp5_elvis_lhs = tmp4_safe_receiver == null ? null : filterNotNull(tmp4_safe_receiver);
-            return tmp5_elvis_lhs == null ? emptyList() : tmp5_elvis_lhs;
+            var res = tmp5_elvis_lhs == null ? emptyList() : tmp5_elvis_lhs;
+            console.log('AQU\xCDIIIIIIIII ' + res);
+            return res;
           case 3:
             var ARGUMENT_0 = suspendResult;
             var tmp0_safe_receiver = ARGUMENT_0.get_data_wokkxf_k$();
@@ -21515,38 +21491,18 @@
   var filterInfoCatalog;
   function filterInfoCatalog$lambda($this$FC, props) {
     init_properties_filterInfoCatalog_kt_lh01s1();
-    var showMoreOrLess$delegate = useState(false);
     var selectedFilters$delegate = useRequiredContext(get_FilterListContextAll());
+    var filterFields$delegate = useState(props.filterFields);
+    var showMoreOrLess$delegate = useState(false);
     var handleClickMore = filterInfoCatalog$lambda$lambda(props);
     var handleClickLess = filterInfoCatalog$lambda$lambda_0(props);
-    var tmp = default_57;
-    $this$FC.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda_1(props, selectedFilters$delegate, showMoreOrLess$delegate, handleClickMore, handleClickLess));
+    var tmp = [listOf(props.filterFields)];
+    useEffect(tmp, filterInfoCatalog$lambda$lambda_1(props, filterFields$delegate));
+    var tmp_0 = default_57;
+    $this$FC.invoke_hixay3_k$(tmp_0, filterInfoCatalog$lambda$lambda_2(props, filterFields$delegate, selectedFilters$delegate, showMoreOrLess$delegate, handleClickMore, handleClickLess));
     return Unit_getInstance();
   }
-  function invoke$lambda_52($showMoreOrLess$delegate) {
-    init_properties_filterInfoCatalog_kt_lh01s1();
-    var tmp$ret$1;
-    // Inline function 'react.StateInstance.getValue' call
-    var tmp0_getValue = getLocalDelegateReference('showMoreOrLess', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $showMoreOrLess$delegate;
-    tmp$ret$1 = tmp$ret$0[0];
-    return tmp$ret$1;
-  }
-  function invoke$lambda_53($showMoreOrLess$delegate, value) {
-    init_properties_filterInfoCatalog_kt_lh01s1();
-    var tmp0_setValue = getLocalDelegateReference('showMoreOrLess', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $showMoreOrLess$delegate;
-    return tmp$ret$0[1](value);
-  }
-  function invoke$lambda_54($selectedFilters$delegate) {
+  function invoke$lambda_50($selectedFilters$delegate) {
     init_properties_filterInfoCatalog_kt_lh01s1();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -21559,7 +21515,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_55($selectedFilters$delegate, value) {
+  function invoke$lambda_51($selectedFilters$delegate, value) {
     init_properties_filterInfoCatalog_kt_lh01s1();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -21567,6 +21523,52 @@
     var tmp$ret$0;
     // Inline function 'kotlin.js.asDynamic' call
     tmp$ret$0 = $selectedFilters$delegate;
+    return tmp$ret$0[1](value);
+  }
+  function invoke$lambda_52($filterFields$delegate) {
+    init_properties_filterInfoCatalog_kt_lh01s1();
+    var tmp$ret$1;
+    // Inline function 'react.StateInstance.getValue' call
+    var tmp0_getValue = getLocalDelegateReference('filterFields', KMutableProperty0, true, function () {
+      return THROW_ISE();
+    });
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = $filterFields$delegate;
+    tmp$ret$1 = tmp$ret$0[0];
+    return tmp$ret$1;
+  }
+  function invoke$lambda_53($filterFields$delegate, value) {
+    init_properties_filterInfoCatalog_kt_lh01s1();
+    var tmp0_setValue = getLocalDelegateReference('filterFields', KMutableProperty0, true, function () {
+      return THROW_ISE();
+    });
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = $filterFields$delegate;
+    return tmp$ret$0[1](value);
+  }
+  function invoke$lambda_54($showMoreOrLess$delegate) {
+    init_properties_filterInfoCatalog_kt_lh01s1();
+    var tmp$ret$1;
+    // Inline function 'react.StateInstance.getValue' call
+    var tmp0_getValue = getLocalDelegateReference('showMoreOrLess', KMutableProperty0, true, function () {
+      return THROW_ISE();
+    });
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = $showMoreOrLess$delegate;
+    tmp$ret$1 = tmp$ret$0[0];
+    return tmp$ret$1;
+  }
+  function invoke$lambda_55($showMoreOrLess$delegate, value) {
+    init_properties_filterInfoCatalog_kt_lh01s1();
+    var tmp0_setValue = getLocalDelegateReference('showMoreOrLess', KMutableProperty0, true, function () {
+      return THROW_ISE();
+    });
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = $showMoreOrLess$delegate;
     return tmp$ret$0[1](value);
   }
   function filterInfoCatalog$lambda$lambda$slambda($props, resultContinuation) {
@@ -21590,6 +21592,7 @@
         switch (tmp) {
           case 0:
             this.set_exceptionState_s9sevl_k$(2);
+            console.log('MOREEEEEEEEEEEEEEE');
             this.set_state_a96kl8_k$(1);
             suspendResult = this.$props_1.updateFilterListMore(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -21699,6 +21702,12 @@
       return launch$default(tmp, null, null, filterInfoCatalog$lambda$lambda$slambda_2($props, null), 3, null);
     };
   }
+  function filterInfoCatalog$lambda$lambda_1($props, $filterFields$delegate) {
+    return function ($this$useEffect) {
+      invoke$lambda_53($filterFields$delegate, $props.filterFields);
+      return Unit_getInstance();
+    };
+  }
   function filterInfoCatalog$lambda$lambda$lambda$lambda($props) {
     return function ($this$invoke) {
       $this$invoke.unaryPlus_g7ydph_k$($props.filterName);
@@ -21740,13 +21749,15 @@
   }
   function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda$lambda($props, $item, $selectedFilters$delegate) {
     return function (it) {
-      var tmp$ret$16;
+      console.log('CLICKKKKKKKK::: ' + $props.filterName);
+      console.log('VALUEEEEEEEE::: ' + $item);
+      var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_54($selectedFilters$delegate));
-      var tmp$ret$15;
+      var tmp0_mapValues = toMutableMap(invoke$lambda_50($selectedFilters$delegate));
+      var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
-      var tmp$ret$14;
+      var tmp$ret$11;
       // Inline function 'kotlin.collections.associateByTo' call
       var tmp0_associateByTo = tmp0_mapValues.get_entries_p20ztl_k$();
       var tmp0_iterator = tmp0_associateByTo.iterator_jk1svi_k$();
@@ -21756,7 +21767,7 @@
         // Inline function 'kotlin.collections.mapValuesTo.<anonymous>' call
         tmp$ret$0 = element.get_key_18j28a_k$();
         var tmp = tmp$ret$0;
-        var tmp$ret$13;
+        var tmp$ret$10;
         // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
         var tmp$ret$1;
         // Inline function 'kotlin.collections.component1' call
@@ -21768,13 +21779,13 @@
         var catalogMap = tmp$ret$2;
         var tmp_0;
         if (key === 'Catalogs') {
-          var tmp$ret$12;
+          var tmp$ret$9;
           // Inline function 'kotlin.collections.mapValues' call
           var tmp0_mapValues_0 = toMutableMap(ensureNotNull(catalogMap));
-          var tmp$ret$11;
+          var tmp$ret$8;
           // Inline function 'kotlin.collections.mapValuesTo' call
           var tmp1_mapValuesTo_0 = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues_0.get_size_woubt6_k$()));
-          var tmp$ret$10;
+          var tmp$ret$7;
           // Inline function 'kotlin.collections.associateByTo' call
           var tmp0_associateByTo_0 = tmp0_mapValues_0.get_entries_p20ztl_k$();
           var tmp0_iterator_0 = tmp0_associateByTo_0.iterator_jk1svi_k$();
@@ -21784,7 +21795,7 @@
             // Inline function 'kotlin.collections.mapValuesTo.<anonymous>' call
             tmp$ret$3 = element_0.get_key_18j28a_k$();
             var tmp_1 = tmp$ret$3;
-            var tmp$ret$9;
+            var tmp$ret$6;
             // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
             var tmp$ret$4;
             // Inline function 'kotlin.collections.component1' call
@@ -21794,61 +21805,37 @@
             // Inline function 'kotlin.collections.component2' call
             tmp$ret$5 = element_0.get_value_j01efc_k$();
             var filterVal = tmp$ret$5;
-            var tmp_2;
-            if (innerKey === $props.filterName ? !filterVal.contains_2ehdt1_k$($item) : false) {
-              tmp_2 = plus(filterVal, $item);
-            } else if (filterVal.contains_2ehdt1_k$($item)) {
-              var tmp$ret$8;
-              // Inline function 'kotlin.collections.filter' call
-              var tmp$ret$7;
-              // Inline function 'kotlin.collections.filterTo' call
-              var tmp0_filterTo = ArrayList_init_$Create$();
-              var tmp0_iterator_1 = filterVal.iterator_jk1svi_k$();
-              while (tmp0_iterator_1.hasNext_bitz1p_k$()) {
-                var element_1 = tmp0_iterator_1.next_20eer_k$();
-                var tmp$ret$6;
-                // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-                tmp$ret$6 = !(element_1 === $item);
-                if (tmp$ret$6) {
-                  tmp0_filterTo.add_1j60pz_k$(element_1);
-                }
-              }
-              tmp$ret$7 = tmp0_filterTo;
-              tmp$ret$8 = tmp$ret$7;
-              tmp_2 = tmp$ret$8;
-            } else {
-              tmp_2 = filterVal;
-            }
-            tmp$ret$9 = tmp_2;
-            tmp1_mapValuesTo_0.put_3mhbri_k$(tmp_1, tmp$ret$9);
+            tmp$ret$6 = (innerKey === $props.filterName ? !filterVal.contains_2ehdt1_k$($item) : false) ? plus(filterVal, $item) : filterVal;
+            tmp1_mapValuesTo_0.put_3mhbri_k$(tmp_1, tmp$ret$6);
           }
-          tmp$ret$10 = tmp1_mapValuesTo_0;
-          tmp$ret$11 = tmp$ret$10;
-          tmp$ret$12 = tmp$ret$11;
-          tmp_0 = toMutableMap(tmp$ret$12);
+          tmp$ret$7 = tmp1_mapValuesTo_0;
+          tmp$ret$8 = tmp$ret$7;
+          tmp$ret$9 = tmp$ret$8;
+          tmp_0 = toMutableMap(tmp$ret$9);
         } else {
           tmp_0 = catalogMap;
         }
-        tmp$ret$13 = tmp_0;
-        tmp1_mapValuesTo.put_3mhbri_k$(tmp, tmp$ret$13);
+        tmp$ret$10 = tmp_0;
+        tmp1_mapValuesTo.put_3mhbri_k$(tmp, tmp$ret$10);
       }
-      tmp$ret$14 = tmp1_mapValuesTo;
-      tmp$ret$15 = tmp$ret$14;
-      tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_55($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      tmp$ret$11 = tmp1_mapValuesTo;
+      tmp$ret$12 = tmp$ret$11;
+      tmp$ret$13 = tmp$ret$12;
+      invoke$lambda_51($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      console.log('FILTERSSSS::: ' + invoke$lambda_50($selectedFilters$delegate));
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda($item, $props, $selectedFilters$delegate) {
+  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda($props, $item, $selectedFilters$delegate) {
     return function ($this$invoke) {
       $this$invoke.onClick = filterInfoCatalog$lambda$lambda$lambda$lambda$lambda$lambda($props, $item, $selectedFilters$delegate);
-      $this$invoke.unaryPlus_g7ydph_k$($item);
-      var tmp0_safe_receiver = toMutableMap(ensureNotNull(invoke$lambda_54($selectedFilters$delegate).get_1mhr4y_k$('Catalogs'))).get_1mhr4y_k$($props.filterName);
+      var tmp0_safe_receiver = toMutableMap(ensureNotNull(invoke$lambda_50($selectedFilters$delegate).get_1mhr4y_k$('Catalogs'))).get_1mhr4y_k$($props.filterName);
       $this$invoke.selected = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.contains_2ehdt1_k$($item);
+      $this$invoke.unaryPlus_g7ydph_k$($item);
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda$lambda_0($props, $selectedFilters$delegate) {
+  function filterInfoCatalog$lambda$lambda$lambda$lambda_0($filterFields$delegate, $props, $selectedFilters$delegate) {
     return function ($this$invoke) {
       var tmp$ret$2;
       // Inline function 'csstype.ClassName' call
@@ -21860,36 +21847,62 @@
       tmp$ret$1 = tmp$ret$0;
       tmp$ret$2 = tmp$ret$1;
       $this$invoke.className = tmp$ret$2;
-      var tmp0_forEachIndexed = $props.filterFields;
-      var index = 0;
-      var tmp0_iterator = tmp0_forEachIndexed.iterator_jk1svi_k$();
-      while (tmp0_iterator.hasNext_bitz1p_k$()) {
-        var item = tmp0_iterator.next_20eer_k$();
-        // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-        var tmp1 = index;
-        index = tmp1 + 1 | 0;
-        var tmp1__anonymous__uwfjfc = checkIndexOverflow(tmp1);
-        var tmp = default_19;
-        $this$invoke.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda$lambda$lambda$lambda(item, $props, $selectedFilters$delegate));
+      var tmp;
+      if (!invoke$lambda_52($filterFields$delegate).isEmpty_y1axqb_k$()) {
+        var tmp0_forEachIndexed = invoke$lambda_52($filterFields$delegate);
+        var index = 0;
+        var tmp0_iterator = tmp0_forEachIndexed.iterator_jk1svi_k$();
+        while (tmp0_iterator.hasNext_bitz1p_k$()) {
+          var item = tmp0_iterator.next_20eer_k$();
+          // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+          var tmp1 = index;
+          index = tmp1 + 1 | 0;
+          var tmp1__anonymous__uwfjfc = checkIndexOverflow(tmp1);
+          var tmp_0 = default_19;
+          $this$invoke.invoke_hixay3_k$(tmp_0, filterInfoCatalog$lambda$lambda$lambda$lambda$lambda($props, item, $selectedFilters$delegate));
+        }
+        tmp = Unit_getInstance();
       }
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate) {
+  function filterInfoCatalog$lambda$lambda$lambda_0($filterFields$delegate, $props, $selectedFilters$delegate) {
+    return function ($this$invoke) {
+      var tmp0_sx = $this$invoke;
+      var tmp$ret$2;
+      // Inline function 'kotlinx.js.jso' call
+      var tmp$ret$1;
+      // Inline function 'kotlin.apply' call
+      var tmp$ret$0;
+      // Inline function 'kotlinx.js.jso' call
+      tmp$ret$0 = {};
+      var tmp0_apply = tmp$ret$0;
+      // Inline function 'kotlin.contracts.contract' call
+      // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+      tmp0_apply.boxShadow = (/*union*/{none: 'none'}/*union*/).none;
+      tmp$ret$1 = tmp0_apply;
+      tmp$ret$2 = tmp$ret$1;
+      tmp0_sx.sx = tmp$ret$2;
+      var tmp = default_20;
+      $this$invoke.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda$lambda$lambda_0($filterFields$delegate, $props, $selectedFilters$delegate));
+      return Unit_getInstance();
+    };
+  }
+  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate) {
     return function (it) {
       $handleClickMore();
-      invoke$lambda_53($showMoreOrLess$delegate, true);
+      invoke$lambda_55($showMoreOrLess$delegate, true);
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda$lambda_1($handleClickLess, $showMoreOrLess$delegate) {
+  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda_1($handleClickLess, $showMoreOrLess$delegate) {
     return function (it) {
       $handleClickLess();
-      invoke$lambda_53($showMoreOrLess$delegate, false);
+      invoke$lambda_55($showMoreOrLess$delegate, false);
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda$lambda$lambda_0($showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
+  function filterInfoCatalog$lambda$lambda$lambda$lambda_1($showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
     return function ($this$invoke) {
       var tmp0_sx = $this$invoke;
       var tmp$ret$8;
@@ -21901,7 +21914,7 @@
       tmp$ret$0 = {};
       var tmp0_apply = tmp$ret$0;
       // Inline function 'kotlin.contracts.contract' call
-      // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+      // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
       var tmp$ret$3;
       // Inline function 'csstype.Color' call
       var tmp$ret$2;
@@ -21937,54 +21950,26 @@
       tmp$ret$11 = tmp$ret$10;
       $this$invoke.className = tmp$ret$11;
       var tmp;
-      if (!invoke$lambda_52($showMoreOrLess$delegate)) {
-        $this$invoke.onClick = filterInfoCatalog$lambda$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate);
+      if (!invoke$lambda_54($showMoreOrLess$delegate)) {
+        $this$invoke.onClick = filterInfoCatalog$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate);
         $this$invoke.unaryPlus_g7ydph_k$('Mostrar m\xE1s');
         tmp = Unit_getInstance();
       } else {
-        $this$invoke.onClick = filterInfoCatalog$lambda$lambda$lambda$lambda$lambda$lambda_1($handleClickLess, $showMoreOrLess$delegate);
+        $this$invoke.onClick = filterInfoCatalog$lambda$lambda$lambda$lambda$lambda_1($handleClickLess, $showMoreOrLess$delegate);
         $this$invoke.unaryPlus_g7ydph_k$('Mostrar menos');
         tmp = Unit_getInstance();
       }
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda$lambda_1($showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
+  function filterInfoCatalog$lambda$lambda$lambda_1($showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
     return function ($this$invoke) {
       var tmp = default_19;
-      $this$invoke.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda$lambda$lambda$lambda_0($showMoreOrLess$delegate, $handleClickMore, $handleClickLess));
+      $this$invoke.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda$lambda$lambda_1($showMoreOrLess$delegate, $handleClickMore, $handleClickLess));
       return Unit_getInstance();
     };
   }
-  function filterInfoCatalog$lambda$lambda$lambda_0($props, $selectedFilters$delegate, $showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
-    return function ($this$invoke) {
-      var tmp0_sx = $this$invoke;
-      var tmp$ret$2;
-      // Inline function 'kotlinx.js.jso' call
-      var tmp$ret$1;
-      // Inline function 'kotlin.apply' call
-      var tmp$ret$0;
-      // Inline function 'kotlinx.js.jso' call
-      tmp$ret$0 = {};
-      var tmp0_apply = tmp$ret$0;
-      // Inline function 'kotlin.contracts.contract' call
-      // Inline function 'components.commmon.pages.catalog.mainPage.filterInfoCatalog.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-      tmp0_apply.boxShadow = (/*union*/{none: 'none'}/*union*/).none;
-      tmp$ret$1 = tmp0_apply;
-      tmp$ret$2 = tmp$ret$1;
-      tmp0_sx.sx = tmp$ret$2;
-      var tmp = default_20;
-      $this$invoke.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda$lambda$lambda_0($props, $selectedFilters$delegate));
-      var tmp_0;
-      if (!($props.filterName === 'N\xFAmero de recursos')) {
-        var tmp_1 = default_20;
-        $this$invoke.invoke_hixay3_k$(tmp_1, filterInfoCatalog$lambda$lambda$lambda$lambda_1($showMoreOrLess$delegate, $handleClickMore, $handleClickLess));
-        tmp_0 = Unit_getInstance();
-      }
-      return Unit_getInstance();
-    };
-  }
-  function filterInfoCatalog$lambda$lambda_1($props, $selectedFilters$delegate, $showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
+  function filterInfoCatalog$lambda$lambda_2($props, $filterFields$delegate, $selectedFilters$delegate, $showMoreOrLess$delegate, $handleClickMore, $handleClickLess) {
     return function ($this$invoke) {
       var tmp0_sx = $this$invoke;
       var tmp$ret$2;
@@ -22005,7 +21990,13 @@
       var tmp = default_59;
       $this$invoke.invoke_hixay3_k$(tmp, filterInfoCatalog$lambda$lambda$lambda($props));
       var tmp_0 = default_60;
-      $this$invoke.invoke_hixay3_k$(tmp_0, filterInfoCatalog$lambda$lambda$lambda_0($props, $selectedFilters$delegate, $showMoreOrLess$delegate, $handleClickMore, $handleClickLess));
+      $this$invoke.invoke_hixay3_k$(tmp_0, filterInfoCatalog$lambda$lambda$lambda_0($filterFields$delegate, $props, $selectedFilters$delegate));
+      var tmp_1;
+      if (!($props.filterName === 'N\xFAmero de recursos')) {
+        var tmp_2 = default_20;
+        $this$invoke.invoke_hixay3_k$(tmp_2, filterInfoCatalog$lambda$lambda$lambda_1($showMoreOrLess$delegate, $handleClickMore, $handleClickLess));
+        tmp_1 = Unit_getInstance();
+      }
       return Unit_getInstance();
     };
   }
@@ -22031,7 +22022,7 @@
     var selectedFilters$delegate = useRequiredContext(get_FilterListContextAll());
     var handleOnClick = listCatalog$lambda$lambda(navigate);
     var tmp = [invoke$lambda_62(selectedFilters$delegate)];
-    useEffect(tmp, listCatalog$lambda$lambda_0(props, catalogsList$delegate));
+    useEffect(tmp, listCatalog$lambda$lambda_0(props, selectedFilters$delegate, catalogsList$delegate));
     var tmp_0 = default_25;
     $this$FC.invoke_hixay3_k$(tmp_0, listCatalog$lambda$lambda_1(props, catalogsList$delegate, searchBy$delegate, selectedFilters$delegate, handleOnClick));
     return Unit_getInstance();
@@ -22165,9 +22156,9 @@
       return Unit_getInstance();
     };
   }
-  function listCatalog$lambda$lambda_0($props, $catalogsList$delegate) {
+  function listCatalog$lambda$lambda_0($props, $selectedFilters$delegate, $catalogsList$delegate) {
     return function ($this$useEffect) {
-      console.log('CAMBIA EL SELECTED FILTERSSSSS CATALOGS');
+      console.log('CAMBIA EL SELECTED FILTERSSSSS CATALOGS: ' + invoke$lambda_62($selectedFilters$delegate));
       invoke$lambda_61($catalogsList$delegate, $props.catalogsList);
       return Unit_getInstance();
     };
@@ -45235,37 +45226,37 @@
   }
   var filterForm;
   function getAllThemes_1(more, $cont) {
-    var tmp = new $getAllThemesCOROUTINE$27(more, $cont);
+    var tmp = new $getAllThemesCOROUTINE$2(more, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
   function getAllFrequencies_1(more, $cont) {
-    var tmp = new $getAllFrequenciesCOROUTINE$28(more, $cont);
+    var tmp = new $getAllFrequenciesCOROUTINE$3(more, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
   function getAllPublishers_2(more, $cont) {
-    var tmp = new $getAllPublishersCOROUTINE$29(more, $cont);
+    var tmp = new $getAllPublishersCOROUTINE$4(more, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
   function getAllAdminLevels_2(more, $cont) {
-    var tmp = new $getAllAdminLevelsCOROUTINE$30(more, $cont);
+    var tmp = new $getAllAdminLevelsCOROUTINE$5(more, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
   function getAllKeywords_1(more, $cont) {
-    var tmp = new $getAllKeywordsCOROUTINE$31(more, $cont);
+    var tmp = new $getAllKeywordsCOROUTINE$6(more, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
   function getAllFormats_1(more, $cont) {
-    var tmp = new $getAllFormatsCOROUTINE$32(more, $cont);
+    var tmp = new $getAllFormatsCOROUTINE$7(more, $cont);
     tmp.set_result_ximc09_k$(Unit_getInstance());
     tmp.set_exception_pwgeox_k$(null);
     return tmp.doResume_5yljmg_k$();
@@ -45276,11 +45267,9 @@
     // Inline function 'kotlin.collections.mutableListOf' call
     tmp$ret$0 = ArrayList_init_$Create$();
     var filtersTypesFields$delegate = useState(tmp$ret$0);
+    var datasetList$delegate = useState(props.filterList);
     var tmp = [emptyList()];
     useEffect(tmp, filterForm$lambda$lambda(filtersTypesFields$delegate));
-    var datasetList$delegate = useState(props.filterList);
-    var searchFilter$delegate = useState('');
-    var testList$delegate = useRequiredContext(get_FilterListContextAll());
     var tmp_0 = default_25;
     $this$FC.invoke_hixay3_k$(tmp_0, filterForm$lambda$lambda_0(props, datasetList$delegate, filtersTypesFields$delegate));
     return Unit_getInstance();
@@ -45329,52 +45318,6 @@
     var tmp$ret$0;
     // Inline function 'kotlin.js.asDynamic' call
     tmp$ret$0 = $datasetList$delegate;
-    return tmp$ret$0[1](value);
-  }
-  function invoke$lambda_146($searchFilter$delegate) {
-    init_properties_filterForm_kt_coimle();
-    var tmp$ret$1;
-    // Inline function 'react.StateInstance.getValue' call
-    var tmp0_getValue = getLocalDelegateReference('searchFilter', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $searchFilter$delegate;
-    tmp$ret$1 = tmp$ret$0[0];
-    return tmp$ret$1;
-  }
-  function invoke$lambda_147($searchFilter$delegate, value) {
-    init_properties_filterForm_kt_coimle();
-    var tmp0_setValue = getLocalDelegateReference('searchFilter', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $searchFilter$delegate;
-    return tmp$ret$0[1](value);
-  }
-  function invoke$lambda_148($testList$delegate) {
-    init_properties_filterForm_kt_coimle();
-    var tmp$ret$1;
-    // Inline function 'react.StateInstance.getValue' call
-    var tmp0_getValue = getLocalDelegateReference('testList', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $testList$delegate;
-    tmp$ret$1 = tmp$ret$0[0];
-    return tmp$ret$1;
-  }
-  function invoke$lambda_149($testList$delegate, value) {
-    init_properties_filterForm_kt_coimle();
-    var tmp0_setValue = getLocalDelegateReference('testList', KMutableProperty0, true, function () {
-      return THROW_ISE();
-    });
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = $testList$delegate;
     return tmp$ret$0[1](value);
   }
   function filterForm$lambda$lambda$slambda($filtersTypesFields$delegate, resultContinuation) {
@@ -46197,11 +46140,11 @@
       return Unit_getInstance();
     };
   }
-  function $getAllThemesCOROUTINE$27(more, resultContinuation) {
+  function $getAllThemesCOROUTINE$2(more, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.more_1 = more;
   }
-  $getAllThemesCOROUTINE$27.prototype.doResume_5yljmg_k$ = function () {
+  $getAllThemesCOROUTINE$2.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -46271,11 +46214,11 @@
       }
      while (true);
   };
-  function $getAllFrequenciesCOROUTINE$28(more, resultContinuation) {
+  function $getAllFrequenciesCOROUTINE$3(more, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.more_1 = more;
   }
-  $getAllFrequenciesCOROUTINE$28.prototype.doResume_5yljmg_k$ = function () {
+  $getAllFrequenciesCOROUTINE$3.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -46345,11 +46288,11 @@
       }
      while (true);
   };
-  function $getAllPublishersCOROUTINE$29(more, resultContinuation) {
+  function $getAllPublishersCOROUTINE$4(more, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.more_1 = more;
   }
-  $getAllPublishersCOROUTINE$29.prototype.doResume_5yljmg_k$ = function () {
+  $getAllPublishersCOROUTINE$4.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -46419,11 +46362,11 @@
       }
      while (true);
   };
-  function $getAllAdminLevelsCOROUTINE$30(more, resultContinuation) {
+  function $getAllAdminLevelsCOROUTINE$5(more, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.more_1 = more;
   }
-  $getAllAdminLevelsCOROUTINE$30.prototype.doResume_5yljmg_k$ = function () {
+  $getAllAdminLevelsCOROUTINE$5.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -46493,11 +46436,11 @@
       }
      while (true);
   };
-  function $getAllKeywordsCOROUTINE$31(more, resultContinuation) {
+  function $getAllKeywordsCOROUTINE$6(more, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.more_1 = more;
   }
-  $getAllKeywordsCOROUTINE$31.prototype.doResume_5yljmg_k$ = function () {
+  $getAllKeywordsCOROUTINE$6.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -46567,11 +46510,11 @@
       }
      while (true);
   };
-  function $getAllFormatsCOROUTINE$32(more, resultContinuation) {
+  function $getAllFormatsCOROUTINE$7(more, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.more_1 = more;
   }
-  $getAllFormatsCOROUTINE$32.prototype.doResume_5yljmg_k$ = function () {
+  $getAllFormatsCOROUTINE$7.prototype.doResume_5yljmg_k$ = function () {
     var suspendResult = this.get_result_iyg5d2_k$();
     $sm: do
       try {
@@ -46677,7 +46620,7 @@
     $this$FC.invoke_hixay3_k$(tmp_0, datasetSeriesInfo$lambda$lambda_0(listTestDatasetSeries$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_150($listTestDatasetSeries$delegate) {
+  function invoke$lambda_146($listTestDatasetSeries$delegate) {
     init_properties_DatasetSeriesInfo_kt_gv63rd();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -46690,7 +46633,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_151($listTestDatasetSeries$delegate, value) {
+  function invoke$lambda_147($listTestDatasetSeries$delegate, value) {
     init_properties_DatasetSeriesInfo_kt_gv63rd();
     var tmp0_setValue = getLocalDelegateReference('listTestDatasetSeries', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -46731,12 +46674,12 @@
             continue $sm;
           case 1:
             var datasetsInfo = suspendResult;
-            invoke$lambda_151(this.$listTestDatasetSeries$delegate_1, ArrayList_init_$Create$());
+            invoke$lambda_147(this.$listTestDatasetSeries$delegate_1, ArrayList_init_$Create$());
             var tmp0_mapTo = ArrayList_init_$Create$_0(collectionSizeOrDefault(datasetsInfo, 10));
             var tmp0_iterator = datasetsInfo.iterator_jk1svi_k$();
             while (tmp0_iterator.hasNext_bitz1p_k$()) {
               var item = tmp0_iterator.next_20eer_k$();
-              tmp0_mapTo.add_1j60pz_k$(invoke$lambda_150(this.$listTestDatasetSeries$delegate_1).add_1j60pz_k$(item));
+              tmp0_mapTo.add_1j60pz_k$(invoke$lambda_146(this.$listTestDatasetSeries$delegate_1).add_1j60pz_k$(item));
             }
 
             ;
@@ -46779,7 +46722,7 @@
   }
   function datasetSeriesInfo$lambda$lambda_0($listTestDatasetSeries$delegate) {
     return function ($this$invoke) {
-      $this$invoke.listTestDatasetSeriesInfo = invoke$lambda_150($listTestDatasetSeries$delegate);
+      $this$invoke.listTestDatasetSeriesInfo = invoke$lambda_146($listTestDatasetSeries$delegate);
       return Unit_getInstance();
     };
   }
@@ -46804,15 +46747,15 @@
     var navigate = useNavigate();
     var selectedFilters$delegate = useRequiredContext(get_FilterListContextAll());
     var handleOnClick = DatasetSeriesInfoElements$lambda$lambda(navigate);
-    var tmp = [listOf(invoke$lambda_154(isLoading$delegate))];
+    var tmp = [listOf(invoke$lambda_150(isLoading$delegate))];
     useEffect(tmp, DatasetSeriesInfoElements$lambda$lambda_0(isLoading$delegate));
     var tmp$ret$0;
     // Inline function 'kotlin.collections.isNullOrEmpty' call
-    var tmp0_isNullOrEmpty = invoke$lambda_152(dSeriesInfo$delegate);
+    var tmp0_isNullOrEmpty = invoke$lambda_148(dSeriesInfo$delegate);
     // Inline function 'kotlin.contracts.contract' call
     tmp$ret$0 = tmp0_isNullOrEmpty == null ? true : tmp0_isNullOrEmpty.isEmpty_y1axqb_k$();
     if (tmp$ret$0) {
-      if (invoke$lambda_154(isLoading$delegate)) {
+      if (invoke$lambda_150(isLoading$delegate)) {
         var tmp_0 = default_26;
         $this$FC.invoke_hixay3_k$(tmp_0, DatasetSeriesInfoElements$lambda$lambda_1);
       } else {
@@ -46860,7 +46803,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$9;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_152(dSeriesInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_148(dSeriesInfo$delegate);
       tmp$ret$9 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$9;
       var tmp4_isNotEmpty = ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_theme_iz24rk_k$());
@@ -46873,7 +46816,7 @@
       $this$FC.invoke_hixay3_k$(tmp_6, DatasetSeriesInfoElements$lambda$lambda_7(dSeriesInfo$delegate));
       var tmp$ret$11;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp5_elementAt = invoke$lambda_152(dSeriesInfo$delegate);
+      var tmp5_elementAt = invoke$lambda_148(dSeriesInfo$delegate);
       tmp$ret$11 = tmp5_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$11;
       if (ensureNotNull(tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_title_iz32un_k$()).get_size_woubt6_k$() > 1) {
@@ -46884,7 +46827,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$12;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp6_elementAt = invoke$lambda_152(dSeriesInfo$delegate);
+      var tmp6_elementAt = invoke$lambda_148(dSeriesInfo$delegate);
       tmp$ret$12 = tmp6_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$12;
       var tmp7_isNotEmpty = ensureNotNull(tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_description_emjre5_k$());
@@ -46897,7 +46840,7 @@
       // Inline function 'kotlin.collections.isNullOrEmpty' call
       var tmp$ret$14;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp8_elementAt = invoke$lambda_152(dSeriesInfo$delegate);
+      var tmp8_elementAt = invoke$lambda_148(dSeriesInfo$delegate);
       tmp$ret$14 = tmp8_elementAt.get_fkrdnv_k$(0);
       var tmp3_safe_receiver = tmp$ret$14;
       var tmp9_isNullOrEmpty = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_servedDatasetID_oruoz9_k$();
@@ -46911,7 +46854,7 @@
       // Inline function 'kotlin.collections.isNullOrEmpty' call
       var tmp$ret$16;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp10_elementAt = invoke$lambda_152(dSeriesInfo$delegate);
+      var tmp10_elementAt = invoke$lambda_148(dSeriesInfo$delegate);
       tmp$ret$16 = tmp10_elementAt.get_fkrdnv_k$(0);
       var tmp4_safe_receiver = tmp$ret$16;
       var tmp11_isNullOrEmpty = tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_seriesMembersID_nth2gc_k$();
@@ -46925,7 +46868,7 @@
       // Inline function 'kotlin.collections.isNullOrEmpty' call
       var tmp$ret$18;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp12_elementAt = invoke$lambda_152(dSeriesInfo$delegate);
+      var tmp12_elementAt = invoke$lambda_148(dSeriesInfo$delegate);
       tmp$ret$18 = tmp12_elementAt.get_fkrdnv_k$(0);
       var tmp5_safe_receiver = tmp$ret$18;
       var tmp13_isNullOrEmpty = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.get_inCatalogID_2oiciu_k$();
@@ -46942,7 +46885,7 @@
     }
     return Unit_getInstance();
   }
-  function invoke$lambda_152($dSeriesInfo$delegate) {
+  function invoke$lambda_148($dSeriesInfo$delegate) {
     init_properties_DatasetSeriesInfoElements_kt_r2dnuo();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -46955,7 +46898,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_153($dSeriesInfo$delegate, value) {
+  function invoke$lambda_149($dSeriesInfo$delegate, value) {
     init_properties_DatasetSeriesInfoElements_kt_r2dnuo();
     var tmp0_setValue = getLocalDelegateReference('dSeriesInfo', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -46965,7 +46908,7 @@
     tmp$ret$0 = $dSeriesInfo$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_154($isLoading$delegate) {
+  function invoke$lambda_150($isLoading$delegate) {
     init_properties_DatasetSeriesInfoElements_kt_r2dnuo();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -46978,7 +46921,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_155($isLoading$delegate, value) {
+  function invoke$lambda_151($isLoading$delegate, value) {
     init_properties_DatasetSeriesInfoElements_kt_r2dnuo();
     var tmp0_setValue = getLocalDelegateReference('isLoading', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -46988,7 +46931,7 @@
     tmp$ret$0 = $isLoading$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_156($selectedFilters$delegate) {
+  function invoke$lambda_152($selectedFilters$delegate) {
     init_properties_DatasetSeriesInfoElements_kt_r2dnuo();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -47001,7 +46944,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_157($selectedFilters$delegate, value) {
+  function invoke$lambda_153($selectedFilters$delegate, value) {
     init_properties_DatasetSeriesInfoElements_kt_r2dnuo();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -47012,7 +46955,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_6(selectedFilters$delegate) {
-    var tmp0_safe_receiver = invoke$lambda_156(selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
+    var tmp0_safe_receiver = invoke$lambda_152(selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -47076,7 +47019,7 @@
 
             continue $sm;
           case 1:
-            invoke$lambda_155(this.$isLoading$delegate_1, false);
+            invoke$lambda_151(this.$isLoading$delegate_1, false);
             return Unit_getInstance();
           case 2:
             throw this.get_exception_x0n6w6_k$();
@@ -47161,7 +47104,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_isNotEmpty = ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$());
@@ -47169,7 +47112,7 @@
       if (tmp$ret$1) {
         var tmp$ret$2;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp2_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+        var tmp2_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
         tmp$ret$2 = tmp2_elementAt.get_fkrdnv_k$(0);
         var tmp1_safe_receiver = tmp$ret$2;
         var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_title_iz32un_k$();
@@ -47291,7 +47234,7 @@
     return function (it) {
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$14;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -47372,7 +47315,7 @@
       tmp$ret$13 = tmp1_mapValuesTo;
       tmp$ret$14 = tmp$ret$13;
       tmp$ret$15 = tmp$ret$14;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$15));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$15));
       return Unit_getInstance();
     };
   }
@@ -47455,7 +47398,7 @@
     return function (_anonymous_parameter_0__qggqh8) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -47546,7 +47489,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -47661,7 +47604,7 @@
       tmp$ret$13 = tmp$ret$12;
       tmp$ret$14 = tmp$ret$13;
       $this$invoke.direction = tmp$ret$14;
-      var tmp0_safe_receiver = invoke$lambda_156($selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
+      var tmp0_safe_receiver = invoke$lambda_152($selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
       if (tmp0_safe_receiver == null)
         null;
       else {
@@ -47723,7 +47666,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       var tmp1_isNotEmpty = ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$());
@@ -47731,7 +47674,7 @@
       if (tmp$ret$4) {
         var tmp$ret$5;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp2_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+        var tmp2_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
         tmp$ret$5 = tmp2_elementAt.get_fkrdnv_k$(0);
         var tmp1_safe_receiver = tmp$ret$5;
         var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_title_iz32un_k$();
@@ -47745,7 +47688,7 @@
     return function (it) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -47838,7 +47781,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -47931,7 +47874,7 @@
       $this$invoke.direction = tmp$ret$14;
       var tmp$ret$15;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$15 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$15;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_theme_iz24rk_k$();
@@ -48077,7 +48020,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       $this$invoke.unaryPlus_g7ydph_k$('' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_publisher_wg9par_k$()));
@@ -48160,7 +48103,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       $this$invoke.unaryPlus_g7ydph_k$('' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_license_40u4wo_k$()));
@@ -48183,7 +48126,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_isNullOrBlank = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_publisher_wg9par_k$();
@@ -48201,7 +48144,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$2;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp2_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp2_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$2 = tmp2_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$2;
       var tmp3_isNullOrBlank = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_license_40u4wo_k$();
@@ -48375,7 +48318,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -48468,7 +48411,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       var tmp_3 = default_36;
       $this_create.invoke_hixay3_k$(tmp_3, DatasetSeriesInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_5);
       var tmp_4 = default_18;
@@ -48587,7 +48530,7 @@
       $this$invoke.invoke_hixay3_k$(tmp, DatasetSeriesInfoElements$lambda$lambda$lambda_6);
       var tmp$ret$18;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp1_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp1_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$18 = tmp1_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$18;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$();
@@ -48632,7 +48575,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -48725,7 +48668,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -48777,7 +48720,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_description_emjre5_k$();
@@ -48905,7 +48848,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -48998,7 +48941,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -49056,7 +48999,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_servedDatasetID_oruoz9_k$();
@@ -49081,7 +49024,7 @@
           // Inline function 'kotlin.collections.isNullOrEmpty' call
           var tmp$ret$1;
           // Inline function 'kotlin.collections.elementAt' call
-          var tmp0_elementAt_0 = invoke$lambda_152($dSeriesInfo$delegate);
+          var tmp0_elementAt_0 = invoke$lambda_148($dSeriesInfo$delegate);
           tmp$ret$1 = tmp0_elementAt_0.get_fkrdnv_k$(0);
           var tmp0_safe_receiver_0 = tmp$ret$1;
           var tmp1_safe_receiver_0 = tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.get_servedDatasetIdentifiers_7b573k_k$();
@@ -49091,7 +49034,7 @@
           if (!tmp$ret$2) {
             var tmp$ret$3;
             // Inline function 'kotlin.collections.elementAt' call
-            var tmp2_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+            var tmp2_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
             tmp$ret$3 = tmp2_elementAt.get_fkrdnv_k$(0);
             var tmp2_safe_receiver = tmp$ret$3;
             var tmp3_safe_receiver = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_servedDatasetIdentifiers_7b573k_k$();
@@ -49100,7 +49043,7 @@
           } else {
             var tmp$ret$4;
             // Inline function 'kotlin.collections.elementAt' call
-            var tmp3_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+            var tmp3_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
             tmp$ret$4 = tmp3_elementAt.get_fkrdnv_k$(0);
             var tmp5_safe_receiver = tmp$ret$4;
             var tmp6_safe_receiver = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.get_servedDatasetTitles_w61ckr_k$();
@@ -49223,7 +49166,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -49316,7 +49259,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -49374,7 +49317,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_seriesMembersID_nth2gc_k$();
@@ -49399,7 +49342,7 @@
           // Inline function 'kotlin.collections.isNullOrEmpty' call
           var tmp$ret$1;
           // Inline function 'kotlin.collections.elementAt' call
-          var tmp0_elementAt_0 = invoke$lambda_152($dSeriesInfo$delegate);
+          var tmp0_elementAt_0 = invoke$lambda_148($dSeriesInfo$delegate);
           tmp$ret$1 = tmp0_elementAt_0.get_fkrdnv_k$(0);
           var tmp0_safe_receiver_0 = tmp$ret$1;
           var tmp1_safe_receiver_0 = tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.get_seriesMembersIdentifiers_skf0wf_k$();
@@ -49409,7 +49352,7 @@
           if (!tmp$ret$2) {
             var tmp$ret$3;
             // Inline function 'kotlin.collections.elementAt' call
-            var tmp2_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+            var tmp2_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
             tmp$ret$3 = tmp2_elementAt.get_fkrdnv_k$(0);
             var tmp2_safe_receiver = tmp$ret$3;
             var tmp3_safe_receiver = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_seriesMembersIdentifiers_skf0wf_k$();
@@ -49418,7 +49361,7 @@
           } else {
             var tmp$ret$4;
             // Inline function 'kotlin.collections.elementAt' call
-            var tmp3_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+            var tmp3_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
             tmp$ret$4 = tmp3_elementAt.get_fkrdnv_k$(0);
             var tmp5_safe_receiver = tmp$ret$4;
             var tmp6_safe_receiver = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.get_seriesMembersTitles_n2fy18_k$();
@@ -49623,7 +49566,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_156($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_152($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -49716,7 +49659,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_157($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_153($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -49754,7 +49697,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_inCatalogID_2oiciu_k$();
@@ -49782,7 +49725,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_inCatalogTitle_pvjekt_k$();
@@ -49860,7 +49803,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       $this$invoke.unaryPlus_g7ydph_k$('' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_issued_ewqnxw_k$()));
@@ -49905,7 +49848,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       $this$invoke.unaryPlus_g7ydph_k$('' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_modified_t1pq4y_k$()));
@@ -49940,7 +49883,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       if (tmp0_safe_receiver == null)
@@ -49964,7 +49907,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       $this$invoke.id = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_isPTOID_zgfy37_k$();
@@ -50084,7 +50027,7 @@
       $this$invoke.direction = tmp$ret$14;
       var tmp$ret$15;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$15 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$15;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_language_cjhhk1_k$();
@@ -50143,7 +50086,7 @@
       // Inline function 'kotlin.text.isNullOrEmpty' call
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_isNullOrEmpty = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_issued_ewqnxw_k$();
@@ -50152,7 +50095,7 @@
       if (!tmp$ret$1) {
         var tmp$ret$2;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp2_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+        var tmp2_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
         tmp$ret$2 = tmp2_elementAt.get_fkrdnv_k$(0);
         var tmp1_safe_receiver = tmp$ret$2;
         tmp_0 = !((tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_issued_ewqnxw_k$()) === 'null');
@@ -50170,7 +50113,7 @@
       // Inline function 'kotlin.text.isNullOrEmpty' call
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$3 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$3;
       var tmp4_isNullOrEmpty = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_modified_t1pq4y_k$();
@@ -50179,7 +50122,7 @@
       if (!tmp$ret$4) {
         var tmp$ret$5;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp5_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+        var tmp5_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
         tmp$ret$5 = tmp5_elementAt.get_fkrdnv_k$(0);
         var tmp3_safe_receiver = tmp$ret$5;
         tmp_3 = !((tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_modified_t1pq4y_k$()) === 'null');
@@ -50196,7 +50139,7 @@
       // Inline function 'kotlin.text.isNullOrEmpty' call
       var tmp$ret$6;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp6_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp6_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$6 = tmp6_elementAt.get_fkrdnv_k$(0);
       var tmp4_safe_receiver = tmp$ret$6;
       var tmp7_isNullOrEmpty = tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_isPTOID_zgfy37_k$();
@@ -50212,7 +50155,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$8;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp8_elementAt = invoke$lambda_152($dSeriesInfo$delegate);
+      var tmp8_elementAt = invoke$lambda_148($dSeriesInfo$delegate);
       tmp$ret$8 = tmp8_elementAt.get_fkrdnv_k$(0);
       var tmp5_safe_receiver = tmp$ret$8;
       var tmp9_isNotEmpty = ensureNotNull(tmp5_safe_receiver == null ? null : tmp5_safe_receiver.get_language_cjhhk1_k$());
@@ -52407,7 +52350,7 @@
     $this$FC.invoke_hixay3_k$(tmp_1, filterFormDataSeries$lambda$lambda(props, dataSeriesList$delegate, filtersTypesFields$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_158($filtersTypesFields$delegate) {
+  function invoke$lambda_154($filtersTypesFields$delegate) {
     init_properties_filterFormDataSeries_kt_78a9ct();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -52420,7 +52363,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_159($filtersTypesFields$delegate, value) {
+  function invoke$lambda_155($filtersTypesFields$delegate, value) {
     init_properties_filterFormDataSeries_kt_78a9ct();
     var tmp0_setValue = getLocalDelegateReference('filtersTypesFields', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -52430,7 +52373,7 @@
     tmp$ret$0 = $filtersTypesFields$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_160($dataSeriesList$delegate) {
+  function invoke$lambda_156($dataSeriesList$delegate) {
     init_properties_filterFormDataSeries_kt_78a9ct();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -52443,7 +52386,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_161($dataSeriesList$delegate, value) {
+  function invoke$lambda_157($dataSeriesList$delegate, value) {
     init_properties_filterFormDataSeries_kt_78a9ct();
     var tmp0_setValue = getLocalDelegateReference('dataSeriesList', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -52455,7 +52398,7 @@
   }
   function filterFormDataSeries$lambda$lambda$lambda$lambda$lambda($props, $dataSeriesList$delegate) {
     return function ($this$invoke) {
-      $this$invoke.filterList = invoke$lambda_160($dataSeriesList$delegate);
+      $this$invoke.filterList = invoke$lambda_156($dataSeriesList$delegate);
       $this$invoke.handleOnChange = $props.handleOnChange;
       return Unit_getInstance();
     };
@@ -52595,7 +52538,7 @@
       $this$invoke.filterName = $item;
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_158($filtersTypesFields$delegate);
+      var tmp0_elementAt = invoke$lambda_154($filtersTypesFields$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$($tmp2__anonymous__bd8cc3);
       $this$invoke.filterFields = tmp$ret$0;
       return Unit_getInstance();
@@ -53146,7 +53089,7 @@
     $this$FC.invoke_hixay3_k$(tmp, filterInfoDatasetSeries$lambda$lambda_1(props, selectedFilters$delegate, showMoreOrLess$delegate, handleClickMore, handleClickLess));
     return Unit_getInstance();
   }
-  function invoke$lambda_162($selectedFilters$delegate) {
+  function invoke$lambda_158($selectedFilters$delegate) {
     init_properties_filterInfoDatasetSeries_kt_1ujyff();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -53159,7 +53102,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_163($selectedFilters$delegate, value) {
+  function invoke$lambda_159($selectedFilters$delegate, value) {
     init_properties_filterInfoDatasetSeries_kt_1ujyff();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -53169,7 +53112,7 @@
     tmp$ret$0 = $selectedFilters$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_164($showMoreOrLess$delegate) {
+  function invoke$lambda_160($showMoreOrLess$delegate) {
     init_properties_filterInfoDatasetSeries_kt_1ujyff();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -53182,7 +53125,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_165($showMoreOrLess$delegate, value) {
+  function invoke$lambda_161($showMoreOrLess$delegate, value) {
     init_properties_filterInfoDatasetSeries_kt_1ujyff();
     var tmp0_setValue = getLocalDelegateReference('showMoreOrLess', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -53333,7 +53276,7 @@
     return function (it) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_162($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_158($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -53426,8 +53369,8 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_163($selectedFilters$delegate, toMutableMap(tmp$ret$16));
-      var tmp0_safe_receiver = toMutableMap(ensureNotNull(invoke$lambda_162($selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries'))).get_1mhr4y_k$($props.filterName);
+      invoke$lambda_159($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      var tmp0_safe_receiver = toMutableMap(ensureNotNull(invoke$lambda_158($selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries'))).get_1mhr4y_k$($props.filterName);
       $this_invoke.selected = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.contains_2ehdt1_k$($item);
       return Unit_getInstance();
     };
@@ -53468,14 +53411,14 @@
   function filterInfoDatasetSeries$lambda$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate) {
     return function (it) {
       $handleClickMore();
-      invoke$lambda_165($showMoreOrLess$delegate, true);
+      invoke$lambda_161($showMoreOrLess$delegate, true);
       return Unit_getInstance();
     };
   }
   function filterInfoDatasetSeries$lambda$lambda$lambda$lambda$lambda$lambda_1($handleClickLess, $showMoreOrLess$delegate) {
     return function (it) {
       $handleClickLess();
-      invoke$lambda_165($showMoreOrLess$delegate, false);
+      invoke$lambda_161($showMoreOrLess$delegate, false);
       return Unit_getInstance();
     };
   }
@@ -53527,7 +53470,7 @@
       tmp$ret$11 = tmp$ret$10;
       $this$invoke.className = tmp$ret$11;
       var tmp;
-      if (!invoke$lambda_164($showMoreOrLess$delegate)) {
+      if (!invoke$lambda_160($showMoreOrLess$delegate)) {
         $this$invoke.onClick = filterInfoDatasetSeries$lambda$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate);
         $this$invoke.unaryPlus_g7ydph_k$('Mostrar m\xE1s');
         tmp = Unit_getInstance();
@@ -53613,14 +53556,14 @@
     var navigate = useNavigate();
     var datasetSeriesList$delegate = useState(props.datasetSeriesList);
     var isLoading$delegate = useState(true);
-    var tmp = [listOf(invoke$lambda_168(isLoading$delegate))];
+    var tmp = [listOf(invoke$lambda_164(isLoading$delegate))];
     useEffect(tmp, listDataSeries$lambda$lambda(isLoading$delegate));
     var handleOnClick = listDataSeries$lambda$lambda_0(navigate);
     var tmp_0 = default_25;
     $this$FC.invoke_hixay3_k$(tmp_0, listDataSeries$lambda$lambda_1(datasetSeriesList$delegate, isLoading$delegate, handleOnClick, props));
     return Unit_getInstance();
   }
-  function invoke$lambda_166($datasetSeriesList$delegate) {
+  function invoke$lambda_162($datasetSeriesList$delegate) {
     init_properties_listDataSeries_kt_y3icx1();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -53633,7 +53576,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_167($datasetSeriesList$delegate, value) {
+  function invoke$lambda_163($datasetSeriesList$delegate, value) {
     init_properties_listDataSeries_kt_y3icx1();
     var tmp0_setValue = getLocalDelegateReference('datasetSeriesList', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -53643,7 +53586,7 @@
     tmp$ret$0 = $datasetSeriesList$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_168($isLoading$delegate) {
+  function invoke$lambda_164($isLoading$delegate) {
     init_properties_listDataSeries_kt_y3icx1();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -53656,7 +53599,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_169($isLoading$delegate, value) {
+  function invoke$lambda_165($isLoading$delegate, value) {
     init_properties_listDataSeries_kt_y3icx1();
     var tmp0_setValue = getLocalDelegateReference('isLoading', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -53695,7 +53638,7 @@
 
             continue $sm;
           case 1:
-            invoke$lambda_169(this.$isLoading$delegate_1, false);
+            invoke$lambda_165(this.$isLoading$delegate_1, false);
             return Unit_getInstance();
           case 2:
             throw this.get_exception_x0n6w6_k$();
@@ -53999,7 +53942,7 @@
       // Inline function 'kotlin.collections.map' call
       var tmp$ret$3;
       // Inline function 'kotlin.collections.filter' call
-      var tmp0_filter = invoke$lambda_166($datasetSeriesList$delegate);
+      var tmp0_filter = invoke$lambda_162($datasetSeriesList$delegate);
       var tmp$ret$2;
       // Inline function 'kotlin.collections.filterTo' call
       var tmp0_filterTo = ArrayList_init_$Create$();
@@ -54100,9 +54043,9 @@
       var tmp = default_39;
       $this$invoke.invoke_hixay3_k$(tmp, listDataSeries$lambda$lambda$lambda);
       var tmp_0;
-      if (invoke$lambda_166($datasetSeriesList$delegate).isEmpty_y1axqb_k$()) {
+      if (invoke$lambda_162($datasetSeriesList$delegate).isEmpty_y1axqb_k$()) {
         var tmp_1;
-        if (invoke$lambda_168($isLoading$delegate)) {
+        if (invoke$lambda_164($isLoading$delegate)) {
           var tmp_2 = default_61;
           $this$invoke.invoke_hixay3_k$(tmp_2, listDataSeries$lambda$lambda$lambda_0);
           tmp_1 = Unit_getInstance();
@@ -54156,7 +54099,7 @@
     $this$FC.invoke_hixay3_k$(tmp_0, distributionsInfo$lambda$lambda_0(listTestDistribution$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_170($listTestDistribution$delegate) {
+  function invoke$lambda_166($listTestDistribution$delegate) {
     init_properties_DistributionsInfo_kt_8e9xpl();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -54169,7 +54112,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_171($listTestDistribution$delegate, value) {
+  function invoke$lambda_167($listTestDistribution$delegate, value) {
     init_properties_DistributionsInfo_kt_8e9xpl();
     var tmp0_setValue = getLocalDelegateReference('listTestDistribution', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -54210,12 +54153,12 @@
             continue $sm;
           case 1:
             var datasetsInfo = suspendResult;
-            invoke$lambda_171(this.$listTestDistribution$delegate_1, ArrayList_init_$Create$());
+            invoke$lambda_167(this.$listTestDistribution$delegate_1, ArrayList_init_$Create$());
             var tmp0_mapTo = ArrayList_init_$Create$_0(collectionSizeOrDefault(datasetsInfo, 10));
             var tmp0_iterator = datasetsInfo.iterator_jk1svi_k$();
             while (tmp0_iterator.hasNext_bitz1p_k$()) {
               var item = tmp0_iterator.next_20eer_k$();
-              tmp0_mapTo.add_1j60pz_k$(invoke$lambda_170(this.$listTestDistribution$delegate_1).add_1j60pz_k$(item));
+              tmp0_mapTo.add_1j60pz_k$(invoke$lambda_166(this.$listTestDistribution$delegate_1).add_1j60pz_k$(item));
             }
 
             ;
@@ -54258,7 +54201,7 @@
   }
   function distributionsInfo$lambda$lambda_0($listTestDistribution$delegate) {
     return function ($this$invoke) {
-      $this$invoke.listTestDistributionsInfo = invoke$lambda_170($listTestDistribution$delegate);
+      $this$invoke.listTestDistributionsInfo = invoke$lambda_166($listTestDistribution$delegate);
       return Unit_getInstance();
     };
   }
@@ -54283,15 +54226,15 @@
     var navigate = useNavigate();
     var selectedFilters$delegate = useRequiredContext(get_FilterListContextAll());
     var handleOnClick = DistributionsInfoElements$lambda$lambda(navigate);
-    var tmp = [listOf(invoke$lambda_174(isLoading$delegate))];
+    var tmp = [listOf(invoke$lambda_170(isLoading$delegate))];
     useEffect(tmp, DistributionsInfoElements$lambda$lambda_0(isLoading$delegate));
     var tmp$ret$0;
     // Inline function 'kotlin.collections.isNullOrEmpty' call
-    var tmp0_isNullOrEmpty = invoke$lambda_172(distInfo$delegate);
+    var tmp0_isNullOrEmpty = invoke$lambda_168(distInfo$delegate);
     // Inline function 'kotlin.contracts.contract' call
     tmp$ret$0 = tmp0_isNullOrEmpty == null ? true : tmp0_isNullOrEmpty.isEmpty_y1axqb_k$();
     if (tmp$ret$0) {
-      if (invoke$lambda_174(isLoading$delegate)) {
+      if (invoke$lambda_170(isLoading$delegate)) {
         var tmp_0 = default_26;
         $this$FC.invoke_hixay3_k$(tmp_0, DistributionsInfoElements$lambda$lambda_1);
       } else {
@@ -54339,7 +54282,7 @@
       $this$FC.invoke_hixay3_k$(tmp_5, DistributionsInfoElements$lambda$lambda_6(distInfo$delegate, selectedFilters$delegate));
       var tmp$ret$9;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_172(distInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_168(distInfo$delegate);
       tmp$ret$9 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$9;
       if (ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$()).get_size_woubt6_k$() > 1) {
@@ -54350,7 +54293,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$10;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp4_elementAt = invoke$lambda_172(distInfo$delegate);
+      var tmp4_elementAt = invoke$lambda_168(distInfo$delegate);
       tmp$ret$10 = tmp4_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$10;
       var tmp5_isNotEmpty = ensureNotNull(tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_identifiers_yibrlr_k$());
@@ -54363,7 +54306,7 @@
       // Inline function 'kotlin.collections.isNullOrEmpty' call
       var tmp$ret$12;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp6_elementAt = invoke$lambda_172(distInfo$delegate);
+      var tmp6_elementAt = invoke$lambda_168(distInfo$delegate);
       tmp$ret$12 = tmp6_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$12;
       var tmp7_isNullOrEmpty = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_accessServiceID_j9xh9f_k$();
@@ -54376,7 +54319,7 @@
     }
     return Unit_getInstance();
   }
-  function invoke$lambda_172($distInfo$delegate) {
+  function invoke$lambda_168($distInfo$delegate) {
     init_properties_DistributionsInfoElements_kt_rjqlk0();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -54389,7 +54332,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_173($distInfo$delegate, value) {
+  function invoke$lambda_169($distInfo$delegate, value) {
     init_properties_DistributionsInfoElements_kt_rjqlk0();
     var tmp0_setValue = getLocalDelegateReference('distInfo', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -54399,7 +54342,7 @@
     tmp$ret$0 = $distInfo$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_174($isLoading$delegate) {
+  function invoke$lambda_170($isLoading$delegate) {
     init_properties_DistributionsInfoElements_kt_rjqlk0();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -54412,7 +54355,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_175($isLoading$delegate, value) {
+  function invoke$lambda_171($isLoading$delegate, value) {
     init_properties_DistributionsInfoElements_kt_rjqlk0();
     var tmp0_setValue = getLocalDelegateReference('isLoading', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -54422,7 +54365,7 @@
     tmp$ret$0 = $isLoading$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_176($selectedFilters$delegate) {
+  function invoke$lambda_172($selectedFilters$delegate) {
     init_properties_DistributionsInfoElements_kt_rjqlk0();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -54435,7 +54378,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_177($selectedFilters$delegate, value) {
+  function invoke$lambda_173($selectedFilters$delegate, value) {
     init_properties_DistributionsInfoElements_kt_rjqlk0();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -54446,7 +54389,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_7(selectedFilters$delegate) {
-    var tmp0_safe_receiver = invoke$lambda_176(selectedFilters$delegate).get_1mhr4y_k$('Distributions');
+    var tmp0_safe_receiver = invoke$lambda_172(selectedFilters$delegate).get_1mhr4y_k$('Distributions');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -54510,7 +54453,7 @@
 
             continue $sm;
           case 1:
-            invoke$lambda_175(this.$isLoading$delegate_1, false);
+            invoke$lambda_171(this.$isLoading$delegate_1, false);
             return Unit_getInstance();
           case 2:
             throw this.get_exception_x0n6w6_k$();
@@ -54593,7 +54536,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_isNotEmpty = ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$());
@@ -54601,7 +54544,7 @@
       if (tmp$ret$1) {
         var tmp$ret$2;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp2_elementAt = invoke$lambda_172($distInfo$delegate);
+        var tmp2_elementAt = invoke$lambda_168($distInfo$delegate);
         tmp$ret$2 = tmp2_elementAt.get_fkrdnv_k$(0);
         var tmp1_safe_receiver = tmp$ret$2;
         var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_title_iz32un_k$();
@@ -54723,7 +54666,7 @@
     return function (it) {
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_176($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_172($selectedFilters$delegate));
       var tmp$ret$14;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -54804,7 +54747,7 @@
       tmp$ret$13 = tmp1_mapValuesTo;
       tmp$ret$14 = tmp$ret$13;
       tmp$ret$15 = tmp$ret$14;
-      invoke$lambda_177($selectedFilters$delegate, toMutableMap(tmp$ret$15));
+      invoke$lambda_173($selectedFilters$delegate, toMutableMap(tmp$ret$15));
       return Unit_getInstance();
     };
   }
@@ -54887,7 +54830,7 @@
     return function (_anonymous_parameter_0__qggqh8) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_176($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_172($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -54978,7 +54921,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_177($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_173($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -55093,7 +55036,7 @@
       tmp$ret$13 = tmp$ret$12;
       tmp$ret$14 = tmp$ret$13;
       $this$invoke.direction = tmp$ret$14;
-      var tmp0_safe_receiver = invoke$lambda_176($selectedFilters$delegate).get_1mhr4y_k$('Distributions');
+      var tmp0_safe_receiver = invoke$lambda_172($selectedFilters$delegate).get_1mhr4y_k$('Distributions');
       if (tmp0_safe_receiver == null)
         null;
       else {
@@ -55155,7 +55098,7 @@
       // Inline function 'kotlin.collections.isNotEmpty' call
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       var tmp1_isNotEmpty = ensureNotNull(tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$());
@@ -55163,7 +55106,7 @@
       if (tmp$ret$4) {
         var tmp$ret$5;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp2_elementAt = invoke$lambda_172($distInfo$delegate);
+        var tmp2_elementAt = invoke$lambda_168($distInfo$delegate);
         tmp$ret$5 = tmp2_elementAt.get_fkrdnv_k$(0);
         var tmp1_safe_receiver = tmp$ret$5;
         var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_title_iz32un_k$();
@@ -55205,7 +55148,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       if (tmp0_safe_receiver == null)
@@ -55253,7 +55196,7 @@
       $this$invoke.className = tmp$ret$2;
       var tmp$ret$3;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$3 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$3;
       if (tmp0_safe_receiver == null)
@@ -55291,7 +55234,7 @@
     return function (it) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_176($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_172($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -55384,7 +55327,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_177($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_173($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -55512,7 +55455,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_isNullOrBlank = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_accessUrl_qgq0ce_k$();
@@ -55528,7 +55471,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$2;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp2_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp2_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$2 = tmp2_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$2;
       var tmp3_isNullOrBlank = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_byteSize_8c84c2_k$();
@@ -55544,7 +55487,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$4;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp4_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp4_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$4 = tmp4_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$4;
       var tmp5_isNullOrBlank = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_format_dfdtds_k$();
@@ -55553,7 +55496,7 @@
       if (!tmp$ret$5) {
         var tmp$ret$6;
         // Inline function 'kotlin.collections.elementAt' call
-        var tmp6_elementAt = invoke$lambda_172($distInfo$delegate);
+        var tmp6_elementAt = invoke$lambda_168($distInfo$delegate);
         tmp$ret$6 = tmp6_elementAt.get_fkrdnv_k$(0);
         var chipValue = tmp$ret$6.get_format_dfdtds_k$();
         var tmp_4;
@@ -55727,7 +55670,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_176($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_172($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -55820,7 +55763,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_177($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_173($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       var tmp_3 = default_36;
       $this_create.invoke_hixay3_k$(tmp_3, DistributionsInfoElements$lambda$lambda$lambda$lambda$lambda$lambda$lambda_5);
       var tmp_4 = default_18;
@@ -55939,7 +55882,7 @@
       $this$invoke.invoke_hixay3_k$(tmp, DistributionsInfoElements$lambda$lambda$lambda_5);
       var tmp$ret$18;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp1_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp1_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$18 = tmp1_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$18;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_title_iz32un_k$();
@@ -56026,7 +55969,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_identifiers_yibrlr_k$();
@@ -56154,7 +56097,7 @@
     return function () {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_176($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_172($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -56247,7 +56190,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_177($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_173($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -56305,7 +56248,7 @@
     return function ($this$invoke) {
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_172($distInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_168($distInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_accessServiceID_j9xh9f_k$();
@@ -56330,7 +56273,7 @@
           // Inline function 'kotlin.collections.isNullOrEmpty' call
           var tmp$ret$1;
           // Inline function 'kotlin.collections.elementAt' call
-          var tmp0_elementAt_0 = invoke$lambda_172($distInfo$delegate);
+          var tmp0_elementAt_0 = invoke$lambda_168($distInfo$delegate);
           tmp$ret$1 = tmp0_elementAt_0.get_fkrdnv_k$(0);
           var tmp0_safe_receiver_0 = tmp$ret$1;
           var tmp1_safe_receiver_0 = tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.get_accessServiceIdentifiers_3sdirm_k$();
@@ -56340,7 +56283,7 @@
           if (!tmp$ret$2) {
             var tmp$ret$3;
             // Inline function 'kotlin.collections.elementAt' call
-            var tmp2_elementAt = invoke$lambda_172($distInfo$delegate);
+            var tmp2_elementAt = invoke$lambda_168($distInfo$delegate);
             tmp$ret$3 = tmp2_elementAt.get_fkrdnv_k$(0);
             var tmp2_safe_receiver = tmp$ret$3;
             var tmp3_safe_receiver = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_accessServiceIdentifiers_3sdirm_k$();
@@ -56349,7 +56292,7 @@
           } else {
             var tmp$ret$4;
             // Inline function 'kotlin.collections.elementAt' call
-            var tmp3_elementAt = invoke$lambda_172($distInfo$delegate);
+            var tmp3_elementAt = invoke$lambda_168($distInfo$delegate);
             tmp$ret$4 = tmp3_elementAt.get_fkrdnv_k$(0);
             var tmp5_safe_receiver = tmp$ret$4;
             var tmp6_safe_receiver = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.get_accessServiceTitles_ilxnlv_k$();
@@ -57850,7 +57793,7 @@
     $this$FC.invoke_hixay3_k$(tmp_0, filterFormDistributions$lambda$lambda(props, distributionsList$delegate, filtersTypesFields$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_178($filtersTypesFields$delegate) {
+  function invoke$lambda_174($filtersTypesFields$delegate) {
     init_properties_filterFormDistributions_kt_sxsbep();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -57863,7 +57806,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_179($filtersTypesFields$delegate, value) {
+  function invoke$lambda_175($filtersTypesFields$delegate, value) {
     init_properties_filterFormDistributions_kt_sxsbep();
     var tmp0_setValue = getLocalDelegateReference('filtersTypesFields', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -57873,7 +57816,7 @@
     tmp$ret$0 = $filtersTypesFields$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_180($distributionsList$delegate) {
+  function invoke$lambda_176($distributionsList$delegate) {
     init_properties_filterFormDistributions_kt_sxsbep();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -57886,7 +57829,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_181($distributionsList$delegate, value) {
+  function invoke$lambda_177($distributionsList$delegate, value) {
     init_properties_filterFormDistributions_kt_sxsbep();
     var tmp0_setValue = getLocalDelegateReference('distributionsList', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -57898,7 +57841,7 @@
   }
   function filterFormDistributions$lambda$lambda$lambda$lambda$lambda($props, $distributionsList$delegate) {
     return function ($this$invoke) {
-      $this$invoke.filterList = invoke$lambda_180($distributionsList$delegate);
+      $this$invoke.filterList = invoke$lambda_176($distributionsList$delegate);
       $this$invoke.handleOnChange = $props.handleOnChange;
       return Unit_getInstance();
     };
@@ -58038,7 +57981,7 @@
       $this$invoke.filterName = $item;
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_178($filtersTypesFields$delegate);
+      var tmp0_elementAt = invoke$lambda_174($filtersTypesFields$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$($tmp2__anonymous__bd8cc3);
       $this$invoke.filterFields = tmp$ret$0;
       return Unit_getInstance();
@@ -58589,7 +58532,7 @@
     $this$FC.invoke_hixay3_k$(tmp, filterInfoDistributions$lambda$lambda_1(props, selectedFilters$delegate, showMoreOrLess$delegate, handleClickMore, handleClickLess));
     return Unit_getInstance();
   }
-  function invoke$lambda_182($selectedFilters$delegate) {
+  function invoke$lambda_178($selectedFilters$delegate) {
     init_properties_filterInfoDistributions_kt_iv2lw5();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -58602,7 +58545,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_183($selectedFilters$delegate, value) {
+  function invoke$lambda_179($selectedFilters$delegate, value) {
     init_properties_filterInfoDistributions_kt_iv2lw5();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -58612,7 +58555,7 @@
     tmp$ret$0 = $selectedFilters$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_184($showMoreOrLess$delegate) {
+  function invoke$lambda_180($showMoreOrLess$delegate) {
     init_properties_filterInfoDistributions_kt_iv2lw5();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -58625,7 +58568,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_185($showMoreOrLess$delegate, value) {
+  function invoke$lambda_181($showMoreOrLess$delegate, value) {
     init_properties_filterInfoDistributions_kt_iv2lw5();
     var tmp0_setValue = getLocalDelegateReference('showMoreOrLess', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -58776,7 +58719,7 @@
     return function (it) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_182($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_178($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -58869,8 +58812,8 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_183($selectedFilters$delegate, toMutableMap(tmp$ret$16));
-      var tmp0_safe_receiver = toMutableMap(ensureNotNull(invoke$lambda_182($selectedFilters$delegate).get_1mhr4y_k$('Distributions'))).get_1mhr4y_k$($props.filterName);
+      invoke$lambda_179($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      var tmp0_safe_receiver = toMutableMap(ensureNotNull(invoke$lambda_178($selectedFilters$delegate).get_1mhr4y_k$('Distributions'))).get_1mhr4y_k$($props.filterName);
       $this_invoke.selected = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.contains_2ehdt1_k$($item);
       $this_invoke.unaryPlus_g7ydph_k$($item);
       return Unit_getInstance();
@@ -58912,14 +58855,14 @@
   function filterInfoDistributions$lambda$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate) {
     return function (it) {
       $handleClickMore();
-      invoke$lambda_185($showMoreOrLess$delegate, true);
+      invoke$lambda_181($showMoreOrLess$delegate, true);
       return Unit_getInstance();
     };
   }
   function filterInfoDistributions$lambda$lambda$lambda$lambda$lambda$lambda_1($handleClickLess, $showMoreOrLess$delegate) {
     return function (it) {
       $handleClickLess();
-      invoke$lambda_185($showMoreOrLess$delegate, false);
+      invoke$lambda_181($showMoreOrLess$delegate, false);
       return Unit_getInstance();
     };
   }
@@ -58971,7 +58914,7 @@
       tmp$ret$11 = tmp$ret$10;
       $this$invoke.className = tmp$ret$11;
       var tmp;
-      if (!invoke$lambda_184($showMoreOrLess$delegate)) {
+      if (!invoke$lambda_180($showMoreOrLess$delegate)) {
         $this$invoke.onClick = filterInfoDistributions$lambda$lambda$lambda$lambda$lambda$lambda_0($handleClickMore, $showMoreOrLess$delegate);
         $this$invoke.unaryPlus_g7ydph_k$('Mostrar m\xE1s');
         tmp = Unit_getInstance();
@@ -59057,14 +59000,14 @@
     var navigate = useNavigate();
     var distributionsList$delegate = useState(props.distributionsList);
     var isLoading$delegate = useState(true);
-    var tmp = [listOf(invoke$lambda_188(isLoading$delegate))];
+    var tmp = [listOf(invoke$lambda_184(isLoading$delegate))];
     useEffect(tmp, listDistributions$lambda$lambda(isLoading$delegate));
     var handleOnClick = listDistributions$lambda$lambda_0(navigate);
     var tmp_0 = default_25;
     $this$FC.invoke_hixay3_k$(tmp_0, listDistributions$lambda$lambda_1(distributionsList$delegate, isLoading$delegate, handleOnClick, props));
     return Unit_getInstance();
   }
-  function invoke$lambda_186($distributionsList$delegate) {
+  function invoke$lambda_182($distributionsList$delegate) {
     init_properties_listDistributions_kt_fzbq2r();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -59077,7 +59020,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_187($distributionsList$delegate, value) {
+  function invoke$lambda_183($distributionsList$delegate, value) {
     init_properties_listDistributions_kt_fzbq2r();
     var tmp0_setValue = getLocalDelegateReference('distributionsList', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -59087,7 +59030,7 @@
     tmp$ret$0 = $distributionsList$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_188($isLoading$delegate) {
+  function invoke$lambda_184($isLoading$delegate) {
     init_properties_listDistributions_kt_fzbq2r();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -59100,7 +59043,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_189($isLoading$delegate, value) {
+  function invoke$lambda_185($isLoading$delegate, value) {
     init_properties_listDistributions_kt_fzbq2r();
     var tmp0_setValue = getLocalDelegateReference('isLoading', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -59139,7 +59082,7 @@
 
             continue $sm;
           case 1:
-            invoke$lambda_189(this.$isLoading$delegate_1, false);
+            invoke$lambda_185(this.$isLoading$delegate_1, false);
             return Unit_getInstance();
           case 2:
             throw this.get_exception_x0n6w6_k$();
@@ -59443,7 +59386,7 @@
       // Inline function 'kotlin.collections.map' call
       var tmp$ret$3;
       // Inline function 'kotlin.collections.filter' call
-      var tmp0_filter = invoke$lambda_186($distributionsList$delegate);
+      var tmp0_filter = invoke$lambda_182($distributionsList$delegate);
       var tmp$ret$2;
       // Inline function 'kotlin.collections.filterTo' call
       var tmp0_filterTo = ArrayList_init_$Create$();
@@ -59544,9 +59487,9 @@
       var tmp = default_39;
       $this$invoke.invoke_hixay3_k$(tmp, listDistributions$lambda$lambda$lambda);
       var tmp_0;
-      if (invoke$lambda_186($distributionsList$delegate).isEmpty_y1axqb_k$()) {
+      if (invoke$lambda_182($distributionsList$delegate).isEmpty_y1axqb_k$()) {
         var tmp_1;
-        if (invoke$lambda_188($isLoading$delegate)) {
+        if (invoke$lambda_184($isLoading$delegate)) {
           var tmp_2 = default_61;
           $this$invoke.invoke_hixay3_k$(tmp_2, listDistributions$lambda$lambda$lambda_0);
           tmp_1 = Unit_getInstance();
@@ -59654,7 +59597,7 @@
     $this$FC.invoke_hixay3_k$(tmp_0, Pagination$lambda$lambda_0(props, selectedFilters$delegate, numberOfPages$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_190($selectedFilters$delegate) {
+  function invoke$lambda_186($selectedFilters$delegate) {
     init_properties_Pagination_kt_wjieio();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -59667,7 +59610,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_191($selectedFilters$delegate, value) {
+  function invoke$lambda_187($selectedFilters$delegate, value) {
     init_properties_Pagination_kt_wjieio();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -59677,7 +59620,7 @@
     tmp$ret$0 = $selectedFilters$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_192($numberOfPages$delegate) {
+  function invoke$lambda_188($numberOfPages$delegate) {
     init_properties_Pagination_kt_wjieio();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -59690,7 +59633,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_193($numberOfPages$delegate, value) {
+  function invoke$lambda_189($numberOfPages$delegate, value) {
     init_properties_Pagination_kt_wjieio();
     var tmp0_setValue = getLocalDelegateReference('numberOfPages', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -59772,7 +59715,7 @@
     return function (e, v) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_190($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_186($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -59863,7 +59806,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_191($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_187($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -59895,13 +59838,13 @@
       tmp$ret$4 = tmp0_apply;
       tmp$ret$5 = tmp$ret$4;
       tmp0_sx.sx = tmp$ret$5;
-      var tmp0_safe_receiver = invoke$lambda_190($selectedFilters$delegate).get_1mhr4y_k$($props.resType);
+      var tmp0_safe_receiver = invoke$lambda_186($selectedFilters$delegate).get_1mhr4y_k$($props.resType);
       var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_1mhr4y_k$('Page');
       var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : firstOrNull(tmp1_safe_receiver);
       var tmp3_elvis_lhs = tmp2_safe_receiver == null ? null : toInt(tmp2_safe_receiver);
       $this$invoke.page = tmp3_elvis_lhs == null ? 1 : tmp3_elvis_lhs;
       $this$invoke.color = (/*union*/{primary: 'primary', secondary: 'secondary', standard: 'standard'}/*union*/).primary;
-      $this$invoke.count = invoke$lambda_192($numberOfPages$delegate);
+      $this$invoke.count = invoke$lambda_188($numberOfPages$delegate);
       $this$invoke.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
       $this$invoke.onChange = Pagination$lambda$lambda$lambda$lambda($props, $selectedFilters$delegate);
       return Unit_getInstance();
@@ -60088,7 +60031,7 @@
     $this$FC.invoke_hixay3_k$(tmp, Searcher$lambda$lambda_0(isDisabled$delegate, props));
     return Unit_getInstance();
   }
-  function invoke$lambda_194($openDialog$delegate) {
+  function invoke$lambda_190($openDialog$delegate) {
     init_properties_Searcher_kt_8abfff();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60101,7 +60044,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_195($openDialog$delegate, value) {
+  function invoke$lambda_191($openDialog$delegate, value) {
     init_properties_Searcher_kt_8abfff();
     var tmp0_setValue = getLocalDelegateReference('openDialog', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -60111,7 +60054,7 @@
     tmp$ret$0 = $openDialog$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_196($isDisabled$delegate) {
+  function invoke$lambda_192($isDisabled$delegate) {
     init_properties_Searcher_kt_8abfff();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60124,7 +60067,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_197($isDisabled$delegate, value) {
+  function invoke$lambda_193($isDisabled$delegate, value) {
     init_properties_Searcher_kt_8abfff();
     var tmp0_setValue = getLocalDelegateReference('isDisabled', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -60168,7 +60111,7 @@
       tmp$ret$4 = tmp0_apply;
       tmp$ret$5 = tmp$ret$4;
       tmp0_sx.sx = tmp$ret$5;
-      $this$invoke.disabled = invoke$lambda_196($isDisabled$delegate);
+      $this$invoke.disabled = invoke$lambda_192($isDisabled$delegate);
       var tmp1__set_ariaLabel__jq8lfv = $this$invoke;
       var tmp$ret$6;
       // Inline function 'kotlin.js.asDynamic' call
@@ -60372,7 +60315,7 @@
     $this$FC.invoke_hixay3_k$(tmp, SearcherByKeywords$lambda$lambda_0(isDisabled$delegate, selectedFilters$delegate, searchBy$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_198($openDialog$delegate) {
+  function invoke$lambda_194($openDialog$delegate) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60385,7 +60328,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_199($openDialog$delegate, value) {
+  function invoke$lambda_195($openDialog$delegate, value) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp0_setValue = getLocalDelegateReference('openDialog', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -60395,7 +60338,7 @@
     tmp$ret$0 = $openDialog$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_200($searchBy$delegate) {
+  function invoke$lambda_196($searchBy$delegate) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60408,7 +60351,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_201($searchBy$delegate, value) {
+  function invoke$lambda_197($searchBy$delegate, value) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp0_setValue = getLocalDelegateReference('searchBy', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -60418,7 +60361,7 @@
     tmp$ret$0 = $searchBy$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_202($isDisabled$delegate) {
+  function invoke$lambda_198($isDisabled$delegate) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60431,7 +60374,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_203($isDisabled$delegate, value) {
+  function invoke$lambda_199($isDisabled$delegate, value) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp0_setValue = getLocalDelegateReference('isDisabled', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -60441,7 +60384,7 @@
     tmp$ret$0 = $isDisabled$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_204($selectedFilters$delegate) {
+  function invoke$lambda_200($selectedFilters$delegate) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60454,7 +60397,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_205($selectedFilters$delegate, value) {
+  function invoke$lambda_201($selectedFilters$delegate, value) {
     init_properties_SearcherByKeywords_kt_3pl804();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -60475,7 +60418,7 @@
     return function (it) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_204($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_200($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -60528,9 +60471,9 @@
             tmp$ret$5 = element_0.get_value_j01efc_k$();
             var filterVal = tmp$ret$5;
             var tmp_2;
-            if (innerKey === 'Etiqueta' ? !filterVal.contains_2ehdt1_k$(invoke$lambda_200($searchBy$delegate)) : false) {
-              tmp_2 = plus(filterVal, invoke$lambda_200($searchBy$delegate));
-            } else if (filterVal.contains_2ehdt1_k$(invoke$lambda_200($searchBy$delegate))) {
+            if (innerKey === 'Etiqueta' ? !filterVal.contains_2ehdt1_k$(invoke$lambda_196($searchBy$delegate)) : false) {
+              tmp_2 = plus(filterVal, invoke$lambda_196($searchBy$delegate));
+            } else if (filterVal.contains_2ehdt1_k$(invoke$lambda_196($searchBy$delegate))) {
               var tmp$ret$8;
               // Inline function 'kotlin.collections.filter' call
               var tmp$ret$7;
@@ -60541,7 +60484,7 @@
                 var element_1 = tmp0_iterator_1.next_20eer_k$();
                 var tmp$ret$6;
                 // Inline function 'components.commmon.searcher.SearcherByKeywords.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-                tmp$ret$6 = !(element_1 === invoke$lambda_200($searchBy$delegate));
+                tmp$ret$6 = !(element_1 === invoke$lambda_196($searchBy$delegate));
                 if (tmp$ret$6) {
                   tmp0_filterTo.add_1j60pz_k$(element_1);
                 }
@@ -60568,8 +60511,8 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_205($selectedFilters$delegate, toMutableMap(tmp$ret$16));
-      console.log('SEARCH BY: ' + invoke$lambda_200($searchBy$delegate));
+      invoke$lambda_201($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      console.log('SEARCH BY: ' + invoke$lambda_196($searchBy$delegate));
       return Unit_getInstance();
     };
   }
@@ -60600,7 +60543,7 @@
       tmp$ret$4 = tmp0_apply;
       tmp$ret$5 = tmp$ret$4;
       tmp0_sx.sx = tmp$ret$5;
-      $this$invoke.disabled = invoke$lambda_202($isDisabled$delegate);
+      $this$invoke.disabled = invoke$lambda_198($isDisabled$delegate);
       var tmp1__set_ariaLabel__jq8lfv = $this$invoke;
       var tmp$ret$6;
       // Inline function 'kotlin.js.asDynamic' call
@@ -60623,7 +60566,7 @@
   function SearcherByKeywords$lambda$lambda$lambda$lambda$lambda_0($searchBy$delegate) {
     return function (event) {
       var tmp = event.target;
-      invoke$lambda_201($searchBy$delegate, (tmp instanceof HTMLInputElement ? tmp : THROW_CCE()).value);
+      invoke$lambda_197($searchBy$delegate, (tmp instanceof HTMLInputElement ? tmp : THROW_CCE()).value);
       return Unit_getInstance();
     };
   }
@@ -60819,7 +60762,7 @@
     $this$FC.invoke_hixay3_k$(tmp, SearcherCatalogs$lambda$lambda_0(props));
     return Unit_getInstance();
   }
-  function invoke$lambda_206($openDialog$delegate) {
+  function invoke$lambda_202($openDialog$delegate) {
     init_properties_SearcherCatalogs_kt_6ij9h1();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -60832,7 +60775,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_207($openDialog$delegate, value) {
+  function invoke$lambda_203($openDialog$delegate, value) {
     init_properties_SearcherCatalogs_kt_6ij9h1();
     var tmp0_setValue = getLocalDelegateReference('openDialog', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61084,7 +61027,7 @@
     $this$FC.invoke_hixay3_k$(tmp_0, selectFilter$lambda$lambda_2(handleChangeRadio, sortBy$delegate, isDisabled$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_208($orderBy$delegate) {
+  function invoke$lambda_204($orderBy$delegate) {
     init_properties_SelectFilter_kt_630vei();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61097,7 +61040,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_209($orderBy$delegate, value) {
+  function invoke$lambda_205($orderBy$delegate, value) {
     init_properties_SelectFilter_kt_630vei();
     var tmp0_setValue = getLocalDelegateReference('orderBy', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61107,7 +61050,7 @@
     tmp$ret$0 = $orderBy$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_210($sortBy$delegate) {
+  function invoke$lambda_206($sortBy$delegate) {
     init_properties_SelectFilter_kt_630vei();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61120,7 +61063,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_211($sortBy$delegate, value) {
+  function invoke$lambda_207($sortBy$delegate, value) {
     init_properties_SelectFilter_kt_630vei();
     var tmp0_setValue = getLocalDelegateReference('sortBy', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61130,7 +61073,7 @@
     tmp$ret$0 = $sortBy$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_212($selectedFilters$delegate) {
+  function invoke$lambda_208($selectedFilters$delegate) {
     init_properties_SelectFilter_kt_630vei();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61143,7 +61086,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_213($selectedFilters$delegate, value) {
+  function invoke$lambda_209($selectedFilters$delegate, value) {
     init_properties_SelectFilter_kt_630vei();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61153,7 +61096,7 @@
     tmp$ret$0 = $selectedFilters$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_214($isDisabled$delegate) {
+  function invoke$lambda_210($isDisabled$delegate) {
     init_properties_SelectFilter_kt_630vei();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61166,7 +61109,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_215($isDisabled$delegate, value) {
+  function invoke$lambda_211($isDisabled$delegate, value) {
     init_properties_SelectFilter_kt_630vei();
     var tmp0_setValue = getLocalDelegateReference('isDisabled', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61178,10 +61121,10 @@
   }
   function selectFilter$lambda$lambda($orderBy$delegate, $selectedFilters$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_209($orderBy$delegate, event.target.value);
+      invoke$lambda_205($orderBy$delegate, event.target.value);
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_212($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_208($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -61272,16 +61215,16 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_213($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_209($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
   function selectFilter$lambda$lambda_0($sortBy$delegate, $selectedFilters$delegate) {
     return function (event, value) {
-      invoke$lambda_211($sortBy$delegate, value);
+      invoke$lambda_207($sortBy$delegate, value);
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_212($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_208($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -61372,7 +61315,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_213($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_209($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -61429,10 +61372,10 @@
       tmp$ret$1 = tmp0_apply;
       tmp$ret$2 = tmp$ret$1;
       tmp0_sx.sx = tmp$ret$2;
-      $this$invoke.disabled = invoke$lambda_214($isDisabled$delegate);
+      $this$invoke.disabled = invoke$lambda_210($isDisabled$delegate);
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$lambda_208($orderBy$delegate);
+      $this$invoke.value = invoke$lambda_204($orderBy$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -61495,7 +61438,7 @@
   function selectFilter$lambda$lambda$lambda$lambda$lambda($isDisabled$delegate) {
     return function ($this$create) {
       $this$create.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
-      $this$create.disabled = invoke$lambda_214($isDisabled$delegate);
+      $this$create.disabled = invoke$lambda_210($isDisabled$delegate);
       return Unit_getInstance();
     };
   }
@@ -61558,7 +61501,7 @@
       tmp$ret$4 = tmp0_apply;
       tmp$ret$5 = tmp$ret$4;
       tmp0_sx.sx = tmp$ret$5;
-      $this$create.disabled = invoke$lambda_214($isDisabled$delegate);
+      $this$create.disabled = invoke$lambda_210($isDisabled$delegate);
       $this$create.size = (/*union*/{small: 'small', medium: 'medium', normal: 'normal', large: 'large'}/*union*/).small;
       return Unit_getInstance();
     };
@@ -61613,7 +61556,7 @@
       tmp$ret$2 = tmp$ret$1;
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.row = true;
-      $this$invoke.value = invoke$lambda_210($sortBy$delegate);
+      $this$invoke.value = invoke$lambda_206($sortBy$delegate);
       $this$invoke.onChange = $handleChangeRadio;
       var tmp = default_67;
       $this$invoke.invoke_hixay3_k$(tmp, selectFilter$lambda$lambda$lambda$lambda_4($isDisabled$delegate));
@@ -61655,7 +61598,7 @@
     $this$FC.invoke_hixay3_k$(tmp_0, selectFilterCatalog$lambda$lambda_2(handleChangeRadio, sortBy$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_216($orderBy$delegate) {
+  function invoke$lambda_212($orderBy$delegate) {
     init_properties_SelectFilterCatalog_kt_xmxzn3();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61668,7 +61611,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_217($orderBy$delegate, value) {
+  function invoke$lambda_213($orderBy$delegate, value) {
     init_properties_SelectFilterCatalog_kt_xmxzn3();
     var tmp0_setValue = getLocalDelegateReference('orderBy', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61678,7 +61621,7 @@
     tmp$ret$0 = $orderBy$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_218($sortBy$delegate) {
+  function invoke$lambda_214($sortBy$delegate) {
     init_properties_SelectFilterCatalog_kt_xmxzn3();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61691,7 +61634,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_219($sortBy$delegate, value) {
+  function invoke$lambda_215($sortBy$delegate, value) {
     init_properties_SelectFilterCatalog_kt_xmxzn3();
     var tmp0_setValue = getLocalDelegateReference('sortBy', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61701,7 +61644,7 @@
     tmp$ret$0 = $sortBy$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_220($selectedFilters$delegate) {
+  function invoke$lambda_216($selectedFilters$delegate) {
     init_properties_SelectFilterCatalog_kt_xmxzn3();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -61714,7 +61657,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_221($selectedFilters$delegate, value) {
+  function invoke$lambda_217($selectedFilters$delegate, value) {
     init_properties_SelectFilterCatalog_kt_xmxzn3();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -61726,10 +61669,10 @@
   }
   function selectFilterCatalog$lambda$lambda($orderBy$delegate, $selectedFilters$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_217($orderBy$delegate, event.target.value);
+      invoke$lambda_213($orderBy$delegate, event.target.value);
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_220($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_216($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -61820,16 +61763,16 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_221($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_217($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
   function selectFilterCatalog$lambda$lambda_0($sortBy$delegate, $selectedFilters$delegate) {
     return function (event, value) {
-      invoke$lambda_219($sortBy$delegate, value);
+      invoke$lambda_215($sortBy$delegate, value);
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_220($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_216($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -61920,7 +61863,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_221($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_217($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -61979,7 +61922,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$lambda_216($orderBy$delegate);
+      $this$invoke.value = invoke$lambda_212($orderBy$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -62155,7 +62098,7 @@
       tmp$ret$2 = tmp$ret$1;
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.row = true;
-      $this$invoke.value = invoke$lambda_218($sortBy$delegate);
+      $this$invoke.value = invoke$lambda_214($sortBy$delegate);
       $this$invoke.onChange = $handleChangeRadio;
       var tmp = default_67;
       $this$invoke.invoke_hixay3_k$(tmp, selectFilterCatalog$lambda$lambda$lambda$lambda_4);
@@ -62194,7 +62137,7 @@
     $this$FC.invoke_hixay3_k$(tmp, selectSearchByCatalog$lambda$lambda_0(handleChange, orderVal$delegate, selectedFilters$delegate, catalogInfo$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_222($catalogInfo$delegate) {
+  function invoke$lambda_218($catalogInfo$delegate) {
     init_properties_SelectSearchByCatalog_kt_6kthgq();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -62207,7 +62150,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_223($catalogInfo$delegate, value) {
+  function invoke$lambda_219($catalogInfo$delegate, value) {
     init_properties_SelectSearchByCatalog_kt_6kthgq();
     var tmp0_setValue = getLocalDelegateReference('catalogInfo', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -62217,7 +62160,7 @@
     tmp$ret$0 = $catalogInfo$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_224($orderVal$delegate) {
+  function invoke$lambda_220($orderVal$delegate) {
     init_properties_SelectSearchByCatalog_kt_6kthgq();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -62230,7 +62173,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_225($orderVal$delegate, value) {
+  function invoke$lambda_221($orderVal$delegate, value) {
     init_properties_SelectSearchByCatalog_kt_6kthgq();
     var tmp0_setValue = getLocalDelegateReference('orderVal', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -62240,7 +62183,7 @@
     tmp$ret$0 = $orderVal$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_226($selectedFilters$delegate) {
+  function invoke$lambda_222($selectedFilters$delegate) {
     init_properties_SelectSearchByCatalog_kt_6kthgq();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -62253,7 +62196,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_227($selectedFilters$delegate, value) {
+  function invoke$lambda_223($selectedFilters$delegate, value) {
     init_properties_SelectSearchByCatalog_kt_6kthgq();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -62264,7 +62207,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_8(selectedFilters$delegate, selectedVal) {
-    var tmp0_safe_receiver = invoke$lambda_226(selectedFilters$delegate).get_1mhr4y_k$('Catalogs');
+    var tmp0_safe_receiver = invoke$lambda_222(selectedFilters$delegate).get_1mhr4y_k$('Catalogs');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -62290,7 +62233,7 @@
       tmp$ret$1 = tmp0_mapTo;
       tmp$ret$2 = tmp$ret$1;
     }
-    var tmp1_safe_receiver = invoke$lambda_226(selectedFilters$delegate).get_1mhr4y_k$('Catalogs');
+    var tmp1_safe_receiver = invoke$lambda_222(selectedFilters$delegate).get_1mhr4y_k$('Catalogs');
     if (tmp1_safe_receiver == null)
       null;
     else {
@@ -62320,7 +62263,7 @@
     return function (event, child) {
       console.log(child);
       console.log(event);
-      invoke$lambda_225($orderVal$delegate, event.target.value);
+      invoke$lambda_221($orderVal$delegate, event.target.value);
       return Unit_getInstance();
     };
   }
@@ -62338,10 +62281,10 @@
   }
   function selectSearchByCatalog$lambda$lambda$lambda$lambda$lambda($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_225($orderVal$delegate, 'Titulo');
+      invoke$lambda_221($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_222($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -62409,7 +62352,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_223($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -62420,7 +62363,7 @@
       $this$invoke.accessKey = 'Publicador';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_publisher_wg9par_k$());
@@ -62430,10 +62373,10 @@
   }
   function selectSearchByCatalog$lambda$lambda$lambda$lambda$lambda_0($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_225($orderVal$delegate, 'Titulo');
+      invoke$lambda_221($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_222($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -62501,7 +62444,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_223($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -62512,7 +62455,7 @@
       $this$invoke.accessKey = 'Licenses';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_license_40u4wo_k$());
@@ -62522,10 +62465,10 @@
   }
   function selectSearchByCatalog$lambda$lambda$lambda$lambda$lambda_1($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_225($orderVal$delegate, 'Titulo');
+      invoke$lambda_221($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_222($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -62593,7 +62536,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_223($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -62604,7 +62547,7 @@
       $this$invoke.accessKey = 'Nivel de Administraci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_notation_5p7b5h_k$());
@@ -62614,10 +62557,10 @@
   }
   function selectSearchByCatalog$lambda$lambda$lambda$lambda$lambda_2($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_225($orderVal$delegate, 'Titulo');
+      invoke$lambda_221($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_222($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -62685,7 +62628,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_223($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -62696,7 +62639,7 @@
       $this$invoke.accessKey = 'Fecha creaci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_issued_ewqnxw_k$());
@@ -62706,10 +62649,10 @@
   }
   function selectSearchByCatalog$lambda$lambda$lambda$lambda$lambda_3($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_225($orderVal$delegate, 'Titulo');
+      invoke$lambda_221($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_222($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -62777,7 +62720,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_223($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -62788,7 +62731,7 @@
       $this$invoke.accessKey = 'Fecha \xFAltima modificaci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_modified_t1pq4y_k$());
@@ -62815,7 +62758,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_8($selectedFilters$delegate, invoke$lambda_224($orderVal$delegate)) ? '' : invoke$lambda_224($orderVal$delegate);
+      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_8($selectedFilters$delegate, invoke$lambda_220($orderVal$delegate)) ? '' : invoke$lambda_220($orderVal$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -62834,7 +62777,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$6;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp1_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp1_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$6 = tmp1_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$6;
       var tmp2_isNullOrBlank = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_publisher_wg9par_k$();
@@ -62850,7 +62793,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$8;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$8 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$8;
       var tmp4_isNullOrBlank = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_license_40u4wo_k$();
@@ -62866,7 +62809,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$10;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp5_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp5_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$10 = tmp5_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$10;
       var tmp6_isNullOrBlank = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_notation_5p7b5h_k$();
@@ -62882,7 +62825,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$12;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp7_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp7_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$12 = tmp7_elementAt.get_fkrdnv_k$(0);
       var tmp3_safe_receiver = tmp$ret$12;
       var tmp8_isNullOrBlank = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_issued_ewqnxw_k$();
@@ -62898,7 +62841,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$14;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp9_elementAt = invoke$lambda_222($catalogInfo$delegate);
+      var tmp9_elementAt = invoke$lambda_218($catalogInfo$delegate);
       tmp$ret$14 = tmp9_elementAt.get_fkrdnv_k$(0);
       var tmp4_safe_receiver = tmp$ret$14;
       var tmp10_isNullOrBlank = tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_modified_t1pq4y_k$();
@@ -62976,7 +62919,7 @@
     $this$FC.invoke_hixay3_k$(tmp, selectFilterCR$lambda$lambda_0(handleChange, orderVal$delegate, selectedFilters$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_228($orderVal$delegate) {
+  function invoke$lambda_224($orderVal$delegate) {
     init_properties_SelectFilterCR_kt_lvzfk9();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -62989,7 +62932,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_229($orderVal$delegate, value) {
+  function invoke$lambda_225($orderVal$delegate, value) {
     init_properties_SelectFilterCR_kt_lvzfk9();
     var tmp0_setValue = getLocalDelegateReference('orderVal', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -62999,7 +62942,7 @@
     tmp$ret$0 = $orderVal$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_230($selectedFilters$delegate) {
+  function invoke$lambda_226($selectedFilters$delegate) {
     init_properties_SelectFilterCR_kt_lvzfk9();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -63012,7 +62955,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_231($selectedFilters$delegate, value) {
+  function invoke$lambda_227($selectedFilters$delegate, value) {
     init_properties_SelectFilterCR_kt_lvzfk9();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -63023,7 +62966,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_9(selectedFilters$delegate, selectedVal) {
-    var tmp0_safe_receiver = invoke$lambda_230(selectedFilters$delegate).get_1mhr4y_k$('CatalogRecords');
+    var tmp0_safe_receiver = invoke$lambda_226(selectedFilters$delegate).get_1mhr4y_k$('CatalogRecords');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -63049,7 +62992,7 @@
       tmp$ret$1 = tmp0_mapTo;
       tmp$ret$2 = tmp$ret$1;
     }
-    var tmp1_safe_receiver = invoke$lambda_230(selectedFilters$delegate).get_1mhr4y_k$('CatalogRecords');
+    var tmp1_safe_receiver = invoke$lambda_226(selectedFilters$delegate).get_1mhr4y_k$('CatalogRecords');
     if (tmp1_safe_receiver == null)
       null;
     else {
@@ -63077,7 +63020,7 @@
   }
   function selectFilterCR$lambda$lambda($orderVal$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_229($orderVal$delegate, event.target.value);
+      invoke$lambda_225($orderVal$delegate, event.target.value);
       return Unit_getInstance();
     };
   }
@@ -63095,10 +63038,10 @@
   }
   function selectFilterCR$lambda$lambda$lambda$lambda$lambda($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_229($orderVal$delegate, 'Titulo');
+      invoke$lambda_225($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -63191,7 +63134,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -63207,10 +63150,10 @@
   }
   function selectFilterCR$lambda$lambda$lambda$lambda$lambda_0($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_229($orderVal$delegate, 'Titulo');
+      invoke$lambda_225($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -63303,7 +63246,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -63319,10 +63262,10 @@
   }
   function selectFilterCR$lambda$lambda$lambda$lambda$lambda_1($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_229($orderVal$delegate, 'Titulo');
+      invoke$lambda_225($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_226($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -63415,7 +63358,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_227($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -63448,7 +63391,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_9($selectedFilters$delegate, invoke$lambda_228($orderVal$delegate)) ? '' : invoke$lambda_228($orderVal$delegate);
+      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_9($selectedFilters$delegate, invoke$lambda_224($orderVal$delegate)) ? '' : invoke$lambda_224($orderVal$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -63535,7 +63478,7 @@
     $this$FC.invoke_hixay3_k$(tmp, selectFilterDServ$lambda$lambda_0(handleChange, orderVal$delegate, selectedFilters$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_232($orderVal$delegate) {
+  function invoke$lambda_228($orderVal$delegate) {
     init_properties_SelectFilterDServ_kt_ghwx82();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -63548,7 +63491,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_233($orderVal$delegate, value) {
+  function invoke$lambda_229($orderVal$delegate, value) {
     init_properties_SelectFilterDServ_kt_ghwx82();
     var tmp0_setValue = getLocalDelegateReference('orderVal', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -63558,7 +63501,7 @@
     tmp$ret$0 = $orderVal$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_234($selectedFilters$delegate) {
+  function invoke$lambda_230($selectedFilters$delegate) {
     init_properties_SelectFilterDServ_kt_ghwx82();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -63571,7 +63514,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_235($selectedFilters$delegate, value) {
+  function invoke$lambda_231($selectedFilters$delegate, value) {
     init_properties_SelectFilterDServ_kt_ghwx82();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -63582,7 +63525,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_10(selectedFilters$delegate, selectedVal) {
-    var tmp0_safe_receiver = invoke$lambda_234(selectedFilters$delegate).get_1mhr4y_k$('DataServices');
+    var tmp0_safe_receiver = invoke$lambda_230(selectedFilters$delegate).get_1mhr4y_k$('DataServices');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -63608,7 +63551,7 @@
       tmp$ret$1 = tmp0_mapTo;
       tmp$ret$2 = tmp$ret$1;
     }
-    var tmp1_safe_receiver = invoke$lambda_234(selectedFilters$delegate).get_1mhr4y_k$('DataServices');
+    var tmp1_safe_receiver = invoke$lambda_230(selectedFilters$delegate).get_1mhr4y_k$('DataServices');
     if (tmp1_safe_receiver == null)
       null;
     else {
@@ -63636,7 +63579,7 @@
   }
   function selectFilterDServ$lambda$lambda($orderVal$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_233($orderVal$delegate, event.target.value);
+      invoke$lambda_229($orderVal$delegate, event.target.value);
       return Unit_getInstance();
     };
   }
@@ -63654,10 +63597,10 @@
   }
   function selectFilterDServ$lambda$lambda$lambda$lambda$lambda($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_233($orderVal$delegate, 'Titulo');
+      invoke$lambda_229($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -63750,7 +63693,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -63768,7 +63711,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -63861,7 +63804,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -63879,7 +63822,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -63972,7 +63915,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -63990,7 +63933,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64083,7 +64026,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -64101,7 +64044,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64194,7 +64137,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -64212,7 +64155,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64305,7 +64248,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -64323,7 +64266,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_234($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_230($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64416,7 +64359,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_235($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_231($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -64449,7 +64392,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_10($selectedFilters$delegate, invoke$lambda_232($orderVal$delegate)) ? '' : invoke$lambda_232($orderVal$delegate);
+      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_10($selectedFilters$delegate, invoke$lambda_228($orderVal$delegate)) ? '' : invoke$lambda_228($orderVal$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -64545,7 +64488,7 @@
     $this$FC.invoke_hixay3_k$(tmp, selectFilterDataset$lambda$lambda_0(handleChange, orderVal$delegate, selectedFilters$delegate, datasetInfo$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_236($datasetInfo$delegate) {
+  function invoke$lambda_232($datasetInfo$delegate) {
     init_properties_SelectFilterDataset_kt_xjzqi8();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -64558,7 +64501,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_237($datasetInfo$delegate, value) {
+  function invoke$lambda_233($datasetInfo$delegate, value) {
     init_properties_SelectFilterDataset_kt_xjzqi8();
     var tmp0_setValue = getLocalDelegateReference('datasetInfo', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -64568,7 +64511,7 @@
     tmp$ret$0 = $datasetInfo$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_238($orderVal$delegate) {
+  function invoke$lambda_234($orderVal$delegate) {
     init_properties_SelectFilterDataset_kt_xjzqi8();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -64581,7 +64524,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_239($orderVal$delegate, value) {
+  function invoke$lambda_235($orderVal$delegate, value) {
     init_properties_SelectFilterDataset_kt_xjzqi8();
     var tmp0_setValue = getLocalDelegateReference('orderVal', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -64591,7 +64534,7 @@
     tmp$ret$0 = $orderVal$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_240($selectedFilters$delegate) {
+  function invoke$lambda_236($selectedFilters$delegate) {
     init_properties_SelectFilterDataset_kt_xjzqi8();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -64604,7 +64547,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_241($selectedFilters$delegate, value) {
+  function invoke$lambda_237($selectedFilters$delegate, value) {
     init_properties_SelectFilterDataset_kt_xjzqi8();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -64615,7 +64558,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_11(selectedFilters$delegate, selectedVal) {
-    var tmp0_safe_receiver = invoke$lambda_240(selectedFilters$delegate).get_1mhr4y_k$('Datasets');
+    var tmp0_safe_receiver = invoke$lambda_236(selectedFilters$delegate).get_1mhr4y_k$('Datasets');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -64641,7 +64584,7 @@
       tmp$ret$1 = tmp0_mapTo;
       tmp$ret$2 = tmp$ret$1;
     }
-    var tmp1_safe_receiver = invoke$lambda_240(selectedFilters$delegate).get_1mhr4y_k$('Datasets');
+    var tmp1_safe_receiver = invoke$lambda_236(selectedFilters$delegate).get_1mhr4y_k$('Datasets');
     if (tmp1_safe_receiver == null)
       null;
     else {
@@ -64669,7 +64612,7 @@
   }
   function selectFilterDataset$lambda$lambda($orderVal$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_239($orderVal$delegate, event.target.value);
+      invoke$lambda_235($orderVal$delegate, event.target.value);
       return Unit_getInstance();
     };
   }
@@ -64687,10 +64630,10 @@
   }
   function selectFilterDataset$lambda$lambda$lambda$lambda$lambda($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_239($orderVal$delegate, 'Titulo');
+      invoke$lambda_235($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_236($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64758,7 +64701,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_237($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -64769,7 +64712,7 @@
       $this$invoke.accessKey = 'Publicador';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_publisher_wg9par_k$());
@@ -64779,10 +64722,10 @@
   }
   function selectFilterDataset$lambda$lambda$lambda$lambda$lambda_0($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_239($orderVal$delegate, 'Titulo');
+      invoke$lambda_235($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_236($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64850,7 +64793,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_237($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -64861,7 +64804,7 @@
       $this$invoke.accessKey = 'Licenses';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_license_40u4wo_k$());
@@ -64871,10 +64814,10 @@
   }
   function selectFilterDataset$lambda$lambda$lambda$lambda$lambda_1($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_239($orderVal$delegate, 'Titulo');
+      invoke$lambda_235($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_236($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -64942,7 +64885,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_237($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -64953,7 +64896,7 @@
       $this$invoke.accessKey = 'Nivel de Administraci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_notation_5p7b5h_k$());
@@ -64963,10 +64906,10 @@
   }
   function selectFilterDataset$lambda$lambda$lambda$lambda$lambda_2($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_239($orderVal$delegate, 'Titulo');
+      invoke$lambda_235($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_236($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65034,7 +64977,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_237($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -65045,7 +64988,7 @@
       $this$invoke.accessKey = 'Fecha creaci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_issued_ewqnxw_k$());
@@ -65055,10 +64998,10 @@
   }
   function selectFilterDataset$lambda$lambda$lambda$lambda$lambda_3($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_239($orderVal$delegate, 'Titulo');
+      invoke$lambda_235($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_236($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65126,7 +65069,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_237($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -65137,7 +65080,7 @@
       $this$invoke.accessKey = 'Fecha \xFAltima modificaci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       $this$invoke.id = '' + (tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_modified_t1pq4y_k$());
@@ -65147,10 +65090,10 @@
   }
   function selectFilterDataset$lambda$lambda$lambda$lambda$lambda_4($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_239($orderVal$delegate, 'Titulo');
+      invoke$lambda_235($orderVal$delegate, 'Titulo');
       var tmp$ret$13;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_236($selectedFilters$delegate));
       var tmp$ret$12;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65218,7 +65161,7 @@
       tmp$ret$11 = tmp1_mapValuesTo;
       tmp$ret$12 = tmp$ret$11;
       tmp$ret$13 = tmp$ret$12;
-      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$13));
+      invoke$lambda_237($selectedFilters$delegate, toMutableMap(tmp$ret$13));
       return Unit_getInstance();
     };
   }
@@ -65228,13 +65171,13 @@
       $this$invoke.accessKey = 'Frecuencia de Actualizaci\xF3n';
       var tmp$ret$0;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp0_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp0_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$0 = tmp0_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$0;
       var tmp = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_temporalStart_lopd55_k$();
       var tmp$ret$1;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp1_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp1_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$1 = tmp1_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$1;
       $this$invoke.id = '' + tmp + ' -- ' + (tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_temporalEnd_nxb1tc_k$());
@@ -65262,7 +65205,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_11($selectedFilters$delegate, invoke$lambda_238($orderVal$delegate)) ? '' : invoke$lambda_238($orderVal$delegate);
+      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_11($selectedFilters$delegate, invoke$lambda_234($orderVal$delegate)) ? '' : invoke$lambda_234($orderVal$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -65281,7 +65224,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$6;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp1_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp1_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$6 = tmp1_elementAt.get_fkrdnv_k$(0);
       var tmp0_safe_receiver = tmp$ret$6;
       var tmp2_isNullOrBlank = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_publisher_wg9par_k$();
@@ -65297,7 +65240,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$8;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp3_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp3_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$8 = tmp3_elementAt.get_fkrdnv_k$(0);
       var tmp1_safe_receiver = tmp$ret$8;
       var tmp4_isNullOrBlank = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.get_license_40u4wo_k$();
@@ -65313,7 +65256,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$10;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp5_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp5_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$10 = tmp5_elementAt.get_fkrdnv_k$(0);
       var tmp2_safe_receiver = tmp$ret$10;
       var tmp6_isNullOrBlank = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_notation_5p7b5h_k$();
@@ -65329,7 +65272,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$12;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp7_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp7_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$12 = tmp7_elementAt.get_fkrdnv_k$(0);
       var tmp3_safe_receiver = tmp$ret$12;
       var tmp8_isNullOrBlank = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.get_issued_ewqnxw_k$();
@@ -65345,7 +65288,7 @@
       // Inline function 'kotlin.text.isNullOrBlank' call
       var tmp$ret$14;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp9_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp9_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$14 = tmp9_elementAt.get_fkrdnv_k$(0);
       var tmp4_safe_receiver = tmp$ret$14;
       var tmp10_isNullOrBlank = tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_modified_t1pq4y_k$();
@@ -65359,7 +65302,7 @@
       var tmp_10;
       var tmp$ret$16;
       // Inline function 'kotlin.collections.elementAt' call
-      var tmp11_elementAt = invoke$lambda_236($datasetInfo$delegate);
+      var tmp11_elementAt = invoke$lambda_232($datasetInfo$delegate);
       tmp$ret$16 = tmp11_elementAt.get_fkrdnv_k$(0);
       var tmp5_safe_receiver = tmp$ret$16;
       if (!((tmp5_safe_receiver == null ? null : tmp5_safe_receiver.get_accrualPeriodicity_m1omtp_k$()) == null)) {
@@ -65434,7 +65377,7 @@
     $this$FC.invoke_hixay3_k$(tmp, selectFilterDSeries$lambda$lambda_0(handleChange, orderVal$delegate, selectedFilters$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_242($orderVal$delegate) {
+  function invoke$lambda_238($orderVal$delegate) {
     init_properties_SelectFilterDSeries_kt_jmzbeb();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -65447,7 +65390,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_243($orderVal$delegate, value) {
+  function invoke$lambda_239($orderVal$delegate, value) {
     init_properties_SelectFilterDSeries_kt_jmzbeb();
     var tmp0_setValue = getLocalDelegateReference('orderVal', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -65457,7 +65400,7 @@
     tmp$ret$0 = $orderVal$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_244($selectedFilters$delegate) {
+  function invoke$lambda_240($selectedFilters$delegate) {
     init_properties_SelectFilterDSeries_kt_jmzbeb();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -65470,7 +65413,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_245($selectedFilters$delegate, value) {
+  function invoke$lambda_241($selectedFilters$delegate, value) {
     init_properties_SelectFilterDSeries_kt_jmzbeb();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -65481,7 +65424,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_12(selectedFilters$delegate, selectedVal) {
-    var tmp0_safe_receiver = invoke$lambda_244(selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
+    var tmp0_safe_receiver = invoke$lambda_240(selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -65507,7 +65450,7 @@
       tmp$ret$1 = tmp0_mapTo;
       tmp$ret$2 = tmp$ret$1;
     }
-    var tmp1_safe_receiver = invoke$lambda_244(selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
+    var tmp1_safe_receiver = invoke$lambda_240(selectedFilters$delegate).get_1mhr4y_k$('DatasetSeries');
     if (tmp1_safe_receiver == null)
       null;
     else {
@@ -65535,7 +65478,7 @@
   }
   function selectFilterDSeries$lambda$lambda($orderVal$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_243($orderVal$delegate, event.target.value);
+      invoke$lambda_239($orderVal$delegate, event.target.value);
       return Unit_getInstance();
     };
   }
@@ -65555,7 +65498,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65648,7 +65591,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -65666,7 +65609,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65759,7 +65702,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -65777,7 +65720,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65870,7 +65813,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -65888,7 +65831,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -65981,7 +65924,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -65999,7 +65942,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -66092,7 +66035,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -66110,7 +66053,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -66203,7 +66146,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -66221,7 +66164,7 @@
     return function (event) {
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_240($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -66314,7 +66257,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_241($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -66347,7 +66290,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_12($selectedFilters$delegate, invoke$lambda_242($orderVal$delegate)) ? '' : invoke$lambda_242($orderVal$delegate);
+      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_12($selectedFilters$delegate, invoke$lambda_238($orderVal$delegate)) ? '' : invoke$lambda_238($orderVal$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;
@@ -66442,7 +66385,7 @@
     $this$FC.invoke_hixay3_k$(tmp, selectFilterDist$lambda$lambda_0(handleChange, orderVal$delegate, selectedFilters$delegate));
     return Unit_getInstance();
   }
-  function invoke$lambda_246($orderVal$delegate) {
+  function invoke$lambda_242($orderVal$delegate) {
     init_properties_SelectFilterDist_kt_gyzkzk();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -66455,7 +66398,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_247($orderVal$delegate, value) {
+  function invoke$lambda_243($orderVal$delegate, value) {
     init_properties_SelectFilterDist_kt_gyzkzk();
     var tmp0_setValue = getLocalDelegateReference('orderVal', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -66465,7 +66408,7 @@
     tmp$ret$0 = $orderVal$delegate;
     return tmp$ret$0[1](value);
   }
-  function invoke$lambda_248($selectedFilters$delegate) {
+  function invoke$lambda_244($selectedFilters$delegate) {
     init_properties_SelectFilterDist_kt_gyzkzk();
     var tmp$ret$1;
     // Inline function 'react.StateInstance.getValue' call
@@ -66478,7 +66421,7 @@
     tmp$ret$1 = tmp$ret$0[0];
     return tmp$ret$1;
   }
-  function invoke$lambda_249($selectedFilters$delegate, value) {
+  function invoke$lambda_245($selectedFilters$delegate, value) {
     init_properties_SelectFilterDist_kt_gyzkzk();
     var tmp0_setValue = getLocalDelegateReference('selectedFilters', KMutableProperty0, true, function () {
       return THROW_ISE();
@@ -66489,7 +66432,7 @@
     return tmp$ret$0[1](value);
   }
   function invoke$checkIfSelectedFiltersIsEmpty_13(selectedFilters$delegate, selectedVal) {
-    var tmp0_safe_receiver = invoke$lambda_248(selectedFilters$delegate).get_1mhr4y_k$('Distributions');
+    var tmp0_safe_receiver = invoke$lambda_244(selectedFilters$delegate).get_1mhr4y_k$('Distributions');
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -66515,7 +66458,7 @@
       tmp$ret$1 = tmp0_mapTo;
       tmp$ret$2 = tmp$ret$1;
     }
-    var tmp1_safe_receiver = invoke$lambda_248(selectedFilters$delegate).get_1mhr4y_k$('Distributions');
+    var tmp1_safe_receiver = invoke$lambda_244(selectedFilters$delegate).get_1mhr4y_k$('Distributions');
     if (tmp1_safe_receiver == null)
       null;
     else {
@@ -66543,7 +66486,7 @@
   }
   function selectFilterDist$lambda$lambda($orderVal$delegate) {
     return function (event, _anonymous_parameter_1__qggqgd) {
-      invoke$lambda_247($orderVal$delegate, event.target.value);
+      invoke$lambda_243($orderVal$delegate, event.target.value);
       return Unit_getInstance();
     };
   }
@@ -66561,10 +66504,10 @@
   }
   function selectFilterDist$lambda$lambda$lambda$lambda$lambda($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_247($orderVal$delegate, 'Titulo');
+      invoke$lambda_243($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_248($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -66657,7 +66600,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_249($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -66673,10 +66616,10 @@
   }
   function selectFilterDist$lambda$lambda$lambda$lambda$lambda_0($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_247($orderVal$delegate, 'Titulo');
+      invoke$lambda_243($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_248($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -66769,7 +66712,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_249($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -66785,10 +66728,10 @@
   }
   function selectFilterDist$lambda$lambda$lambda$lambda$lambda_1($orderVal$delegate, $selectedFilters$delegate) {
     return function (event) {
-      invoke$lambda_247($orderVal$delegate, 'Titulo');
+      invoke$lambda_243($orderVal$delegate, 'Titulo');
       var tmp$ret$16;
       // Inline function 'kotlin.collections.mapValues' call
-      var tmp0_mapValues = toMutableMap(invoke$lambda_248($selectedFilters$delegate));
+      var tmp0_mapValues = toMutableMap(invoke$lambda_244($selectedFilters$delegate));
       var tmp$ret$15;
       // Inline function 'kotlin.collections.mapValuesTo' call
       var tmp1_mapValuesTo = LinkedHashMap_init_$Create$(mapCapacity(tmp0_mapValues.get_size_woubt6_k$()));
@@ -66881,7 +66824,7 @@
       tmp$ret$14 = tmp1_mapValuesTo;
       tmp$ret$15 = tmp$ret$14;
       tmp$ret$16 = tmp$ret$15;
-      invoke$lambda_249($selectedFilters$delegate, toMutableMap(tmp$ret$16));
+      invoke$lambda_245($selectedFilters$delegate, toMutableMap(tmp$ret$16));
       return Unit_getInstance();
     };
   }
@@ -66914,7 +66857,7 @@
       tmp0_sx.sx = tmp$ret$2;
       $this$invoke.labelId = 'demo-select-small';
       $this$invoke.id = 'demo-select-small';
-      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_13($selectedFilters$delegate, invoke$lambda_246($orderVal$delegate)) ? '' : invoke$lambda_246($orderVal$delegate);
+      $this$invoke.value = invoke$checkIfSelectedFiltersIsEmpty_13($selectedFilters$delegate, invoke$lambda_242($orderVal$delegate)) ? '' : invoke$lambda_242($orderVal$delegate);
       var tmp$ret$5;
       // Inline function 'react.ReactNode' call
       var tmp$ret$4;

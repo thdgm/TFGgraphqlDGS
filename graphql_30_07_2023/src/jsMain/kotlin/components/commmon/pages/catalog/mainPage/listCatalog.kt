@@ -79,7 +79,7 @@ val listCatalog = FC<ListCatalogProps> { props ->
     }
 
     useEffect(selectedFilters){
-        console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS")
+        console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
         catalogsList = props.catalogsList
     }
 

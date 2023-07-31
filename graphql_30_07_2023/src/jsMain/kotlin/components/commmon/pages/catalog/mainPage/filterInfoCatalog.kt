@@ -1,7 +1,10 @@
 package components.commmon.pages.catalog.mainPage
 
 
+import Store.SetLoadingFalse
+import Store.SetLoadingTrue
 import components.commmon.FilterListContextAll
+import components.commmon.pages.dataset.mainPage.IsLoadingContext
 import csstype.ClassName
 import csstype.Color
 import csstype.NamedColor
@@ -32,23 +35,24 @@ external interface FilterInfoCatalogProps:Props{
 }
 
 val filterInfoCatalog = FC<FilterInfoCatalogProps> { props ->
+    var selectedFilters by useRequiredContext(FilterListContextAll)
     var filterFields by useState(props.filterFields)
     var showMoreOrLess by useState(false)
-    var selectedFilters by useRequiredContext(FilterListContextAll)
     val handleClickMore = {
         GlobalScope.launch {
+            console.log("MOREEEEEEEEEEEEEEE")
             props.updateFilterListMore()
         }
     }
     val handleClickLess = {
         GlobalScope.launch {
-           props.updateFilterListLess()
+            props.updateFilterListLess()
         }
     }
-
     useEffect(listOf(props.filterFields)) {
         filterFields = props.filterFields
     }
+
     Accordion {
         sx {
             boxShadow = None.none
@@ -65,55 +69,68 @@ val filterInfoCatalog = FC<FilterInfoCatalogProps> { props ->
                 + "${props.filterName}"
             }
         }
-
         AccordionDetails{
             sx {
                 boxShadow = None.none
             }
+
             mui.material.List {
                 className = ClassName("scrollUlFilters")
-                props.filterFields.forEachIndexed { index, value ->
-                    ListItemButton {
-                        onClick = { selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                            if (key == "Catalogs") {
-                                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                    if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(value)
-                                    else if (filterVal.contains( value)) filterVal.filter { miVal -> miVal != value }
-                                    else filterVal
+
+                // console.log("SELECTED: " + disbledButtons)
+                if (!filterFields.isEmpty()) {
+                    filterFields.forEachIndexed { index, value ->
+
+                        ListItemButton {
+                            onClick = {
+                                console.log("CLICKKKKKKKK::: "+props.filterName)
+                                console.log("VALUEEEEEEEE::: "+value)
+                                selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                    if (key == "Catalogs") {
+                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                            if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(
+                                                value
+                                            )
+                                            //else if (filterVal.contains(value)) filterVal.filter { miVal -> miVal != value }
+                                            else filterVal
+                                        }.toMutableMap()
+                                    } else {
+                                        catalogMap
+                                    }
                                 }.toMutableMap()
-                            } else {
-                                catalogMap
+
+                                console.log("FILTERSSSS::: "+selectedFilters)
                             }
-                        }.toMutableMap()
+                            selected =
+                                selectedFilters["Catalogs"]!!.toMutableMap()[props.filterName]?.contains(value)
+                            +"$value"
+
                         }
-                        +"$value"
-                        selected = selectedFilters["Catalogs"]!!.toMutableMap()[props.filterName]?.contains(value)
-                    }
-
-                }
-
-            }
-            if (props.filterName != "Número de recursos") {
-                mui.material.List {
-                    ListItemButton {
-                        sx {
-                            color = Color("white")
-                            backgroundColor = rgb(247, 160, 93)
-                        }
-                        className = ClassName("addMoreFilters")
-
-                        if (!showMoreOrLess) {
-                            onClick = { handleClickMore(); showMoreOrLess = true }
-                            +"Mostrar más"
-                        } else {
-                            onClick = { handleClickLess(); showMoreOrLess = false }
-                            +"Mostrar menos"
-                        }
-
                     }
                 }
             }
 
         }
+        if (props.filterName != "Número de recursos"){
+            mui.material.List {
+                ListItemButton {
+                    sx {
+                        color = Color("white")
+                        backgroundColor = rgb(247, 160, 93)
+                    }
+                    className = ClassName("addMoreFilters")
+
+                    if (!showMoreOrLess) {
+                        onClick = { handleClickMore(); showMoreOrLess = true }
+                        +"Mostrar más"
+                    } else {
+                        onClick = { handleClickLess(); showMoreOrLess = false }
+                        +"Mostrar menos"
+                    }
+                }
+            }
+        }
+
+
     }
 }

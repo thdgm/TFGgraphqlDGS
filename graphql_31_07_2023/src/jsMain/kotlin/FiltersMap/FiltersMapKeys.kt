@@ -53,7 +53,7 @@ class FiltersMapKeys {
             "Categoría" to listOf(),
             "Publicador" to listOf(),
             "Licenses" to listOf(),
-            "Nivel de Administración" to listOf(),
+            "Nivel de administración" to listOf(),
             "Fecha creación" to listOf(),
             "Fecha última modificación" to listOf(),
             "Número de recursos" to listOf(),

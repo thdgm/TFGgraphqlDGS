@@ -188,8 +188,9 @@ class ResourceServicesImpl(
         //Conversiones de issued, modified y period
         val issued = appliedFilters.find { it.key == "Fecha creación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
         val modified = appliedFilters.find { it.key == "Fecha última modificación"}?.values?.map{converterAux.toLocalDateTime(it)} ?: listOf()
-        val notation = appliedFilters.find { it.key == "Nivel de Administración"}?.values?.map{"${converterAux.getAdministrationLevel(it)}%"} ?: listOf()
+        val notation = appliedFilters.find { it.key == "Nivel de administración"}?.values?.map{"${converterAux.getAdministrationLevel(it)}%"} ?: listOf()
         var numberOfResources: Pair<String?, String?>? = if (appliedFilters.find { it.key == "Número de recursos"}?.values?.isNotEmpty() == true) appliedFilters.find { it.key == "Número de recursos"}?.values?.first()?.split(" - ").let{Pair(it?.first(),it?.last())} else null
+       println("ADMONNNNN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ $notation")
         return repoCriteria.findCatalogsNumberByFilters(appliedFilters,type,issued, modified, notation,numberOfResources)?.toInt() ?: 0
 
     }
