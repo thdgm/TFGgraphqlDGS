@@ -1,0 +1,237 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/99883b69-f606-443c-bca4-d3f811a6509d/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.ms-excel",
+      "rdfs:label": "XLS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/6d070c02-7a7a-451a-9a11-7cf311fd8f24",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://datos.madrid.es/egob/catalogo/300618-2-ejecucion-presupuestaria-2023.csv",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "1302528"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/6d070c02-7a7a-451a-9a11-7cf311fd8f24/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "AYUNTAMIENTO Y OOAA (a 31 de enero de 2023). GASTOS"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/DurationDescription",
+      "@type": "time:DurationDescription",
+      "time:months": {
+        "@type": "xsd:decimal",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/99883b69-f606-443c-bca4-d3f811a6509d",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://datos.madrid.es/egob/catalogo/300618-5-ejecucion-presupuestaria-2023.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "215040"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/99883b69-f606-443c-bca4-d3f811a6509d/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "AYUNTAMIENTO Y OOAA (a 31 de enero de 2023). INVERSIONES"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/d3d6fa5c-b65c-46a2-90e5-bdd00bd151e7",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://datos.madrid.es/egob/catalogo/300618-4-ejecucion-presupuestaria-2023.csv",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "321536"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/d3d6fa5c-b65c-46a2-90e5-bdd00bd151e7/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "AYUNTAMIENTO Y OOAA (a 31 de enero de 2023). INVERSIONES"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/bb0e91fd-4db7-40af-8a70-d6c2dea01681/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.ms-excel",
+      "rdfs:label": "XLS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/58d05b17-0642-4cf7-a223-d37b610bc414"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/6d070c02-7a7a-451a-9a11-7cf311fd8f24"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/99883b69-f606-443c-bca4-d3f811a6509d"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/bb0e91fd-4db7-40af-8a70-d6c2dea01681"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/75b8f23b-48e0-4593-9461-3b3f186d9de4"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/d3d6fa5c-b65c-46a2-90e5-bdd00bd151e7"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "Información financiera y presupuestaria"
+        },
+        {
+          "@language": "es",
+          "@value": "Hacienda"
+        }
+      ],
+      "dcat:theme": {
+        "@id": "http://datos.gob.es/kos/sector-publico/sector/hacienda"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/Frequency"
+      },
+      "dct:description": {
+        "@language": "es",
+        "@value": "Ejecución presupuestaria de los Presupuestos Municipales de 2023.   Incluye la Información de:     001 Ayuntamiento de Madrid   501 OO.AA. Informática del Ayuntamiento de Madrid   503 OO.AA. Agencia para el Empleo de Madrid   506 OO.AA. Agencia Tributaria de Madrid   508 OO.AA. Madrid Salud   509 OO.AA. Agencia de actividades   Proyectos de Inversión del Ayuntamiento y Organismos Autónomos     Las cantidades que se muestran en los ficheros de lo que ingresa, gasta e invierte el Ayuntamiento son NOMINALES.    Esta información se actualiza mensualmente sobre el día 15 del mes, obteniéndose en ese momento la información de dos meses antes (por ejemplo, sobre el 15 de Marzo, se obtendría los datos del mes de enero completo). La información del ultimo mes mostrado,   consolida la información de los meses anteriores  , es decir, la ejecución presupuestaria de noviembre, por ejemplo, recoge la ejecución de los primeros once meses del año, y no solo los datos de noviembre.    El nivel de granularidad con que se presentan el presupuesto y su ejecución mensual supone que los ciudadanos y las instituciones interesadas tienen toda la información necesaria para un estudio detallado.    Existen en el Portal de Datos Abiertos, los siguientes conjuntos de datos relacionados con información presupuestaria:      Presupuestos. Presupuesto general 2022     Presupuestos. Históricos ejecución - Liquidación 2011-2020     Presupuestos. Históricos generales 2011-2020      Presupuestos. Histórico de proyectos 2017-2020      En  el apartado 'Documentación asociada', hay un documento explicativo con advertencias y recomendaciones sobre el uso de los datos.     Ejemplo de reutilización de estos datos:    Presupuestos Abiertos  es una aplicación del Ayuntamiento de Madrid que reutiliza los conjuntos de datos de información presupuestaria de este portal, para facilitar la consulta interactiva, clara y visual de las cuentas municipales desde el año 2011.   Puedes encontrar más información sobre estos datos en el  Portal de transparencia &gt; Presupuestos.     Visualización : El Ayuntamiento de Madrid con este conjunto de datos, el cual puede descargar más abajo, ha realizado una visualización  (Presupuestos Abiertos)  para hacer más accesibles estos datos abiertos:            Acceder a la visualización Presupuestos Abiertos"
+      },
+      "dct:identifier": "https://datos.madrid.es/egob/catalogo/300618-0-ejecucion-presupuestaria-2023",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-03-07T09:57:55+01:00"
+      },
+      "dct:language": "es",
+      "dct:license": {
+        "@id": "https://datos.madrid.es/egob/catalogo/aviso-legal"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-03-07T10:03:22+01:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01280796"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "Presupuestos. Ejecución mensual ejercicio 2023"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/58d05b17-0642-4cf7-a223-d37b610bc414",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://datos.madrid.es/egob/catalogo/300618-3-ejecucion-presupuestaria-2023.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "539648"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/58d05b17-0642-4cf7-a223-d37b610bc414/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "AYUNTAMIENTO Y OOAA (a 31 de enero de 2023). GASTOS"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/58d05b17-0642-4cf7-a223-d37b610bc414/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.ms-excel",
+      "rdfs:label": "XLS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/bb0e91fd-4db7-40af-8a70-d6c2dea01681",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://datos.madrid.es/egob/catalogo/300618-1-ejecucion-presupuestaria-2023.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "22528"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/bb0e91fd-4db7-40af-8a70-d6c2dea01681/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "AYUNTAMIENTO Y OOAA (a 31 de enero de 2023). INGRESOS"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/d3d6fa5c-b65c-46a2-90e5-bdd00bd151e7/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/75b8f23b-48e0-4593-9461-3b3f186d9de4/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/6d070c02-7a7a-451a-9a11-7cf311fd8f24/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/Frequency",
+      "@type": "dct:Frequency",
+      "rdf:value": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/DurationDescription"
+      }
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01280796",
+      "@type": "skos:Concept",
+      "skos:notation": "L01280796",
+      "skos:prefLabel": "Ayuntamiento de Madrid"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/75b8f23b-48e0-4593-9461-3b3f186d9de4",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://datos.madrid.es/egob/catalogo/300618-0-ejecucion-presupuestaria-2023.csv",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "24576"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01280796-presupuestos-ejecucion-mensual-ejercicio-2023/resource/75b8f23b-48e0-4593-9461-3b3f186d9de4/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "AYUNTAMIENTO Y OOAA (a 31 de enero de 2023). INGRESOS"
+      }
+    }
+  ]
+}

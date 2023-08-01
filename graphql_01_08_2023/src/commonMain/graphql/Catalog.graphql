@@ -1,0 +1,5 @@
+query Catalog($id:ID!) {
+    catalog(id:$id){
+        id
+    }
+}

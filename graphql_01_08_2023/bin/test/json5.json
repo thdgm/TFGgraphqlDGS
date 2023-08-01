@@ -1,0 +1,220 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01502973",
+      "@type": "skos:Concept",
+      "skos:notation": "L01502973",
+      "skos:prefLabel": "Ayuntamiento de Zaragoza"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/e2dbfba7-2a21-4079-a07d-aaea45b84c26/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/07895a12-b2ab-4a94-b03a-7a7b00f74d5b",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/sede/servicio/equipamiento/basic/campos-de-futbol.json?srsname=utm30n_etrs89",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/07895a12-b2ab-4a94-b03a-7a7b00f74d5b/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4242",
+      "dct:title": {
+        "@language": "es",
+        "@value": "json"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/f274a1e6-9d42-4311-a0b2-b4d484232696",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/cont/paginas/opendata/campos-futbol-2019.xls",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "11776"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/f274a1e6-9d42-4311-a0b2-b4d484232696/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/2041",
+      "dct:title": {
+        "@language": "es",
+        "@value": "Campos de FÃºtbol 2019"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/f274a1e6-9d42-4311-a0b2-b4d484232696/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.ms-excel",
+      "rdfs:label": "XLS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/49e35def-a79a-4647-ae23-cab3c35eb3f9",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/sede/servicio/equipamiento/basic/campos-de-futbol.geojson?srsname=utm30n_etrs89",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/49e35def-a79a-4647-ae23-cab3c35eb3f9/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4236",
+      "dct:title": {
+        "@language": "es",
+        "@value": "Geojson"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/DurationDescription",
+      "@type": "time:DurationDescription",
+      "time:years": {
+        "@type": "xsd:decimal",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/49e35def-a79a-4647-ae23-cab3c35eb3f9/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/json",
+      "rdfs:label": "JSON"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/e2dbfba7-2a21-4079-a07d-aaea45b84c26",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/sede/servicio/equipamiento/basic/campos-de-futbol.geojson?srsname=utm30n_etrs89",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/e2dbfba7-2a21-4079-a07d-aaea45b84c26/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4241",
+      "dct:title": {
+        "@language": "es",
+        "@value": "csv"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/Frequency",
+      "@type": "dct:Frequency",
+      "rdf:value": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/DurationDescription"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/07895a12-b2ab-4a94-b03a-7a7b00f74d5b/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/json",
+      "rdfs:label": "JSON"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/c6b7c93a-bc2d-4f6d-9830-5d6d01fe8b91/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.oasis.opendocument.spreadsheet",
+      "rdfs:label": "ODS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/e2dbfba7-2a21-4079-a07d-aaea45b84c26"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/07895a12-b2ab-4a94-b03a-7a7b00f74d5b"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/49e35def-a79a-4647-ae23-cab3c35eb3f9"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/c6b7c93a-bc2d-4f6d-9830-5d6d01fe8b91"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/f274a1e6-9d42-4311-a0b2-b4d484232696"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "fÃºtbol"
+        },
+        {
+          "@language": "es",
+          "@value": "equipamientos"
+        },
+        {
+          "@language": "es",
+          "@value": "campos de futbol"
+        },
+        {
+          "@language": "es",
+          "@value": "instalaciones deportivas"
+        }
+      ],
+      "dcat:theme": {
+        "@id": "http://datos.gob.es/kos/sector-publico/sector/deporte"
+      },
+      "dct:accrualPeriodicity": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/Frequency"
+      },
+      "dct:description": {
+        "@language": "es",
+        "@value": "Este conjunto de datos incluye un directorio con los datos de los Campos de FÃºtbol de Zaragoza.\n\nA travÃ©s del Servicio de VisualizaciÃ³n, el Ayuntamiento de Zaragoza pone a disposiciÃ³n una visualizaciÃ³n en la que se muestran datos sobre campos de fÃºtbol. El conjunto de datos contiene informaciÃ³n de localizaciÃ³n (direcciÃ³n, cÃ³digo postal, latitud y longitud), contacto (email y telÃ©fono) , horario y url a la web de cada centro.\n\nEl buscador le permite hacer bÃºsquedas filtrando por barrio. TambiÃ©n cabe la posibilidad de ver los resultados en forma de mapa.\n\nFuente de informaciÃ³n: Instalaciones Deportivas"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/1040",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2014-01-16T00:00:00+01:00"
+      },
+      "dct:language": "es",
+      "dct:license": {
+        "@id": "https://www.zaragoza.es/sede/portal/aviso-legal#condiciones"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-06-16T00:00:00+02:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01502973"
+      },
+      "dct:spatial": [
+        {
+          "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon"
+        },
+        {
+          "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Zaragoza"
+        },
+        {
+          "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Pais/EspaÃ±a"
+        }
+      ],
+      "dct:title": {
+        "@language": "es",
+        "@value": "Campos de FÃºtbol"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/c6b7c93a-bc2d-4f6d-9830-5d6d01fe8b91",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/cont/paginas/opendata/campos-futbol-2015.ods",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-campos-de-futbol/resource/c6b7c93a-bc2d-4f6d-9830-5d6d01fe8b91/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4121",
+      "dct:title": {
+        "@language": "es",
+        "@value": "Campos de futbol 2015"
+      }
+    }
+  ]
+}
