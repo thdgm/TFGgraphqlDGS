@@ -1,5 +1,5 @@
 {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     modules: [
       'node_modules'
@@ -42,22 +42,10 @@
     libraryTarget: 'umd',
     globalObject: 'this'
   },
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   ignoreWarnings: [
     /Failed to parse source map/
   ],
-  devServer: {
-    open: true,
-    static: [
-      '/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_31_07_2023/build/processedResources/js/main'
-    ],
-    client: {
-      overlay: {
-        errors: true,
-        warnings: false
-      }
-    }
-  },
   stats: {
     warnings: false,
     errors: false

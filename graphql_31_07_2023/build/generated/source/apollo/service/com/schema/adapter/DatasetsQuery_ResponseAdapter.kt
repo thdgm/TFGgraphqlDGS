@@ -93,10 +93,26 @@ public object DatasetsQuery_ResponseAdapter {
             customScalarAdapters)
       }
 
+      var _onDataService: DatasetsQuery.OnDataService? = null
+      if (and(possibleTypes("DataService"),variable("isDataService")).evaluate(customScalarAdapters.adapterContext.variables(), __typename, customScalarAdapters.adapterContext, null)) {
+        reader.rewind()
+        _onDataService = com.schema.adapter.DatasetsQuery_ResponseAdapter.OnDataService.fromJson(reader,
+            customScalarAdapters)
+      }
+
+      var _onDatasetSeries: DatasetsQuery.OnDatasetSeries? = null
+      if (and(possibleTypes("DatasetSeries"),variable("isDatasetSeries")).evaluate(customScalarAdapters.adapterContext.variables(), __typename, customScalarAdapters.adapterContext, null)) {
+        reader.rewind()
+        _onDatasetSeries = com.schema.adapter.DatasetsQuery_ResponseAdapter.OnDatasetSeries.fromJson(reader,
+            customScalarAdapters)
+      }
+
       return DatasetsQuery.ResourcesByFilter(
         __typename = __typename,
         onDataset = _onDataset,
-        onCatalog = _onCatalog
+        onCatalog = _onCatalog,
+        onDataService = _onDataService,
+        onDatasetSeries = _onDatasetSeries
       )
     }
 
@@ -116,6 +132,16 @@ public object DatasetsQuery_ResponseAdapter {
       if (value.onCatalog != null) {
         com.schema.adapter.DatasetsQuery_ResponseAdapter.OnCatalog.toJson(writer,
             customScalarAdapters, value.onCatalog)
+      }
+
+      if (value.onDataService != null) {
+        com.schema.adapter.DatasetsQuery_ResponseAdapter.OnDataService.toJson(writer,
+            customScalarAdapters, value.onDataService)
+      }
+
+      if (value.onDatasetSeries != null) {
+        com.schema.adapter.DatasetsQuery_ResponseAdapter.OnDatasetSeries.toJson(writer,
+            customScalarAdapters, value.onDatasetSeries)
       }
     }
   }
@@ -271,6 +297,134 @@ public object DatasetsQuery_ResponseAdapter {
 
       writer.name("numberOfResources")
       NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfResources)
+    }
+  }
+
+  public object OnDataService : Adapter<DatasetsQuery.OnDataService> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "title", "description", "issued",
+        "modified", "numberOfServedResources")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetsQuery.OnDataService {
+      var _id: String? = null
+      var _title: List<LangStringAdapterScalar>? = null
+      var _description: List<LangStringAdapterScalar>? = null
+      var _issued: Any? = null
+      var _modified: Any? = null
+      var _numberOfServedResources: Int? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _title = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          2 -> _description = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          3 -> _issued = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          4 -> _modified = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          5 -> _numberOfServedResources = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetsQuery.OnDataService(
+        id = _id!!,
+        title = _title,
+        description = _description,
+        issued = _issued,
+        modified = _modified,
+        numberOfServedResources = _numberOfServedResources
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetsQuery.OnDataService,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("title")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.title)
+
+      writer.name("description")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.description)
+
+      writer.name("issued")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.issued)
+
+      writer.name("modified")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.modified)
+
+      writer.name("numberOfServedResources")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfServedResources)
+    }
+  }
+
+  public object OnDatasetSeries : Adapter<DatasetsQuery.OnDatasetSeries> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "title", "description", "issued",
+        "modified", "numberOfMembersDatasets")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetsQuery.OnDatasetSeries {
+      var _id: String? = null
+      var _title: List<LangStringAdapterScalar>? = null
+      var _description: List<LangStringAdapterScalar>? = null
+      var _issued: Any? = null
+      var _modified: Any? = null
+      var _numberOfMembersDatasets: Int? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _title = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          2 -> _description = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          3 -> _issued = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          4 -> _modified = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          5 -> _numberOfMembersDatasets = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetsQuery.OnDatasetSeries(
+        id = _id!!,
+        title = _title,
+        description = _description,
+        issued = _issued,
+        modified = _modified,
+        numberOfMembersDatasets = _numberOfMembersDatasets
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetsQuery.OnDatasetSeries,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("title")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.title)
+
+      writer.name("description")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.description)
+
+      writer.name("issued")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.issued)
+
+      writer.name("modified")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.modified)
+
+      writer.name("numberOfMembersDatasets")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfMembersDatasets)
     }
   }
 }

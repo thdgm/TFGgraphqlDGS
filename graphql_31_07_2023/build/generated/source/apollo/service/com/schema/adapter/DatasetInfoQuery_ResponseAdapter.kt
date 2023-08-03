@@ -93,10 +93,26 @@ public object DatasetInfoQuery_ResponseAdapter {
             customScalarAdapters)
       }
 
+      var _onDataService: DatasetInfoQuery.OnDataService? = null
+      if (and(possibleTypes("DataService"),variable("isDataService")).evaluate(customScalarAdapters.adapterContext.variables(), __typename, customScalarAdapters.adapterContext, null)) {
+        reader.rewind()
+        _onDataService = com.schema.adapter.DatasetInfoQuery_ResponseAdapter.OnDataService.fromJson(reader,
+            customScalarAdapters)
+      }
+
+      var _onDatasetSeries: DatasetInfoQuery.OnDatasetSeries? = null
+      if (and(possibleTypes("DatasetSeries"),variable("isDatasetSeries")).evaluate(customScalarAdapters.adapterContext.variables(), __typename, customScalarAdapters.adapterContext, null)) {
+        reader.rewind()
+        _onDatasetSeries = com.schema.adapter.DatasetInfoQuery_ResponseAdapter.OnDatasetSeries.fromJson(reader,
+            customScalarAdapters)
+      }
+
       return DatasetInfoQuery.Resource(
         __typename = __typename,
         onDataset = _onDataset,
-        onCatalog = _onCatalog
+        onCatalog = _onCatalog,
+        onDataService = _onDataService,
+        onDatasetSeries = _onDatasetSeries
       )
     }
 
@@ -116,6 +132,16 @@ public object DatasetInfoQuery_ResponseAdapter {
       if (value.onCatalog != null) {
         com.schema.adapter.DatasetInfoQuery_ResponseAdapter.OnCatalog.toJson(writer,
             customScalarAdapters, value.onCatalog)
+      }
+
+      if (value.onDataService != null) {
+        com.schema.adapter.DatasetInfoQuery_ResponseAdapter.OnDataService.toJson(writer,
+            customScalarAdapters, value.onDataService)
+      }
+
+      if (value.onDatasetSeries != null) {
+        com.schema.adapter.DatasetInfoQuery_ResponseAdapter.OnDatasetSeries.toJson(writer,
+            customScalarAdapters, value.onDatasetSeries)
       }
     }
   }
@@ -837,6 +863,491 @@ public object DatasetInfoQuery_ResponseAdapter {
 
       writer.name("title")
       NullableStringAdapter.toJson(writer, customScalarAdapters, value.title)
+    }
+  }
+
+  public object OnDataService : Adapter<DatasetInfoQuery.OnDataService> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "title", "description", "issued",
+        "modified", "publisher", "license", "numberOfServedResources", "numberOfServedCatalogs",
+        "numberOfServedDatasets", "numberOfServedDatasetSeries", "isPrimaryTopicOf",
+        "servesDataset", "inCatalog")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.OnDataService {
+      var _id: String? = null
+      var _title: List<LangStringAdapterScalar>? = null
+      var _description: List<LangStringAdapterScalar>? = null
+      var _issued: Any? = null
+      var _modified: Any? = null
+      var _publisher: ConceptAdapterScalar? = null
+      var _license: String? = null
+      var _numberOfServedResources: Int? = null
+      var _numberOfServedCatalogs: Int? = null
+      var _numberOfServedDatasets: Int? = null
+      var _numberOfServedDatasetSeries: Int? = null
+      var _isPrimaryTopicOf: List<DatasetInfoQuery.IsPrimaryTopicOf2>? = null
+      var _servesDataset: List<DatasetInfoQuery.ServesDataset>? = null
+      var _inCatalog: List<DatasetInfoQuery.InCatalog2>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _title = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          2 -> _description = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          3 -> _issued = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          4 -> _modified = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          5 -> _publisher = commonModels.conceptAdapter.nullable().fromJson(reader,
+              customScalarAdapters)
+          6 -> _license = NullableStringAdapter.fromJson(reader, customScalarAdapters)
+          7 -> _numberOfServedResources = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          8 -> _numberOfServedCatalogs = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          9 -> _numberOfServedDatasets = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          10 -> _numberOfServedDatasetSeries = NullableIntAdapter.fromJson(reader,
+              customScalarAdapters)
+          11 -> _isPrimaryTopicOf = IsPrimaryTopicOf2.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          12 -> _servesDataset = ServesDataset.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          13 -> _inCatalog = InCatalog2.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.OnDataService(
+        id = _id!!,
+        title = _title,
+        description = _description,
+        issued = _issued,
+        modified = _modified,
+        publisher = _publisher,
+        license = _license,
+        numberOfServedResources = _numberOfServedResources,
+        numberOfServedCatalogs = _numberOfServedCatalogs,
+        numberOfServedDatasets = _numberOfServedDatasets,
+        numberOfServedDatasetSeries = _numberOfServedDatasetSeries,
+        isPrimaryTopicOf = _isPrimaryTopicOf,
+        servesDataset = _servesDataset,
+        inCatalog = _inCatalog
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.OnDataService,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("title")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.title)
+
+      writer.name("description")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.description)
+
+      writer.name("issued")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.issued)
+
+      writer.name("modified")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.modified)
+
+      writer.name("publisher")
+      commonModels.conceptAdapter.nullable().toJson(writer, customScalarAdapters, value.publisher)
+
+      writer.name("license")
+      NullableStringAdapter.toJson(writer, customScalarAdapters, value.license)
+
+      writer.name("numberOfServedResources")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfServedResources)
+
+      writer.name("numberOfServedCatalogs")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfServedCatalogs)
+
+      writer.name("numberOfServedDatasets")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfServedDatasets)
+
+      writer.name("numberOfServedDatasetSeries")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfServedDatasetSeries)
+
+      writer.name("isPrimaryTopicOf")
+      IsPrimaryTopicOf2.obj().list().nullable().toJson(writer, customScalarAdapters,
+          value.isPrimaryTopicOf)
+
+      writer.name("servesDataset")
+      ServesDataset.obj().list().nullable().toJson(writer, customScalarAdapters,
+          value.servesDataset)
+
+      writer.name("inCatalog")
+      InCatalog2.obj().list().nullable().toJson(writer, customScalarAdapters, value.inCatalog)
+    }
+  }
+
+  public object IsPrimaryTopicOf2 : Adapter<DatasetInfoQuery.IsPrimaryTopicOf2> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "title")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.IsPrimaryTopicOf2 {
+      var _id: String? = null
+      var _title: String? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _title = NullableStringAdapter.fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.IsPrimaryTopicOf2(
+        id = _id!!,
+        title = _title
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.IsPrimaryTopicOf2,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("title")
+      NullableStringAdapter.toJson(writer, customScalarAdapters, value.title)
+    }
+  }
+
+  public object ServesDataset : Adapter<DatasetInfoQuery.ServesDataset> {
+    public val RESPONSE_NAMES: List<String> = listOf("__typename", "id", "identifier")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.ServesDataset {
+      var __typename: String? = null
+      var _id: String? = null
+      var _identifier: List<String>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> __typename = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          2 -> _identifier = StringAdapter.list().nullable().fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.ServesDataset(
+        __typename = __typename!!,
+        id = _id!!,
+        identifier = _identifier
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.ServesDataset,
+    ): Unit {
+      writer.name("__typename")
+      StringAdapter.toJson(writer, customScalarAdapters, value.__typename)
+
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("identifier")
+      StringAdapter.list().nullable().toJson(writer, customScalarAdapters, value.identifier)
+    }
+  }
+
+  public object InCatalog2 : Adapter<DatasetInfoQuery.InCatalog2> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "identifier")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.InCatalog2 {
+      var _id: String? = null
+      var _identifier: List<String>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _identifier = StringAdapter.list().nullable().fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.InCatalog2(
+        id = _id!!,
+        identifier = _identifier
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.InCatalog2,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("identifier")
+      StringAdapter.list().nullable().toJson(writer, customScalarAdapters, value.identifier)
+    }
+  }
+
+  public object OnDatasetSeries : Adapter<DatasetInfoQuery.OnDatasetSeries> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "title", "description", "issued",
+        "modified", "publisher", "license", "numberOfMembersDatasets", "seriesMembers",
+        "isPrimaryTopicOf", "inCatalog", "isServedBy")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.OnDatasetSeries {
+      var _id: String? = null
+      var _title: List<LangStringAdapterScalar>? = null
+      var _description: List<LangStringAdapterScalar>? = null
+      var _issued: Any? = null
+      var _modified: Any? = null
+      var _publisher: ConceptAdapterScalar? = null
+      var _license: String? = null
+      var _numberOfMembersDatasets: Int? = null
+      var _seriesMembers: List<DatasetInfoQuery.SeriesMember>? = null
+      var _isPrimaryTopicOf: List<DatasetInfoQuery.IsPrimaryTopicOf3>? = null
+      var _inCatalog: List<DatasetInfoQuery.InCatalog3>? = null
+      var _isServedBy: List<DatasetInfoQuery.IsServedBy2>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _title = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          2 -> _description = commonModels.langStringAdapter.list().nullable().fromJson(reader,
+              customScalarAdapters)
+          3 -> _issued = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          4 -> _modified = NullableAnyAdapter.fromJson(reader, customScalarAdapters)
+          5 -> _publisher = commonModels.conceptAdapter.nullable().fromJson(reader,
+              customScalarAdapters)
+          6 -> _license = NullableStringAdapter.fromJson(reader, customScalarAdapters)
+          7 -> _numberOfMembersDatasets = NullableIntAdapter.fromJson(reader, customScalarAdapters)
+          8 -> _seriesMembers = SeriesMember.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          9 -> _isPrimaryTopicOf = IsPrimaryTopicOf3.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          10 -> _inCatalog = InCatalog3.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          11 -> _isServedBy = IsServedBy2.obj().list().nullable().fromJson(reader,
+              customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.OnDatasetSeries(
+        id = _id!!,
+        title = _title,
+        description = _description,
+        issued = _issued,
+        modified = _modified,
+        publisher = _publisher,
+        license = _license,
+        numberOfMembersDatasets = _numberOfMembersDatasets,
+        seriesMembers = _seriesMembers,
+        isPrimaryTopicOf = _isPrimaryTopicOf,
+        inCatalog = _inCatalog,
+        isServedBy = _isServedBy
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.OnDatasetSeries,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("title")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.title)
+
+      writer.name("description")
+      commonModels.langStringAdapter.list().nullable().toJson(writer, customScalarAdapters,
+          value.description)
+
+      writer.name("issued")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.issued)
+
+      writer.name("modified")
+      NullableAnyAdapter.toJson(writer, customScalarAdapters, value.modified)
+
+      writer.name("publisher")
+      commonModels.conceptAdapter.nullable().toJson(writer, customScalarAdapters, value.publisher)
+
+      writer.name("license")
+      NullableStringAdapter.toJson(writer, customScalarAdapters, value.license)
+
+      writer.name("numberOfMembersDatasets")
+      NullableIntAdapter.toJson(writer, customScalarAdapters, value.numberOfMembersDatasets)
+
+      writer.name("seriesMembers")
+      SeriesMember.obj().list().nullable().toJson(writer, customScalarAdapters, value.seriesMembers)
+
+      writer.name("isPrimaryTopicOf")
+      IsPrimaryTopicOf3.obj().list().nullable().toJson(writer, customScalarAdapters,
+          value.isPrimaryTopicOf)
+
+      writer.name("inCatalog")
+      InCatalog3.obj().list().nullable().toJson(writer, customScalarAdapters, value.inCatalog)
+
+      writer.name("isServedBy")
+      IsServedBy2.obj().list().nullable().toJson(writer, customScalarAdapters, value.isServedBy)
+    }
+  }
+
+  public object SeriesMember : Adapter<DatasetInfoQuery.SeriesMember> {
+    public val RESPONSE_NAMES: List<String> = listOf("__typename", "id", "identifier")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.SeriesMember {
+      var __typename: String? = null
+      var _id: String? = null
+      var _identifier: List<String>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> __typename = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          2 -> _identifier = StringAdapter.list().nullable().fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.SeriesMember(
+        __typename = __typename!!,
+        id = _id!!,
+        identifier = _identifier
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.SeriesMember,
+    ): Unit {
+      writer.name("__typename")
+      StringAdapter.toJson(writer, customScalarAdapters, value.__typename)
+
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("identifier")
+      StringAdapter.list().nullable().toJson(writer, customScalarAdapters, value.identifier)
+    }
+  }
+
+  public object IsPrimaryTopicOf3 : Adapter<DatasetInfoQuery.IsPrimaryTopicOf3> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "title")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.IsPrimaryTopicOf3 {
+      var _id: String? = null
+      var _title: String? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _title = NullableStringAdapter.fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.IsPrimaryTopicOf3(
+        id = _id!!,
+        title = _title
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.IsPrimaryTopicOf3,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("title")
+      NullableStringAdapter.toJson(writer, customScalarAdapters, value.title)
+    }
+  }
+
+  public object InCatalog3 : Adapter<DatasetInfoQuery.InCatalog3> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "identifier")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.InCatalog3 {
+      var _id: String? = null
+      var _identifier: List<String>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _identifier = StringAdapter.list().nullable().fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.InCatalog3(
+        id = _id!!,
+        identifier = _identifier
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.InCatalog3,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("identifier")
+      StringAdapter.list().nullable().toJson(writer, customScalarAdapters, value.identifier)
+    }
+  }
+
+  public object IsServedBy2 : Adapter<DatasetInfoQuery.IsServedBy2> {
+    public val RESPONSE_NAMES: List<String> = listOf("id", "identifier")
+
+    public override fun fromJson(reader: JsonReader, customScalarAdapters: CustomScalarAdapters):
+        DatasetInfoQuery.IsServedBy2 {
+      var _id: String? = null
+      var _identifier: List<String>? = null
+
+      while(true) {
+        when (reader.selectName(RESPONSE_NAMES)) {
+          0 -> _id = StringAdapter.fromJson(reader, customScalarAdapters)
+          1 -> _identifier = StringAdapter.list().nullable().fromJson(reader, customScalarAdapters)
+          else -> break
+        }
+      }
+
+      return DatasetInfoQuery.IsServedBy2(
+        id = _id!!,
+        identifier = _identifier
+      )
+    }
+
+    public override fun toJson(
+      writer: JsonWriter,
+      customScalarAdapters: CustomScalarAdapters,
+      `value`: DatasetInfoQuery.IsServedBy2,
+    ): Unit {
+      writer.name("id")
+      StringAdapter.toJson(writer, customScalarAdapters, value.id)
+
+      writer.name("identifier")
+      StringAdapter.list().nullable().toJson(writer, customScalarAdapters, value.identifier)
     }
   }
 }

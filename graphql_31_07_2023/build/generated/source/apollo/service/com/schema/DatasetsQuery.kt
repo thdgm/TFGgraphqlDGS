@@ -33,6 +33,8 @@ public data class DatasetsQuery(
   public val page: Int,
   public val isDataset: Boolean,
   public val isCatalog: Boolean,
+  public val isDataService: Boolean,
+  public val isDatasetSeries: Boolean,
 ) : Query<DatasetsQuery.Data> {
   public override fun id(): String = OPERATION_ID
 
@@ -72,6 +74,14 @@ public data class DatasetsQuery(
      * Synthetic field for inline fragment on Catalog
      */
     public val onCatalog: OnCatalog?,
+    /**
+     * Synthetic field for inline fragment on DataService
+     */
+    public val onDataService: OnDataService?,
+    /**
+     * Synthetic field for inline fragment on DatasetSeries
+     */
+    public val onDatasetSeries: OnDatasetSeries?,
   )
 
   public data class OnDataset(
@@ -95,18 +105,36 @@ public data class DatasetsQuery(
     public val numberOfResources: Int?,
   )
 
+  public data class OnDataService(
+    public val id: String,
+    public val title: List<LangStringAdapterScalar>?,
+    public val description: List<LangStringAdapterScalar>?,
+    public val issued: Any?,
+    public val modified: Any?,
+    public val numberOfServedResources: Int?,
+  )
+
+  public data class OnDatasetSeries(
+    public val id: String,
+    public val title: List<LangStringAdapterScalar>?,
+    public val description: List<LangStringAdapterScalar>?,
+    public val issued: Any?,
+    public val modified: Any?,
+    public val numberOfMembersDatasets: Int?,
+  )
+
   public companion object {
     public const val OPERATION_ID: String =
-        "02e2ccd5ed8994cca8fcd2961f3337bf7b10b694000fb43c624457a606c7488e"
+        "eee33303e337044c21d3af11489ef001aeece0f4b38191f190af2bf6db461730"
 
     /**
      * The minimized GraphQL document being sent to the server to save a few bytes.
      * The un-minimized version is:
      *
      * query Datasets($filter: \[MapInput!\], $type: String!, $page: Int!, $isDataset: Boolean!,
-     * $isCatalog: Boolean!) {
-     *   resourcesByFilter(filters: $filter, type: $type, page: $page, isDataset: $isDataset,
-     * isCatalog: $isCatalog) {
+     * $isCatalog: Boolean!, $isDataService: Boolean!, $isDatasetSeries: Boolean!) {
+     *   resourcesByFilter(filters: $filter, type: $type, isDataset: $isDataset, isCatalog:
+     * $isCatalog, isDataService: $isDataService, isDatasetSeries: $isDatasetSeries, page: $page) {
      *     __typename
      *     ... on Dataset @include(if: $isDataset) {
      *       id
@@ -125,12 +153,28 @@ public data class DatasetsQuery(
      *       modified
      *       numberOfResources
      *     }
+     *     ... on DataService @include(if: $isDataService) {
+     *       id
+     *       title
+     *       description
+     *       issued
+     *       modified
+     *       numberOfServedResources
+     *     }
+     *     ... on DatasetSeries @include(if: $isDatasetSeries) {
+     *       id
+     *       title
+     *       description
+     *       issued
+     *       modified
+     *       numberOfMembersDatasets
+     *     }
      *   }
      * }
      */
     public val OPERATION_DOCUMENT: String
       get() =
-          "query Datasets(${'$'}filter: [MapInput!], ${'$'}type: String!, ${'$'}page: Int!, ${'$'}isDataset: Boolean!, ${'$'}isCatalog: Boolean!) { resourcesByFilter(filters: ${'$'}filter, type: ${'$'}type, page: ${'$'}page, isDataset: ${'$'}isDataset, isCatalog: ${'$'}isCatalog) { __typename ... on Dataset @include(if: ${'$'}isDataset) { id title publisher description distributions { format } } ... on Catalog @include(if: ${'$'}isCatalog) { id title description issued modified numberOfResources } } }"
+          "query Datasets(${'$'}filter: [MapInput!], ${'$'}type: String!, ${'$'}page: Int!, ${'$'}isDataset: Boolean!, ${'$'}isCatalog: Boolean!, ${'$'}isDataService: Boolean!, ${'$'}isDatasetSeries: Boolean!) { resourcesByFilter(filters: ${'$'}filter, type: ${'$'}type, isDataset: ${'$'}isDataset, isCatalog: ${'$'}isCatalog, isDataService: ${'$'}isDataService, isDatasetSeries: ${'$'}isDatasetSeries, page: ${'$'}page) { __typename ... on Dataset @include(if: ${'$'}isDataset) { id title publisher description distributions { format } } ... on Catalog @include(if: ${'$'}isCatalog) { id title description issued modified numberOfResources } ... on DataService @include(if: ${'$'}isDataService) { id title description issued modified numberOfServedResources } ... on DatasetSeries @include(if: ${'$'}isDatasetSeries) { id title description issued modified numberOfMembersDatasets } } }"
 
     public const val OPERATION_NAME: String = "Datasets"
   }

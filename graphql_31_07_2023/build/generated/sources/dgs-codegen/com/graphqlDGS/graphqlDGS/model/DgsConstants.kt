@@ -49,6 +49,10 @@ public object DgsConstants {
 
       public const val IsCatalog: String = "isCatalog"
 
+      public const val IsDataService: String = "isDataService"
+
+      public const val IsDatasetSeries: String = "isDatasetSeries"
+
       public const val Page: String = "page"
     }
 
@@ -92,6 +96,10 @@ public object DgsConstants {
       public const val IsDataset: String = "isDataset"
 
       public const val IsCatalog: String = "isCatalog"
+
+      public const val IsDataService: String = "isDataService"
+
+      public const val IsDatasetSeries: String = "isDatasetSeries"
     }
 
     public object FINDRESOURCEBYIDENTIFIER_INPUT_ARGUMENT {
@@ -181,6 +189,22 @@ public object DgsConstants {
     public const val Publisher: String = "publisher"
 
     public const val Identifier: String = "identifier"
+
+    public const val NumberOfServedResources: String = "numberOfServedResources"
+
+    public const val NumberOfServedCatalogs: String = "numberOfServedCatalogs"
+
+    public const val NumberOfServedDatasets: String = "numberOfServedDatasets"
+
+    public const val NumberOfServedDatasetSeries: String = "numberOfServedDatasetSeries"
+
+    public object SERVESDATASET_INPUT_ARGUMENT {
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
+
+      public const val Type: String = "type"
+    }
 
     public object INCATALOG_INPUT_ARGUMENT {
       public const val Filter: String = "filter"
@@ -324,8 +348,14 @@ public object DgsConstants {
 
     public const val Identifier: String = "identifier"
 
+    public const val NumberOfMembersDatasets: String = "numberOfMembersDatasets"
+
     public object SERIESMEMBERS_INPUT_ARGUMENT {
       public const val Filter: String = "filter"
+
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
     }
 
     public object INCATALOG_INPUT_ARGUMENT {

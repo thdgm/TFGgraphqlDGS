@@ -33,5 +33,9 @@ public object DatasetInfoQuery_VariablesAdapter : Adapter<DatasetInfoQuery> {
     BooleanAdapter.toJson(writer, customScalarAdapters, value.isCatalog)
     writer.name("page")
     IntAdapter.toJson(writer, customScalarAdapters, value.page)
+    writer.name("isDataService")
+    BooleanAdapter.toJson(writer, customScalarAdapters, value.isDataService)
+    writer.name("isDatasetSeries")
+    BooleanAdapter.toJson(writer, customScalarAdapters, value.isDatasetSeries)
   }
 }

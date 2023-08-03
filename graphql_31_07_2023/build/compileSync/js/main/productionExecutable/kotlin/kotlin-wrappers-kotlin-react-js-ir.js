@@ -20,7 +20,7 @@
   var Fragment = $module$react.Fragment;
   var Unit_getInstance = kotlin_kotlin.$_$.a3;
   var interfaceMeta = kotlin_kotlin.$_$.f7;
-  var setMetadataFor = kotlin_kotlin.$_$.r7;
+  var setMetadataFor = kotlin_kotlin.$_$.q7;
   var classMeta = kotlin_kotlin.$_$.w6;
   var single = kotlin_kotlin.$_$.i5;
   //endregion

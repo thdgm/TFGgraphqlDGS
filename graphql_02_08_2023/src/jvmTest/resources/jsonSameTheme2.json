@@ -1,0 +1,512 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7561f030-dc79-4d2c-95f3-7780795d141e"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/46cbda26-59d8-4ae7-b7cc-fba4b65242bc"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/de1ac047-5d41-4180-81da-9f6be1c91943"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7baa8bad-cb2c-48c0-a05a-148ad6a750ee"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/c37071fd-c4e3-4df7-ae98-1c576c367b76"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/4ba425f5-ee42-4bcd-aa0f-2ab5ec171a87"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/0b30dea9-11bc-4be5-aaad-c88e58da7416"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/81dcecdd-4355-47d1-90a3-59961a07ddcf"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/031f3392-30f2-4dd0-8432-f0e5a5dd7e7f"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/fd03e4db-3a88-469a-8d0e-90df810cc3e6"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "Número de discapacidades"
+        },
+        {
+          "@language": "en",
+          "@value": "Has received sufficient support and curricular adaptations"
+        },
+        {
+          "@language": "en",
+          "@value": "Four disabilities"
+        },
+        {
+          "@language": "es",
+          "@value": "Estadísticas"
+        },
+        {
+          "@language": "en",
+          "@value": "Health"
+        },
+        {
+          "@language": "es",
+          "@value": "Sólo una discapacidad"
+        },
+        {
+          "@language": "en",
+          "@value": "Number of Disabilities"
+        },
+        {
+          "@language": "es",
+          "@value": "Ha recibido los apoyos y adaptaciones curriculares suficientes"
+        },
+        {
+          "@language": "es",
+          "@value": "Total"
+        },
+        {
+          "@language": "es",
+          "@value": "Encuesta de Discapacidad Autonomía Personal y Situaciones de Dependencia"
+        },
+        {
+          "@language": "en",
+          "@value": "Five to eight disabilities"
+        },
+        {
+          "@language": "en",
+          "@value": "Disability Independence and Dependency Situations Survey"
+        },
+        {
+          "@language": "es",
+          "@value": "Ha necesitado apoyos y/o adaptaciones curriculares y no los ha recibido"
+        },
+        {
+          "@language": "en",
+          "@value": "Curricular adaptations"
+        },
+        {
+          "@language": "es",
+          "@value": "Cuatro discapacidades"
+        },
+        {
+          "@language": "en",
+          "@value": "Sex"
+        },
+        {
+          "@language": "en",
+          "@value": "Has received support and curricular adaptations but not enough"
+        },
+        {
+          "@language": "en",
+          "@value": "State of health and conditioning factors"
+        },
+        {
+          "@language": "es",
+          "@value": "Nivel calidad y condiciones de vida"
+        },
+        {
+          "@language": "es",
+          "@value": "Hombre"
+        },
+        {
+          "@language": "en",
+          "@value": "Two disabilities"
+        },
+        {
+          "@language": "en",
+          "@value": "Has not needed support or curricular adaptations"
+        },
+        {
+          "@language": "es",
+          "@value": "Tres discapacidades"
+        },
+        {
+          "@language": "en",
+          "@value": "Statistics"
+        },
+        {
+          "@language": "es",
+          "@value": "Ha recibido apoyos y adaptaciones curriculares pero no los suficientes"
+        },
+        {
+          "@language": "en",
+          "@value": "Three disabilities"
+        },
+        {
+          "@language": "es",
+          "@value": "Mujer"
+        },
+        {
+          "@language": "en",
+          "@value": "Has needed supports and/or curricular adaptations and has not received them"
+        },
+        {
+          "@language": "es",
+          "@value": "Dos discapacidades"
+        },
+        {
+          "@language": "es",
+          "@value": "De cinco a ocho discapacidades"
+        },
+        {
+          "@language": "en",
+          "@value": "Just one disability"
+        },
+        {
+          "@language": "en",
+          "@value": "Man"
+        },
+        {
+          "@language": "es",
+          "@value": "No ha necesitado ni apoyos ni adaptaciones curriculares"
+        },
+        {
+          "@language": "es",
+          "@value": "Salud"
+        },
+        {
+          "@language": "en",
+          "@value": "Quality of life and living conditions"
+        },
+        {
+          "@language": "es",
+          "@value": "Sexo"
+        },
+        {
+          "@language": "es",
+          "@value": "Adaptaciones curriculares"
+        },
+        {
+          "@language": "en",
+          "@value": "Woman"
+        },
+        {
+          "@language": "es",
+          "@value": "Estado de salud y factores condicionantes"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/salud"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar"
+        }
+      ],
+      "dct:conformsTo": {
+        "@id": "https://www.ine.es/dynt3/metadatos/es/RespuestaDatos.htm?oe=30418"
+      },
+      "dct:description": [
+        {
+          "@language": "es",
+          "@value": "Tabla de INEbase\nDisponibilidad de adaptaciones curriculares o apoyos suficientes para la inclusión  educativa por sexo y número de discapacidades. Población de 6 a 15 años con discapacidad que está escolarizada. Nacional. Encuesta de Discapacidad, Autonomía Personal y Situaciones de Dependencia"
+        },
+        {
+          "@language": "en",
+          "@value": "Table of INEBase\nAvailability of curricular adaptations or sufficient support for educational inclusion by gender and number of disabilities. Population aged 6 to 15 years with a disability that is enrolled in school. National. Disability, Independence and Dependency Situations Survey"
+        }
+      ],
+      "dct:identifier": "urn:ine:es:TABLA:PX:tpx:Sociedad_2589:Salud_2590:EDAD_8494:cap01_8495:mod2r_8509:Cap004_8524:0204107",
+      "dct:language": [
+        "en",
+        "es"
+      ],
+      "dct:license": {
+        "@id": "https://www.ine.es/aviso_legal"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-02-07T10:23:20+01:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/EA0010587"
+      },
+      "dct:references": {
+        "@id": "https://www.ine.es/dyngs/IOE/es/operacion.htm?numinv=30418"
+      },
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Pais/España"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Disponibilidad de adaptaciones curriculares o apoyos suficientes para la inclusión  educativa por sexo y número de discapacidades. Pobla ...  (Identificador API: /tpx/Sociedad_2589/Salud_2590/EDAD_8494/cap01_8495/mod2r_8509/Cap004_8524/l0/0204107.px)"
+        },
+        {
+          "@language": "en",
+          "@value": "Availability of curricular adaptations or sufficient support for educational inclusion by gender and number of disabilities. Population age ...  (API identifier: /tpx/Sociedad_2589/Salud_2590/EDAD_8494/cap01_8495/mod2r_8509/Cap004_8524/l0/0204107.px)"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/de1ac047-5d41-4180-81da-9f6be1c91943/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/81dcecdd-4355-47d1-90a3-59961a07ddcf",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/csv/51856.csv",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/81dcecdd-4355-47d1-90a3-59961a07ddcf/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Texto plano: separado por tabuladores"
+        },
+        {
+          "@language": "en",
+          "@value": "Plain Text: separated by tab"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/031f3392-30f2-4dd0-8432-f0e5a5dd7e7f",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://servicios.ine.es/wstempus/js/es/DATOS_TABLA/51856?tip=AM",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/031f3392-30f2-4dd0-8432-f0e5a5dd7e7f/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "Json"
+        },
+        {
+          "@language": "es",
+          "@value": "Json"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/c37071fd-c4e3-4df7-ae98-1c576c367b76",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/csv_bdsc/51856.csv",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/c37071fd-c4e3-4df7-ae98-1c576c367b76/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "CSV: Separated by ;"
+        },
+        {
+          "@language": "es",
+          "@value": "CSV: separado por ;"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/46cbda26-59d8-4ae7-b7cc-fba4b65242bc",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/csv_c/51856.csv",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/46cbda26-59d8-4ae7-b7cc-fba4b65242bc/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "Plain Text: separated by comma"
+        },
+        {
+          "@language": "es",
+          "@value": "Texto plano: separado por ,"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/de1ac047-5d41-4180-81da-9f6be1c91943",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/xlsx/51856.xlsx",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/de1ac047-5d41-4180-81da-9f6be1c91943/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "Excel: XLSx extension"
+        },
+        {
+          "@language": "es",
+          "@value": "Excel: Extension XLSx"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/0b30dea9-11bc-4be5-aaad-c88e58da7416",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/Tabla.htm?tpx=51856",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/0b30dea9-11bc-4be5-aaad-c88e58da7416/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "Html"
+        },
+        {
+          "@language": "es",
+          "@value": "Html"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7baa8bad-cb2c-48c0-a05a-148ad6a750ee/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/pc-axis",
+      "rdfs:label": "PC-Axis"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/4ba425f5-ee42-4bcd-aa0f-2ab5ec171a87",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/csv_sc/51856.csv",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/4ba425f5-ee42-4bcd-aa0f-2ab5ec171a87/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "Plain Text: separated by semicolons"
+        },
+        {
+          "@language": "es",
+          "@value": "Texto plano: separado por ;"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/4ba425f5-ee42-4bcd-aa0f-2ab5ec171a87/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/c37071fd-c4e3-4df7-ae98-1c576c367b76/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7561f030-dc79-4d2c-95f3-7780795d141e",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/xls/51856.xls",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7561f030-dc79-4d2c-95f3-7780795d141e/format"
+      },
+      "dct:title": [
+        {
+          "@language": "en",
+          "@value": "Excel: XLS extension"
+        },
+        {
+          "@language": "es",
+          "@value": "Excel: Extensión XLS"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7561f030-dc79-4d2c-95f3-7780795d141e/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.ms-excel",
+      "rdfs:label": "XLS"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/031f3392-30f2-4dd0-8432-f0e5a5dd7e7f/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/json",
+      "rdfs:label": "JSON"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/fd03e4db-3a88-469a-8d0e-90df810cc3e6/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/81dcecdd-4355-47d1-90a3-59961a07ddcf/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/fd03e4db-3a88-469a-8d0e-90df810cc3e6",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/csv_bd/51856.csv",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/fd03e4db-3a88-469a-8d0e-90df810cc3e6/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "CSV: separado por tabuladores"
+        },
+        {
+          "@language": "en",
+          "@value": "CSV: Tab Separated"
+        }
+      ]
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/46cbda26-59d8-4ae7-b7cc-fba4b65242bc/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7baa8bad-cb2c-48c0-a05a-148ad6a750ee",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.ine.es/jaxi/files/tpx/px/51856.px",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/7baa8bad-cb2c-48c0-a05a-148ad6a750ee/format"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Pc-Axis"
+        },
+        {
+          "@language": "en",
+          "@value": "Pc-Axis"
+        }
+      ]
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/EA0010587",
+      "@type": "skos:Concept",
+      "skos:notation": "EA0010587",
+      "skos:prefLabel": "Instituto Nacional de Estadística"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/ea0010587-disponibilidad-de-adaptaciones-curriculares-o-apoyos-suficientes-para-la-inclusion-educativa-por-sexo-y-numero-de-discapacidades-pobla-identificador-api-tpx-sociedad_2589-salud_2590-edad_8494-cap01_8495-mod2r_8509-cap004_8524-l0-0204107-px/resource/0b30dea9-11bc-4be5-aaad-c88e58da7416/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/html",
+      "rdfs:label": "HTML"
+    }
+  ]
+}

@@ -83,6 +83,60 @@ public object DatasetsQuerySelections {
         ).build()
       )
 
+  private val __onDataService: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "title",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "description",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "issued",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "modified",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfServedResources",
+          type = GraphQLInt.type
+        ).build()
+      )
+
+  private val __onDatasetSeries: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "title",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "description",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "issued",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "modified",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfMembersDatasets",
+          type = GraphQLInt.type
+        ).build()
+      )
+
   private val __resourcesByFilter: List<CompiledSelection> = listOf(
         CompiledField.Builder(
           name = "__typename",
@@ -99,6 +153,18 @@ public object DatasetsQuerySelections {
           possibleTypes = listOf("Catalog")
         ).condition(listOf(CompiledCondition("isCatalog", false)))
         .selections(__onCatalog)
+        .build(),
+        CompiledFragment.Builder(
+          typeCondition = "DataService",
+          possibleTypes = listOf("DataService")
+        ).condition(listOf(CompiledCondition("isDataService", false)))
+        .selections(__onDataService)
+        .build(),
+        CompiledFragment.Builder(
+          typeCondition = "DatasetSeries",
+          possibleTypes = listOf("DatasetSeries")
+        ).condition(listOf(CompiledCondition("isDatasetSeries", false)))
+        .selections(__onDatasetSeries)
         .build()
       )
 
@@ -109,7 +175,9 @@ public object DatasetsQuerySelections {
         ).arguments(listOf(
           CompiledArgument.Builder("filters", CompiledVariable("filter")).build(),
           CompiledArgument.Builder("isCatalog", CompiledVariable("isCatalog")).build(),
+          CompiledArgument.Builder("isDataService", CompiledVariable("isDataService")).build(),
           CompiledArgument.Builder("isDataset", CompiledVariable("isDataset")).build(),
+          CompiledArgument.Builder("isDatasetSeries", CompiledVariable("isDatasetSeries")).build(),
           CompiledArgument.Builder("page", CompiledVariable("page")).build(),
           CompiledArgument.Builder("type", CompiledVariable("type")).build()
         ))

@@ -17,7 +17,7 @@ schema {
 }
 
 type Query {
-  resource(id: ID,isDataset: Boolean, isCatalog: Boolean,page: Int!): Resource
+  resource(id: ID,isDataset: Boolean, isCatalog: Boolean,isDataService:Boolean!,isDatasetSeries:Boolean!,page: Int!): Resource
   catalog(id: ID): Catalog
   dataset(id: ID): DatasetInCatalog
   numberOfResources(filters:[MapInput!],type: String!): Int
@@ -25,7 +25,7 @@ type Query {
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord
   distribution(id: ID): Distribution
-  resourcesByFilter(filters:[MapInput!], type: String!, page: Int!, isDataset: Boolean, isCatalog: Boolean): [Resource] # Filter could be p.g: publisher
+  resourcesByFilter(filters:[MapInput!], type: String!, page: Int!, isDataset: Boolean!, isCatalog: Boolean!, isDataService:Boolean!,isDatasetSeries:Boolean!): [Resource] # Filter could be p.g: publisher
   findResourceByIdentifier(id: String): Resource
   getAllThemes(page: Int!, pageSize: Int!): [String]      # Get all existing themes
   getAllKeywords(page: Int!, pageSize: Int!): [String] # Get all existing keywords with particular language
@@ -192,7 +192,7 @@ interface AbstractDataset implements Resource & ReferenceWithinExternalContext{
 type DataService implements ResourceInCatalog & Resource & AbstractDataset & ReferenceWithinExternalContext{
   id: ID!
   title: [LangString!]#String!
-  servesDataset: [DatasetInCatalog!] # If a DataService is bound to one or more specified
+  servesDataset(page: Int!, pageSize: Int!, type: String!): [DatasetInCatalog!] # If a DataService is bound to one or more specified
   # Datasets, they are indicated by the this property.
   description: [LangString!]
   language: [String!]
@@ -209,6 +209,11 @@ type DataService implements ResourceInCatalog & Resource & AbstractDataset & Ref
   license:String
   publisher:Concept
   identifier: [String!]
+
+  numberOfServedResources: Int
+  numberOfServedCatalogs: Int
+  numberOfServedDatasets: Int
+  numberOfServedDatasetSeries: Int
 
 }
 
@@ -270,7 +275,7 @@ type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDat
   title: [LangString!]
   description: [LangString!]
   language: [String!]
-  seriesMembers(filter:String): [Dataset!] # rename to dcat:seriesMembers due to https://w3c.github.io/dxwg/dcat/#inverse-properties
+  seriesMembers(filter:String,page: Int!, pageSize: Int!): [Dataset!] # rename to dcat:seriesMembers due to https://w3c.github.io/dxwg/dcat/#inverse-properties
   issued: LocalDateTime
   modified: LocalDateTime
   inCatalog(filter:String): [Catalog!]
@@ -283,6 +288,7 @@ type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDat
   license:String
   publisher:Concept
   identifier: [String!]
+  numberOfMembersDatasets: Int
 }
 
 # Dataset que no es ni Catalogo ni Dataset Series

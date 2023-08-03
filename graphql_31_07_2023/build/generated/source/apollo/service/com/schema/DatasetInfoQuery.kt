@@ -31,6 +31,8 @@ public data class DatasetInfoQuery(
   public val isDataset: Boolean,
   public val isCatalog: Boolean,
   public val page: Int,
+  public val isDataService: Boolean,
+  public val isDatasetSeries: Boolean,
 ) : Query<DatasetInfoQuery.Data> {
   public override fun id(): String = OPERATION_ID
 
@@ -67,6 +69,14 @@ public data class DatasetInfoQuery(
      * Synthetic field for inline fragment on Catalog
      */
     public val onCatalog: OnCatalog?,
+    /**
+     * Synthetic field for inline fragment on DataService
+     */
+    public val onDataService: OnDataService?,
+    /**
+     * Synthetic field for inline fragment on DatasetSeries
+     */
+    public val onDatasetSeries: OnDatasetSeries?,
   )
 
   public data class OnDataset(
@@ -172,16 +182,87 @@ public data class DatasetInfoQuery(
     public val title: String?,
   )
 
+  public data class OnDataService(
+    public val id: String,
+    public val title: List<LangStringAdapterScalar>?,
+    public val description: List<LangStringAdapterScalar>?,
+    public val issued: Any?,
+    public val modified: Any?,
+    public val publisher: ConceptAdapterScalar?,
+    public val license: String?,
+    public val numberOfServedResources: Int?,
+    public val numberOfServedCatalogs: Int?,
+    public val numberOfServedDatasets: Int?,
+    public val numberOfServedDatasetSeries: Int?,
+    public val isPrimaryTopicOf: List<IsPrimaryTopicOf2>?,
+    public val servesDataset: List<ServesDataset>?,
+    public val inCatalog: List<InCatalog2>?,
+  )
+
+  public data class IsPrimaryTopicOf2(
+    public val id: String,
+    public val title: String?,
+  )
+
+  public data class ServesDataset(
+    public val __typename: String,
+    public val id: String,
+    public val identifier: List<String>?,
+  )
+
+  public data class InCatalog2(
+    public val id: String,
+    public val identifier: List<String>?,
+  )
+
+  public data class OnDatasetSeries(
+    public val id: String,
+    public val title: List<LangStringAdapterScalar>?,
+    public val description: List<LangStringAdapterScalar>?,
+    public val issued: Any?,
+    public val modified: Any?,
+    public val publisher: ConceptAdapterScalar?,
+    public val license: String?,
+    public val numberOfMembersDatasets: Int?,
+    public val seriesMembers: List<SeriesMember>?,
+    public val isPrimaryTopicOf: List<IsPrimaryTopicOf3>?,
+    public val inCatalog: List<InCatalog3>?,
+    public val isServedBy: List<IsServedBy2>?,
+  )
+
+  public data class SeriesMember(
+    public val __typename: String,
+    public val id: String,
+    public val identifier: List<String>?,
+  )
+
+  public data class IsPrimaryTopicOf3(
+    public val id: String,
+    public val title: String?,
+  )
+
+  public data class InCatalog3(
+    public val id: String,
+    public val identifier: List<String>?,
+  )
+
+  public data class IsServedBy2(
+    public val id: String,
+    public val identifier: List<String>?,
+  )
+
   public companion object {
     public const val OPERATION_ID: String =
-        "565faa1bd0c2546d379aa8af240e38af503ec46a51ab79c813c2f8d00c68b304"
+        "8303344b9d9c69230a621c27e904fed4cd40bea2e734d4afc6d17e062f191959"
 
     /**
      * The minimized GraphQL document being sent to the server to save a few bytes.
      * The un-minimized version is:
      *
-     * query DatasetInfo($id: ID!, $isDataset: Boolean!, $isCatalog: Boolean!, $page: Int!) {
-     *   resource(id: $id, isDataset: $isDataset, isCatalog: $isCatalog, page: $page) {
+     * query DatasetInfo($id: ID!, $isDataset: Boolean!, $isCatalog: Boolean!, $page: Int!,
+     * $isDataService: Boolean!, $isDatasetSeries: Boolean!) {
+     *   resource(id: $id, isDataset: $isDataset, isCatalog: $isCatalog, page: $page, isDataService:
+     * $isDataService, isDatasetSeries: $isDatasetSeries) {
      *     __typename
      *     ... on Dataset @include(if: $isDataset) {
      *       id
@@ -263,12 +344,65 @@ public data class DatasetInfoQuery(
      *         title
      *       }
      *     }
+     *     ... on DataService @include(if: $isDataService) {
+     *       id
+     *       title
+     *       description
+     *       issued
+     *       modified
+     *       publisher
+     *       license
+     *       numberOfServedResources
+     *       numberOfServedCatalogs
+     *       numberOfServedDatasets
+     *       numberOfServedDatasetSeries
+     *       isPrimaryTopicOf {
+     *         id
+     *         title
+     *       }
+     *       servesDataset(page: $page, pageSize: 10, type: "All") {
+     *         __typename
+     *         id
+     *         identifier
+     *       }
+     *       inCatalog {
+     *         id
+     *         identifier
+     *       }
+     *     }
+     *     ... on DatasetSeries @include(if: $isDatasetSeries) {
+     *       id
+     *       title
+     *       description
+     *       issued
+     *       modified
+     *       publisher
+     *       license
+     *       numberOfMembersDatasets
+     *       seriesMembers(page: $page, pageSize: 10) {
+     *         __typename
+     *         id
+     *         identifier
+     *       }
+     *       isPrimaryTopicOf {
+     *         id
+     *         title
+     *       }
+     *       inCatalog {
+     *         id
+     *         identifier
+     *       }
+     *       isServedBy(page: $page, pageSize: 10) {
+     *         id
+     *         identifier
+     *       }
+     *     }
      *   }
      * }
      */
     public val OPERATION_DOCUMENT: String
       get() =
-          "query DatasetInfo(${'$'}id: ID!, ${'$'}isDataset: Boolean!, ${'$'}isCatalog: Boolean!, ${'$'}page: Int!) { resource(id: ${'$'}id, isDataset: ${'$'}isDataset, isCatalog: ${'$'}isCatalog, page: ${'$'}page) { __typename ... on Dataset @include(if: ${'$'}isDataset) { id title publisher description license keywords theme language issued modified accrualPeriodicity identifier inCatalog { id identifier title } isPrimaryTopicOf { id title } inSeries { id title identifier } isServedBy(page: ${'$'}page, pageSize: -1) { id identifier title } spatial temporal { start end } distributions { accessUrl format } } ... on Catalog @include(if: ${'$'}isCatalog) { id title description issued modified numberOfResources publisher license numberOfResources numberOfCatalogs numberOfDataServices numberOfDatasets numberOfDatasetSeries numberOfRecords numberOfServedBy resources(page: ${'$'}page, pageSize: 10, type: \"All\") { __typename id identifier } records(page: ${'$'}page, pageSize: 10) { id title } isServedBy(page: ${'$'}page, pageSize: 10) { id identifier } inCatalog { id identifier } isPrimaryTopicOf { id title } } } }"
+          "query DatasetInfo(${'$'}id: ID!, ${'$'}isDataset: Boolean!, ${'$'}isCatalog: Boolean!, ${'$'}page: Int!, ${'$'}isDataService: Boolean!, ${'$'}isDatasetSeries: Boolean!) { resource(id: ${'$'}id, isDataset: ${'$'}isDataset, isCatalog: ${'$'}isCatalog, page: ${'$'}page, isDataService: ${'$'}isDataService, isDatasetSeries: ${'$'}isDatasetSeries) { __typename ... on Dataset @include(if: ${'$'}isDataset) { id title publisher description license keywords theme language issued modified accrualPeriodicity identifier inCatalog { id identifier title } isPrimaryTopicOf { id title } inSeries { id title identifier } isServedBy(page: ${'$'}page, pageSize: -1) { id identifier title } spatial temporal { start end } distributions { accessUrl format } } ... on Catalog @include(if: ${'$'}isCatalog) { id title description issued modified numberOfResources publisher license numberOfResources numberOfCatalogs numberOfDataServices numberOfDatasets numberOfDatasetSeries numberOfRecords numberOfServedBy resources(page: ${'$'}page, pageSize: 10, type: \"All\") { __typename id identifier } records(page: ${'$'}page, pageSize: 10) { id title } isServedBy(page: ${'$'}page, pageSize: 10) { id identifier } inCatalog { id identifier } isPrimaryTopicOf { id title } } ... on DataService @include(if: ${'$'}isDataService) { id title description issued modified publisher license numberOfServedResources numberOfServedCatalogs numberOfServedDatasets numberOfServedDatasetSeries isPrimaryTopicOf { id title } servesDataset(page: ${'$'}page, pageSize: 10, type: \"All\") { __typename id identifier } inCatalog { id identifier } } ... on DatasetSeries @include(if: ${'$'}isDatasetSeries) { id title description issued modified publisher license numberOfMembersDatasets seriesMembers(page: ${'$'}page, pageSize: 10) { __typename id identifier } isPrimaryTopicOf { id title } inCatalog { id identifier } isServedBy(page: ${'$'}page, pageSize: 10) { id identifier } } } }"
 
     public const val OPERATION_NAME: String = "DatasetInfo"
   }

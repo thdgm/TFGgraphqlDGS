@@ -13,7 +13,7 @@
   'use strict';
   //region block: imports
   var classMeta = kotlin_kotlin.$_$.w6;
-  var setMetadataFor = kotlin_kotlin.$_$.r7;
+  var setMetadataFor = kotlin_kotlin.$_$.q7;
   //endregion
   //region block: pre-declaration
   setMetadataFor(ApolloAdaptableWith, 'ApolloAdaptableWith', classMeta, undefined, undefined, 0, undefined, []);

@@ -44,5 +44,9 @@ public object DatasetsQuery_VariablesAdapter : Adapter<DatasetsQuery> {
     BooleanAdapter.toJson(writer, customScalarAdapters, value.isDataset)
     writer.name("isCatalog")
     BooleanAdapter.toJson(writer, customScalarAdapters, value.isCatalog)
+    writer.name("isDataService")
+    BooleanAdapter.toJson(writer, customScalarAdapters, value.isDataService)
+    writer.name("isDatasetSeries")
+    BooleanAdapter.toJson(writer, customScalarAdapters, value.isDatasetSeries)
   }
 }

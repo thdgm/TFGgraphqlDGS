@@ -5,6 +5,7 @@ import com.fasterxml.jackson.`annotation`.JsonTypeInfo
 import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.annotations.LangString
 import java.time.LocalDateTime
+import kotlin.Int
 import kotlin.String
 import kotlin.collections.List
 
@@ -38,6 +39,8 @@ public data class DatasetSeries(
   public override val publisher: Concept? = null,
   @JsonProperty("identifier")
   public override val identifier: List<String>? = null,
+  @JsonProperty("numberOfMembersDatasets")
+  public val numberOfMembersDatasets: Int? = null,
 ) : ResourceInCatalog, DatasetInCatalog, AbstractDataset, Resource, ReferenceWithinExternalContext {
   public companion object
 }

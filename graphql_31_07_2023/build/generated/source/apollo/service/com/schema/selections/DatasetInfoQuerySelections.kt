@@ -17,6 +17,8 @@ import com.schema.type.Catalog
 import com.schema.type.CatalogRecord
 import com.schema.type.Concept
 import com.schema.type.DataService
+import com.schema.type.Dataset
+import com.schema.type.DatasetInCatalog
 import com.schema.type.DatasetSeries
 import com.schema.type.Distribution
 import com.schema.type.Frequency
@@ -359,6 +361,221 @@ public object DatasetInfoQuerySelections {
         .build()
       )
 
+  private val __isPrimaryTopicOf2: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "title",
+          type = GraphQLString.type
+        ).build()
+      )
+
+  private val __servesDataset: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "__typename",
+          type = GraphQLString.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "identifier",
+          type = GraphQLString.type.notNull().list()
+        ).build()
+      )
+
+  private val __inCatalog2: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "identifier",
+          type = GraphQLString.type.notNull().list()
+        ).build()
+      )
+
+  private val __onDataService: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "title",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "description",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "issued",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "modified",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "publisher",
+          type = Concept.type
+        ).build(),
+        CompiledField.Builder(
+          name = "license",
+          type = GraphQLString.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfServedResources",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfServedCatalogs",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfServedDatasets",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfServedDatasetSeries",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "isPrimaryTopicOf",
+          type = CatalogRecord.type.notNull().list()
+        ).selections(__isPrimaryTopicOf2)
+        .build(),
+        CompiledField.Builder(
+          name = "servesDataset",
+          type = DatasetInCatalog.type.notNull().list()
+        ).arguments(listOf(
+          CompiledArgument.Builder("page", CompiledVariable("page")).build(),
+          CompiledArgument.Builder("pageSize", 10).build(),
+          CompiledArgument.Builder("type", "All").build()
+        ))
+        .selections(__servesDataset)
+        .build(),
+        CompiledField.Builder(
+          name = "inCatalog",
+          type = Catalog.type.notNull().list()
+        ).selections(__inCatalog2)
+        .build()
+      )
+
+  private val __seriesMembers: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "__typename",
+          type = GraphQLString.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "identifier",
+          type = GraphQLString.type.notNull().list()
+        ).build()
+      )
+
+  private val __isPrimaryTopicOf3: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "title",
+          type = GraphQLString.type
+        ).build()
+      )
+
+  private val __inCatalog3: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "identifier",
+          type = GraphQLString.type.notNull().list()
+        ).build()
+      )
+
+  private val __isServedBy2: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "identifier",
+          type = GraphQLString.type.notNull().list()
+        ).build()
+      )
+
+  private val __onDatasetSeries: List<CompiledSelection> = listOf(
+        CompiledField.Builder(
+          name = "id",
+          type = GraphQLID.type.notNull()
+        ).build(),
+        CompiledField.Builder(
+          name = "title",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "description",
+          type = LangString.type.notNull().list()
+        ).build(),
+        CompiledField.Builder(
+          name = "issued",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "modified",
+          type = LocalDateTime.type
+        ).build(),
+        CompiledField.Builder(
+          name = "publisher",
+          type = Concept.type
+        ).build(),
+        CompiledField.Builder(
+          name = "license",
+          type = GraphQLString.type
+        ).build(),
+        CompiledField.Builder(
+          name = "numberOfMembersDatasets",
+          type = GraphQLInt.type
+        ).build(),
+        CompiledField.Builder(
+          name = "seriesMembers",
+          type = Dataset.type.notNull().list()
+        ).arguments(listOf(
+          CompiledArgument.Builder("page", CompiledVariable("page")).build(),
+          CompiledArgument.Builder("pageSize", 10).build()
+        ))
+        .selections(__seriesMembers)
+        .build(),
+        CompiledField.Builder(
+          name = "isPrimaryTopicOf",
+          type = CatalogRecord.type.notNull().list()
+        ).selections(__isPrimaryTopicOf3)
+        .build(),
+        CompiledField.Builder(
+          name = "inCatalog",
+          type = Catalog.type.notNull().list()
+        ).selections(__inCatalog3)
+        .build(),
+        CompiledField.Builder(
+          name = "isServedBy",
+          type = DataService.type.notNull().list()
+        ).arguments(listOf(
+          CompiledArgument.Builder("page", CompiledVariable("page")).build(),
+          CompiledArgument.Builder("pageSize", 10).build()
+        ))
+        .selections(__isServedBy2)
+        .build()
+      )
+
   private val __resource: List<CompiledSelection> = listOf(
         CompiledField.Builder(
           name = "__typename",
@@ -375,6 +592,18 @@ public object DatasetInfoQuerySelections {
           possibleTypes = listOf("Catalog")
         ).condition(listOf(CompiledCondition("isCatalog", false)))
         .selections(__onCatalog)
+        .build(),
+        CompiledFragment.Builder(
+          typeCondition = "DataService",
+          possibleTypes = listOf("DataService")
+        ).condition(listOf(CompiledCondition("isDataService", false)))
+        .selections(__onDataService)
+        .build(),
+        CompiledFragment.Builder(
+          typeCondition = "DatasetSeries",
+          possibleTypes = listOf("DatasetSeries")
+        ).condition(listOf(CompiledCondition("isDatasetSeries", false)))
+        .selections(__onDatasetSeries)
         .build()
       )
 
@@ -385,7 +614,9 @@ public object DatasetInfoQuerySelections {
         ).arguments(listOf(
           CompiledArgument.Builder("id", CompiledVariable("id")).build(),
           CompiledArgument.Builder("isCatalog", CompiledVariable("isCatalog")).build(),
+          CompiledArgument.Builder("isDataService", CompiledVariable("isDataService")).build(),
           CompiledArgument.Builder("isDataset", CompiledVariable("isDataset")).build(),
+          CompiledArgument.Builder("isDatasetSeries", CompiledVariable("isDatasetSeries")).build(),
           CompiledArgument.Builder("page", CompiledVariable("page")).build()
         ))
         .selections(__resource)

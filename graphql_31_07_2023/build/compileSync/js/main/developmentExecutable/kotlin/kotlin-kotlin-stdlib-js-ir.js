@@ -32,6 +32,20 @@ if (typeof Array.prototype.fill === 'undefined') {
     Object.defineProperty(TypedArray.prototype, 'fill', {value: Array.prototype.fill});
   }
 });
+if (typeof Math.sign === 'undefined') {
+  Math.sign = function (x) {
+    x = +x; // convert to a number
+    if (x === 0 || isNaN(x)) {
+      return Number(x);
+    }
+    return x > 0 ? 1 : -1;
+  };
+}
+if (typeof Math.log10 === 'undefined') {
+  Math.log10 = function (x) {
+    return Math.log(x) * Math.LOG10E;
+  };
+}
 if (typeof Math.clz32 === 'undefined') {
   Math.clz32 = function (log, LN2) {
     return function (x) {
@@ -42,20 +56,6 @@ if (typeof Math.clz32 === 'undefined') {
       return 31 - (log(asUint) / LN2 | 0) | 0; // the "| 0" acts like math.floor
     };
   }(Math.log, Math.LN2);
-}
-if (typeof Math.log10 === 'undefined') {
-  Math.log10 = function (x) {
-    return Math.log(x) * Math.LOG10E;
-  };
-}
-if (typeof Math.sign === 'undefined') {
-  Math.sign = function (x) {
-    x = +x; // convert to a number
-    if (x === 0 || isNaN(x)) {
-      return Number(x);
-    }
-    return x > 0 ? 1 : -1;
-  };
 }
 if (typeof String.prototype.startsWith === 'undefined') {
   Object.defineProperty(String.prototype, 'startsWith', {value: function (searchString, position) {
@@ -4472,43 +4472,14 @@ if (typeof Math.imul === 'undefined') {
   }
   function MapWithDefault() {
   }
-  function plusAssign(_this__u8e3s4, map) {
-    _this__u8e3s4.putAll_mee1c3_k$(map);
-  }
-  function iterator_0(_this__u8e3s4) {
-    return _this__u8e3s4.get_entries_p20ztl_k$().iterator_jk1svi_k$();
-  }
-  function get_1(_this__u8e3s4, key) {
-    return (isInterface(_this__u8e3s4, Map) ? _this__u8e3s4 : THROW_CCE()).get_1mhr4y_k$(key);
-  }
   function mutableMapOf() {
     return LinkedHashMap_init_$Create$();
-  }
-  function component1_0(_this__u8e3s4) {
-    return _this__u8e3s4.get_key_18j28a_k$();
-  }
-  function component2_0(_this__u8e3s4) {
-    return _this__u8e3s4.get_value_j01efc_k$();
   }
   function set(_this__u8e3s4, key, value) {
     _this__u8e3s4.put_3mhbri_k$(key, value);
   }
-  function mapOf(pairs) {
-    return pairs.length > 0 ? toMap_0(pairs, LinkedHashMap_init_$Create$_2(mapCapacity(pairs.length))) : emptyMap();
-  }
-  function mutableMapOf_0(pairs) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    var tmp0_apply = LinkedHashMap_init_$Create$_2(mapCapacity(pairs.length));
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'kotlin.collections.mutableMapOf.<anonymous>' call
-    putAll(tmp0_apply, pairs);
-    tmp$ret$0 = tmp0_apply;
-    return tmp$ret$0;
-  }
-  function emptyMap() {
-    var tmp = EmptyMap_getInstance();
-    return isInterface(tmp, Map) ? tmp : THROW_CCE();
+  function plusAssign(_this__u8e3s4, map) {
+    _this__u8e3s4.putAll_mee1c3_k$(map);
   }
   function mapValues(_this__u8e3s4, transform) {
     var tmp$ret$2;
@@ -4529,11 +4500,24 @@ if (typeof Math.imul === 'undefined') {
     tmp$ret$2 = tmp$ret$1;
     return tmp$ret$2;
   }
+  function emptyMap() {
+    var tmp = EmptyMap_getInstance();
+    return isInterface(tmp, Map) ? tmp : THROW_CCE();
+  }
+  function component1_0(_this__u8e3s4) {
+    return _this__u8e3s4.get_key_18j28a_k$();
+  }
+  function component2_0(_this__u8e3s4) {
+    return _this__u8e3s4.get_value_j01efc_k$();
+  }
   function contains_10(_this__u8e3s4, key) {
     var tmp$ret$0;
     // Inline function 'kotlin.collections.containsKey' call
     tmp$ret$0 = (isInterface(_this__u8e3s4, Map) ? _this__u8e3s4 : THROW_CCE()).containsKey_wgk31w_k$(key);
     return tmp$ret$0;
+  }
+  function iterator_0(_this__u8e3s4) {
+    return _this__u8e3s4.get_entries_p20ztl_k$().iterator_jk1svi_k$();
   }
   function filter_0(_this__u8e3s4, predicate) {
     var tmp$ret$1;
@@ -4552,11 +4536,8 @@ if (typeof Math.imul === 'undefined') {
     tmp$ret$1 = tmp0_filterTo;
     return tmp$ret$1;
   }
-  function getValue(_this__u8e3s4, key) {
-    return getOrImplicitDefault(_this__u8e3s4, key);
-  }
-  function linkedMapOf() {
-    return LinkedHashMap_init_$Create$();
+  function mapOf(pairs) {
+    return pairs.length > 0 ? toMap_0(pairs, LinkedHashMap_init_$Create$_2(mapCapacity(pairs.length))) : emptyMap();
   }
   function getOrPut(_this__u8e3s4, key, defaultValue) {
     var value = _this__u8e3s4.get_1mhr4y_k$(key);
@@ -4569,6 +4550,12 @@ if (typeof Math.imul === 'undefined') {
       tmp = value;
     }
     return tmp;
+  }
+  function getValue(_this__u8e3s4, key) {
+    return getOrImplicitDefault(_this__u8e3s4, key);
+  }
+  function linkedMapOf() {
+    return LinkedHashMap_init_$Create$();
   }
   function toMap(_this__u8e3s4) {
     if (isInterface(_this__u8e3s4, Collection)) {
@@ -4596,56 +4583,26 @@ if (typeof Math.imul === 'undefined') {
     }
     return optimizeReadOnlyMap(toMap_1(_this__u8e3s4, LinkedHashMap_init_$Create$()));
   }
-  function plusAssign_0(_this__u8e3s4, pair) {
-    _this__u8e3s4.put_3mhbri_k$(pair.get_first_irdx8n_k$(), pair.get_second_jf7fjx_k$());
+  function get_1(_this__u8e3s4, key) {
+    return (isInterface(_this__u8e3s4, Map) ? _this__u8e3s4 : THROW_CCE()).get_1mhr4y_k$(key);
   }
   function toPair(_this__u8e3s4) {
     return new Pair(_this__u8e3s4.get_key_18j28a_k$(), _this__u8e3s4.get_value_j01efc_k$());
   }
-  function containsKey(_this__u8e3s4, key) {
-    return (isInterface(_this__u8e3s4, Map) ? _this__u8e3s4 : THROW_CCE()).containsKey_wgk31w_k$(key);
-  }
-  function getOrElseNullable(_this__u8e3s4, key, defaultValue) {
-    var value = _this__u8e3s4.get_1mhr4y_k$(key);
-    if (value == null ? !_this__u8e3s4.containsKey_wgk31w_k$(key) : false) {
-      return defaultValue();
-    } else {
-      return (value == null ? true : isObject(value)) ? value : THROW_CCE();
+  function mapValuesTo(_this__u8e3s4, destination, transform) {
+    var tmp$ret$1;
+    // Inline function 'kotlin.collections.associateByTo' call
+    var tmp0_associateByTo = _this__u8e3s4.get_entries_p20ztl_k$();
+    var tmp0_iterator = tmp0_associateByTo.iterator_jk1svi_k$();
+    while (tmp0_iterator.hasNext_bitz1p_k$()) {
+      var element = tmp0_iterator.next_20eer_k$();
+      var tmp$ret$0;
+      // Inline function 'kotlin.collections.mapValuesTo.<anonymous>' call
+      tmp$ret$0 = element.get_key_18j28a_k$();
+      destination.put_3mhbri_k$(tmp$ret$0, transform(element));
     }
-  }
-  function hashMapOf(pairs) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    var tmp0_apply = HashMap_init_$Create$_2(mapCapacity(pairs.length));
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'kotlin.collections.hashMapOf.<anonymous>' call
-    putAll(tmp0_apply, pairs);
-    tmp$ret$0 = tmp0_apply;
-    return tmp$ret$0;
-  }
-  function toMutableMap(_this__u8e3s4) {
-    return LinkedHashMap_init_$Create$_3(_this__u8e3s4);
-  }
-  function toMap_0(_this__u8e3s4, destination) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.apply' call
-    // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'kotlin.collections.toMap.<anonymous>' call
-    putAll(destination, _this__u8e3s4);
-    tmp$ret$0 = destination;
-    return tmp$ret$0;
-  }
-  function putAll(_this__u8e3s4, pairs) {
-    var indexedObject = pairs;
-    var inductionVariable = 0;
-    var last = indexedObject.length;
-    while (inductionVariable < last) {
-      var tmp1_loop_parameter = indexedObject[inductionVariable];
-      inductionVariable = inductionVariable + 1 | 0;
-      var key = tmp1_loop_parameter.component1_7eebsc_k$();
-      var value = tmp1_loop_parameter.component2_7eebsb_k$();
-      _this__u8e3s4.put_3mhbri_k$(key, value);
-    }
+    tmp$ret$1 = destination;
+    return tmp$ret$1;
   }
   function _get_serialVersionUID__fhggm9_0($this) {
     return $this.serialVersionUID_1;
@@ -4723,20 +4680,8 @@ if (typeof Math.imul === 'undefined') {
       new EmptyMap();
     return EmptyMap_instance;
   }
-  function mapValuesTo(_this__u8e3s4, destination, transform) {
-    var tmp$ret$1;
-    // Inline function 'kotlin.collections.associateByTo' call
-    var tmp0_associateByTo = _this__u8e3s4.get_entries_p20ztl_k$();
-    var tmp0_iterator = tmp0_associateByTo.iterator_jk1svi_k$();
-    while (tmp0_iterator.hasNext_bitz1p_k$()) {
-      var element = tmp0_iterator.next_20eer_k$();
-      var tmp$ret$0;
-      // Inline function 'kotlin.collections.mapValuesTo.<anonymous>' call
-      tmp$ret$0 = element.get_key_18j28a_k$();
-      destination.put_3mhbri_k$(tmp$ret$0, transform(element));
-    }
-    tmp$ret$1 = destination;
-    return tmp$ret$1;
+  function containsKey(_this__u8e3s4, key) {
+    return (isInterface(_this__u8e3s4, Map) ? _this__u8e3s4 : THROW_CCE()).containsKey_wgk31w_k$(key);
   }
   function filterTo_0(_this__u8e3s4, destination, predicate) {
     var tmp$ret$0;
@@ -4750,6 +4695,15 @@ if (typeof Math.imul === 'undefined') {
       }
     }
     return destination;
+  }
+  function toMap_0(_this__u8e3s4, destination) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'kotlin.collections.toMap.<anonymous>' call
+    putAll(destination, _this__u8e3s4);
+    tmp$ret$0 = destination;
+    return tmp$ret$0;
   }
   function toMap_1(_this__u8e3s4, destination) {
     var tmp$ret$0;
@@ -4780,6 +4734,18 @@ if (typeof Math.imul === 'undefined') {
     }
     return tmp;
   }
+  function putAll(_this__u8e3s4, pairs) {
+    var indexedObject = pairs;
+    var inductionVariable = 0;
+    var last = indexedObject.length;
+    while (inductionVariable < last) {
+      var tmp1_loop_parameter = indexedObject[inductionVariable];
+      inductionVariable = inductionVariable + 1 | 0;
+      var key = tmp1_loop_parameter.component1_7eebsc_k$();
+      var value = tmp1_loop_parameter.component2_7eebsb_k$();
+      _this__u8e3s4.put_3mhbri_k$(key, value);
+    }
+  }
   function putAll_0(_this__u8e3s4, pairs) {
     var tmp0_iterator = pairs.iterator_jk1svi_k$();
     while (tmp0_iterator.hasNext_bitz1p_k$()) {
@@ -4788,6 +4754,40 @@ if (typeof Math.imul === 'undefined') {
       var value = tmp1_loop_parameter.component2_7eebsb_k$();
       _this__u8e3s4.put_3mhbri_k$(key, value);
     }
+  }
+  function hashMapOf(pairs) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    var tmp0_apply = HashMap_init_$Create$_2(mapCapacity(pairs.length));
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'kotlin.collections.hashMapOf.<anonymous>' call
+    putAll(tmp0_apply, pairs);
+    tmp$ret$0 = tmp0_apply;
+    return tmp$ret$0;
+  }
+  function getOrElseNullable(_this__u8e3s4, key, defaultValue) {
+    var value = _this__u8e3s4.get_1mhr4y_k$(key);
+    if (value == null ? !_this__u8e3s4.containsKey_wgk31w_k$(key) : false) {
+      return defaultValue();
+    } else {
+      return (value == null ? true : isObject(value)) ? value : THROW_CCE();
+    }
+  }
+  function mutableMapOf_0(pairs) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.apply' call
+    var tmp0_apply = LinkedHashMap_init_$Create$_2(mapCapacity(pairs.length));
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'kotlin.collections.mutableMapOf.<anonymous>' call
+    putAll(tmp0_apply, pairs);
+    tmp$ret$0 = tmp0_apply;
+    return tmp$ret$0;
+  }
+  function toMutableMap(_this__u8e3s4) {
+    return LinkedHashMap_init_$Create$_3(_this__u8e3s4);
+  }
+  function plusAssign_0(_this__u8e3s4, pair) {
+    _this__u8e3s4.put_3mhbri_k$(pair.get_first_irdx8n_k$(), pair.get_second_jf7fjx_k$());
   }
   function plusAssign_1(_this__u8e3s4, element) {
     _this__u8e3s4.add_1j60pz_k$(element);
