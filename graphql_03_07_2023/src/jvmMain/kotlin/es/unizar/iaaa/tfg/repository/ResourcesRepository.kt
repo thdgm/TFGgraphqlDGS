@@ -162,41 +162,6 @@ interface DatasetRepository : JpaRepository<DatasetEntity, String> {
     @Transactional
     fun findByKeywordsIn(@Param("keywords") keywords: Collection<String>, page: Pageable): Page<DatasetEntity>
 
-    /*@Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByLabelASC(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>*/
-/*
-    @Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format order by r.\"publisher_id\" ASC"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByNotationASC(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>
-
-    @Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format order by r.\"issued\" ASC"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByIssuedASC(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>
-
-    @Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format order by r.\"modified\" ASC"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByModifiedASC(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>
-
-    @Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format order by r.\"publisher_id\" DESC"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByNotationDesc(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>
-
-    @Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format order by r.\"issued\" DESC"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByIssuedDesc(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>
-
-    @Query(value="select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"distribution\" as d, \"distributions\" as dist, \"resource\" as r where d.\"id\" = dist.\"distribution_id\" and r.\"id\" = dist.\"dataset_id\" and d.\"format\" IN :format order by r.\"modified\" DESC"
-        ,nativeQuery = true)
-    @Transactional
-    fun findByDistributionsFormatInOrderByModifiedDesc(@Param("format") format: Collection<String>, page: Pageable): Page<DatasetEntity>
-*/
 
 
 }
@@ -333,103 +298,7 @@ class ResourceRepositoryCriteria(private val entityManager: EntityManager) {
         println("OBTENGOOOO::::::::::::::::::::::: $resultList")
         return resultList
 
-        // Aplicar los filtros seleccionados
 
-        /*filters.forEach { filter ->
-            when (filter.key) {
-                "Categoría" -> {
-                    val themeJoin: Join<ResourceEntity, ThemeEntity> = root.join("theme")
-                    predicates.add(themeJoin.get<String>("id").`in`(filter.values))
-                }
-                /*"Formato" -> {
-                    val distributionJoin: Join<DatasetEntity, DistributionEntity> = root.join("distributions")
-                    val mediaTypeMap = MediaTypeMap.MEDIA_TYPE
-                    val formats = filter.values.mapNotNull { mediaTypeMap[it] }
-                    predicates.add(distributionJoin.get<String>("format").`in`(formats))
-                }*/
-                "Frecuencia de Actualización" -> {
-                    val datasetJoin: Join<ResourceEntity, DatasetEntity> = root.join("dataset")
-                    predicates.add(datasetJoin.get<String>("accrualPeriodicity").`in`(period))
-                }
-               /* "Títulos" -> {
-                    predicates.add(root.get<String>("title").`in`(filter.values))
-                }
-                "Descripciones" -> {
-                    predicates.add(root.get<String>("description").`in`(filter.values))
-                }
-                "DataServices" -> {
-                    val datasetServiceJoin: Join<ResourceEntity, DataServiceEntity> = root.join("datasetService")
-                    predicates.add(datasetServiceJoin.get<String>("datasetServiceId").`in`(filter.values))
-                }
-                "DatasetSeries" -> {
-                    val datasetSeriesJoin: Join<ResourceEntity, DatasetSeriesEntity> = root.join("datasetSeries")
-                    predicates.add(datasetSeriesJoin.get<String>("id").`in`(filter.values))
-                }
-                "Catalogs" -> {
-                    val catalogJoin: Join<ResourceEntity, CatalogEntity> = root.join("catalogResources")
-                    predicates.add(catalogJoin.get<String>("id").`in`(filter.values))
-                }
-                "Distribuciones" -> {
-                    val distributionJoin: Join<ResourceEntity, DistributionEntity> = root.join("distributions")
-                    predicates.add(distributionJoin.get<String>("id").`in`(filter.values))
-                }
-                "Etiqueta" -> {
-                    val datasetJoin: Join<ResourceEntity, DatasetEntity> = root.join("dataset")
-                    predicates.add(datasetJoin.get<String>("keywords").`in`(filter.values))
-                }
-                "Publicador" -> {
-                    val publisherJoin: Join<ResourceEntity, PublisherEntity> = root.join("publisher")
-                    predicates.add(publisherJoin.get<String>("label").`in`(filter.values))
-                }
-                "Licenses" -> {
-                    predicates.add(root.get<String>("license").`in`(filter.values))
-                }
-                "Nivel de Administración" -> {
-                    val publisherJoin: Join<ResourceEntity, PublisherEntity> = root.join("publisher")
-                    predicates.add(publisherJoin.get<String>("notation").`in`(filter.values))
-                }
-                "Fecha creación" -> {
-                    predicates.add(root.get<LocalDateTime>("issued").`in`(issued))
-                }
-                "Fecha última modificación" -> {
-                    predicates.add(root.get<LocalDateTime>("modified").`in`(modified))
-                }
-                "Frecuencia de Actualización" -> {
-                    val datasetJoin: Join<ResourceEntity, DatasetEntity> = root.join("dataset")
-                    predicates.add(datasetJoin.get<String>("accrualPeriodicity").`in`(period))
-                }
-                "Formato" -> {
-                    val distributionJoin: Join<ResourceEntity, DistributionEntity> = root.join("distributions")
-                    val mediaTypeMap = MediaTypeMap.MEDIA_TYPE
-                    val formats = filter.values.mapNotNull { mediaTypeMap[it] }
-                    predicates.add(distributionJoin.get<String>("format").`in`(formats))
-                }
-                "PrimaryTopic" -> {
-                    val catalogRecordJoin: Join<ResourceEntity, CatalogRecordEntity> = root.join("catalogRecords")
-                    predicates.add(catalogRecordJoin.get<String>("id").`in`(filter.values))
-                }*/
-                else -> {
-
-                    // Otros casos de filtro, si los tienes
-                }
-            }
-        }
-
-        // Aplicar filtro por tipo
-        predicates.add(criteriaBuilder.equal(root.get<String>("type"), type))
-
-        // Combinar todos los predicados con AND
-        val combinedPredicate: Predicate = criteriaBuilder.and(*predicates.toTypedArray())
-        criteriaQuery.select(root).where(combinedPredicate)
-
-        // Aplicar paginación
-        val pageSize = 20
-        val offset = page * pageSize
-        val resultList = entityManager.createQuery(criteriaQuery)
-            .setFirstResult(offset)
-            .setMaxResults(pageSize)
-            .resultList
-*/
 
         // Convertir entidades a recursos
 
@@ -973,6 +842,98 @@ class ResourceRepositoryExtra(){
         println("NUMBERSSSSSSSSSSSSSSSSS 2: $numberOfResources")
         return kotlin.runCatching {
             nativeQuery.resultList.first() as Long?
+        }.getOrNull()
+    }
+
+    fun findDistributionsByFilters(
+        filters: Collection<MapInput>,
+        orderBy: String,
+        sortBy: String,
+        page: Int,
+        byteSizeRange: Pair<String, String>?,
+        formats: List<String>,
+    ): Collection<DistributionEntity>?{
+        val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+
+        val accessUrl = appliedFilters.find { it.key == "AccessUrl" }?.values ?: listOf()
+        val titles = appliedFilters.find { it.key == "Títulos" }?.values ?: listOf()
+
+        var queryString = "SELECT DISTINCT tt.id, tt.access_url, tt.byte_size, tt.format FROM ( " +
+                "SELECT dist.id, dist.access_url, dist.byte_size, dist.format, titls.id_title " +
+                "FROM distribution dist " +
+                "LEFT JOIN titles_distribution titls ON dist.id = titls.id_distribution) as tt " +
+                "WHERE "
+
+        if (formats.isNotEmpty()) queryString += "tt.format IN :formats OR "
+        if (accessUrl.isNotEmpty()) queryString += "tt.access_url IN :accessUrls OR "
+        if (byteSizeRange != null) queryString += "tt.byte_size BETWEEN :byteStart AND :byteEnd OR "
+        if (titles.isNotEmpty()) queryString += "tt.id_title IN :titles OR "
+
+        var querySplit = queryString.split(' ').toMutableList()
+
+        if(querySplit[querySplit.size-2] == "OR" || querySplit[querySplit.size-2] == "WHERE") querySplit[querySplit.size-2] = ""
+        queryString = querySplit.joinToString(" ")
+
+        queryString += "ORDER BY tt.${sortBy} $orderBy " +
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
+
+        val nativeQuery = entityManager.createNativeQuery(queryString, DistributionEntity::class.java)
+
+        if (formats.isNotEmpty()) nativeQuery.setParameter("formats", formats)
+        if (accessUrl.isNotEmpty()) nativeQuery.setParameter("accessUrls", accessUrl)
+        if (titles.isNotEmpty()) nativeQuery.setParameter("titles", titles)
+        if(byteSizeRange != null) {
+            nativeQuery.setParameter("byteStart", byteSizeRange.first.toInt())
+            nativeQuery.setParameter("byteEnd", byteSizeRange.second.toInt())
+        }
+        println("QEURRYYYYYYYYYYYYYYYYY:::::::::::::::::::---------------------------- $queryString")
+        return kotlin.runCatching {
+            nativeQuery.resultList as Collection<DistributionEntity>?
+        }.getOrNull()
+    }
+
+    fun findNumberOfDistributionsByFilters(
+        filters: Collection<MapInput>,
+        byteSizeRange: Pair<String, String>?,
+        formats: List<String>,
+    ): Long?{
+        val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+
+        val accessUrl = appliedFilters.find { it.key == "AccessUrl" }?.values ?: listOf()
+        val titles = appliedFilters.find { it.key == "Títulos" }?.values ?: listOf()
+
+        var queryString = "SELECT COUNT(DISTINCT result.id) as total_elements FROM " +
+                "(SELECT DISTINCT tt.id, tt.access_url, tt.byte_size, tt.format " +
+                "FROM (SELECT dist.id, dist.access_url, dist.byte_size, dist.format, titls.id_title " +
+                "FROM distribution dist " +
+                "LEFT JOIN titles_distribution titls ON dist.id = titls.id_distribution) as tt " +
+                "WHERE "
+
+
+        if (formats.isNotEmpty()) queryString += "tt.format IN :formats OR "
+        if (accessUrl.isNotEmpty()) queryString += "tt.access_url IN :accessUrls OR "
+        if (byteSizeRange != null) queryString += "tt.byte_size BETWEEN :byteStart AND :byteEnd OR "
+        if (titles.isNotEmpty()) queryString += "tt.id_title IN :titles OR "
+
+        var querySplit = queryString.split(' ').toMutableList()
+
+        if(querySplit[querySplit.size-2] == "OR" || querySplit[querySplit.size-2] == "WHERE") querySplit[querySplit.size-2] = ""
+        queryString = querySplit.joinToString(" ")
+        queryString =  queryString.trimEnd()+ ") as result"
+
+
+        val nativeQuery = entityManager.createNativeQuery(queryString)
+
+        if (formats.isNotEmpty()) nativeQuery.setParameter("formats", formats)
+        if (accessUrl.isNotEmpty()) nativeQuery.setParameter("accessUrls", accessUrl)
+        if (titles.isNotEmpty()) nativeQuery.setParameter("titles", titles)
+        if(byteSizeRange != null) {
+            nativeQuery.setParameter("byteStart", byteSizeRange.first.toInt())
+            nativeQuery.setParameter("byteEnd", byteSizeRange.second.toInt())
+        }
+        println("QEURRYYYYYYYYYYYYYYYYY:::::::::::::::::::---------------------------- $queryString")
+        return kotlin.runCatching {
+            nativeQuery.resultList as Long?
         }.getOrNull()
     }
 }

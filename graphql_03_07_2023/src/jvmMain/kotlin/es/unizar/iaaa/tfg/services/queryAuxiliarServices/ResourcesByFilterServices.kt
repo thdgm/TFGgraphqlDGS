@@ -1,5 +1,6 @@
 package es.unizar.iaaa.tfg.services.queryAuxiliarServices
 
+import com.graphqlDGS.graphqlDGS.model.types.Distribution
 import com.graphqlDGS.graphqlDGS.model.types.MapInput
 import com.graphqlDGS.graphqlDGS.model.types.Resource
 import es.unizar.iaaa.tfg.constants.ConstantValues.PERIODICITY_RANGE
@@ -21,6 +22,9 @@ import java.time.LocalDateTime
 interface ResourcesByFilterServices {
 
     fun getResourcesByFilters(filters: Collection<MapInput>, type: String, page: Int): Collection<Resource>
+
+    fun getDistributionsByFilters(filters: Collection<MapInput>, page: Int): Collection<Distribution>
+
 }
 
 @Service
@@ -145,16 +149,37 @@ class ResourcesByFilterServicesImpl(
     }
 
 
-    fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{
-        if (selectedFilters.isNullOrEmpty()){
-            return true
+    override fun getDistributionsByFilters(filters: Collection<MapInput>, page: Int): Collection<Distribution> {
+        val orderBy = filters.firstOrNull { it.key == "OrderBy" }?.values?.firstOrNull()
+        var sortBy = filters.firstOrNull { it.key == "SortBy" }?.values?.firstOrNull()
+        var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+        sortBy = when(sortBy){
+            "format" -> {"format"}
+            "byte_size" -> {"byte_size"}
+            "access_url" -> {"access_url"}
+            else ->{"byte_size "}
         }
-        selectedFilters?.map{
-            if (it.values.isNotEmpty()){
-                return false
+        val mediaTypeMap = MediaTypeMap.MEDIA_TYPE
+        val formats_pre = appliedFilters.find { it.key == "Formato" }?.values ?: listOf()
+        val formats = formats_pre.mapNotNull { mediaTypeMap[it] }
+        var byteSize: String? = if (appliedFilters.find { it.key == "ByteSize"}?.values?.isNotEmpty() == true) appliedFilters.find { it.key == "ByteSize"}?.values?.first() else null
+        var rangeNumber: Pair<String, String>? = null
+        if (byteSize != null){
+            rangeNumber = when(byteSize){
+                "0 Bytes" -> Pair("0","0")
+                "Menos de 100 bytes" -> Pair("0","100")
+                "Entre 100 y 1000 bytes" -> Pair("100","1000")
+                "Entre 1000 y 10.000 bytes" -> Pair("1000","10000")
+                "Entre 10.000 y 100.000 bytes" -> Pair("10000","100000")
+                "Más de 100.000" -> Pair("100000","9999999")
+                else -> null
             }
         }
-        return true
+        println("RESSSSSSSSSSS1::::::::::---------------------------------------------------------------------------------: $rangeNumber - $formats")
+        val res = repoCriteria.findDistributionsByFilters(appliedFilters,orderBy?.toUpperCase() ?: "ASC",sortBy,page,rangeNumber,formats) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        println("QEURRYYYYYYYYYYYYYYYYY RESSSS:::::::::::::::::::---------------------------- $res")
+
+        return res?.map { convertersResourcesEntitiesTo.toDistribution(it) }?.distinct()?.filterNotNull() ?: listOf()
     }
 
 }

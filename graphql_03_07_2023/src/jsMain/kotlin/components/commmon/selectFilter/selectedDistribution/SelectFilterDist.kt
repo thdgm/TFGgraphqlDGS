@@ -4,47 +4,77 @@ package components.commmon.selectFilter.selectedDistribution
 
 
 import components.commmon.FilterListContextAll
+import components.commmon.pages.distribution.mainPage.IsLoadingContext
+import csstype.FlexDirection
+import csstype.FontSize
 import csstype.NamedColor
+import csstype.pct
 import csstype.px
 import mui.material.FormControl
+import mui.material.FormControlLabel
 import mui.material.FormHelperText
 import mui.material.InputLabel
+import mui.material.LabelPlacement
 import mui.material.MenuItem
+import mui.material.Radio
+import mui.material.RadioGroup
 import mui.material.Select
 import mui.material.Size
+import mui.material.Typography
 import mui.system.sx
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.HTMLLIElement
 import react.FC
 import react.Props
 import react.ReactNode
+import react.create
 import react.dom.events.ChangeEvent
 import react.dom.events.MouseEvent
 import react.useRequiredContext
 import react.useState
 
 val selectFilterDist = FC<Props> {
-    var orderVal by useState("")
-
+    var orderBy by useState("")
+    var sortBy by useState("asc")
     var selectedFilters by useRequiredContext(FilterListContextAll)
+    var isDisabled by useRequiredContext(IsLoadingContext)
+
     val handleChange: (event: ChangeEvent<HTMLInputElement>, child: ReactNode) -> Unit = {event,_ ->
-        orderVal = event.target.value
-    }
-    fun checkIfSelectedFiltersIsEmpty(selectedVal: String): Boolean{
-        selectedFilters["Distributions"]?.map{
-            if (it.key == selectedVal){
-                if(it.value.isEmpty()){
-                    return true
-                }
+        orderBy = event.target.value
+
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+            if (key == "Datasets") {
+                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                    if (innerKey == "SortBy") filterVal.filter { false }.plus(
+                        event.target.value
+                    )
+                    else filterVal
+                }.toMutableMap()
+            } else {
+                catalogMap
             }
-        }
-        selectedFilters["Distributions"]?.map{
-            if (!it.value.isEmpty()){
-                return false
-            }
-        }
-        return true
+        }.toMutableMap()
+
     }
+
+    val handleChangeRadio: (event: ChangeEvent<HTMLInputElement>, child: String) -> Unit = {event,value ->
+
+        sortBy = value
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+            if (key == "Datasets") {
+                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                    if (innerKey == "OrderBy") filterVal.filter { false }.plus(
+                        value
+                    )
+                    else filterVal
+                }.toMutableMap()
+            } else {
+                catalogMap
+            }
+        }.toMutableMap()
+
+    }
+
 
     FormControl {
         sx {
@@ -60,72 +90,76 @@ val selectFilterDist = FC<Props> {
             sx {
                 backgroundColor = NamedColor.white
             }
+            disabled = isDisabled
             labelId = "demo-select-small"
             id = "demo-select-small"
-            value = if(checkIfSelectedFiltersIsEmpty(orderVal)) "" else orderVal
+            value = orderBy
             label = ReactNode("Ordenar por")
-            onChange = handleChange
-
+            onChange= handleChange
             MenuItem {
                 value = ""
                 + "None"
             }
 
             MenuItem {
-
-                onClick= {event: MouseEvent<HTMLLIElement, *> -> orderVal = "Titulo"; selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                    if (key == "Distributions") {
-                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                            if (innerKey == event.currentTarget.accessKey && !filterVal.contains(event.currentTarget.id)) filterVal.plus(event.currentTarget.id)
-                            else if (filterVal.contains( event.currentTarget.id)) filterVal.filter { miVal -> miVal != event.currentTarget.id }
-                            else filterVal
-                        }.toMutableMap()
-                    } else {
-                        catalogMap
-                    }
-                }.toMutableMap()}
-                value = "ByteSize"
-                accessKey = "ByteSize"
-                id = "bytesizeValue"
+                value = "access_url"
+                + "Url de acceso"
+            }
+            MenuItem {
+                value = "byte_size"
                 + "ByteSize"
             }
+
             MenuItem {
-                onClick= {event: MouseEvent<HTMLLIElement, *> -> orderVal = "Titulo"; selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                    if (key == "Distributions") {
-                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                            if (innerKey == event.currentTarget.accessKey && !filterVal.contains(event.currentTarget.id)) filterVal.plus(event.currentTarget.id)
-                            else if (filterVal.contains( event.currentTarget.id)) filterVal.filter { miVal -> miVal != event.currentTarget.id }
-                            else filterVal
-                        }.toMutableMap()
-                    } else {
-                        catalogMap
-                    }
-                }.toMutableMap()}
-                value = "Format"
-                accessKey = "Format"
-                id = "formatValue"
+                value = "format"
                 + "Format"
             }
-            MenuItem {
-                onClick= {event: MouseEvent<HTMLLIElement, *> -> orderVal = "Titulo"; selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                    if (key == "Distributions") {
-                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                            if (innerKey == event.currentTarget.accessKey && !filterVal.contains(event.currentTarget.id)) filterVal.plus(event.currentTarget.id)
-                            else if (filterVal.contains( event.currentTarget.id)) filterVal.filter { miVal -> miVal != event.currentTarget.id }
-                            else filterVal
-                        }.toMutableMap()
-                    } else {
-                        catalogMap
-                    }
-                }.toMutableMap()}
-                value = "AccessUrl"
-                accessKey = "AccessUrl"
-                id = "accessUrlValue"
-                + "AccessUrl"
-            }
         }
-        FormHelperText{
-            + "Look for similar content"
+
+    }
+    FormControl{
+
+        RadioGroup{
+            sx {
+                flexDirection = FlexDirection.row
+            }
+
+            row = true
+            value = sortBy
+            onChange= handleChangeRadio
+            FormControlLabel{
+
+                value="asc"
+                control= Radio.create{
+                    size = Size.small
+                    disabled = isDisabled
+                }
+                label= Typography.create{
+                    sx{
+                        fontSize = FontSize.smaller
+                    }
+                    + "ASC"
+                }
+                labelPlacement= LabelPlacement.start
+            }
+            FormControlLabel{
+
+                value="desc"
+                control= Radio.create{
+                    sx{
+                        marginLeft = 6.pct
+                    }
+                    disabled = isDisabled
+                    size = Size.small
+                }
+                label= Typography.create{
+                    sx{
+                        fontSize = FontSize.smaller
+                    }
+                    + "DESC"
+                }
+                labelPlacement= LabelPlacement.end
+            }
         }
     }
 }

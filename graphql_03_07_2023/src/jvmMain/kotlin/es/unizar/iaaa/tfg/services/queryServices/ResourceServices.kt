@@ -255,8 +255,6 @@ class ResourceServicesImpl(
     }
 
 
-
-
     fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{
         if (selectedFilters.isNullOrEmpty()){
             return true

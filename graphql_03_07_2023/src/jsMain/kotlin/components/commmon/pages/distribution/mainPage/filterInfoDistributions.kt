@@ -19,6 +19,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
+import react.useEffect
 import react.useRequiredContext
 import react.useState
 
@@ -33,16 +34,22 @@ external interface FilterInfoDistributionsProps:Props{
 val filterInfoDistributions = FC<FilterInfoDistributionsProps> { props ->
 
     var selectedFilters by useRequiredContext(FilterListContextAll)
+    var filterFields by useState(props.filterFields)
     var showMoreOrLess by useState(false)
+    var isDisabled by useRequiredContext(IsLoadingContext)
+
     val handleClickMore = {
         GlobalScope.launch {
-            //props.updateFilterListMore()
+            props.updateFilterListMore()
         }
     }
     val handleClickLess = {
         GlobalScope.launch {
-           // props.updateFilterListLess()
+            props.updateFilterListLess()
         }
+    }
+    useEffect(listOf(props.filterFields)) {
+        filterFields = props.filterFields
     }
 
     Accordion {
@@ -61,39 +68,53 @@ val filterInfoDistributions = FC<FilterInfoDistributionsProps> { props ->
                 + "${props.filterName}"
             }
         }
-
         AccordionDetails{
             sx {
                 boxShadow = None.none
             }
+
             mui.material.List {
                 className = ClassName("scrollUlFilters")
-                props.filterFields.forEachIndexed { index, value ->
-                    ListItemButton {
-                        onClick = {
-                            selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                if (key == "Distributions") {
-                                    catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                        if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(
-                                            value
-                                        )
-                                        else if (filterVal.contains(value)) filterVal.filter { miVal -> miVal != value }
-                                        else filterVal
-                                    }.toMutableMap()
-                                } else {
-                                    catalogMap
-                                }
-                            }.toMutableMap()
 
-                            selected = selectedFilters["Distributions"]!!.toMutableMap()[props.filterName]?.contains(value)
+                // console.log("SELECTED: " + disbledButtons)
+                if (!filterFields.isEmpty()) {
+                    filterFields.forEachIndexed { index, value ->
+
+                        ListItemButton {
+                            onClick = {
+
+                                selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                    if (key == "Distributions") {
+                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+
+                                            if (innerKey == props.filterName && !filterVal.contains(value)){
+                                                if(props.filterName == "ByteSize") {
+                                                    filterVal.filter{false}.plus(value)
+                                                }else{
+                                                    filterVal.plus(value)
+                                                }
+                                            }
+                                            //else if (filterVal.contains(value)) filterVal.filter { miVal -> miVal != value }
+                                            else filterVal
+                                        }.toMutableMap()
+                                    } else {
+                                        catalogMap
+                                    }
+                                }.toMutableMap()
+
+                                console.log("FILTERSSSS::: "+selectedFilters)
+                            }
+                            selected =
+                                selectedFilters["Distributions"]!!.toMutableMap()[props.filterName]?.contains(value)
                             +"$value"
+
                         }
-
                     }
-
                 }
-
             }
+
+        }
+        if (props.filterName != "ByteSize"){
             mui.material.List {
                 ListItemButton {
                     sx {
@@ -101,18 +122,16 @@ val filterInfoDistributions = FC<FilterInfoDistributionsProps> { props ->
                         backgroundColor = rgb(247, 160, 93)
                     }
                     className = ClassName("addMoreFilters")
-
-                    if (!showMoreOrLess){
-                        onClick = {handleClickMore(); showMoreOrLess = true}
+                    disabled = isDisabled
+                    if (!showMoreOrLess) {
+                        onClick = { handleClickMore(); showMoreOrLess = true }
                         +"Mostrar más"
-                    }else{
-                        onClick = {handleClickLess(); showMoreOrLess = false}
+                    } else {
+                        onClick = { handleClickLess(); showMoreOrLess = false }
                         +"Mostrar menos"
                     }
-
                 }
             }
-
         }
     }
 }

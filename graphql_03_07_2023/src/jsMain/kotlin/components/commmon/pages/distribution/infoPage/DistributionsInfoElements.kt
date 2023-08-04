@@ -6,6 +6,7 @@ import components.commmon.Sizes
 import components.commmon.pages.dataset.infoPage.addToFiltersButton
 import components.commmon.selectFilter.selectedDataset.selectFilterDataset
 import components.commmon.selectFilter.selectedDistribution.selectFilterDist
+import components.commmon.selectFilter.selectedDistribution.selectSearchByDist
 import csstype.AlignItems
 import csstype.Auto
 import csstype.ClassName
@@ -15,10 +16,13 @@ import csstype.NamedColor
 import csstype.Position
 import csstype.pct
 import csstype.px
+import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import models.DistributionInfo
+import mui.icons.material.DownloadForOffline
+import mui.icons.material.Podcasts
 import mui.icons.material.RssFeed
 import mui.icons.material.Title
 import mui.icons.material.VpnKey
@@ -70,15 +74,14 @@ external interface DistributionsInfoElementsProps : Props {
 
 val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
 
-
     var distInfo by useState(props.listTestDistributionsInfo)
     var isLoading by useState(true)
     val navigate = useNavigate()
     var selectedFilters by useRequiredContext(FilterListContextAll)
 
+
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
-        //console.log("ID: "+event.currentTarget.id)
-        navigate("/dataservices")
+        navigate("/distributions")
     }
     fun checkIfSelectedFiltersIsEmpty(): Boolean {
 
@@ -99,15 +102,14 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
     }
 
     if (distInfo.isNullOrEmpty()){
-        if (isLoading) {
-            CircularProgress {
-                className = ClassName("circularProgressInfo")
-            }
-        }else{
-            +"No se ha encontrado información del elemento"
-            PruebaInfo()
+
+        CircularProgress {
+            className = ClassName("circularProgressInfo")
         }
+
     }else{
+        console.log("INFOOOOOOOOOOOO::::::"+distInfo)
+
         ReactHTML.div {
             className = ClassName("titleSelect")
             Breadcrumbs {
@@ -129,10 +131,11 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 }
 
                 Typography {
-                    if (distInfo.elementAt(0)?.title!!.isNotEmpty()) {
-                        +"${distInfo.elementAt(0)?.title?.elementAt(0)}"
+                    if (!distInfo.elementAt(0).title.isNullOrEmpty()) {
+                        +"${distInfo.elementAt(0).title?.elementAt(0)}"
+                    }else{
+                        +"${distInfo.first().id}"
                     }
-
                 }
             }
             Box {
@@ -140,7 +143,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                     marginRight = 10.pct
                     alignItems = AlignItems.center
                 }
-                selectFilterDist()
+                selectSearchByDist{infoDist = distInfo}
             }
         }
         if (!checkIfSelectedFiltersIsEmpty()) {
@@ -153,6 +156,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 Button {
                     variant = ButtonVariant.contained
                     color = ButtonColor.primary
+                    onClick = handleOnClick
                     +"Search"
                 }
                 Button {
@@ -181,7 +185,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["Distributions"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty()) {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
@@ -216,8 +220,10 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
         }
         ReactHTML.h1 {
             className = ClassName("titleInit")
-            if(distInfo.elementAt(0)?.title!!.isNotEmpty()){
-                distInfo.elementAt(0)?.title?.elementAt(0)
+            if (!distInfo.elementAt(0).title.isNullOrEmpty()) {
+                +"${distInfo.elementAt(0).title?.elementAt(0)}"
+            }else{
+                +"${distInfo.first().id}"
             }
         }
 
@@ -242,18 +248,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 Table {
                     className = ClassName("tableInfo")
                     TableBody {
-                        if(!distInfo.elementAt(0)?.accessUrl.isNullOrBlank()) {
-                            TableRow {
-                                TableCell {
-                                    className = ClassName("tableCell1")
-                                    +"AccessUrl"
-                                }
-                                TableCell {
-                                    className = ClassName("tableCell2")
-                                    distInfo.elementAt(0)?.accessUrl
-                                }
-                            }
-                        }
+
                         if(!distInfo.elementAt(0)?.byteSize.isNullOrBlank()) {
                             TableRow {
                                 TableCell {
@@ -262,7 +257,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                                 }
                                 TableCell {
                                     className = ClassName("tableCell2")
-                                    distInfo.elementAt(0)?.byteSize
+                                    +"${distInfo.elementAt(0)?.byteSize}"
                                 }
                             }
                         }
@@ -296,7 +291,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                                                                                 chipValue
                                                                             )
                                                                         ) filterVal.plus(chipValue)
-                                                                        else if (filterVal.contains(chipValue)) filterVal.filter { miVal -> miVal != chipValue }
+                                                                        //else if (filterVal.contains(chipValue)) filterVal.filter { miVal -> miVal != chipValue }
                                                                         else filterVal
                                                                     }.toMutableMap()
                                                             } else {
@@ -316,8 +311,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 }
             }
         }
-
-        if(distInfo.elementAt(0)?.title!!.size > 1) {
+        if(distInfo.elementAt(0)?.accessUrl!!.isNotEmpty()) {
             Paper {
                 sx {
                     width = Sizes.BoxList.Width
@@ -334,9 +328,66 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 elevation = 0
                 Typography {
                     className = ClassName("subtitle_info")
-                    +"Otros títulos"
+                    +"Access Url"
                 }
-                distInfo.elementAt(0)?.title?.drop(1)?.map {
+                List {
+                    var valueToShow = distInfo.elementAt(0)?.accessUrl
+
+
+                        ListItem {
+                            className = ClassName("distributionsList2")
+
+
+                            ListItemAvatar {
+                                Podcasts {
+                                    color = SvgIconColor.primary
+                                }
+
+                            }
+
+                            ListItemText {
+
+                                Link {
+                                    className = ClassName("distributionsList")
+                                    href = "${valueToShow}"
+                                    +"$valueToShow"
+                                }
+                            }
+
+                            ListItemAvatar {
+                                className = ClassName("downloadIcon")
+                                onClick = { window.location.href = "$valueToShow" }
+                                DownloadForOffline {
+                                    color = SvgIconColor.primary
+                                }
+                            }
+
+                        }
+
+                }
+
+            }
+        }
+        if(!distInfo.elementAt(0)?.title.isNullOrEmpty()) {
+            Paper {
+                sx {
+                    width = Sizes.BoxList.Width
+                    marginRight = Auto.auto
+                    marginLeft = Auto.auto
+                    marginTop = 2.pct
+                    paddingTop = 2.pct
+                    paddingBottom = 5.pct
+                    backgroundColor = NamedColor.white
+                    paddingRight = 10.pct
+                    paddingLeft = 6.pct
+                    position = Position.relative
+                }
+                elevation = 0
+                Typography {
+                    className = ClassName("subtitle_info")
+                    +"Títulos"
+                }
+                distInfo.elementAt(0)?.title?.map {
                     List {
 
                         ListItem {
@@ -356,15 +407,16 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                                             catalogMap
                                         }
                                     }.toMutableMap()
-                                    ListItemAvatar {
-                                        Title {
-                                            className = ClassName("titleIcon")
-                                        }
-                                    }
-                                    ListItemText {
-                                        it
-                                    }
+
                                 }
+                            }
+                            ListItemAvatar {
+                                Title {
+                                    className = ClassName("titleIcon")
+                                }
+                            }
+                            ListItemText {
+                                +"$it"
                             }
                         }
                     }
@@ -373,7 +425,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
             }
         }
 
-        if(distInfo.elementAt(0)?.identifiers!!.isNotEmpty()){
+        if(!distInfo.elementAt(0)?.identifiers.isNullOrEmpty()){
             Paper {
                 sx {
                     width = Sizes.BoxList.Width
@@ -404,7 +456,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                             }
                             ListItemText {
                                 Link{
-                                    value
+                                    +"$value"
                                 }
                             }
                         }
@@ -413,7 +465,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
             }
         }
 
-        if(!distInfo.elementAt(0)?.accessServiceID.isNullOrEmpty()) {
+        if(!distInfo.elementAt(0)?.accessService.isNullOrEmpty()) {
             Paper {
                 sx {
                     width = Sizes.BoxList.Width
@@ -433,36 +485,10 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                     +"Data Services"
                 }
                 List {
-                    distInfo.elementAt(0)?.accessServiceID?.mapIndexed { i, it ->
-
-                        val valueToShow = if (!distInfo.elementAt(0)?.accessServiceIdentifiers?.elementAt(i).isNullOrEmpty()){
-                                    distInfo.elementAt(0)?.accessServiceIdentifiers?.elementAt(i)?.elementAt(0)
-                                }else{
-                                    distInfo.elementAt(0)?.accessServiceTitles?.elementAt(i)?.elementAt(0)
-                                }
-
-                        if (valueToShow != null){
+                    distInfo.elementAt(0)?.accessService?.mapIndexed { i, it ->
+                        if (it.serviceId != null){
                             ListItem {
                                 className = ClassName("distributionsList")
-                                secondaryAction = addToFiltersButton.create {
-                                    addToFilters = {
-
-                                        selectedFilters =
-                                            selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                                if (key == "Distributions") {
-                                                    catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                        if (innerKey == "DataServices" && !filterVal.contains(valueToShow)) filterVal.plus(
-                                                            valueToShow
-                                                        )
-                                                        else if (filterVal.contains(valueToShow)) filterVal.filter { miVal -> miVal != valueToShow }
-                                                        else filterVal
-                                                    }.toMutableMap()
-                                                } else {
-                                                    catalogMap
-                                                }
-                                            }.toMutableMap()
-                                    }
-                                }
 
                                 ListItemAvatar {
                                     RssFeed {
@@ -471,7 +497,8 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                                 }
                                 ListItemText {
                                     Link {
-                                        valueToShow
+                                        if (it.serviceIdentifiers.isNullOrEmpty()) +"${it.serviceId}"
+                                        else +"${it.serviceIdentifiers?.first()}"
                                     }
                                 }
                             }

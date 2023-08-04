@@ -94,7 +94,6 @@ val catalogInfo = FC<CatalogInfoProps> {
             catalogsInfo.map{
                 listTestCatalogs.add(it)
             }
-            console.log("CATALOGGG INFOOOO::::: "+ listTestCatalogs)
         }
 
     }

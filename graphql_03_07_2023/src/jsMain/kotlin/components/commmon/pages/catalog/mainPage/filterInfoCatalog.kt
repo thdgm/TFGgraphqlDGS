@@ -138,7 +138,5 @@ val filterInfoCatalog = FC<FilterInfoCatalogProps> { props ->
                 }
             }
         }
-
-
     }
 }

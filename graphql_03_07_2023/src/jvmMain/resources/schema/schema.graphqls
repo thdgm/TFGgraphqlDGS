@@ -21,11 +21,17 @@ type Query {
   catalog(id: ID): Catalog
   dataset(id: ID): DatasetInCatalog
   numberOfResources(filters:[MapInput!],type: String!): Int
+
+  numberOfDistributions(filters:[MapInput!]): Int
+
   dataService(id: ID): DataService
   datasetSeries(id: ID): DatasetSeries
   catalogRecord(id: ID): CatalogRecord
   distribution(id: ID): Distribution
   resourcesByFilter(filters:[MapInput!], type: String!, page: Int!, isDataset: Boolean!, isCatalog: Boolean!, isDataService:Boolean!,isDatasetSeries:Boolean!): [Resource] # Filter could be p.g: publisher
+
+  distributionsByFilters(filters:[MapInput!], page: Int!): [Distribution]
+
   findResourceByIdentifier(id: String): Resource
   getAllThemes(page: Int!, pageSize: Int!): [String]      # Get all existing themes
   getAllKeywords(page: Int!, pageSize: Int!): [String] # Get all existing keywords with particular language

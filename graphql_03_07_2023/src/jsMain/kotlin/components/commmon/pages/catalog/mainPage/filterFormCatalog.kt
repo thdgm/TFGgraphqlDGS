@@ -99,8 +99,6 @@ val filterFormCatalog = FC<FilterFormCatalogProps> {props->
         }
     }
 
-
-
     Paper {
         sx {
             width = Sizes.FilterFormPaper.Width

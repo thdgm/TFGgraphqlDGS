@@ -3,13 +3,16 @@ package es.unizar.iaaa.tfg.services.queryServices
 import com.graphqlDGS.graphqlDGS.model.types.DataService
 import com.graphqlDGS.graphqlDGS.model.types.Dataset
 import com.graphqlDGS.graphqlDGS.model.types.Distribution
+import com.graphqlDGS.graphqlDGS.model.types.MapInput
 import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.NonNegativeInt
 import es.unizar.iaaa.tfg.constants.ConstantValues.LANGSTRING_SEPARADOR
+import es.unizar.iaaa.tfg.constants.MediaTypeMap
 import es.unizar.iaaa.tfg.repository.DataServiceRepository
 import es.unizar.iaaa.tfg.repository.DatasetRepository
 import es.unizar.iaaa.tfg.repository.DistributionRepository
 import es.unizar.iaaa.tfg.repository.LanguageRepository
+import es.unizar.iaaa.tfg.repository.ResourceRepositoryExtra
 import es.unizar.iaaa.tfg.repository.TitleDistributionRepository
 import es.unizar.iaaa.tfg.services.converts.ConvertersAuxiliarEntitiesTo
 import es.unizar.iaaa.tfg.services.converts.ConvertersResourcesEntitiesTo
@@ -29,6 +32,8 @@ interface DistributionServices {
     fun getByteSize(id: String): NonNegativeInt?
     fun getFormat(id: String): String?
     fun getDatasets(id: String): Collection<Dataset>
+    fun getNumberOfDistributions(filters: Collection<MapInput>): Int
+
 }
 
 @Service
@@ -40,6 +45,7 @@ class DistributionServicesImpl(
     private val titleDistributionRepository: TitleDistributionRepository,
     private val converterAuxiliar: ConvertersAuxiliarEntitiesTo,
     private val languageRepository: LanguageRepository,
+    private val repoCriteria: ResourceRepositoryExtra
 
     ) : DistributionServices {
 
@@ -102,5 +108,43 @@ class DistributionServicesImpl(
     // Return corresponding Datasets
     override fun getDatasets(id: String): Collection<Dataset> =
         datasetRepository.findDatasetsByDistributionsDatasetId(id).mapNotNull { converter.toDataset(it) }
+
+    // Return number of distributions according some filters
+    override fun getNumberOfDistributions(filters: Collection<MapInput>): Int {
+        var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+        val mediaTypeMap = MediaTypeMap.MEDIA_TYPE
+        val formats_pre = appliedFilters.find { it.key == "Formato" }?.values ?: listOf()
+        val formats = formats_pre.mapNotNull { mediaTypeMap[it] }
+        var byteSize: String? = if (appliedFilters.find { it.key == "ByteSize"}?.values?.isNotEmpty() == true) appliedFilters.find { it.key == "ByteSize"}?.values?.first() else null
+        var rangeNumber: Pair<String, String>? = null
+        if (byteSize != null){
+            rangeNumber = when(byteSize){
+                "0 Bytes" -> Pair("0","0")
+                "Menos de 100 bytes" -> Pair("0","100")
+                "Entre 100 y 1000 bytes" -> Pair("100","1000")
+                "Entre 1000 y 10.000 bytes" -> Pair("1000","10000")
+                "Entre 10.000 y 100.000 bytes" -> Pair("10000","100000")
+                "Más de 100.000" -> Pair("100000","9999999")
+                else -> null
+            }
+        }
+        return if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)) {
+            distributionRepository.count().toInt()
+        }else{
+            repoCriteria.findNumberOfDistributionsByFilters(appliedFilters, rangeNumber, formats)?.toInt() ?: 0
+        }
+    }
+
+    fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{
+        if (selectedFilters.isNullOrEmpty()){
+            return true
+        }
+        selectedFilters?.map{
+            if (it.values.isNotEmpty()){
+                return false
+            }
+        }
+        return true
+    }
 
 }

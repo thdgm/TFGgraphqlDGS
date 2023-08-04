@@ -118,7 +118,6 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
     val navigate = useNavigate()
     val catalogInfo by useState(props.listTestCatalogInfo)
     var selectedFilters by useRequiredContext(FilterListContextAll)
-    var isLoading by useState(true)
     var filterResourcesByType by useState("All")
     var newResources by useState(mutableListOf<ResourceInfo>())
     var newRecords by useState(mutableListOf<RecordsInfo>())
@@ -128,23 +127,10 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
         //console.log("ID: " + event.currentTarget.id)
         navigate("/catalogs")
     }
-    useEffect(filterResourcesByType){
-        console.log("FILTROOOO POR:::: "+filterResourcesByType)
-
-       /* if (!catalogInfo.isNullOrEmpty()){
-            catalogInfo.elementAt(0).resources = newResources
-        }*/
-
-    }
 
 
-    useEffect(listOf(isLoading)) {
-        MainScope().launch {
-            delay(2000)
-            isLoading = false
-            //console.log("TIMEOUTTT")
-        }
-    }
+
+
     val handleChangePageResources: (event: ChangeEvent<*>, number: Number) -> Unit = { event, number ->
         console.log("NUMBER: "+ number)
         console.log("EVENT: "+event)

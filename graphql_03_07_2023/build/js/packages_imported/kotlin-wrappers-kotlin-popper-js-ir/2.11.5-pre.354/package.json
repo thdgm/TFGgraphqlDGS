@@ -1,0 +1,15 @@
+{
+  "name": "kotlin-wrappers-kotlin-popper-js-ir",
+  "version": "2.11.5-pre.354",
+  "main": "kotlin-wrappers-kotlin-popper-js-ir.js",
+  "types": "kotlin-wrappers-kotlin-popper-js-ir.d.ts",
+  "devDependencies": {
+    "dukat": "0.5.8-rc.4"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.5"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}

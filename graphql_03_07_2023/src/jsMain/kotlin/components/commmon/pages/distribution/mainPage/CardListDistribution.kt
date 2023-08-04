@@ -1,6 +1,7 @@
 package components.commmon.pages.distribution.mainPage
 
 import commonModels.DatasetModel
+import commonModels.DistributionsModel
 import components.commmon.Sizes
 import csstype.ClassName
 import csstype.Display
@@ -23,7 +24,7 @@ import react.FC
 import react.Props
 
 external interface CardProps:Props{
-    var datasetInfo: DatasetModel
+    var distributionsInfo: DistributionsModel
     var handleClickOpen: () -> Unit
     var handleClickClose: () -> Unit
 }
@@ -44,8 +45,8 @@ val CardListDistribution = FC<CardProps> { props->
                         color = rgb(34,24,117)
                         fontWeight = FontWeight.bold
                     }
-                    //+"${props.datasetInfo.title}"
-                    + "DISTRIBUTION TITLE"
+                    +"${props.distributionsInfo.title}"
+
                 }
 
                 Typography {
@@ -54,15 +55,8 @@ val CardListDistribution = FC<CardProps> { props->
                         color = rgb(10,72,241)
 
                     }
-                    //+"${props.datasetInfo.publisher}"
-                    + "DISTRIBUTION ACCESS URL"
-                }
+                    +"${props.distributionsInfo.accessUrl}"
 
-                Typography {
-                    variant = TypographyVariant.subtitle2
-                    className = ClassName("description-content")
-                    //+"${props.datasetInfo.description}"
-                    + "DISTRIBUTION DESCRIPTION"
                 }
 
             }
@@ -77,7 +71,7 @@ val CardListDistribution = FC<CardProps> { props->
                     spacing = responsive(4.px)
                     direction = responsive(StackDirection.row)
                     Chip {
-                        label = react.ReactNode("1402-Bytesize")
+                        label = react.ReactNode("${props.distributionsInfo.byteSize} bytes")
                         variant = mui.material.ChipVariant.outlined
                         color = ChipColor.success
 
@@ -88,15 +82,13 @@ val CardListDistribution = FC<CardProps> { props->
                         display = Display.block
                     }
                     direction = responsive(StackDirection.row)
-
                     className = ClassName("stackSelectedFilters")
                     spacing = responsive(4.px)
                     direction = responsive(StackDirection.row)
                     Chip {
-                        label = react.ReactNode("CSV")
+                        label = react.ReactNode("${props.distributionsInfo.format}")
                         variant = mui.material.ChipVariant.outlined
                         color = ChipColor.primary
-
                     }
                     /*props.datasetInfo.format.distinct().map{
                         if(it != null){

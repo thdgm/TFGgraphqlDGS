@@ -13,6 +13,7 @@ import es.unizar.iaaa.tfg.annotations.LangString
 import es.unizar.iaaa.tfg.annotations.Concept
 import es.unizar.iaaa.tfg.services.queryServices.CatalogRecordsServices
 import es.unizar.iaaa.tfg.services.queryAuxiliarServices.ReferenceWithinExternalContextServices
+import es.unizar.iaaa.tfg.services.queryServices.DistributionServices
 import es.unizar.iaaa.tfg.services.queryServices.ResourceServices
 import java.time.LocalDateTime
 
@@ -23,17 +24,18 @@ import java.time.LocalDateTime
 @DgsComponent
 class NumberOfResourcesQueries(
     private val resourceServices: ResourceServices,
-    private val catalogRecordsServices: CatalogRecordsServices,
-    private val referenceWithinExternalContextServices: ReferenceWithinExternalContextServices,
-
-
+    private val distributionServices: DistributionServices
     ) {
 
-    // @DgsQuery resource: returns the resource which id is the @InputArgument id
+    // @DgsQuery numberOfResources: returns the number of existing resources
     @DgsQuery
     fun numberOfResources(@InputArgument filters: Collection<MapInput>,@InputArgument type: String): Int {
         return resourceServices.getNumberOfResources(filters,type)
     }
-
+    // @DgsQuery numberOfDistributions: returns the number of existing distributions
+    @DgsQuery
+    fun numberOfDistributions(@InputArgument filters: Collection<MapInput>): Int {
+        return distributionServices.getNumberOfDistributions(filters)
+    }
 
 }
