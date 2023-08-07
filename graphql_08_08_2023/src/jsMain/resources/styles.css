@@ -1,0 +1,201 @@
+body{
+ /*background-color: rgb(240,240,240);*/
+ background-image: linear-gradient(189deg, rgba(245, 245, 245, 0.44), #f2f1f1);
+}
+
+.buttonsFilter{
+    margin-top: 20%;
+}
+
+.MuiDrawer-paper{
+  width: 30%;
+}
+
+.titleInit {
+    margin-left: 10%;
+    font-weight: bold;
+    color: #245E7C;
+    font-size: 1.889em;
+}
+
+.accordionHeader,.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root{
+    /*background-color: rgba(217, 217, 217, 0.83) !important;*/
+    background-color: transparent !important; /*rgba(249, 249, 249, 0.87) !important;*/
+    border-bottom-color: rgba(126,125,125,0.22) !important;/*rgba(0,0,0.16) !important;*/
+    border-bottom-width: thin !important;
+    border-bottom-style: inset !important;
+}
+
+.pagination{
+    width: fit-content;
+
+}
+
+.listInfoHeader {
+    display: flex;
+}
+
+.search-container {
+     /*background-color: rgba(230, 228, 226) !important;*/
+     background-color: transparent !important;
+
+}
+
+#h1 {
+ font-family: 'neutra_text', Helvetica, Arial, sans-serif;
+}
+
+.subtitle_info{
+    font-family: 'neutra_text', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    color: #245E7C !important;
+    font-size: 20px !important;
+}
+
+.MuiChip-root {
+    width: fit-content;
+}
+
+.css-rorn0c-MuiTableContainer-root {
+    width: fit-content !important;
+}
+
+.countDatasets{
+  font-size: 20px !important;
+  color: rgb(27, 92, 245) !important;
+  font-weight: bold !important;
+}
+.spanDatasets{
+  font-size: 16px !important;
+  color: rgb(10, 28, 45) !important;
+}
+
+.stackSelectedFilters{
+    display: block !important;
+    margin-top: 3% !important;
+    width: 80%;
+    justify-content: true;
+    margin-left: auto;
+    margin-right: auto;
+}
+.css-1ba2zw7-MuiButtonBase-root-MuiPaginationItem-root{
+    background-color: white !important;
+    font-size: small !important;
+}
+.infoIcon {
+    color: white !important;
+}
+
+.MuiTableCell-root{
+    width: 30% !important;
+}
+.tableInfo{
+    width: 100% !important;
+}
+.tableCell1 {
+    width: 20% !important;
+    color: #397798 !important;
+    font-weight: bold !important;
+
+}
+
+.tableCell2 {
+    width: 50% !important;
+     color: black !important;
+}
+
+.keywordsChip {
+    color: white !important;
+    background-color: #43a047 !important;
+    margin-bottom: 8px !important;
+}
+
+.themesChip{
+    margin-bottom: 8px !important;
+}
+.paper-left {
+    height: fit-content !important;
+}
+
+.description-content {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    overflow: hidden !important;
+    white-space: normal !important;
+    word-break: break-all !important;
+}
+
+.chipsSelectedFilters{
+    font-size: small !important;
+    font-family: "Roboto","Helvetica","Arial",sans-serif !important;
+}
+
+.stackLanguagesChip{
+    display: block !important;
+}
+
+.languagesChip {
+    color: white !important;
+    background-color: #fc9a39 !important;
+     margin-bottom: 8px !important;
+}
+.css-10hburv-MuiTypography-root {
+    overflow: scroll !important;
+    white-space: nowrap !important;
+    width: 90% !important;
+
+}
+
+.addMoreFilters:hover {
+    background-color: rgba(247,160,93,0.62) !important;
+}
+
+.scrollUlFilters {
+    overflow-y: scroll !important;
+    max-height: 400px !important;
+}
+
+.circularProgressInfo{
+width: 60px;
+height: 60px;
+margin-left: 50% !important;
+margin-top: 5% !important;
+}
+
+.menuIcon {
+    color: white !important;
+    font-size: larger !important;
+}
+
+.titleSelect {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-top: 2% !important;
+}
+
+.titleIcon {
+    background-color: rgb(77, 130, 213);
+    border-radius: 50%;
+    color: white;
+}
+
+.addIcon {
+    background-color: white;
+    border-radius: 50%;
+    color: rgb(70, 125, 182);
+    font-size: larger;
+}
+
+.css-1bhi0za-MuiTypography-root-MuiLink-root{
+    cursor: pointer;
+}
+
+.downloadIcon{
+    cursor: pointer;
+}
+
+.css-518kzi-MuiListItemSecondaryAction-root{
+    right: 1px !important;
+}

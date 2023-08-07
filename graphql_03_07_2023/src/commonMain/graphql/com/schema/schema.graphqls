@@ -41,6 +41,8 @@ type Query {
   getAllFrequencies(page: Int!, pageSize: Int!): [String] # Get all existing Frequency's ranges
   getAllFormats(page: Int!, pageSize: Int!): [String]     # Get all existing Formats
   getAllAdminLabel(page: Int!, pageSize: Int!): [String]  # Get all existing Publisher's notations p.g: L02000048 mapped
+  getAllContentTypes(page: Int!, pageSize: Int!): [String]
+  getAllHints(page: Int!, pageSize: Int!): [String]
   # Map them. If starts with L0: Local Administration
   # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
 

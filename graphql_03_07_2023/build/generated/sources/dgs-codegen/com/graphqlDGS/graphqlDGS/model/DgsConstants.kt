@@ -50,6 +50,10 @@ public object DgsConstants {
 
     public const val GetAllAdminLabel: String = "getAllAdminLabel"
 
+    public const val GetAllContentTypes: String = "getAllContentTypes"
+
+    public const val GetAllHints: String = "getAllHints"
+
     public object RESOURCE_INPUT_ARGUMENT {
       public const val Id: String = "id"
 
@@ -165,6 +169,18 @@ public object DgsConstants {
     }
 
     public object GETALLADMINLABEL_INPUT_ARGUMENT {
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
+    }
+
+    public object GETALLCONTENTTYPES_INPUT_ARGUMENT {
+      public const val Page: String = "page"
+
+      public const val PageSize: String = "pageSize"
+    }
+
+    public object GETALLHINTS_INPUT_ARGUMENT {
       public const val Page: String = "page"
 
       public const val PageSize: String = "pageSize"

@@ -1,0 +1,172 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/9021a43f-8f68-42f4-af04-24c28d3168a9",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.interior.gob.es/opencms/pdf/archivos-y-documentacion/documentacion-y-publicaciones/anuarios-y-estadisticas/anuarios-estadisticos-anteriores/anuario-estadistico-de-2021/Anuario-Estadistico-2021_web.pdf ",
+      "dcat:byteSize": "10.711.707",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/9021a43f-8f68-42f4-af04-24c28d3168a9/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "Documento de la publicación Anuario Estadístico del Ministerio del Interior 2021"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/PeriodOfTime-1",
+      "@type": "dct:PeriodOfTime",
+      "schema:endDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2021-12-31T00:00:00+01:00"
+      },
+      "schema:startDate": {
+        "@type": "xsd:dateTime",
+        "@value": "2021-01-01T00:00:00+01:00"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/9021a43f-8f68-42f4-af04-24c28d3168a9/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/pdf",
+      "rdfs:label": "PDF"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/667c8e7a-53d0-4931-ab7f-e0429fe8c2bf"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/9021a43f-8f68-42f4-af04-24c28d3168a9"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "distinciones"
+        },
+        {
+          "@language": "es",
+          "@value": "subvenciones"
+        },
+        {
+          "@language": "es",
+          "@value": "terrorismo"
+        },
+        {
+          "@language": "es",
+          "@value": "víctimas"
+        },
+        {
+          "@language": "es",
+          "@value": "indemnizaciones"
+        },
+        {
+          "@language": "es",
+          "@value": "anuario estadístico del ministerio del interior"
+        },
+        {
+          "@language": "es",
+          "@value": "ayudas"
+        }
+      ],
+      "dcat:theme": {
+        "@id": "http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar"
+      },
+      "dct:conformsTo": [
+        {
+          "@id": "https://www.boe.es/buscar/pdf/2011/BOE-A-2011-15039-consolidado.pdf"
+        },
+        {
+          "@id": "https://www.boe.es/buscar/pdf/1999/BOE-A-1999-20063-consolidado.pdf"
+        },
+        {
+          "@id": "https://www.boe.es/buscar/pdf/2013/BOE-A-2013-9680-consolidado.pdf"
+        }
+      ],
+      "dct:description": {
+        "@language": "es",
+        "@value": "Conocimiento de los ámbitos principales competencia de la Dirección General de Apoyo a Víctimas del Terrorismo"
+      },
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-09-27T00:00:00+02:00"
+      },
+      "dct:language": "es",
+      "dct:license": {
+        "@id": "https://sede.mir.gob.es/opencms/export/sites/default/es/informacion-general/aviso-legal/"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-01-11T00:00:00+01:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/E00003801"
+      },
+      "dct:references": [
+        {
+          "@id": "https://www.interior.gob.es/opencms/es/archivos-y-documentacion/documentacion-y-publicaciones/anuarios-y-estadisticas/anuarios-estadisticos-anteriores/anuario-estadistico-de-2021/"
+        },
+        {
+          "@id": "https://www.interior.gob.es/opencms/es/archivos-y-documentacion/documentacion-y-publicaciones/anuarios-y-estadisticas/"
+        }
+      ],
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Pais/España"
+      },
+      "dct:temporal": {
+        "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/PeriodOfTime-1"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "Datos de la Dirección General de Apoyo a Víctimas del Terrorismo 2021. Anuario Estadístico del Ministerio del Interior"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/667c8e7a-53d0-4931-ab7f-e0429fe8c2bf/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "rdfs:label": "XLSX"
+    },
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/E00003801",
+      "@type": "skos:Concept",
+      "skos:notation": "E00003801",
+      "skos:prefLabel": "Ministerio del Interior"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/667c8e7a-53d0-4931-ab7f-e0429fe8c2bf",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.interior.gob.es/opencms/pdf/archivos-y-documentacion/documentacion-y-publicaciones/anuarios-y-estadisticas/anuarios-estadisticos-anteriores/anuario-estadistico-de-2021/07_Tablas_apartado_7.xlsx",
+      "dcat:byteSize": {
+        "@type": "xsd:decimal",
+        "@value": "39"
+      },
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/e00003801-datos-de-la-direccion-general-de-apoyo-a-victimas-del-terrorismo-2021-anuario-estadistico-del-ministerio-del-interior/resource/667c8e7a-53d0-4931-ab7f-e0429fe8c2bf/format"
+      },
+      "dct:title": {
+        "@language": "es",
+        "@value": "Fichero con datos de la Dirección General de Apoyo a Víctimas del Terrorismo 2021"
+      }
+    }
+  ]
+}
