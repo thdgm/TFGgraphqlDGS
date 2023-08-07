@@ -123,6 +123,7 @@ body{
     -webkit-line-clamp: 2 !important;
     overflow: hidden !important;
     white-space: normal !important;
+    word-break: break-all !important;
 }
 
 .chipsSelectedFilters{

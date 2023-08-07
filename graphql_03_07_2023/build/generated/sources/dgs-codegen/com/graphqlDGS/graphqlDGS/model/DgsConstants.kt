@@ -20,6 +20,8 @@ public object DgsConstants {
 
     public const val NumberOfDistributions: String = "numberOfDistributions"
 
+    public const val NumberOfCatalogRecords: String = "numberOfCatalogRecords"
+
     public const val DataService: String = "dataService"
 
     public const val DatasetSeries: String = "datasetSeries"
@@ -31,6 +33,8 @@ public object DgsConstants {
     public const val ResourcesByFilter: String = "resourcesByFilter"
 
     public const val DistributionsByFilters: String = "distributionsByFilters"
+
+    public const val CatalogRecordsByFilters: String = "catalogRecordsByFilters"
 
     public const val FindResourceByIdentifier: String = "findResourceByIdentifier"
 
@@ -78,6 +82,10 @@ public object DgsConstants {
       public const val Filters: String = "filters"
     }
 
+    public object NUMBEROFCATALOGRECORDS_INPUT_ARGUMENT {
+      public const val Filters: String = "filters"
+    }
+
     public object DATASERVICE_INPUT_ARGUMENT {
       public const val Id: String = "id"
     }
@@ -111,6 +119,12 @@ public object DgsConstants {
     }
 
     public object DISTRIBUTIONSBYFILTERS_INPUT_ARGUMENT {
+      public const val Filters: String = "filters"
+
+      public const val Page: String = "page"
+    }
+
+    public object CATALOGRECORDSBYFILTERS_INPUT_ARGUMENT {
       public const val Filters: String = "filters"
 
       public const val Page: String = "page"

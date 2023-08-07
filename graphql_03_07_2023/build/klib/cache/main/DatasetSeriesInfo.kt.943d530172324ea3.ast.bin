@@ -19,7 +19,7 @@
 $cont
 getDataServiceInfo
 tmp
-$getDataServiceInfoCOROUTINE$29
+$getDataServiceInfoCOROUTINE$23
 set_result_ximc09_k$
 Unit_getInstance
 set_exception_pwgeox_k$

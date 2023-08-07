@@ -24,7 +24,8 @@ import java.time.LocalDateTime
 @DgsComponent
 class NumberOfResourcesQueries(
     private val resourceServices: ResourceServices,
-    private val distributionServices: DistributionServices
+    private val distributionServices: DistributionServices,
+    private val catalogRecordsServices: CatalogRecordsServices
     ) {
 
     // @DgsQuery numberOfResources: returns the number of existing resources
@@ -36,6 +37,12 @@ class NumberOfResourcesQueries(
     @DgsQuery
     fun numberOfDistributions(@InputArgument filters: Collection<MapInput>): Int {
         return distributionServices.getNumberOfDistributions(filters)
+    }
+
+    // @DgsQuery numberOfCatalogRecords: returns the number of existing catalog records
+    @DgsQuery
+    fun numberOfCatalogRecords(@InputArgument filters: Collection<MapInput>): Int {
+        return catalogRecordsServices.getNumberOfCatalogRecords(filters)
     }
 
 }

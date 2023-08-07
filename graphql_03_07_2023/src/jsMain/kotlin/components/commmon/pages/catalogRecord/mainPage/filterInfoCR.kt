@@ -19,6 +19,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
+import react.useEffect
 import react.useRequiredContext
 import react.useState
 
@@ -34,15 +35,23 @@ val filterInfoCR = FC<FilterInfoCRProps> { props ->
 
     var showMoreOrLess by useState(false)
     var selectedFilters by useRequiredContext(FilterListContextAll)
+    var isDisabled by useRequiredContext(IsLoadingContext)
+    var filterFields by useState(props.filterFields)
+
+
     val handleClickMore = {
         GlobalScope.launch {
-            //props.updateFilterListMore()
+            props.updateFilterListMore()
         }
     }
     val handleClickLess = {
         GlobalScope.launch {
-           // props.updateFilterListLess()
+           props.updateFilterListLess()
         }
+    }
+
+    useEffect(listOf(props.filterFields)) {
+        filterFields = props.filterFields
     }
 
     Accordion {
@@ -70,25 +79,21 @@ val filterInfoCR = FC<FilterInfoCRProps> { props ->
                 className = ClassName("scrollUlFilters")
                 props.filterFields.forEachIndexed { index, value ->
                     ListItemButton {
+                        disabled = isDisabled
                         onClick = { selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
                             if (key == "CatalogRecords") {
                                 catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                                     if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(value)
-                                    else if (filterVal.contains( value)) filterVal.filter { miVal -> miVal != value }
+                                   // else if (filterVal.contains( value)) filterVal.filter { miVal -> miVal != value }
                                     else filterVal
                                 }.toMutableMap()
-                            } else {
-                                catalogMap
-                            }
-                        }.toMutableMap()
+                            } else { catalogMap }
+                            }.toMutableMap()
                         }
-                        value
                         selected = selectedFilters["CatalogRecords"]!!.toMutableMap()[props.filterName]?.contains(value)
-
+                        +"$value"
                     }
-
                 }
-
             }
             mui.material.List {
                 ListItemButton {
@@ -97,7 +102,7 @@ val filterInfoCR = FC<FilterInfoCRProps> { props ->
                         backgroundColor = rgb(247, 160, 93)
                     }
                     className = ClassName("addMoreFilters")
-
+                    disabled = isDisabled
                     if (!showMoreOrLess){
                         onClick = {handleClickMore(); showMoreOrLess = true}
                         +"Mostrar más"
@@ -105,10 +110,8 @@ val filterInfoCR = FC<FilterInfoCRProps> { props ->
                         onClick = {handleClickLess(); showMoreOrLess = false}
                         +"Mostrar menos"
                     }
-
                 }
             }
-
         }
     }
 }

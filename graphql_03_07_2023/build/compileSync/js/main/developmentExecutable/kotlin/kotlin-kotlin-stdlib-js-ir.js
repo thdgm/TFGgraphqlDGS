@@ -43,11 +43,6 @@ if (typeof Math.clz32 === 'undefined') {
     };
   }(Math.log, Math.LN2);
 }
-if (typeof Math.log10 === 'undefined') {
-  Math.log10 = function (x) {
-    return Math.log(x) * Math.LOG10E;
-  };
-}
 if (typeof Math.sign === 'undefined') {
   Math.sign = function (x) {
     x = +x; // convert to a number
@@ -55,6 +50,11 @@ if (typeof Math.sign === 'undefined') {
       return Number(x);
     }
     return x > 0 ? 1 : -1;
+  };
+}
+if (typeof Math.log10 === 'undefined') {
+  Math.log10 = function (x) {
+    return Math.log(x) * Math.LOG10E;
   };
 }
 if (typeof String.prototype.startsWith === 'undefined') {
@@ -2740,14 +2740,6 @@ if (typeof Math.imul === 'undefined') {
     addAll(result, elements);
     return result;
   }
-  function last_1(_this__u8e3s4) {
-    var tmp$ret$0;
-    // Inline function 'kotlin.text.isEmpty' call
-    tmp$ret$0 = charSequenceLength(_this__u8e3s4) === 0;
-    if (tmp$ret$0)
-      throw NoSuchElementException_init_$Create$_0('Char sequence is empty.');
-    return charSequenceGet(_this__u8e3s4, get_lastIndex_7(_this__u8e3s4));
-  }
   function first_1(_this__u8e3s4) {
     var tmp$ret$0;
     // Inline function 'kotlin.text.isEmpty' call
@@ -2755,6 +2747,14 @@ if (typeof Math.imul === 'undefined') {
     if (tmp$ret$0)
       throw NoSuchElementException_init_$Create$_0('Char sequence is empty.');
     return charSequenceGet(_this__u8e3s4, 0);
+  }
+  function last_1(_this__u8e3s4) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.text.isEmpty' call
+    tmp$ret$0 = charSequenceLength(_this__u8e3s4) === 0;
+    if (tmp$ret$0)
+      throw NoSuchElementException_init_$Create$_0('Char sequence is empty.');
+    return charSequenceGet(_this__u8e3s4, get_lastIndex_7(_this__u8e3s4));
   }
   function forEachIndexed_2(_this__u8e3s4, action) {
     var index = 0;
@@ -2840,15 +2840,6 @@ if (typeof Math.imul === 'undefined') {
     }
     return tmp;
   }
-  function forEach_2(_this__u8e3s4, action) {
-    var indexedObject = _this__u8e3s4;
-    var inductionVariable = 0;
-    while (inductionVariable < charSequenceLength(indexedObject)) {
-      var element = charSequenceGet(indexedObject, inductionVariable);
-      inductionVariable = inductionVariable + 1 | 0;
-      action(new Char(element));
-    }
-  }
   function drop_0(_this__u8e3s4, n) {
     // Inline function 'kotlin.require' call
     var tmp0_require = n >= 0;
@@ -2897,6 +2888,15 @@ if (typeof Math.imul === 'undefined') {
       throw IllegalArgumentException_init_$Create$_0(toString_4(message));
     }
     return take_1(_this__u8e3s4, coerceAtLeast(_this__u8e3s4.length - n | 0, 0));
+  }
+  function forEach_2(_this__u8e3s4, action) {
+    var indexedObject = _this__u8e3s4;
+    var inductionVariable = 0;
+    while (inductionVariable < charSequenceLength(indexedObject)) {
+      var element = charSequenceGet(indexedObject, inductionVariable);
+      inductionVariable = inductionVariable + 1 | 0;
+      action(new Char(element));
+    }
   }
   function copyOf(_this__u8e3s4, newSize) {
     return _ULongArray___init__impl__twm1l3(copyOf_10(_ULongArray___get_storage__impl__28e64j(_this__u8e3s4), newSize));

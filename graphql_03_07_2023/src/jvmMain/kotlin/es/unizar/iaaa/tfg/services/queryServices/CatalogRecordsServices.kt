@@ -5,6 +5,8 @@ import com.graphqlDGS.graphqlDGS.model.types.CatalogRecord
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordInput
 import com.graphqlDGS.graphqlDGS.model.types.CatalogRecordOutput
 import com.graphqlDGS.graphqlDGS.model.types.Error
+import com.graphqlDGS.graphqlDGS.model.types.MapInput
+import es.unizar.iaaa.tfg.constants.MediaTypeMap
 import es.unizar.iaaa.tfg.domain.catalogRecord.CatalogRecordEntity
 import es.unizar.iaaa.tfg.domain.resources.CatalogEntity
 import es.unizar.iaaa.tfg.csvDataModels.DatasetCSVModel
@@ -56,6 +58,8 @@ interface CatalogRecordsServices {
         cRInput: CatalogRecordInput,
         idCatalog: String
     ): CatalogRecordOutput
+
+    fun getNumberOfCatalogRecords(filters: Collection<MapInput>): Int
 }
 
 @Service
@@ -198,5 +202,27 @@ class CatalogRecordsServicesImpl(
         return if(cr != null) converter.toCatalogRecord(cr!!) else Error("No se ha creado el Catalog Record")
 
         //return Error("No se ha creado el Catalog Record")
+    }
+
+    override fun getNumberOfCatalogRecords(filters: Collection<MapInput>): Int{
+        var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+
+        return if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)) {
+            catalogRepository.count().toInt()
+        }else{
+            0
+           // repoCriteria.findNumberOfDistributionsByFilters(appliedFilters, rangeNumber, formats)?.toInt() ?: 0
+        }
+    }
+    fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{
+        if (selectedFilters.isNullOrEmpty()){
+            return true
+        }
+        selectedFilters?.map{
+            if (it.values.isNotEmpty()){
+                return false
+            }
+        }
+        return true
     }
 }

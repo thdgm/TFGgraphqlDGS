@@ -931,9 +931,57 @@ class ResourceRepositoryExtra(){
             nativeQuery.setParameter("byteStart", byteSizeRange.first.toInt())
             nativeQuery.setParameter("byteEnd", byteSizeRange.second.toInt())
         }
+        println("QEURRYYYYYYYYYYYYYYYYY COUNTTT::::::::::: <$formats> ::::::::---------------------------- ${nativeQuery.resultList}")
+        return kotlin.runCatching {
+            nativeQuery.resultList.first() as Long?
+        }.getOrNull()
+    }
+
+    fun findCatalogRecordsByFilters(
+        filters: Collection<MapInput>,
+        orderBy: String,
+        sortBy: String,
+        page: Int,
+        formats: List<String>,
+    ): Collection<CatalogRecordEntity>?{
+        val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
+
+        val hints = appliedFilters.find { it.key == "Hints" }?.values ?: listOf()
+        val titles = appliedFilters.find { it.key == "Título" }?.values ?: listOf()
+        val url = appliedFilters.find { it.key == "ContentUrl" }?.values ?: listOf()
+        val pTopic = appliedFilters.find { it.key == "PrimaryTopic" }?.values ?: listOf()
+
+        var queryString = "SELECT DISTINCT tt.id, tt.content, tt.content_type, tt.content_url, tt.title, tt.resource_id FROM ( " +
+                "SELECT cr.id, cr.content, cr.content_type, cr.content_url, cr.title, cr.resource_id " +
+                "FROM catalogrecord cr " +
+                "LEFT JOIN hints h ON h.id_catalog_record = cr.id) as tt " +
+                "WHERE "
+
+        if (formats.isNotEmpty()) queryString += "tt.content_type IN :formats OR "
+        if (hints.isNotEmpty()) queryString += "tt.hints IN :hints OR "
+        if (titles.isNotEmpty()) queryString += "tt.title IN :titles OR "
+        if (url.isNotEmpty()) queryString += "tt.content_url IN :url OR "
+        if (pTopic.isNotEmpty()) queryString += "tt.resource_id IN :pTopic OR "
+
+        var querySplit = queryString.split(' ').toMutableList()
+
+        if(querySplit[querySplit.size-2] == "OR" || querySplit[querySplit.size-2] == "WHERE") querySplit[querySplit.size-2] = ""
+        queryString = querySplit.joinToString(" ")
+
+        queryString += "ORDER BY tt.${sortBy} $orderBy " +
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
+
+        val nativeQuery = entityManager.createNativeQuery(queryString, CatalogRecordEntity::class.java)
+
+        if (formats.isNotEmpty()) nativeQuery.setParameter("formats", formats)
+        if (hints.isNotEmpty()) nativeQuery.setParameter("hints", hints)
+        if (titles.isNotEmpty()) nativeQuery.setParameter("titles", titles)
+        if (url.isNotEmpty()) nativeQuery.setParameter("url", url)
+        if (pTopic.isNotEmpty()) nativeQuery.setParameter("pTopic", pTopic)
+
         println("QEURRYYYYYYYYYYYYYYYYY:::::::::::::::::::---------------------------- $queryString")
         return kotlin.runCatching {
-            nativeQuery.resultList as Long?
+            nativeQuery.resultList as Collection<CatalogRecordEntity>?
         }.getOrNull()
     }
 }
