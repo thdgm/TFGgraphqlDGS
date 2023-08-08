@@ -46,23 +46,14 @@ val SearcherByKeywords = FC<SearcherByKeywordsProps> { props->
     var searchBy by useState("")
     var isDisabled by useRequiredContext(IsLoadingContext)
     var selectedFilters by useRequiredContext(FilterListContextAll)
-    val handleChange: (event: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?) -> Unit = {event ->
-        console.log(event)
-    //props.filterList.filter { it.title!!.contains(event.target.value) }
-        //console.log("FILTRO: "+ props.filterList.filter { it.title!!.contains(event.target.value) })
-    }
-    /*val handleChange2: (event: ChangeEvent<HTMLElement>) -> Unit = {event ->
-        console.log(event.target.value)
-    }*/
-    fun onChangee(){
-        //console.log("HOLA")
-    }
+
+
 
     Container {
         sx {
             display = Display.flex
             alignItems = AlignItems.center
-            marginRight= Auto.auto
+            marginRight = Auto.auto
             marginLeft = Auto.auto
             marginTop = 10.px
             marginBottom = 6.pct
@@ -74,11 +65,11 @@ val SearcherByKeywords = FC<SearcherByKeywordsProps> { props->
             sx {
                 display = Display.flex
                 alignItems = AlignItems.center
-                marginRight= Auto.auto
+                marginRight = Auto.auto
                 marginLeft = Auto.auto
                 marginTop = 10.px
-                marginBottom= 10.px
-                width= 100.pct
+                marginBottom = 10.px
+                width = 100.pct
                 borderRadius = 30.px
                 backgroundColor = rgba(247, 247, 247, 1.0)
                 //zIndex = integer(1300)
@@ -109,10 +100,10 @@ val SearcherByKeywords = FC<SearcherByKeywordsProps> { props->
                             catalogMap
                         }
                     }.toMutableMap();
-                    console.log("SEARCH BY: "+ searchBy)}
-                Search()
-            }
-            /*Search {
+                    // console.log("SEARCH BY: "+ searchBy)}
+                    Search()
+                }
+                /*Search {
 
                 Search()
                 InputBase {
@@ -121,24 +112,24 @@ val SearcherByKeywords = FC<SearcherByKeywordsProps> { props->
                 }
 
             }*/
-           InputBase {
-                sx {
-                    width= 100.pct
+                InputBase {
+                    sx {
+                        width = 100.pct
+                    }
+                    // type = "search"
+                    placeholder = "Search by keywords"
+                    onChange = { event ->
+                        searchBy =
+                            (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/
+                    } //{event: ChangeEvent<HTMLElement> -> console.log(props.filterList.filter { it.title!!.contains((event.target as HTMLInputElement).value) })}
                 }
-               // type = "search"
-                placeholder = "Search by keywords"
-                onChange = { event ->
-                    searchBy =
-                        (event.target as HTMLInputElement).value/*datasetList = datasetList.filter { it.title!!.contains((event.target as HTMLInputElement).value)}*/
-                } //{event: ChangeEvent<HTMLElement> -> console.log(props.filterList.filter { it.title!!.contains((event.target as HTMLInputElement).value) })}
-            }
-            /*IconButton {
+                /*IconButton {
                 type = ButtonType.button
                 ariaLabel = "search"
 
                 Search()
             }*/
-            /*IconButton {
+                /*IconButton {
                 type = ButtonType.button
                 ariaLabel = "info"
 
@@ -149,8 +140,8 @@ val SearcherByKeywords = FC<SearcherByKeywordsProps> { props->
                 }
             }*/
 
+            }
         }
     }
-
 
 }

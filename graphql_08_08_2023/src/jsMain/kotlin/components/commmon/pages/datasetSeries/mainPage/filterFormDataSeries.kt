@@ -164,7 +164,7 @@ val filterFormDataSeries = FC<FilterFormDataSeriesProps> {props->
                             this.filterName = value
                             this.filterFields = filtersTypesFields.elementAt(index)
                             this.updateFilterListMore = {
-                                console.log("MOREEE2: "+value)
+                                //console.log("MOREEE2: "+value)
                                 filtersTypesFields = mutableListOf(
                                     if (value == "Publicador") getAllPublishers(false)
                                     else filtersTypesFields.elementAt(0),

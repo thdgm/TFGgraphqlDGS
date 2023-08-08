@@ -28,7 +28,7 @@ external interface PaginationProps:Props{
 }
 val Pagination = FC<PaginationProps> { props ->
     var selectedFilters by useRequiredContext(FilterListContextAll)
-   console.log("NUMBER: "+ ceil(props.numberOfPages.toDouble() / 10).toInt())
+   //console.log("NUMBER: "+ ceil(props.numberOfPages.toDouble() / 10).toInt())
     var numberOfPages by useState( ceil(props.numberOfPages.toDouble() / 10).toInt())
     /*val handleChange:(event: ChangeEvent<*>, value: Number) -> Unit =  {e,v ->
         GlobalScope.launch {

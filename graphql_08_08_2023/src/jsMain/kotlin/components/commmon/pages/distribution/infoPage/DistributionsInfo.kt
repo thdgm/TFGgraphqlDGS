@@ -91,7 +91,7 @@ val distributionsInfo = FC<DistributionsInfoProps> {
             datasetsInfo.map{
                 listTestDistribution.add(it)
             }
-            console.log("INFOOOOO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+listTestDistribution)
+           // console.log("INFOOOOO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+listTestDistribution)
         }
 
     }

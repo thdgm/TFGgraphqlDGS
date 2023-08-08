@@ -48,7 +48,7 @@ suspend fun getDistributions(filters: MutableMap<String, MutableMap<String, Coll
         val title = if(!it.title.isNullOrEmpty()) it.title?.elementAt(0)?.literal ?: "No tiene título" else "No tiene título"
         DistributionsModel(it.id, title, it.accessUrl,it.byteSize.toString(),it.format?.subtype ?: null)
     }
-    console.log("ESTO CARGOOOOO: "+ll)
+    //console.log("ESTO CARGOOOOO: "+ll)
     return ll
 }
 
@@ -88,7 +88,7 @@ val DistributionsPage = FC<DistributionsPageProps> {
             }
         }
         coroutineScope.launch {
-            console.log("TOTAL NUMBER")
+            //console.log("TOTAL NUMBER")
             numberDistributions = getDistributionsNumber(selectedFiltersContext)
         }
     }

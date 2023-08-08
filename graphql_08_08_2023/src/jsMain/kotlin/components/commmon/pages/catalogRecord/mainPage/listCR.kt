@@ -73,7 +73,7 @@ val listCR = FC<ListCRProps> { props ->
     }
 
     useEffect(selectedFilters){
-        console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
+       // console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
         cRList = props.cRList
     }
 
@@ -168,6 +168,7 @@ val listCR = FC<ListCRProps> { props ->
                                             if (key == "CatalogRecords") {
                                                 catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                                                     if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                                     else filterVal
                                                 }.toMutableMap<String, Collection<String>>()
                                             } else {

@@ -36,8 +36,8 @@ val selectSearchByCatalog = FC<SelectSearchByCatalogProps> { props ->
     var isDisabled by useRequiredContext(IsLoadingContext)
 
     val handleChange: (event: ChangeEvent<HTMLInputElement>, child: ReactNode) -> Unit = {event,child ->
-        console.log(child)
-        console.log(event)
+        //console.log(child)
+        //console.log(event)
         orderVal = event.target.value
     }
     fun checkIfSelectedFiltersIsEmpty(selectedVal: String): Boolean{

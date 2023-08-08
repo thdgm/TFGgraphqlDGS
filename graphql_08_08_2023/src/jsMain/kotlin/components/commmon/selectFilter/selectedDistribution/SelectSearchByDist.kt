@@ -35,8 +35,8 @@ val selectSearchByDist = FC<SelectSearchByDistProps> { props ->
 
 
     val handleChange: (event: ChangeEvent<HTMLInputElement>, child: ReactNode) -> Unit = {event,child ->
-        console.log(child)
-        console.log(event)
+        //console.log(child)
+        //console.log(event)
         orderVal = event.target.value
     }
     fun checkIfSelectedFiltersIsEmpty(selectedVal: String): Boolean{

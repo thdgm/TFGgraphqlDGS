@@ -81,6 +81,18 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
 
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+            if (key == "Distributions") {
+                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                    if (innerKey == "Page") filterVal.filter { false }.plus(
+                        "1"
+                    )
+                    else filterVal
+                }.toMutableMap()
+            } else {
+                catalogMap
+            }
+        }.toMutableMap()
         navigate("/distributions")
     }
     fun checkIfSelectedFiltersIsEmpty(): Boolean {
@@ -108,7 +120,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
         }
 
     }else{
-        console.log("INFOOOOOOOOOOOO::::::"+distInfo)
+        //console.log("INFOOOOOOOOOOOO::::::"+distInfo)
 
         ReactHTML.div {
             className = ClassName("titleSelect")

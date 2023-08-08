@@ -97,8 +97,7 @@ val filterInfoCatalog = FC<FilterInfoCatalogProps> { props ->
                                                     filterVal.plus(value)
                                                 }
                                             }
-
-
+                                            else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                             //else if (filterVal.contains(value)) filterVal.filter { miVal -> miVal != value }
                                             else filterVal
                                         }.toMutableMap()

@@ -40,7 +40,7 @@ val paginationResourcesService = FC<PaginationResourcesServiceProps> { props ->
     //var filterTest by useState(props.filterType)
 
     useEffect(props.filterType){
-        console.log("F1: "+props.filterType)
+        //console.log("F1: "+props.filterType)
         if(props.serviceInfo.isNotEmpty()) {
             val num = when (props.filterType) {
                 "All" -> props.serviceInfo.elementAt(0).numberOfResources

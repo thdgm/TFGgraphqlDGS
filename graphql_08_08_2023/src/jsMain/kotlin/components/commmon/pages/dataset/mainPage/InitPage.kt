@@ -45,8 +45,8 @@ suspend fun getDatasets(filters: MutableMap<String, MutableMap<String, Collectio
         selectedFilters?.filter { it.key != "Page" /*&&  it.key != "OrderBy" && it.key != "SortBy" */}
 
     }
-    console.log("FILTROO: "+selectedFilters)
-    console.log("PAGEEE: "+page)
+    //console.log("FILTROO: "+selectedFilters)
+    //console.log("PAGEEE: "+page)
     val l =  apolloClient.query(DatasetsQuery(filter=Optional.present(filter), type=values, page = page, isDataset = true, isCatalog = false,isDataService = false, isDatasetSeries = false)).execute().data?.resourcesByFilter?.filterNotNull() ?: emptyList()
     val ll =  l.map{
         if (it.onDataset != null) {
@@ -59,7 +59,7 @@ suspend fun getDatasets(filters: MutableMap<String, MutableMap<String, Collectio
             null
         }
     }.filterNotNull()
-    console.log("ESTO CARGOOOOO: "+ll)
+   // console.log("ESTO CARGOOOOO: "+ll)
     return ll
 }
 
@@ -96,15 +96,24 @@ val InitPage = FC<InitPageProps> { props->
     var selectedFiltersContext by useRequiredContext(FilterListContextAll)
     var listTestDatasets by useState(mutableListOf<DatasetModel>())
     var numberDatasets by useState(0)
+    var pageNumber by useState(0)
 
-    //var pageNumber by useState(0)
    /* var miVariable: MutableMap<String, MutableMap<String, Collection<String>>> =
         selectedFiltersContext.mapValues { it.value.toMutableMap() }.toMutableMap()*/
     useEffect(selectedFiltersContext) {
 
         coroutineScope.launch {
             val numPage = selectedFiltersContext["Datasets"]!!["Page"]
-            val num = if(numPage.isNullOrEmpty()) 0 else numPage.elementAt(0).toInt()-1
+
+            var num = if (numPage.isNullOrEmpty()) 0 else numPage.elementAt(0).toInt() - 1
+            /*if (!numPage.isNullOrEmpty()){
+
+                if (numPage?.first()?.toInt() != pageNumber) {
+                    pageNumber = numPage?.first()?.toInt()!!
+                } else {
+                    num = 0
+                }
+            }*/
 
             val newListDatsets = getDatasets(selectedFiltersContext, "dataset",num)
 
@@ -112,14 +121,14 @@ val InitPage = FC<InitPageProps> { props->
             newListDatsets.map{
                 listTestDatasets.add(it)
             }
-
         }
-
     }
+
+
 
     useEffect(/*numberDatasets*/selectedFiltersContext) {
         coroutineScope.launch {
-            console.log("TOTAL NUMBER")
+            //console.log("TOTAL NUMBER")
             numberDatasets = getResourcesNumber(selectedFiltersContext,"dataset")
         }
 

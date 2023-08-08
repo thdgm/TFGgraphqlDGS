@@ -85,6 +85,7 @@ val filterInfoCR = FC<FilterInfoCRProps> { props ->
                                 catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                                     if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(value)
                                    // else if (filterVal.contains( value)) filterVal.filter { miVal -> miVal != value }
+                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                     else filterVal
                                 }.toMutableMap()
                             } else { catalogMap }

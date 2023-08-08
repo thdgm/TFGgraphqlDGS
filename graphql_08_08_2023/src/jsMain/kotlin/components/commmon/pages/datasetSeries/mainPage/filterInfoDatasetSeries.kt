@@ -95,8 +95,7 @@ val filterInfoDatasetSeries = FC<FilterInfoDatasetSeriesProps> { props ->
                                                     filterVal.plus(value)
                                                 }
                                             }
-
-
+                                            else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                             //else if (filterVal.contains(value)) filterVal.filter { miVal -> miVal != value }
                                             else filterVal
                                         }.toMutableMap()
@@ -104,8 +103,8 @@ val filterInfoDatasetSeries = FC<FilterInfoDatasetSeriesProps> { props ->
                                         catalogMap
                                     }
                                 }.toMutableMap()
-                                console.log("FILTERSSSS11::: "+value)
-                                console.log("FILTERSSSS22::: "+selectedFilters + " --- "+props.filterName)
+                                //console.log("FILTERSSSS11::: "+value)
+                                //console.log("FILTERSSSS22::: "+selectedFilters + " --- "+props.filterName)
                             }
                             selected =
                                 selectedFilters["DatasetSeries"]!!.toMutableMap()[props.filterName]?.contains(value)

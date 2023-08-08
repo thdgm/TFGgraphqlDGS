@@ -53,7 +53,7 @@ suspend fun getCatalogRecords(filters: MutableMap<String, MutableMap<String, Col
             null
         }
     }.filterNotNull()
-    console.log("ESTO CARGOOOOO: "+ll)
+    //console.log("ESTO CARGOOOOO: "+ll)
     return ll
 }
 
@@ -92,7 +92,7 @@ val CatalogRecordsPage = FC<CatalogsPageProps> {
 
     useEffect(selectedFiltersContext) {
         coroutineScope.launch {
-            console.log("TOTAL NUMBER")
+           // console.log("TOTAL NUMBER")
             numberCatalogRecords = getCatalogRecordsNumber(selectedFiltersContext)
         }
     }

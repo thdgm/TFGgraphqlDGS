@@ -50,7 +50,7 @@ suspend fun getSeries(filters: MutableMap<String, MutableMap<String, Collection<
             null
         }
     }.filterNotNull()
-    console.log("ESTO CARGOOOOO: "+ll)
+    //console.log("ESTO CARGOOOOO: "+ll)
     return ll
 }
 
@@ -93,7 +93,7 @@ val DatasetSeriesPage = FC<DatasetSeriesPageProps> {
 
     useEffect(selectedFiltersContext) {
         coroutineScope.launch {
-            console.log("TOTAL NUMBER")
+            //console.log("TOTAL NUMBER")
             numberSeries = getSeriesNumber(selectedFiltersContext,"dataset_series")
         }
     }

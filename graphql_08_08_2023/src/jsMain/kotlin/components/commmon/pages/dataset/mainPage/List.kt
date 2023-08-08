@@ -80,7 +80,7 @@ val list = FC<ListProps> { props ->
     }
 
     useEffect(selectedFilters){
-        console.log("CAMBIA EL SELECTED FILTERSSSSS")
+        //console.log("CAMBIA EL SELECTED FILTERSSSSS")
         datasetList = props.filterList
 
     }
@@ -161,7 +161,7 @@ val list = FC<ListProps> { props ->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["Datasets"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page") {
+                    if (valuesList.value.isNotEmpty()/* && valuesList.key != "Page"*/) {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
@@ -179,6 +179,7 @@ val list = FC<ListProps> { props ->
                                                 if (key == "Datasets") {
                                                     catalogMap.toMutableMap().mapValues { (innerKey, filterVal) ->
                                                         if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                        else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                                         else filterVal
                                                     }.toMutableMap()
                                                 } else {
@@ -229,7 +230,7 @@ val list = FC<ListProps> { props ->
                 resType = "Datasets"
             }
             //val v = selectedFilters.filter { it.key == "Datasets" }
-            console.log("PAAGINASSSS1: "+ selectedFilters["Datasets"]?.get("Page")?.firstOrNull()?.toInt() ?: 1)
+           // console.log("PAAGINASSSS1: "+ selectedFilters["Datasets"]?.get("Page")?.firstOrNull()?.toInt() ?: 1)
 
         }
 

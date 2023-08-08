@@ -84,6 +84,7 @@ val filterInfoDServ = FC<FilterInfoDServProps> { props ->
                             if (key == "DataServices") {
                                 catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                                     if (innerKey == props.filterName && !filterVal.contains(value)) filterVal.plus(value)
+                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                     //else if (filterVal.contains( value)) filterVal.filter { miVal -> miVal != value }
                                     else filterVal
                                 }.toMutableMap()

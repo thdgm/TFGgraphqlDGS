@@ -166,6 +166,7 @@ val listDistributions = FC<ListDistributionsProps> { props ->
                                             if (key == "Distributions") {
                                                 catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                                                     if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                                     else filterVal
                                                 }.toMutableMap()
                                             } else {

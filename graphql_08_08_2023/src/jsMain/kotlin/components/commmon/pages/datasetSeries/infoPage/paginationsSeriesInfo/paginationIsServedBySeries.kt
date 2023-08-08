@@ -20,7 +20,7 @@ external interface PaginationIsServedBySeriesProps: Props {
 val paginationIsServedBySeries = FC<PaginationIsServedBySeriesProps> { props ->
 
     var numberOfPages by useState(ceil(props.numberOfPages.toDouble() / 10).toInt())
-    console.log("SERVEDD NUUKMMMM: : "+ numberOfPages)
+   // console.log("SERVEDD NUUKMMMM: : "+ numberOfPages)
 
     Paper {
         sx {

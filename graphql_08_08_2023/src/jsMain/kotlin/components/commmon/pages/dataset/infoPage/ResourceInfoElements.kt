@@ -147,7 +147,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                     }
                     underline = LinkUnderline.hover
                     color = "inherit"
-                    onClick = handleOnClick
+                    onClick = handleOnClickSearch
                     +"/datasets"
                 }
 

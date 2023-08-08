@@ -75,12 +75,12 @@ suspend fun getAllPublishers(more: Boolean): Collection<String>{
     return components.commmon.pages.catalog.mainPage.apolloClient.query(PublishersQuery(page = 0, pageSize = 6)).execute().data?.getAllPublishers?.filterNotNull() ?: emptyList()
 }
 suspend fun getAllAdminLevels(more: Boolean): Collection<String>{
-    console.log("AQUÍIIIIIIIII11111")
+    //console.log("AQUÍIIIIIIIII11111")
     if(!more){
         return components.commmon.pages.catalog.mainPage.apolloClient.query(AdminLevelsQuery(page = 0, pageSize = -1)).execute().data?.getAllAdminLabel?.filterNotNull() ?: emptyList()
     }
     val res = components.commmon.pages.catalog.mainPage.apolloClient.query(AdminLevelsQuery(page = 0, pageSize = 6)).execute().data?.getAllAdminLabel?.filterNotNull() ?: emptyList()
-    console.log("AQUÍIIIIIIIII "+ res)
+    //console.log("AQUÍIIIIIIIII "+ res)
     return res
 }
 
@@ -168,7 +168,7 @@ val filterFormDataServ = FC<FilterFormDataServProps> {props->
                             this.filterName = value
                             this.filterFields = filtersTypesFields.elementAt(index)
                             this.updateFilterListMore = {
-                                console.log("MOREEE2: "+value)
+                               // console.log("MOREEE2: "+value)
                                 filtersTypesFields = mutableListOf(
                                     if (value == "Publicador") components.commmon.pages.catalog.mainPage.getAllPublishers(
                                         false

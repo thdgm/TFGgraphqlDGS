@@ -90,7 +90,7 @@ suspend fun getServicesResources(id_service: String?, page: Int, type: String): 
     if (id_service != null){
         resourceInfo =  apolloClient.query(DatasetsServedByServiceQuery(id= id_service!!, page = page, type=type)).execute().data?.dataService?.servesDataset
     }
-    console.log("NEW RESOURCESSS:: "+resourceInfo)
+    //console.log("NEW RESOURCESSS:: "+resourceInfo)
     return resourceInfo?.map{ ResourceInfo(it.identifier, it.id, it.__typename) } ?: emptyList()
 
 }
@@ -111,6 +111,16 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
     var newServedBy by useState(mutableListOf<IsServedInfo>())
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+            if (key == "DataServices") {
+                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                    if (innerKey == "Page") filterVal.filter { false }.plus("1")
+                    else filterVal
+                }.toMutableMap()
+            } else {
+                catalogMap
+            }
+        }.toMutableMap()
         navigate("/dataservices")
     }
 
@@ -124,7 +134,7 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
                 newResources.add(it)
             }
             dServInfo.elementAt(0).resources = newResources
-            console.log("NEW ASISGNEDDD BY PAGEEE::: " + dServInfo.elementAt(0).resources)
+           // console.log("NEW ASISGNEDDD BY PAGEEE::: " + dServInfo.elementAt(0).resources)
 
         }
     }
@@ -141,7 +151,7 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
             filterResourcesByType = event.target.value
             dServInfo.elementAt(0).resources = newResources
 
-            console.log("NEW ASISGNEDDD::: "+ dServInfo.elementAt(0).resources)
+           // console.log("NEW ASISGNEDDD::: "+ dServInfo.elementAt(0).resources)
         }
     }
     fun checkIfSelectedFiltersIsEmpty(): Boolean {

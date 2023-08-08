@@ -77,7 +77,7 @@ suspend fun getSeriesMembers(id_service: String?, page: Int): Collection<Resourc
     if (id_service != null){
         resourceInfo =  apolloClient.query(ResourcesMembersFromSeriesQuery(id= id_service!!, page = page)).execute().data?.datasetSeries?.seriesMembers
     }
-    console.log("NEW RESOURCESSS:: "+resourceInfo)
+   // console.log("NEW RESOURCESSS:: "+resourceInfo)
     return resourceInfo?.map{ ResourceInfo(it.identifier, it.id, it.__typename) } ?: emptyList()
 
 }
@@ -95,6 +95,16 @@ val DatasetSeriesInfoElements = FC<DatasetSeriesInfoElementsProps> { props->
     var newDatasets by useState(mutableListOf<ResourceInfo>())
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+            if (key == "DatasetSeries") {
+                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                    if (innerKey == "Page") filterVal.filter { false }.plus("1")
+                    else filterVal
+                }.toMutableMap()
+            } else {
+                catalogMap
+            }
+        }.toMutableMap()
         navigate("/datasetseries")
     }
 
@@ -108,22 +118,11 @@ val DatasetSeriesInfoElements = FC<DatasetSeriesInfoElementsProps> { props->
                 newDatasets.add(it)
             }
             dSeriesInfo.elementAt(0).resources = newDatasets
-            console.log("NEW ASISGNEDDD BY PAGEEE::: " + dSeriesInfo.elementAt(0).resources)
+            //console.log("NEW ASISGNEDDD BY PAGEEE::: " + dSeriesInfo.elementAt(0).resources)
 
         }
     }
 
-    val handleChangePageServedBy: (event: ChangeEvent<*>, number: Number) -> Unit = { event, number ->
-        coroutineScope.launch {
-            /*val newRes = getCatalogServedBy(catalogInfo.first().id, number.toInt())
-            newServedBy = newServedBy.filter { it == null } as MutableList<IsServedInfo>
-            newRes.map {
-                newServedBy.add(it)
-            }
-            catalogInfo.elementAt(0).isServedBy = newServedBy
-            console.log("NEW ASISGNEDDD BY PAGEEE::: " + catalogInfo.elementAt(0).isServedBy)*/
-        }
-    }
     useEffect(listOf(isLoading)) {
         MainScope().launch {
             delay(2000)

@@ -160,7 +160,7 @@ val filterFormCR = FC<FilterFormProps> {props->
                             this.filterName = value
                             this.filterFields = filtersTypesFields.elementAt(index)
                             this.updateFilterListMore = {
-                                console.log("MOREEE2: "+value)
+                               // console.log("MOREEE2: "+value)
                                 filtersTypesFields = mutableListOf(
                                     if (value == "Hints") getAllHints(false) else filtersTypesFields.elementAt(0),
                                     if (value == "Tipo de contenido") getAllContentTypes(false) else filtersTypesFields.elementAt(1)

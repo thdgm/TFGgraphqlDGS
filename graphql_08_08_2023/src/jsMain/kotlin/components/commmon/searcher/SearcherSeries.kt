@@ -46,7 +46,7 @@ val SearcherSeries = FC<SearcherSeriesProps> { props->
     var openDialog by useState(false)
     var isDisabled by useRequiredContext(IsLoadingContext)
     val handleChange: (event: react.dom.events.ChangeEventHandler<org.w3c.dom.HTMLElement>?) -> Unit = {event ->
-        console.log(event)
+        //console.log(event)
     //props.filterList.filter { it.title!!.contains(event.target.value) }
         //console.log("FILTRO: "+ props.filterList.filter { it.title!!.contains(event.target.value) })
     }

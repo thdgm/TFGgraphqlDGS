@@ -94,6 +94,7 @@ val filterInfoDistributions = FC<FilterInfoDistributionsProps> { props ->
                                                     filterVal.plus(value)
                                                 }
                                             }
+                                            else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                             //else if (filterVal.contains(value)) filterVal.filter { miVal -> miVal != value }
                                             else filterVal
                                         }.toMutableMap()
@@ -102,7 +103,7 @@ val filterInfoDistributions = FC<FilterInfoDistributionsProps> { props ->
                                     }
                                 }.toMutableMap()
 
-                                console.log("FILTERSSSS::: "+selectedFilters)
+                                //console.log("FILTERSSSS::: "+selectedFilters)
                             }
                             selected =
                                 selectedFilters["Distributions"]!!.toMutableMap()[props.filterName]?.contains(value)

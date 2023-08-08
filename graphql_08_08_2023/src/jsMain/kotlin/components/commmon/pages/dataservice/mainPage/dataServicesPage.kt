@@ -52,7 +52,7 @@ suspend fun getServices(filters: MutableMap<String, MutableMap<String, Collectio
             null
         }
     }.filterNotNull()
-    console.log("ESTO CARGOOOOO: "+ll)
+  //  console.log("ESTO CARGOOOOO: "+ll)
     return ll
 }
 
@@ -95,7 +95,7 @@ val DataServicesPage = FC<DataServicesPageProps> {
 
     useEffect(selectedFiltersContext) {
         coroutineScope.launch {
-            console.log("TOTAL NUMBER")
+           // console.log("TOTAL NUMBER")
             numberServices = getServicesNumber(selectedFiltersContext,"data_service")
         }
     }

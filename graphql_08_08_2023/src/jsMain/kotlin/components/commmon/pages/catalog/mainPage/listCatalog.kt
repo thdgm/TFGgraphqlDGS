@@ -67,7 +67,7 @@ val listCatalog = FC<ListCatalogProps> { props ->
     }
 
     useEffect(selectedFilters){
-        console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
+        //console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
         catalogsList = props.catalogsList
     }
 
@@ -159,6 +159,7 @@ val listCatalog = FC<ListCatalogProps> { props ->
                                             if (key == "Catalogs") {
                                                 catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
                                                     if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
                                                     else filterVal
                                                 }.toMutableMap<String, Collection<String>>()
                                             } else {

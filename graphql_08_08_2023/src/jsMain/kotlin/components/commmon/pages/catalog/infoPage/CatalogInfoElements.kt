@@ -124,7 +124,16 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
     var newServedBy by useState(mutableListOf<IsServedInfo>())
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event ->
-        //console.log("ID: " + event.currentTarget.id)
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+            if (key == "Catalogs") {
+                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                    if (innerKey == "Page") filterVal.filter { false }.plus("1")
+                    else filterVal
+                }.toMutableMap()
+            } else {
+                catalogMap
+            }
+        }.toMutableMap()
         navigate("/catalogs")
     }
 
