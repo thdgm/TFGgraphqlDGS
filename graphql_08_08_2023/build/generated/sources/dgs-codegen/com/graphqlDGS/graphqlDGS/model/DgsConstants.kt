@@ -16,6 +16,8 @@ public object DgsConstants {
 
     public const val Dataset: String = "dataset"
 
+    public const val Publisher: String = "publisher"
+
     public const val NumberOfResources: String = "numberOfResources"
 
     public const val NumberOfDistributions: String = "numberOfDistributions"
@@ -74,6 +76,12 @@ public object DgsConstants {
 
     public object DATASET_INPUT_ARGUMENT {
       public const val Id: String = "id"
+    }
+
+    public object PUBLISHER_INPUT_ARGUMENT {
+      public const val Notation: String = "notation"
+
+      public const val Label: String = "label"
     }
 
     public object NUMBEROFRESOURCES_INPUT_ARGUMENT {
@@ -201,6 +209,20 @@ public object DgsConstants {
     public const val TYPE_NAME: String = "Error"
 
     public const val Message: String = "message"
+  }
+
+  public object PUBLISHEROUTPUT {
+    public const val TYPE_NAME: String = "PublisherOutput"
+
+    public const val Notation: String = "notation"
+
+    public const val Label: String = "label"
+
+    public const val Resources: String = "resources"
+
+    public object RESOURCES_INPUT_ARGUMENT {
+      public const val Page: String = "page"
+    }
   }
 
   public object DATASERVICE {

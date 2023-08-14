@@ -18,16 +18,13 @@
   var createElement = $module$react.createElement;
   var isValidElement = $module$react.isValidElement;
   var Fragment = $module$react.Fragment;
-  var Unit_getInstance = kotlin_kotlin.$_$.s5;
-  var interfaceMeta = kotlin_kotlin.$_$.jb;
-  var setMetadataFor = kotlin_kotlin.$_$.fc;
-  var classMeta = kotlin_kotlin.$_$.ab;
-  var single = kotlin_kotlin.$_$.e9;
+  var Unit_getInstance = kotlin_kotlin.$_$.a3;
+  var interfaceMeta = kotlin_kotlin.$_$.f7;
+  var setMetadataFor = kotlin_kotlin.$_$.q7;
+  var classMeta = kotlin_kotlin.$_$.w6;
+  var single = kotlin_kotlin.$_$.i5;
   //endregion
   //region block: pre-declaration
-  function unaryPlus(_this__u8e3s4) {
-    Object.assign(this, _this__u8e3s4);
-  }
   function child(element) {
     var tmp$ret$1;
     // Inline function 'react.children' call
@@ -65,10 +62,10 @@
       tmp$ret$8[get_CHILDREN()] = tmp1__set_children__edo2ot;
     }
   }
-  function unaryPlus_0(_this__u8e3s4) {
-    this.child_l8x7rz_k$(_this__u8e3s4);
+  function unaryPlus(_this__u8e3s4) {
+    this.w44(_this__u8e3s4);
   }
-  function unaryPlus_1(_this__u8e3s4) {
+  function unaryPlus_0(_this__u8e3s4) {
     var tmp$ret$2;
     // Inline function 'react.ReactNode' call
     var tmp$ret$1;
@@ -78,23 +75,17 @@
     tmp$ret$0 = _this__u8e3s4;
     tmp$ret$1 = tmp$ret$0;
     tmp$ret$2 = tmp$ret$1;
-    this.unaryPlus_remv6s_k$(tmp$ret$2);
-  }
-  function child_0(type, props) {
-    this.unaryPlus_remv6s_k$(createElement(type, props));
+    this.x44(tmp$ret$2);
   }
   function invoke(_this__u8e3s4) {
-    this.unaryPlus_remv6s_k$(createElement(_this__u8e3s4));
+    this.x44(createElement(_this__u8e3s4));
   }
   function invoke_0(_this__u8e3s4, block) {
-    this.unaryPlus_remv6s_k$(create(_this__u8e3s4, block));
+    this.x44(create(_this__u8e3s4, block));
   }
   function invoke_1(_this__u8e3s4, value, block) {
     var tmp = _this__u8e3s4.Provider;
-    this.invoke_hixay3_k$(tmp, ChildrenBuilder$invoke$lambda(value, block));
-  }
-  function invoke_2(_this__u8e3s4, value, block) {
-    this.invoke_hixay3_k$(_this__u8e3s4, ChildrenBuilder$invoke$lambda_0(value, block));
+    this.a45(tmp, ChildrenBuilder$invoke$lambda(value, block));
   }
   setMetadataFor(ChildrenBuilder, 'ChildrenBuilder', interfaceMeta, undefined, undefined, undefined, undefined, []);
   setMetadataFor(ChildrenBuilderImpl, 'ChildrenBuilderImpl', classMeta, undefined, [ChildrenBuilder], undefined, undefined, []);
@@ -111,32 +102,11 @@
       return Unit_getInstance();
     };
   }
-  function ChildrenBuilder$invoke$lambda_0($value, $block) {
-    return function ($this$invoke) {
-      $this$invoke.value = $value;
-      $block($this$invoke);
-      return Unit_getInstance();
-    };
-  }
   function ChildrenBuilder() {
   }
   function createChildrenBuilder() {
     init_properties_ChildrenBuilder_kt_7yrkko();
     return new ChildrenBuilderImpl();
-  }
-  function set_children(_this__u8e3s4, value) {
-    init_properties_ChildrenBuilder_kt_7yrkko();
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = _this__u8e3s4;
-    tmp$ret$0[get_CHILDREN()] = value;
-  }
-  function get_children(_this__u8e3s4) {
-    init_properties_ChildrenBuilder_kt_7yrkko();
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = _this__u8e3s4;
-    return tmp$ret$0[get_CHILDREN()];
   }
   function ChildrenBuilderImpl() {
   }
@@ -255,15 +225,12 @@
     return createElement.apply(null, [Fragment, void 1].concat([].slice.call(children.slice())));
   }
   //region block: post-declaration
-  ChildrenBuilderImpl.prototype.unaryPlus_hmv8mt_k$ = unaryPlus;
-  ChildrenBuilderImpl.prototype.unaryPlus_remv6s_k$ = unaryPlus_0;
-  ChildrenBuilderImpl.prototype.unaryPlus_g7ydph_k$ = unaryPlus_1;
-  ChildrenBuilderImpl.prototype.child_l8x7rz_k$ = child;
-  ChildrenBuilderImpl.prototype.child_6rj8db_k$ = child_0;
-  ChildrenBuilderImpl.prototype.invoke_7r4cgu_k$ = invoke;
-  ChildrenBuilderImpl.prototype.invoke_hixay3_k$ = invoke_0;
-  ChildrenBuilderImpl.prototype.invoke_o43tqo_k$ = invoke_1;
-  ChildrenBuilderImpl.prototype.invoke_rotlsu_k$ = invoke_2;
+  ChildrenBuilderImpl.prototype.x44 = unaryPlus;
+  ChildrenBuilderImpl.prototype.y44 = unaryPlus_0;
+  ChildrenBuilderImpl.prototype.w44 = child;
+  ChildrenBuilderImpl.prototype.z44 = invoke;
+  ChildrenBuilderImpl.prototype.a45 = invoke_0;
+  ChildrenBuilderImpl.prototype.b45 = invoke_1;
   //endregion
   //region block: exports
   _.$_$ = _.$_$ || {};

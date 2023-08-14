@@ -1,0 +1,157 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/9e5bb798-d003-4a5e-8d24-ddaecdd65bc5",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://idena.navarra.es/descargas/IDEMUN_Sym_AbaContador.zip",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/9e5bb798-d003-4a5e-8d24-ddaecdd65bc5/format"
+      },
+      "dct:identifier": "https://idena.navarra.es/descargas/IDEMUN_Sym_AbaContador.zip",
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Enlace a la descarga del Conjunto de Datos Espaciales"
+        },
+        {
+          "@language": "eu",
+          "@value": "Enlace a la descarga del Conjunto de Datos Espaciales"
+        }
+      ]
+    },
+
+
+
+    {
+      "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/90f9b585-9474-4c16-a351-fe967f160c5e"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/9e5bb798-d003-4a5e-8d24-ddaecdd65bc5"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "Servicios de utilidad pÃºblica y estatales"
+        },
+        {
+          "@language": "es",
+          "@value": "Utility and governmental services"
+        }
+      ],
+      "dcat:theme": {
+        "@id": "http://datos.gob.es/kos/sector-publico/sector/sector-publico"
+      },
+      "dct:conformsTo": {
+        "@id": "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2008:326:0012:0030:ES:PDF"
+      },
+      "dct:description": [
+        {
+          "@language": "es",
+          "@value": "Contadores existentes en los municipios participantes  en el Grupo de Trabajo IDE del Foro SITNA de Entidades Locales."
+        },
+        {
+          "@language": "eu",
+          "@value": "Contadores existentes en los municipios participantes  en el Grupo de Trabajo IDE del Foro SITNA de Entidades Locales."
+        }
+      ],
+      "dct:identifier": "https://datosabiertos.navarra.es/dataset/spasitnaidemun_sym_abacontador-xml",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-01-13T00:00:00+01:00"
+      },
+      "dct:language": [
+        "es",
+        "eu"
+      ],
+      "dct:license": {
+        "@id": "http://www.opendefinition.org/licenses/cc-by"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2023-01-13T00:00:00+01:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/A15002917"
+      },
+      "dct:spatial": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Comunidad-Foral-Navarra"
+      },
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Abastecimiento. Contadores (municipal)"
+        },
+        {
+          "@language": "eu",
+          "@value": "Abastecimiento. Contadores (municipal)"
+        }
+      ]
+    },
+
+
+    {
+      "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/90f9b585-9474-4c16-a351-fe967f160c5e/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/html",
+      "rdfs:label": "HTML"
+    },
+
+
+    {
+      "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/90f9b585-9474-4c16-a351-fe967f160c5e",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://idena.navarra.es/navegar/?layerid=IDEMUN_Sym_AbaContador",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/90f9b585-9474-4c16-a351-fe967f160c5e/format"
+      },
+      "dct:identifier": "https://idena.navarra.es/navegar/?layerid=IDEMUN_Sym_AbaContador",
+      "dct:title": [
+        {
+          "@language": "es",
+          "@value": "Enlace a la visualizaciÃ³n del Conjunto de Datos Espaciales"
+        },
+        {
+          "@language": "eu",
+          "@value": "Enlace a la visualizaciÃ³n del Conjunto de Datos Espaciales"
+        }
+      ]
+    },
+
+
+    {
+      "@id": "https://datos.gob.es/catalogo/a15002917-abastecimiento-contadores-municipal/resource/9e5bb798-d003-4a5e-8d24-ddaecdd65bc5/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/zip",
+      "rdfs:label": "ZIP"
+    },
+
+
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/A15002917",
+      "@type": "skos:Concept",
+      "skos:notation": "A15002917",
+      "skos:prefLabel": "Comunidad Foral de Navarra"
+    }
+  ]
+}

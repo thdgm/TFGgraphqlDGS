@@ -1,0 +1,8 @@
+/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_08_08_2023/build/kover/raw-reports/jvmTest.ic
+false
+false
+true
+false
+-exclude
+android\..*
+com\.android\..*

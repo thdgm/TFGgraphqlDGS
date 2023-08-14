@@ -20,6 +20,8 @@ type Query {
   resource(id: ID,isDataset: Boolean, isCatalog: Boolean,isDataService:Boolean!,isDatasetSeries:Boolean!,page: Int!): Resource
   catalog(id: ID): Catalog
   dataset(id: ID): DatasetInCatalog
+  publisher(notation:String, label:String): PublisherOutput
+
   numberOfResources(filters:[MapInput!],type: String!): Int
   numberOfDistributions(filters:[MapInput!]): Int
 
@@ -46,9 +48,6 @@ type Query {
   # Map them. If starts with L0: Local Administration
   # According to https://datos.gob.es/es/recurso/sector-publico/org/Organismo
 
-
-
-
 }
 
 type Mutation {
@@ -64,15 +63,23 @@ input CatalogRecordInput{
   hints:[String!] #Extra process apart of contentType
 }
 
+type Error{
+  message: String
+}
+
+union CatalogRecordOutput = CatalogRecord | Error
+
 input MapInput {
   key: String!
   values: [String!]!
 }
-union CatalogRecordOutput = CatalogRecord | Error
 
-type Error{
-  message: String
+type PublisherOutput{
+  notation: String
+  label: String
+  resources(page: Int!): [Resource!]
 }
+
 #
 # type -> final type, cannot be extended
 # interface -> abstract type, can be extended
@@ -407,4 +414,5 @@ type PeriodOfTime{
   start:LocalDateTime
   end:LocalDateTime
 }
+
 
