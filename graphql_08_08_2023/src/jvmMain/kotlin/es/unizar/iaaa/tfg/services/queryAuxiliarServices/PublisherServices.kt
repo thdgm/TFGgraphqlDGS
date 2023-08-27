@@ -46,12 +46,17 @@ class PublisherServicesImpl(
 
     // Return publisher information
     override fun getPublisherInfo(notation: String?,label: String?): PublisherOutput?{
-        println("PUBLISHERRRRRRRR2::::::::::::::: $notation")
-        return if (notation != null){
+        println("PUBLISHERRRRRRRR2::::::::::::::: $notation --- $label")
+        return if (!notation.isNullOrBlank()){
             println("PUBLISHERRRRRRRR3::::::::::::::: ${publisherRepository.findById(notation)}")
-            converterAux.toPublisherOutput(publisherRepository.findById(notation).get())
-        }else if (label != null){
-            converterAux.toPublisherOutput(publisherRepository.findByLabel(label))
+            val publisherOptional = publisherRepository.findById(notation)
+            if(publisherOptional.isPresent) converterAux.toPublisherOutput(publisherOptional.get())
+            else null
+        }else if (!label.isNullOrBlank()){
+            println("PUBLISHERRRRRRRR4::::::::::::::: ${publisherRepository.findByLabel(label)}")
+            val publisherOptional = publisherRepository.findByLabel(label)
+            if ( publisherOptional == null) null else converterAux.toPublisherOutput(publisherOptional)
+
         }else{
             null
         }

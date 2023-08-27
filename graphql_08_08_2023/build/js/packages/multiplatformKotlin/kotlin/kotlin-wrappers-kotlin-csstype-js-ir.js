@@ -3924,15 +3924,6 @@
     tmp$ret$1 = tmp$ret$0;
     return tmp$ret$1;
   }
-  function Color(value) {
-    var tmp$ret$1;
-    // Inline function 'kotlin.js.unsafeCast' call
-    var tmp$ret$0;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = value;
-    tmp$ret$1 = tmp$ret$0;
-    return tmp$ret$1;
-  }
   function rgb(red, green, blue) {
     var tmp$ret$1;
     // Inline function 'kotlin.js.unsafeCast' call
@@ -3940,6 +3931,15 @@
     var tmp$ret$0;
     // Inline function 'kotlin.js.asDynamic' call
     tmp$ret$0 = tmp0_unsafeCast;
+    tmp$ret$1 = tmp$ret$0;
+    return tmp$ret$1;
+  }
+  function Color(value) {
+    var tmp$ret$1;
+    // Inline function 'kotlin.js.unsafeCast' call
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = value;
     tmp$ret$1 = tmp$ret$0;
     return tmp$ret$1;
   }

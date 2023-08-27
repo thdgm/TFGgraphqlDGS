@@ -202,6 +202,7 @@ margin-top: 5% !important;
 .textFieldApiParam{
     width: 50%;
     background: white;
+    margin-top: 2% !important;
 }
 .endpoint_info{
     font-family: 'neutra_text', Helvetica, Arial, sans-serif !important;
@@ -209,4 +210,12 @@ margin-top: 5% !important;
     color: #245E7C !important;
     font-size: 20px !important;
     margin-left: 4% !important;
+}
+.endpoint_result{
+    font-family: 'neutra_text', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    color: #245E7C !important;
+    font-size: 20px !important;
+    margin-left: 4% !important;
+    margin-top: 2% !important;
 }

@@ -162,7 +162,7 @@ interface PublisherRepository : JpaRepository<PublisherEntity, String>{
     @Transactional
     fun findAllLabelNotNull(pageable: Pageable): Page<String>
 
-    fun findByLabel(label: String): PublisherEntity
+    fun findByLabel(label: String): PublisherEntity?
     /*@Query(value="select p.\"id\", p.\"notation\", p.\"label\" from \"publisher\" as p where (:notations is null OR p.\"notation\" LIKE CONCAT(:notations, '%'));"
         ,nativeQuery = true)
     @Transactional

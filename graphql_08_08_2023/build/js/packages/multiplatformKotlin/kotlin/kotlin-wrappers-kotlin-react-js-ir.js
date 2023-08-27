@@ -120,10 +120,6 @@
   }
   function ChildrenBuilder() {
   }
-  function createChildrenBuilder() {
-    init_properties_ChildrenBuilder_kt_7yrkko();
-    return new ChildrenBuilderImpl();
-  }
   function set_children(_this__u8e3s4, value) {
     init_properties_ChildrenBuilder_kt_7yrkko();
     var tmp$ret$0;
@@ -137,6 +133,10 @@
     // Inline function 'kotlin.js.asDynamic' call
     tmp$ret$0 = _this__u8e3s4;
     return tmp$ret$0[get_CHILDREN()];
+  }
+  function createChildrenBuilder() {
+    init_properties_ChildrenBuilder_kt_7yrkko();
+    return new ChildrenBuilderImpl();
   }
   function ChildrenBuilderImpl() {
   }
