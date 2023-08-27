@@ -35,6 +35,7 @@ val Pagination = FC<PaginationProps> { props ->
             props.changePage(e,v)
         }
     }*/
+    console.log("ESTO RECIBE PAGINATION:: "+props.numberOfPages + " - "+props.resType + " - "+ selectedFilters["Datasets"] )
      Paper {
          sx{
             // marginLeft= 60.pct
@@ -54,7 +55,7 @@ val Pagination = FC<PaginationProps> { props ->
            //  page = selectedFilters.filter { it.key == "Datasets" }.filter{it.key == "Page"}.values.first().toInt()
              page = selectedFilters["${props.resType}"]?.get("Page")?.firstOrNull()?.toInt() ?: 1
              color = PaginationColor.primary
-             count = numberOfPages
+             count = ceil(props.numberOfPages.toDouble() / 10).toInt()//numberOfPages
              size = Size.small
              onChange = {e,v ->
                  selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->

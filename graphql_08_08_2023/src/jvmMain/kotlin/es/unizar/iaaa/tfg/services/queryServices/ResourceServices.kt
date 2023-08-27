@@ -180,8 +180,9 @@ class ResourceServicesImpl(
                 converterAux.toLocalDateTime(startEnd.first().split("--").last().trim())
             } else null
         }
-        return repoCriteria.findNumberOfDatasetsByFilters(appliedFilters,type,issued, modified, period, notation, start, end)?.toInt() ?: 0
+        val n =  repoCriteria.findNumberOfDatasetsByFilters(appliedFilters,type,issued, modified, period, notation, start, end)?.toInt() ?: 0
 
+        return n
     }
 
     fun getNumberOfCatalogs(appliedFilters: Collection<MapInput>,type: String): Int {
@@ -240,9 +241,10 @@ class ResourceServicesImpl(
 
         var appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
 
-        return if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)){
+        val n = if (appliedFilters.isEmpty() || checkIfSelectedFiltersIsEmpty(appliedFilters)){
              resourceRepository.countByType(type).toInt()
         } else {
+            println("NUMBEEEERRRRRRRRRRRRRRRRRRRRRRRRRRR1_---------------------------- $type")
             when (type) {
                 "dataset" -> getNumberOfDatasets(appliedFilters, type)
                 "catalog" -> getNumberOfCatalogs(appliedFilters, type)
@@ -251,6 +253,8 @@ class ResourceServicesImpl(
                 else -> 0
             }
         }
+        println("NUMBEEEERRRRRRRRRRRRRRRRRRRRRRRRRRR_2---------------------------- $n")
+        return n
 
 
     }

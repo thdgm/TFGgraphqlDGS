@@ -63,6 +63,7 @@ suspend fun getCatalogsNumber(filters: MutableMap<String, MutableMap<String, Col
         selectedFilters?.filter { it.key != "Page" /*&&  it.key != "OrderBy" && it.key != "SortBy" */}
     }
     val number =  apolloClient.query(NumberOfResourcesQuery(filter= Optional.present(filter),type=resType)).execute().data?.numberOfResources
+
     return number ?: 0
 }
 
@@ -103,8 +104,9 @@ val CatalogsPage = FC<CatalogsPageProps> {
 
     useEffect(selectedFiltersContext) {
         coroutineScope.launch {
-            console.log("TOTAL NUMBER")
+
             numberCatalogs = getCatalogsNumber(selectedFiltersContext,"catalog")
+            console.log("TOTAL NUMBER CATLOG "+numberCatalogs)
         }
     }
 

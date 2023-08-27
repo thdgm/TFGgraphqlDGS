@@ -33,7 +33,6 @@ val selectSearchByCatalog = FC<SelectSearchByCatalogProps> { props ->
     var catalogInfo by useState(props.infoCatalog)
     var orderVal by useState("")
     var selectedFilters by useRequiredContext(FilterListContextAll)
-    var isDisabled by useRequiredContext(IsLoadingContext)
 
     val handleChange: (event: ChangeEvent<HTMLInputElement>, child: ReactNode) -> Unit = {event,child ->
         //console.log(child)

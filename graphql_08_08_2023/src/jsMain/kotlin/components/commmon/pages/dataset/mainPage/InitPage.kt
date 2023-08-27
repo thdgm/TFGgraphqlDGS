@@ -72,7 +72,11 @@ suspend fun getResourcesNumber(filters: MutableMap<String, MutableMap<String, Co
 
     }
     val number =  apolloClient.query(NumberOfResourcesQuery(filter=Optional.present(filter),type=resType)).execute().data?.numberOfResources
-    return number ?: 0
+    console.log("NFILTERSSSSSS::: "+ filter)
+
+    val v =  number ?: 0
+    console.log("NUM DATASETTSSSS::: "+ v)
+    return v
 }
 
 fun checkIfSelectedFiltersIsEmpty(selectedFilters: Collection<MapInput>?): Boolean{
@@ -126,10 +130,11 @@ val InitPage = FC<InitPageProps> { props->
 
 
 
-    useEffect(/*numberDatasets*/selectedFiltersContext) {
+    useEffect(selectedFiltersContext) {
         coroutineScope.launch {
-            //console.log("TOTAL NUMBER")
-            numberDatasets = getResourcesNumber(selectedFiltersContext,"dataset")
+            val n = getResourcesNumber(selectedFiltersContext,"dataset")
+            numberDatasets = n
+            console.log("TOTAL NUMBER_ "+numberDatasets + " - "+ n)
         }
 
     }
