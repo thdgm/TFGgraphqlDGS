@@ -12,8 +12,8 @@
 }(this, function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var objectMeta = kotlin_kotlin.$_$.p7;
-  var setMetadataFor = kotlin_kotlin.$_$.q7;
+  var objectMeta = kotlin_kotlin.$_$.q7;
+  var setMetadataFor = kotlin_kotlin.$_$.r7;
   //endregion
   //region block: pre-declaration
   setMetadataFor(ReactHTML, 'ReactHTML', objectMeta, undefined, undefined, undefined, undefined, []);

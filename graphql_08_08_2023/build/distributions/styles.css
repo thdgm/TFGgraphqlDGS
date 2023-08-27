@@ -199,3 +199,14 @@ margin-top: 5% !important;
 .css-518kzi-MuiListItemSecondaryAction-root{
     right: 1px !important;
 }
+.textFieldApiParam{
+    width: 50%;
+    background: white;
+}
+.endpoint_info{
+    font-family: 'neutra_text', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    color: #245E7C !important;
+    font-size: 20px !important;
+    margin-left: 4% !important;
+}

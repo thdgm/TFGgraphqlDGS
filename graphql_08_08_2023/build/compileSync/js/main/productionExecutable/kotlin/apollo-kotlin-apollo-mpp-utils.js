@@ -12,7 +12,7 @@
 }(this, function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var numberToLong = kotlin_kotlin.$_$.o7;
+  var numberToLong = kotlin_kotlin.$_$.p7;
   //endregion
   //region block: pre-declaration
   //endregion

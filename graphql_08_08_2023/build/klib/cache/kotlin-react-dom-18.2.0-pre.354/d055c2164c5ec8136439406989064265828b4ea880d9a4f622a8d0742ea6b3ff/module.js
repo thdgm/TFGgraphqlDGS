@@ -19,6 +19,18 @@
   //region block: pre-declaration
   setMetadataFor(ReactHTML, 'ReactHTML', objectMeta, undefined, undefined, undefined, undefined, []);
   //endregion
+  function set_onChange(_this__u8e3s4, value) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = _this__u8e3s4;
+    tmp$ret$0.onChange = value;
+  }
+  function get_onChange(_this__u8e3s4) {
+    var tmp$ret$0;
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp$ret$0 = _this__u8e3s4;
+    return tmp$ret$0.onChange;
+  }
   function set_ariaLabel(_this__u8e3s4, value) {
     var tmp$ret$0;
     // Inline function 'kotlin.js.asDynamic' call

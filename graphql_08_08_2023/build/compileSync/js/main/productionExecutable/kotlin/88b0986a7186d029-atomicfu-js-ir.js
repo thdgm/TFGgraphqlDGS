@@ -12,10 +12,10 @@
 }(this, function (_, kotlin_kotlin) {
   'use strict';
   //region block: imports
-  var objectMeta = kotlin_kotlin.$_$.p7;
-  var setMetadataFor = kotlin_kotlin.$_$.q7;
-  var classMeta = kotlin_kotlin.$_$.w6;
-  var toString = kotlin_kotlin.$_$.ga;
+  var objectMeta = kotlin_kotlin.$_$.q7;
+  var setMetadataFor = kotlin_kotlin.$_$.r7;
+  var classMeta = kotlin_kotlin.$_$.x6;
+  var toString = kotlin_kotlin.$_$.ha;
   //endregion
   //region block: pre-declaration
   setMetadataFor(atomicfu$TraceBase, 'TraceBase', classMeta, undefined, undefined, undefined, undefined, []);
