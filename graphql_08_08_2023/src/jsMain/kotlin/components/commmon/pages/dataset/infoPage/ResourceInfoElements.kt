@@ -210,26 +210,34 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
-                                Chip {
-                                    id = value
-                                    label = ReactNode(value)
-                                    variant = ChipVariant.outlined
-                                    color = ChipColor.primary
-                                    onDelete = { _ ->
-                                        selectedFilters =
-                                            selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                                if (key == "Datasets") {
-                                                    catalogMap.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                        if (innerKey == valuesList.key) filterVal.filter { it != value }
-                                                        else filterVal
-                                                    }.toMutableMap()
-                                                } else {
-                                                    catalogMap
-                                                }
-                                            }.toMutableMap()
+                                if (valuesList.key == "OrderBy" || valuesList.key == "SortBy"){
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.success
                                     }
-                                    deleteIcon
+                                }else {
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.primary
+                                        onDelete = { _ ->
+                                            selectedFilters =
+                                                selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                                    if (key == "Datasets") {
+                                                        catalogMap.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                            if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                            else filterVal
+                                                        }.toMutableMap()
+                                                    } else {
+                                                        catalogMap
+                                                    }
+                                                }.toMutableMap()
+                                        }
+                                        deleteIcon
+                                    }
                                 }
                                 +" "
                             }

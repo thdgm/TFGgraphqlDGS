@@ -161,33 +161,42 @@ val list = FC<ListProps> { props ->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["Datasets"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty()/* && valuesList.key != "Page"*/) {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
-                                Chip {
-                                    id = value
-                                    label = ReactNode(value)
-                                    variant = ChipVariant.outlined
-                                    color = ChipColor.primary
-                                    disabled = isDisabled
-                                    onDelete = { _ ->
-                                        selectedFilters =
-                                            selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                                if (key == "Datasets") {
-                                                    catalogMap.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                        if (innerKey == valuesList.key) filterVal.filter { it != value }
-                                                        else if (innerKey == "Page") filterVal.filter { false }.plus("1")
-                                                        else filterVal
-                                                    }.toMutableMap()
-                                                } else {
-                                                    catalogMap
-                                                }
-                                            }.toMutableMap()
+                                if (valuesList.key == "OrderBy" || valuesList.key == "SortBy"){
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.success
                                     }
-                                    deleteIcon
+                                }else {
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.primary
+                                        disabled = isDisabled
+                                        onDelete = { _ ->
+                                            selectedFilters =
+                                                selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                                    if (key == "Datasets") {
+                                                        catalogMap.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                            if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                            else if (innerKey == "Page") filterVal.filter { false }
+                                                                .plus("1")
+                                                            else filterVal
+                                                        }.toMutableMap()
+                                                    } else {
+                                                        catalogMap
+                                                    }
+                                                }.toMutableMap()
+                                        }
+                                        deleteIcon
+                                    }
                                 }
                                 +" "
                             }
