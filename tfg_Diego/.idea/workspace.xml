@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="85f3bd99-27e2-4a98-a44f-7b4b4898fbe9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../graphqlDGS/frontend/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphqlDGS/frontend/src/test/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphqlDGS/frontend/src/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/lombok.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/GraphqlDgsApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/GraphqlDgsApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/AddCatalogRecordMutation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/AddCatalogRecordMutation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/CatalogQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/CatalogQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/CatalogRecordQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/CatalogRecordQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/ConceptScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/ConceptScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DataServiceQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DataServiceQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DatasetInCatalogQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DatasetInCatalogQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DatasetQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DatasetQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DatasetSeriesQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DatasetSeriesQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DistributionQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/DistributionQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/LangStringScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/LangStringScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/LocalDateTimeScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/LocalDateTimeScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/MediaTypeScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/MediaTypeScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/NonNegativeIntScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/NonNegativeIntScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/PeriodicidadScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/PeriodicidadScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/adapters/ResourceQueries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/adapters/ResourceQueries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/annotations/Concept.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/annotations/Concept.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/annotations/LangString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/annotations/LangString.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/annotations/MediaType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/annotations/MediaType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/annotations/NonNegativeInt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/annotations/NonNegativeInt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/annotations/Periocidad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/annotations/Periocidad.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/config/RedisConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/config/RedisConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/constants/ConstantValues.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/constants/ConstantValues.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/controller/ExceptionController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/controller/ExceptionController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/CatalogEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/CatalogEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/CatalogRecordEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/CatalogRecordEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/DataServiceEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/DataServiceEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/DatasetEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/DatasetEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/DatasetSeriesEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/DatasetSeriesEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/DistributionEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/DistributionEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/IdentifierEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/IdentifierEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/KeywordDatasetId.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/KeywordDatasetId.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/KeywordEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/KeywordEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/LanguageEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/LanguageEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/LocationEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/LocationEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/Properties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/Properties.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/PublisherEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/PublisherEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/RedisEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/RedisEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/ResourceDescriptionId.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/ResourceDescriptionId.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/ResourceDescriptionsEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/ResourceDescriptionsEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/ResourceEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/ResourceEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/ThemeEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/ThemeEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitleDistributionId.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitleDistributionId.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitleResourceId.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitleResourceId.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitlesDistributionEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitlesDistributionEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitlesResourceEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/domain/TitlesResourceEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/AccrualPeriodicityJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/AccrualPeriodicityJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/DatasetJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/DatasetJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/DistributionJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/DistributionJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/ImtJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/ImtJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/ModelJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/ModelJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/PeriodOfTimeJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/PeriodOfTimeJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/PublisherJsonMapping.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/jsonDataModels/PublisherJsonMapping.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/repository/AuxiliarEntitiesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/repository/AuxiliarEntitiesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/repository/RedisRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/repository/RedisRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/repository/ResourcesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/repository/ResourcesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/CatalogRecordsServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/CatalogRecordsServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/CatalogServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/CatalogServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/CheckIfExistResourceServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/CheckIfExistResourceServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/DataServicesServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/DataServicesServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetInCatalogServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetInCatalogServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetSeriesService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetSeriesService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetServicesAuxiliarFields.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/DatasetServicesAuxiliarFields.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/DistributionServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/DistributionServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/Logger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/Logger.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/ReferenceWithinExternalCOntextServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/ReferenceWithinExternalCOntextServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/ResourceServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/ResourceServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/converts/ConvertersAuxiliarEntitiesTo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/converts/ConvertersAuxiliarEntitiesTo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/converts/ConvertersResourceEntitiesToImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/converts/ConvertersResourceEntitiesToImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/CreateAuxiliarEntitiesServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/CreateAuxiliarEntitiesServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/CreateRelationsBetweenEntitiesServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/CreateRelationsBetweenEntitiesServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/CreateResourcesEntitiesServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/CreateResourcesEntitiesServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/ProcessJsonServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/kotlin/es/unizar/iaaa/tfg/services/mutationServices/ProcessJsonServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/resources/schema/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/resources/schema/schema.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/main/resources/see.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/main/resources/see.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/CatalogRecordTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/CatalogRecordTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/CatalogTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/CatalogTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DatasetSeriesTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DatasetSeriesTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DatasetServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DatasetServiceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DatasetTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DatasetTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DistributionTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/DistributionTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/PruebaTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/PruebaTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/ResourceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/ResourceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson4.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson4.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/adapters/mutations/TestsFicheroJson5.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/data/ConstantValues.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/data/ConstantValues.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/redisTests/ResdisTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/redisTests/ResdisTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/CatalogRecordRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/CatalogRecordRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/CatalogRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/CatalogRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/DatasetRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/DatasetRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/DatasetSeriesRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/DatasetSeriesRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/DatasetServiceRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/DatasetServiceRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/DistributionRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/DistributionRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/IdentifierRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/IdentifierRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/kotlin/es/unizar/iaaa/tfg/repository/ResourceRepositoryTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/kotlin/es/unizar/iaaa/tfg/repository/ResourceRepositoryTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/json1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/json1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/json2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/json2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/json3.json" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/json3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/json4.json" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/json4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/json5.json" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/json5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphqlDGS/src/test/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../graphqlDGS/graphql/src/test/resources/logback.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/client">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/graphqlDGS">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/client">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="client" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="client" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="client" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="kotlin browser" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MMxCuuWeU76rrju6EJiOWKRqhK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/tfg_Diego"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/graphqlDGS" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.client [browserDevelopmentRun]">
+    <configuration name="Tests in 'es.unizar.iaaa.tfg'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/graphqlDGS" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;es.unizar.iaaa.tfg.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="client [browserDevelopmentRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="browserDevelopmentRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.client [browserDevelopmentRun]" />
+        <item itemvalue="Gradle.Tests in 'es.unizar.iaaa.tfg'" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="85f3bd99-27e2-4a98-a44f-7b4b4898fbe9" name="Changes" comment="" />
+      <created>1677591128463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677591128463</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

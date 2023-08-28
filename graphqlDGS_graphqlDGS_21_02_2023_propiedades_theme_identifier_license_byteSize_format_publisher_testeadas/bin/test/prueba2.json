@@ -1,0 +1,189 @@
+{
+  "@context": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "time": "http://www.w3.org/2006/time#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01502973",
+      "@type": "skos:Concept",
+      "skos:notation": "L01502973",
+      "skos:prefLabel": "Ayuntamiento de Zaragoza"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9cbae344-c32d-40b9-acfd-ee594eb1808e/format",
+      "@type": "dct:IMT",
+      "rdf:value": "text/csv",
+      "rdfs:label": "CSV"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9aaa643e-bcdc-4bec-8967-3e293aec944a",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/sede/servicio/equipamiento/basic/instalacion-deportiva-elemental.json?srsname=utm30n_etrs89",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9aaa643e-bcdc-4bec-8967-3e293aec944a/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4234",
+      "dct:title": {
+        "@language": "es",
+        "@value": "JSON"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/Frequency",
+      "@type": "dct:Frequency",
+      "rdf:value": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/DurationDescription"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/4a7a57e0-2164-4a45-a9ea-ce67f1af6625",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/sede/servicio/equipamiento/basic/instalacion-deportiva-elemental.geojson?srsname=utm30_etrs89",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/4a7a57e0-2164-4a45-a9ea-ce67f1af6625/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4223",
+      "dct:title": {
+        "@language": "es",
+        "@value": "Datos en formato geojson"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/4a7a57e0-2164-4a45-a9ea-ce67f1af6625/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/json",
+      "rdfs:label": "JSON"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/DurationDescription",
+      "@type": "time:DurationDescription",
+      "time:years": {
+        "@type": "xsd:decimal",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9aaa643e-bcdc-4bec-8967-3e293aec944a/format",
+      "@type": "dct:IMT",
+      "rdf:value": "application/json",
+      "rdfs:label": "JSON"
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9cbae344-c32d-40b9-acfd-ee594eb1808e",
+      "@type": "dcat:Distribution",
+      "dcat:accessURL": "https://www.zaragoza.es/sede/servicio/equipamiento/basic/instalacion-deportiva-elemental.csv?srsname=utm30n_etrs89",
+      "dct:format": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9cbae344-c32d-40b9-acfd-ee594eb1808e/format"
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/formato/4235",
+      "dct:title": {
+        "@language": "es",
+        "@value": "csv"
+      }
+    },
+    {
+      "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros",
+      "@type": "dcat:Dataset",
+      "dcat:distribution": [
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9cbae344-c32d-40b9-acfd-ee594eb1808e"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/4a7a57e0-2164-4a45-a9ea-ce67f1af6625"
+        },
+        {
+          "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/resource/9aaa643e-bcdc-4bec-8967-3e293aec944a"
+        }
+      ],
+      "dcat:keyword": [
+        {
+          "@language": "es",
+          "@value": "deportivo"
+        },
+        {
+          "@language": "es",
+          "@value": "piscinas"
+        },
+        {
+          "@language": "es",
+          "@value": "campos de futbol"
+        },
+        {
+          "@language": "es",
+          "@value": "baloncesto"
+        },
+        {
+          "@language": "es",
+          "@value": "fÃºtbol"
+        },
+        {
+          "@language": "es",
+          "@value": "deporte"
+        },
+        {
+          "@language": "es",
+          "@value": "instalaciones deportivas"
+        }
+      ],
+      "dcat:theme": [
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/deporte"
+        },
+        {
+          "@id": "http://datos.gob.es/kos/sector-publico/sector/urbanismo-infraestructuras"
+        }
+      ],
+      "dct:accrualPeriodicity": {
+        "@id": "https://datos.gob.es/catalogo/l01502973-instalaciones-deportivas-elementales-potreros/Frequency"
+      },
+      "dct:description": {
+        "@language": "es",
+        "@value": "Este conjunto de datos incluye un directorio con los datos de las Instalaciones Deportivas de Zaragoza, incluyendo pistas para realizar diferentes disciplinas deportivas (baloncesto, fÃºtbol,petanca, skate...)\n\nA travÃ©s del Servicio de VisualizaciÃ³n, el Ayuntamiento de Zaragoza pone a disposiciÃ³n una visualizaciÃ³n en la que se muestran datos sobre instalaciones deportivas. El conjunto de datos contiene informaciÃ³n de localizaciÃ³n (direcciÃ³n, cÃ³digo postal, latitud y longitud), contacto (email y telÃ©fono) , horario y url a la web de cada centro.\n\nEl buscador le permite hacer bÃºsquedas filtrando por barrio. TambiÃ©n cabe la posibilidad de ver los resultados en forma de mapa."
+      },
+      "dct:identifier": "https://www.zaragoza.es/sede/servicio/catalogo/2440",
+      "dct:issued": {
+        "@type": "xsd:dateTime",
+        "@value": "2021-06-07T00:00:00+02:00"
+      },
+      "dct:language": "es",
+      "dct:license": {
+        "@id": "https://www.zaragoza.es/sede/portal/aviso-legal#condiciones"
+      },
+      "dct:modified": {
+        "@type": "xsd:dateTime",
+        "@value": "2022-06-16T00:00:00+02:00"
+      },
+      "dct:publisher": {
+        "@id": "http://datos.gob.es/recurso/sector-publico/org/Organismo/L01502973"
+      },
+      "dct:spatial": [
+        {
+          "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/Aragon"
+        },
+        {
+          "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Pais/EspaÃ±a"
+        },
+        {
+          "@id": "http://datos.gob.es/recurso/sector-publico/territorio/Provincia/Zaragoza"
+        }
+      ],
+      "dct:title": {
+        "@language": "es",
+        "@value": "Instalaciones Deportivas Elementales (potreros)"
+      }
+    }
+  ]
+}

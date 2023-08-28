@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-webmvc-autoconfigure:7.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-webmvc-autoconfigure/7.3.4/60c18dce44f0914512279014c45af6633cfa3753/graphql-dgs-spring-webmvc-autoconfigure-7.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-webmvc-autoconfigure/7.3.4/f78465201ba8a385a57297709b17b1b8c663eb11/graphql-dgs-spring-webmvc-autoconfigure-7.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

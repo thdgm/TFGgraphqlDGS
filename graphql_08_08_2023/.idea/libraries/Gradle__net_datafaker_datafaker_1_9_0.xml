@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.datafaker:datafaker:1.9.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.datafaker/datafaker/1.9.0/306d43c72abc9363872da9426fd5c51199b3b2ac/datafaker-1.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.datafaker/datafaker/1.9.0/c7175927221f65418e21f14d53c347b809bbd35a/datafaker-1.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

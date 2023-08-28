@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.apollographql.apollo3:apollo-annotations:commonMain:3.7.4" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/kotlin/kotlinTransformedMetadataLibraries/com.apollographql.apollo3-apollo-annotations-3.7.4-commonMain-oSNsuA.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-annotations/3.7.4/e30d22747d82e3cfc869d060e9cfb7c0695783f/apollo-annotations-3.7.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

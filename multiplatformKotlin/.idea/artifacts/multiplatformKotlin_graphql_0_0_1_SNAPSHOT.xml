@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="multiplatformKotlin-graphql-0.0.1-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="multiplatformKotlin-graphql-0.0.1-SNAPSHOT.jar">
+      <element id="module-output" name="multiplatformKotlin.graphqlMain" />
+    </root>
+  </artifact>
+</component>

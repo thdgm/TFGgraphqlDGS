@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="491222f9-04b4-4d15-85ba-eb649eb852f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/AdminLevelsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/CatalogQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/DatasetInfoQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/DatasetsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/FormatsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/FrequenciesQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/KeywordsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/NumberOfResourcesQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/PublishersQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/ResourceQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/ThemesQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/AdminLevelsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/AdminLevelsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/CatalogQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/CatalogQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/DatasetInfoQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/DatasetInfoQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/DatasetsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/DatasetsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/FormatsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/FormatsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/FrequenciesQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/FrequenciesQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/KeywordsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/KeywordsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/NumberOfResourcesQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/NumberOfResourcesQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/PublishersQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/PublishersQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/ResourceQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/ResourceQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/ThemesQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/adapter/ThemesQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/AdminLevelsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/CatalogQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/DatasetInfoQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/DatasetsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/FormatsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/FrequenciesQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/KeywordsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/NumberOfResourcesQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/PublishersQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/ResourceQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/selections/ThemesQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/AbstractDataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/Catalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/CatalogRecord.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/Concept.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/DataService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/DatasetInCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/DatasetSeries.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/Distribution.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/Frequency.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/GraphQLBoolean.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/GraphQLFloat.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/GraphQLID.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/GraphQLInt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/GraphQLString.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/LangString.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/LocalDateTime.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/MapInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/MediaType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/PeriodOfTime.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/Query.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/ReferenceWithinExternalContext.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/Resource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/ResourceInCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/source/apollo/service/com/schema/type/adapter/MapInput_InputAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/DgsConstants.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/AbstractDataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Catalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/CatalogRecord.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/CatalogRecordInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/CatalogRecordOutput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/DataService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Dataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/DatasetInCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/DatasetSeries.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Distribution.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Error.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/MapInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/PeriodOfTime.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/ReferenceWithinExternalContext.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Resource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/ResourceInCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/build/kotlin/sessions/kotlin-compiler-9373010496272425472.salive" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/List.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/List.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfoElements.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfoElements.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataset/SelectFilterDataset.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataset/SelectFilterDataset.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/config/corsConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/config/corsConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/repository/ResourcesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/repository/ResourcesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/queryAuxiliarServices/ResourcesByFilterServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/queryAuxiliarServices/ResourcesByFilterServices.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2T4cmWkrAUil75w5qwhzsExx0Gh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_24_07_2023"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="491222f9-04b4-4d15-85ba-eb649eb852f5" name="Changes" comment="" />
+      <created>1690305953927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690305953927</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.graphql.dgs:graphql-dgs-mocking:7.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-mocking/7.3.4/dc1e50de9b4642c9af347bc4d9cef3ed21ee7251/graphql-dgs-mocking-7.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-mocking/7.3.4/e63e6a2695760c3a60f705c3d7eef88e68025ab1/graphql-dgs-mocking-7.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

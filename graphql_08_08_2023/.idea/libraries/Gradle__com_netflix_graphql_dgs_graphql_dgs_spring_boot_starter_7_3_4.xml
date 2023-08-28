@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:7.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-boot-starter/7.3.4/d3f74aa8a4e9d905f6a3f625edefc0028a7598fa/graphql-dgs-spring-boot-starter-7.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-boot-starter/7.3.4/30f03c2e9c074ac17014ddfca7451a5a3724fb3e/graphql-dgs-spring-boot-starter-7.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

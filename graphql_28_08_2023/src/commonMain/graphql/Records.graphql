@@ -1,0 +1,37 @@
+
+query NumberOfCatalogRecords($filter:[MapInput!]){
+    numberOfCatalogRecords(filters:$filter)
+}
+
+query CatalogRecords($filter:[MapInput!], $page: Int!) {
+    catalogRecordsByFilters (filters:$filter, page: $page) {
+        id
+        title
+        contentType
+        hints
+        primaryTopic {
+            id
+            identifier
+        }
+    }
+}
+
+query CatalogRecordInfo($id:ID!) {
+    catalogRecord(id:$id){
+        id
+        title
+        content
+        contentType
+        contentURL
+        hints
+        inCatalog {
+            id
+            identifier
+        }
+        primaryTopic {
+            id
+            __typename
+            identifier
+        }
+    }
+}

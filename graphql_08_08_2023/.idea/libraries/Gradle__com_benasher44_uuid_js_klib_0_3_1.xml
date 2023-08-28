@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.benasher44:uuid-js:klib:0.3.1" type="kotlin.js">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.benasher44/uuid-js/0.3.1/dda123a9057b0a2b221838b0fac66b3774c0e6f1/uuid-jsir-0.3.1.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.benasher44/uuid-js/0.3.1/6ba6d08ae80502595c8bcbd39bd770423807dc36/uuid-js-0.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

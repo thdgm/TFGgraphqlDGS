@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="multiplatformKotlin:jvmTest" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="org.example" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="5" platform="JVM 17" allPlatforms="JVM [17]" useProjectSettings="false" isTestModule="true" externalProjectId="multiplatformKotlin" isHmppProject="true" pureKotlinSourceFolders="$MODULE_DIR$/../../src/jvmMain/kotlin;/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_08_08_2023/src/jvmTest/kotlin;/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_08_08_2023/build/generated/source/apollo/service;/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_08_08_2023/src/jsMain/kotlin;/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_08_08_2023/build/externals/multiplatformKotlin/src;/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_08_08_2023/src/jsTest/kotlin">
+        <dependsOnModuleNames>multiplatformKotlin:commonTest</dependsOnModuleNames>
+        <sourceSets>
+          <sourceSet>multiplatformKotlin.commonTest</sourceSet>
+        </sourceSets>
+        <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
+        <externalSystemTestTasks>
+          <externalSystemTestTask>jvmTest|:|jvm</externalSystemTestTask>
+        </externalSystemTestTasks>
+        <compilerSettings>
+          <option name="additionalArguments" value="-Xallow-no-source-files -Xjsr305=strict" />
+        </compilerSettings>
+        <compilerArguments>
+          <flagArguments>
+            <flagArg name="noReflect" arg="true" />
+            <flagArg name="noStdlib" arg="true" />
+            <flagArg name="multiPlatform" arg="true" />
+          </flagArguments>
+          <stringArguments>
+            <stringArg name="classpath">
+              <args>
+                <arg>$MODULE_DIR$/../../build/classes/kotlin/jvm/main</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs.codegen/graphql-dgs-codegen-shared-core/5.6.7/ee31c64de1f80338e462530c218c963b873eca74/graphql-dgs-codegen-shared-core-5.6.7.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core-jvm/2.2.4/76d9e7a8dccbed982e9df919e5f525a4f5515ced/ktor-client-core-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-events-jvm/2.2.4/bef995ae157d5d14fd41fc5516fa846e43591bfc/ktor-events-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-websocket-serialization-jvm/2.2.4/4ffbd85ba77e16bb61a90239fc94a7fd7b2c6c0e/ktor-websocket-serialization-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-serialization-jvm/2.2.4/5bdef027d90d8eb90d63430b4d0d2916b45e6709/ktor-serialization-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-websockets-jvm/2.2.4/e421265f8fbb10a882361be2f756154e135e68f8/ktor-websockets-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-jvm/2.2.4/7010d6fc3a10dfa5be0ef42f9bea91facd07b01b/ktor-http-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils-jvm/2.2.4/c516ba0dc59aa741744527e8c529f15331c18f72/ktor-utils-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-io-jvm/2.2.4/803fcf7880fa1a978eee825c66018982912e2c6b/ktor-io-jvm-2.2.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8/1.6.4/5bc4b0bf6fd90fc190fd2f17e919c74c6274cb71/kotlinx-coroutines-jdk8-1.6.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.6.4/2c997cd1c0ef33f3e751d3831929aeff1390cb30/kotlinx-coroutines-core-jvm-1.6.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.6.4/f955fc8b2ad196e2f4429598440e15f7492eeb2b/kotlinx-coroutines-android-1.6.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-runtime-jvm/3.7.4/279d892cee10d45d89cf86ca511efbb37b1c8550/apollo-runtime-jvm-3.7.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphiql-spring-boot-starter/5.0.2/c55658e60df69afd77514cfb76b676c8ac15f3b/graphiql-spring-boot-starter-5.0.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-boot-oss-autoconfigure/7.3.4/e91c62aa104e96f8f5be91c598e6e102aed8b0a5/graphql-dgs-spring-boot-oss-autoconfigure-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-webmvc-autoconfigure/7.3.4/60c18dce44f0914512279014c45af6633cfa3753/graphql-dgs-spring-webmvc-autoconfigure-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-client/7.3.4/a1e5282d6c1619f3863047e641feae68ba8f033f/graphql-dgs-client-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-webmvc/7.3.4/5af8c59458b03bbfeb69673c9a4676912111963a/graphql-dgs-spring-webmvc-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs/7.3.4/3ae03925e7c713d707dc0a0363b6ccdadfbce19a/graphql-dgs-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-error-types/7.3.4/2df56886b7a59843584220e302d30773499ac482/graphql-error-types-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-subscription-types/7.3.4/a2ee31d890b6057a7f14a13657cb17b8508f5861/graphql-dgs-subscription-types-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-mocking/7.3.4/dc1e50de9b4642c9af347bc4d9cef3ed21ee7251/graphql-dgs-mocking-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-boot-starter/7.3.4/d3f74aa8a4e9d905f6a3f625edefc0028a7598fa/graphql-dgs-spring-boot-starter-7.3.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs.codegen/graphql-dgs-codegen-core/5.6.7/e74e78117de293be02fc3a261ccda7e0b863a1c3/graphql-dgs-codegen-core-5.6.7.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/3.0.1/1d99ce519a0fe66f15dc9bbdc2507a8d0a01690/spring-boot-starter-web-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/3.0.1/a68c2e57bd3a0c5bdf7e4de6c0d563aad38d3f47/spring-boot-starter-data-jpa-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-graphql/3.0.1/328532a766b5a1a6a624df6bc5de59a3a30a56a2/spring-boot-starter-graphql-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis-reactive/3.0.1/b10f2a6482073a83d4b41d5801a251b7d0bb6fd8/spring-boot-starter-data-redis-reactive-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-redis/3.0.1/c49cc842bda5816d3ed257fa89db50ee9e100a73/spring-boot-starter-data-redis-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.microutils/kotlin-logging-jvm/2.0.11/a3f36fd09535817352d24893e70cdf6c2f69ce08/kotlin-logging-jvm-2.0.11.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.doyaaaaaken/kotlin-csv-jvm/1.9.0/a8ed9d9ff9eeb1efe7cf7e616ed25af37db94904/kotlin-csv-jvm-1.9.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-json-jvm/1.4.1/e6430b33f06dcdff88998abfcb2e78bc3cd0a1f6/kotlinx-serialization-json-jvm-1.4.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-core-jvm/1.4.1/e0c2c11e5d0d541ca343c8f09602c0c2287d15a1/kotlinx-serialization-core-jvm-1.4.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/4.10.0/cd63657ac15770ed1420647154c9f44645533bef/okhttp-4.10.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-api-jvm/3.7.4/8d220c83f1d0a9f2a58df4e536153c6a783db071/apollo-api-jvm-3.7.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.2.0/332d1c5dc82b0241cb1d35bb0901d28470cc89ca/okio-jvm-3.2.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.benasher44/uuid-jvm/0.3.1/13bb3e11588c88d22fe3d2bb5ed2837b42498584/uuid-jvm-0.3.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.8.10/7c002ac41f547a82e81dfebd2a20577a738dbf3f/kotlin-stdlib-jdk8-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-validation/3.0.2/19c672463a693c8a3cecaf458cd7e69f2971eea7/spring-boot-starter-validation-3.0.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/3.0.1/e409ce80cf518c619d59e44f0173a7e728f75da2/spring-boot-starter-json-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.14.1/da194197d187bf24a8699514344ebf0abd7c342a/jackson-datatype-jdk8-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.14.1/f24e8cb1437e05149b7a3049ebd6700f42e664b1/jackson-datatype-jsr310-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.14.1/2e05a86dba3d4b05074b6a313c4d5b7ff844c8dd/jackson-module-parameter-names-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.14.1/268524b9056cae1211b9f1f52560ef19347f4d17/jackson-databind-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.14.1/2a6ad504d591a7903ffdec76b5b7252819a2d162/jackson-annotations-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.14.1/7a07bc535ccf0b7f6929c4d0f2ab9b294ef7c4a3/jackson-core-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.14.1/9230908f5a521fc2afccdd62c50bb7bb9ef633a1/jackson-module-kotlin-2.14.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.8.10/1e90b778ea4669b6bcbfaca57313665ddd804779/kotlin-reflect-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/redis.clients/jedis/4.4.0-m2/49e5cb0a60b49e0fb3dbf2591a17cd1f5fa75b81/jedis-4.4.0-m2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.json/json/20090211/c183aa3a2a6250293808bba12262c8920ce5a51c/json-20090211.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.5/f645ed69d595b24d4cf8b3fbb64cc505bede8829/gson-2.8.5.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-validator/commons-validator/1.7/76069c915de3787f3ddd8726a56f47a95bfcbb0e/commons-validator-1.7.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.3.1/9ca7df660e875b91c78e3d1608d4d7469ad3470c/postgresql-42.3.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opencsv/opencsv/4.6/b7ce164e9e75be4b5eb42fd89c9c53ebecea6729/opencsv-4.6.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.16/6dc192c7f93ec1853f70d59d8a6dcf94eb42866/lombok-1.18.16.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/3.0.1/92d4e6de86bf76db3bd5c40155ede74c35f3323f/spring-boot-starter-test-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webflux/6.0.3/de8d312f66baa079994e0111bb681676f25f771e/spring-webflux-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.graphql/spring-graphql-test/1.1.1/7050da934678dd83af3d54a7df87541ba3793abc/spring-graphql-test-1.1.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jayway.jsonpath/json-path/2.7.0/f9d7d9659f2694e61142046ff8a216c047f263e8/json-path-2.7.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minidev/json-smart/2.4.8/7c62f5f72ab05eb54d40e2abf0360a2fe9ea477f/json-smart-2.4.8.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.9.1/ffcd1013edaeee112be11fcddeb38882d79238de/junit-jupiter-params-5.9.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.9.1/7bb53fbc0173e9f6a9d21d58297af94b1f2f9ce1/junit-jupiter-api-5.9.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.9.1/3145f821b5cd10abcdc5f925baa5fffa6f1b628f/junit-platform-commons-1.9.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.9.1/9274d3757e224bc02eae367bd481062a263c150b/junit-jupiter-5.9.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/3.0.0/c1289ab131eddd70fc35beb880927f4808d5d5f1/spring-data-jpa-3.0.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/6.0.3/b0e6742f8dcbf0353d45d1b540b35e0748e58ea7/spring-webmvc-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.graphql/spring-graphql/1.1.1/ebaf3550a2e78ea590bf9555ed3c66b78de5b3a2/spring-graphql-1.1.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-aop/3.0.1/489dae5b71e160d74190738b0419c2cecd7f7e95/spring-boot-starter-aop-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/3.0.1/a1121611438c39fdcad2c73da7564d851b386a75/spring-boot-starter-jdbc-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/3.0.1/c37bc07921436d1ef410ae4bd53747c721ae1c7c/spring-boot-starter-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/3.0.1/26346db6db873dd9a7737691b66727cf6e0984d9/spring-boot-test-autoconfigure-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test/3.0.1/1ad6a6b50844ac5a3290b40963b7151b2684a3d3/spring-boot-test-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphiql-spring-boot-autoconfigure/5.0.2/228038243a21afc06497398f6c418673d8db21f6/graphiql-spring-boot-autoconfigure-5.0.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/3.0.1/7705d0e28d18b79b25587fb88eade85287a10513/spring-boot-autoconfigure-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.0.1/9a7c15dfec7a5207965c8893abfd12fa0eac1d38/spring-boot-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/3.0.0/e8a10bb4b7e7e52390158f797cbbfa256621b827/spring-data-redis-3.0.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-keyvalue/3.0.0/8655203112a9783f7b254b5db51cd102f8e20689/spring-data-keyvalue-3.0.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/6.0.3/23ccc0a9e5d205a7c0064c3fb9527e4269e08a14/spring-context-support-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/6.0.3/a111998c7ba31ea6cd25b23e5a9ea73582af1f89/spring-context-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/6.0.3/778ab1fedad855d9d6c79e3e2368b29818589a59/spring-expression-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/3.0.1/e0c8b1f3bb20b08ef532bf58262b4374a6f64d06/spring-boot-starter-tomcat-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/10.1.4/d1cc4aaeaf512334dfadc25da7cb5f64fa301632/tomcat-embed-websocket-10.1.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/10.1.4/9876c0b98b91b5054d32fe5279b21cf8d57991e8/tomcat-embed-core-10.1.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.0.0/79f898c8a9d926f6434ae53c9a927a299e079663/spring-data-commons-3.0.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.lettuce/lettuce-core/6.2.2.RELEASE/4fe8ede6b07ccdd1bd2c4acfd3a46524e9cbb358/lettuce-core-6.2.2.RELEASE.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-handler/4.1.86.Final/bcb65230218286e6456b5d085cb42e67776eb70/netty-handler-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport-native-unix-common/4.1.86.Final/5e0e7fc1c337485cabcf7971faefe692b76f93a2/netty-transport-native-unix-common-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec/4.1.86.Final/ee126da926ea202da3b21eb737788ef83b1db772/netty-codec-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-transport/4.1.86.Final/7c7739c41fd110c3576e9faace332ee957f27203/netty-transport-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.86.Final/a66fa0ed2687eb33a2e53a17a6df61bfe3b3f2bd/netty-buffer-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphql-java/20.3/3f5b14d0ab6490491783a842a3f241729a8e787f/graphql-java-20.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.4.22/c23a496c6d68afe0800f7ab8cb887e8cde010bd4/reactor-core-3.4.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.4/3864a1320d97d7b045f729a326e1e077661f31b7/reactive-streams-1.0.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/2.1.1/48b9bda22b091b1f48b13af03fe36db3be6e1ae3/jakarta.annotation-api-2.1.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.0.1/f14786a40bdc99cbed57e924a4c12e43abc95dd/spring-boot-configuration-processor-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.1.6.Final/e2ff7dfc50d16377da7bedbf48a0a2e9db30ac66/hibernate-core-6.1.6.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/8.0.0.Final/8e0389f22a3a246915a3311877da4168256b95d2/hibernate-validator-8.0.0.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.5.0.Final/c19307cc11f28f5e2679347e633a3294d865334d/jboss-logging-3.5.0.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/2.0.1/51a520e3fae406abb84e2e1148e6746ce3f80a1a/jakarta.transaction-api-2.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.2/1820c0968dba3a11a1b30669bb1f01978a91dedc/hamcrest-2.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xmlunit/xmlunit-core/2.9.0/8959725d90eecfee28acd7110e2bb8460285d876/xmlunit-core-2.9.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/6.0.3/9b1603b8c93f638e3f1bbe24f62f2eafc2cdf661/spring-orm-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.23.1/d2bb60570f5b3d7ffa8f8000118c9c07b86eca93/assertj-core-3.23.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-collections4/4.2/54ebea0a5b653d3c680131e73fe807bb8f78c4ed/commons-collections4-4.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.33/2cd0a87ff7df953f810c344bdf2fe3340b954c69/snakeyaml-1.33.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.3/484265303687177c5952e4cb8c141333dc89c7fb/spring-web-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/6.0.3/ba05b9129c800e7a3febf795724d0be7d4995a7e/spring-aop-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/6.0.3/eec28775713c2a106270e2988be03f603367c92b/spring-jdbc-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/6.0.3/e4673092d71ac1aa36627305d269eaa670d10c9e/spring-tx-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-oxm/6.0.3/2dc78eb9b9b9bfd33cda970aab3dedf56007b38c/spring-oxm-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/6.0.3/7ca05b6618b149da38fde262a0d98fc8a6f75d02/spring-beans-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/3.0.1/bf285578b44ecddaeb32f5d57a08fa5be60fc69f/spring-boot-starter-logging-3.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.20.0/d37f81f8978e2672bc32c82712ab4b3f66624adc/log4j-to-slf4j-2.20.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.20.0/1fe6082e660daf07c689a89c94dc0f49c26b44bb/log4j-api-2.20.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-junit-jupiter/4.8.1/e393aa62eca2244a535b03842843f2f199343d1f/mockito-junit-jupiter-4.8.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.skyscreamer/jsonassert/1.5.1/6d842d0faf4cf6725c509a5e5347d319ee0431c3/jsonassert-1.5.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0/bbb399208d288b15ec101fa4fcfc4bd77cedc97a/jakarta.xml.bind-api-4.0.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/6.0.3/b7be928715aefbcaf44c2ad1ca19c86615886ba0/spring-test-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/3.1.0/66901fa1c373c6aff65c13791cc11da72060a8d6/jakarta.persistence-api-3.1.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.4.5/28e7dc0b208d6c3f15beefd73976e064b4ecfa9b/logback-classic-1.4.5.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.7.22/6aa0a0e051d6b828dc25047025ec245758fab6d9/kotlin-stdlib-jdk7-1.7.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-mpp-utils-jvm/3.7.4/d08d17ce99b39fb06c7df14ac590573dfb16d576/apollo-mpp-utils-jvm-3.7.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.apollo3/apollo-annotations-jvm/3.7.4/8f6195d5766ee0ecee2357ddb63ea3a7bac2e05c/apollo-annotations-jvm-3.7.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.22/9fb43bccb6cf8cfaaf3776c75f5df4f052f09b72/kotlin-stdlib-1.7.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/4.8.1/d8eb9dec8747d08645347bb8c69088ac83197975/mockito-core-4.8.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.12.20/c37341e04a529c7263ff3093ecdceaa4ab39b489/byte-buddy-agent-1.12.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/10.1.4/c52d54faef26b3e6fd56fa20c7d7c77ba1216efa/tomcat-embed-el-10.1.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aspects/6.0.3/3c1a00fc7d6ad9c229c81d0b01c77788789cfbbc/spring-aspects-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.9.19/afbffb1210239fbba5cad73093c5b216d515838f/aspectjweaver-1.9.19.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.4.5/e9bb2ea70f84401314da4300343b0a246c8954da/logback-core-1.4.5.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/java-dataloader/3.2.0/f45c53595cab4c23e35526cc122e2bd159a50516/java-dataloader-3.2.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/5.0.1/a74c7f0a37046846e88d54f7cb6ea6d565c65f9c/HikariCP-5.0.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/2.0.6/c4d348977a83a0bfcf42fd6fd1fee6e7904f1a0c/jul-to-slf4j-2.0.6.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.6/88c40d8b4f33326f19a7d3c0aaf2c7e8721d4953/slf4j-api-2.0.6.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.86.Final/bad83d479f7bd8ea84eefd77c316435be4c97270/netty-resolver-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-common/4.1.86.Final/1dceab4662a9cc93faf87b237bb41103b1bc7f0e/netty-common-4.1.86.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-observation/1.10.2/5b63205c0e9f3acf4b84f852ea707f9f9fffda6f/micrometer-observation-1.10.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.0/a58861b5deac5e151140511cf57d6b80a83f2d20/jakarta.activation-api-2.1.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.11.1/8970fd110c965f285ed4c6e40be7630c62db6f68/commons-pool2-2.11.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.3/9abf61708a66ab5e55f6169a200dbfc584b546d9/commons-text-1.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.12.0/c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e/commons-lang3-3.12.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.3/5314570bb619e4821a3ca0dad28702f9cb7fc114/spring-core-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/6.0.3/ce5a18b010a99c58e98d1fa993dcec2148a361a6/spring-jcl-6.0.3.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-commons/1.10.2/3a97e1874b8ca9c1c08f67d58bf7d567bb748601/micrometer-commons-1.10.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/3.0.2/92b6631659ba35ca09e44874d3eb936edfeee532/jakarta.validation-api-3.0.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.12.20/6ec3b8bccc4c988790d8cde5baad3b95609ef136/byte-buddy-1.12.20.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-jpamodelgen/6.1.6.Final/56327e121894568264972776ef02ffd501d72fb9/hibernate-jpamodelgen-6.1.6.Final.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.4/d52b9abcd97f38c81342bb7e7ae1eee9b73cba51/commons-beanutils-1.9.4.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-digester/commons-digester/2.1/73a8001e7a54a255eef0f03521ec1805dc738ca0/commons-digester-2.1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.2/8ad72fe39fa8c91eaaf12aadb21e0c3661fe26d5/commons-collections-3.2.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/23.0.0/8cc20c07506ec18e0834947b84a864bfc094484e/annotations-23.0.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minidev/accessors-smart/2.4.8/6e1bee5a530caba91893604d6ab41d0edcecca9a/accessors-smart-2.4.8.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/28c11eb91f9b6d8e200631d46e20a7f407f2a046/opentest4j-1.2.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.1/a99500cf6eea30535eeac6be73899d048f8d12a8/asm-9.1.jar</arg>
+              </args>
+            </stringArg>
+            <stringArg name="destination" arg="$MODULE_DIR$/../../build/classes/kotlin/jvm/test" />
+            <stringArg name="jvmTarget" arg="17" />
+            <stringArg name="moduleName" arg="multiplatformKotlin" />
+            <stringArg name="apiVersion" arg="1.7" />
+            <stringArg name="languageVersion" arg="1.8" />
+          </stringArguments>
+          <arrayArguments>
+            <arrayArg name="friendPaths">
+              <args>
+                <arg>$MODULE_DIR$/../../build/classes/kotlin/jvm/main</arg>
+                <arg>$MODULE_DIR$/../../build/classes/java/main</arg>
+                <arg>$MODULE_DIR$/../../build/libs/multiplatformKotlin-jvm-1.0-SNAPSHOT.jar</arg>
+              </args>
+            </arrayArg>
+            <arrayArg name="pluginClasspaths">
+              <args>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-model/1.8.10/22cff511171b6f721ba91e0a869c4a66108cf9dd/kotlin-gradle-plugin-model-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.8.10/71bb7a6e45dfa34ee566f88280c2b1d0514cb473/kotlin-gradle-plugin-api-1.8.10-gradle75.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.8.10/71bb7a6e45dfa34ee566f88280c2b1d0514cb473/kotlin-gradle-plugin-api-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-jvm/1.7.22/496ed7206d5d7ddb1bc3fc5ecb357558a26e1954/kotlin-scripting-jvm-1.7.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-common/1.7.22/98ac39f8f50d398e9e8df8a1d30fc854f83f3629/kotlin-scripting-common-1.7.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.22/9fb43bccb6cf8cfaaf3776c75f5df4f052f09b72/kotlin-stdlib-1.7.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-native-utils/1.8.10/e1de66d607c11818ccc6bddf36b1eb5f903327e8/kotlin-native-utils-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-project-model/1.8.10/b08f8eca6a556f00b9f2fbacc7aeafc6914b9f1d/kotlin-project-model-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-tooling-core/1.8.10/da3a4252e4b48833eb566227b2baecbaede8993/kotlin-tooling-core-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.7.22/5dd2c9dcf64c94b46cf4bdb6fa4035b9bb726e2e/kotlin-stdlib-common-1.7.22.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-util-io/1.8.10/aa7685d78461d1098087d8816075d5ae27ac413b/kotlin-util-io-1.8.10.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.7.22/703a4d56168f3517532bc04481e3c8b751f685cb/kotlin-script-runtime-1.7.22.jar</arg>
+                <arg>$KOTLIN_BUNDLED$/lib/kotlinx-serialization-compiler-plugin.jar</arg>
+                <arg>$KOTLIN_BUNDLED$/lib/lombok-compiler-plugin.jar</arg>
+                <arg>$KOTLIN_BUNDLED$/lib/noarg-compiler-plugin.jar</arg>
+                <arg>$KOTLIN_BUNDLED$/lib/allopen-compiler-plugin.jar</arg>
+              </args>
+            </arrayArg>
+            <arrayArg name="pluginOptions">
+              <args>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Entity</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.Embeddable</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=javax.persistence.MappedSuperclass</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=jakarta.persistence.Entity</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=jakarta.persistence.Embeddable</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:annotation=jakarta.persistence.MappedSuperclass</arg>
+                <arg>plugin:org.jetbrains.kotlin.noarg:invokeInitializers=false</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.stereotype.Component</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.transaction.annotation.Transactional</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.scheduling.annotation.Async</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.cache.annotation.Cacheable</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.boot.test.context.SpringBootTest</arg>
+                <arg>plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.validation.annotation.Validated</arg>
+              </args>
+            </arrayArg>
+          </arrayArguments>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output-test url="file://$MODULE_DIR$/../../build/classes/kotlin/jvm/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/jvmTest">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/jvmTest/kotlin" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/jvmTest/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="multiplatformKotlin.commonMain" scope="TEST" />
+    <orderEntry type="module" module-name="multiplatformKotlin.commonTest" scope="TEST" production-on-test="" />
+    <orderEntry type="module" module-name="multiplatformKotlin.jvmMain" scope="TEST" />
+    <orderEntry type="module" module-name="multiplatformKotlin.jvmMain" scope="RUNTIME" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-shared-core:5.6.7" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.graphql-java:graphiql-spring-boot-starter:5.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs.codegen:graphql-dgs-codegen-core:5.6.7" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-web:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-graphql:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-data-redis-reactive:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-data-redis:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.github.microutils:kotlin-logging-jvm:2.0.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.github.doyaaaaaken:kotlin-csv-jvm:1.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-validation:3.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.module:jackson-module-kotlin:2.14.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.8.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: redis.clients:jedis:4.4.0-m2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.json:json:20090211" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.gson:gson:2.8.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-validator:commons-validator:1.7" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.postgresql:postgresql:42.3.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.opencsv:opencsv:4.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.projectlombok:lombok:1.18.16" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.h2database:h2:2.1.214" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-test:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-webflux:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.graphql:spring-graphql-test:1.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.4.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-client-core-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.graphql-java:graphql-java:20.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.graphql-java:graphiql-spring-boot-autoconfigure:5.0.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.squareup:kotlinpoet:1.12.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-boot-oss-autoconfigure:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-webmvc-autoconfigure:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-client:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-error-types:7.3.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.squareup:javapoet:1.13.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-json:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-webmvc:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-web:6.0.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework.boot:spring-boot-starter-websocket:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.data:spring-data-jpa:3.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-aop:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hibernate.orm:hibernate-core:6.1.6.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-aspects:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.graphql:spring-graphql:1.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.minidev:accessors-smart:2.4.7" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.data:spring-data-redis:3.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.lettuce:lettuce-core:6.2.2.RELEASE" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.slf4j:slf4j-api:2.0.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.22" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.7.22" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hibernate.validator:hibernate-validator:8.0.0.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:10.1.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.14.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.14.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.commons:commons-pool2:2.11.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-beanutils:commons-beanutils:1.9.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-digester:commons-digester:2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-collections:commons-collections:3.2.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.commons:commons-collections4:4.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.commons:commons-text:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.commons:commons-lang3:3.12.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hibernate.orm:hibernate-jpamodelgen:6.1.6.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.jayway.jsonpath:json-path:2.7.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.checkerframework:checker-qual:3.5.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.junit.jupiter:junit-jupiter:5.9.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-test:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest:2.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.xmlunit:xmlunit-core:2.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.assertj:assertj-core:3.23.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-junit-jupiter:4.8.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.skyscreamer:jsonassert:1.5.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-test:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-core:4.8.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-core:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.projectreactor:reactor-core:3.4.22" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-beans:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-context:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.okhttp3:okhttp:4.10.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.reactivestreams:reactive-streams:1.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.graphql-java:java-dataloader:3.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-configuration-processor:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-webmvc:7.3.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.6.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-subscription-types:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.6.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.apollographql.federation:federation-graphql-java-support:3.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.github.ajalt.clikt:clikt-jvm:3.5.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-expression:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-aop:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jakarta.annotation:jakarta.annotation-api:2.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.yaml:snakeyaml:1.33" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: jakarta.servlet:jakarta.servlet-api:6.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.boot:spring-boot-starter-logging:3.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:10.1.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.micrometer:micrometer-observation:1.10.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.data:spring-data-commons:3.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-orm:6.0.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework:spring-websocket:6.0.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework:spring-messaging:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-tx:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.aspectj:aspectjweaver:1.9.19" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-jdbc:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.zaxxer:HikariCP:5.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jakarta.transaction:jakarta.transaction-api:2.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jakarta.persistence:jakarta.persistence-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework.data:spring-data-keyvalue:3.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-context-support:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-oxm:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-handler:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-transport:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-common:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.glassfish.jaxb:jaxb-runtime:4.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains:annotations:23.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jboss.logging:jboss-logging:3.5.0.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml:classmate:1.5.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jakarta.validation:jakarta.validation-api:3.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.14.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.minidev:json-smart:2.4.8" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.hibernate.common:hibernate-commons-annotations:6.0.2.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.junit.jupiter:junit-jupiter-params:5.9.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jboss:jandex:2.4.2.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.9.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: jakarta.inject:jakarta.inject-api:2.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.bytebuddy:byte-buddy:1.12.20" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.antlr:antlr4-runtime:4.10.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jakarta.activation:jakarta.activation-api:2.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.bytebuddy:byte-buddy-agent:1.12.20" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-jcl:6.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.4.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-events-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-websocket-serialization-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-http-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.micrometer:context-propagation:1.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.apollographql.apollo3:apollo-api-jvm:3.7.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.okio:okio-jvm:3.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.benasher44:uuid-jvm:0.3.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.apollographql.apollo3:apollo-mpp-utils-jvm:3.7.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.netflix.graphql.dgs:graphql-dgs-mocking:7.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.20.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ch.qos.logback:logback-classic:1.4.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.slf4j:jul-to-slf4j:2.0.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.micrometer:micrometer-commons:1.10.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-codec:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.9.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-buffer:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.netty:netty-resolver:4.1.86.Final" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.minidev:accessors-smart:2.4.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.objenesis:objenesis:3.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.junit.platform:junit-platform-commons:1.9.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.logging.log4j:log4j-api:2.20.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: ch.qos.logback:logback-core:1.4.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.ow2.asm:asm:9.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-utils-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-serialization-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.apollographql.apollo3:apollo-annotations-jvm:3.7.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-io-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: io.ktor:ktor-websockets-jvm:2.2.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: net.datafaker:datafaker:1.9.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.6.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.apollographql.federation:federation-graphql-java-support-api:3.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.google.protobuf:protobuf-java:3.22.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.glassfish.jaxb:jaxb-core:4.0.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.9.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.github.mifmif:generex:1.0.2" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.sun.istack:istack-commons-runtime:4.1.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.angus:angus-activation:1.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.glassfish.jaxb:txw2:4.0.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: dk.brics.automaton:automaton:1.11-8" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="multiplatformKotlin.jvmMain" />
+</module>

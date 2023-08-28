@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.apollographql.federation:federation-graphql-java-support-api:3.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.federation/federation-graphql-java-support-api/3.0.0/3582bb6a3cec3c808d1335d5746655f59a56c493/federation-graphql-java-support-api-3.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.apollographql.federation/federation-graphql-java-support-api/3.0.0/ce88e0cd2908918696b8fe616f27cfb87b1a547d/federation-graphql-java-support-api-3.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

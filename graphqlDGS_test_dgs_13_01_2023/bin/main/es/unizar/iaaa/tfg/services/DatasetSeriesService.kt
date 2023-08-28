@@ -1,0 +1,24 @@
+package es.unizar.iaaa.tfg.services
+
+import com.graphqlDGS.graphqlDGS.model.types.DatasetSeries
+import es.unizar.iaaa.tfg.repository.DatasetSeriesRepository
+import es.unizar.iaaa.tfg.services.converts.Converters
+import org.springframework.stereotype.Service
+
+interface DatasetSeriesService {
+    fun showDatasetSerie(id: String): DatasetSeries?
+}
+
+@Service
+class DatasetSeriesServiceImpl(
+    private val datasetSeriesRepository: DatasetSeriesRepository,
+    private val converter: Converters
+
+) : DatasetSeriesService {
+
+    // Busca el DatasetSeries correspondiente al id y lo devuelve, si no lo encuentra devuelve null
+    override fun showDatasetSerie(id: String): DatasetSeries? {
+        val c = datasetSeriesRepository.findById(id)
+        return if (!c.isEmpty) converter.toDatasetSeries(c.get()) else null
+    }
+}

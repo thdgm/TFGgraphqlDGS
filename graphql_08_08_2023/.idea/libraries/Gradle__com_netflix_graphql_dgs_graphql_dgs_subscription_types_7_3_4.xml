@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.graphql.dgs:graphql-dgs-subscription-types:7.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-subscription-types/7.3.4/a2ee31d890b6057a7f14a13657cb17b8508f5861/graphql-dgs-subscription-types-7.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-subscription-types/7.3.4/ad7d427eff58d3570f924a29ff443d8ae6f64746/graphql-dgs-subscription-types-7.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.graphql-java:graphiql-spring-boot-starter:5.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphiql-spring-boot-starter/5.0.2/c55658e60df69afd77514cfb76b676c8ac15f3b/graphiql-spring-boot-starter-5.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphiql-spring-boot-starter/5.0.2/37fb558a89e6d1164870b83b9a7573b1b6aaa041/graphiql-spring-boot-starter-5.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

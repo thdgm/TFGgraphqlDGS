@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95f58cf2-1688-4b03-978a-e5b3e295a89d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/graphql_js_apollo_16_05_2023.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/FiltersMap/FiltersMapKeys.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/addToFiltersButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/pruebaInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalog/SelectFilterCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalogRecord/SelectFilterCR.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataservice/SelectFilterDServ.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataset/SelectFilterDataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDatasetSeries/SelectFilterDSeries.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDistribution/SelectFilterDist.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jsMain/kotlin/models/DatasetInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/multiplatformKotlin_js_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/multiplatformKotlin_js_1_0_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/multiplatformKotlin_jvm_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/multiplatformKotlin_jvm_1_0_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/infoPage/CatalogInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/infoPage/CatalogInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/infoPage/pruebaInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/infoPage/pruebaInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/CardListCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/CardListCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/catalogsPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/catalogsPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/filterFormCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/filterFormCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/filterInfoCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/filterInfoCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/listCatalog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/mainPage/listCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalogRecord/mainPage/CardListCatalogRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalogRecord/mainPage/CardListCatalogRecord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataservice/mainPage/CardListDataServ.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataservice/mainPage/CardListDataServ.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfoElements.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfoElements.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/Card.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/Card.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/InitPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/InitPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/List.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/List.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/datasetSeries/mainPage/CardListDatasetSeries.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/datasetSeries/mainPage/CardListDatasetSeries.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/distribution/mainPage/CardListDistribution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/distribution/mainPage/CardListDistribution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pagination/Pagination.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pagination/Pagination.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/searcher/Searcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/searcher/Searcher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jsMain/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/jsMain/resources/styles.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="apollo" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="kotlin browser" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2PK483ofPx1cHsVLGOM1TbLhwkv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_js_apollo_16_05_2023/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalog&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalog" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalogRecord" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataservice" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataset" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedDatasetSeries" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/jsMain/resources" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/secondPages" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="commonModels" />
+      <recent name="models" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="models" />
+      <recent name="commonModels" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.graphql_js_apollo_6_05_2023 [jsBrowserRun] ">
+    <configuration name="Prueba.Check load all csv async" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.prueba.Prueba.Check load all csv async&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Prueba.Check load all csv" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.prueba.Prueba.Check load all csv&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="graphql_js_apollo_16_05_2023 [generateApolloSources]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateApolloSources" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="graphql_js_apollo_16_05_2023 [generateServiceApolloSchema]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateServiceApolloSchema" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="graphql_js_apollo_6_05_2023 [jsBrowserRun] " type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jsBrowserRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="graphql_js_apollo_6_05_2023" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="graphql_js_apollo_6_05_2023" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="docker/docker-compose.yaml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="src/commonMain/docker/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker/docker-compose.yaml.postgres: Compose Deployment" />
+      <item itemvalue="Gradle.graphql_js_apollo_6_05_2023 [jsBrowserRun] " />
+      <item itemvalue="Gradle.graphql_js_apollo_16_05_2023 [generateApolloSources]" />
+      <item itemvalue="Gradle.graphql_js_apollo_16_05_2023 [generateServiceApolloSchema]" />
+      <item itemvalue="Gradle.Prueba.Check load all csv" />
+      <item itemvalue="Gradle.Prueba.Check load all csv async" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.graphql_js_apollo_16_05_2023 [generateApolloSources]" />
+        <item itemvalue="Gradle.graphql_js_apollo_16_05_2023 [generateServiceApolloSchema]" />
+        <item itemvalue="Gradle.Prueba.Check load all csv" />
+        <item itemvalue="Gradle.Prueba.Check load all csv async" />
+        <item itemvalue="Docker.docker/docker-compose.yaml.postgres: Compose Deployment" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95f58cf2-1688-4b03-978a-e5b3e295a89d" name="Changes" comment="" />
+      <created>1683192276327</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683192276327</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

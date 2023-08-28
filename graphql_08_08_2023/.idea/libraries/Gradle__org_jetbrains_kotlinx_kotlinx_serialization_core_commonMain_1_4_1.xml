@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.kotlinx:kotlinx-serialization-core:commonMain:1.4.1" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/kotlin/kotlinTransformedMetadataLibraries/org.jetbrains.kotlinx-kotlinx-serialization-core-1.4.1-commonMain-tstFDA.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-core/1.4.1/c4f3eed97762e1f78256596d33645d6503d6eb2b/kotlinx-serialization-core-1.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

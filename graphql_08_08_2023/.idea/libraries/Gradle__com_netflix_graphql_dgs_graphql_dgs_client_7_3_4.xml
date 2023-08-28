@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.graphql.dgs:graphql-dgs-client:7.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-client/7.3.4/a1e5282d6c1619f3863047e641feae68ba8f033f/graphql-dgs-client-7.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-client/7.3.4/2cdf9006ed0321ce2ddf1755bec5b1c63dc153b4/graphql-dgs-client-7.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

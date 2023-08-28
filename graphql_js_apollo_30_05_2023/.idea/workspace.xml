@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95f58cf2-1688-4b03-978a-e5b3e295a89d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/AdminLevelsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/CatalogQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/DatasetInfoQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/DatasetsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/FormatsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/FrequenciesQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/KeywordsQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/NumberOfResourcesQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/PublishersQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/ResourceQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/ThemesQuery.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/AdminLevelsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/AdminLevelsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/CatalogQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/CatalogQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/DatasetInfoQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/DatasetInfoQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/DatasetsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/DatasetsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/FormatsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/FormatsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/FrequenciesQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/FrequenciesQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/KeywordsQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/KeywordsQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/NumberOfResourcesQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/NumberOfResourcesQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/PublishersQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/PublishersQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/ResourceQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/ResourceQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/ThemesQuery_ResponseAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/adapter/ThemesQuery_VariablesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/AdminLevelsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/CatalogQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/DatasetInfoQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/DatasetsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/FormatsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/FrequenciesQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/KeywordsQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/NumberOfResourcesQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/PublishersQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/ResourceQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/selections/ThemesQuerySelections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/AbstractDataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/Catalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/CatalogRecord.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/Concept.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/DataService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/DatasetInCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/DatasetSeries.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/Distribution.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/Frequency.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/GraphQLBoolean.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/GraphQLFloat.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/GraphQLID.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/GraphQLInt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/GraphQLString.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/LangString.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/LocalDateTime.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/MapInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/MediaType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/PeriodOfTime.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/Query.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/ReferenceWithinExternalContext.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/Resource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/ResourceInCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/source/apollo/service/com/schema/type/adapter/MapInput_InputAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/DgsConstants.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/AbstractDataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Catalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/CatalogRecord.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/CatalogRecordInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/CatalogRecordOutput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/DataService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Dataset.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/DatasetInCatalog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/DatasetSeries.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Distribution.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Error.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/MapInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/PeriodOfTime.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/ReferenceWithinExternalContext.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/Resource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../graphql_24_07_2023/build/generated/sources/dgs-codegen/com/graphqlDGS/graphqlDGS/model/types/ResourceInCatalog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/classes/kotlin/jvm/main/es/unizar/iaaa/tfg/services/initLoadServices/InitLoadFromCsvServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/classes/kotlin/jvm/main/es/unizar/iaaa/tfg/services/initLoadServices/InitLoadFromCsvServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/compileSync/js/main/productionExecutable/kotlin/multiplatformKotlin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/compileSync/js/main/productionExecutable/kotlin/multiplatformKotlin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/compileSync/js/main/productionExecutable/kotlin/multiplatformKotlin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/compileSync/js/main/productionExecutable/kotlin/multiplatformKotlin.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/distributions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/distributions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/constants.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/constants.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/constants.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/constants.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/build/kotlin/compileKotlinJvm/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gaphql_19_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/initLoadServices/initLoadFromCsvService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../gaphql_19_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/initLoadServices/initLoadFromCsvService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/build/kotlin/sessions/kotlin-compiler-9373010496272425472.salive" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_22_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/List.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_22_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage/List.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfoElements.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage/ResourceInfoElements.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataset/SelectFilterDataset.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jsMain/kotlin/components/commmon/selectFilter/selectedDataset/SelectFilterDataset.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/config/corsConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/config/corsConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/repository/ResourcesRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/repository/ResourcesRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/initLoadServices/initLoadFromCsvService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/initLoadServices/initLoadFromCsvService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/queryAuxiliarServices/ResourcesByFilterServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../graphql_25_07_2023/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/queryAuxiliarServices/ResourcesByFilterServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/es/unizar/iaaa/tfg/services/initLoadServices/InitLoadFromCsvServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/es/unizar/iaaa/tfg/services/initLoadServices/InitLoadFromCsvServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/compileSync/js/main/developmentExecutable/kotlin/multiplatformKotlin.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/compileSync/js/main/developmentExecutable/kotlin/multiplatformKotlin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/compileSync/js/main/developmentExecutable/kotlin/multiplatformKotlin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/compileSync/js/main/developmentExecutable/kotlin/multiplatformKotlin.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/88b0986a7186d029-atomicfu-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/88b0986a7186d029-atomicfu-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/88b0986a7186d029-atomicfu-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/88b0986a7186d029-atomicfu-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-annotations.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-annotations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-annotations.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-annotations.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-api.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-api.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-mpp-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-mpp-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/apollo-kotlin-apollo-runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-kotlin-stdlib-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-kotlin-stdlib-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-kotlin-stdlib-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-kotlin-stdlib-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-csstype-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-csstype-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-csstype-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-csstype-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-emotion-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-emotion-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-emotion-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-emotion-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-extensions-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-extensions-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-extensions-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-extensions-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-js-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-js-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-js-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-js-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-mui-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-mui-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-mui-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-mui-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-core-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-core-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-core-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-core-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-dom-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-dom-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-dom-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-dom-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-router-dom-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-router-dom-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-router-dom-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-react-router-dom-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-redux-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-redux-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-redux-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin-wrappers-kotlin-redux-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin_org_jetbrains_kotlinx_kotlinx_html.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin_org_jetbrains_kotlinx_kotlinx_html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin_org_jetbrains_kotlinx_kotlinx_html.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlin_org_jetbrains_kotlinx_kotlinx_html.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-core-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-core-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-core-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-core-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-json-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-json-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-json-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx-serialization-kotlinx-serialization-json-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx.coroutines-kotlinx-coroutines-core-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx.coroutines-kotlinx-coroutines-core-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx.coroutines-kotlinx-coroutines-core-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/kotlinx.coroutines-kotlinx-coroutines-core-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-content-negotiation-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-content-negotiation-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-content-negotiation-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-content-negotiation-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-core-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-core-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-core-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-client-core-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-events-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-events-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-events-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-events-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-http-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-http-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-http-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-http-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-io-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-io-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-io-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-io-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-serialization-kotlinx-json-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-serialization-kotlinx-json-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-serialization-kotlinx-json-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-serialization-kotlinx-json-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-utils-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-utils-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-utils-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-utils-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-websockets-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-websockets-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-websockets-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/ktor-ktor-websockets-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/multiplatformKotlin.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/multiplatformKotlin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/multiplatformKotlin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/multiplatformKotlin.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/okio-parent-okio-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/okio-parent-okio-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/okio-parent-okio-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/okio-parent-okio-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/uuid-js-ir.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/uuid-js-ir.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/uuid-js-ir.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/kotlin/uuid-js-ir.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/packages/multiplatformKotlin/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Any.kt.d748bae35b577702.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Any.kt.d748bae35b577702.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Boolean.kt.48ed381ab6eb70c8.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Boolean.kt.48ed381ab6eb70c8.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Collections.kt.a7b15f68b6b9509f.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Collections.kt.a7b15f68b6b9509f.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Collections.kt.d5d1de6867b566d4.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/Collections.kt.d5d1de6867b566d4.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/_Collections.kt.9098eec08220a9ac.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/_Collections.kt.9098eec08220a9ac.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/collections.kt.e446073dab209c.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/kotlin-stdlib-js-1.8.10/c0769ac0cad056211b4335c05537f1dd28fef7874cca18cc361742864831739d/collections.kt.e446073dab209c.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/main/Application.kt.9ed16ed0b7637c55.metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/main/Application.kt.9ed16ed0b7637c55.metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/main/ic.header.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/main/ic.header.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/main/js.module.header.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/main/js.module.header.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/main/module.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/main/module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/klib/cache/main/module.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/klib/cache/main/module.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/constants.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/constants.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/webpack/multiplatformKotlin/webpack.config.evaluated.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/webpack/multiplatformKotlin/webpack.config.evaluated.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/es/unizar/iaaa/tfg/config/corsConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/es/unizar/iaaa/tfg/config/corsConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/initLoadServices/initLoadFromCsvService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/es/unizar/iaaa/tfg/services/initLoadServices/initLoadFromCsvService.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="apollo" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="dgs graphql codegen" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="kotlin browser" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.benasher44:uuid:0.3.1" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-api-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.benasher44:uuid:0.3.1" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.benasher44:uuid-jvm:0.3.1" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.squareup.okhttp3:okhttp:4.10.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="com.apollographql.apollo3:apollo-runtime-jvm:3.7.4" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="multiplatformKotlin" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2PK483ofPx1cHsVLGOM1TbLhwkv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_js_apollo_30_05_2023/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage" />
+      <recent name="$PROJECT_DIR$/src/jvmMain/resources" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/catalog/infoPage" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalog" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/selectFilter/selectedCatalogRecord" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/mainPage" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/pages/dataset/infoPage" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/jsMain/resources" />
+      <recent name="$PROJECT_DIR$/src/jsMain/kotlin/components/commmon/secondPages" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="commonModels" />
+      <recent name="models" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="es.unizar.iaaa.tfg.adapters" />
+      <recent name="models" />
+      <recent name="commonModels" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.graphql_js_apollo_6_05_2023 [jsBrowserRun] ">
+    <configuration name="TestFilterFields.Creo CRs a partir de json y filtro resources dataservices" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.adapters.mutations.TestFilterFields.Creo CRs a partir de json y filtro resources dataservices&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestFilterFields.Creo CRs a partir de json y obtengo todos los themes" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.adapters.mutations.TestFilterFields.Creo CRs a partir de json y obtengo todos los themes&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestFilterFields.Filtro resources por Format" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.adapters.mutations.TestFilterFields.Filtro resources por Format&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestFilterFields.Filtrsos" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.adapters.mutations.TestFilterFields.Filtrsos&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TestsFicheroJson1.Creo CR a partir de json y tiene inCatalog records id su id" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;es.unizar.iaaa.tfg.adapters.mutations.TestsFicheroJson1.Creo CR a partir de json y tiene inCatalog records id su id&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="graphql_js_apollo_6_05_2023 [jsBrowserRun] " type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jsBrowserRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="graphql_js_apollo_6_05_2023" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="graphql_js_apollo_6_05_2023" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.graphql_js_apollo_6_05_2023 [jsBrowserRun] " />
+      <item itemvalue="Gradle.TestFilterFields.Creo CRs a partir de json y obtengo todos los themes" />
+      <item itemvalue="Gradle.TestFilterFields.Filtrsos" />
+      <item itemvalue="Gradle.TestsFicheroJson1.Creo CR a partir de json y tiene inCatalog records id su id" />
+      <item itemvalue="Gradle.TestFilterFields.Filtro resources por Format" />
+      <item itemvalue="Gradle.TestFilterFields.Creo CRs a partir de json y filtro resources dataservices" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.TestFilterFields.Filtrsos" />
+        <item itemvalue="Gradle.TestsFicheroJson1.Creo CR a partir de json y tiene inCatalog records id su id" />
+        <item itemvalue="Gradle.TestFilterFields.Creo CRs a partir de json y obtengo todos los themes" />
+        <item itemvalue="Gradle.TestFilterFields.Creo CRs a partir de json y filtro resources dataservices" />
+        <item itemvalue="Gradle.TestFilterFields.Filtro resources por Format" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95f58cf2-1688-4b03-978a-e5b3e295a89d" name="Changes" comment="" />
+      <created>1683192276327</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683192276327</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

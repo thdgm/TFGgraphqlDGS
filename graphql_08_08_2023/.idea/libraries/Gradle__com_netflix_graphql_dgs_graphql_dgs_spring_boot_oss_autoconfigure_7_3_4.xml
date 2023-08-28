@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.netflix.graphql.dgs:graphql-dgs-spring-boot-oss-autoconfigure:7.3.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-boot-oss-autoconfigure/7.3.4/e91c62aa104e96f8f5be91c598e6e102aed8b0a5/graphql-dgs-spring-boot-oss-autoconfigure-7.3.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netflix.graphql.dgs/graphql-dgs-spring-boot-oss-autoconfigure/7.3.4/48ede40c8ab1810615e513e855366ca2e94f755/graphql-dgs-spring-boot-oss-autoconfigure-7.3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

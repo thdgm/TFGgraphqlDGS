@@ -1,0 +1,22 @@
+{
+  "name": "graphql_js_apollo_6_05_2023",
+  "version": "1.0.0",
+  "description": "[![official JetBrains project](https://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "kotlin": "^1.8.21",
+    "kotlin-webpack-plugin": "^1.0.8",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}

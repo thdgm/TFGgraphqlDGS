@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.benasher44:uuid:commonMain:0.3.1" type="kotlin.common">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/kotlin/kotlinTransformedMetadataLibraries/com.benasher44-uuid-0.3.1-commonMain-1L2aFg.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.benasher44/uuid/0.3.1/340e21fb50aac944ddf40758dddf817e133d6687/uuid-0.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

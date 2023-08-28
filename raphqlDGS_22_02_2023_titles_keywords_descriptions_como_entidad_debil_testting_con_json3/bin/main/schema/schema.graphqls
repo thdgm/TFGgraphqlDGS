@@ -1,0 +1,295 @@
+schema {
+  query: Query
+}
+
+
+type Query {
+  resource(id: ID): Resource
+  catalog(id: ID): Catalog
+  dataset(id: ID): DatasetInCatalog
+  dataService(id: ID): DataService
+  datasetSeries(id: ID): DatasetSeries
+  catalogRecord(id: ID): CatalogRecord
+  distribution(id: ID): Distribution
+}
+
+type Mutation {
+  createCatalogRecord(input: CatalogRecordInput):CatalogRecordOutput
+}
+
+input CatalogRecordInput{
+  inCatalog: ID #root por defecto
+  catalogRecorId: ID
+  contentType: String #metadata content type
+  content: String #content as string
+  contentUrl:String #record location
+  hints:[String!] #Extra process apart of contentType
+}
+
+union CatalogRecordOutput = CatalogRecord | Error
+
+type Error{
+  message: String
+}
+#
+# type -> final type, cannot be extended
+# interface -> abstrct type, can be extended
+#
+
+# Resource published or curated by a single agent.
+interface Resource {
+  id: ID!
+  # A name given to the resource.
+  title: [LangString!]#String!
+  description: [LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  # From https://w3c.github.io/dxwg/dcat/#inverse-properties
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+
+}
+
+# It can be a Resource, Catalog, dataset or dataservice
+# union ResourceInCatalog = DatasetSeries | DataService | Dataset | Catalog
+interface ResourceInCatalog implements AbstractDataset & Resource{
+  id: ID!
+  title: [LangString!]#String!
+  description: [LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+
+}
+
+interface DatasetInCatalog implements AbstractDataset & Resource {
+  id: ID!
+  title: [LangString!]#String!
+  description: [LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  isServedBy(filter:String): [DataService!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+}
+
+# Concepto dcat:Dataset 
+interface AbstractDataset implements Resource {
+  id: ID!
+  title: [LangString!]#String!
+  description: [LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+}
+
+# A collection of operations that provides access to one or more datasets or 
+# data processing functions.
+#
+# Implemented by DataServiceEntity
+#   id
+#   title
+#.  servesDataset -> <id dataservice entity, id dataset in catalog>
+type DataService implements ResourceInCatalog & Resource & AbstractDataset {
+  id: ID!
+  title: [LangString!]#String!
+  servesDataset: [DatasetInCatalog!] # If a DataService is bound to one or more specified 
+                                     # Datasets, they are indicated by the this property.
+  description: [LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+
+}
+ 
+#
+# A Catalog represents a catalog, which is a Dataset in which each individual item 
+# is a metadata record describing some resource.
+#
+# Implemented by CatalogEntity
+#   id
+#   title
+#   resources = <fromId, CatalogEntity | DatasetEntity | DatasetSeriesEntity | DatasetServiceEntity, fromId>
+#   datasets = <toId,  CatalogEntity | DatasetEntity | DatasetSeriesEntity, toId>
+#   services = <toId,  DatasetServiceEntity, toId>
+#   catalogs = relationships.findById(catalogEntity.id).filter { it.type = CatalogEntity })
+#.  records => tabla de CatalogInRecord
+type Catalog implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
+  id: ID!
+  title: [LangString!]#String!
+  resources: [ResourceInCatalog!] # A resource that is listed in the catalog.
+  datasets: [DatasetInCatalog!]  # A dataset that is listed in the catalog.
+  services: [DataService!] # A service that is listed in the catalog. 
+  catalogs: [Catalog!] # A catalog that is listed in the catalog. 
+  records: [CatalogRecord!] # A record describing the registration of a single resource
+                             # (e.g., a dataset, a data service) that is part of the catalog.
+                             # set(records.primaryTopic) == resources
+  description: [LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  isServedBy(filter:String): [DataService!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+  # Future:
+  #  - A Catalog can record descriptions of resources such as dataset or dataservices
+  #    dcatDescriptions(first: Int, offset: ID): [CatalogDescriptions!]
+}
+
+# Concepto dcat:DatasetSeries
+# Implemented by DataServiceEntity
+#   id
+#   title
+type DatasetSeries implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
+  id: ID!
+  title: [LangString!]#String!
+  description: [LangString!]
+  language: [String!]
+  seriesMembers(filter:String): [Dataset!] # rename to dcat:seriesMembers due to https://w3c.github.io/dxwg/dcat/#inverse-properties
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  isServedBy(filter:String): [DataService!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+}
+
+# Dataset que no es ni Catalogo ni Dataset Series
+# Implemented by DataServiceEntity
+#   id
+#   title
+#.  inSeries -> <id dataservice entity, id series>
+#.  distributions -> <id dataservice entity, id distributions>
+type Dataset implements ResourceInCatalog & DatasetInCatalog & AbstractDataset & Resource {
+  id: ID!
+  title: [LangString!]
+  inSeries(filter:String): [DatasetSeries!] # A dataset series of which the dataset is part.
+  distributions: [Distribution!] # An available distribution of the dataset.
+  description: [LangString!]
+  keywords:[LangString!]
+  language: [String!]
+  fechaHoraCreacion: LocalDateTime
+  ultimaModificacion: LocalDateTime
+  spatial: [String!]
+  accrualPeriodicity: Periocidad
+  temporal: CoberturaTemporal
+  inCatalog(filter:String): [Catalog!]
+  isPrimaryTopicOf(filter:String): [CatalogRecord!]
+  isServedBy(filter:String): [DataService!]
+  theme:[String!]
+  identifier:String
+  license:String
+  publisher:Concept
+}
+
+# Implemented by CatalogRecordEntity
+#   id
+#   title
+#   primaryTopic: recordId
+#.  +CatalogInRecord: <catalogId, catalogRecordId>
+type CatalogRecord {
+  id: ID!
+  title: String  # Record es "Zaragoza", Catalog Record es "Metadato de Zaragoza"
+  contentType: String
+  content: String
+  contentURL: String
+  hints: [String!]
+  primaryTopic: ResourceInCatalog!
+  inCatalog: [Catalog!] #root por defecto
+}
+
+# A specific representation of a dataset. 
+# This represents a general availability of a dataset.
+# That is, represents an accessible form of a dataset such as a downloadable file.
+#
+# Implemented by Distribution
+#   id
+#   title
+#.  accessService .. ver DataServiceEntity.distributions -> <id dataservice entity, id distributions>
+type Distribution {
+  id: ID!
+  title: [LangString!] #String!
+  accessUrl:String
+  accessService: [DataService!] # A data service that gives access to the distribution of the dataset
+  byteSize: NonNegativeInt
+  format: String
+  identifier:String
+}
+
+# This represents the description of one resource and the language of that description
+#type ResourceDescription{
+ # text:String
+  #idioma:String
+#}
+
+# scalar LangString {
+#    literal: String!      # En Unicode  
+#.   languageTag: String   # BCP 47   
+# }
+
+
+# This represents one keyword of a dataset and its language
+
+type Keywords{
+  word:String
+  idioma:String
+}
+
+
+# This represents the updating frequency
+#type Periodicidad{
+#  rango:String  #day,month,year
+#  periodo:String   #"1.0"...
+#}
+
+type CoberturaTemporal{
+  start:LocalDateTime
+  end:LocalDateTime
+
+}
+
+
+scalar LangString
+
+scalar LocalDateTime
+
+scalar Periocidad
+
+scalar NonNegativeInt
+
+scalar Concept

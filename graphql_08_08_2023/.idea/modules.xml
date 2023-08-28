@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.commonMain.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.commonMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.commonTest.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jsMain.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jsMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jsTest.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jvmMain.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jvmMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jvmTest.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.jvmTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiplatformKotlin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/multiplatformKotlin.test.iml" />
+    </modules>
+  </component>
+</project>
