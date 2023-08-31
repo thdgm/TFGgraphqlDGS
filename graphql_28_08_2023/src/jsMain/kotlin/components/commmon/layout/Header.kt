@@ -1,6 +1,7 @@
 package components.commmon.layout
 
 
+import components.commmon.FilterListContextAll
 import components.commmon.ThemeContext
 import components.commmon.dialog.Dialog
 import components.commmon.searcher.Searcher
@@ -70,7 +71,7 @@ val header = FC<HeaderProps> { props->
     var theme by useRequiredContext(ThemeContext)
     var openDialog by useState(false)
     var isCollapse by useState(true)
-
+    var selectedFilters by useRequiredContext(FilterListContextAll)
 
     val showMenu: () -> Unit = {
         //console.log(isCollapse)
@@ -78,6 +79,17 @@ val header = FC<HeaderProps> { props->
     }
 
     val handleOnClick: (path: String) -> Unit = {path->
+        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, mapValues) ->
+            mapValues!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                if(innerKey == "OrderBy") {
+                    filterVal.filter { false }.plus("ASC")
+                }else if(innerKey == "SortBy") {
+                    filterVal.filter { false }.plus("No Order")
+                }else{
+                    filterVal.filter { false }
+                }
+            }.toMutableMap<String, Collection<String>>()
+        }.toMutableMap()
         isCollapse = true
         navigate("/$path")
     }
@@ -134,7 +146,7 @@ val header = FC<HeaderProps> { props->
                     }
                 }
 
-                Switch {
+                /*Switch {
                     icon = Brightness7.create()
                     checkedIcon = Brightness4.create()
                     checked = theme == Themes.Dark
@@ -143,7 +155,7 @@ val header = FC<HeaderProps> { props->
                     onChange = { _, checked ->
                         theme = if (checked) Themes.Dark else Themes.Light
                     }
-                }
+                }*/
             }
 
         }

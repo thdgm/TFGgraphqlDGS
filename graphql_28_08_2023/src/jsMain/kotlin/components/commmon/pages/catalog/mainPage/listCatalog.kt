@@ -14,6 +14,10 @@ import csstype.Position
 import csstype.pct
 import csstype.px
 import csstype.rgba
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import mui.material.Box
 import mui.material.Chip
 import mui.material.ChipColor
@@ -45,14 +49,17 @@ external interface ListCatalogProps: Props {
     var catalogsList: Collection<CatalogModel>
    // var updateCatalogsList: suspend (event: ChangeEvent<*>, value: Number) -> Unit
     var numberOfCatalogs: Int
+
 }
 val listCatalog = FC<ListCatalogProps> { props ->
     val navigate = useNavigate()
+    val coroutineScope = CoroutineScope(Dispatchers.Default)
     var searchBy by useState("")
+
     var catalogsList by useState(props.catalogsList)
     var selectedFilters by useRequiredContext(FilterListContextAll)
     var isDisabled by useRequiredContext(IsLoadingContext)
-
+    var endLoading by useState(false)
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
         navigate("/catalogs/${event.currentTarget.id}")
     }
@@ -67,8 +74,17 @@ val listCatalog = FC<ListCatalogProps> { props ->
     }
 
     useEffect(selectedFilters){
-        //console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
+        console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+props.catalogsList)
         catalogsList = props.catalogsList
+    }
+    useEffect(selectedFilters){
+        //console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
+        endLoading = false
+        coroutineScope.launch{
+            delay(8000)
+            endLoading = true
+        }
+
     }
 
     Paper {
@@ -147,30 +163,40 @@ val listCatalog = FC<ListCatalogProps> { props ->
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
-                                Chip {
-                                    id = value
-                                    label = ReactNode(value)
-                                    variant = ChipVariant.outlined
-                                    color = ChipColor.primary
-                                    disabled = isDisabled
-                                    onDelete = { _ ->
-                                        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                            if (key == "Catalogs") {
-                                                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                    if (innerKey == valuesList.key) filterVal.filter { it != value }
-                                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
-                                                    else filterVal
-                                                }.toMutableMap<String, Collection<String>>()
-                                            } else {
-                                                catalogMap
-                                            }
-                                        }.toMutableMap()
-                                        /*selectedFilters = selectedFilters!!.toMutableMap().mapValues { (key, filterVal) ->
+                                if (valuesList.key == "OrderBy" || valuesList.key == "SortBy"){
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.success
+                                    }
+                                }else {
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.primary
+                                        disabled = isDisabled
+                                        onDelete = { _ ->
+                                            selectedFilters =
+                                                selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                                    if (key == "Catalogs") {
+                                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                            if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                            else if (innerKey == "Page") filterVal.filter { false }
+                                                                .plus("1")
+                                                            else filterVal
+                                                        }.toMutableMap<String, Collection<String>>()
+                                                    } else {
+                                                        catalogMap
+                                                    }
+                                                }.toMutableMap()
+                                            /*selectedFilters = selectedFilters!!.toMutableMap().mapValues { (key, filterVal) ->
                                             if (key == valuesList.key) filterVal.filter { it != value } else filterVal //value.plus()
                                         }.toMutableMap()*/
+                                        }
+                                        deleteIcon
                                     }
-                                    deleteIcon
                                 }
                                 +" "
                             }
@@ -179,22 +205,27 @@ val listCatalog = FC<ListCatalogProps> { props ->
                 }
             }
         }
+
         //console.log(catalogsList)
         if (catalogsList.isEmpty()) { //Esto durante 4 segundos, luego muestra no se ha encontardo nada
-            //if (isLoading) {
-            isDisabled = true
-            LinearProgress {
-                sx {
-                    width = 100.pct
-                    marginTop = 3.pct
+            if (!endLoading) {
+                isDisabled = true
+                LinearProgress {
+                    sx {
+                        width = 100.pct
+                        marginTop = 3.pct
+                    }
+                }
+            } else {
+                isDisabled = false
+                Typography{
+                    className = ClassName("elementsNotFound")
+                    +"No se ha encontrado ningún elemento"
                 }
             }
-            /*} else {
-                +"No se ha encontrado ningún elemento"
-            }*/
-
         }
         else {
+
             isDisabled = false
             mui.material.List {
                 catalogsList.filter { if (searchBy.isNotEmpty()) it.title!!.contains(searchBy) || it.id!!.contains(searchBy) || it.description!!.contains(searchBy) else true }

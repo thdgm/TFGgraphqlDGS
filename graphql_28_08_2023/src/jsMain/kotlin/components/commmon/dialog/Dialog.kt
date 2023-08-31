@@ -39,26 +39,28 @@ val Dialog = FC<DialogProps> { props ->
             open = true
             onClose = { _, _ -> props.handleClickOpen() }
             DialogTitle {
-                +"How to use"
+                +"Sobre la aplicación"
             }
             DialogContent {
                 DialogContentText {
-                    +"Push the menu icon: "
-                    Menu()
-                    +" to open the filters tab.\n"
-                    +"Put your request in the searcher and push the search icon."
-
+                    + "A través de esta interfaz es posible navegar entre los diferentes recursos "
+                    + "que el modelo DCAT ofrece: Catálogos, Series de Datos, Conjuntos de Datos"
+                    + "Servicios de Datos, Distribuciones y Registros de Catálogo."
+                    + "\n"
+                    + "También cuenta con múltiples filtros para localizar exclusivamente lo que se necesita."
+                    + "\n"
+                    + "Los datos se han obtenido del Portal de Datos Abiertos del Gobierno de España. "
+                    + "\n"
+                    + "Con el fin de facilitar la organización y el acceso a los datos, se utiliza GraphQL, "
+                    + "un lenguaje de consulta para API. Su mayor ventaja, la flexibilidad a la hora de realizar consultas, "
+                    + "solicitando únicamente los campos requeridos."
                 }
             }
 
             DialogActions {
                 Button {
                     onClick = { props.handleClickClose() }
-                    +"Cancel"
-                }
-                Button {
-                    onClick = { props.handleClickClose() }
-                    +"Continue"
+                    +"Cerrar"
                 }
             }
         }

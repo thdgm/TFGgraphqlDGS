@@ -11,6 +11,7 @@ import csstype.Auto
 import csstype.ClassName
 import csstype.Color
 import csstype.Display
+import csstype.MarginTop
 import csstype.NamedColor
 import csstype.Overflow
 import csstype.Position
@@ -25,6 +26,7 @@ import mui.material.Button
 import mui.material.ButtonVariant
 import mui.material.Chip
 import mui.material.ChipColor
+import mui.material.CircularProgress
 import mui.material.Divider
 import mui.material.FormHelperText
 import mui.material.Paper
@@ -184,6 +186,7 @@ val endpointsList = FC<Props>{
     var error4 by useState(false)
     var input3 by useState("")
     var input4 by useState("")
+    var queryActual by useState("")
     val handleChange: FormEventHandler<HTMLDivElement>? = { event ->
         //error = mutableListOf(false, false, false, false, false)
         error1 = false
@@ -256,31 +259,48 @@ val endpointsList = FC<Props>{
                 }
             }
             isLoading = false
+            queryActual = ""
         }
     }
 
     val handleOnClick: (id: String, numberQ: Int) -> Unit = { id, numberQ ->
-
+        var isOk = true
         when (id) {
             "Q1" -> {
-                if (inputs[0] == "" || inputs[1] == "") error1 = true
+                if (inputs[0] == "" || inputs[1] == "") {
+                    error1 = true
+                    isOk = false
+                }
+                queryActual = "Q1"
             }
 
             "Q2" -> {
-                if (inputs[2] == "") error2 = true
+                if (inputs[2] == "") {
+                    error2 = true
+                    isOk = false
+                }
+                queryActual = "Q2"
             }
 
             "Q3" -> {
-                if (inputs[3] == "" && inputs[4] == "") error3 = true
+                if (inputs[3] == "" && inputs[4] == "") {
+                    error3 = true
+                    isOk = false
+                }
+                queryActual = "Q3"
             }
 
             "Q4" -> {
-                if (inputs[5] == "") error4 = true
+                if (inputs[5] == "") {
+                    isOk = false
+                    error4 = true
+                }
+                queryActual = "Q4"
             }
         }
 
         console.log("ERORRRESSSSS::::::::::: "+error)
-        if (!error[numberQ]) {
+        if (isOk) {
             var param1 = inputs[numberQ].split("//")
             if(numberQ != 0 && numberQ != 3){
                 param1 = inputs[numberQ+1].split("//")
@@ -334,18 +354,21 @@ val endpointsList = FC<Props>{
 
                 TextField {
                     id = "ID1"
+                    disabled = isLoading
                     onChange = handleChange
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Introduce categorías separados por //. Ej: Deporte//Hacienda")
                 }
                 TextField {
                     id = "ID2"
+                    disabled = isLoading
                     onChange = handleChange
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Introduce publicadores separados por //. Ej: Agencia Estatal de Meteorología")
                 }
                 TextField {
                     id = "Q1"
+                    disabled = isLoading
                     onChange = handleChangePage
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Número de página")
@@ -375,7 +398,12 @@ val endpointsList = FC<Props>{
                     className = ClassName("endpoint_result")
                     + "Resultados"
                 }
-                if (!result1.isNullOrEmpty()) {
+                if (isLoading && queryActual == "Q1") {
+                    CircularProgress {
+                        className = ClassName("circularProgressInfo")
+                    }
+                }
+                if ((!result1.isNullOrEmpty() && !isLoading) || (!result1.isNullOrEmpty() && isLoading && queryActual != "Q1")) {
                     Paper {
                         sx {
                             marginRight = Auto.auto
@@ -476,6 +504,18 @@ val endpointsList = FC<Props>{
                             Divider()
                         }
                     }
+                }else if(result1.isNullOrEmpty() && !isLoading){
+                    Typography{
+                        sx {
+                            marginTop = 2.pct
+                        }
+                        className = ClassName("EmptyAPIMsg")
+                        + "No se han encontrado resultados"
+                    }
+                    Typography{
+                        className = ClassName("EmptyAPIMsg")
+                        + "Realiza una consulta"
+                    }
                 }
             }
         }
@@ -498,7 +538,7 @@ val endpointsList = FC<Props>{
                 }
                 Typography {
                     className = ClassName("endpoint_info")
-                    +"Obtener servicios de datos contenidos en el catálogo al que pertenece un dataset de uno o varios publicadores"
+                    +"Obtener 10 servicios de datos contenidos en el catálogo al que pertenece un dataset de uno o varios publicadores"
                 }
             }
             Stack {
@@ -512,12 +552,14 @@ val endpointsList = FC<Props>{
 
                 TextField {
                     id = "ID3"
+                    disabled=isLoading
                     onChange = handleChange
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Introduce publicadores separados por //. Ej: Agencia Estatal de Meteorología")
                 }
                 TextField {
                     id = "Q2"
+                    disabled=isLoading
                     onChange = handleChangePage
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Número de página")
@@ -547,7 +589,12 @@ val endpointsList = FC<Props>{
                     className = ClassName("endpoint_result")
                     + "Resultados"
                 }
-                if (!result2.isNullOrEmpty()) {
+                if (isLoading && queryActual == "Q2") {
+                    CircularProgress {
+                        className = ClassName("circularProgressInfo")
+                    }
+                }
+                if ((!result2.isNullOrEmpty() && !isLoading)  || (!result2.isNullOrEmpty() && isLoading && queryActual != "Q2")) {
                     Paper {
                         sx {
                             marginRight = Auto.auto
@@ -638,6 +685,19 @@ val endpointsList = FC<Props>{
                         }
                     }
                 }
+                else if(result2.isNullOrEmpty() && !isLoading){
+                    Typography{
+                        sx {
+                            marginTop = 2.pct
+                        }
+                        className = ClassName("EmptyAPIMsg")
+                        + "No se han encontrado resultados"
+                    }
+                    Typography{
+                        className = ClassName("EmptyAPIMsg")
+                        + "Realiza una consulta"
+                    }
+                }
             }
 
         }
@@ -674,6 +734,7 @@ val endpointsList = FC<Props>{
 
                 TextField {
                     id = "ID4"
+                    disabled=isLoading
                     onChange = handleChange
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Introduce un identificador de un publicador. Ej: A02002834")
@@ -684,6 +745,7 @@ val endpointsList = FC<Props>{
                 }
                 TextField {
                     id = "ID5"
+                    disabled=isLoading
                     onChange = handleChange
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Introduce un publicador. Ej: Agencia Estatal de Meteorología")
@@ -713,7 +775,12 @@ val endpointsList = FC<Props>{
                     className = ClassName("endpoint_result")
                     + "Resultados"
                 }
-                if (!result3.isNullOrEmpty()) {
+                if (isLoading && queryActual == "Q3") {
+                    CircularProgress {
+                        className = ClassName("circularProgressInfo")
+                    }
+                }
+                if ((!result3.isNullOrEmpty() && !isLoading) || (!result3.isNullOrEmpty() && isLoading && queryActual != "Q3")) {
                     Paper {
                         sx {
                             marginRight = Auto.auto
@@ -769,6 +836,19 @@ val endpointsList = FC<Props>{
                         }
                     }
                 }
+                else if(result3.isNullOrEmpty() && !isLoading){
+                    Typography{
+                        sx {
+                            marginTop = 2.pct
+                        }
+                        className = ClassName("EmptyAPIMsg")
+                        + "No se han encontrado resultados"
+                    }
+                    Typography{
+                        className = ClassName("EmptyAPIMsg")
+                        + "Realiza una consulta"
+                    }
+                }
             }
 
         }
@@ -791,7 +871,7 @@ val endpointsList = FC<Props>{
                 }
                 Typography {
                     className = ClassName("endpoint_info")
-                    +"Obtener publicadores que sirvan datasets con ciertas palabras clave"
+                    +"Obtener 10 publicadores que sirvan datasets con ciertas palabras clave"
                 }
             }
             Stack {
@@ -806,11 +886,13 @@ val endpointsList = FC<Props>{
                 TextField {
                     id = "ID6"
                     onChange = handleChange
+                    disabled=isLoading
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Introduce palabras clave separados por //. Ej: Legislación//ePUB")
                 }
                 TextField {
                     id = "Q4"
+                    disabled=isLoading
                     onChange = handleChangePage
                     className = ClassName("textFieldApiParam")
                     label = ReactNode("Número de página")
@@ -840,7 +922,12 @@ val endpointsList = FC<Props>{
                     className = ClassName("endpoint_result")
                     + "Resultados"
                 }
-                if (!result4.isNullOrEmpty()) {
+                if (isLoading && queryActual == "Q4") {
+                    CircularProgress {
+                        className = ClassName("circularProgressInfo")
+                    }
+                }
+                if ((!result4.isNullOrEmpty() && !isLoading) || (!result4.isNullOrEmpty() && isLoading && queryActual != "Q4")) {
                     Paper {
                         sx {
                             marginRight = Auto.auto
@@ -905,6 +992,19 @@ val endpointsList = FC<Props>{
                             Divider()
                             Divider()
                         }
+                    }
+                }
+                else if(result4.isNullOrEmpty() && !isLoading){
+                    Typography{
+                        sx {
+                            marginTop = 2.pct
+                        }
+                        className = ClassName("EmptyAPIMsg")
+                        + "No se han encontrado resultados"
+                    }
+                    Typography{
+                        className = ClassName("EmptyAPIMsg")
+                        + "Realiza una consulta"
                     }
                 }
             }

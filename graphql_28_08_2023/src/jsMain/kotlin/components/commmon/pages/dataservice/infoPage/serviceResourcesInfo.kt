@@ -59,24 +59,28 @@ val serviceResourcesInfo = FC<ServiceResourcesInfoProps> { props ->
             props.listResourcesInfo!!.map {
                 ListItem {
                     className = ClassName("distributionsList")
-
+                    var resType = "datasets"
                     ListItemAvatar {
                         Tooltip {
                             title = ReactNode(it.resourceType)
 
                             if (it.resourceType == "Dataset") {
+                                resType = "datasets"
                                 TextSnippet {
                                     color = SvgIconColor.primary
                                 }
                             } else if (it.resourceType == "Catalog") {
+                                resType = "catalogs"
                                 Folder {
                                     color = SvgIconColor.primary
                                 }
                             } else if (it.resourceType == "DatasetSeries") {
+                                resType = "datasetseries"
                                 Source {
                                     color = SvgIconColor.primary
                                 }
                             } else {
+                                resType = "dataservices"
                                 RssFeed {
                                     color = SvgIconColor.primary
                                 }
@@ -85,6 +89,7 @@ val serviceResourcesInfo = FC<ServiceResourcesInfoProps> { props ->
                     }
                     ListItemText {
                         Link {
+                            href = "/$resType/#/${it.resourceId}"
                             if (it.resourceIdentifier.isNullOrEmpty()) +"${it.resourceId}"
                             else +"${it.resourceIdentifier.first()}"
                         }

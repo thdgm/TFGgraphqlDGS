@@ -41,27 +41,12 @@ repositories {
 }
 
 kotlin {
+
     jvm {
         withJava()
 
         apply(plugin = "org.springframework.boot")
         apply(plugin = "com.netflix.dgs.codegen")
-
-
-        tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
-            // The package name to use to generate sources
-
-
-            schemaPaths = mutableListOf("src/jvmMain/resources/schema/schema.graphqls")
-            packageName = "com.graphqlDGS.graphqlDGS.model"
-            language = "kotlin"
-            typeMapping=mutableMapOf("LangString" to "es.unizar.iaaa.tfg.annotations.LangString",
-                "Frequency" to "es.unizar.iaaa.tfg.annotations.Frequency",
-                "Concept" to "es.unizar.iaaa.tfg.annotations.Concept",
-                "NonNegativeInt" to "es.unizar.iaaa.tfg.annotations.NonNegativeInt",
-                "MediaType" to "es.unizar.iaaa.tfg.annotations.MediaType",
-            )
-        }
 
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
             kotlinOptions {
@@ -227,7 +212,8 @@ apollo {
     service("service") {
         packageName.set("com.schema")
         schemaFile.set(
-            file("src/commonMain/graphql/com/schema/schema.graphqls")
+            file("src/commonMain/resources/schema/schema.graphqls")
+            //file("src/commonMain/graphql/com/schema/schema.graphqls")
         )
         generateKotlinModels.set(true)
         outputDirConnection {
@@ -244,7 +230,19 @@ apollo {
 tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
     systemProperty("graphiql.enabled", "true")
 }
+tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
+    // The package name to use to generate sources
 
+    schemaPaths = mutableListOf("src/commonMain/resources/schema/schema.graphqls")//mutableListOf("src/jvmMain/resources/schema/schema.graphqls")
+    packageName = "com.graphqlDGS.graphqlDGS.model"
+    language = "kotlin"
+    typeMapping=mutableMapOf("LangString" to "es.unizar.iaaa.tfg.annotations.LangString",
+        "Frequency" to "es.unizar.iaaa.tfg.annotations.Frequency",
+        "Concept" to "es.unizar.iaaa.tfg.annotations.Concept",
+        "NonNegativeInt" to "es.unizar.iaaa.tfg.annotations.NonNegativeInt",
+        "MediaType" to "es.unizar.iaaa.tfg.annotations.MediaType",
+    )
+}
 /*
 tasks.withType<KotlinWebpack> {
     configure<org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig> {

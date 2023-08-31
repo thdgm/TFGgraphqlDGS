@@ -248,12 +248,11 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["DataServices"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty()) {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page" && valuesList.key != "OrderBy" && valuesList.key != "SortBy") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
                                 Chip {
                                     id = value
                                     label = ReactNode(value)
@@ -274,6 +273,7 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
                                     }
                                     deleteIcon
                                 }
+
                                 +" "
                             }
                         }
@@ -418,6 +418,7 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
                                     className = ClassName("tableCell2")
                                     id = dServInfo.elementAt(0).isPTO?.recordId
                                     Link {
+                                        href = "/catalogrecords/#/${dServInfo.elementAt(0).isPTO?.recordId}"
                                         +"${dServInfo.elementAt(0).isPTO?.recordId}"
                                     }
                                 }
@@ -734,6 +735,7 @@ val DataServiceInfoElements = FC<DataServiceInfoElementsProps> { props->
                             }
                             ListItemText {
                                 Link {
+                                    href = "/catalogs/#/${it.catalogId}"
                                     if (it.catalogIdentifiers.isNullOrEmpty()) +"${it.catalogId}"
                                     else +"${it.catalogIdentifiers.first()}"
                                 }

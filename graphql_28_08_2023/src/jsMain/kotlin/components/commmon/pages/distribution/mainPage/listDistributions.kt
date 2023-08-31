@@ -17,6 +17,8 @@ import csstype.Position
 import csstype.pct
 import csstype.px
 import csstype.rgba
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -55,10 +57,12 @@ external interface ListDistributionsProps: Props {
 }
 val listDistributions = FC<ListDistributionsProps> { props ->
     val navigate = useNavigate()
+    val coroutineScope = CoroutineScope(Dispatchers.Default)
     var distributionsList by useState(props.distributionsList)
     var selectedFilters by useRequiredContext(FilterListContextAll)
     var searchBy by useState("")
     var isDisabled by useRequiredContext(IsLoadingContext)
+    var endLoading by useState(false)
 
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
         navigate("/distributions/${event.currentTarget.id}")
@@ -75,6 +79,14 @@ val listDistributions = FC<ListDistributionsProps> { props ->
 
     useEffect(selectedFilters){
         distributionsList = props.distributionsList
+    }
+    useEffect(selectedFilters){
+        //console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
+        endLoading = false
+        coroutineScope.launch{
+            delay(8000)
+            endLoading = true
+        }
     }
 
     Paper {
@@ -154,27 +166,37 @@ val listDistributions = FC<ListDistributionsProps> { props ->
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
-                                Chip {
-                                    id = value
-                                    label = ReactNode(value)
-                                    variant = ChipVariant.outlined
-                                    color = ChipColor.primary
-                                    disabled = isDisabled
-                                    onDelete = { _ ->
-                                        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                            if (key == "Distributions") {
-                                                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                    if (innerKey == valuesList.key) filterVal.filter { it != value }
-                                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
-                                                    else filterVal
-                                                }.toMutableMap()
-                                            } else {
-                                                catalogMap
-                                            }
-                                        }.toMutableMap()
+                                if (valuesList.key == "OrderBy" || valuesList.key == "SortBy"){
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.success
                                     }
-                                    deleteIcon
+                                }else {
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.primary
+                                        disabled = isDisabled
+                                        onDelete = { _ ->
+                                            selectedFilters =
+                                                selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                                    if (key == "Distributions") {
+                                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                            if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                            else if (innerKey == "Page") filterVal.filter { false }
+                                                                .plus("1")
+                                                            else filterVal
+                                                        }.toMutableMap()
+                                                    } else {
+                                                        catalogMap
+                                                    }
+                                                }.toMutableMap()
+                                        }
+                                        deleteIcon
+                                    }
                                 }
                                 +" "
                             }
@@ -187,14 +209,21 @@ val listDistributions = FC<ListDistributionsProps> { props ->
         }
 
         if (distributionsList.isEmpty()) { //Esto durante 4 segundos, luego muestra no se ha encontardo nada
-            isDisabled = true
-            LinearProgress {
-                sx {
-                    width = 100.pct
-                    marginTop = 3.pct
+            if (!endLoading) {
+                isDisabled = true
+                LinearProgress {
+                    sx {
+                        width = 100.pct
+                        marginTop = 3.pct
+                    }
+                }
+            } else {
+                isDisabled = false
+                Typography{
+                    className = ClassName("elementsNotFound")
+                    +"No se ha encontrado ningún elemento"
                 }
             }
-
         } else {
             isDisabled = false
             mui.material.List {

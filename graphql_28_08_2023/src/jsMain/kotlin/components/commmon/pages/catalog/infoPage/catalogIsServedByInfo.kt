@@ -40,6 +40,7 @@ val catalogIsServedByInfo = FC<CatalogIsServedByInfoProps> { props ->
                         }
                         ListItemText {
                             Link {
+                                href = "/dataservices/#/${it.serviceId}"
                                 if (it.serviceIdentifiers.isNullOrEmpty()) +"${it.serviceId}"
                                 else +"${it.serviceIdentifiers?.first()}"
                             }

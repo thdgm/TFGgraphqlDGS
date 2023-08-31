@@ -188,12 +188,11 @@ val CatalogRecordInfoElements = FC<CatalogRecordInfoElementsProps> { props ->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["CatalogRecords"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty()) {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page" && valuesList.key != "OrderBy" && valuesList.key != "SortBy") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
                                 Chip {
                                     id = value
                                     label = ReactNode(value)
@@ -214,6 +213,7 @@ val CatalogRecordInfoElements = FC<CatalogRecordInfoElementsProps> { props ->
                                     }
                                     deleteIcon
                                 }
+
                                 +" "
                             }
                         }
@@ -273,7 +273,11 @@ val CatalogRecordInfoElements = FC<CatalogRecordInfoElementsProps> { props ->
                                 }
                                 TableCell {
                                     className = ClassName("tableCell2")
-                                    +"${catalogRecordInfo.elementAt(0)?.contentURL}"
+                                    Link{
+                                        href = "${catalogRecordInfo.elementAt(0)?.contentURL}"
+                                        +"${catalogRecordInfo.elementAt(0)?.contentURL}"
+                                    }
+
                                 }
                             }
                         }
@@ -302,6 +306,7 @@ val CatalogRecordInfoElements = FC<CatalogRecordInfoElementsProps> { props ->
                                             item = true
                                             direction = responsive(GridDirection.row)
                                             Link {
+                                                href = "/datasets/#/$crId"
                                                 if (catalogRecordInfo.elementAt(0).primaryTopic?.resourceIdentifier.isNullOrEmpty()) {
                                                     +"$crId"
                                                 }
@@ -391,6 +396,7 @@ val CatalogRecordInfoElements = FC<CatalogRecordInfoElementsProps> { props ->
                                 }
                                 ListItemText {
                                     Link {
+                                        href = "/catalogs/#/${it.catalogId}"
                                         if (it.catalogIdentifiers.isNullOrEmpty()) +"${it.catalogId}"
                                         else +"${it.catalogIdentifiers.first()}"
                                     }

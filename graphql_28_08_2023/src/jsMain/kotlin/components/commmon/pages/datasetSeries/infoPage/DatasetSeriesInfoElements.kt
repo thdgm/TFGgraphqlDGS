@@ -224,7 +224,7 @@ val DatasetSeriesInfoElements = FC<DatasetSeriesInfoElementsProps> { props->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["DatasetSeries"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty()) {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page" && valuesList.key != "OrderBy" && valuesList.key != "SortBy") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
@@ -250,6 +250,7 @@ val DatasetSeriesInfoElements = FC<DatasetSeriesInfoElementsProps> { props->
                                     }
                                     deleteIcon
                                 }
+
                                 +" "
                             }
                         }
@@ -361,6 +362,7 @@ val DatasetSeriesInfoElements = FC<DatasetSeriesInfoElementsProps> { props->
                                     className = ClassName("tableCell2")
                                     id = dSeriesInfo.elementAt(0).isPTO?.recordId
                                     Link {
+                                        href = "/catalogrecods/#/${dSeriesInfo.elementAt(0).isPTO?.recordId}"
                                         +"${dSeriesInfo.elementAt(0).isPTO?.recordId}"
                                     }
                                 }
@@ -587,6 +589,7 @@ val DatasetSeriesInfoElements = FC<DatasetSeriesInfoElementsProps> { props->
                                 }
                                 ListItemText {
                                     Link {
+                                        href = "/catalogs/#/${it.catalogId}"
                                         if (it.catalogIdentifiers.isNullOrEmpty()) +"${it.catalogId}"
                                         else +"${it.catalogIdentifiers.first()}"
                                     }

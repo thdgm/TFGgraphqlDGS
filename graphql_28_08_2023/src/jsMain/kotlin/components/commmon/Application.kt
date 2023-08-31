@@ -90,8 +90,6 @@ val Application = FC<ApplicationProps> { props ->
                                 path = "/datasets/:id"
                                 element = resourceInfo.create()
                             }
-
-
                             Route {
                                 path = "/catalogs"
                                 element = CatalogsPage.create()

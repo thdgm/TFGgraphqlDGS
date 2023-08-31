@@ -197,7 +197,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["Distributions"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page") {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page" && valuesList.key != "OrderBy" && valuesList.key != "SortBy") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
@@ -223,6 +223,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                                     }
                                     deleteIcon
                                 }
+
                                 +" "
                             }
                         }
@@ -468,6 +469,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                             }
                             ListItemText {
                                 Link{
+                                    href = "$value"
                                     +"$value"
                                 }
                             }
@@ -509,6 +511,7 @@ val DistributionsInfoElements = FC<DistributionsInfoElementsProps> { props->
                                 }
                                 ListItemText {
                                     Link {
+                                        href = "/dataservices/#/${it.serviceId}"
                                         if (it.serviceIdentifiers.isNullOrEmpty()) +"${it.serviceId}"
                                         else +"${it.serviceIdentifiers?.first()}"
                                     }

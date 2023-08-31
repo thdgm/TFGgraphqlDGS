@@ -17,6 +17,8 @@ import csstype.Position
 import csstype.pct
 import csstype.px
 import csstype.rgba
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -54,11 +56,12 @@ external interface ListCRProps: Props {
 
 val listCR = FC<ListCRProps> { props ->
     val navigate = useNavigate()
+    val coroutineScope = CoroutineScope(Dispatchers.Default)
     var cRList by useState(props.cRList)
     var searchBy by useState("")
     var selectedFilters by useRequiredContext(FilterListContextAll)
     var isDisabled by useRequiredContext(IsLoadingContext)
-
+    var endLoading by useState(false)
     val handleOnClick: (event: MouseEvent<HTMLElement, *>) -> Unit = { event->
         navigate("/catalogrecords/${event.currentTarget.id.replace("/","\\")}")
     }
@@ -76,7 +79,14 @@ val listCR = FC<ListCRProps> { props ->
        // console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
         cRList = props.cRList
     }
-
+    useEffect(selectedFilters){
+        //console.log("CAMBIA EL SELECTED FILTERSSSSS CATALOGS: "+selectedFilters)
+        endLoading = false
+        coroutineScope.launch{
+            delay(8000)
+            endLoading = true
+        }
+    }
 
 
     Paper {
@@ -156,27 +166,37 @@ val listCR = FC<ListCRProps> { props ->
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
-                                Chip {
-                                    id = value
-                                    label = ReactNode(value)
-                                    variant = ChipVariant.outlined
-                                    color = ChipColor.primary
-                                    disabled = isDisabled
-                                    onDelete = { _ ->
-                                        selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
-                                            if (key == "CatalogRecords") {
-                                                catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
-                                                    if (innerKey == valuesList.key) filterVal.filter { it != value }
-                                                    else if (innerKey == "Page") filterVal.filter { false }.plus("1")
-                                                    else filterVal
-                                                }.toMutableMap<String, Collection<String>>()
-                                            } else {
-                                                catalogMap
-                                            }
-                                        }.toMutableMap()
+                                if (valuesList.key == "OrderBy" || valuesList.key == "SortBy"){
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.success
                                     }
-                                    deleteIcon
+                                }else {
+                                    Chip {
+                                        id = value
+                                        label = ReactNode(value)
+                                        variant = ChipVariant.outlined
+                                        color = ChipColor.primary
+                                        disabled = isDisabled
+                                        onDelete = { _ ->
+                                            selectedFilters =
+                                                selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->
+                                                    if (key == "CatalogRecords") {
+                                                        catalogMap!!.toMutableMap().mapValues { (innerKey, filterVal) ->
+                                                            if (innerKey == valuesList.key) filterVal.filter { it != value }
+                                                            else if (innerKey == "Page") filterVal.filter { false }
+                                                                .plus("1")
+                                                            else filterVal
+                                                        }.toMutableMap<String, Collection<String>>()
+                                                    } else {
+                                                        catalogMap
+                                                    }
+                                                }.toMutableMap()
+                                        }
+                                        deleteIcon
+                                    }
                                 }
                                 +" "
                             }
@@ -188,11 +208,19 @@ val listCR = FC<ListCRProps> { props ->
 
         if (cRList.isEmpty()) { //Esto durante 4 segundos, luego muestra no se ha encontardo nada
 
-            isDisabled = true
-            LinearProgress {
-                sx {
-                    width = 100.pct
-                    marginTop = 3.pct
+            if (!endLoading) {
+                isDisabled = true
+                LinearProgress {
+                    sx {
+                        width = 100.pct
+                        marginTop = 3.pct
+                    }
+                }
+            } else {
+                isDisabled = false
+                Typography{
+                    className = ClassName("elementsNotFound")
+                    +"No se ha encontrado ningún elemento"
                 }
             }
 

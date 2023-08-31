@@ -286,12 +286,11 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["Catalogs"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty()) {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page" && valuesList.key != "OrderBy" && valuesList.key != "SortBy") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
                             valuesList.value.map { value ->
-
                                 Chip {
                                     id = value
                                     label = ReactNode(value)
@@ -312,6 +311,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                     }
                                     deleteIcon
                                 }
+
                                 +" "
                             }
                         }
@@ -422,11 +422,8 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                     className = ClassName("tableCell2")
                                     id = catalogInfo.elementAt(0).isPTO?.recordId
                                     Link {
-                                        //if(catalogInfo.elementAt(0).isPTO?.recordTitle.isNullOrEmpty()){
-                                            +"${catalogInfo.elementAt(0).isPTO?.recordId}"
-                                       // }else{
-                                        //   +"${catalogInfo.elementAt(0).isPTO?.recordTitle}"
-                                        //}
+                                        href = "/catalogrecords/#/${catalogInfo.elementAt(0).isPTO?.recordId}"
+                                        +"${catalogInfo.elementAt(0).isPTO?.recordId}"
                                     }
 
                                 }
@@ -758,6 +755,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                 }
                                 ListItemText {
                                     Link {
+                                        href = "/catalogs/#/${it.catalogId}"
                                         if (it.catalogIdentifiers.isNullOrEmpty()) +"${it.catalogId}"
                                         else +"${it.catalogIdentifiers.first()}"
                                     }

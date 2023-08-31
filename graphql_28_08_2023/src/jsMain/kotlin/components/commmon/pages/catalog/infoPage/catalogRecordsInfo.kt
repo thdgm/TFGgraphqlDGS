@@ -41,6 +41,7 @@ val catalogRecordsInfo = FC<CatalogRecordsInfoProps> { props ->
                     }
                     ListItemText {
                         Link {
+                            href = "/catalogrecords/#/${it.recordId}"
                             +"${it.recordId}"
 
                         }

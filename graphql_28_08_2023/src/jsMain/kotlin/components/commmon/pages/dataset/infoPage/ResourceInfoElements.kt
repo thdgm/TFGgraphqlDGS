@@ -205,7 +205,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                 spacing = responsive(4.px)
                 direction = responsive(StackDirection.row)
                 selectedFilters["Datasets"]?.map { valuesList ->
-                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page") {
+                    if (valuesList.value.isNotEmpty() && valuesList.key != "Page" && valuesList.key != "OrderBy" && valuesList.key != "SortBy") {
                         ReactHTML.span {
                             className = ClassName("chipsSelectedFilters")
                             +"${valuesList.key}: "
@@ -231,6 +231,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                     }
                                     deleteIcon
                                 }
+
                                 +" "
                             }
                         }
@@ -584,6 +585,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                  }
                                  ListItemText {
                                      Link {
+                                         href = "/dataservices/#/$valueToShow"
                                          +"$valueToShow"
                                      }
                                  }
@@ -649,6 +651,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                 }
                                 ListItemText {
                                     Link {
+                                        href = "/datasetseries/#/$valueToShow"
                                         +"$valueToShow"
                                     }
                                 }
@@ -711,6 +714,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                 }
                                 ListItemText {
                                     Link {
+                                        href = "/catalogs/#/$valueToShow"
                                         +"$valueToShow"
                                     }
                                 }
@@ -822,7 +826,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
 
                                 Link {
                                     className = ClassName("distributionsList")
-                                    href = "${valueToShow}"
+                                    href = "/distributions/#/$valueToShow"
                                     +"$valueToShow"
                                 }
                             }
@@ -894,6 +898,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                  }
                                  ListItemText {
                                      Link {
+                                         href = "/catalogrecords/#/$valueToShow"
                                          +"$valueToShow"
                                      }
                                  }
