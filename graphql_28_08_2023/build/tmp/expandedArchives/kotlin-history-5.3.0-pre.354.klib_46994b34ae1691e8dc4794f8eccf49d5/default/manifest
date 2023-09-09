@@ -1,8 +1,0 @@
-builtins_platform=JS
-unique_name=org.jetbrains.kotlin-wrappers\:kotlin-history
-compiler_version=1.7.10
-depends=org.jetbrains.kotlin-wrappers\:kotlin-js kotlin
-jsOutputName=kotlin-wrappers-kotlin-history-js-ir
-abi_version=1.7.0
-metadata_version=1.4.1
-ir_version=1.0.0

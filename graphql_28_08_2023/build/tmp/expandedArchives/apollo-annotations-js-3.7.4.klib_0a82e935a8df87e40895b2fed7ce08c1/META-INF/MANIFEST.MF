@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Built-By: apollographql
-Build-Jdk: 11.0.17 (Eclipse Adoptium 11.0.17+8)
-Created-By: Gradle 7.6
-Implementation-Title: Apollo GraphQL Annotations
-Implementation-Version: 3.7.4
-Automatic-Module-Name: com.apollographql.apollo3.annotations
-
