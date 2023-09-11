@@ -1,0 +1,3784 @@
+
+´¡
+MediaTypeMap
+MediaTypeMap_instance
+u/Users/diegogarcia/Desktop/TFG/Diego/TFGgraphqlDGS/graphql_09_09_2023/src/commonMain/kotlin/constants/MediaTypeMap.kt
+MEDIA_TYPE_1
+mapOf
+to
+.ez
+application/andrew-inset
+.aw
+application/applixware
+.atom
+application/atom+xml
+.atomcat
+application/atomcat+xml
+.atomsvc
+application/atomsvc+xml
+.ccxml
+application/ccxml+xml
+.cu
+application/cu-seeme
+	.davmount
+application/davmount+xml
+.ecma
+application/ecmascript
+.emma
+application/emma+xml
+.epub
+application/epub+zip
+.pfr
+application/font-tdpfr
+.gz
+application/gzip
+.tgz
+application/x-gzip
+.stk
+application/hyperstudio
+.jar
+application/java-archive
+.ser
+"application/java-serialized-object
+.class
+application/java-vm
+.json
+application/json
+	text/json
+.lostxml
+application/lost+xml
+.hqx
+application/mac-binhex40
+.cpt
+application/mac-compactpro
+.mrc
+application/marc
+.ma
+application/mathematica
+.mb
+.nb
+.mathml
+application/mathml+xml
+.mml
+text/mathml
+.mbox
+application/mbox
+.mscml
+"application/mediaservercontrol+xml
+.mp4s
+application/mp4
+.doc
+application/msword
+.dot
+.wiz
+.mxf
+application/mxf
+.a
+application/octet-stream
+.bin
+.bpk
+.deploy
+.dist
+.distz
+.dmg
+.dms
+.dump
+.elc
+.iso
+.lha
+.lrf
+.lzh
+.o
+.obj
+.pkg
+.so
+.oda
+application/oda
+.opf
+application/oebps-package+xml
+.ogx
+application/ogg
+.onepkg
+application/onenote
+.onetmp
+.onetoc
+.onetoc2
+.xer
+application/patch-ops-error+xml
+.pdf
+application/pdf
+application/x-pdf
+.pgp
+application/pgp-encrypted
+.asc
+application/pgp-signature
+.sig
+.prf
+application/pics-rules
+.p10
+application/pkcs10
+.p7c
+application/pkcs7-mime
+.p7m
+application/x-pkcs7-certreqresp
+ application/x-pkcs7-certificates
+.p7s
+application/pkcs7-signature
+.cer
+application/pkix-cert
+.crl
+application/pkix-crl
+.pkipath
+application/pkix-pkipath
+.pki
+application/pkixcmp
+.pls
+application/pls+xml
+.ai
+application/postscript
+.eps
+.ps
+.cww
+application/prs.cww
+.rdf
+application/rdf+xml
+.rif
+application/reginfo+xml
+.rnc
+#application/relax-ng-compact-syntax
+.rl
+application/resource-lists+xml
+.rld
+#application/resource-lists-diff+xml
+.rs
+application/rls-services+xml
+.rsd
+application/rsd+xml
+.rss
+application/rss+xml
+.rtf
+application/rtf
+.sbml
+application/sbml+xml
+.scq
+application/scvp-cv-request
+.scs
+application/scvp-cv-response
+.spq
+application/scvp-vp-request
+.spp
+application/scvp-vp-response
+.sdp
+application/sdp
+.setpay
+"application/set-payment-initiation
+.setreg
+'application/set-registration-initiation
+.shf
+application/shf+xml
+.smi
+application/smil+xml
+.smil
+.rq
+application/sparql-query
+.srx
+application/sparql-results+xml
+.gram
+application/srgs
+.grxml
+application/srgs+xml
+.ssml
+application/ssml+xml
+.plb
+!application/vnd.3gpp.pic-bw-large
+.psb
+!application/vnd.3gpp.pic-bw-small
+.pvb
+application/vnd.3gpp.pic-bw-var
+.tcap
+application/vnd.3gpp2.tcap
+.pwn
+ application/vnd.3m.post-it-notes
+.aso
+!application/vnd.accpac.simply.aso
+.imp
+!application/vnd.accpac.simply.imp
+.acu
+application/vnd.acucobol
+.acutc
+application/vnd.acucorp
+.atc
+.air
+;application/vnd.adobe.air-application-installer-package+zip
+.xdp
+application/vnd.adobe.xdp+xml
+.xfdf
+application/vnd.adobe.xfdf
+.azf
+%application/vnd.airzip.filesecure.azf
+.azs
+%application/vnd.airzip.filesecure.azs
+.azw
+application/vnd.amazon.ebook
+.acc
+$application/vnd.americandynamics.acc
+.ami
+application/vnd.amiga.ami
+.apk
+'application/vnd.android.package-archive
+.cii
+6application/vnd.anser-web-certificate-issue-initiation
+.fti
+3application/vnd.anser-web-funds-transfer-initiation
+.atx
+$application/vnd.antix.game-component
+.mpkg
+#application/vnd.apple.installer+xml
+.swi
+application/vnd.arastra.swi
+.aep
+application/vnd.audiograph
+.mpm
+!application/vnd.blueice.multipass
+.bmi
+application/vnd.bmi
+.rep
+application/vnd.businessobjects
+.cdxml
+application/vnd.chemdraw+xml
+.mmd
+$application/vnd.chipnuts.karaoke-mmd
+.cdy
+application/vnd.cinderella
+.cla
+application/vnd.claymore
+.c4d
+application/vnd.clonk.c4group
+.c4f
+.c4g
+.c4p
+.c4u
+.csp
+application/vnd.commonspace
+.cdbcmsg
+application/vnd.contact.cmsg
+.cmc
+application/vnd.cosmocaller
+.clkx
+application/vnd.crick.clicker
+.clkk
+&application/vnd.crick.clicker.keyboard
+.clkp
+%application/vnd.crick.clicker.palette
+.clkt
+&application/vnd.crick.clicker.template
+.clkw
+&application/vnd.crick.clicker.wordbank
+.wbs
+%application/vnd.criticaltools.wbs+xml
+.pml
+application/vnd.ctc-posml
+.ppd
+application/vnd.cups-ppd
+.car
+application/vnd.curl.car
+.pcurl
+application/vnd.curl.pcurl
+.rdz
+application/vnd.data-vision.rdz
+.deb
+%application/vnd.debian.binary-package
+.udeb
+
+.fe_launch
+&application/vnd.denovo.fcselayout-link
+.dna
+application/vnd.dna
+.mlp
+application/vnd.dolby.mlp
+.dpg
+application/vnd.dpgraph
+.dfac
+application/vnd.dreamfactory
+.geo
+application/vnd.dynageo
+.mag
+application/vnd.ecowin.chart
+.nml
+application/vnd.enliven
+.esf
+application/vnd.epson.esf
+.msf
+application/vnd.epson.msf
+.qam
+ application/vnd.epson.quickanime
+.slt
+application/vnd.epson.salt
+.ssf
+application/vnd.epson.ssf
+.es3
+application/vnd.eszigno3+xml
+.et3
+.ez2
+application/vnd.ezpix-album
+.ez3
+application/vnd.ezpix-package
+.fdf
+application/vnd.fdf
+.mseed
+application/vnd.fdsn.mseed
+	.dataless
+application/vnd.fdsn.seed
+.seed
+.gph
+application/vnd.flographit
+.ftc
+application/vnd.fluxtime.clip
+.book
+application/vnd.framemaker
+.fm
+.frame
+.maker
+.fnc
+application/vnd.frogans.fnc
+.ltf
+application/vnd.frogans.ltf
+.fsc
+application/vnd.fsc.weblaunch
+.oas
+application/vnd.fujitsu.oasys
+.oa2
+application/vnd.fujitsu.oasys2
+.oa3
+application/vnd.fujitsu.oasys3
+.fg5
+application/vnd.fujitsu.oasysgp
+.bh2
+ application/vnd.fujitsu.oasysprs
+.ddd
+application/vnd.fujixerox.ddd
+.xdw
+#application/vnd.fujixerox.docuworks
+.xbd
+*application/vnd.fujixerox.docuworks.binder
+.fzs
+application/vnd.fuzzysheet
+.txd
+ application/vnd.genomatix.tuxedo
+.ggb
+application/vnd.geogebra.file
+.ggt
+application/vnd.geogebra.tool
+.gex
+!application/vnd.geometry-explorer
+.gre
+.gmx
+application/vnd.gmx
+.kml
+$application/vnd.google-earth.kml+xml
+.kmz
+ application/vnd.google-earth.kmz
+.gqf
+application/vnd.grafeq
+.gqs
+.gac
+application/vnd.groove-account
+.ghf
+application/vnd.groove-help
+.gim
+'application/vnd.groove-identity-message
+.grv
+application/vnd.groove-injector
+.gtm
+#application/vnd.groove-tool-message
+.tpl
+$application/vnd.groove-tool-template
+.vcg
+application/vnd.groove-vcard
+.zmm
+*application/vnd.handheld-entertainment+xml
+.hbci
+application/vnd.hbci
+.les
+!application/vnd.hhe.lesson-player
+.hpgl
+application/vnd.hp-hpgl
+.hpid
+application/vnd.hp-hpid
+.hps
+application/vnd.hp-hps
+.jlt
+application/vnd.hp-jlyt
+.pcl
+application/vnd.hp-pcl
+.pclxl
+application/vnd.hp-pclxl
+
+.sfd-hdstx
+$application/vnd.hydrostatix.sof-data
+.x3d
+ application/vnd.hzn-3d-crossword
+.mpy
+application/vnd.ibm.minipay
+.afp
+application/vnd.ibm.modcap
+	.list3820
+.listafp
+.irm
+%application/vnd.ibm.rights-management
+.sc
+$application/vnd.ibm.secure-container
+.icc
+application/vnd.iccprofile
+.icm
+.igl
+application/vnd.igloader
+.ivp
+application/vnd.immervision-ivp
+.ivu
+application/vnd.immervision-ivu
+.xpw
+ application/vnd.intercon.formnet
+.xpx
+.qbo
+application/vnd.intu.qbo
+.qfx
+application/vnd.intu.qfx
+
+.rcprofile
+%application/vnd.ipunplugged.rcprofile
+.irp
+'application/vnd.irepository.package+xml
+.xpr
+application/vnd.is-xpr
+.jam
+application/vnd.jam
+.rms
+%application/vnd.jcp.javame.midlet-rms
+.jisp
+application/vnd.jisp
+.joda
+"application/vnd.joost.joda-archive
+.ktr
+application/vnd.kahootz
+.ktz
+.karbon
+application/vnd.kde.karbon
+.chrt
+application/vnd.kde.kchart
+.kfo
+application/vnd.kde.kformula
+.flw
+application/vnd.kde.kivio
+.kon
+application/vnd.kde.kontour
+.kpr
+application/vnd.kde.kpresenter
+.kpt
+.ksp
+application/vnd.kde.kspread
+.kwd
+application/vnd.kde.kword
+.kwt
+.htke
+application/vnd.kenameaapp
+.kia
+application/vnd.kidspiration
+.kne
+application/vnd.kinar
+.knp
+.skd
+application/vnd.koan
+.skm
+.skp
+.skt
+.sse
+ application/vnd.kodak-descriptor
+.lbd
+2application/vnd.llamagraphics.life-balance.desktop
+.lbe
+7application/vnd.llamagraphics.life-balance.exchange+xml
+.123
+application/vnd.lotus-1-2-3
+.apr
+application/vnd.lotus-approach
+.pre
+application/vnd.lotus-freelance
+.nsf
+application/vnd.lotus-notes
+.org
+application/vnd.lotus-organizer
+.scm
+application/vnd.lotus-screencam
+.lwp
+application/vnd.lotus-wordpro
+.portpkg
+ application/vnd.macports.portpkg
+.mcd
+application/vnd.mcd
+.mc1
+application/vnd.medcalcdata
+.cdkey
+"application/vnd.mediastation.cdkey
+.mwf
+application/vnd.mfer
+.mfm
+application/vnd.mfmp
+.flo
+application/vnd.micrografx.flo
+.igx
+application/vnd.micrografx.igx
+.mif
+application/vnd.mif
+.daf
+application/vnd.mobius.daf
+.dis
+application/vnd.mobius.dis
+.mbk
+application/vnd.mobius.mbk
+.mqy
+application/vnd.mobius.mqy
+.msl
+application/vnd.mobius.msl
+.plc
+application/vnd.mobius.plc
+.txf
+application/vnd.mobius.txf
+.mpn
+"application/vnd.mophun.application
+.mpc
+"application/vnd.mophun.certificate
+.xul
+application/vnd.mozilla.xul+xml
+.cil
+application/vnd.ms-artgalry
+.cab
+!application/vnd.ms-cab-compressed
+.xla
+application/vnd.ms-excel
+.xlb
+.xlc
+.xlm
+.xls
+.xlt
+.xlw
+.xlam
+.application/vnd.ms-excel.addin.macroenabled.12
+.xlsb
+5application/vnd.ms-excel.sheet.binary.macroenabled.12
+.xlsm
+.application/vnd.ms-excel.sheet.macroenabled.12
+.xltm
+1application/vnd.ms-excel.template.macroenabled.12
+.eot
+application/vnd.ms-fontobject
+.chm
+application/vnd.ms-htmlhelp
+.ims
+application/vnd.ms-ims
+.lrm
+application/vnd.ms-lrm
+.cat
+application/vnd.ms-pki.seccat
+.stl
+application/vnd.ms-pki.stl
+.pot
+application/vnd.ms-powerpoint
+.ppa
+.pps
+.ppt
+.pwz
+.ppam
+3application/vnd.ms-powerpoint.addin.macroenabled.12
+.pptm
+:application/vnd.ms-powerpoint.presentation.macroenabled.12
+.sldm
+3application/vnd.ms-powerpoint.slide.macroenabled.12
+.ppsm
+7application/vnd.ms-powerpoint.slideshow.macroenabled.12
+.potm
+6application/vnd.ms-powerpoint.template.macroenabled.12
+.mpp
+application/vnd.ms-project
+.mpt
+.docm
+0application/vnd.ms-word.document.macroenabled.12
+.dotm
+0application/vnd.ms-word.template.macroenabled.12
+.wcm
+application/vnd.ms-works
+.wdb
+.wks
+.wps
+.wpl
+application/vnd.ms-wpl
+.xps
+application/vnd.ms-xpsdocument
+.mseq
+application/vnd.mseq
+.mus
+application/vnd.musician
+.msty
+application/vnd.muvee.style
+.nlu
+!application/vnd.neurolanguage.nlu
+.nnd
+"application/vnd.noblenet-directory
+.nns
+application/vnd.noblenet-sealer
+.nnw
+application/vnd.noblenet-web
+.ngdat
+!application/vnd.nokia.n-gage.data
+.n-gage
+,application/vnd.nokia.n-gage.symbian.install
+.rpst
+"application/vnd.nokia.radio-preset
+.rpss
+#application/vnd.nokia.radio-presets
+.edm
+application/vnd.novadigm.edm
+.edx
+application/vnd.novadigm.edx
+.ext
+application/vnd.novadigm.ext
+.odc
+(application/vnd.oasis.opendocument.chart
+.otc
+1application/vnd.oasis.opendocument.chart-template
+.odb
++application/vnd.oasis.opendocument.database
+.odf
+*application/vnd.oasis.opendocument.formula
+.odft
+3application/vnd.oasis.opendocument.formula-template
+.odg
++application/vnd.oasis.opendocument.graphics
+.otg
+4application/vnd.oasis.opendocument.graphics-template
+.odi
+(application/vnd.oasis.opendocument.image
+.oti
+1application/vnd.oasis.opendocument.image-template
+.odp
+/application/vnd.oasis.opendocument.presentation
+.otp
+8application/vnd.oasis.opendocument.presentation-template
+.ods
+.application/vnd.oasis.opendocument.spreadsheet
+.ots
+7application/vnd.oasis.opendocument.spreadsheet-template
+.odt
+'application/vnd.oasis.opendocument.text
+.otm
+.application/vnd.oasis.opendocument.text-master
+.ott
+0application/vnd.oasis.opendocument.text-template
+.oth
++application/vnd.oasis.opendocument.text-web
+.xo
+application/vnd.olpc-sugar
+.dd2
+application/vnd.oma.dd2+xml
+.oxt
+'application/vnd.openofficeorg.extension
+.pptx
+Iapplication/vnd.openxmlformats-officedocument.presentationml.presentation
+.sldx
+Bapplication/vnd.openxmlformats-officedocument.presentationml.slide
+.ppsx
+Fapplication/vnd.openxmlformats-officedocument.presentationml.slideshow
+.potx
+Eapplication/vnd.openxmlformats-officedocument.presentationml.template
+.xlsx
+Aapplication/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+.xltx
+Dapplication/vnd.openxmlformats-officedocument.spreadsheetml.template
+.docx
+Gapplication/vnd.openxmlformats-officedocument.wordprocessingml.document
+.dotx
+Gapplication/vnd.openxmlformats-officedocument.wordprocessingml.template
+.dp
+application/vnd.osgi.dp
+.oprc
+application/vnd.palm
+.pdb
+.pqa
+.str
+application/vnd.pg.format
+.ei6
+application/vnd.pg.osasli
+.efif
+application/vnd.picsel
+.plf
+application/vnd.pocketlearn
+.pbd
+application/vnd.powerbuilder6
+.box
+"application/vnd.previewsystems.box
+.mgz
+ application/vnd.proteus.magazine
+.qps
+%application/vnd.publishare-delta-tree
+.ptid
+application/vnd.pvi.ptid1
+.qwd
+!application/vnd.quark.quarkxpress
+.qwt
+.qxb
+.qxd
+.qxl
+.qxt
+.mxl
+"application/vnd.recordare.musicxml
+	.musicxml
+&application/vnd.recordare.musicxml+xml
+.cod
+application/vnd.rim.cod
+.rm
+application/vnd.rn-realmedia
+.link66
+"application/vnd.route66.link66+xml
+.see
+application/vnd.seemail
+.sema
+application/vnd.sema
+.semd
+application/vnd.semd
+.semf
+application/vnd.semf
+.ifm
+'application/vnd.shana.informed.formdata
+.itp
++application/vnd.shana.informed.formtemplate
+.iif
+*application/vnd.shana.informed.interchange
+.ipk
+&application/vnd.shana.informed.package
+.twd
+"application/vnd.simtech-mindmapper
+.twds
+.mmf
+application/vnd.smaf
+.teacher
+application/vnd.smart.teacher
+.sdkd
+application/vnd.solent.sdkm+xml
+.sdkm
+.dxp
+application/vnd.spotfire.dxp
+.sfs
+application/vnd.spotfire.sfs
+.db
+application/vnd.sqlite3
+.sqlite
+.sqlite3
+.db-wal
+.sqlite-wal
+.db-shm
+.sqlite-shm
+application/x-sqlite3
+.sdc
+!application/vnd.stardivision.calc
+.sda
+!application/vnd.stardivision.draw
+.sdd
+$application/vnd.stardivision.impress
+.smf
+!application/vnd.stardivision.math
+.sdw
+#application/vnd.stardivision.writer
+.vor
+.sgl
+*application/vnd.stardivision.writer-global
+.sxc
+application/vnd.sun.xml.calc
+.stc
+%application/vnd.sun.xml.calc.template
+.sxd
+application/vnd.sun.xml.draw
+.std
+%application/vnd.sun.xml.draw.template
+.sxi
+application/vnd.sun.xml.impress
+.sti
+(application/vnd.sun.xml.impress.template
+.sxm
+application/vnd.sun.xml.math
+.sxw
+application/vnd.sun.xml.writer
+.sxg
+%application/vnd.sun.xml.writer.global
+.stw
+'application/vnd.sun.xml.writer.template
+.sus
+application/vnd.sus-calendar
+.susp
+.svd
+application/vnd.svd
+.sis
+application/vnd.symbian.install
+.sisx
+.xsm
+application/vnd.syncml+xml
+.bdm
+application/vnd.syncml.dm+wbxml
+.xdm
+application/vnd.syncml.dm+xml
+.tao
+)application/vnd.tao.intent-module-archive
+.tmo
+application/vnd.tmobile-livetv
+.tpt
+application/vnd.trid.tpt
+.mxs
+application/vnd.triscape.mxs
+.tra
+application/vnd.trueapp
+.ufd
+application/vnd.ufdl
+.ufdl
+.utz
+application/vnd.uiq.theme
+.umj
+application/vnd.umajin
+	.unityweb
+application/vnd.unity
+.uoml
+application/vnd.uoml+xml
+.vcx
+application/vnd.vcx
+.vsd
+application/vnd.visio
+.vss
+.vst
+.vsw
+.vis
+application/vnd.visionary
+.vsf
+application/vnd.vsf
+.sic
+application/vnd.wap.sic
+.slc
+application/vnd.wap.slc
+.wbxml
+application/vnd.wap.wbxml
+.wmlc
+application/vnd.wap.wmlc
+.wmlsc
+application/vnd.wap.wmlscriptc
+.wtb
+application/vnd.webturbo
+.wpd
+application/vnd.wordperfect
+.wqd
+application/vnd.wqd
+.stf
+application/vnd.wt.stf
+.xar
+application/vnd.xara
+.xfdl
+application/vnd.xfdl
+.hvd
+application/vnd.yamaha.hv-dic
+.hvs
+ application/vnd.yamaha.hv-script
+.hvp
+application/vnd.yamaha.hv-voice
+.osf
+&application/vnd.yamaha.openscoreformat
+.osfpvg
+1application/vnd.yamaha.openscoreformat.osfpvg+xml
+.saf
+!application/vnd.yamaha.smaf-audio
+.spf
+"application/vnd.yamaha.smaf-phrase
+.cmp
+'application/vnd.yellowriver-custom-menu
+.zir
+application/vnd.zul
+.zirz
+.zaz
+application/vnd.zzazz.deck+xml
+.vxml
+application/voicexml+xml
+.hlp
+application/winhlp
+.wsdl
+application/wsdl+xml
+	.wspolicy
+application/wspolicy+xml
+.7z
+application/x-7z-compressed
+.abw
+application/x-abiword
+.ace
+application/x-ace-compressed
+.aab
+application/x-authorware-bin
+.u32
+.vox
+.x32
+.aam
+application/x-authorware-map
+.aas
+application/x-authorware-seg
+.bcpio
+application/x-bcpio
+.torrent
+application/x-bittorrent
+.bz
+application/x-bzip
+.boz
+application/x-bzip2
+.bz2
+.vcd
+application/x-cdlink
+.chat
+application/x-chat
+.pgn
+application/x-chess-pgn
+.cpio
+application/x-cpio
+.csh
+application/x-csh
+application/x-debian-package
+.cct
+application/x-director
+.cst
+.cxt
+.dcr
+.dir
+.dxr
+.fgd
+.swa
+.w3d
+.wad
+application/x-doom
+.ncx
+application/x-dtbncx+xml
+.dtb
+application/x-dtbook+xml
+.res
+application/x-dtbresource+xml
+.dvi
+application/x-dvi
+.bdf
+application/x-font-bdf
+.gsf
+application/x-font-ghostscript
+.psf
+application/x-font-linux-psf
+.otf
+application/x-font-otf
+font/otf
+.pcf
+application/x-font-pcf
+.snf
+application/x-font-snf
+.ttc
+application/x-font-ttf
+.ttf
+.afm
+application/x-font-type1
+.pfa
+.pfb
+.pfm
+.spl
+application/x-futuresplash
+	.gnumeric
+application/x-gnumeric
+.gtar
+application/x-gtar
+.hdf
+application/x-hdf
+.jnlp
+application/x-java-jnlp-file
+.kil
+application/x-killustrator
+.kra
+application/x-krita
+.krz
+.latex
+application/x-latex
+.mobi
+application/x-mobipocket-ebook
+.prc
+.application
+application/x-ms-application
+.wmd
+application/x-ms-wmd
+.wmz
+application/x-ms-wmz
+.xbap
+application/x-ms-xbap
+.mdb
+application/x-msaccess
+.obd
+application/x-msbinder
+.crd
+application/x-mscardfile
+.clp
+application/x-msclip
+.bat
+application/x-msdownload
+.com
+.dll
+.exe
+.msi
+.m13
+application/x-msmediaview
+.m14
+.mvb
+.wmf
+application/x-msmetafile
+.mny
+application/x-msmoney
+.pub
+application/x-mspublisher
+.scd
+application/x-msschedule
+.trm
+application/x-msterminal
+.wri
+application/x-mswrite
+.cdf
+application/x-netcdf
+.nc
+.pm
+application/x-perl
+.pl
+.p12
+application/x-pkcs12
+.pfx
+.p7b
+.spc
+.pyc
+application/x-python-code
+.pyo
+.rpa
+$application/x-redhat-package-manager
+.rpm
+application/x-rpm
+.sh
+application/x-sh
+.shar
+application/x-shar
+application/x-shellscript
+.swf
+application/x-shockwave-flash
+.xap
+application/x-silverlight-app
+.sit
+application/x-stuffit
+.sitx
+application/x-stuffitx
+.sv4cpio
+application/x-sv4cpio
+.sv4crc
+application/x-sv4crc
+.tar
+application/x-tar
+.tcl
+application/x-tcl
+.tex
+application/x-tex
+.tfm
+application/x-tex-tfm
+.texi
+application/x-texinfo
+.texinfo
+application/x-trash
+.ustar
+application/x-ustar
+.src
+application/x-wais-source
+.crt
+application/x-x509-ca-cert
+.der
+.fig
+application/x-xfig
+.xpi
+application/x-xpinstall
+.xenc
+application/xenc+xml
+.xht
+application/xhtml+xml
+.xhtml
+.xml
+application/xml
+.xpdl
+.xsl
+.dtd
+application/xml-dtd
+.xop
+application/xop+xml
+.xslt
+application/xslt+xml
+.xspf
+application/xspf+xml
+.mxml
+application/xv+xml
+.xhvml
+.xvm
+.xvml
+.zip
+application/zip
+application/x-zip-compressed
+application/zip-compressed
+.3gp
+
+audio/3gpp
+
+video/3gpp
+.3g2
+audio/3gpp2
+video/3gpp2
+.adp
+audio/adpcm
+.aiff
+
+audio/aiff
+.aif
+.aff
+audio/x-aiff
+.au
+audio/basic
+.snd
+.flac
+
+audio/flac
+audio/x-flac
+.kar
+
+audio/midi
+.mid
+.midi
+.rmi
+.mp4a
+	audio/mp4
+.m2a
+
+audio/mpeg
+.m3a
+.mp2
+.mp2a
+.mp3
+.mpga
+	audio/mp3
+audio/mpeg3
+audio/x-mpeg-3
+.oga
+	audio/ogg
+.ogg
+.spx
+.opus
+
+audio/opus
+.eol
+audio/vnd.digital-winds
+.dts
+audio/vnd.dts
+.dtshd
+audio/vnd.dts.hd
+.lvp
+audio/vnd.lucent.voice
+.pya
+ audio/vnd.ms-playready.media.pya
+
+.ecelp4800
+audio/vnd.nuera.ecelp4800
+
+.ecelp7470
+audio/vnd.nuera.ecelp7470
+
+.ecelp9600
+audio/vnd.nuera.ecelp9600
+.wav
+	audio/wav
+audio/x-wav
+.weba
+
+audio/webm
+.aac
+audio/x-aac
+.aifc
+.mka
+audio/x-matroska
+.m3u
+audio/x-mpegurl
+.wax
+audio/x-ms-wax
+.wma
+audio/x-ms-wma
+.ra
+audio/x-pn-realaudio
+.ram
+.rmp
+audio/x-pn-realaudio-plugin
+.cdx
+chemical/x-cdx
+.cif
+chemical/x-cif
+.cmdf
+chemical/x-cmdf
+.cml
+chemical/x-cml
+.csml
+chemical/x-csml
+.xyz
+chemical/x-xyz
+.woff
+	font/woff
+.woff2
+
+font/woff2
+.gcode
+gcode
+text/x.gcode
+text/x-gcode
+.avif
+
+image/avif
+.avifs
+.bmp
+	image/bmp
+.cgm
+	image/cgm
+.g3
+image/g3fax
+.gif
+	image/gif
+.heif
+
+image/heic
+.heic
+.ief
+	image/ief
+.jpe
+
+image/jpeg
+.jpeg
+.jpg
+.pjpg
+.jfif
+
+.jfif-tbnl
+.jif
+image/pjpeg
+.jfi
+.png
+	image/png
+image/x-png
+image/vnd.mozilla.apng
+.btif
+image/prs.btif
+.svg
+image/svg+xml
+.svgz
+.tif
+
+image/tiff
+.tiff
+.psd
+image/vnd.adobe.photoshop
+.djv
+image/vnd.djvu
+.djvu
+.dwg
+image/vnd.dwg
+.dxf
+image/vnd.dxf
+.fbs
+image/vnd.fastbidsheet
+.fpx
+image/vnd.fpx
+.fst
+image/vnd.fst
+.mmr
+image/vnd.fujixerox.edmics-mmr
+.rlc
+image/vnd.fujixerox.edmics-rlc
+.mdi
+image/vnd.ms-modi
+.npx
+image/vnd.net-fpx
+.wbmp
+image/vnd.wap.wbmp
+.xif
+image/vnd.xiff
+.webp
+
+image/webp
+.dng
+image/x-adobe-dng
+.cr2
+image/x-canon-cr2
+.crw
+image/x-canon-crw
+.ras
+image/x-cmu-raster
+.cmx
+image/x-cmx
+.erf
+image/x-epson-erf
+.fh
+image/x-freehand
+.fh4
+.fh5
+.fh7
+.fhc
+.raf
+image/x-fuji-raf
+.ico
+image/x-icon
+image/x-kodak-dcr
+.k25
+image/x-kodak-k25
+.kdc
+image/x-kodak-kdc
+.mrw
+image/x-minolta-mrw
+.nef
+image/x-nikon-nef
+.orf
+image/x-olympus-orf
+.raw
+image/x-panasonic-raw
+.rw2
+.rwl
+.pcx
+image/x-pcx
+.pef
+image/x-pentax-pef
+.ptx
+.pct
+image/x-pict
+.pic
+.pnm
+image/x-portable-anymap
+.pbm
+image/x-portable-bitmap
+.pgm
+image/x-portable-graymap
+.ppm
+image/x-portable-pixmap
+.rgb
+image/x-rgb
+.x3f
+image/x-sigma-x3f
+.arw
+image/x-sony-arw
+.sr2
+image/x-sony-sr2
+.srf
+image/x-sony-srf
+.xbm
+image/x-xbitmap
+.xpm
+image/x-xpixmap
+.xwd
+image/x-xwindowdump
+.eml
+message/rfc822
+.mht
+.mhtml
+.mime
+.nws
+.iges
+
+model/iges
+.igs
+.mesh
+
+model/mesh
+.msh
+.silo
+.dwf
+model/vnd.dwf
+.gdl
+model/vnd.gdl
+.gtw
+model/vnd.gtw
+.mts
+model/vnd.mts
+.vtu
+model/vnd.vtu
+.vrml
+
+model/vrml
+.wrl
+.ics
+text/calendar
+.ifb
+.css
+text/css
+.csv
+text/csv
+.htm
+	text/html
+.html
+.js
+text/javascript
+application/javascript
+application/x-ecmascript
+application/x-javascript
+text/ecmascript
+text/javascript1.0
+text/javascript1.1
+text/javascript1.2
+text/javascript1.3
+text/javascript1.4
+text/javascript1.5
+text/jscript
+text/livescript
+text/x-ecmascript
+text/x-javascript
+.md
+text/markdown
+	.markdown
+.mdown
+.markdn
+text/x-markdown
+.conf
+
+text/plain
+.def
+.diff
+.in
+.ksh
+.list
+.log
+.text
+.txt
+.dsc
+text/prs.lines.tag
+.rtx
+text/richtext
+.sgm
+	text/sgml
+.sgml
+.tsv
+text/tab-separated-values
+.man
+
+text/troff
+.me
+.ms
+.roff
+.t
+.tr
+.uri
+text/uri-list
+.uris
+.urls
+.curl
+text/vnd.curl
+.dcurl
+text/vnd.curl.dcurl
+.mcurl
+text/vnd.curl.mcurl
+.scurl
+text/vnd.curl.scurl
+.fly
+text/vnd.fly
+.flx
+text/vnd.fmi.flexstor
+.gv
+text/vnd.graphviz
+.3dml
+text/vnd.in3d.3dml
+.spot
+text/vnd.in3d.spot
+.jad
+ text/vnd.sun.j2me.app-descriptor
+.si
+text/vnd.wap.si
+.sl
+text/vnd.wap.sl
+.wml
+text/vnd.wap.wml
+.wmls
+text/vnd.wap.wmlscript
+.asm
+
+text/x-asm
+.s
+.c
+text/x-c
+.cc
+.cpp
+.cxx
+.dic
+.h
+.hh
+.f
+text/x-fortran
+.f77
+.f90
+.for
+.java
+text/x-java-source
+.p
+text/x-pascal
+.pas
+.pp
+.inc
+.py
+text/x-python
+.etx
+text/x-setext
+.uu
+text/x-uuencode
+.vcs
+text/x-vcalendar
+.vcf
+text/x-vcard
+.h261
+
+video/h261
+.h263
+
+video/h263
+.h264
+
+video/h264
+.jpgv
+
+video/jpeg
+.jpgm
+	video/jpm
+.jpm
+.mj2
+	video/mj2
+.mjp2
+.mp4
+	video/mp4
+.mp4v
+.mpg4
+.m1v
+
+video/mpeg
+.m2v
+.mpa
+.mpe
+.mpeg
+.mpg
+.ogv
+	video/ogg
+.mov
+video/quicktime
+.qt
+.fvt
+video/vnd.fvt
+.m4u
+video/vnd.mpegurl
+.mxu
+.pyv
+ video/vnd.ms-playready.media.pyv
+.viv
+video/vnd.vivo
+.webm
+
+video/webm
+.f4v
+video/x-f4v
+.fli
+video/x-fli
+.flv
+video/x-flv
+.m4v
+video/x-m4v
+.mkv
+video/x-matroska
+.asf
+video/x-ms-asf
+.asx
+.wm
+video/x-ms-wm
+.wmv
+video/x-ms-wmv
+.wmx
+video/x-ms-wmx
+.wvx
+video/x-ms-wvx
+.avi
+video/x-msvideo
+.movie
+video/x-sgi-movie
+.ice
+x-conference/x-cooltalk
+.pc-axis
+ine/pc-axis
+get_MEDIA_TYPE_kf3tjy_k$
+	prototype
+MediaTypeMap_getInstance
+1es.unizar.iaaa.tfg.constants/MediaTypeMap|null[0]
+9ic#95:es.unizar.iaaa.tfg.constants/MediaTypeMap|null[0]-1
+ kotlin/to|9142910121690433229[0]
+/kotlin.collections/mapOf|5848051883920634516[0]
+,kotlin.js/objectMeta|-6597366550536324531[0]
+
+objectMeta
+/kotlin.js/setMetadataFor|-730693805633988211[0]
+setMetadataFor
+9ic#95:es.unizar.iaaa.tfg.constants/MediaTypeMap|null[0]-0
+kotlin/Any|null[0]
+Any
+	undefinedG
+ 
+
+ 
+
+
+ ©
+ 
+´
+±
+≥
+∂√¿„æ
+˙ΩÍıΩ
+ÜΩ“ÅΩ
+˝º  äÙº Óº‚Èº
+ “
+  ö
+  ∞  ∫ 
+≤ 
+æº“πº
+µº  ö§º
+  ∫  ∫ Ñº   ıª
+  ∞Ëª  ˙Ÿª
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ	
+4   '
+  ∞	  ÿ
+  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4	   '
+  ∞		  ÿ	  ÿ
+4
+   '
+  ∞
+	  ÿ
+  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ  ÿ
+4   '
+  ∞	  ÿ   ÿ
+4   '
+  ∞	  ÿ  ÿ!
+4   '
+  ∞	  ÿ   ÿ!
+4   '
+  ∞	  ÿ"  ÿ#
+4   '
+  ∞	  ÿ$  ÿ%
+4   '
+  ∞	  ÿ&  ÿ'
+4   '
+  ∞	  ÿ(  ÿ)
+4   '
+  ∞	  ÿ*  ÿ+
+4   '
+  ∞	  ÿ*  ÿ,
+4   '
+  ∞	  ÿ-  ÿ.
+4   '
+  ∞	  ÿ/  ÿ0
+4   '
+  ∞	  ÿ1  ÿ2
+4   '
+  ∞	  ÿ3  ÿ4
+4   '
+  ∞	  ÿ5  ÿ6
+4   '
+  ∞	  ÿ7  ÿ6
+4    '
+  ∞ 	  ÿ8   ÿ6
+4!   '
+  ∞!	  ÿ9!  ÿ:
+4"   '
+  ∞"	  ÿ;"  ÿ:
+4#   '
+  ∞#	  ÿ9#  ÿ<
+4$   '
+  ∞$	  ÿ;$  ÿ<
+4%   '
+  ∞%	  ÿ=%  ÿ>
+4&   '
+  ∞&	  ÿ?&  ÿ@
+4'   '
+  ∞'	  ÿA'  ÿB
+4(   '
+  ∞(	  ÿC(  ÿD
+4)   '
+  ∞)	  ÿE)  ÿD
+4*   '
+  ∞*	  ÿF*  ÿD
+4+   '
+  ∞+	  ÿG+  ÿH
+4,   '
+  ∞,	  ÿI,  ÿJ
+4-   '
+  ∞-	  ÿK-  ÿJ
+4.   '
+  ∞.	  ÿL.  ÿJ
+4/   '
+  ∞/	  ÿM/  ÿJ
+40   '
+  ∞0	  ÿN0  ÿJ
+41   '
+  ∞1	  ÿO1  ÿJ
+42   '
+  ∞2	  ÿP2  ÿJ
+43   '
+  ∞3	  ÿQ3  ÿJ
+44   '
+  ∞4	  ÿR4  ÿJ
+45   '
+  ∞5	  ÿS5  ÿJ
+46   '
+  ∞6	  ÿT6  ÿJ
+47   '
+  ∞7	  ÿU7  ÿJ
+48   '
+  ∞8	  ÿV8  ÿJ
+49   '
+  ∞9	  ÿW9  ÿJ
+4:   '
+  ∞:	  ÿX:  ÿJ
+4;   '
+  ∞;	  ÿY;  ÿJ
+4<   '
+  ∞<	  ÿZ<  ÿJ
+4=   '
+  ∞=	  ÿ[=  ÿJ
+4>   '
+  ∞>	  ÿ\>  ÿ]
+4?   '
+  ∞?	  ÿ^?  ÿ_
+4@   '
+  ∞@	  ÿ`@  ÿa
+4A   '
+  ∞A	  ÿbA  ÿc
+4B   '
+  ∞B	  ÿdB  ÿc
+4C   '
+  ∞C	  ÿeC  ÿc
+4D   '
+  ∞D	  ÿfD  ÿc
+4E   '
+  ∞E	  ÿgE  ÿh
+4F   '
+  ∞F	  ÿiF  ÿj
+4G   '
+  ∞G	  ÿiG  ÿk
+4H   '
+  ∞H	  ÿlH  ÿm
+4I   '
+  ∞I	  ÿnI  ÿo
+4J   '
+  ∞J	  ÿpJ  ÿo
+4K   '
+  ∞K	  ÿqK  ÿr
+4L   '
+  ∞L	  ÿsL  ÿt
+4M   '
+  ∞M	  ÿuM  ÿv
+4N   '
+  ∞N	  ÿwN  ÿv
+4O   '
+  ∞O	  ÿuO  ÿx
+4P   '
+  ∞P	  ÿwP  ÿx
+4Q   '
+  ∞Q	  ÿuQ  ÿy
+4R   '
+  ∞R	  ÿwR  ÿy
+4S   '
+  ∞S	  ÿzS  ÿ{
+4T   '
+  ∞T	  ÿ|T  ÿ}
+4U   '
+  ∞U	  ÿ~U  ÿ
+6V   )
+  ∞V	  ÿÄV  ÿÅ
+6W   )
+  ∞W	  ÿÇW  ÿÉ
+6X   )
+  ∞X	  ÿÑX  ÿÖ
+6Y   )
+  ∞Y	  ÿÜY  ÿá
+6Z   )
+  ∞Z	  ÿàZ  ÿá
+6[   )
+  ∞[	  ÿâ[  ÿá
+6\   )
+  ∞\	  ÿä\  ÿã
+6]   )
+  ∞]	  ÿå]  ÿç
+6^   )
+  ∞^	  ÿé^  ÿè
+6_   )
+  ∞_	  ÿê_  ÿë
+6`   )
+  ∞`	  ÿí`  ÿì
+6a   )
+  ∞a	  ÿîa  ÿï
+6b   )
+  ∞b	  ÿñb  ÿó
+6c   )
+  ∞c	  ÿòc  ÿô
+6d   )
+  ∞d	  ÿöd  ÿõ
+6e   )
+  ∞e	  ÿúe  ÿù
+6f   )
+  ∞f	  ÿûf  ÿü
+6g   )
+  ∞g	  ÿ†g  ÿ°
+6h   )
+  ∞h	  ÿ¢h  ÿ£
+6i   )
+  ∞i	  ÿ§i  ÿ•
+6j   )
+  ∞j	  ÿ¶j  ÿß
+6k   )
+  ∞k	  ÿ®k  ÿ©
+6l   )
+  ∞l	  ÿ™l  ÿ´
+6m   )
+  ∞m	  ÿ¨m  ÿ≠
+6n   )
+  ∞n	  ÿÆn  ÿØ
+6o   )
+  ∞o	  ÿ∞o  ÿ±
+6p   )
+  ∞p	  ÿ≤p  ÿ±
+6q   )
+  ∞q	  ÿ≥q  ÿ¥
+6r   )
+  ∞r	  ÿµr  ÿ∂
+6s   )
+  ∞s	  ÿ∑s  ÿ∏
+6t   )
+  ∞t	  ÿπt  ÿ∫
+6u   )
+  ∞u	  ÿªu  ÿº
+6v   )
+  ∞v	  ÿΩv  ÿæ
+6w   )
+  ∞w	  ÿøw  ÿ¿
+6x   )
+  ∞x	  ÿ¡x  ÿ¬
+6y   )
+  ∞y	  ÿ√y  ÿƒ
+6z   )
+  ∞z	  ÿ≈z  ÿ∆
+6{   )
+  ∞{	  ÿ«{  ÿ»
+6|   )
+  ∞|	  ÿ…|  ÿ 
+6}   )
+  ∞}	  ÿÀ}  ÿÃ
+6~   )
+  ∞~	  ÿÕ~  ÿŒ
+6   )
+  ∞	  ÿœ  ÿŒ
+9Ä   +
+  ∞Ä	  ÿ–Ä  ÿ—
+9Å   +
+  ∞Å	  ÿ“Å  ÿ”
+9Ç   +
+  ∞Ç	  ÿ‘Ç  ÿ’
+9É   +
+  ∞É	  ÿ÷É  ÿ◊
+9Ñ   +
+  ∞Ñ	  ÿÿÑ  ÿŸ
+9Ö   +
+  ∞Ö	  ÿ⁄Ö  ÿ€
+9Ü   +
+  ∞Ü	  ÿ‹Ü  ÿ›
+9á   +
+  ∞á	  ÿﬁá  ÿﬂ
+9à   +
+  ∞à	  ÿ‡à  ÿ·
+9â   +
+  ∞â	  ÿ‚â  ÿ„
+9ä   +
+  ∞ä	  ÿ‰ä  ÿÂ
+9ã   +
+  ∞ã	  ÿÊã  ÿÁ
+9å   +
+  ∞å	  ÿËå  ÿÈ
+9ç   +
+  ∞ç	  ÿÍç  ÿÎ
+9é   +
+  ∞é	  ÿÏé  ÿÌ
+9è   +
+  ∞è	  ÿÓè  ÿÔ
+9ê   +
+  ∞ê	  ÿê  ÿÒ
+9ë   +
+  ∞ë	  ÿÚë  ÿÛ
+9í   +
+  ∞í	  ÿÙí  ÿı
+9ì   +
+  ∞ì	  ÿˆì  ÿ˜
+9î   +
+  ∞î	  ÿ¯î  ÿ˘
+9ï   +
+  ∞ï	  ÿ˙ï  ÿ˚
+9ñ   +
+  ∞ñ	  ÿ¸ñ  ÿ˝
+9ó   +
+  ∞ó	  ÿ˛ó  ÿ˝
+9ò   +
+  ∞ò	  ÿˇò  ÿ˝
+9ô   +
+  ∞ô	  ÿÄô  ÿ˝
+9ö   +
+  ∞ö	  ÿÅö  ÿ˝
+9õ   +
+  ∞õ	  ÿÇõ  ÿÉ
+9ú   +
+  ∞ú	  ÿÑú  ÿÖ
+9ù   +
+  ∞ù	  ÿÜù  ÿá
+9û   +
+  ∞û	  ÿàû  ÿâ
+9ü   +
+  ∞ü	  ÿäü  ÿã
+9†   +
+  ∞†	  ÿå†  ÿç
+9°   +
+  ∞°	  ÿé°  ÿè
+9¢   +
+  ∞¢	  ÿê¢  ÿë
+9£   +
+  ∞£	  ÿí£  ÿì
+9§   +
+  ∞§	  ÿî§  ÿï
+9•   +
+  ∞•	  ÿñ•  ÿó
+9¶   +
+  ∞¶	  ÿò¶  ÿô
+9ß   +
+  ∞ß	  ÿöß  ÿõ
+9®   +
+  ∞®	  ÿú®  ÿù
+9©   +
+  ∞©	  ÿû©  ÿü
+9™   +
+  ∞™	  ÿ†™  ÿü
+9´   +
+  ∞´	  ÿ°´  ÿ¢
+9¨   +
+  ∞¨	  ÿ£¨  ÿ§
+9≠   +
+  ∞≠	  ÿ•≠  ÿ¶
+9Æ   +
+  ∞Æ	  ÿßÆ  ÿ®
+9Ø   +
+  ∞Ø	  ÿ©Ø  ÿ™
+9∞   +
+  ∞∞	  ÿ´∞  ÿ¨
+9±   +
+  ∞±	  ÿ≠±  ÿÆ
+9≤   +
+  ∞≤	  ÿØ≤  ÿ∞
+9≥   +
+  ∞≥	  ÿ±≥  ÿ≤
+9¥   +
+  ∞¥	  ÿ≥¥  ÿ¥
+9µ   +
+  ∞µ	  ÿµµ  ÿ∂
+9∂   +
+  ∞∂	  ÿ∑∂  ÿ∏
+9∑   +
+  ∞∑	  ÿπ∑  ÿ∫
+9∏   +
+  ∞∏	  ÿª∏  ÿº
+9π   +
+  ∞π	  ÿΩπ  ÿº
+9∫   +
+  ∞∫	  ÿæ∫  ÿø
+9ª   +
+  ∞ª	  ÿ¿ª  ÿ¡
+9º   +
+  ∞º	  ÿ¬º  ÿ√
+9Ω   +
+  ∞Ω	  ÿƒΩ  ÿ≈
+9æ   +
+  ∞æ	  ÿ∆æ  ÿ«
+9ø   +
+  ∞ø	  ÿ»ø  ÿ«
+9¿   +
+  ∞¿	  ÿ…¿  ÿ 
+9¡   +
+  ∞¡	  ÿÀ¡  ÿÃ
+9¬   +
+  ∞¬	  ÿÕ¬  ÿŒ
+9√   +
+  ∞√	  ÿœ√  ÿŒ
+9ƒ   +
+  ∞ƒ	  ÿ–ƒ  ÿŒ
+9≈   +
+  ∞≈	  ÿ—≈  ÿŒ
+9∆   +
+  ∞∆	  ÿ“∆  ÿ”
+9«   +
+  ∞«	  ÿ‘«  ÿ’
+9»   +
+  ∞»	  ÿ÷»  ÿ◊
+9…   +
+  ∞…	  ÿÿ…  ÿŸ
+9    +
+  ∞ 	  ÿ⁄   ÿ€
+9À   +
+  ∞À	  ÿ‹À  ÿ›
+9Ã   +
+  ∞Ã	  ÿﬁÃ  ÿﬂ
+9Õ   +
+  ∞Õ	  ÿ‡Õ  ÿ·
+9Œ   +
+  ∞Œ	  ÿ‚Œ  ÿ„
+9œ   +
+  ∞œ	  ÿ‰œ  ÿÂ
+9–   +
+  ∞–	  ÿÊ–  ÿÁ
+9—   +
+  ∞—	  ÿË—  ÿÈ
+9“   +
+  ∞“	  ÿÍ“  ÿÎ
+9”   +
+  ∞”	  ÿÏ”  ÿÌ
+9‘   +
+  ∞‘	  ÿÓ‘  ÿÔ
+9’   +
+  ∞’	  ÿ’  ÿÒ
+9÷   +
+  ∞÷	  ÿÚ÷  ÿÒ
+9◊   +
+  ∞◊	  ÿÛ◊  ÿÙ
+9ÿ   +
+  ∞ÿ	  ÿıÿ  ÿˆ
+9Ÿ   +
+  ∞Ÿ	  ÿ˜Ÿ  ÿ¯
+9⁄   +
+  ∞⁄	  ÿ˘⁄  ÿ˙
+9€   +
+  ∞€	  ÿ˚€  ÿ˙
+9‹   +
+  ∞‹	  ÿ¸‹  ÿ˝
+9›   +
+  ∞›	  ÿ˛›  ÿˇ
+9ﬁ   +
+  ∞ﬁ	  ÿÄﬁ  ÿÅ
+9ﬂ   +
+  ∞ﬂ	  ÿÇﬂ  ÿÉ
+9‡   +
+  ∞‡	  ÿÑ‡  ÿÖ
+9·   +
+  ∞·	  ÿÜ·  ÿá
+9‚   +
+  ∞‚	  ÿà‚  ÿâ
+9„   +
+  ∞„	  ÿä„  ÿã
+9‰   +
+  ∞‰	  ÿå‰  ÿç
+9Â   +
+  ∞Â	  ÿéÂ  ÿè
+9Ê   +
+  ∞Ê	  ÿêÊ  ÿë
+9Á   +
+  ∞Á	  ÿíÁ  ÿì
+9Ë   +
+  ∞Ë	  ÿîË  ÿï
+9È   +
+  ∞È	  ÿñÈ  ÿó
+9Í   +
+  ∞Í	  ÿòÍ  ÿô
+9Î   +
+  ∞Î	  ÿöÎ  ÿõ
+9Ï   +
+  ∞Ï	  ÿúÏ  ÿù
+9Ì   +
+  ∞Ì	  ÿûÌ  ÿü
+9Ó   +
+  ∞Ó	  ÿ†Ó  ÿ°
+9Ô   +
+  ∞Ô	  ÿ¢Ô  ÿ£
+9   +
+  ∞	  ÿ§  ÿ£
+9Ò   +
+  ∞Ò	  ÿ•Ò  ÿ£
+9Ú   +
+  ∞Ú	  ÿ¶Ú  ÿß
+9Û   +
+  ∞Û	  ÿ®Û  ÿ©
+9Ù   +
+  ∞Ù	  ÿ™Ù  ÿ´
+9ı   +
+  ∞ı	  ÿ¨ı  ÿ´
+9ˆ   +
+  ∞ˆ	  ÿ≠ˆ  ÿÆ
+9˜   +
+  ∞˜	  ÿØ˜  ÿ∞
+9¯   +
+  ∞¯	  ÿ±¯  ÿ≤
+9˘   +
+  ∞˘	  ÿ≥˘  ÿ¥
+9˙   +
+  ∞˙	  ÿµ˙  ÿ¥
+9˚   +
+  ∞˚	  ÿ∂˚  ÿ∑
+9¸   +
+  ∞¸	  ÿ∏¸  ÿπ
+9˝   +
+  ∞˝	  ÿ∫˝  ÿª
+9˛   +
+  ∞˛	  ÿº˛  ÿΩ
+9ˇ   +
+  ∞ˇ	  ÿæˇ  ÿø
+9Ä   +
+  ∞Ä	  ÿ¿Ä  ÿ¡
+9Å   +
+  ∞Å	  ÿ¬Å  ÿ√
+9Ç   +
+  ∞Ç	  ÿƒÇ  ÿ≈
+9É   +
+  ∞É	  ÿ∆É  ÿ«
+9Ñ   +
+  ∞Ñ	  ÿ»Ñ  ÿ…
+9Ö   +
+  ∞Ö	  ÿ Ö  ÿ…
+9Ü   +
+  ∞Ü	  ÿÀÜ  ÿÃ
+9á   +
+  ∞á	  ÿÕá  ÿŒ
+9à   +
+  ∞à	  ÿœà  ÿ–
+9â   +
+  ∞â	  ÿ—â  ÿ“
+9ä   +
+  ∞ä	  ÿ”ä  ÿ‘
+9ã   +
+  ∞ã	  ÿ’ã  ÿ÷
+9å   +
+  ∞å	  ÿ◊å  ÿ÷
+9ç   +
+  ∞ç	  ÿÿç  ÿŸ
+9é   +
+  ∞é	  ÿ⁄é  ÿ€
+9è   +
+  ∞è	  ÿ‹è  ÿ€
+9ê   +
+  ∞ê	  ÿ›ê  ÿﬁ
+9ë   +
+  ∞ë	  ÿﬂë  ÿ‡
+9í   +
+  ∞í	  ÿ·í  ÿ‚
+9ì   +
+  ∞ì	  ÿ„ì  ÿ‚
+9î   +
+  ∞î	  ÿ‰î  ÿÂ
+9ï   +
+  ∞ï	  ÿÊï  ÿÂ
+9ñ   +
+  ∞ñ	  ÿÁñ  ÿÂ
+9ó   +
+  ∞ó	  ÿËó  ÿÂ
+9ò   +
+  ∞ò	  ÿÈò  ÿÍ
+9ô   +
+  ∞ô	  ÿÎô  ÿÏ
+9ö   +
+  ∞ö	  ÿÌö  ÿÓ
+9õ   +
+  ∞õ	  ÿÔõ  ÿ
+9ú   +
+  ∞ú	  ÿÒú  ÿÚ
+9ù   +
+  ∞ù	  ÿÛù  ÿÙ
+9û   +
+  ∞û	  ÿıû  ÿˆ
+9ü   +
+  ∞ü	  ÿ˜ü  ÿ¯
+9†   +
+  ∞†	  ÿ˘†  ÿ˙
+9°   +
+  ∞°	  ÿ˚°  ÿ¸
+9¢   +
+  ∞¢	  ÿ˝¢  ÿ˛
+9£   +
+  ∞£	  ÿˇ£  ÿÄ
+9§   +
+  ∞§	  ÿÅ§  ÿÇ
+9•   +
+  ∞•	  ÿÉ•  ÿÑ
+9¶   +
+  ∞¶	  ÿÖ¶  ÿÜ
+9ß   +
+  ∞ß	  ÿáß  ÿà
+9®   +
+  ∞®	  ÿâ®  ÿä
+9©   +
+  ∞©	  ÿã©  ÿå
+9™   +
+  ∞™	  ÿç™  ÿé
+9´   +
+  ∞´	  ÿè´  ÿê
+9¨   +
+  ∞¨	  ÿë¨  ÿí
+9≠   +
+  ∞≠	  ÿì≠  ÿî
+9Æ   +
+  ∞Æ	  ÿïÆ  ÿñ
+9Ø   +
+  ∞Ø	  ÿóØ  ÿò
+9∞   +
+  ∞∞	  ÿô∞  ÿö
+9±   +
+  ∞±	  ÿõ±  ÿú
+9≤   +
+  ∞≤	  ÿù≤  ÿû
+9≥   +
+  ∞≥	  ÿü≥  ÿ†
+9¥   +
+  ∞¥	  ÿ°¥  ÿ¢
+9µ   +
+  ∞µ	  ÿ£µ  ÿ§
+9∂   +
+  ∞∂	  ÿ•∂  ÿ¶
+9∑   +
+  ∞∑	  ÿß∑  ÿ®
+9∏   +
+  ∞∏	  ÿ©∏  ÿ®
+9π   +
+  ∞π	  ÿ™π  ÿ®
+9∫   +
+  ∞∫	  ÿ´∫  ÿ®
+9ª   +
+  ∞ª	  ÿ¨ª  ÿ®
+9º   +
+  ∞º	  ÿ≠º  ÿ®
+9Ω   +
+  ∞Ω	  ÿÆΩ  ÿ®
+9æ   +
+  ∞æ	  ÿØæ  ÿ∞
+9ø   +
+  ∞ø	  ÿ±ø  ÿ≤
+9¿   +
+  ∞¿	  ÿ≥¿  ÿ¥
+9¡   +
+  ∞¡	  ÿµ¡  ÿ∂
+9¬   +
+  ∞¬	  ÿ∑¬  ÿ∏
+9√   +
+  ∞√	  ÿπ√  ÿ∫
+9ƒ   +
+  ∞ƒ	  ÿªƒ  ÿº
+9≈   +
+  ∞≈	  ÿΩ≈  ÿæ
+9∆   +
+  ∞∆	  ÿø∆  ÿ¿
+9«   +
+  ∞«	  ÿ¡«  ÿ¬
+9»   +
+  ∞»	  ÿ√»  ÿƒ
+9…   +
+  ∞…	  ÿ≈…  ÿƒ
+9    +
+  ∞ 	  ÿ∆   ÿƒ
+9À   +
+  ∞À	  ÿ«À  ÿƒ
+9Ã   +
+  ∞Ã	  ÿ»Ã  ÿƒ
+9Õ   +
+  ∞Õ	  ÿ…Õ  ÿ 
+9Œ   +
+  ∞Œ	  ÿÀŒ  ÿÃ
+9œ   +
+  ∞œ	  ÿÕœ  ÿŒ
+9–   +
+  ∞–	  ÿœ–  ÿ–
+9—   +
+  ∞—	  ÿ——  ÿ“
+9“   +
+  ∞“	  ÿ”“  ÿ‘
+9”   +
+  ∞”	  ÿ’”  ÿ‘
+9‘   +
+  ∞‘	  ÿ÷‘  ÿ◊
+9’   +
+  ∞’	  ÿÿ’  ÿŸ
+9÷   +
+  ∞÷	  ÿ⁄÷  ÿ€
+9◊   +
+  ∞◊	  ÿ‹◊  ÿ€
+9ÿ   +
+  ∞ÿ	  ÿ›ÿ  ÿ€
+9Ÿ   +
+  ∞Ÿ	  ÿﬁŸ  ÿ€
+9⁄   +
+  ∞⁄	  ÿﬂ⁄  ÿ‡
+9€   +
+  ∞€	  ÿ·€  ÿ‚
+9‹   +
+  ∞‹	  ÿ„‹  ÿ‰
+9›   +
+  ∞›	  ÿÂ›  ÿÊ
+9ﬁ   +
+  ∞ﬁ	  ÿÁﬁ  ÿË
+9ﬂ   +
+  ∞ﬂ	  ÿÈﬂ  ÿÍ
+9‡   +
+  ∞‡	  ÿÎ‡  ÿÏ
+9·   +
+  ∞·	  ÿÌ·  ÿÓ
+9‚   +
+  ∞‚	  ÿÔ‚  ÿ
+9„   +
+  ∞„	  ÿÒ„  ÿÚ
+9‰   +
+  ∞‰	  ÿÛ‰  ÿÙ
+9Â   +
+  ∞Â	  ÿıÂ  ÿˆ
+9Ê   +
+  ∞Ê	  ÿ˜Ê  ÿ¯
+9Á   +
+  ∞Á	  ÿ˘Á  ÿ˙
+9Ë   +
+  ∞Ë	  ÿ˚Ë  ÿ¸
+9È   +
+  ∞È	  ÿ˝È  ÿ˛
+9Í   +
+  ∞Í	  ÿˇÍ  ÿÄ
+9Î   +
+  ∞Î	  ÿÅÎ  ÿÇ
+9Ï   +
+  ∞Ï	  ÿÉÏ  ÿÑ
+9Ì   +
+  ∞Ì	  ÿÖÌ  ÿÜ
+9Ó   +
+  ∞Ó	  ÿáÓ  ÿà
+9Ô   +
+  ∞Ô	  ÿâÔ  ÿä
+9   +
+  ∞	  ÿã  ÿå
+9Ò   +
+  ∞Ò	  ÿçÒ  ÿé
+9Ú   +
+  ∞Ú	  ÿèÚ  ÿê
+9Û   +
+  ∞Û	  ÿëÛ  ÿí
+9Ù   +
+  ∞Ù	  ÿìÙ  ÿî
+9ı   +
+  ∞ı	  ÿïı  ÿñ
+9ˆ   +
+  ∞ˆ	  ÿóˆ  ÿò
+9˜   +
+  ∞˜	  ÿô˜  ÿö
+9¯   +
+  ∞¯	  ÿõ¯  ÿú
+9˘   +
+  ∞˘	  ÿù˘  ÿû
+9˙   +
+  ∞˙	  ÿü˙  ÿ†
+9˚   +
+  ∞˚	  ÿ°˚  ÿ¢
+9¸   +
+  ∞¸	  ÿ£¸  ÿ§
+9˝   +
+  ∞˝	  ÿ•˝  ÿ¶
+9˛   +
+  ∞˛	  ÿß˛  ÿ®
+9ˇ   +
+  ∞ˇ	  ÿ©ˇ  ÿ™
+9Ä   +
+  ∞Ä	  ÿ´Ä  ÿ¨
+9Å   +
+  ∞Å	  ÿ≠Å  ÿÆ
+9Ç   +
+  ∞Ç	  ÿØÇ  ÿ∞
+9É   +
+  ∞É	  ÿ±É  ÿ≤
+9Ñ   +
+  ∞Ñ	  ÿ≥Ñ  ÿ¥
+9Ö   +
+  ∞Ö	  ÿµÖ  ÿ∂
+9Ü   +
+  ∞Ü	  ÿ∑Ü  ÿ∏
+9á   +
+  ∞á	  ÿπá  ÿ∫
+9à   +
+  ∞à	  ÿªà  ÿ∫
+9â   +
+  ∞â	  ÿºâ  ÿ∫
+9ä   +
+  ∞ä	  ÿΩä  ÿæ
+9ã   +
+  ∞ã	  ÿøã  ÿ¿
+9å   +
+  ∞å	  ÿ¡å  ÿ¬
+9ç   +
+  ∞ç	  ÿ√ç  ÿƒ
+9é   +
+  ∞é	  ÿ≈é  ÿ∆
+9è   +
+  ∞è	  ÿ«è  ÿ»
+9ê   +
+  ∞ê	  ÿ…ê  ÿ 
+9ë   +
+  ∞ë	  ÿÀë  ÿÃ
+9í   +
+  ∞í	  ÿÕí  ÿŒ
+9ì   +
+  ∞ì	  ÿœì  ÿ–
+9î   +
+  ∞î	  ÿ—î  ÿ–
+9ï   +
+  ∞ï	  ÿ“ï  ÿ–
+9ñ   +
+  ∞ñ	  ÿ”ñ  ÿ–
+9ó   +
+  ∞ó	  ÿ‘ó  ÿ–
+9ò   +
+  ∞ò	  ÿ’ò  ÿ–
+9ô   +
+  ∞ô	  ÿ÷ô  ÿ◊
+9ö   +
+  ∞ö	  ÿÿö  ÿŸ
+9õ   +
+  ∞õ	  ÿ⁄õ  ÿ€
+9ú   +
+  ∞ú	  ÿ‹ú  ÿ›
+9ù   +
+  ∞ù	  ÿﬁù  ÿﬂ
+9û   +
+  ∞û	  ÿ‡û  ÿ·
+9ü   +
+  ∞ü	  ÿ‚ü  ÿ„
+9†   +
+  ∞†	  ÿ‰†  ÿÂ
+9°   +
+  ∞°	  ÿÊ°  ÿÁ
+9¢   +
+  ∞¢	  ÿË¢  ÿÈ
+9£   +
+  ∞£	  ÿÍ£  ÿÎ
+9§   +
+  ∞§	  ÿÏ§  ÿÌ
+9•   +
+  ∞•	  ÿÓ•  ÿÔ
+9¶   +
+  ∞¶	  ÿ¶  ÿÒ
+9ß   +
+  ∞ß	  ÿÚß  ÿÒ
+9®   +
+  ∞®	  ÿÛ®  ÿÙ
+9©   +
+  ∞©	  ÿı©  ÿˆ
+9™   +
+  ∞™	  ÿ˜™  ÿ¯
+9´   +
+  ∞´	  ÿ˘´  ÿ¯
+9¨   +
+  ∞¨	  ÿ˙¨  ÿ˚
+9≠   +
+  ∞≠	  ÿ¸≠  ÿ˝
+9Æ   +
+  ∞Æ	  ÿ˛Æ  ÿˇ
+9Ø   +
+  ∞Ø	  ÿÄØ  ÿˇ
+9∞   +
+  ∞∞	  ÿÅ∞  ÿˇ
+9±   +
+  ∞±	  ÿÇ±  ÿˇ
+9≤   +
+  ∞≤	  ÿÉ≤  ÿˇ
+9≥   +
+  ∞≥	  ÿÑ≥  ÿˇ
+9¥   +
+  ∞¥	  ÿÖ¥  ÿˇ
+9µ   +
+  ∞µ	  ÿ˛µ  ÿÜ
+9∂   +
+  ∞∂	  ÿÄ∂  ÿÜ
+9∑   +
+  ∞∑	  ÿÅ∑  ÿÜ
+9∏   +
+  ∞∏	  ÿÇ∏  ÿÜ
+9π   +
+  ∞π	  ÿÉπ  ÿÜ
+9∫   +
+  ∞∫	  ÿÑ∫  ÿÜ
+9ª   +
+  ∞ª	  ÿÖª  ÿÜ
+9º   +
+  ∞º	  ÿáº  ÿà
+9Ω   +
+  ∞Ω	  ÿâΩ  ÿä
+9æ   +
+  ∞æ	  ÿãæ  ÿå
+9ø   +
+  ∞ø	  ÿçø  ÿé
+9¿   +
+  ∞¿	  ÿè¿  ÿê
+9¡   +
+  ∞¡	  ÿë¡  ÿê
+9¬   +
+  ∞¬	  ÿí¬  ÿì
+9√   +
+  ∞√	  ÿî√  ÿï
+9ƒ   +
+  ∞ƒ	  ÿñƒ  ÿó
+9≈   +
+  ∞≈	  ÿò≈  ÿô
+9∆   +
+  ∞∆	  ÿö∆  ÿõ
+9«   +
+  ∞«	  ÿú«  ÿù
+9»   +
+  ∞»	  ÿû»  ÿü
+9…   +
+  ∞…	  ÿ†…  ÿ°
+9    +
+  ∞ 	  ÿ¢   ÿ£
+9À   +
+  ∞À	  ÿ§À  ÿ•
+9Ã   +
+  ∞Ã	  ÿ¶Ã  ÿß
+9Õ   +
+  ∞Õ	  ÿ®Õ  ÿ©
+9Œ   +
+  ∞Œ	  ÿ™Œ  ÿ©
+9œ   +
+  ∞œ	  ÿ´œ  ÿ¨
+9–   +
+  ∞–	  ÿ≠–  ÿÆ
+9—   +
+  ∞—	  ÿØ—  ÿÆ
+9“   +
+  ∞“	  ÿ∞“  ÿ±
+9”   +
+  ∞”	  ÿ≤”  ÿ≥
+9‘   +
+  ∞‘	  ÿ¥‘  ÿµ
+9’   +
+  ∞’	  ÿ∂’  ÿ∑
+9÷   +
+  ∞÷	  ÿ∏÷  ÿπ
+9◊   +
+  ∞◊	  ÿ∫◊  ÿª
+9ÿ   +
+  ∞ÿ	  ÿºÿ  ÿΩ
+9Ÿ   +
+  ∞Ÿ	  ÿæŸ  ÿø
+9⁄   +
+  ∞⁄	  ÿ¿⁄  ÿ¡
+9€   +
+  ∞€	  ÿ¬€  ÿ¡
+9‹   +
+  ∞‹	  ÿ√‹  ÿƒ
+9›   +
+  ∞›	  ÿ≈›  ÿ∆
+9ﬁ   +
+  ∞ﬁ	  ÿ«ﬁ  ÿ»
+9ﬂ   +
+  ∞ﬂ	  ÿ…ﬂ  ÿ 
+9‡   +
+  ∞‡	  ÿÀ‡  ÿÃ
+9·   +
+  ∞·	  ÿÕ·  ÿŒ
+9‚   +
+  ∞‚	  ÿœ‚  ÿŒ
+9„   +
+  ∞„	  ÿ–„  ÿŒ
+9‰   +
+  ∞‰	  ÿ—‰  ÿŒ
+9Â   +
+  ∞Â	  ÿ“Â  ÿ”
+9Ê   +
+  ∞Ê	  ÿ‘Ê  ÿ’
+9Á   +
+  ∞Á	  ÿ÷Á  ÿ◊
+9Ë   +
+  ∞Ë	  ÿÿË  ÿŸ
+9È   +
+  ∞È	  ÿ⁄È  ÿ€
+9Í   +
+  ∞Í	  ÿ‹Í  ÿ›
+9Î   +
+  ∞Î	  ÿﬁÎ  ÿﬂ
+9Ï   +
+  ∞Ï	  ÿ‡Ï  ÿ·
+9Ì   +
+  ∞Ì	  ÿ‚Ì  ÿ„
+9Ó   +
+  ∞Ó	  ÿ‰Ó  ÿÂ
+9Ô   +
+  ∞Ô	  ÿÊÔ  ÿÁ
+9   +
+  ∞	  ÿË  ÿÈ
+9Ò   +
+  ∞Ò	  ÿÍÒ  ÿÎ
+9Ú   +
+  ∞Ú	  ÿÏÚ  ÿÌ
+9Û   +
+  ∞Û	  ÿÓÛ  ÿÔ
+9Ù   +
+  ∞Ù	  ÿÙ  ÿÒ
+9ı   +
+  ∞ı	  ÿÚı  ÿÛ
+9ˆ   +
+  ∞ˆ	  ÿÙˆ  ÿı
+9˜   +
+  ∞˜	  ÿˆ˜  ÿ˜
+9¯   +
+  ∞¯	  ÿ¯¯  ÿ˘
+9˘   +
+  ∞˘	  ÿ˙˘  ÿ˚
+9˙   +
+  ∞˙	  ÿ¸˙  ÿ˝
+9˚   +
+  ∞˚	  ÿ˛˚  ÿ˝
+9¸   +
+  ∞¸	  ÿˇ¸  ÿÄ
+9˝   +
+  ∞˝	  ÿÅ˝  ÿÇ
+9˛   +
+  ∞˛	  ÿÉ˛  ÿÑ
+9ˇ   +
+  ∞ˇ	  ÿÖˇ  ÿÜ
+9Ä   +
+  ∞Ä	  ÿáÄ  ÿà
+9Å   +
+  ∞Å	  ÿâÅ  ÿä
+9Ç   +
+  ∞Ç	  ÿãÇ  ÿå
+9É   +
+  ∞É	  ÿçÉ  ÿé
+9Ñ   +
+  ∞Ñ	  ÿèÑ  ÿê
+9Ö   +
+  ∞Ö	  ÿëÖ  ÿê
+9Ü   +
+  ∞Ü	  ÿíÜ  ÿê
+9á   +
+  ∞á	  ÿìá  ÿê
+9à   +
+  ∞à	  ÿîà  ÿï
+9â   +
+  ∞â	  ÿñâ  ÿó
+9ä   +
+  ∞ä	  ÿòä  ÿô
+9ã   +
+  ∞ã	  ÿöã  ÿõ
+9å   +
+  ∞å	  ÿúå  ÿù
+9ç   +
+  ∞ç	  ÿûç  ÿü
+9é   +
+  ∞é	  ÿ†é  ÿü
+9è   +
+  ∞è	  ÿ°è  ÿ¢
+9ê   +
+  ∞ê	  ÿ£ê  ÿ§
+9ë   +
+  ∞ë	  ÿ•ë  ÿ¶
+9í   +
+  ∞í	  ÿßí  ÿ®
+9ì   +
+  ∞ì	  ÿ©ì  ÿ™
+9î   +
+  ∞î	  ÿûî  ÿ´
+9ï   +
+  ∞ï	  ÿ†ï  ÿ´
+9ñ   +
+  ∞ñ	  ÿ¨ñ  ÿ≠
+9ó   +
+  ∞ó	  ÿÆó  ÿ≠
+9ò   +
+  ∞ò	  ÿØò  ÿ≠
+9ô   +
+  ∞ô	  ÿ∞ô  ÿ≠
+9ö   +
+  ∞ö	  ÿ±ö  ÿ≠
+9õ   +
+  ∞õ	  ÿ≤õ  ÿ≠
+9ú   +
+  ∞ú	  ÿ≥ú  ÿ≠
+9ù   +
+  ∞ù	  ÿ¥ù  ÿ≠
+9û   +
+  ∞û	  ÿµû  ÿ≠
+9ü   +
+  ∞ü	  ÿ∂ü  ÿ∑
+9†   +
+  ∞†	  ÿ∏†  ÿπ
+9°   +
+  ∞°	  ÿ∫°  ÿª
+9¢   +
+  ∞¢	  ÿº¢  ÿΩ
+9£   +
+  ∞£	  ÿæ£  ÿø
+9§   +
+  ∞§	  ÿ¿§  ÿ¡
+9•   +
+  ∞•	  ÿ¬•  ÿ√
+9¶   +
+  ∞¶	  ÿƒ¶  ÿ≈
+9ß   +
+  ∞ß	  ÿ∆ß  ÿ«
+9®   +
+  ∞®	  ÿ∆®  ÿ»
+9©   +
+  ∞©	  ÿ…©  ÿ 
+9™   +
+  ∞™	  ÿÀ™  ÿÃ
+9´   +
+  ∞´	  ÿÕ´  ÿŒ
+9¨   +
+  ∞¨	  ÿœ¨  ÿŒ
+9≠   +
+  ∞≠	  ÿ–≠  ÿ—
+9Æ   +
+  ∞Æ	  ÿ“Æ  ÿ—
+9Ø   +
+  ∞Ø	  ÿ”Ø  ÿ—
+9∞   +
+  ∞∞	  ÿ‘∞  ÿ—
+9±   +
+  ∞±	  ÿ’±  ÿ÷
+9≤   +
+  ∞≤	  ÿ◊≤  ÿÿ
+9≥   +
+  ∞≥	  ÿŸ≥  ÿ⁄
+7¥   )
+  ∞¥	  ÿ¥  ÿ!
+7µ   )
+  ∞µ	  ÿ µ  ÿ!
+7∂   )
+  ∞∂	  ÿ∂  ÿ
+7∑   )
+  ∞∑	  ÿ ∑  ÿ
+9∏   +
+  ∞∏	  ÿ€∏  ÿ‹
+9π   +
+  ∞π	  ÿ›π  ÿﬁ
+9∫   +
+  ∞∫	  ÿﬂ∫  ÿ‡
+9ª   +
+  ∞ª	  ÿ·ª  ÿ‚
+9º   +
+  ∞º	  ÿ„º  ÿ‚
+9Ω   +
+  ∞Ω	  ÿ‰Ω  ÿÂ
+9æ   +
+  ∞æ	  ÿÊæ  ÿÁ
+9ø   +
+  ∞ø	  ÿËø  ÿÁ
+9¿   +
+  ∞¿	  ÿÈ¿  ÿÍ
+9¡   +
+  ∞¡	  ÿÎ¡  ÿÏ
+9¬   +
+  ∞¬	  ÿÌ¬  ÿÓ
+9√   +
+  ∞√	  ÿÔ√  ÿ
+9ƒ   +
+  ∞ƒ	  ÿÒƒ  ÿÚ
+9≈   +
+  ∞≈	  ÿÛ≈  ÿÙ
+9∆   +
+  ∞∆	  ÿı∆  ÿˆ
+9«   +
+  ∞«	  ÿ˜«  ÿ¯
+9»   +
+  ∞»	  ÿ˘»  ÿ˙
+9…   +
+  ∞…	  ÿ˚…  ÿ˙
+9    +
+  ∞ 	  ÿ¸   ÿ˙
+9À   +
+  ∞À	  ÿ˝À  ÿ˙
+9Ã   +
+  ∞Ã	  ÿ˛Ã  ÿ˙
+9Õ   +
+  ∞Õ	  ÿˇÕ  ÿÄ
+9Œ   +
+  ∞Œ	  ÿÅŒ  ÿÄ
+9œ   +
+  ∞œ	  ÿÇœ  ÿÄ
+9–   +
+  ∞–	  ÿÉ–  ÿÑ
+9—   +
+  ∞—	  ÿÖ—  ÿÜ
+9“   +
+  ∞“	  ÿá“  ÿà
+9”   +
+  ∞”	  ÿâ”  ÿä
+9‘   +
+  ∞‘	  ÿã‘  ÿå
+9’   +
+  ∞’	  ÿç’  ÿé
+9÷   +
+  ∞÷	  ÿè÷  ÿê
+9◊   +
+  ∞◊	  ÿë◊  ÿê
+9ÿ   +
+  ∞ÿ	  ÿíÿ  ÿì
+9Ÿ   +
+  ∞Ÿ	  ÿîŸ  ÿì
+9⁄   +
+  ∞⁄	  ÿï⁄  ÿñ
+9€   +
+  ∞€	  ÿó€  ÿñ
+8‹   *
+  ∞‹	  ÿò‹  ÿy
+8›   *
+  ∞›	  ÿô›  ÿy
+9ﬁ   +
+  ∞ﬁ	  ÿöﬁ  ÿõ
+9ﬂ   +
+  ∞ﬂ	  ÿúﬂ  ÿõ
+9‡   +
+  ∞‡	  ÿù‡  ÿû
+9·   +
+  ∞·	  ÿü·  ÿ†
+9‚   +
+  ∞‚	  ÿ°‚  ÿ¢
+9„   +
+  ∞„	  ÿ£„  ÿ§
+9‰   +
+  ∞‰	  ÿ°‰  ÿ•
+9Â   +
+  ∞Â	  ÿ¶Â  ÿß
+9Ê   +
+  ∞Ê	  ÿ®Ê  ÿ©
+9Á   +
+  ∞Á	  ÿ™Á  ÿ´
+9Ë   +
+  ∞Ë	  ÿ¨Ë  ÿ≠
+9È   +
+  ∞È	  ÿÆÈ  ÿØ
+9Í   +
+  ∞Í	  ÿ∞Í  ÿ±
+9Î   +
+  ∞Î	  ÿ≤Î  ÿ≥
+9Ï   +
+  ∞Ï	  ÿ¥Ï  ÿµ
+9Ì   +
+  ∞Ì	  ÿ∂Ì  ÿ∑
+9Ó   +
+  ∞Ó	  ÿ∏Ó  ÿπ
+9Ô   +
+  ∞Ô	  ÿ∫Ô  ÿª
+9   +
+  ∞	  ÿº  ÿª
+9Ò   +
+  ∞Ò	  ÿ∫Ò  ÿΩ
+9Ú   +
+  ∞Ú	  ÿºÚ  ÿΩ
+9Û   +
+  ∞Û	  ÿæÛ  ÿø
+9Ù   +
+  ∞Ù	  ÿ¿Ù  ÿ¡
+9ı   +
+  ∞ı	  ÿ¬ı  ÿ√
+9ˆ   +
+  ∞ˆ	  ÿƒˆ  ÿ√
+9˜   +
+  ∞˜	  ÿ≈˜  ÿ∆
+9¯   +
+  ∞¯	  ÿ«¯  ÿ»
+9˘   +
+  ∞˘	  ÿ…˘  ÿ 
+9˙   +
+  ∞˙	  ÿÀ˙  ÿÃ
+9˚   +
+  ∞˚	  ÿÕ˚  ÿÃ
+9¸   +
+  ∞¸	  ÿŒ¸  ÿœ
+9˝   +
+  ∞˝	  ÿ–˝  ÿœ
+9˛   +
+  ∞˛	  ÿ—˛  ÿœ
+9ˇ   +
+  ∞ˇ	  ÿ“ˇ  ÿ”
+9Ä   +
+  ∞Ä	  ÿ‘Ä  ÿ’
+9Å   +
+  ∞Å	  ÿ÷Å  ÿ◊
+9Ç   +
+  ∞Ç	  ÿÿÇ  ÿŸ
+9É   +
+  ∞É	  ÿ⁄É  ÿ€
+9Ñ   +
+  ∞Ñ	  ÿ‹Ñ  ÿ€
+9Ö   +
+  ∞Ö	  ÿ›Ö  ÿ€
+9Ü   +
+  ∞Ü	  ÿﬁÜ  ÿ€
+9á   +
+  ∞á	  ÿﬂá  ÿ‡
+9à   +
+  ∞à	  ÿﬂà  ÿ·
+9â   +
+  ∞â	  ÿﬂâ  ÿ‚
+9ä   +
+  ∞ä	  ÿ„ä  ÿ‰
+9ã   +
+  ∞ã	  ÿ„ã  ÿÂ
+9å   +
+  ∞å	  ÿÊå  ÿÁ
+9ç   +
+  ∞ç	  ÿÊç  ÿË
+9é   +
+  ∞é	  ÿÈé  ÿÍ
+9è   +
+  ∞è	  ÿÎè  ÿÏ
+9ê   +
+  ∞ê	  ÿÌê  ÿÏ
+9ë   +
+  ∞ë	  ÿÓë  ÿÏ
+9í   +
+  ∞í	  ÿÎí  ÿÔ
+9ì   +
+  ∞ì	  ÿÌì  ÿÔ
+9î   +
+  ∞î	  ÿÓî  ÿÔ
+9ï   +
+  ∞ï	  ÿï  ÿÒ
+9ñ   +
+  ∞ñ	  ÿÚñ  ÿÒ
+9ó   +
+  ∞ó	  ÿÛó  ÿÙ
+9ò   +
+  ∞ò	  ÿÛò  ÿı
+9ô   +
+  ∞ô	  ÿˆô  ÿ˜
+9ö   +
+  ∞ö	  ÿ¯ö  ÿ˜
+9õ   +
+  ∞õ	  ÿ˘õ  ÿ˜
+9ú   +
+  ∞ú	  ÿ˙ú  ÿ˜
+9ù   +
+  ∞ù	  ÿ˚ù  ÿ¸
+9û   +
+  ∞û	  ÿ˝û  ÿ˛
+9ü   +
+  ∞ü	  ÿˇü  ÿ˛
+9†   +
+  ∞†	  ÿÄ	†  ÿ˛
+9°   +
+  ∞°	  ÿÅ	°  ÿ˛
+9¢   +
+  ∞¢	  ÿÇ	¢  ÿ˛
+9£   +
+  ∞£	  ÿÉ	£  ÿ˛
+9§   +
+  ∞§	  ÿ˝§  ÿÑ	
+9•   +
+  ∞•	  ÿˇ•  ÿÑ	
+9¶   +
+  ∞¶	  ÿÄ	¶  ÿÑ	
+9ß   +
+  ∞ß	  ÿÅ	ß  ÿÑ	
+9®   +
+  ∞®	  ÿÇ	®  ÿÑ	
+9©   +
+  ∞©	  ÿÉ	©  ÿÑ	
+9™   +
+  ∞™	  ÿ˝™  ÿÖ	
+9´   +
+  ∞´	  ÿˇ´  ÿÖ	
+9¨   +
+  ∞¨	  ÿÄ	¨  ÿÖ	
+9≠   +
+  ∞≠	  ÿÅ	≠  ÿÖ	
+9Æ   +
+  ∞Æ	  ÿÇ	Æ  ÿÖ	
+9Ø   +
+  ∞Ø	  ÿÉ	Ø  ÿÖ	
+9∞   +
+  ∞∞	  ÿ˝∞  ÿÜ	
+9±   +
+  ∞±	  ÿˇ±  ÿÜ	
+9≤   +
+  ∞≤	  ÿÄ	≤  ÿÜ	
+9≥   +
+  ∞≥	  ÿÅ	≥  ÿÜ	
+9¥   +
+  ∞¥	  ÿÇ	¥  ÿÜ	
+9µ   +
+  ∞µ	  ÿÉ	µ  ÿÜ	
+9∂   +
+  ∞∂	  ÿá	∂  ÿà	
+9∑   +
+  ∞∑	  ÿâ	∑  ÿà	
+9∏   +
+  ∞∏	  ÿä	∏  ÿà	
+9π   +
+  ∞π	  ÿã	π  ÿå	
+9∫   +
+  ∞∫	  ÿç	∫  ÿé	
+9ª   +
+  ∞ª	  ÿè	ª  ÿê	
+9º   +
+  ∞º	  ÿë	º  ÿí	
+9Ω   +
+  ∞Ω	  ÿì	Ω  ÿî	
+9æ   +
+  ∞æ	  ÿï	æ  ÿñ	
+9ø   +
+  ∞ø	  ÿó	ø  ÿò	
+9¿   +
+  ∞¿	  ÿô	¿  ÿö	
+9¡   +
+  ∞¡	  ÿõ	¡  ÿú	
+9¬   +
+  ∞¬	  ÿù	¬  ÿû	
+9√   +
+  ∞√	  ÿù	√  ÿü	
+9ƒ   +
+  ∞ƒ	  ÿ†	ƒ  ÿ°	
+9≈   +
+  ∞≈	  ÿ¢	≈  ÿ£	
+9∆   +
+  ∞∆	  ÿÌ∆  ÿÔ
+9«   +
+  ∞«	  ÿ§	«  ÿÔ
+9»   +
+  ∞»	  ÿÎ»  ÿÔ
+9…   +
+  ∞…	  ÿ•	…  ÿ¶	
+9    +
+  ∞ 	  ÿß	   ÿ®	
+9À   +
+  ∞À	  ÿ©	À  ÿ™	
+9Ã   +
+  ∞Ã	  ÿ´	Ã  ÿ¨	
+9Õ   +
+  ∞Õ	  ÿ≠	Õ  ÿÆ	
+9Œ   +
+  ∞Œ	  ÿØ	Œ  ÿÆ	
+9œ   +
+  ∞œ	  ÿ∞	œ  ÿ±	
+9–   +
+  ∞–	  ÿ≤	–  ÿ≥	
+9—   +
+  ∞—	  ÿ¥	—  ÿµ	
+9“   +
+  ∞“	  ÿ∂	“  ÿ∑	
+9”   +
+  ∞”	  ÿ∏	”  ÿπ	
+9‘   +
+  ∞‘	  ÿ∫	‘  ÿª	
+9’   +
+  ∞’	  ÿº	’  ÿΩ	
+9÷   +
+  ∞÷	  ÿ∆÷  ÿ»
+9◊   +
+  ∞◊	  ÿ∆◊  ÿ«
+9ÿ   +
+  ∞ÿ	  ÿæ	ÿ  ÿø	
+9Ÿ   +
+  ∞Ÿ	  ÿ¿	Ÿ  ÿ¡	
+9⁄   +
+  ∞⁄	  ÿ¬	⁄  ÿ√	
+9€   +
+  ∞€	  ÿ¬	€  ÿƒ	
+9‹   +
+  ∞‹	  ÿ¬	‹  ÿ≈	
+9›   +
+  ∞›	  ÿ∆	›  ÿ«	
+9ﬁ   +
+  ∞ﬁ	  ÿ»	ﬁ  ÿ«	
+9ﬂ   +
+  ∞ﬂ	  ÿ…	ﬂ  ÿ 	
+9‡   +
+  ∞‡	  ÿÀ	‡  ÿÃ	
+9·   +
+  ∞·	  ÿÕ	·  ÿŒ	
+9‚   +
+  ∞‚	  ÿœ	‚  ÿ–	
+9„   +
+  ∞„	  ÿ—	„  ÿ“	
+9‰   +
+  ∞‰	  ÿ”	‰  ÿ“	
+9Â   +
+  ∞Â	  ÿ‘	Â  ÿ’	
+9Ê   +
+  ∞Ê	  ÿ÷	Ê  ÿ◊	
+9Á   +
+  ∞Á	  ÿÿ	Á  ÿ◊	
+9Ë   +
+  ∞Ë	  ÿŸ	Ë  ÿ◊	
+9È   +
+  ∞È	  ÿ⁄	È  ÿ◊	
+9Í   +
+  ∞Í	  ÿ€	Í  ÿ◊	
+9Î   +
+  ∞Î	  ÿ‹	Î  ÿ◊	
+9Ï   +
+  ∞Ï	  ÿ›	Ï  ÿ◊	
+9Ì   +
+  ∞Ì	  ÿ÷	Ì  ÿﬁ	
+9Ó   +
+  ∞Ó	  ÿÿ	Ó  ÿﬁ	
+9Ô   +
+  ∞Ô	  ÿŸ	Ô  ÿﬁ	
+9   +
+  ∞	  ÿ⁄	  ÿﬁ	
+9Ò   +
+  ∞Ò	  ÿﬂ	Ò  ÿﬁ	
+9Ú   +
+  ∞Ú	  ÿ€	Ú  ÿﬁ	
+9Û   +
+  ∞Û	  ÿ‹	Û  ÿﬁ	
+9Ù   +
+  ∞Ù	  ÿ›	Ù  ÿﬁ	
+9ı   +
+  ∞ı	  ÿ‡	ı  ÿ·	
+9ˆ   +
+  ∞ˆ	  ÿ‡	ˆ  ÿ‚	
+9˜   +
+  ∞˜	  ÿ‡	˜  ÿ„	
+9¯   +
+  ∞¯	  ÿ‰	¯  ÿÂ	
+9˘   +
+  ∞˘	  ÿÊ	˘  ÿÁ	
+9˙   +
+  ∞˙	  ÿË	˙  ÿÁ	
+9˚   +
+  ∞˚	  ÿÈ	˚  ÿÍ	
+9¸   +
+  ∞¸	  ÿÎ	¸  ÿÍ	
+9˝   +
+  ∞˝	  ÿÏ	˝  ÿÌ	
+9˛   +
+  ∞˛	  ÿÓ	˛  ÿÔ	
+9ˇ   +
+  ∞ˇ	  ÿ	ˇ  ÿÔ	
+9Ä   +
+  ∞Ä	  ÿÒ	Ä  ÿÚ	
+9Å   +
+  ∞Å	  ÿÛ	Å  ÿÙ	
+9Ç   +
+  ∞Ç	  ÿı	Ç  ÿˆ	
+9É   +
+  ∞É	  ÿ˜	É  ÿ¯	
+9Ñ   +
+  ∞Ñ	  ÿ˘	Ñ  ÿ˙	
+9Ö   +
+  ∞Ö	  ÿ˚	Ö  ÿ¸	
+9Ü   +
+  ∞Ü	  ÿ˝	Ü  ÿ˛	
+9á   +
+  ∞á	  ÿˇ	á  ÿÄ
+
+9à   +
+  ∞à	  ÿÅ
+à  ÿÇ
+
+9â   +
+  ∞â	  ÿÉ
+â  ÿÑ
+
+9ä   +
+  ∞ä	  ÿÖ
+ä  ÿÜ
+
+9ã   +
+  ∞ã	  ÿá
+ã  ÿà
+
+9å   +
+  ∞å	  ÿâ
+å  ÿä
+
+9ç   +
+  ∞ç	  ÿã
+ç  ÿå
+
+9é   +
+  ∞é	  ÿç
+é  ÿé
+
+9è   +
+  ∞è	  ÿè
+è  ÿê
+
+9ê   +
+  ∞ê	  ÿë
+ê  ÿí
+
+9ë   +
+  ∞ë	  ÿì
+ë  ÿî
+
+9í   +
+  ∞í	  ÿï
+í  ÿñ
+
+9ì   +
+  ∞ì	  ÿó
+ì  ÿñ
+
+9î   +
+  ∞î	  ÿò
+î  ÿñ
+
+9ï   +
+  ∞ï	  ÿô
+ï  ÿñ
+
+9ñ   +
+  ∞ñ	  ÿö
+ñ  ÿñ
+
+9ó   +
+  ∞ó	  ÿõ
+ó  ÿú
+
+9ò   +
+  ∞ò	  ÿù
+ò  ÿû
+
+9ô   +
+  ∞ô	  ÿ∞ô  ÿü
+
+9ö   +
+  ∞ö	  ÿ†
+ö  ÿ°
+
+9õ   +
+  ∞õ	  ÿ¢
+õ  ÿ£
+
+9ú   +
+  ∞ú	  ÿ§
+ú  ÿ•
+
+9ù   +
+  ∞ù	  ÿ¶
+ù  ÿß
+
+9û   +
+  ∞û	  ÿ®
+û  ÿ©
+
+9ü   +
+  ∞ü	  ÿ™
+ü  ÿ´
+
+9†   +
+  ∞†	  ÿ¨
+†  ÿ´
+
+9°   +
+  ∞°	  ÿ≠
+°  ÿ´
+
+9¢   +
+  ∞¢	  ÿÆ
+¢  ÿØ
+
+9£   +
+  ∞£	  ÿ∞
+£  ÿ±
+
+9§   +
+  ∞§	  ÿ≤
+§  ÿ±
+
+9•   +
+  ∞•	  ÿ≥
+•  ÿ¥
+
+9¶   +
+  ∞¶	  ÿµ
+¶  ÿ¥
+
+9ß   +
+  ∞ß	  ÿ∂
+ß  ÿ∑
+
+9®   +
+  ∞®	  ÿ∏
+®  ÿπ
+
+9©   +
+  ∞©	  ÿ∫
+©  ÿª
+
+9™   +
+  ∞™	  ÿº
+™  ÿΩ
+
+9´   +
+  ∞´	  ÿæ
+´  ÿø
+
+9¨   +
+  ∞¨	  ÿ¿
+¨  ÿ¡
+
+9≠   +
+  ∞≠	  ÿ¬
+≠  ÿ√
+
+9Æ   +
+  ∞Æ	  ÿƒ
+Æ  ÿ≈
+
+9Ø   +
+  ∞Ø	  ÿ∆
+Ø  ÿ«
+
+9∞   +
+  ∞∞	  ÿ»
+∞  ÿ…
+
+9±   +
+  ∞±	  ÿ 
+±  ÿÀ
+
+9≤   +
+  ∞≤	  ÿÃ
+≤  ÿÕ
+
+9≥   +
+  ∞≥	  ÿŒ
+≥  ÿœ
+
+9¥   +
+  ∞¥	  ÿ–
+¥  ÿœ
+
+9µ   +
+  ∞µ	  ÿ—
+µ  ÿœ
+
+9∂   +
+  ∞∂	  ÿ“
+∂  ÿœ
+
+9∑   +
+  ∞∑	  ÿ”
+∑  ÿœ
+
+9∏   +
+  ∞∏	  ÿ‘
+∏  ÿ’
+
+9π   +
+  ∞π	  ÿ÷
+π  ÿ’
+
+9∫   +
+  ∞∫	  ÿ◊
+∫  ÿÿ
+
+9ª   +
+  ∞ª	  ÿŸ
+ª  ÿÿ
+
+9º   +
+  ∞º	  ÿ⁄
+º  ÿÿ
+
+9Ω   +
+  ∞Ω	  ÿ€
+Ω  ÿ‹
+
+9æ   +
+  ∞æ	  ÿ›
+æ  ÿﬁ
+
+9ø   +
+  ∞ø	  ÿﬂ
+ø  ÿ‡
+
+9¿   +
+  ∞¿	  ÿ·
+¿  ÿ‚
+
+9¡   +
+  ∞¡	  ÿ„
+¡  ÿ‰
+
+9¬   +
+  ∞¬	  ÿÂ
+¬  ÿÊ
+
+9√   +
+  ∞√	  ÿÁ
+√  ÿÊ
+
+9ƒ   +
+  ∞ƒ	  ÿË
+ƒ  ÿÈ
+
+9≈   +
+  ∞≈	  ÿÍ
+≈  ÿÈ
+
+9∆   +
+  ∞∆	  ÿÎ
+∆  ÿÏ
+
+9«   +
+  ∞«	  ÿÌ
+«  ÿÓ
+
+9»   +
+  ∞»	  ÿÔ
+»  ÿ
+
+9…   +
+  ∞…	  ÿÒ
+…  ÿ
+
+9    +
+  ∞ 	  ÿÚ
+   ÿÛ
+
+8À   *
+  ∞À	  ÿÚ
+À  ÿ
+9Ã   +
+  ∞Ã	  ÿÚ
+Ã  ÿÙ
+
+9Õ   +
+  ∞Õ	  ÿÚ
+Õ  ÿı
+
+9Œ   +
+  ∞Œ	  ÿÚ
+Œ  ÿˆ
+
+9œ   +
+  ∞œ	  ÿÚ
+œ  ÿ˜
+
+9–   +
+  ∞–	  ÿÚ
+–  ÿ¯
+
+9—   +
+  ∞—	  ÿÚ
+—  ÿ˘
+
+9“   +
+  ∞“	  ÿÚ
+“  ÿ˙
+
+9”   +
+  ∞”	  ÿÚ
+”  ÿ˚
+
+9‘   +
+  ∞‘	  ÿÚ
+‘  ÿ¸
+
+9’   +
+  ∞’	  ÿÚ
+’  ÿ˝
+
+9÷   +
+  ∞÷	  ÿÚ
+÷  ÿ˛
+
+9◊   +
+  ∞◊	  ÿÚ
+◊  ÿˇ
+
+9ÿ   +
+  ∞ÿ	  ÿÚ
+ÿ  ÿÄ
+9Ÿ   +
+  ∞Ÿ	  ÿÚ
+Ÿ  ÿÅ
+9⁄   +
+  ∞⁄	  ÿÇ⁄  ÿÉ
+9€   +
+  ∞€	  ÿÑ€  ÿÉ
+9‹   +
+  ∞‹	  ÿÖ‹  ÿÉ
+9›   +
+  ∞›	  ÿÜ›  ÿÉ
+9ﬁ   +
+  ∞ﬁ	  ÿÇﬁ  ÿá
+9ﬂ   +
+  ∞ﬂ	  ÿÑﬂ  ÿá
+9‡   +
+  ∞‡	  ÿÖ‡  ÿá
+9·   +
+  ∞·	  ÿÜ·  ÿá
+7‚   )
+  ∞‚	  ÿ9‚  ÿ<
+7„   )
+  ∞„	  ÿ;„  ÿ<
+7‰   )
+  ∞‰	  ÿ9‰  ÿ:
+7Â   )
+  ∞Â	  ÿ;Â  ÿ:
+9Ê   +
+  ∞Ê	  ÿàÊ  ÿâ
+9Á   +
+  ∞Á	  ÿäÁ  ÿâ
+9Ë   +
+  ∞Ë	  ÿãË  ÿâ
+9È   +
+  ∞È	  ÿåÈ  ÿâ
+9Í   +
+  ∞Í	  ÿçÍ  ÿâ
+9Î   +
+  ∞Î	  ÿéÎ  ÿâ
+9Ï   +
+  ∞Ï	  ÿèÏ  ÿâ
+9Ì   +
+  ∞Ì	  ÿîÌ  ÿâ
+9Ó   +
+  ∞Ó	  ÿêÓ  ÿâ
+9Ô   +
+  ∞Ô	  ÿëÔ  ÿâ
+9   +
+  ∞	  ÿí  ÿì
+9Ò   +
+  ∞Ò	  ÿîÒ  ÿï
+9Ú   +
+  ∞Ú	  ÿñÚ  ÿó
+9Û   +
+  ∞Û	  ÿòÛ  ÿó
+9Ù   +
+  ∞Ù	  ÿôÙ  ÿö
+9ı   +
+  ∞ı	  ÿõı  ÿú
+9ˆ   +
+  ∞ˆ	  ÿùˆ  ÿú
+9˜   +
+  ∞˜	  ÿû˜  ÿú
+9¯   +
+  ∞¯	  ÿü¯  ÿú
+9˘   +
+  ∞˘	  ÿ†˘  ÿú
+9˙   +
+  ∞˙	  ÿ°˙  ÿú
+9˚   +
+  ∞˚	  ÿ¢˚  ÿ£
+9¸   +
+  ∞¸	  ÿ§¸  ÿ£
+9˝   +
+  ∞˝	  ÿ•˝  ÿ£
+9˛   +
+  ∞˛	  ÿ¶˛  ÿß
+9ˇ   +
+  ∞ˇ	  ÿ®ˇ  ÿ©
+9Ä   +
+  ∞Ä	  ÿ™Ä  ÿ´
+9Å   +
+  ∞Å	  ÿ¨Å  ÿ≠
+9Ç   +
+  ∞Ç	  ÿÆÇ  ÿØ
+9É   +
+  ∞É	  ÿ∞É  ÿ±
+9Ñ   +
+  ∞Ñ	  ÿ≤Ñ  ÿ≥
+9Ö   +
+  ∞Ö	  ÿ¥Ö  ÿµ
+9Ü   +
+  ∞Ü	  ÿ∂Ü  ÿ∑
+9á   +
+  ∞á	  ÿ∏á  ÿπ
+9à   +
+  ∞à	  ÿ∫à  ÿª
+9â   +
+  ∞â	  ÿºâ  ÿΩ
+9ä   +
+  ∞ä	  ÿæä  ÿø
+9ã   +
+  ∞ã	  ÿ¿ã  ÿ¡
+9å   +
+  ∞å	  ÿ¬å  ÿ√
+9ç   +
+  ∞ç	  ÿƒç  ÿ√
+9é   +
+  ∞é	  ÿ≈é  ÿ∆
+9è   +
+  ∞è	  ÿ«è  ÿ∆
+9ê   +
+  ∞ê	  ÿ»ê  ÿ∆
+9ë   +
+  ∞ë	  ÿ…ë  ÿ∆
+9í   +
+  ∞í	  ÿ í  ÿ∆
+9ì   +
+  ∞ì	  ÿÀì  ÿ∆
+9î   +
+  ∞î	  ÿÃî  ÿ∆
+9ï   +
+  ∞ï	  ÿÕï  ÿŒ
+9ñ   +
+  ∞ñ	  ÿœñ  ÿŒ
+9ó   +
+  ∞ó	  ÿ–ó  ÿŒ
+9ò   +
+  ∞ò	  ÿ—ò  ÿŒ
+9ô   +
+  ∞ô	  ÿ“ô  ÿ”
+9ö   +
+  ∞ö	  ÿ‘ö  ÿ’
+9õ   +
+  ∞õ	  ÿ÷õ  ÿ’
+9ú   +
+  ∞ú	  ÿ◊ú  ÿ’
+9ù   +
+  ∞ù	  ÿÿù  ÿ’
+9û   +
+  ∞û	  ÿŸû  ÿ⁄
+9ü   +
+  ∞ü	  ÿ€ü  ÿ‹
+9†   +
+  ∞†	  ÿ›†  ÿﬁ
+9°   +
+  ∞°	  ÿﬂ°  ÿ‡
+9¢   +
+  ∞¢	  ÿ·¢  ÿ‚
+9£   +
+  ∞£	  ÿ„£  ÿÂ
+9§   +
+  ∞§	  ÿ„§  ÿ‰
+9•   +
+  ∞•	  ÿÊ•  ÿË
+9¶   +
+  ∞¶	  ÿÊ¶  ÿÁ
+9ß   +
+  ∞ß	  ÿ„ß  ÿ‰
+9®   +
+  ∞®	  ÿÂ®  ÿÊ
+9©   +
+  ∞©	  ÿÁ©  ÿË
+9™   +
+  ∞™	  ÿÈ™  ÿÍ
+9´   +
+  ∞´	  ÿÎ´  ÿÏ
+9¨   +
+  ∞¨	  ÿÌ¨  ÿÏ
+9≠   +
+  ∞≠	  ÿÓ≠  ÿÔ
+9Æ   +
+  ∞Æ	  ÿÆ  ÿÔ
+9Ø   +
+  ∞Ø	  ÿÒØ  ÿÚ
+9∞   +
+  ∞∞	  ÿÛ∞  ÿÚ
+9±   +
+  ∞±	  ÿÙ±  ÿÚ
+9≤   +
+  ∞≤	  ÿı≤  ÿˆ
+9≥   +
+  ∞≥	  ÿ˜≥  ÿˆ
+9¥   +
+  ∞¥	  ÿ¯¥  ÿˆ
+9µ   +
+  ∞µ	  ÿ˘µ  ÿˆ
+9∂   +
+  ∞∂	  ÿ˙∂  ÿˆ
+9∑   +
+  ∞∑	  ÿ˚∑  ÿˆ
+9∏   +
+  ∞∏	  ÿ¸∏  ÿ˝
+9π   +
+  ∞π	  ÿ˛π  ÿˇ
+9∫   +
+  ∞∫	  ÿÄ∫  ÿˇ
+9ª   +
+  ∞ª	  ÿÅª  ÿÇ
+9º   +
+  ∞º	  ÿÉº  ÿÑ
+9Ω   +
+  ∞Ω	  ÿÖΩ  ÿÑ
+9æ   +
+  ∞æ	  ÿÜæ  ÿá
+9ø   +
+  ∞ø	  ÿàø  ÿâ
+9¿   +
+  ∞¿	  ÿä¿  ÿã
+9¡   +
+  ∞¡	  ÿå¡  ÿç
+9¬   +
+  ∞¬	  ÿé¬  ÿè
+9√   +
+  ∞√	  ÿê√  ÿë
+9ƒ   +
+  ∞ƒ	  ÿíƒ  ÿì
+9≈   +
+  ∞≈	  ÿî≈  ÿï
+9∆   +
+  ∞∆	  ÿñ∆  ÿó
+9«   +
+  ∞«	  ÿò«  ÿó
+9»   +
+  ∞»	  ÿô»  ÿö
+9…   +
+  ∞…	  ÿõ…  ÿú
+9    +
+  ∞ 	  ÿù   ÿû
+9À   +
+  ∞À	  ÿüÀ  ÿ†
+9Ã   +
+  ∞Ã	  ÿ°Ã  ÿ¢
+9Õ   +
+  ∞Õ	  ÿ£Õ  ÿ§
+9Œ   +
+  ∞Œ	  ÿ•Œ  ÿ¶
+9œ   +
+  ∞œ	  ÿßœ  ÿ®
+i“f
+d  ö]
+  ∫  ¬™  ∞ 9  ä20‚-
++™ 
+  ∫  ∫ 
+⁄
+
+Z“W
+U  äNJ‚G
+7˙4
+  ö
+  ∞  ¬ “
+  “	
+  ∞ 
+™	
+  ∞" * 2¨ 2≠2Æ2Ø2∞2≤	2¥2µ
+Res.unizar.iaaa.tfg.constantsrq 
+k
+i“f
+d   ]
+  ∞	  ∞   ÿ   ∞
+  ¬∑
+  ¬∑
+  ¬∑
+  ¬∑  ˙ à¨à≠à¥í 
