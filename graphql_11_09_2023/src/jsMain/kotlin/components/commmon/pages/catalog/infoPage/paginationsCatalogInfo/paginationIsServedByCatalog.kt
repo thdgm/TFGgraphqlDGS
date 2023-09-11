@@ -19,6 +19,7 @@ import react.useEffect
 import react.useRequiredContext
 import react.useState
 import kotlin.math.ceil
+import kotlin.math.floor
 
 
 external interface PaginationIsServedByCatalogProps: Props {
@@ -32,7 +33,7 @@ external interface PaginationIsServedByCatalogProps: Props {
 }
 val paginationIsServedByCatalog = FC<PaginationIsServedByCatalogProps> { props ->
 
-    var numberOfPages by useState(ceil(props.numberOfPages.toDouble() / 5).toInt())
+    var numberOfPages by useState(floor(props.numberOfPages.toDouble() / 5).toInt())//(ceil(props.numberOfPages.toDouble() / 5).toInt())
     console.log("SERVEDD NUUKMMMM: : "+ numberOfPages)
 
     Paper {

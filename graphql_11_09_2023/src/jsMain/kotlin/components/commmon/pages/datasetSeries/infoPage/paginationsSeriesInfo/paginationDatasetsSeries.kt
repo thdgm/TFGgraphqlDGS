@@ -12,6 +12,7 @@ import react.dom.events.ChangeEvent
 import react.useEffect
 import react.useState
 import kotlin.math.ceil
+import kotlin.math.floor
 
 
 external interface PaginationDatasetsSeriesProps: Props {
@@ -21,7 +22,7 @@ external interface PaginationDatasetsSeriesProps: Props {
 }
 val paginationDatasetsSeries = FC<PaginationDatasetsSeriesProps> { props ->
 
-    var numberOfPages by useState(ceil(props.numberOfPages.toDouble() / 5).toInt())
+    var numberOfPages by useState (floor(props.numberOfPages.toDouble() / 5).toInt())//(ceil(props.numberOfPages.toDouble() / 5).toInt())
 
     Paper {
         sx {

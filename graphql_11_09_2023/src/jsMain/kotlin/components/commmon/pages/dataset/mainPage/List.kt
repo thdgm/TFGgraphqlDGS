@@ -22,6 +22,7 @@ import mui.material.Box
 import mui.material.Chip
 import mui.material.ChipColor
 import mui.material.ChipVariant
+import mui.material.CircularProgress
 import mui.material.Grid
 import mui.material.GridDirection
 import mui.material.LinearProgress
@@ -56,6 +57,7 @@ external interface ListProps:Props{
     var filterList: Collection<DatasetModel>
     var updateDatasetsList: suspend (event: ChangeEvent<*>, value: Number) -> Unit
     var numberOfDatasets: Int
+    var cargando: Boolean
     var flag: Int
 
 }
@@ -96,6 +98,14 @@ val list = FC<ListProps> { props ->
         }
     }
 
+    useEffect(props.numberOfDatasets){
+        console.log("CAMBIA PAGEEEEE1 "+ props.numberOfDatasets)
+    }
+
+    useEffect(listOf(props.numberOfDatasets)){
+        console.log("CAMBIA PAGEEEEE2 "+ props.numberOfDatasets)
+
+    }
 
 
 
@@ -129,16 +139,17 @@ val list = FC<ListProps> { props ->
                 item = true
                 direction = responsive(GridDirection.row)
                 Typography{
-
-
                     className = ClassName("countDatasets")
                         + "${props.numberOfDatasets} "
-
                         b{
                             className = ClassName("spanDatasets")
                             +"Datasets encontrados"
                         }
-
+                }
+                if(props.cargando) {
+                    CircularProgress {
+                        className = ClassName("circularProgressInfo")
+                    }
                 }
             }
             Grid {

@@ -23,6 +23,7 @@ import react.useEffect
 import react.useRequiredContext
 import react.useState
 import kotlin.math.ceil
+import kotlin.math.floor
 
 
 external interface PaginationResourcesServiceProps: Props {
@@ -36,7 +37,7 @@ external interface PaginationResourcesServiceProps: Props {
 }
 val paginationResourcesService = FC<PaginationResourcesServiceProps> { props ->
 
-    var numberOfPages by useState(ceil(props.numberOfPages.toDouble() / 5).toInt())
+    var numberOfPages by useState (floor(props.numberOfPages.toDouble() / 5).toInt())//(ceil(props.numberOfPages.toDouble() / 5).toInt())
     //var filterTest by useState(props.filterType)
 
     useEffect(props.filterType){
@@ -49,7 +50,7 @@ val paginationResourcesService = FC<PaginationResourcesServiceProps> { props ->
                 "dataset_series" -> props.serviceInfo.elementAt(0).numberOfDatasetSeries
                 else -> 0
             }
-            numberOfPages = ceil(num.toDouble() / 10).toInt()
+            numberOfPages = floor(num.toDouble() / 5).toInt()//ceil(num.toDouble() / 10).toInt()
         }
     }
 

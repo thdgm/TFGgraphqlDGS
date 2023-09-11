@@ -394,7 +394,8 @@ class ResourceRepositoryExtra(){
         period: List<String>,
         notation: List<String>,
         start: LocalDateTime?,
-        end: LocalDateTime?
+        end: LocalDateTime?,
+        last_id: String
     ): Collection<ResourceEntity>?{
         val appliedFilters = filters.filter { it.key != "Page" &&  it.key != "OrderBy" && it.key != "SortBy" }
 
@@ -412,8 +413,9 @@ class ResourceRepositoryExtra(){
 
         println("******************** TITLESSS *******************:: $titles")
         println("******************** DESCRIPPTTTIONSSSS *******************:: $descriptions")
+        println("******************** LASTTTTT_____IDDDDD *******************:: $last_id")
 
-        /*var queryString = "SELECT DISTINCT tt.id, tt.tipo, tt.issued, tt.license, tt.modified, tt.publisher_id,tt.accrual_periodicity, tt.temporal_coverage_end, tt.temporal_coverage_start, tt.validity  FROM ( " +
+       /* var queryString = "SELECT DISTINCT tt.id, tt.tipo, tt.issued, tt.license, tt.modified, tt.publisher_id,tt.accrual_periodicity, tt.temporal_coverage_end, tt.temporal_coverage_start, tt.validity  FROM ( " +
                 "SELECT r.id, r.tipo, tit_res.id_title, descr.id_description, r.issued, r.license, r.modified, r.publisher_id, r.accrual_periodicity, r.temporal_coverage_end, r.temporal_coverage_start, r.validity, tr.id_theme,k1_0.id_word, pub.label, pub.notation,dd.format " +
                 "FROM resource r " +
                 "LEFT JOIN themes_resources tr ON r.id = tr.id_resource " +
@@ -428,6 +430,7 @@ class ResourceRepositoryExtra(){
         var queryString = "SELECT DISTINCT tt.id, tt.tipo, tt.issued, tt.license, tt.modified, tt.publisher_id, tt.accrual_periodicity, " +
                 "tt.temporal_coverage_end, tt.temporal_coverage_start, tt.validity " +
                 "FROM dataset_by_filters tt WHERE "
+
         if (formats.isNotEmpty()) queryString += "tt.format IN :format OR "
         if (ids.isNotEmpty()) queryString += "tt.id IN :ids OR "
         if (periods.isNotEmpty()) queryString += "tt.accrual_periodicity IN :period OR "
@@ -451,10 +454,12 @@ class ResourceRepositoryExtra(){
 
         var querySplit = queryString.split(' ').toMutableList()
 
-        if(querySplit[querySplit.size-2] == "OR" || querySplit[querySplit.size-2] == "WHERE") querySplit[querySplit.size-2] = ""
+        if(querySplit[querySplit.size-2] == "OR" || querySplit[querySplit.size-2] == "WHERE" || querySplit[querySplit.size-2] == "AND") querySplit[querySplit.size-2] = ""
         queryString = querySplit.joinToString(" ")
+        /*queryString += "ORDER BY tt.${sortBy} $orderBy " +
+                "LIMIT 5 OFFSET ${page*5}"*/
         queryString += "ORDER BY tt.${sortBy} $orderBy " +
-                "OFFSET ${page*5} ROWS FETCH FIRST 5 ROWS ONLY;"
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
         val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
         if(formats.isNotEmpty()) nativeQuery.setParameter("format", formats)
@@ -529,7 +534,7 @@ class ResourceRepositoryExtra(){
         if(numberOfResources != null) queryString += "GROUP BY tt.id, tt.tipo, tt.issued, tt.license, tt.modified, tt.publisher_id,tt.accrual_periodicity, tt.temporal_coverage_end, tt.temporal_coverage_start, tt.validity  HAVING COUNT(tt.resources) BETWEEN :startCount AND :endCount "
 
         queryString += "ORDER BY tt.${sortBy} $orderBy " +
-                "OFFSET ${page*5} ROWS FETCH FIRST 5 ROWS ONLY;"
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
         val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
 
@@ -677,7 +682,7 @@ class ResourceRepositoryExtra(){
         if(numberOfResources != null) queryString += "GROUP BY tt.id, tt.tipo, tt.issued, tt.license, tt.modified, tt.publisher_id,tt.accrual_periodicity, tt.temporal_coverage_end, tt.temporal_coverage_start, tt.validity  HAVING COUNT(tt.resources) BETWEEN :startCount AND :endCount "
 
         queryString += "ORDER BY tt.${sortBy} $orderBy " +
-                "OFFSET ${page*5} ROWS FETCH FIRST 5 ROWS ONLY;"
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
         val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
 
@@ -815,7 +820,7 @@ class ResourceRepositoryExtra(){
         if(numberOfResources != null) queryString += "GROUP BY tt.id, tt.tipo, tt.issued, tt.license, tt.modified, tt.publisher_id,tt.accrual_periodicity, tt.temporal_coverage_end, tt.temporal_coverage_start, tt.validity  HAVING COUNT(tt.resources) BETWEEN :startCount AND :endCount "
 
         queryString += "ORDER BY tt.${sortBy} $orderBy " +
-                "OFFSET ${page*5} ROWS FETCH FIRST 5 ROWS ONLY;"
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
         val nativeQuery = entityManager.createNativeQuery(queryString, ResourceEntity::class.java)
 
@@ -966,7 +971,7 @@ class ResourceRepositoryExtra(){
         queryString = querySplit.joinToString(" ")
 
         queryString += "ORDER BY tt.${sortBy} $orderBy " +
-                "OFFSET ${page*5} ROWS FETCH FIRST 5 ROWS ONLY;"
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
         val nativeQuery = entityManager.createNativeQuery(queryString, DistributionEntity::class.java)
 
@@ -1064,7 +1069,7 @@ class ResourceRepositoryExtra(){
         queryString = querySplit.joinToString(" ")
 
         queryString += "ORDER BY tt.${sortBy} $orderBy " +
-                "OFFSET ${page*5} ROWS FETCH FIRST 5 ROWS ONLY;"
+                "OFFSET ${page*10} ROWS FETCH FIRST 10 ROWS ONLY;"
 
         val nativeQuery = entityManager.createNativeQuery(queryString, CatalogRecordEntity::class.java)
 

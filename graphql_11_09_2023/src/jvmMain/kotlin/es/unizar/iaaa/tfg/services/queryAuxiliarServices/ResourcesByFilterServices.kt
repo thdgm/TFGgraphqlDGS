@@ -33,7 +33,7 @@ interface ResourcesByFilterServices {
     fun getCatalogsByFilters(appliedFilters: List<MapInput>, type: String,page: Int, sortBy: String, orderBy: String?): Collection<Resource>
     fun getDatasetsByFilters(appliedFilters: List<MapInput>, type: String,page: Int,sortBy: String, orderBy: String?): Collection<Resource>
 }
-
+var last_id = ""
 @Service
 class ResourcesByFilterServicesImpl(
 
@@ -63,8 +63,10 @@ class ResourcesByFilterServicesImpl(
             } else null
         }
 
-        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation, start, end) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        val res = repoCriteria.findDatasetsByFilters(appliedFilters,type,orderBy?.toUpperCase() ?: "ASC",sortBy,page,issued, modified, period, notation, start, end, last_id) //resRepo.getResources(appliedFilters,type,page, issued, modified, period, notation).map { convertersResourcesEntitiesTo.createResource(it) }.distinct()
+        if (res?.isEmpty() == false) last_id = res.elementAt(res.size-1).id
         println("RESULTTTT-------------------------------------------------- $res")
+        println("LAST_ID-------------------------------------------------- $last_id")
         println(res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct())
         return res?.map { convertersResourcesEntitiesTo.createResource(it) }?.distinct() ?: listOf()
     }

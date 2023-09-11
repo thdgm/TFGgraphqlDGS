@@ -1133,12 +1133,11 @@ interface ResourceRepository : JpaRepository<ResourceEntity, String> {
     fun findByResId(idRes: String): ResourceEntity? //CHANGEE
     fun findByIdAndTypeNot(idS: String, type: String): ResourceEntity?
 
-   /* @Query(
+    /*@Query(
         value = "select r.\"id\",r.\"issued\",r.\"modified\",r.\"tipo\",r.\"license\",r.\"accrual_periodicity\",r.\"temporal_coverage_end\",r.\"temporal_coverage_start\",r.\"validity\",r.\"publisher_id\" from \"relationships\" as relat, \"resource\" as r where \"id_catalog\" = ?1 and relat.\"id_resource\" = r.\"id\"",
         nativeQuery = true
     )
     @Transactional*/
-
     fun findDistinctResourcesCatalogByCatalogResourcesId(id_catalog: String, page: Pageable): Page<ResourceEntity> //CHANGEE
     fun findDistinctResourcesCatalogByCatalogResourcesIdAndType(id_catalog: String, type:String, page: Pageable): Page<ResourceEntity> //CHANGEE
     @Query(

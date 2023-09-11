@@ -101,6 +101,7 @@ val InitPage = FC<InitPageProps> { props->
     var listTestDatasets by useState(mutableListOf<DatasetModel>())
     var numberDatasets by useState(0)
     var pageNumber by useState(0)
+    var cargandoNum by useState(false)
 
    /* var miVariable: MutableMap<String, MutableMap<String, Collection<String>>> =
         selectedFiltersContext.mapValues { it.value.toMutableMap() }.toMutableMap()*/
@@ -131,10 +132,13 @@ val InitPage = FC<InitPageProps> { props->
 
 
     useEffect(selectedFiltersContext) {
-        coroutineScope.launch {
-            val n = getResourcesNumber(selectedFiltersContext,"dataset")
+        //coroutineScope.launch {
+        kotlinx.coroutines.GlobalScope.launch {
+            cargandoNum = true
+            val n = getResourcesNumber(selectedFiltersContext, "dataset")
             numberDatasets = n
-            console.log("TOTAL NUMBER_ "+numberDatasets + " - "+ n)
+            cargandoNum = false
+            console.log("TOTAL NUMBER_ " + numberDatasets + " - " + n)
         }
 
     }
@@ -187,6 +191,7 @@ val InitPage = FC<InitPageProps> { props->
                    // flag = pageNumber
                     numberOfDatasets = numberDatasets
                   //  searchBy = searchFilter
+                    cargando = cargandoNum
                     filterList = listTestDatasets
                     //this.updateDatasetsList = {e,v -> pageNumber = v.toInt()}
                 }

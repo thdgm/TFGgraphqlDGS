@@ -18,6 +18,7 @@ import react.dom.events.ChangeEvent
 import react.useRequiredContext
 import react.useState
 import kotlin.math.ceil
+import kotlin.math.floor
 
 external interface PaginationProps:Props{
 
@@ -29,15 +30,19 @@ external interface PaginationProps:Props{
 val Pagination = FC<PaginationProps> { props ->
     var selectedFilters by useRequiredContext(FilterListContextAll)
     console.log("NUMM: "+props.numberOfPages)
-    console.log("NUMBER: "+ ceil(props.numberOfPages.toDouble() / 5).toInt())
-    var numberOfPages by useState( ceil(props.numberOfPages.toDouble() / 5).toInt())
+    console.log("NUMBER: "+ ceil(props.numberOfPages.toDouble() / 10).toInt() + " -- " +floor(props.numberOfPages.toDouble() / 10).toInt())
+    var numberOfPages by useState(
+        if (props.numberOfPages.toDouble() > 10) floor(props.numberOfPages.toDouble() / 10).toInt() + 1
+        else ceil(props.numberOfPages.toDouble() / 10).toInt()
+    )
     /*val handleChange:(event: ChangeEvent<*>, value: Number) -> Unit =  {e,v ->
         GlobalScope.launch {
             props.changePage(e,v)
         }
     }*/
     console.log("ESTO RECIBE PAGINATION:: "+props.numberOfPages + " - "+props.resType + " - "+ selectedFilters["Datasets"] )
-     Paper {
+
+    Paper {
          sx{
             // marginLeft= 60.pct
 
@@ -56,7 +61,8 @@ val Pagination = FC<PaginationProps> { props ->
            //  page = selectedFilters.filter { it.key == "Datasets" }.filter{it.key == "Page"}.values.first().toInt()
              page = selectedFilters["${props.resType}"]?.get("Page")?.firstOrNull()?.toInt() ?: 1
              color = PaginationColor.primary
-             count = ceil(props.numberOfPages.toDouble() / 5).toInt()//numberOfPages
+             count = if (props.numberOfPages.toDouble() > 10) floor(props.numberOfPages.toDouble() / 10).toInt() + 1
+             else ceil(props.numberOfPages.toDouble() / 10).toInt()//numberOfPages //floor(props.numberOfPages.toDouble() / 10).toInt()//numberOfPages
              size = Size.small
              onChange = {e,v ->
                  selectedFilters = selectedFilters.toMutableMap().mapValues { (key, catalogMap) ->

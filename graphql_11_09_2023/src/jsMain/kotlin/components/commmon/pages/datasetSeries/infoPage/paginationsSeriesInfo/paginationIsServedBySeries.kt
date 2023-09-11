@@ -10,6 +10,7 @@ import react.Props
 import react.dom.events.ChangeEvent
 import react.useState
 import kotlin.math.ceil
+import kotlin.math.floor
 
 
 external interface PaginationIsServedBySeriesProps: Props {
@@ -19,7 +20,7 @@ external interface PaginationIsServedBySeriesProps: Props {
 }
 val paginationIsServedBySeries = FC<PaginationIsServedBySeriesProps> { props ->
 
-    var numberOfPages by useState(ceil(props.numberOfPages.toDouble() / 5).toInt())
+    var numberOfPages by useState (floor(props.numberOfPages.toDouble() / 5).toInt())//(ceil(props.numberOfPages.toDouble() / 5).toInt())
    // console.log("SERVEDD NUUKMMMM: : "+ numberOfPages)
 
     Paper {
