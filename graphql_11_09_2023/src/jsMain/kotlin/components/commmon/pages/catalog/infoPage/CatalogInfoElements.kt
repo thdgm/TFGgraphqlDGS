@@ -723,7 +723,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                         if (it.catalogId != null) {
                             ListItem {
                                 className = ClassName("distributionsList")
-                                secondaryAction = addToFiltersButton.create {
+                                /*secondaryAction = addToFiltersButton.create {
                                     addToFilters = {
 
                                         selectedFilters =
@@ -746,7 +746,7 @@ val CatalogInfoElements = FC<CatalogInfoElementsProps> { props ->
                                                 }
                                             }.toMutableMap()
                                     }
-                                }
+                                }*/
 
                                 ListItemAvatar {
                                     Folder {

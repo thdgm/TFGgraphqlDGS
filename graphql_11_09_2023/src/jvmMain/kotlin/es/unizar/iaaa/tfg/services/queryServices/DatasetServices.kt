@@ -33,7 +33,7 @@ class DatasetServicesImpl(
     // Return property Distributions Dataset
     @Cacheable
     override fun getDistributionsDataset(id: String): Collection<Distribution?> =
-        distributionRepository.findDistributionsByDatasetsId(id, PageRequest.of(0, 5)).get().toList()
+        distributionRepository.findDistributionsByDatasetsId(id, PageRequest.of(0, Integer.MAX_VALUE)).get().toList()
             .map {
                 converter.toDistribution(it)
             }
@@ -41,7 +41,7 @@ class DatasetServicesImpl(
     // Return property InSeries Dataset
     @Cacheable
     override fun getInSeriesDataset(filterIdDS: String?, id: String): Collection<DatasetSeries?> {
-        val datasetSeries = datasetSeriesRepository.findInseriesByDatasetId(id, PageRequest.of(0,5))
+        val datasetSeries = datasetSeriesRepository.findInseriesByDatasetId(id, PageRequest.of(0,Integer.MAX_VALUE))
             .map {
                 converter.toDatasetSeriesById(it)
             }

@@ -558,7 +558,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                          if (valueToShow != null){
                              ListItem {
                                  className = ClassName("distributionsList")
-                                 secondaryAction = addToFiltersButton.create {
+                                 /*secondaryAction = addToFiltersButton.create {
                                      addToFilters = {
 
                                          selectedFilters =
@@ -576,7 +576,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                                  }
                                              }.toMutableMap()
                                      }
-                                 }
+                                 }*/
 
                                  ListItemAvatar {
                                      RssFeed {
@@ -624,7 +624,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                         if (valueToShow != null){
                             ListItem {
                                 className = ClassName("distributionsList")
-                                secondaryAction = addToFiltersButton.create {
+                                /*secondaryAction = addToFiltersButton.create {
                                     addToFilters = {
 
                                         selectedFilters =
@@ -642,7 +642,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                                 }
                                             }.toMutableMap()
                                     }
-                                }
+                                }*/
 
                                 ListItemAvatar {
                                     Source {
@@ -687,7 +687,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                         if (valueToShow != null){
                             ListItem {
                                 className = ClassName("distributionsList")
-                                secondaryAction = addToFiltersButton.create {
+                                /*secondaryAction = addToFiltersButton.create {
                                     addToFilters = {
 
                                         selectedFilters =
@@ -705,7 +705,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                                 }
                                             }.toMutableMap()
                                     }
-                                }
+                                }*/
 
                                 ListItemAvatar {
                                     Folder {
@@ -797,7 +797,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                         if(!valueToShow.isNullOrBlank()) {
                             ListItem {
                                 className = ClassName("distributionsList2")
-                                secondaryAction = addToFiltersButton.create {
+                                /*secondaryAction = addToFiltersButton.create {
                                     addToFilters = {
 
                                         selectedFilters =
@@ -818,7 +818,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                                 }
                                             }.toMutableMap()
                                     }
-                                }
+                                }*/
 
                                 ListItemAvatar {
                                     Podcasts {
@@ -895,7 +895,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                          if (valueToShow != null){
                              ListItem {
                                  className = ClassName("distributionsList")
-                                 secondaryAction = addToFiltersButton.create {
+                                 /*secondaryAction = addToFiltersButton.create {
                                      addToFilters = {
 
                                          selectedFilters =
@@ -913,7 +913,7 @@ val ResourceInfoElements = FC<ResourceInfoElementsProps> { props->
                                                  }
                                              }.toMutableMap()
                                      }
-                                 }
+                                 }*/
 
                                  ListItemAvatar {
                                      Folder {
